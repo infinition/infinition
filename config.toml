@@ -1,0 +1,60 @@
+baseURL = "http://example.org/"
+languageCode = "fr-FR"
+title = "My New Hugo Site"
+theme = "hugo-theme-learn" 
+
+defaultContentLanguage = "fr"
+defaultContentLanguageInSubdir= true
+
+[Languages]
+[Languages.en]
+title = "Documentation for Hugo Learn Theme"
+weight = 1
+languageName = "English"
+
+[Languages.fr]
+title = "Documentation du thème Hugo Learn"
+weight = 2
+languageName = "Français"
+
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+
+[params]
+  # L'URL préfixe pour éditer la page courante. Ce paramètre affichera un bouton "Modifier cette page" on haut de de chacune des pages.
+  # Pratique pour donner les possibilité à vos utilisateurs de créer une merge request pour votre doc.
+  # Allez voir le fichier config.toml de cette documentation pour avoir un exemple.
+  editURL = ""
+  # Autheur du site, est utilisé dans les informations meta
+  author = "Infinition"
+  # Description du site, est utilisé dans les informations meta
+  description = ""
+  # Affiche une icône lorsque la page a été visitée
+  showVisitedLinks = false
+  # Désactive la fonction de recherche. Une valeur à true cache la barre de recherche.
+  disableSearch = false
+  # Par défaut, le cache Javascript et CSS est automatiquement vidé lorsqu'une nouvelle version du site est générée.
+  # Utilisez ce paramètre lorsque vous voulez désactiver ce comportement (c'est parfois incompatible avec certains proxys)
+  disableAssetsBusting = false
+  # Utilisez ce paramètre pour désactiver le bouton copy-to-clipboard pour le code formatté sur une ligne.
+  disableInlineCopyToClipBoard = false
+  # Un titre est défini par défaut lorsque vous utilisez un raccourci dans le menu. Utilisez ce paramètre pour le cacher.
+  disableShortcutsTitle = false
+  # S'il est réglé sur faux, un bouton Accueil apparaîtra sous la barre de recherche dans le menu.
+  # Il redirige vers la page d'accueil de la langue actuelle si cela est spécifié. (La valeur par défaut est "/")
+  disableLandingPageButton = false
+  # Si défini à true, empêche Hugo d'inclure le module "mermaid" s'il n'est pas nécessaire (réduira les temps de chargement et le trafic)
+  disableMermaid = false
+  # Spécifie l'emplacement distant du mermaid js
+  customMermaidURL = "https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"
+  # Quand vous utilisez un site multi-langue, utilisez ce paramètre pour désactiver le bouton de changement de langue.
+  disableLanguageSwitchingButton = false
+  # Ordonne les sections dans menu par poids ("weight") ou titre ("title"). Défaut à "weight"
+  ordersectionsby = "weight"
+  # Utilisez ce paramètre pour modifier le schéma de couleur du site. Les valeurs par défaut sont "red", "blue", "green".
+  themeVariant = "infinition"
+  # Fournissez une liste de fichiers css personnalisés à charger par rapport depuis le dossier `static/` à la racine du site.
+  custom_css = ["css/foo.css", "css/bar.css"]
+
