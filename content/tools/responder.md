@@ -3,19 +3,14 @@ title: Responder
 weight: "10"
 
 ---
-!\[\](file:///C:/Users/NEPHYS\~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif =206x33)[!\[GitHub Pages Logo (Page 1) - Line.17QQ.com\](file:///C:/Users/NEPHYS\~1/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg =80x80)](https://github.com/SpiderLabs/Responder)RESPONDER
 
-| --- |
-|  |
-|  |  |
-
-![](/uploads/skull.png)**WHAT is responder ?**
+![](/uploads/skull.png)##**WHAT is responder ?**
 
 How to use Responder to capture NetNTLM and grab a shell | A2Secure
 
 Responder is a tool with different capabilities but the most interesting is the possibility of setting up a rogue samba server and steal NetNTLM hashes.
 
-Ä **Overview & Tools**
+**##Overview & Tools**
 
 In order to be able to complete this task, it is good practice to start the responder in analyzing mode with the option -A.
 
