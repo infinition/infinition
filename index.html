@@ -92,15 +92,24 @@
         
         .portal-ring {
             width: 300px; height: 300px;
-            border: 2px solid rgba(255,255,255,0.1);
+            border: 2px dashed rgba(255,255,255,0.1);
+            border-top: 2px solid var(--neon-blue);
             border-radius: 50%;
             position: absolute;
-            animation: spin 20s linear infinite;
+            animation: spin 15s linear infinite;
+            box-shadow: 0 0 15px rgba(19, 175, 240, 0.1);
         }
-        .portal-ring::before {
-            content: ''; position: absolute; top: -2px; left: 50%;
-            width: 20px; height: 4px; background: var(--neon-blue);
-            box-shadow: 0 0 10px var(--neon-blue);
+        .portal-ring::after {
+            content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            border-bottom: 2px solid var(--neon-orange);
+            border-radius: 50%;
+            animation: spin 10s linear infinite reverse;
+        }
+
+        @keyframes spin { 
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); } 
         }
 
         .portal-title {
@@ -221,8 +230,23 @@
         }
         .article-entry:hover { background: rgba(255, 255, 255, 0.05); border-left-color: var(--neon-orange); }
         
-        .article-thumb { width: 140px; height: 90px; object-fit: cover; border: 1px solid #333; opacity: 0.7; transition: all 0.3s; border-radius: 4px; background: #000; }
+        /* Updated Thumbnail Style: Square and Centered Icon */
+        .article-thumb { 
+            width: 100px; height: 100px; /* Square */
+            object-fit: cover; 
+            border: 1px solid #333; 
+            opacity: 0.7; 
+            transition: all 0.3s; 
+            border-radius: 4px; 
+            background: #000; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            flex-shrink: 0;
+        }
         .article-entry:hover .article-thumb { opacity: 1; border-color: var(--neon-orange); box-shadow: 0 0 10px rgba(255,107,0,0.2); }
+        .thumb-icon { font-size: 2.5rem; color: #444; }
+        .article-entry:hover .thumb-icon { color: var(--neon-orange); }
         
         .article-info { flex: 1; }
         .article-title { font-family: var(--cyber-font); font-size: 1.1rem; font-weight: bold; line-height: 1.3; }
@@ -230,11 +254,26 @@
         
         /* --- KB SPECIFIC --- */
         .kb-container { display: flex; height: calc(100vh - 60px); }
-        .kb-sidebar { width: 300px; background: #090d10; border-right: 1px solid rgba(255,255,255,0.1); overflow-y: auto; padding: 1rem; font-family: var(--code-font); font-size: 0.9rem; }
+        .kb-sidebar { width: 300px; background: #090d10; border-right: 1px solid rgba(255,255,255,0.1); overflow-y: auto; padding: 1rem; font-family: var(--code-font); font-size: 0.9rem; display: flex; flex-direction: column;}
         .kb-main { flex: 1; overflow-y: auto; padding: 2rem; background: var(--bg-color); }
         
+        .kb-search-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #333;
+            padding: 8px;
+            width: 100%;
+            color: #fff;
+            font-family: var(--code-font);
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+        .kb-search-box:focus { outline: none; border-color: var(--neon-purple); }
+
         .tree-item { margin-left: 1rem; cursor: pointer; padding: 5px; color: #aaa; display: block; }
         .tree-item:hover { color: var(--neon-purple); background: rgba(255,255,255,0.05); }
+        .tree-item i { margin-right: 8px; color: #555; font-size: 0.8rem; } /* Added icon style */
+        .tree-item:hover i { color: var(--neon-purple); }
+
         .tree-folder { font-weight: bold; color: #fff; margin-bottom: 5px; margin-top: 10px; cursor: pointer; }
         .tree-folder i { color: var(--neon-blue); margin-right: 5px; }
         .tree-children { display: none; padding-left: 10px; border-left: 1px solid rgba(255,255,255,0.1); }
@@ -294,7 +333,7 @@
         
         <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.4;">
             SECURE CONNECTION ESTABLISHED<br>
-            v7.0.0 (KB_MODULE_LOADED)
+            v7.2.0 (KB_SEARCH + UI_POLISH)
         </p>
     </section>
 
@@ -491,8 +530,11 @@
     <!-- VIEW 5: KNOWLEDGE BASE (KB) -->
     <section id="kb-view" class="view-section" style="padding-top: 60px; padding-bottom: 0;">
         <div class="kb-container">
-            <div class="kb-sidebar" id="kb-tree">
-                <div style="text-align:center; padding:1rem; color:#666;">Loading Tree Structure...</div>
+            <div class="kb-sidebar">
+                <input type="text" id="kb-search" class="kb-search-box" placeholder="Search Knowledge Base..." autocomplete="off">
+                <div id="kb-tree">
+                    <div style="text-align:center; padding:1rem; color:#666;">Loading Tree Structure...</div>
+                </div>
             </div>
             <div class="kb-main" id="kb-content-area">
                 <h1 style="font-family: var(--cyber-font); color: var(--neon-purple);">Welcome to the KB</h1>
@@ -546,39 +588,61 @@
             return null;
         }
 
-        // --- 1. DATA LOGS: FETCH ARTICLES ---
-        async function fetchLocalArticles() {
+        // --- 1. DATA LOGS: FETCH ARTICLES (ARTICLES + KB FLATTENED) ---
+        // Better Recursive Fetcher for Flattened List
+        async function fetchAllMDRecursively(path) {
+            let allFiles = [];
             try {
-                const listUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${ARTICLES_PATH}`;
-                const response = await fetch(listUrl);
+                const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`;
+                const response = await fetch(url);
                 if (!response.ok) return [];
-                const files = await response.json();
-                const mdFiles = files.filter(f => f.name.endsWith('.md'));
+                const items = await response.json();
 
-                const articlePromises = mdFiles.map(async (file) => {
-                    const contentResp = await fetch(file.download_url);
-                    const text = await contentResp.text();
-                    const titleMatch = text.match(/^# (.*)/m);
-                    const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
-                    
-                    // Dynamic date from API first
-                    let date = await fetchCommitDate(`${ARTICLES_PATH}/${file.name}`);
-                    if (!date) {
-                        // Fallback to regex inside file
-                        const dateMatch = text.match(/(?:\*\*|__)?Date(?:\*\*|__)?:\s*(.*)/i);
-                        date = dateMatch ? dateMatch[1].trim() : 'Unknown Date';
+                for (const item of items) {
+                    if (item.type === 'dir') {
+                        const subFiles = await fetchAllMDRecursively(item.path);
+                        allFiles = allFiles.concat(subFiles);
+                    } else if (item.name.endsWith('.md')) {
+                        allFiles.push(item);
                     }
-
-                    return {
-                        id: file.sha, type: 'article', file: file.name, title: title, date: date,
-                        icon: 'fas fa-file-code', image: null, content: text
-                    };
-                });
-                return await Promise.all(articlePromises);
-            } catch (e) { return []; }
+                }
+            } catch(e) { console.error(e); }
+            return allFiles;
         }
 
-        // --- 2. KB: FETCH RECURSIVE TREE ---
+        async function fetchLocalDataLogs() {
+            // 1. Get files from /articles
+            const articles = await fetchAllMDRecursively(ARTICLES_PATH);
+            // 2. Get files from /kb
+            const kbs = await fetchAllMDRecursively(KB_PATH);
+            
+            const allFiles = [...articles, ...kbs];
+
+            const processed = await Promise.all(allFiles.map(async (file) => {
+                const contentResp = await fetch(file.download_url);
+                const text = await contentResp.text();
+                const titleMatch = text.match(/^# (.*)/m);
+                const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
+                
+                let date = await fetchCommitDate(file.path);
+                if (!date) {
+                    const dateMatch = text.match(/(?:\*\*|__)?Date(?:\*\*|__)?:\s*(.*)/i);
+                    date = dateMatch ? dateMatch[1].trim() : 'Unknown Date';
+                }
+
+                return {
+                    id: file.sha, type: 'article', file: file.path, title: title, date: date,
+                    // Icon based on folder
+                    icon: file.path.startsWith('kb') ? 'fas fa-book-medical' : 'fas fa-file-alt', 
+                    image: null, content: text
+                };
+            }));
+            
+            return processed;
+        }
+
+
+        // --- 2. KB: FETCH RECURSIVE TREE (For Sidebar) ---
         async function fetchKBTree(path = KB_PATH, parentElement = document.getElementById('kb-tree')) {
             try {
                 const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`;
@@ -592,7 +656,6 @@
                 const items = await response.json();
                 if(path === KB_PATH) parentElement.innerHTML = ""; 
 
-                // Sort: Folders first, then files
                 items.sort((a, b) => (a.type === b.type ? 0 : a.type === 'dir' ? -1 : 1));
 
                 for (const item of items) {
@@ -615,12 +678,13 @@
                         parentElement.appendChild(folderDiv);
                         parentElement.appendChild(childrenDiv);
                         
-                        await fetchKBTree(item.path, childrenDiv); // Recursive
+                        await fetchKBTree(item.path, childrenDiv);
 
                     } else if (item.type === 'file' && item.name.endsWith('.md')) {
                         const fileDiv = document.createElement('div');
                         fileDiv.className = 'tree-item';
-                        fileDiv.innerText = item.name.replace('.md', '');
+                        // Added Icon for files
+                        fileDiv.innerHTML = `<i class="fas fa-file-lines"></i> ${item.name.replace('.md', '')}`;
                         fileDiv.onclick = () => loadKBContent(item.download_url);
                         parentElement.appendChild(fileDiv);
                     }
@@ -630,13 +694,47 @@
             }
         }
 
+        // KB SEARCH FUNCTION
+        document.getElementById('kb-search').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const items = document.querySelectorAll('.tree-item');
+            const folders = document.querySelectorAll('.tree-folder');
+            
+            if(!query) {
+                // Reset visibility
+                items.forEach(item => item.style.display = 'block');
+                folders.forEach(f => f.style.display = 'block');
+                document.querySelectorAll('.tree-children').forEach(c => c.classList.remove('open'));
+                return;
+            }
+
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if(text.includes(query)) {
+                    item.style.display = 'block';
+                    // Reveal parents
+                    let parent = item.parentElement;
+                    while(parent.classList.contains('tree-children')) {
+                        parent.classList.add('open');
+                        // Show folder label associated with this children container
+                        if(parent.previousElementSibling && parent.previousElementSibling.classList.contains('tree-folder')) {
+                            parent.previousElementSibling.style.display = 'block';
+                        }
+                        parent = parent.parentElement;
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
         async function loadKBContent(url) {
             const container = document.getElementById('kb-content-area');
             container.innerHTML = '<div style="color:var(--neon-green)">> Downloading Knowledge Fragment...</div>';
             try {
                 const res = await fetch(url);
                 const text = await res.text();
-                const cleanText = text.replace(/^# .*/m, ''); // Remove Title H1
+                const cleanText = text.replace(/^# .*/m, ''); 
                 const titleMatch = text.match(/^# (.*)/m);
                 const title = titleMatch ? titleMatch[1] : 'Untitled Note';
                 
@@ -679,10 +777,10 @@
         async function runScanSimulation() {
             const output = document.getElementById('scan-output');
             const listContainer = document.getElementById('article-list-container');
-            output.innerHTML = '> INITIALIZING PROTOCOLS...<br>> SCANNING GITHUB FS... <span class="blink">_</span>';
+            output.innerHTML = '> INITIALIZING PROTOCOLS...<br>> SCANNING FILESYSTEM (ARTICLES + KB)... <span class="blink">_</span>';
             
-            const localData = await fetchLocalArticles();
-            renderArticles(localData); // Render fast
+            const localData = await fetchLocalDataLogs();
+            renderArticles(localData); 
 
             setTimeout(async () => {
                 output.innerHTML += '<br>> FETCHING REPOS...';
@@ -723,7 +821,16 @@
                     else openArticle(item);
                 };
                 
-                let thumb = item.image ? `<img src="${item.image}" class="article-thumb">` : `<div class="article-thumb" style="background:#111;display:flex;align-items:center;justify-content:center;"><i class="${item.icon}" style="font-size:2rem;opacity:0.3;"></i></div>`;
+                // Thumbnail Logic
+                let thumb = '';
+                if (item.image) {
+                    thumb = `<img src="${item.image}" class="article-thumb">`;
+                } else {
+                    // Fallback Icon Thumbnail for Articles/KB
+                    let fallbackIcon = item.type === 'repo' ? 'fab fa-github' : 'fas fa-file-lines';
+                    thumb = `<div class="article-thumb"><i class="${fallbackIcon} thumb-icon"></i></div>`;
+                }
+
                 let color = item.type === 'repo' ? 'var(--neon-orange)' : (item.type === 'artwork' ? 'var(--neon-blue)' : '#555');
 
                 div.innerHTML = `
