@@ -36,7 +36,6 @@
             font-family: var(--code-font);
             line-height: 1.6;
             overflow-x: hidden;
-            /* Complex Background */
             background-image: 
                 linear-gradient(rgba(5, 10, 14, 0.96), rgba(5, 10, 14, 0.98)),
                 linear-gradient(0deg, rgba(255, 107, 0, 0.03) 1px, transparent 1px),
@@ -61,7 +60,7 @@
 
         .sys-status { color: var(--neon-green); }
         .back-btn { 
-            display: none; /* Hidden on home */
+            display: none; 
             cursor: pointer; 
             color: var(--neon-orange);
             font-weight: bold;
@@ -73,16 +72,14 @@
         .view-section {
             display: none; 
             min-height: 100vh;
-            padding-top: 60px; /* Space for sys-bar */
+            padding-top: 60px; 
             animation: fadeIn 0.5s ease;
         }
         .view-section.active { display: block; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* ========================
-           VIEW 1: PORTAL HOME 
-           ======================== */
+        /* --- PORTAL HOME --- */
         #portal-view {
             height: 100vh;
             display: flex;
@@ -119,6 +116,8 @@
             gap: 2rem;
             margin-top: 3rem;
             z-index: 10;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .portal-btn {
@@ -150,32 +149,19 @@
 
         .portal-btn.profile:hover { border-color: var(--neon-blue); box-shadow: 0 0 20px rgba(19, 175, 240, 0.3); }
         .portal-btn.blog:hover { border-color: var(--neon-orange); box-shadow: 0 0 20px rgba(255, 107, 0, 0.3); }
+        .portal-btn.kb:hover { border-color: var(--neon-purple); box-shadow: 0 0 20px rgba(189, 0, 255, 0.3); }
 
-        /* ========================
-           VIEW 2: PORTFOLIO STYLES
-           ======================== */
+        /* --- PORTFOLIO STYLES --- */
         .container { max-width: 1100px; margin: 0 auto; padding: 2rem; position: relative; }
-        
-        /* Timeline Line */
-        .container::before {
-            content: ''; position: fixed; left: 20px; top: 0; bottom: 0; width: 1px;
-            background: linear-gradient(to bottom, var(--neon-blue), var(--neon-orange), var(--neon-purple), var(--neon-red));
-            opacity: 0.3;
-            z-index: -1;
-        }
-        
-        /* Typography */
         h1.port-h1 { font-family: var(--cyber-font); font-size: 3.5rem; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text-color); text-shadow: 2px 2px 0 var(--neon-orange), -2px -2px 0 var(--neon-blue); }
         h2.port-h2 { font-family: var(--cyber-font); font-size: 1.8rem; margin-bottom: 2rem; color: var(--text-color); border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 10px; display: inline-flex; align-items: center; width: 100%; }
-        h2.port-h2 i { margin-right: 15px; }
-
         .tagline { font-family: var(--code-font); font-size: 1.1rem; color: var(--neon-blue); margin-bottom: 2rem; font-weight: 700; display: block; }
+        
         .highlight-orange { color: var(--neon-orange); }
         .highlight-purple { color: var(--neon-purple); }
         .highlight-blue { color: var(--neon-blue); }
         .highlight-red { color: var(--neon-red); }
 
-        /* Portfolio Buttons */
         .btn-link {
             display: inline-flex; align-items: center; justify-content: center;
             padding: 10px 24px; background: transparent; border: 1px solid var(--text-color);
@@ -183,15 +169,10 @@
             letter-spacing: 1px; transition: all 0.3s ease; margin-right: 10px; margin-bottom: 10px; font-size: 0.85rem;
         }
         .btn-link:hover { transform: translateY(-2px); box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); }
-        .btn-link i { margin-right: 8px; }
         .btn-oxford { border-color: var(--neon-blue); color: var(--neon-blue); }
-        .btn-oxford:hover { background: rgba(19, 175, 240, 0.1); box-shadow: 0 0 20px rgba(19, 175, 240, 0.4); }
         .btn-hack { border-color: var(--neon-orange); color: var(--neon-orange); }
-        .btn-hack:hover { background: rgba(255, 107, 0, 0.1); box-shadow: 0 0 20px rgba(255, 107, 0, 0.4); }
-        .btn-skate { border-color: var(--neon-red); color: var(--neon-red); }
-        .btn-skate:hover { background: rgba(255, 0, 60, 0.1); box-shadow: 0 0 20px rgba(255, 0, 60, 0.4); }
 
-        /* Timeline */
+        /* Timeline & Grid */
         .timeline { border-left: 2px solid rgba(255,255,255,0.1); padding-left: 2rem; margin-left: 1rem; }
         .timeline-item { position: relative; margin-bottom: 2.5rem; }
         .timeline-item::before { content: ''; position: absolute; left: -2.6rem; top: 5px; width: 1rem; height: 1rem; background: var(--bg-color); border: 2px solid var(--text-color); border-radius: 50%; }
@@ -202,124 +183,69 @@
         .company { font-size: 1rem; color: var(--neon-blue); margin-bottom: 0.2rem; display: block; }
         .summary { font-size: 0.95rem; color: #aaa; margin-top: 0.5rem; font-style: italic; }
 
-        /* Grids & Cards */
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-        .card { background: var(--card-bg); padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease; height: 100%; z-index: 1; position: relative; }
-        .card h3 { font-size: 1rem; margin-bottom: 1rem; font-family: var(--code-font); color: #fff; display: flex; align-items: center; }
-        .card h3 i { margin-right: 10px; }
+        .card, .project-card { background: var(--card-bg); padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease; height: 100%; z-index: 1; position: relative; }
+        .card h3, .project-card h3 { font-size: 1rem; margin-bottom: 1rem; font-family: var(--code-font); color: #fff; display: flex; align-items: center; }
+        .card h3 i, .project-card h3 i { margin-right: 10px; }
         .card ul { list-style: none; padding: 0; }
         .card li { font-size: 0.9rem; color: #aaa; margin-bottom: 5px; border-left: 2px solid transparent; padding-left: 10px; }
-        .skill-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        .skill-card:hover li { border-left-color: rgba(255,255,255,0.2); }
-
-        /* Animated Project Cards */
-        .project-card { border: none; background: #0d1216; position: relative; z-index: 0; overflow: hidden; padding: 2px; border-radius: 8px; transition: transform 0.3s ease; height: 100%; }
+        .card:hover, .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        
+        .project-card { border: none; background: #0d1216; position: relative; z-index: 0; overflow: hidden; padding: 2px; border-radius: 8px; }
         .project-content { background: var(--card-bg); height: 100%; padding: 1.5rem; border-radius: 6px; position: relative; z-index: 2; }
         .project-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(transparent, var(--neon-blue), transparent 30%); animation: rotate 4s linear infinite; z-index: 1; }
+        @keyframes rotate { 100% { transform: rotate(1turn); } }
         
         .project-card.border-orange::before { background: conic-gradient(transparent, var(--neon-orange), transparent 30%); }
-        .project-card.border-purple::before { background: conic-gradient(transparent, var(--neon-purple), transparent 30%); }
         .project-card.border-green::before { background: conic-gradient(transparent, var(--neon-green), transparent 30%); }
+        .project-card.border-purple::before { background: conic-gradient(transparent, var(--neon-purple), transparent 30%); }
         .project-card.border-blue::before { background: conic-gradient(transparent, var(--neon-blue), transparent 30%); }
         
-        @keyframes rotate { 100% { transform: rotate(1turn); } }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        .project-card:hover { transform: scale(1.02); box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-        .project-card:hover h3 { text-shadow: 0 0 8px currentColor; }
-        .project-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin-bottom: 0.5rem; display: block; font-weight: 700; }
-
         .border-purple { border-top: 3px solid var(--neon-purple); }
         .border-orange { border-top: 3px solid var(--neon-orange); }
         .border-green { border-top: 3px solid var(--neon-green); }
         .border-red { border-top: 3px solid var(--neon-red); }
         .border-blue { border-top: 3px solid var(--neon-blue); }
 
-        /* ========================
-           VIEW 3: BLOG STYLES
-           ======================== */
+        /* --- BLOG & KB SHARED STYLES --- */
         .blog-header { text-align: center; margin-bottom: 3rem; }
-        
-        /* Interactive Console Style */
         .console-output { font-family: var(--code-font); background: rgba(0,0,0,0.3); padding: 1rem; border: 1px solid #333; margin-bottom: 2rem; color: var(--neon-green); font-size: 0.9rem; position: relative;}
-        
-        .console-input {
-            background: transparent;
-            border: none;
-            color: var(--neon-green);
-            font-family: var(--code-font);
-            font-size: 0.9rem;
-            outline: none;
-            width: 50%;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .console-input::placeholder {
-            color: var(--neon-green);
-            opacity: 0.5;
-        }
-        
+        .console-input { background: transparent; border: none; color: var(--neon-green); font-family: var(--code-font); font-size: 0.9rem; outline: none; width: 50%; font-weight: bold; text-transform: uppercase; }
         .blink { animation: blinker 1s linear infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
 
-        /* Article Entry with Image Support */
         .article-entry { 
-            display: flex; 
-            align-items: flex-start; /* Align top */
-            padding: 1.5rem; 
-            background: var(--card-bg); 
-            border-left: 3px solid var(--text-color); 
-            transition: all 0.2s; 
-            cursor: pointer; 
-            margin-bottom: 1rem; 
-            gap: 1.5rem;
+            display: flex; align-items: flex-start; padding: 1.5rem; 
+            background: var(--card-bg); border-left: 3px solid var(--text-color); 
+            transition: all 0.2s; cursor: pointer; margin-bottom: 1rem; gap: 1.5rem;
         }
+        .article-entry:hover { background: rgba(255, 255, 255, 0.05); border-left-color: var(--neon-orange); }
         
-        .article-entry:hover { 
-            background: rgba(255, 255, 255, 0.05); 
-            border-left-color: var(--neon-orange); 
-        }
-
-        /* Thumbnail Styles */
-        .article-thumb {
-            width: 140px;
-            height: 90px;
-            object-fit: cover;
-            border: 1px solid #333;
-            opacity: 0.7;
-            transition: all 0.3s;
-            border-radius: 4px;
-            background: #000;
-        }
+        .article-thumb { width: 140px; height: 90px; object-fit: cover; border: 1px solid #333; opacity: 0.7; transition: all 0.3s; border-radius: 4px; background: #000; }
+        .article-entry:hover .article-thumb { opacity: 1; border-color: var(--neon-orange); box-shadow: 0 0 10px rgba(255,107,0,0.2); }
         
-        .article-entry:hover .article-thumb {
-            opacity: 1;
-            border-color: var(--neon-orange);
-            box-shadow: 0 0 10px rgba(255,107,0,0.2);
-        }
-
         .article-info { flex: 1; }
-        
-        .article-header { display: flex; align-items: center; margin-bottom: 0.5rem; }
-        .file-icon { font-size: 1.2rem; margin-right: 10px; color: #555; }
-        .article-entry:hover .file-icon { color: var(--neon-orange); }
-        
         .article-title { font-family: var(--cyber-font); font-size: 1.1rem; font-weight: bold; line-height: 1.3; }
         .article-date { font-family: var(--code-font); font-size: 0.8rem; opacity: 0.5; display: block; margin-top: 0.2rem;}
-        .article-desc { font-size: 0.85rem; opacity: 0.7; margin-top: 8px; font-family: sans-serif; line-height: 1.4; }
         
-        /* Markdown Body Styles */
-        #article-view { max-width: 800px; margin: 0 auto; }
-        .article-content { background: var(--card-bg); padding: 3rem; border-top: 3px solid var(--neon-orange); }
+        /* --- KB SPECIFIC --- */
+        .kb-container { display: flex; height: calc(100vh - 60px); }
+        .kb-sidebar { width: 300px; background: #090d10; border-right: 1px solid rgba(255,255,255,0.1); overflow-y: auto; padding: 1rem; font-family: var(--code-font); font-size: 0.9rem; }
+        .kb-main { flex: 1; overflow-y: auto; padding: 2rem; background: var(--bg-color); }
         
-        .article-body { margin-top: 2rem; font-family: sans-serif; line-height: 1.8; color: #ccc; }
-        .article-body h1, .article-body h2, .article-body h3 { color: #fff; margin-top: 1.5em; margin-bottom: 0.5em; }
+        .tree-item { margin-left: 1rem; cursor: pointer; padding: 5px; color: #aaa; display: block; }
+        .tree-item:hover { color: var(--neon-purple); background: rgba(255,255,255,0.05); }
+        .tree-folder { font-weight: bold; color: #fff; margin-bottom: 5px; margin-top: 10px; cursor: pointer; }
+        .tree-folder i { color: var(--neon-blue); margin-right: 5px; }
+        .tree-children { display: none; padding-left: 10px; border-left: 1px solid rgba(255,255,255,0.1); }
+        .tree-children.open { display: block; }
+
+        /* Markdown Body */
+        .article-body { margin-top: 1rem; font-family: sans-serif; line-height: 1.8; color: #ccc; max-width: 800px; }
+        .article-body h1, .article-body h2 { color: #fff; margin-top: 1.5em; margin-bottom: 0.5em; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
         .article-body a { color: var(--neon-blue); text-decoration: none; }
-        .article-body a:hover { text-decoration: underline; }
-        .article-body code { background: rgba(255,255,255,0.1); padding: 2px 5px; border-radius: 3px; font-family: var(--code-font); color: var(--neon-green); }
         .article-body pre { background: #000; padding: 1rem; border-radius: 5px; overflow-x: auto; border: 1px solid #333; }
-        .article-body pre code { background: none; padding: 0; color: #ccc; }
-        .article-body blockquote { border-left: 3px solid var(--neon-orange); padding-left: 1rem; margin-left: 0; color: #999; font-style: italic; }
+        .article-body blockquote { border-left: 3px solid var(--neon-orange); padding-left: 1rem; color: #999; font-style: italic; }
 
         @media (max-width: 768px) {
             h1.port-h1 { font-size: 2.5rem; }
@@ -328,6 +254,8 @@
             .portal-btn { min-width: 100%; }
             .article-entry { flex-direction: column; }
             .article-thumb { width: 100%; height: 150px; margin-bottom: 1rem; }
+            .kb-container { flex-direction: column; }
+            .kb-sidebar { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
         }
     </style>
 </head>
@@ -357,15 +285,20 @@
                 <span>DATA LOGS</span>
                 <small>READ ARTICLES</small>
             </button>
+            <button class="portal-btn kb" onclick="navigateTo('kb')">
+                <i class="fas fa-network-wired"></i>
+                <span>KNOWLEDGE BASE</span>
+                <small>ACCESS DOCUMENTATION</small>
+            </button>
         </div>
         
         <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.4;">
             SECURE CONNECTION ESTABLISHED<br>
-            v5.3.0 (MARKDOWN_SUPPORT)
+            v7.0.0 (KB_MODULE_LOADED)
         </p>
     </section>
 
-    <!-- VIEW 2: PORTFOLIO (FULL CONTENT FROM V4) -->
+    <!-- VIEW 2: PORTFOLIO -->
     <section id="portfolio-view" class="view-section">
         <main class="container">
             
@@ -476,7 +409,7 @@
                 </div>
             </div>
 
-            <!-- Projects (Integrated from V4) -->
+            <!-- Projects -->
             <h2 class="port-h2" style="margin-top: 5rem;"><i class="fas fa-project-diagram"></i> Featured Projects</h2>
             <div class="grid-container">
                 
@@ -536,90 +469,71 @@
         </main>
     </section>
 
-    <!-- VIEW 3: BLOG INDEX -->
+    <!-- VIEW 3: DATA LOGS (BLOG) -->
     <section id="blog-view" class="view-section">
         <div class="container">
             <div class="blog-header">
                 <h1 class="port-h1">DATA LOGS</h1>
                 <p>Personal Research Notes & Live Repositories</p>
             </div>
-
             <div class="console-output" id="scan-output">
-                > INITIALIZING SCAN PROTOCOL...<br>
-                > TARGET DIRECTORY: /var/www/articles/*.md<br>
-                > SCANNING... <span class="blink">_</span>
+                > INITIALIZING...
             </div>
-
-            <div class="article-list" id="article-list-container">
-                <!-- Injected via JS -->
-            </div>
+            <div class="article-list" id="article-list-container"></div>
         </div>
     </section>
 
-    <!-- VIEW 4: ARTICLE READER -->
+    <!-- VIEW 4: ARTICLE READER (SHARED) -->
     <section id="article-reader" class="view-section">
-        <div class="container" id="article-view">
-            <!-- Content via JS -->
+        <div class="container" id="article-view"></div>
+    </section>
+
+    <!-- VIEW 5: KNOWLEDGE BASE (KB) -->
+    <section id="kb-view" class="view-section" style="padding-top: 60px; padding-bottom: 0;">
+        <div class="kb-container">
+            <div class="kb-sidebar" id="kb-tree">
+                <div style="text-align:center; padding:1rem; color:#666;">Loading Tree Structure...</div>
+            </div>
+            <div class="kb-main" id="kb-content-area">
+                <h1 style="font-family: var(--cyber-font); color: var(--neon-purple);">Welcome to the KB</h1>
+                <p>Select a node on the left to access documentation, snippets, and second brain notes.</p>
+            </div>
         </div>
     </section>
 
     <!-- JS -->
     <script>
-        // --- DATA SOURCES ---
+        const GITHUB_USER = 'infinition';
+        const GITHUB_REPO = 'infinition'; 
+        const ARTICLES_PATH = 'articles'; 
+        const KB_PATH = 'kb'; 
+
         let mergedData = [];
-        
-        // Static articles now using MARKDOWN instead of HTML content
-        const staticArticles = [
-            {
-                id: 'recursive-vla',
-                type: 'article',
-                file: 'recursive_vla.md',
-                title: 'Breaking GPU Dependency: Recursive VLA for Edge Robotics',
-                date: '2025-10-12',
-                icon: 'fas fa-robot',
-                image: 'https://placehold.co/600x400/0aff47/000000?text=VLA+Research', // Placeholder
-                content: `
-## The Problem with Modern VLA
 
-Visual-Language-Action models represent the future of robotics, but they currently require massive GPU clusters to run efficiently. This creates a latency bottleneck for autonomous systems operating on the edge.
-
-My research focuses on **Tiny Recursive Networks**. Instead of processing the entire visual field at once, the network recursively attends to regions of interest, drastically reducing the computational overhead.
-
-### Key Findings
-* **300%** inference speed increase on Raspberry Pi 5.
-* Maintained **92%** accuracy on grasping tasks compared to RT-2.
-`
-            },
-            {
-                id: 'quantum-ethics',
-                type: 'article',
-                file: 'consciousness_limits.md',
-                title: 'Limits of Reproducing Human Consciousness in AI',
-                date: '2025-08-04',
-                icon: 'fas fa-brain',
-                image: 'https://placehold.co/600x400/bd00ff/ffffff?text=AI+Consciousness', // Placeholder
-                content: `
-## Defining the Undefinable
-
-Can a machine truly feel, or does it merely simulate the statistical probability of feeling? This article explores the "Hard Problem" of consciousness through the lens of *Quantum Information Theory*.
-
-> "Consciousness is not just a computation, it's a state of quantum coherence."
-
-`
+        // --- HELPER: FETCH LAST COMMIT DATE ---
+        async function fetchCommitDate(path) {
+            try {
+                const response = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/commits?path=${path}&page=1&per_page=1`);
+                if (!response.ok) return null;
+                const data = await response.json();
+                if (data.length > 0) {
+                    return new Date(data[0].commit.committer.date).toISOString().split('T')[0];
+                }
+            } catch (e) {
+                console.warn("Rate limit or error fetching date for:", path);
             }
-        ];
+            return null;
+        }
 
-        // --- HELPER: EXTRACT IMAGE FROM README ---
+        // --- HELPER: FETCH README IMG ---
         async function fetchReadmeImage(owner, repo, branch) {
             try {
                 const readmeUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/README.md`;
                 const response = await fetch(readmeUrl);
                 if (!response.ok) return null;
-                
                 const text = await response.text();
                 const imgRegex = /!\[.*?\]\((.*?)\)|<img.*?src=["'](.*?)["']/;
                 const match = text.match(imgRegex);
-                
                 if (match) {
                     let imgUrl = match[1] || match[2];
                     if (imgUrl && !imgUrl.startsWith('http')) {
@@ -628,258 +542,237 @@ Can a machine truly feel, or does it merely simulate the statistical probability
                     }
                     return imgUrl;
                 }
-            } catch (e) {
-                return null;
-            }
+            } catch (e) { return null; }
             return null;
         }
 
-        // --- ARTSTATION FETCH (REAL API + PROXY) ---
-        async function fetchArtStation() {
-            const fallbackData = [
-                {
-                    id: 'art-exoplanet',
-                    type: 'artwork',
-                    file: 'art_exoplanet.png',
-                    title: 'Exoplanet Exploration',
-                    date: '2023-05-15',
-                    icon: 'fab fa-artstation',
-                    image: 'https://cdnb.artstation.com/p/assets/covers/images/062/895/179/smaller_square/fabien-polly-fabien-polly-exoplanet-exploration-cover.jpg', 
-                    content: '3D Environment Art. Exploration of alien landscapes and atmospheric lighting.',
-                    url: 'https://www.artstation.com/artwork/GeJodd'
-                }
-            ];
-
+        // --- 1. DATA LOGS: FETCH ARTICLES ---
+        async function fetchLocalArticles() {
             try {
-                // Use corsproxy.io as requested
-                const proxyUrl = 'https://corsproxy.io/?url=' + encodeURIComponent('https://www.artstation.com/users/infinition/projects.json?page=1');
-                const response = await fetch(proxyUrl);
-                
-                if (!response.ok) {
-                    throw new Error('ArtStation API returned invalid status');
-                }
-                
-                const data = await response.json();
-                
-                return data.data.map(item => ({
-                    id: `art-${item.id}`,
-                    type: 'artwork',
-                    file: `art_${item.hash_id || item.id}.png`, 
-                    title: item.title,
-                    date: item.published_at ? new Date(item.published_at).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
-                    icon: 'fab fa-artstation',
-                    // PRIORITIZE MICRO SQUARE AS REQUESTED
-                    image: item.cover.micro_square_image_url || item.cover.small_square_url || item.cover.medium_image_url, 
-                    content: 'ArtStation Portfolio Piece', 
-                    url: item.permalink
-                }));
+                const listUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${ARTICLES_PATH}`;
+                const response = await fetch(listUrl);
+                if (!response.ok) return [];
+                const files = await response.json();
+                const mdFiles = files.filter(f => f.name.endsWith('.md'));
 
-            } catch (e) {
-                console.warn("ArtStation API Fetch failed (likely CORS), using fallback data.", e);
-                return fallbackData; 
-            }
-        }
-
-        // --- NAVIGATION ---
-        function navigateTo(viewId) {
-            document.querySelectorAll('.view-section').forEach(el => {
-                el.style.display = 'none';
-                el.classList.remove('active');
-            });
-            
-            if(viewId === 'portal') {
-                document.getElementById('portal-view').style.display = 'flex';
-                document.querySelector('.back-btn').style.display = 'none';
-            } else {
-                const target = document.getElementById(viewId + '-view') || document.getElementById(viewId);
-                if(target) {
-                    target.style.display = 'block';
-                    target.classList.add('active');
-                }
-                document.querySelector('.back-btn').style.display = 'block';
-            }
-
-            if(viewId === 'blog') runScanSimulation();
-            window.scrollTo(0,0);
-        }
-
-        // --- GITHUB FETCH ---
-        async function fetchGitHubRepos() {
-            try {
-                const response = await fetch('https://api.github.com/users/infinition/repos?sort=created&direction=desc');
-                if(!response.ok) throw new Error('Network error');
-                const repos = await response.json();
-                
-                const enrichedRepos = await Promise.all(repos.map(async (repo) => {
-                    let imageUrl = await fetchReadmeImage(repo.owner.login, repo.name, repo.default_branch);
-                    if (!imageUrl) {
-                        imageUrl = repo.owner.avatar_url;
+                const articlePromises = mdFiles.map(async (file) => {
+                    const contentResp = await fetch(file.download_url);
+                    const text = await contentResp.text();
+                    const titleMatch = text.match(/^# (.*)/m);
+                    const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
+                    
+                    // Dynamic date from API first
+                    let date = await fetchCommitDate(`${ARTICLES_PATH}/${file.name}`);
+                    if (!date) {
+                        // Fallback to regex inside file
+                        const dateMatch = text.match(/(?:\*\*|__)?Date(?:\*\*|__)?:\s*(.*)/i);
+                        date = dateMatch ? dateMatch[1].trim() : 'Unknown Date';
                     }
 
                     return {
-                        id: `repo-${repo.id}`,
-                        type: 'repo',
-                        file: `git://${repo.name}`,
-                        title: repo.name,
-                        date: new Date(repo.created_at).toISOString().split('T')[0],
-                        icon: 'fab fa-github',
-                        image: imageUrl, 
-                        content: repo.description || "No description provided.",
-                        url: repo.html_url
+                        id: file.sha, type: 'article', file: file.name, title: title, date: date,
+                        icon: 'fas fa-file-code', image: null, content: text
                     };
-                }));
-                
-                return enrichedRepos;
+                });
+                return await Promise.all(articlePromises);
+            } catch (e) { return []; }
+        }
 
+        // --- 2. KB: FETCH RECURSIVE TREE ---
+        async function fetchKBTree(path = KB_PATH, parentElement = document.getElementById('kb-tree')) {
+            try {
+                const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`;
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    if(path === KB_PATH) parentElement.innerHTML = "<div style='color:red'>KB Folder not found on GitHub. Create a 'kb' folder.</div>";
+                    return;
+                }
+
+                const items = await response.json();
+                if(path === KB_PATH) parentElement.innerHTML = ""; 
+
+                // Sort: Folders first, then files
+                items.sort((a, b) => (a.type === b.type ? 0 : a.type === 'dir' ? -1 : 1));
+
+                for (const item of items) {
+                    if (item.type === 'dir') {
+                        const folderDiv = document.createElement('div');
+                        folderDiv.className = 'tree-folder';
+                        folderDiv.innerHTML = `<i class="fas fa-folder"></i> ${item.name}`;
+                        
+                        const childrenDiv = document.createElement('div');
+                        childrenDiv.className = 'tree-children';
+                        
+                        folderDiv.onclick = (e) => {
+                            e.stopPropagation();
+                            childrenDiv.classList.toggle('open');
+                            const icon = folderDiv.querySelector('i');
+                            icon.classList.toggle('fa-folder');
+                            icon.classList.toggle('fa-folder-open');
+                        };
+
+                        parentElement.appendChild(folderDiv);
+                        parentElement.appendChild(childrenDiv);
+                        
+                        await fetchKBTree(item.path, childrenDiv); // Recursive
+
+                    } else if (item.type === 'file' && item.name.endsWith('.md')) {
+                        const fileDiv = document.createElement('div');
+                        fileDiv.className = 'tree-item';
+                        fileDiv.innerText = item.name.replace('.md', '');
+                        fileDiv.onclick = () => loadKBContent(item.download_url);
+                        parentElement.appendChild(fileDiv);
+                    }
+                }
             } catch (e) {
-                console.error("GitHub Fetch Failed", e);
-                return [];
+                console.error("KB Fetch Error", e);
             }
         }
 
-        // --- BLOG SCAN SIMULATION (Hybrid) ---
+        async function loadKBContent(url) {
+            const container = document.getElementById('kb-content-area');
+            container.innerHTML = '<div style="color:var(--neon-green)">> Downloading Knowledge Fragment...</div>';
+            try {
+                const res = await fetch(url);
+                const text = await res.text();
+                const cleanText = text.replace(/^# .*/m, ''); // Remove Title H1
+                const titleMatch = text.match(/^# (.*)/m);
+                const title = titleMatch ? titleMatch[1] : 'Untitled Note';
+                
+                container.innerHTML = `
+                    <h1 style="font-family:var(--cyber-font); color:var(--neon-purple); border-bottom:1px solid #333; padding-bottom:10px;">${title}</h1>
+                    <div class="article-body">${marked.parse(cleanText)}</div>
+                `;
+            } catch(e) {
+                container.innerHTML = "Error loading content.";
+            }
+        }
+
+        // --- GITHUB & ARTSTATION ---
+        async function fetchGitHubRepos() {
+            try {
+                const response = await fetch('https://api.github.com/users/infinition/repos?sort=created&direction=desc');
+                if(!response.ok) return [];
+                const repos = await response.json();
+                return Promise.all(repos.map(async (repo) => {
+                    let img = await fetchReadmeImage(repo.owner.login, repo.name, repo.default_branch);
+                    if(!img) img = repo.owner.avatar_url;
+                    return { id: repo.id, type: 'repo', title: repo.name, date: repo.created_at.split('T')[0], icon: 'fab fa-github', image: img, content: repo.description || "", url: repo.html_url, file: 'git://repo' };
+                }));
+            } catch(e) { return []; }
+        }
+
+        async function fetchArtStation() {
+            try {
+                const proxyUrl = 'https://corsproxy.io/?url=' + encodeURIComponent('https://www.artstation.com/users/infinition/projects.json?page=1');
+                const response = await fetch(proxyUrl);
+                if (!response.ok) return [];
+                const data = await response.json();
+                return data.data.map(item => ({
+                    id: `art-${item.id}`, type: 'artwork', file: `art_${item.hash_id}.png`, title: item.title, date: item.published_at.split('T')[0], icon: 'fab fa-artstation', image: item.cover.micro_square_image_url || item.cover.small_square_url, content: 'ArtStation Portfolio', url: item.permalink
+                }));
+            } catch(e) { return []; }
+        }
+
+        // --- SCANNER LOGIC ---
         async function runScanSimulation() {
             const output = document.getElementById('scan-output');
             const listContainer = document.getElementById('article-list-container');
+            output.innerHTML = '> INITIALIZING PROTOCOLS...<br>> SCANNING GITHUB FS... <span class="blink">_</span>';
             
-            output.innerHTML = '> INITIALIZING SCAN PROTOCOL...<br>> TARGET DIRECTORY: /var/www/articles/*.md<br>> SCANNING LOCAL DRIVE... <span class="blink">_</span>';
-            listContainer.innerHTML = '';
-            
-            renderArticles(staticArticles);
+            const localData = await fetchLocalArticles();
+            renderArticles(localData); // Render fast
 
             setTimeout(async () => {
-                output.innerHTML = `
-                    > INITIALIZING SCAN PROTOCOL...<br>
-                    > TARGET DIRECTORY: /var/www/articles/*.md<br>
-                    > LOCAL SCAN: OK.<br>
-                    > ESTABLISHING UPLINK TO GITHUB.COM... <span class="blink">_</span>
-                `;
-                
+                output.innerHTML += '<br>> FETCHING REPOS...';
                 const repos = await fetchGitHubRepos();
-                mergedData = [...staticArticles, ...repos];
-                renderArticles(mergedData);
                 
-                output.innerHTML += `<br>> SYNCING ARTSTATION PORTFOLIO... <span class="blink">_</span>`;
-                const artworks = await fetchArtStation();
-                
-                mergedData = [...staticArticles, ...repos, ...artworks];
+                output.innerHTML += '<br>> SYNCING ARTSTATION...';
+                const arts = await fetchArtStation();
+
+                mergedData = [...localData, ...repos, ...arts];
                 mergedData.sort((a, b) => new Date(b.date) - new Date(a.date));
                 
                 renderArticles(mergedData);
                 
                 output.innerHTML = `
-                    > INITIALIZING SCAN PROTOCOL...<br>
-                    > TARGET DIRECTORY: /var/www/articles/*.md<br>
-                    > LOCAL SCAN: OK.<br>
-                    > GITHUB UPLINK: ESTABLISHED.<br>
-                    > ARTSTATION SYNC: COMPLETE.<br>
-                    > FOUND ${mergedData.length} RECORDS.<br>
-                    > SEARCH DATABASE: <input type="text" id="console-search" class="console-input" placeholder="_" autocomplete="off" autofocus>
+                    > SYSTEM READY.<br>
+                    > INDEXED: ${mergedData.length} NODES.<br>
+                    > SEARCH INPUT ACTIVE: <input type="text" id="console-search" class="console-input" placeholder="_" autocomplete="off">
                 `;
                 
-                const searchInput = document.getElementById('console-search');
-                searchInput.focus();
-                searchInput.addEventListener('input', (e) => {
-                    filterArticles(e.target.value);
-                });
-
-            }, 1000);
+                document.getElementById('console-search').addEventListener('input', (e) => filterArticles(e.target.value));
+            }, 500);
         }
 
-        // --- FILTER FUNCTION ---
         function filterArticles(query) {
-            const lowerQuery = query.toLowerCase();
-            const filtered = mergedData.filter(item => 
-                item.title.toLowerCase().includes(lowerQuery) || 
-                (item.content && item.content.toLowerCase().includes(lowerQuery))
-            );
+            const q = query.toLowerCase();
+            const filtered = mergedData.filter(i => i.title.toLowerCase().includes(q) || (i.content && i.content.toLowerCase().includes(q)));
             renderArticles(filtered);
         }
 
-        // --- RENDER HELPER ---
         function renderArticles(list) {
-            const listContainer = document.getElementById('article-list-container');
-            listContainer.innerHTML = '';
-            
-            if(list.length === 0) {
-                 listContainer.innerHTML = '<div style="opacity:0.5; font-family:var(--code-font); padding:1rem;">> NO MATCHING RECORDS FOUND.</div>';
-                 return;
-            }
-
+            const container = document.getElementById('article-list-container');
+            container.innerHTML = '';
             list.forEach(item => {
-                const el = document.createElement('div');
-                el.className = 'article-entry';
+                const div = document.createElement('div');
+                div.className = 'article-entry';
+                div.onclick = () => {
+                    if(item.type === 'repo' || item.type === 'artwork') window.open(item.url, '_blank');
+                    else openArticle(item);
+                };
                 
-                if(item.type === 'repo' || item.type === 'artwork') {
-                     el.onclick = () => window.open(item.url, '_blank');
-                     el.title = "View External Resource";
-                } else {
-                     el.onclick = () => openArticle(item);
-                }
-                
-                let iconColor = '#555';
-                if(item.type === 'repo') iconColor = 'var(--neon-orange)'; 
-                if(item.type === 'artwork') iconColor = 'var(--neon-blue)'; 
-                
-                let imgHtml = '';
-                if(item.image) {
-                    imgHtml = `<img src="${item.image}" class="article-thumb" alt="Preview" onerror="this.style.display='none'">`;
-                } else {
-                    imgHtml = `<div class="article-thumb" style="display:flex;align-items:center;justify-content:center;background:#111;"><i class="${item.icon}" style="font-size:2rem;opacity:0.3;"></i></div>`;
-                }
+                let thumb = item.image ? `<img src="${item.image}" class="article-thumb">` : `<div class="article-thumb" style="background:#111;display:flex;align-items:center;justify-content:center;"><i class="${item.icon}" style="font-size:2rem;opacity:0.3;"></i></div>`;
+                let color = item.type === 'repo' ? 'var(--neon-orange)' : (item.type === 'artwork' ? 'var(--neon-blue)' : '#555');
 
-                el.innerHTML = `
-                    ${imgHtml}
+                div.innerHTML = `
+                    ${thumb}
                     <div class="article-info">
-                        <div class="article-header">
-                            <i class="${item.icon} file-icon" style="color:${iconColor}"></i>
-                            <span class="article-title">${item.title}</span>
-                        </div>
-                        <span class="article-date">${item.file} // ${item.date}</span>
-                        <div class="article-desc">${item.content ? item.content.substring(0, 120) + (item.content.length>120?'...':'') : ''}</div>
+                        <div class="article-header"><i class="${item.icon} file-icon" style="color:${color}"></i> <span class="article-title">${item.title}</span></div>
+                        <span class="article-date">${item.date}</span>
+                        <div class="article-desc">${item.content.substring(0, 100)}...</div>
                     </div>
                 `;
-                listContainer.appendChild(el);
+                container.appendChild(div);
             });
         }
 
-        // --- ARTICLE READER (Markdown Parser) ---
         function openArticle(article) {
-            const reader = document.getElementById('article-reader');
-            const container = document.getElementById('article-view');
-            
             document.getElementById('blog-view').style.display = 'none';
-            reader.style.display = 'block';
-            
-            // PARSE MARKDOWN HERE
-            const htmlContent = marked.parse(article.content);
-
+            document.getElementById('article-reader').style.display = 'block';
+            const container = document.getElementById('article-view');
+            const cleanContent = article.content.replace(/^# .*/m, '');
             container.innerHTML = `
                 <div class="article-content">
-                    <div style="margin-bottom: 2rem;">
-                        <span style="color:var(--neon-orange); font-family:var(--code-font); font-size:0.8rem;">
-                            DIR: /articles/${article.file}
-                        </span>
-                        <h1 style="font-family:var(--cyber-font); font-size:2rem; margin-top:0.5rem;">${article.title}</h1>
-                        <div style="display:flex; align-items:center; gap:10px; margin-top:10px; opacity:0.6; font-size:0.8rem;">
-                            <i class="fas fa-calendar"></i> ${article.date}
-                            <span>// FABIEN POLLY</span>
-                        </div>
-                    </div>
-                    ${article.image ? `<img src="${article.image}" style="max-width:100%; border:1px solid #333; margin-bottom:2rem;">` : ''}
-                    <div class="article-body">
-                        ${htmlContent}
-                    </div>
-                    <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #333; text-align: center;">
-                        <button class="btn-link" onclick="navigateTo('blog')">
-                            <i class="fas fa-arrow-left"></i> BACK TO LOGS
-                        </button>
-                    </div>
+                    <h1 style="font-family:var(--cyber-font); font-size:2rem;">${article.title}</h1>
+                    <div style="opacity:0.6; margin-bottom:2rem; font-size:0.8rem;"><i class="fas fa-calendar"></i> ${article.date}</div>
+                    ${article.image ? `<img src="${article.image}" style="max-width:100%; border:1px solid #333;">` : ''}
+                    <div class="article-body">${marked.parse(cleanContent)}</div>
+                    <div style="text-align:center; margin-top:3rem;"><button class="btn-link" onclick="navigateTo('blog')">BACK</button></div>
                 </div>
             `;
             window.scrollTo(0,0);
         }
 
+        function navigateTo(viewId) {
+            document.querySelectorAll('.view-section').forEach(el => { el.style.display = 'none'; el.classList.remove('active'); });
+            
+            if(viewId === 'portal') {
+                document.getElementById('portal-view').style.display = 'flex';
+                document.querySelector('.back-btn').style.display = 'none';
+            } else {
+                const target = document.getElementById(viewId + (viewId.endsWith('view') ? '' : '-view'));
+                if(target) { target.style.display = 'block'; target.classList.add('active'); }
+                document.querySelector('.back-btn').style.display = 'block';
+            }
+
+            if(viewId === 'blog') runScanSimulation();
+            if(viewId === 'kb') fetchKBTree();
+            window.scrollTo(0,0);
+        }
+
+        // Init
         navigateTo('portal');
     </script>
 </body>
