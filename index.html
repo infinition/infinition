@@ -160,6 +160,82 @@
         .portal-btn.blog:hover { border-color: var(--neon-orange); box-shadow: 0 0 20px rgba(255, 107, 0, 0.3); }
         .portal-btn.kb:hover { border-color: var(--neon-purple); box-shadow: 0 0 20px rgba(189, 0, 255, 0.3); }
 
+        /* --- MUSIC TRIGGER --- */
+        .music-trigger {
+            position: absolute;
+            bottom: 40px;
+            right: 40px; 
+            color: rgba(255, 255, 255, 0.6); 
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 20;
+            font-size: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px; height: 50px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(0,0,0,0.5);
+        }
+        .music-trigger:hover {
+            color: var(--neon-red);
+            border-color: var(--neon-red);
+            box-shadow: 0 0 15px var(--neon-red);
+            transform: scale(1.1);
+        }
+
+        /* --- MUSIC VIEW STYLES --- */
+        .music-frame-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto 4rem auto;
+            border: 1px solid var(--neon-red);
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(255, 0, 60, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+        }
+        .music-card {
+            background: #0d1216;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .music-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-red);
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.3);
+        }
+        .album-cover {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            filter: grayscale(60%);
+            transition: 0.3s;
+        }
+        .music-card:hover .album-cover { filter: grayscale(0%); }
+        .music-info {
+            padding: 0.8rem;
+            background: rgba(0,0,0,0.9);
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .band-name { color: #fff; font-weight: bold; display: block; font-size: 0.9rem; }
+        .album-name { color: var(--neon-red); font-size: 0.75rem; }
+
         /* --- PORTFOLIO STYLES --- */
         .container { max-width: 1100px; margin: 0 auto; padding: 2rem; position: relative; }
         h1.port-h1 { font-family: var(--cyber-font); font-size: 3.5rem; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text-color); text-shadow: 2px 2px 0 var(--neon-orange), -2px -2px 0 var(--neon-blue); }
@@ -230,19 +306,11 @@
         }
         .article-entry:hover { background: rgba(255, 255, 255, 0.05); border-left-color: var(--neon-orange); }
         
-        /* Updated Thumbnail Style: Square and Centered Icon */
         .article-thumb { 
-            width: 100px; height: 100px; /* Square */
-            object-fit: cover; 
-            border: 1px solid #333; 
-            opacity: 0.7; 
-            transition: all 0.3s; 
-            border-radius: 4px; 
-            background: #000; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            flex-shrink: 0;
+            width: 100px; height: 100px; 
+            object-fit: cover; border: 1px solid #333; opacity: 0.7; 
+            transition: all 0.3s; border-radius: 4px; background: #000; 
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
         .article-entry:hover .article-thumb { opacity: 1; border-color: var(--neon-orange); box-shadow: 0 0 10px rgba(255,107,0,0.2); }
         .thumb-icon { font-size: 2.5rem; color: #444; }
@@ -271,7 +339,7 @@
 
         .tree-item { margin-left: 1rem; cursor: pointer; padding: 5px; color: #aaa; display: block; }
         .tree-item:hover { color: var(--neon-purple); background: rgba(255,255,255,0.05); }
-        .tree-item i { margin-right: 8px; color: #555; font-size: 0.8rem; } /* Added icon style */
+        .tree-item i { margin-right: 8px; color: #555; font-size: 0.8rem; }
         .tree-item:hover i { color: var(--neon-purple); }
 
         .tree-folder { font-weight: bold; color: #fff; margin-bottom: 5px; margin-top: 10px; cursor: pointer; }
@@ -295,6 +363,7 @@
             .article-thumb { width: 100%; height: 150px; margin-bottom: 1rem; }
             .kb-container { flex-direction: column; }
             .kb-sidebar { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .music-trigger { bottom: 20px; right: 20px; width: 40px; height: 40px; }
         }
     </style>
 </head>
@@ -333,8 +402,13 @@
         
         <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.4;">
             SECURE CONNECTION ESTABLISHED<br>
-            v7.2.0 (KB_SEARCH + UI_POLISH)
+            v8.1.0 (DYNAMIC_BANDS)
         </p>
+
+        <!-- DISCREET MUSIC TRIGGER -->
+        <div class="music-trigger" onclick="navigateTo('music')" title="Audio Frequency">
+            <i class="fas fa-music"></i>
+        </div>
     </section>
 
     <!-- VIEW 2: PORTFOLIO -->
@@ -370,37 +444,25 @@
             <!-- Timeline -->
             <h2 class="port-h2"><i class="fas fa-history"></i> Career Evolution</h2>
             <div class="timeline">
-                
                 <div class="timeline-item research">
                     <div class="role-title">Cyber Director & Independent Researcher</div>
                     <span class="company"><i class="fas fa-network-wired"></i> Current Status</span>
-                    <div class="summary">
-                        Combining executive cybersecurity leadership with advanced research in Quantum Computing, AI Consciousness, and Cryptography at Oxford (Independent).
-                    </div>
+                    <div class="summary">Combining executive cybersecurity leadership with advanced research in Quantum Computing, AI Consciousness, and Cryptography at Oxford (Independent).</div>
                 </div>
-
                 <div class="timeline-item ciso">
                     <div class="role-title">Chief Information Security Officer (CISO/RSSI)</div>
                     <span class="company"><i class="fas fa-shield-alt"></i> Various Missions (Nuclear, Energy, Banking...)</span>
-                    <div class="summary">
-                        Strategic cybersecurity leadership for Critical Infrastructure Operators (OIV). Managing risks, governance (ISO 27001), and large-scale defense strategies.
-                    </div>
+                    <div class="summary">Strategic cybersecurity leadership for Critical Infrastructure Operators (OIV). Managing risks, governance (ISO 27001), and large-scale defense strategies.</div>
                 </div>
-
                 <div class="timeline-item ciso">
                     <div class="role-title">Ethical Hacker & Security Consultant</div>
                     <span class="company"><i class="fas fa-user-secret"></i> Various Missions</span>
-                    <div class="summary">
-                        The foundation. Offensive security, pentesting, and discovering vulnerabilities before they could be exploited.
-                    </div>
+                    <div class="summary">The foundation. Offensive security, pentesting, and discovering vulnerabilities before they could be exploited.</div>
                 </div>
-
                 <div class="timeline-item navy">
                     <div class="role-title">Submarine Officer ("Golden Ear")</div>
                     <span class="company"><i class="fas fa-anchor"></i> French Navy</span>
-                    <div class="summary">
-                        <small>Where it all started: Signal analysis and acoustic warfare in high-pressure environments.</small>
-                    </div>
+                    <div class="summary"><small>Where it all started: Signal analysis and acoustic warfare in high-pressure environments.</small></div>
                 </div>
             </div>
 
@@ -409,101 +471,46 @@
             <div class="grid-container">
                 <div class="card skill-card border-purple">
                     <h3 style="color:var(--neon-purple)"><i class="fas fa-atom"></i> Quantum & AI</h3>
-                    <ul>
-                        <li>Quantum Machine Learning</li>
-                        <li>AI Engineering & Data Science</li>
-                        <li>Post-Quantum Cryptography</li>
-                        <li>AI Orchestration (LLMs)</li>
-                    </ul>
+                    <ul><li>Quantum Machine Learning</li><li>AI Engineering & Data Science</li><li>Post-Quantum Cryptography</li><li>AI Orchestration (LLMs)</li></ul>
                 </div>
-
                 <div class="card skill-card border-green">
                     <h3 style="color:var(--neon-green)"><i class="fas fa-robot"></i> Robotics & Eng.</h3>
-                    <ul>
-                        <li>VLA/VLM & Tiny Networks</li>
-                        <li>Embedded Systems Security</li>
-                        <li>Robotics Engineering</li>
-                        <li>Autonomous Systems</li>
-                    </ul>
+                    <ul><li>VLA/VLM & Tiny Networks</li><li>Embedded Systems Security</li><li>Robotics Engineering</li><li>Autonomous Systems</li></ul>
                 </div>
-
                 <div class="card skill-card border-orange">
                     <h3 style="color:var(--neon-orange)"><i class="fas fa-shield-virus"></i> Cybersecurity</h3>
-                    <ul>
-                        <li>Offensive Security (Pentest)</li>
-                        <li>SCADA & Industrial Systems</li>
-                        <li>Governance (ISO 27001, LPM)</li>
-                        <li>Risk Management</li>
-                    </ul>
+                    <ul><li>Offensive Security (Pentest)</li><li>SCADA & Industrial Systems</li><li>Governance (ISO 27001, LPM)</li><li>Risk Management</li></ul>
                 </div>
-
                 <div class="card skill-card border-red">
                     <h3 style="color:var(--neon-red)"><i class="fas fa-bolt"></i> Art & Lifestyle</h3>
-                    <ul>
-                        <li><strong>3D Env Artist (Unreal/Blender)</strong></li>
-                        <li>2D Concept Art</li>
-                        <li>Aggressive Inline Skating</li>
-                        <li>Creative Technology</li>
-                    </ul>
+                    <ul><li><strong>3D Env Artist (Unreal/Blender)</strong></li><li>2D Concept Art</li><li>Aggressive Inline Skating</li><li>Creative Technology</li></ul>
                 </div>
             </div>
 
             <!-- Projects -->
             <h2 class="port-h2" style="margin-top: 5rem;"><i class="fas fa-project-diagram"></i> Featured Projects</h2>
             <div class="grid-container">
-                
-                <!-- Bjorn -->
                 <div class="project-card border-orange">
-                    <div class="project-content">
-                        <span class="project-tag" style="color:var(--neon-orange)">// CYBERSECURITY TOOL</span>
-                        <h3 style="color:var(--neon-orange)"><i class="fas fa-skull"></i> Bjorn</h3>
-                        <p>Autonomous offensive security tool for Raspberry Pi (Tamagotchi-like). Scans networks, discovers vulnerabilities, and automates attacks.</p>
-                    </div>
+                    <div class="project-content"><span class="project-tag" style="color:var(--neon-orange)">// CYBERSECURITY TOOL</span><h3 style="color:var(--neon-orange)"><i class="fas fa-skull"></i> Bjorn</h3><p>Autonomous offensive security tool for Raspberry Pi (Tamagotchi-like). Scans networks, discovers vulnerabilities, and automates attacks.</p></div>
                 </div>
-
-                <!-- Robotics VLA -->
                 <div class="project-card border-green">
-                    <div class="project-content">
-                        <span class="project-tag" style="color:var(--neon-green)">// ROBOTICS RESEARCH</span>
-                        <h3 style="color:var(--neon-green)"><i class="fas fa-robot"></i> Recursive VLA</h3>
-                        <p>Personal research on Robotics Vision-Language-Action (VLA) models using tiny recursive networks to bypass GPU dependency.</p>
-                    </div>
+                    <div class="project-content"><span class="project-tag" style="color:var(--neon-green)">// ROBOTICS RESEARCH</span><h3 style="color:var(--neon-green)"><i class="fas fa-robot"></i> Recursive VLA</h3><p>Personal research on Robotics Vision-Language-Action (VLA) models using tiny recursive networks to bypass GPU dependency.</p></div>
                 </div>
-
-                <!-- Paradigm -->
                 <div class="project-card border-purple">
-                    <div class="project-content">
-                        <span class="project-tag" style="color:var(--neon-purple)">// ARTIFICIAL INTELLIGENCE</span>
-                        <h3 style="color:var(--neon-purple)"><i class="fas fa-brain"></i> Paradigm</h3>
-                        <p>Orchestrated AI System designed to mimic human-like intelligence. Coordinates specialized LLMs to solve reasoning tasks.</p>
-                    </div>
+                    <div class="project-content"><span class="project-tag" style="color:var(--neon-purple)">// ARTIFICIAL INTELLIGENCE</span><h3 style="color:var(--neon-purple)"><i class="fas fa-brain"></i> Paradigm</h3><p>Orchestrated AI System designed to mimic human-like intelligence. Coordinates specialized LLMs to solve reasoning tasks.</p></div>
                 </div>
-
-                <!-- Consciousness Research -->
                 <div class="project-card border-purple">
-                    <div class="project-content">
-                        <span class="project-tag" style="color:var(--neon-purple)">// RESEARCH PUBLICATION</span>
-                        <h3 style="color:var(--neon-purple)"><i class="fas fa-book"></i> AI Consciousness</h3>
-                        <p>WIP Publication: "Limits of Reproducing Human Consciousness in AI Systems". Theoretical boundaries of AGI.</p>
-                    </div>
+                    <div class="project-content"><span class="project-tag" style="color:var(--neon-purple)">// RESEARCH PUBLICATION</span><h3 style="color:var(--neon-purple)"><i class="fas fa-book"></i> AI Consciousness</h3><p>WIP Publication: "Limits of Reproducing Human Consciousness in AI Systems". Theoretical boundaries of AGI.</p></div>
                 </div>
-
-                <!-- 3D Worlds -->
                 <div class="project-card border-blue">
-                    <div class="project-content">
-                        <span class="project-tag" style="color:var(--neon-blue)">// 3D ENVIRONMENT ART</span>
-                        <h3 style="color:var(--neon-blue)"><i class="fas fa-vr-cardboard"></i> Immersive Worlds</h3>
-                        <p>Collection of real-time 3D environments created with Unreal Engine 5 and Blender. Lighting and storytelling.</p>
-                    </div>
+                    <div class="project-content"><span class="project-tag" style="color:var(--neon-blue)">// 3D ENVIRONMENT ART</span><h3 style="color:var(--neon-blue)"><i class="fas fa-vr-cardboard"></i> Immersive Worlds</h3><p>Collection of real-time 3D environments created with Unreal Engine 5 and Blender. Lighting and storytelling.</p></div>
                 </div>
-
             </div>
 
             <!-- Footer -->
             <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 4rem; opacity: 0.6; font-size: 0.9rem;">
                 © 2025 Fabien Polly.<br><em>"From the abyss to the quantum realm."</em>
             </div>
-            
             <div style="height: 50px;"></div>
         </main>
     </section>
@@ -543,12 +550,31 @@
         </div>
     </section>
 
+    <!-- VIEW 6: MUSIC SECTION -->
+    <section id="music-view" class="view-section">
+        <div class="container">
+            <h1 class="port-h1" style="text-align:center; color: var(--neon-red); text-shadow: 2px 2px 0 #000;">AUDIO FREQUENCIES</h1>
+            <p style="text-align:center; opacity:0.7; margin-bottom: 2rem;">Current Rotation & Inspirations</p>
+            
+            <div class="music-frame-container">
+                <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/fr/playlist/fab/pl.u-6mo44JmF4kgllW"></iframe>
+            </div>
+
+            <h3 style="text-align:center; color:#fff; margin-top: 3rem; border-bottom:1px dashed #333; padding-bottom:10px;">MY FAVORITE ARTISTS</h3>
+            <div class="music-grid" id="music-grid">
+                <div style="color:#666; text-align:center; width:100%;">Loading frequencies...</div>
+            </div>
+        </div>
+    </section>
+
     <!-- JS -->
     <script>
         const GITHUB_USER = 'infinition';
         const GITHUB_REPO = 'infinition'; 
         const ARTICLES_PATH = 'articles'; 
         const KB_PATH = 'kb'; 
+        // Path to the bands list on GitHub (Raw content)
+        const BANDS_FILE_URL = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/bands/bands.md`;
 
         let mergedData = [];
 
@@ -588,8 +614,66 @@
             return null;
         }
 
+        // --- MUSIC: FETCH BANDS FROM FILE ---
+        async function fetchBandsList() {
+            try {
+                const response = await fetch(BANDS_FILE_URL);
+                if (!response.ok) {
+                    console.warn("Could not fetch bands list from " + BANDS_FILE_URL);
+                    return []; // Return empty if file not found
+                }
+                const text = await response.text();
+                // Split by newline and filter out empty lines
+                return text.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+            } catch (e) {
+                console.error("Error fetching bands list:", e);
+                return [];
+            }
+        }
+
+        // --- MUSIC API (ITUNES VIA PROXY) ---
+        async function fetchMusicData() {
+            const container = document.getElementById('music-grid');
+            container.innerHTML = '';
+            
+            // 1. Get the list of bands dynamically from GitHub
+            const bands = await fetchBandsList();
+            
+            if (bands.length === 0) {
+                 container.innerHTML = '<div style="color:#888;">No bands found in bands/bands.md</div>';
+                 return;
+            }
+
+            // 2. Fetch data for each band
+            for (const band of bands) {
+                try {
+                    const url = `https://corsproxy.io/?url=` + encodeURIComponent(`https://itunes.apple.com/search?term=${band}&entity=album&limit=1`);
+                    const res = await fetch(url);
+                    const data = await res.json();
+
+                    if (data.results && data.results.length > 0) {
+                        const album = data.results[0];
+                        const highResImg = album.artworkUrl100.replace('100x100bb', '600x600bb');
+                        
+                        const card = document.createElement('div');
+                        card.className = 'music-card';
+                        card.onclick = () => window.open(album.collectionViewUrl, '_blank');
+                        card.innerHTML = `
+                            <img src="${highResImg}" class="album-cover" alt="${album.collectionName}">
+                            <div class="music-info">
+                                <span class="band-name">${album.artistName}</span>
+                                <span class="album-name">${album.collectionName}</span>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    }
+                } catch (e) {
+                    console.warn(`Could not fetch music for ${band}`, e);
+                }
+            }
+        }
+
         // --- 1. DATA LOGS: FETCH ARTICLES (ARTICLES + KB FLATTENED) ---
-        // Better Recursive Fetcher for Flattened List
         async function fetchAllMDRecursively(path) {
             let allFiles = [];
             try {
@@ -611,11 +695,8 @@
         }
 
         async function fetchLocalDataLogs() {
-            // 1. Get files from /articles
             const articles = await fetchAllMDRecursively(ARTICLES_PATH);
-            // 2. Get files from /kb
             const kbs = await fetchAllMDRecursively(KB_PATH);
-            
             const allFiles = [...articles, ...kbs];
 
             const processed = await Promise.all(allFiles.map(async (file) => {
@@ -632,15 +713,12 @@
 
                 return {
                     id: file.sha, type: 'article', file: file.path, title: title, date: date,
-                    // Icon based on folder
                     icon: file.path.startsWith('kb') ? 'fas fa-book-medical' : 'fas fa-file-alt', 
                     image: null, content: text
                 };
             }));
-            
             return processed;
         }
-
 
         // --- 2. KB: FETCH RECURSIVE TREE (For Sidebar) ---
         async function fetchKBTree(path = KB_PATH, parentElement = document.getElementById('kb-tree')) {
@@ -663,10 +741,8 @@
                         const folderDiv = document.createElement('div');
                         folderDiv.className = 'tree-folder';
                         folderDiv.innerHTML = `<i class="fas fa-folder"></i> ${item.name}`;
-                        
                         const childrenDiv = document.createElement('div');
                         childrenDiv.className = 'tree-children';
-                        
                         folderDiv.onclick = (e) => {
                             e.stopPropagation();
                             childrenDiv.classList.toggle('open');
@@ -674,36 +750,28 @@
                             icon.classList.toggle('fa-folder');
                             icon.classList.toggle('fa-folder-open');
                         };
-
                         parentElement.appendChild(folderDiv);
                         parentElement.appendChild(childrenDiv);
-                        
                         await fetchKBTree(item.path, childrenDiv);
-
                     } else if (item.type === 'file' && item.name.endsWith('.md')) {
                         const fileDiv = document.createElement('div');
                         fileDiv.className = 'tree-item';
-                        // Added Icon for files
                         fileDiv.innerHTML = `<i class="fas fa-file-lines"></i> ${item.name.replace('.md', '')}`;
                         fileDiv.onclick = () => loadKBContent(item.download_url);
                         parentElement.appendChild(fileDiv);
                     }
                 }
-            } catch (e) {
-                console.error("KB Fetch Error", e);
-            }
+            } catch (e) { console.error("KB Fetch Error", e); }
         }
 
-        // KB SEARCH FUNCTION
+        // KB SEARCH
         document.getElementById('kb-search').addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase();
             const items = document.querySelectorAll('.tree-item');
-            const folders = document.querySelectorAll('.tree-folder');
             
             if(!query) {
-                // Reset visibility
                 items.forEach(item => item.style.display = 'block');
-                folders.forEach(f => f.style.display = 'block');
+                document.querySelectorAll('.tree-folder').forEach(f => f.style.display = 'block');
                 document.querySelectorAll('.tree-children').forEach(c => c.classList.remove('open'));
                 return;
             }
@@ -712,11 +780,9 @@
                 const text = item.innerText.toLowerCase();
                 if(text.includes(query)) {
                     item.style.display = 'block';
-                    // Reveal parents
                     let parent = item.parentElement;
                     while(parent.classList.contains('tree-children')) {
                         parent.classList.add('open');
-                        // Show folder label associated with this children container
                         if(parent.previousElementSibling && parent.previousElementSibling.classList.contains('tree-folder')) {
                             parent.previousElementSibling.style.display = 'block';
                         }
@@ -737,14 +803,11 @@
                 const cleanText = text.replace(/^# .*/m, ''); 
                 const titleMatch = text.match(/^# (.*)/m);
                 const title = titleMatch ? titleMatch[1] : 'Untitled Note';
-                
                 container.innerHTML = `
                     <h1 style="font-family:var(--cyber-font); color:var(--neon-purple); border-bottom:1px solid #333; padding-bottom:10px;">${title}</h1>
                     <div class="article-body">${marked.parse(cleanText)}</div>
                 `;
-            } catch(e) {
-                container.innerHTML = "Error loading content.";
-            }
+            } catch(e) { container.innerHTML = "Error loading content."; }
         }
 
         // --- GITHUB & ARTSTATION ---
@@ -785,7 +848,6 @@
             setTimeout(async () => {
                 output.innerHTML += '<br>> FETCHING REPOS...';
                 const repos = await fetchGitHubRepos();
-                
                 output.innerHTML += '<br>> SYNCING ARTSTATION...';
                 const arts = await fetchArtStation();
 
@@ -821,12 +883,10 @@
                     else openArticle(item);
                 };
                 
-                // Thumbnail Logic
                 let thumb = '';
                 if (item.image) {
                     thumb = `<img src="${item.image}" class="article-thumb">`;
                 } else {
-                    // Fallback Icon Thumbnail for Articles/KB
                     let fallbackIcon = item.type === 'repo' ? 'fab fa-github' : 'fas fa-file-lines';
                     thumb = `<div class="article-thumb"><i class="${fallbackIcon} thumb-icon"></i></div>`;
                 }
@@ -876,6 +936,7 @@
 
             if(viewId === 'blog') runScanSimulation();
             if(viewId === 'kb') fetchKBTree();
+            if(viewId === 'music') fetchMusicData();
             window.scrollTo(0,0);
         }
 
