@@ -19,7 +19,7 @@
   
 ![GitHub Profile](https://img.shields.io/badge/Username-infinition-blue?style=for-the-badge&logo=github)
 [![Reddit](https://img.shields.io/badge/Reddit-Bjorn__CyberViking-orange?style=for-the-badge&logo=reddit)](https://www.reddit.com/r/Bjorn_CyberViking)
-[![Discord](https://img.shields.io/badge/Discord-Join%20Us%20-7289DA?style=for-the-badge&logo=discord)](https://discord.com/invite/B3ZH9taVfT)
+[![Discord](https://img.shields.io/discord/1259976765829414972?label=Discord&logo=discord&style=for-the-badge&color=7289DA)](https://discord.com/invite/B3ZH9taVfT)
 
 </div>
 
@@ -27,7 +27,6 @@
 <div align="center">
 <a href="https://www.buymeacoffee.com/infinition" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 </div>
-<!-- Custom CSS styling for dark theme -->
 <div align="center">
   
 <picture>
@@ -51,14 +50,15 @@
 ### 🛠️ 
 
 ![JavaScript](https://img.shields.io/badge/-JavaScript-0D1117?style=flat-square&logo=javascript)
+![TypeScript](https://img.shields.io/badge/-TypeScript-0D1117?style=flat-square&logo=typescript)
 ![React](https://img.shields.io/badge/-React-0D1117?style=flat-square&logo=react)
 ![Node.js](https://img.shields.io/badge/-Node.js-0D1117?style=flat-square&logo=node.js)
 ![Python](https://img.shields.io/badge/-Python-0D1117?style=flat-square&logo=python)
+![C++](https://img.shields.io/badge/-C++-0D1117?style=flat-square&logo=c%2B%2B)
 
 </div>
 
 
-<!-- Footer -->
 <div align="center">
   
 ### 💬 Let's Connect!
