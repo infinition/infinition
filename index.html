@@ -530,25 +530,55 @@
         async function fetchReadmeImage(o,r,b) { try { const res = await fetch(`https://raw.githubusercontent.com/${o}/${r}/${b}/README.md`); if(!res.ok) return null; const t = await res.text(); const m = t.match(/!\[.*?\]\((.*?)\)|<img.*?src=["'](.*?)["']/); if(m) { let u=m[1]||m[2]; if(u&&!u.startsWith('http')) return `https://raw.githubusercontent.com/${o}/${r}/${b}/${u.startsWith('./')?u.substring(2):u}`; return u; } } catch(e){} return null; }
         async function fetchBandsList() { try { const r = await fetch(BANDS_FILE_URL); if(!r.ok) return []; const t = await r.text(); return t.split('\n').map(l=>l.trim()).filter(l=>l.length>0); } catch(e){ return []; } }
         
-        async function fetchMusicData() {
-            const container = document.getElementById('music-grid'); container.innerHTML = '';
-            const bands = await fetchBandsList();
-            if(bands.length===0) { container.innerHTML='<div style="color:#888;">No bands found in bands/bands.md</div>'; return; }
-            for(const band of bands) {
-                try {
+// --- MUSIC API (ITUNES VIA PROXY) ---
+async function fetchMusicData() {
+    const container = document.getElementById('music-grid');
+    container.innerHTML = '';
+    
+    // 1. Get the list of bands dynamically from GitHub
+    const bands = await fetchBandsList();
+    
+    if (bands.length === 0) {
+         container.innerHTML = '<div style="color:#888;">No bands found in bands/bands.md</div>';
+         return;
+    }
+
+    // 2. Fetch data for each band
+    for (const band of bands) {
+        try {
             const searchUrl = 
                 `https://corsproxy.io/?url=` + 
                 encodeURIComponent(`https://itunes.apple.com/search?term=${band}&entity=musicArtist&limit=1`);
-                    const res = await fetch(url); const data = await res.json();
-                    if(data.results?.length>0) {
-                        const alb = data.results[0]; const img = alb.artworkUrl100.replace('100x100bb','600x600bb');
-                        const card = document.createElement('div'); card.className='music-card'; card.onclick=()=>window.open(alb.collectionViewUrl,'_blank');
-                        card.innerHTML = `<img src="${img}" class="album-cover"><div class="music-info"><span class="band-name">${alb.artistName}</span><span class="album-name">${alb.collectionName}</span></div>`;
-                        container.appendChild(card);
-                    }
-                } catch(e){}
+
+            const res = await fetch(searchUrl);
+            const data = await res.json();
+
+            if (data.results && data.results.length > 0) {
+                const artist = data.results[0];
+
+                // Some artists don't have artworkUrl100 — fallback to a placeholder
+                const image = artist.artworkUrl100
+                    ? artist.artworkUrl100.replace('100x100bb', '600x600bb')
+                    : 'assets/placeholder-artist.png';
+
+                const card = document.createElement('div');
+                card.className = 'music-card';
+                card.onclick = () => window.open(artist.artistLinkUrl, '_blank');
+
+                card.innerHTML = `
+                    <img src="${image}" class="album-cover" alt="${artist.artistName}">
+                    <div class="music-info">
+                        <span class="band-name">${artist.artistName}</span>
+                        <span class="album-name">Artist</span>
+                    </div>
+                `;
+                container.appendChild(card);
             }
+        } catch (e) {
+            console.warn(`Could not fetch music for ${band}`, e);
         }
+    }
+}
 
         async function fetchAllMDRecursively(path) {
             let files = []; try { const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`); if(!r.ok) return []; const items = await r.json(); for(const i of items) { if(i.type==='dir') files = files.concat(await fetchAllMDRecursively(i.path)); else if(i.name.endsWith('.md')) files.push(i); } } catch(e){} return files;
