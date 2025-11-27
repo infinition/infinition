@@ -2104,81 +2104,84 @@ body.audio-playing .audio-toggle-btn {
         background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
         opacity: 0.5;
     }
+}
 
-    /* --- RESPONSIVE --- */
-    @media (max-width: 768px) {
-        h1.port-h1 {
-            font-size: 2.5rem;
-        }
 
-        .container::before {
-            display: none;
-        }
-
-        .portal-menu {
-            gap: 10px;
-        }
-
-        .portal-btn {
-            min-width: 30%;
-            padding: 10px;
-        }
-
-        .portal-btn span {
-            font-size: 0.8rem;
-        }
-
-        .portal-btn i {
-            font-size: 1.2rem;
-        }
-
-        .portal-title {
-            font-size: 3rem;
-            top: 20px;
-        }
-
-        /* On remonte un peu le centre sur mobile */
-        .reactor-container {
-            top: 50%;
-        }
-
-        .article-entry {
-            flex-direction: column;
-        }
-
-        .article-thumb {
-            width: 100%;
-            height: 150px;
-            margin-bottom: 1rem;
-        }
-
-        .kb-container {
-            flex-direction: column;
-        }
-
-        .kb-sidebar {
-            width: 100%;
-            height: 200px;
-            border-right: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .music-trigger {
-            bottom: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-        }
-
-        /* Mobile Music Grid: 3 per row */
-        .music-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
-            margin-top: 2rem;
-        }
-
-        .band-name {
-            font-size: 0.6rem;
-            padding: 2px;
-        }
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    h1.port-h1 {
+        font-size: 2.5rem;
     }
+
+    .container::before {
+        display: none;
+    }
+
+    .portal-menu {
+        gap: 10px;
+    }
+
+    .portal-btn {
+        min-width: 30%;
+        padding: 10px;
+    }
+
+    .portal-btn span {
+        font-size: 0.8rem;
+    }
+
+    .portal-btn i {
+        font-size: 1.2rem;
+    }
+
+    .portal-title {
+        font-size: 3rem;
+        top: 20px;
+    }
+
+    /* On remonte un peu le centre sur mobile */
+    .reactor-container {
+        top: 50%;
+    }
+
+    .article-entry {
+        flex-direction: column;
+    }
+
+    .article-thumb {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 1rem;
+    }
+
+    .kb-container {
+        flex-direction: column;
+    }
+
+    .kb-sidebar {
+        width: 100%;
+        height: 200px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .music-trigger {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Mobile Music Grid: 3 per row */
+    .music-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin-top: 2rem;
+    }
+
+    .band-name {
+        font-size: 0.6rem;
+        padding: 2px;
+    }
+
+}
