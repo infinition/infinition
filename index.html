@@ -8,6 +8,7 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Marked.js for Markdown Parsing -->
@@ -26,6 +27,10 @@
             --neon-red: #ff003c;       
             --cyber-font: 'Cinzel', serif;
             --code-font: 'JetBrains Mono', monospace;
+            --ui-font: 'Inter', sans-serif;
+            
+            /* App Colors */
+            --quiz-gradient: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,221 +48,103 @@
             background-size: 100% 100%, 40px 40px, 40px 40px;
         }
 
+        /* --- MODALS & OVERLAY --- */
+        .modal-overlay {
+            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 3000;
+            flex-direction: column; padding: 20px; overflow-y: auto;
+        }
+        .modal-header-nav {
+            width: 100%; max-width: 500px; margin: 0 auto 20px auto;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-btn { background: #2c2c2e; border: none; color: white; width: 40px; height: 40px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+
+        /* --- FLASHCARDS UI --- */
+        .fc-container { width: 100%; max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; height: 100%; font-family: var(--ui-font); }
+        .fc-top-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; font-weight: 600; font-size: 1.1rem;}
+        .fc-counter-badge { background: #2c2c2e; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; color: #aaa; }
+        .fc-progress-bg { height: 4px; background: #333; border-radius: 2px; margin-bottom: 15px; width: 100%; }
+        .fc-progress-fill { height: 100%; background: var(--neon-orange); width: 30%; border-radius: 2px; transition: width 0.3s; }
+        .fc-status { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #888; margin-bottom: 20px; }
+        
+        .fc-scene { position: relative; width: 100%; aspect-ratio: 3/4; perspective: 1000px; margin-bottom: auto; }
+        .fc-stack-1 { position: absolute; top: -10px; left: 10px; right: 10px; bottom: 20px; background: #222; border-radius: 20px; z-index: 1; opacity: 0.6; transform: scale(0.95); }
+        .fc-stack-2 { position: absolute; top: -20px; left: 20px; right: 20px; bottom: 40px; background: #111; border-radius: 20px; z-index: 0; opacity: 0.4; transform: scale(0.9); }
+
+        .fc-card {
+            width: 100%; height: 100%; position: relative; z-index: 10;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform-style: preserve-3d; cursor: pointer;
+        }
+        .fc-card.flipped { transform: rotateY(180deg); }
+        
+        .fc-face {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            background: #1c1c1e; border-radius: 20px; padding: 30px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
+        }
+        .fc-back { transform: rotateY(180deg); background: #252527; }
+
+        .fc-q-badge { position: absolute; top: 25px; left: 25px; display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 1.1rem; }
+        .fc-q-icon { background: rgba(255, 159, 10, 0.2); color: var(--neon-orange); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+        .fc-num-badge { position: absolute; top: 25px; right: 25px; background: var(--neon-orange); color: black; font-weight: bold; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+        .fc-text { font-size: 1.4rem; font-weight: 600; color: white; line-height: 1.4; }
+        .fc-tap-hint { position: absolute; bottom: 25px; background: rgba(255,255,255,0.1); color: #aaa; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; display: flex; align-items: center; gap: 6px; }
+
+        .fc-controls { display: flex; justify-content: center; gap: 40px; padding: 30px 0; margin-top: auto; }
+        .fc-action-btn { width: 70px; height: 70px; border-radius: 50%; border: none; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; cursor: pointer; transition: 0.2s; }
+        .fc-btn-no { background: rgba(255, 69, 58, 0.15); color: var(--neon-red); }
+        .fc-btn-yes { background: rgba(48, 209, 88, 0.15); color: var(--neon-green); }
+        .fc-action-btn:active { transform: scale(0.9); filter: brightness(1.2); }
+
+        /* --- QUIZ UI --- */
+        .qz-container { width: 100%; max-width: 450px; margin: 0 auto; display: flex; flex-direction: column; font-family: var(--ui-font); }
+        .qz-top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-weight: bold; font-size: 1.2rem; }
+        .qz-badge { background: #2c2c2e; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; color: #888; }
+        .qz-progress-bg { height: 6px; background: #222; border-radius: 3px; margin-bottom: 30px; position: relative; overflow: hidden; }
+        .qz-progress-fill { position: absolute; top:0; left:0; height: 100%; background: linear-gradient(90deg, #bf5af2, #0a84ff); width: 50%; border-radius: 3px; transition: width 0.3s; }
+        .qz-question-box { background: #1c1c1e; border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 1px solid #333; }
+        .qz-label { display: flex; align-items: center; gap: 8px; color: #0a84ff; font-weight: 700; margin-bottom: 10px; font-size: 0.9rem; }
+        .qz-label i { background: rgba(10, 132, 255, 0.2); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+        .qz-text { font-size: 1.1rem; font-weight: 600; line-height: 1.5; }
+        .qz-options { display: flex; flex-direction: column; gap: 10px; }
+        .qz-option { background: #2c2c2e; padding: 16px; border-radius: 12px; display: flex; align-items: center; gap: 15px; cursor: pointer; border: 1px solid transparent; transition: 0.2s; }
+        .qz-option:active { background: #3a3a3c; }
+        .qz-letter { background: #3a3a3c; color: #ccc; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; }
+        .qz-option.correct { background: rgba(48, 209, 88, 0.15); border-color: var(--neon-green); color: var(--neon-green); }
+        .qz-option.wrong { background: rgba(255, 69, 58, 0.15); border-color: var(--neon-red); color: var(--neon-red); }
+        .qz-next-btn { margin-top: 30px; padding: 16px; border-radius: 12px; background: #5e5ce6; color: white; font-weight: bold; font-size: 1rem; border: none; width: 100%; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; }
+
         /* --- SYSTEM BAR --- */
-        .sys-bar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            padding: 10px 20px;
-            background: rgba(5, 10, 14, 0.95);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            font-size: 0.8rem;
-            backdrop-filter: blur(5px);
-        }
-
+        .sys-bar { position: fixed; top: 0; left: 0; right: 0; padding: 10px 20px; background: rgba(5, 10, 14, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; align-items: center; z-index: 1000; font-size: 0.8rem; backdrop-filter: blur(5px); }
         .sys-status { color: var(--neon-green); }
-        .back-btn { 
-            display: none; 
-            cursor: pointer; 
-            color: var(--neon-orange);
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .back-btn:hover { text-shadow: 0 0 5px var(--neon-orange); }
-
-        /* --- VIEWS MANAGEMENT --- */
-        .view-section {
-            display: none; 
-            min-height: 100vh;
-            padding-top: 60px; 
-            animation: fadeIn 0.5s ease;
-        }
+        .back-btn { display: none; cursor: pointer; color: var(--neon-orange); font-weight: bold; text-transform: uppercase; }
+        .view-section { display: none; min-height: 100vh; padding-top: 60px; animation: fadeIn 0.5s ease; }
         .view-section.active { display: block; }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        /* --- PORTAL HOME --- */
-        #portal-view {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
         
-        .portal-ring {
-            width: 300px; height: 300px;
-            border: 2px dashed rgba(255,255,255,0.1);
-            border-top: 2px solid var(--neon-blue);
-            border-radius: 50%;
-            position: absolute;
-            animation: spin 15s linear infinite;
-            box-shadow: 0 0 15px rgba(19, 175, 240, 0.1);
-        }
-        .portal-ring::after {
-            content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
-            border: 1px solid rgba(255, 107, 0, 0.2);
-            border-bottom: 2px solid var(--neon-orange);
-            border-radius: 50%;
-            animation: spin 10s linear infinite reverse;
-        }
+        /* --- SHARE TOOLBAR --- */
+        .share-toolbar { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; align-items: center; flex-wrap: wrap; }
+        .share-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #aaa; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; font-family: var(--code-font); display: flex; align-items: center; gap: 8px; transition: 0.2s; text-decoration: none;}
+        .share-btn:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
+        .action-btn { border: none; padding: 10px 20px; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-family: var(--ui-font); font-size: 0.9rem;}
+        .action-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        .btn-flash { background: var(--neon-orange); color: black; }
+        .btn-quiz { background: var(--neon-blue); color: white; }
 
-        @keyframes spin { 
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); } 
-        }
-
-        .portal-title {
-            font-family: var(--cyber-font);
-            font-size: 4rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
-            z-index: 10;
-        }
-
-        .portal-menu {
-            display: flex;
-            gap: 2rem;
-            margin-top: 3rem;
-            z-index: 10;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .portal-btn {
-            background: rgba(13, 18, 22, 0.8);
-            border: 1px solid var(--text-color);
-            color: var(--text-color);
-            padding: 1.5rem 2rem;
-            min-width: 200px;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .portal-btn i { font-size: 2rem; margin-bottom: 5px; }
-        .portal-btn span { font-family: var(--cyber-font); font-size: 1.2rem; }
-        .portal-btn small { font-family: var(--code-font); font-size: 0.7rem; opacity: 0.6; }
-
-        .portal-btn:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
-        }
-
-        .portal-btn.profile:hover { border-color: var(--neon-blue); box-shadow: 0 0 20px rgba(19, 175, 240, 0.3); }
-        .portal-btn.blog:hover { border-color: var(--neon-orange); box-shadow: 0 0 20px rgba(255, 107, 0, 0.3); }
-        .portal-btn.kb:hover { border-color: var(--neon-purple); box-shadow: 0 0 20px rgba(189, 0, 255, 0.3); }
-
-        /* --- MUSIC TRIGGER --- */
-        .music-trigger {
-            position: absolute;
-            bottom: 40px;
-            right: 40px; 
-            color: rgba(255, 255, 255, 0.6); 
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 20;
-            font-size: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 10px;
-            border-radius: 50%;
-            width: 50px; height: 50px;
-            display: flex; align-items: center; justify-content: center;
-            background: rgba(0,0,0,0.5);
-        }
-        .music-trigger:hover {
-            color: var(--neon-red);
-            border-color: var(--neon-red);
-            box-shadow: 0 0 15px var(--neon-red);
-            transform: scale(1.1);
-        }
-
-        /* --- MUSIC VIEW STYLES --- */
-        .music-frame-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 2rem auto 4rem auto;
-            border: 1px solid var(--neon-red);
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0 30px rgba(255, 0, 60, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .music-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding-top: 2rem;
-        }
-        .music-card {
-            background: #0d1216;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-        }
-        .music-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-red);
-            box-shadow: 0 0 15px rgba(255, 0, 60, 0.3);
-        }
-        .album-cover {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            filter: grayscale(60%);
-            transition: 0.3s;
-        }
-        .music-card:hover .album-cover { filter: grayscale(0%); }
-        .music-info {
-            padding: 0.8rem;
-            background: rgba(0,0,0,0.9);
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .band-name { color: #fff; font-weight: bold; display: block; font-size: 0.9rem; }
-        .album-name { color: var(--neon-red); font-size: 0.75rem; }
-
-        /* --- PORTFOLIO STYLES --- */
+        /* --- PORTFOLIO --- */
         .container { max-width: 1100px; margin: 0 auto; padding: 2rem; position: relative; }
         h1.port-h1 { font-family: var(--cyber-font); font-size: 3.5rem; line-height: 1.1; margin-bottom: 0.5rem; color: var(--text-color); text-shadow: 2px 2px 0 var(--neon-orange), -2px -2px 0 var(--neon-blue); }
         h2.port-h2 { font-family: var(--cyber-font); font-size: 1.8rem; margin-bottom: 2rem; color: var(--text-color); border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 10px; display: inline-flex; align-items: center; width: 100%; }
         .tagline { font-family: var(--code-font); font-size: 1.1rem; color: var(--neon-blue); margin-bottom: 2rem; font-weight: 700; display: block; }
-        
-        .highlight-orange { color: var(--neon-orange); }
-        .highlight-purple { color: var(--neon-purple); }
-        .highlight-blue { color: var(--neon-blue); }
-        .highlight-red { color: var(--neon-red); }
-
-        .btn-link {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 10px 24px; background: transparent; border: 1px solid var(--text-color);
-            color: var(--text-color); text-decoration: none; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1px; transition: all 0.3s ease; margin-right: 10px; margin-bottom: 10px; font-size: 0.85rem;
-        }
+        .highlight-orange { color: var(--neon-orange); } .highlight-purple { color: var(--neon-purple); } .highlight-blue { color: var(--neon-blue); } .highlight-red { color: var(--neon-red); }
+        .btn-link { display: inline-flex; align-items: center; justify-content: center; padding: 10px 24px; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; margin-right: 10px; margin-bottom: 10px; font-size: 0.85rem; }
         .btn-link:hover { transform: translateY(-2px); box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); }
         .btn-oxford { border-color: var(--neon-blue); color: var(--neon-blue); }
         .btn-hack { border-color: var(--neon-orange); color: var(--neon-orange); }
 
-        /* Timeline & Grid */
         .timeline { border-left: 2px solid rgba(255,255,255,0.1); padding-left: 2rem; margin-left: 1rem; }
         .timeline-item { position: relative; margin-bottom: 2.5rem; }
         .timeline-item::before { content: ''; position: absolute; left: -2.6rem; top: 5px; width: 1rem; height: 1rem; background: var(--bg-color); border: 2px solid var(--text-color); border-radius: 50%; }
@@ -299,61 +186,57 @@
         .blink { animation: blinker 1s linear infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
 
-        .article-entry { 
-            display: flex; align-items: flex-start; padding: 1.5rem; 
-            background: var(--card-bg); border-left: 3px solid var(--text-color); 
-            transition: all 0.2s; cursor: pointer; margin-bottom: 1rem; gap: 1.5rem;
-        }
+        .article-entry { display: flex; align-items: flex-start; padding: 1.5rem; background: var(--card-bg); border-left: 3px solid var(--text-color); transition: all 0.2s; cursor: pointer; margin-bottom: 1rem; gap: 1.5rem; }
         .article-entry:hover { background: rgba(255, 255, 255, 0.05); border-left-color: var(--neon-orange); }
-        
-        .article-thumb { 
-            width: 100px; height: 100px; 
-            object-fit: cover; border: 1px solid #333; opacity: 0.7; 
-            transition: all 0.3s; border-radius: 4px; background: #000; 
-            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-        }
+        .article-thumb { width: 100px; height: 100px; object-fit: cover; border: 1px solid #333; opacity: 0.7; transition: all 0.3s; border-radius: 4px; background: #000; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .article-entry:hover .article-thumb { opacity: 1; border-color: var(--neon-orange); box-shadow: 0 0 10px rgba(255,107,0,0.2); }
         .thumb-icon { font-size: 2.5rem; color: #444; }
         .article-entry:hover .thumb-icon { color: var(--neon-orange); }
-        
         .article-info { flex: 1; }
         .article-title { font-family: var(--cyber-font); font-size: 1.1rem; font-weight: bold; line-height: 1.3; }
         .article-date { font-family: var(--code-font); font-size: 0.8rem; opacity: 0.5; display: block; margin-top: 0.2rem;}
         
-        /* --- KB SPECIFIC --- */
         .kb-container { display: flex; height: calc(100vh - 60px); }
         .kb-sidebar { width: 300px; background: #090d10; border-right: 1px solid rgba(255,255,255,0.1); overflow-y: auto; padding: 1rem; font-family: var(--code-font); font-size: 0.9rem; display: flex; flex-direction: column;}
         .kb-main { flex: 1; overflow-y: auto; padding: 2rem; background: var(--bg-color); }
-        
-        .kb-search-box {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid #333;
-            padding: 8px;
-            width: 100%;
-            color: #fff;
-            font-family: var(--code-font);
-            margin-bottom: 1rem;
-            border-radius: 4px;
-        }
+        .kb-search-box { background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 8px; width: 100%; color: #fff; font-family: var(--code-font); margin-bottom: 1rem; border-radius: 4px; }
         .kb-search-box:focus { outline: none; border-color: var(--neon-purple); }
-
         .tree-item { margin-left: 1rem; cursor: pointer; padding: 5px; color: #aaa; display: block; }
         .tree-item:hover { color: var(--neon-purple); background: rgba(255,255,255,0.05); }
         .tree-item i { margin-right: 8px; color: #555; font-size: 0.8rem; }
         .tree-item:hover i { color: var(--neon-purple); }
-
         .tree-folder { font-weight: bold; color: #fff; margin-bottom: 5px; margin-top: 10px; cursor: pointer; }
-        .tree-folder i { color: var(--neon-blue); margin-right: 5px; }
         .tree-children { display: none; padding-left: 10px; border-left: 1px solid rgba(255,255,255,0.1); }
         .tree-children.open { display: block; }
 
-        /* Markdown Body */
         .article-body { margin-top: 1rem; font-family: sans-serif; line-height: 1.8; color: #ccc; max-width: 800px; }
         .article-body h1, .article-body h2 { color: #fff; margin-top: 1.5em; margin-bottom: 0.5em; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
         .article-body a { color: var(--neon-blue); text-decoration: none; }
         .article-body pre { background: #000; padding: 1rem; border-radius: 5px; overflow-x: auto; border: 1px solid #333; }
         .article-body blockquote { border-left: 3px solid var(--neon-orange); padding-left: 1rem; color: #999; font-style: italic; }
 
+        /* Portal Home */
+        #portal-view { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .portal-ring { width: 300px; height: 300px; border: 2px dashed rgba(255,255,255,0.1); border-top: 2px solid var(--neon-blue); border-radius: 50%; position: absolute; animation: spin 15s linear infinite; box-shadow: 0 0 15px rgba(19, 175, 240, 0.1); }
+        .portal-ring::after { content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; border: 1px solid rgba(255, 107, 0, 0.2); border-bottom: 2px solid var(--neon-orange); border-radius: 50%; animation: spin 10s linear infinite reverse; }
+        .portal-title { font-family: var(--cyber-font); font-size: 4rem; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 107, 0, 0.3); z-index: 10; }
+        .portal-menu { display: flex; gap: 2rem; margin-top: 3rem; z-index: 10; flex-wrap: wrap; justify-content: center; }
+        .portal-btn { background: rgba(13, 18, 22, 0.8); border: 1px solid var(--text-color); color: var(--text-color); padding: 1.5rem 2rem; min-width: 200px; cursor: pointer; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .portal-btn:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.05); box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+        
+        .music-trigger { position: absolute; bottom: 40px; right: 40px; color: rgba(255, 255, 255, 0.6); cursor: pointer; transition: all 0.3s; z-index: 20; font-size: 1.5rem; border: 1px solid rgba(255,255,255,0.2); padding: 10px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); }
+        .music-trigger:hover { color: var(--neon-red); border-color: var(--neon-red); box-shadow: 0 0 15px var(--neon-red); transform: scale(1.1); }
+        .music-frame-container { width: 100%; max-width: 800px; margin: 2rem auto 4rem auto; border: 1px solid var(--neon-red); padding: 10px; background: rgba(0, 0, 0, 0.3); box-shadow: 0 0 30px rgba(255, 0, 60, 0.1); border-radius: 8px; text-align: center; }
+        .music-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
+        .music-card { background: #0d1216; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; transition: all 0.3s ease; cursor: pointer; position: relative; }
+        .music-card:hover { transform: translateY(-5px); border-color: var(--neon-red); box-shadow: 0 0 15px rgba(255, 0, 60, 0.3); }
+        .album-cover { width: 100%; aspect-ratio: 1; object-fit: cover; filter: grayscale(60%); transition: 0.3s; }
+        .music-card:hover .album-cover { filter: grayscale(0%); }
+        .music-info { padding: 0.8rem; background: rgba(0,0,0,0.9); position: absolute; bottom: 0; left: 0; right: 0; border-top: 1px solid rgba(255,255,255,0.1); }
+        .band-name { color: #fff; font-weight: bold; display: block; font-size: 0.9rem; }
+        .album-name { color: var(--neon-red); font-size: 0.75rem; }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         @media (max-width: 768px) {
             h1.port-h1 { font-size: 2.5rem; }
             .container::before { display: none; }
@@ -369,6 +252,11 @@
 </head>
 <body>
 
+    <!-- INTERACTIVE MODAL (App-like) -->
+    <div id="interactive-modal" class="modal-overlay">
+        <div class="modal-content" id="modal-content-area"></div>
+    </div>
+
     <!-- SYSTEM BAR -->
     <div class="sys-bar">
         <div class="sys-id">USER: GUEST // ID: 0xPOLLY_PORTAL</div>
@@ -381,171 +269,79 @@
         <div class="portal-ring"></div>
         <h1 class="portal-title">INFINITION</h1>
         <p style="letter-spacing: 5px; opacity: 0.7;">FABIEN POLLY</p>
-        
         <div class="portal-menu">
-            <button class="portal-btn profile" onclick="navigateTo('portfolio')">
-                <i class="fas fa-user-astronaut"></i>
-                <span>PROFILE</span>
-                <small>ACCESS CV & PROJECTS</small>
-            </button>
-            <button class="portal-btn blog" onclick="navigateTo('blog')">
-                <i class="fas fa-terminal"></i>
-                <span>DATA LOGS</span>
-                <small>READ ARTICLES</small>
-            </button>
-            <button class="portal-btn kb" onclick="navigateTo('kb')">
-                <i class="fas fa-network-wired"></i>
-                <span>KNOWLEDGE BASE</span>
-                <small>ACCESS DOCUMENTATION</small>
-            </button>
+            <button class="portal-btn" onclick="navigateTo('portfolio')"><i class="fas fa-user-astronaut"></i><span>PROFILE</span><small>ACCESS CV & PROJECTS</small></button>
+            <button class="portal-btn" onclick="navigateTo('blog')"><i class="fas fa-terminal"></i><span>DATA LOGS</span><small>READ ARTICLES</small></button>
+            <button class="portal-btn" onclick="navigateTo('kb')"><i class="fas fa-network-wired"></i><span>KNOWLEDGE</span><small>DOCUMENTATION</small></button>
         </div>
-        
-        <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.4;">
-            SECURE CONNECTION ESTABLISHED<br>
-            v8.1.0 (DYNAMIC_BANDS)
-        </p>
-
-        <!-- DISCREET MUSIC TRIGGER -->
-        <div class="music-trigger" onclick="navigateTo('music')" title="Audio Frequency">
-            <i class="fas fa-music"></i>
-        </div>
+        <div class="music-trigger" onclick="navigateTo('music')" title="Audio Frequency"><i class="fas fa-music"></i></div>
     </section>
 
     <!-- VIEW 2: PORTFOLIO -->
     <section id="portfolio-view" class="view-section">
         <main class="container">
-            
-            <!-- Header -->
             <div style="padding-top: 2rem; margin-bottom: 4rem;">
                 <p style="font-family: var(--code-font); font-size: 0.9rem; opacity: 0.7;">> SYSTEM ACCESS: GRANTED // ID: 0xPOLLY</p>
                 <h1 class="port-h1">FABIEN POLLY</h1>
-                <span class="tagline">
-                    <span class="highlight-orange">Cyber Director & CISO</span> // 
-                    <span class="highlight-purple">Independent Researcher</span> // 
-                    <span class="highlight-blue">Creative Tech</span> //
-                    <span class="highlight-red">Skater</span>
-                </span>
-                
-                <p style="max-width: 750px; margin-top: 1.5rem;">
-                    My journey started as an <strong>Ethical Hacker</strong>, breaking systems to understand them. This path led me to high-stakes strategic roles, serving as <strong>CISO</strong> for critical infrastructures.
-                    <br><br>
-                    Today, I operate at a unique intersection: I maintain my executive role as a <strong>Cyber Director & CISO</strong>, while simultaneously pushing the boundaries of technology as an <strong>Independent Researcher</strong> in <strong>Quantum AI & Post-Quantum Security</strong>.
-                    <br>
-                    <em>"I protect nuclear secrets by day and build digital consciousness by night. The rollerblades? That's just to test if I'm still breakable."</em>
-                </p>
-                
+                <span class="tagline"><span class="highlight-orange">Cyber Director & CISO</span> // <span class="highlight-purple">Independent Researcher</span> // <span class="highlight-blue">Creative Tech</span> // <span class="highlight-red">Skater</span></span>
+                <p style="max-width: 750px; margin-top: 1.5rem;">My journey started as an <strong>Ethical Hacker</strong>, breaking systems to understand them... Today, I operate at a unique intersection: I maintain my executive role as a <strong>Cyber Director & CISO</strong>, while simultaneously pushing the boundaries of technology as an <strong>Independent Researcher</strong> in <strong>Quantum AI & Post-Quantum Security</strong>.<br><em>"I protect nuclear secrets by day and build digital consciousness by night."</em></p>
                 <div style="margin-top: 2rem;">
                     <a href="https://www.linkedin.com/in/fabienpolly/" class="btn-link btn-oxford"><i class="fab fa-linkedin"></i> LinkedIn</a>
                     <a href="https://github.com/infinition" class="btn-link btn-hack"><i class="fab fa-github"></i> GitHub</a>
                     <a href="https://www.artstation.com/infinition" class="btn-link btn-oxford"><i class="fab fa-artstation"></i> ArtStation</a>
                 </div>
             </div>
-
-            <!-- Timeline -->
             <h2 class="port-h2"><i class="fas fa-history"></i> Career Evolution</h2>
             <div class="timeline">
-                <div class="timeline-item research">
-                    <div class="role-title">Cyber Director & Independent Researcher</div>
-                    <span class="company"><i class="fas fa-network-wired"></i> Current Status</span>
-                    <div class="summary">Combining executive cybersecurity leadership with advanced research in Quantum Computing, AI Consciousness, and Cryptography at Oxford (Independent).</div>
-                </div>
-                <div class="timeline-item ciso">
-                    <div class="role-title">Chief Information Security Officer (CISO/RSSI)</div>
-                    <span class="company"><i class="fas fa-shield-alt"></i> Various Missions (Nuclear, Energy, Banking...)</span>
-                    <div class="summary">Strategic cybersecurity leadership for Critical Infrastructure Operators (OIV). Managing risks, governance (ISO 27001), and large-scale defense strategies.</div>
-                </div>
-                <div class="timeline-item ciso">
-                    <div class="role-title">Ethical Hacker & Security Consultant</div>
-                    <span class="company"><i class="fas fa-user-secret"></i> Various Missions</span>
-                    <div class="summary">The foundation. Offensive security, pentesting, and discovering vulnerabilities before they could be exploited.</div>
-                </div>
-                <div class="timeline-item navy">
-                    <div class="role-title">Submarine Officer ("Golden Ear")</div>
-                    <span class="company"><i class="fas fa-anchor"></i> French Navy</span>
-                    <div class="summary"><small>Where it all started: Signal analysis and acoustic warfare in high-pressure environments.</small></div>
-                </div>
+                <div class="timeline-item research"><div class="role-title">Cyber Director & Independent Researcher</div><span class="company"><i class="fas fa-network-wired"></i> Current Status</span><div class="summary">Combining executive cybersecurity leadership with advanced research in Quantum Computing, AI Consciousness, and Cryptography at Oxford (Independent).</div></div>
+                <div class="timeline-item ciso"><div class="role-title">Chief Information Security Officer (CISO/RSSI)</div><span class="company"><i class="fas fa-shield-alt"></i> Various Missions (Nuclear, Energy, Banking...)</span><div class="summary">Strategic cybersecurity leadership for Critical Infrastructure Operators (OIV). Managing risks, governance (ISO 27001), and large-scale defense strategies.</div></div>
+                <div class="timeline-item ciso"><div class="role-title">Ethical Hacker & Security Consultant</div><span class="company"><i class="fas fa-user-secret"></i> Various Missions</span><div class="summary">The foundation. Offensive security, pentesting, and discovering vulnerabilities before they could be exploited.</div></div>
+                <div class="timeline-item navy"><div class="role-title">Submarine Officer ("Golden Ear")</div><span class="company"><i class="fas fa-anchor"></i> French Navy</span><div class="summary"><small>Where it all started: Signal analysis and acoustic warfare in high-pressure environments.</small></div></div>
             </div>
-
-            <!-- Skills -->
             <h2 class="port-h2" style="margin-top: 3rem;"><i class="fas fa-microchip"></i> Stack & Expertise</h2>
             <div class="grid-container">
-                <div class="card skill-card border-purple">
-                    <h3 style="color:var(--neon-purple)"><i class="fas fa-atom"></i> Quantum & AI</h3>
-                    <ul><li>Quantum Machine Learning</li><li>AI Engineering & Data Science</li><li>Post-Quantum Cryptography</li><li>AI Orchestration (LLMs)</li></ul>
-                </div>
-                <div class="card skill-card border-green">
-                    <h3 style="color:var(--neon-green)"><i class="fas fa-robot"></i> Robotics & Eng.</h3>
-                    <ul><li>VLA/VLM & Tiny Networks</li><li>Embedded Systems Security</li><li>Robotics Engineering</li><li>Autonomous Systems</li></ul>
-                </div>
-                <div class="card skill-card border-orange">
-                    <h3 style="color:var(--neon-orange)"><i class="fas fa-shield-virus"></i> Cybersecurity</h3>
-                    <ul><li>Offensive Security (Pentest)</li><li>SCADA & Industrial Systems</li><li>Governance (ISO 27001, LPM)</li><li>Risk Management</li></ul>
-                </div>
-                <div class="card skill-card border-red">
-                    <h3 style="color:var(--neon-red)"><i class="fas fa-bolt"></i> Art & Lifestyle</h3>
-                    <ul><li><strong>3D Env Artist (Unreal/Blender)</strong></li><li>2D Concept Art</li><li>Aggressive Inline Skating</li><li>Creative Technology</li></ul>
-                </div>
+                <div class="card skill-card border-purple"><h3 style="color:var(--neon-purple)"><i class="fas fa-atom"></i> Quantum & AI</h3><ul><li>Quantum Machine Learning</li><li>AI Engineering & Data Science</li><li>Post-Quantum Cryptography</li><li>AI Orchestration (LLMs)</li></ul></div>
+                <div class="card skill-card border-green"><h3 style="color:var(--neon-green)"><i class="fas fa-robot"></i> Robotics & Eng.</h3><ul><li>VLA/VLM & Tiny Networks</li><li>Embedded Systems Security</li><li>Robotics Engineering</li><li>Autonomous Systems</li></ul></div>
+                <div class="card skill-card border-orange"><h3 style="color:var(--neon-orange)"><i class="fas fa-shield-virus"></i> Cybersecurity</h3><ul><li>Offensive Security (Pentest)</li><li>SCADA & Industrial Systems</li><li>Governance (ISO 27001, LPM)</li><li>Risk Management</li></ul></div>
+                <div class="card skill-card border-red"><h3 style="color:var(--neon-red)"><i class="fas fa-bolt"></i> Art & Lifestyle</h3><ul><li><strong>3D Env Artist (Unreal/Blender)</strong></li><li>2D Concept Art</li><li>Aggressive Inline Skating</li><li>Creative Technology</li></ul></div>
             </div>
-
-            <!-- Projects -->
             <h2 class="port-h2" style="margin-top: 5rem;"><i class="fas fa-project-diagram"></i> Featured Projects</h2>
             <div class="grid-container">
-                <div class="project-card border-orange">
-                    <div class="project-content"><span class="project-tag" style="color:var(--neon-orange)">// CYBERSECURITY TOOL</span><h3 style="color:var(--neon-orange)"><i class="fas fa-skull"></i> Bjorn</h3><p>Autonomous offensive security tool for Raspberry Pi (Tamagotchi-like). Scans networks, discovers vulnerabilities, and automates attacks.</p></div>
-                </div>
-                <div class="project-card border-green">
-                    <div class="project-content"><span class="project-tag" style="color:var(--neon-green)">// ROBOTICS RESEARCH</span><h3 style="color:var(--neon-green)"><i class="fas fa-robot"></i> Recursive VLA</h3><p>Personal research on Robotics Vision-Language-Action (VLA) models using tiny recursive networks to bypass GPU dependency.</p></div>
-                </div>
-                <div class="project-card border-purple">
-                    <div class="project-content"><span class="project-tag" style="color:var(--neon-purple)">// ARTIFICIAL INTELLIGENCE</span><h3 style="color:var(--neon-purple)"><i class="fas fa-brain"></i> Paradigm</h3><p>Orchestrated AI System designed to mimic human-like intelligence. Coordinates specialized LLMs to solve reasoning tasks.</p></div>
-                </div>
-                <div class="project-card border-purple">
-                    <div class="project-content"><span class="project-tag" style="color:var(--neon-purple)">// RESEARCH PUBLICATION</span><h3 style="color:var(--neon-purple)"><i class="fas fa-book"></i> AI Consciousness</h3><p>WIP Publication: "Limits of Reproducing Human Consciousness in AI Systems". Theoretical boundaries of AGI.</p></div>
-                </div>
-                <div class="project-card border-blue">
-                    <div class="project-content"><span class="project-tag" style="color:var(--neon-blue)">// 3D ENVIRONMENT ART</span><h3 style="color:var(--neon-blue)"><i class="fas fa-vr-cardboard"></i> Immersive Worlds</h3><p>Collection of real-time 3D environments created with Unreal Engine 5 and Blender. Lighting and storytelling.</p></div>
-                </div>
+                <div class="project-card border-orange"><div class="project-content"><span class="project-tag" style="color:var(--neon-orange)">// CYBERSECURITY TOOL</span><h3 style="color:var(--neon-orange)"><i class="fas fa-skull"></i> Bjorn</h3><p>Autonomous offensive security tool for Raspberry Pi (Tamagotchi-like). Scans networks, discovers vulnerabilities, and automates attacks.</p></div></div>
+                <div class="project-card border-green"><div class="project-content"><span class="project-tag" style="color:var(--neon-green)">// ROBOTICS RESEARCH</span><h3 style="color:var(--neon-green)"><i class="fas fa-robot"></i> Recursive VLA</h3><p>Personal research on Robotics Vision-Language-Action (VLA) models using tiny recursive networks to bypass GPU dependency.</p></div></div>
+                <div class="project-card border-purple"><div class="project-content"><span class="project-tag" style="color:var(--neon-purple)">// ARTIFICIAL INTELLIGENCE</span><h3 style="color:var(--neon-purple)"><i class="fas fa-brain"></i> Paradigm</h3><p>Orchestrated AI System designed to mimic human-like intelligence. Coordinates specialized LLMs to solve reasoning tasks.</p></div></div>
+                <div class="project-card border-purple"><div class="project-content"><span class="project-tag" style="color:var(--neon-purple)">// RESEARCH PUBLICATION</span><h3 style="color:var(--neon-purple)"><i class="fas fa-book"></i> AI Consciousness</h3><p>WIP Publication: "Limits of Reproducing Human Consciousness in AI Systems". Theoretical boundaries of AGI.</p></div></div>
+                <div class="project-card border-blue"><div class="project-content"><span class="project-tag" style="color:var(--neon-blue)">// 3D ENVIRONMENT ART</span><h3 style="color:var(--neon-blue)"><i class="fas fa-vr-cardboard"></i> Immersive Worlds</h3><p>Collection of real-time 3D environments created with Unreal Engine 5 and Blender. Lighting and storytelling.</p></div></div>
             </div>
-
-            <!-- Footer -->
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 4rem; opacity: 0.6; font-size: 0.9rem;">
-                © 2025 Fabien Polly.<br><em>"From the abyss to the quantum realm."</em>
-            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 4rem; opacity: 0.6; font-size: 0.9rem;">© 2025 Fabien Polly.<br><em>"From the abyss to the quantum realm."</em></div>
             <div style="height: 50px;"></div>
         </main>
     </section>
 
-    <!-- VIEW 3: DATA LOGS (BLOG) -->
+    <!-- VIEW 3: DATA LOGS -->
     <section id="blog-view" class="view-section">
         <div class="container">
-            <div class="blog-header">
-                <h1 class="port-h1">DATA LOGS</h1>
-                <p>Personal Research Notes & Live Repositories</p>
-            </div>
-            <div class="console-output" id="scan-output">
-                > INITIALIZING...
-            </div>
+            <div class="blog-header"><h1 class="port-h1">DATA LOGS</h1><p>Personal Research Notes & Live Repositories</p></div>
+            <div class="console-output" id="scan-output">> INITIALIZING...</div>
             <div class="article-list" id="article-list-container"></div>
         </div>
     </section>
 
-    <!-- VIEW 4: ARTICLE READER (SHARED) -->
+    <!-- VIEW 4: ARTICLE READER -->
     <section id="article-reader" class="view-section">
         <div class="container" id="article-view"></div>
     </section>
 
-    <!-- VIEW 5: KNOWLEDGE BASE (KB) -->
+    <!-- VIEW 5: KNOWLEDGE BASE -->
     <section id="kb-view" class="view-section" style="padding-top: 60px; padding-bottom: 0;">
         <div class="kb-container">
             <div class="kb-sidebar">
                 <input type="text" id="kb-search" class="kb-search-box" placeholder="Search Knowledge Base..." autocomplete="off">
-                <div id="kb-tree">
-                    <div style="text-align:center; padding:1rem; color:#666;">Loading Tree Structure...</div>
-                </div>
+                <div id="kb-tree"><div style="text-align:center; padding:1rem; color:#666;">Loading Tree...</div></div>
             </div>
             <div class="kb-main" id="kb-content-area">
                 <h1 style="font-family: var(--cyber-font); color: var(--neon-purple);">Welcome to the KB</h1>
-                <p>Select a node on the left to access documentation, snippets, and second brain notes.</p>
+                <p>Select a node on the left to access documentation.</p>
             </div>
         </div>
     </section>
@@ -555,15 +351,11 @@
         <div class="container">
             <h1 class="port-h1" style="text-align:center; color: var(--neon-red); text-shadow: 2px 2px 0 #000;">AUDIO FREQUENCIES</h1>
             <p style="text-align:center; opacity:0.7; margin-bottom: 2rem;">Current Rotation & Inspirations</p>
-            
             <div class="music-frame-container">
                 <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/fr/playlist/fab/pl.u-6mo44JmF4kgllW"></iframe>
             </div>
-
             <h3 style="text-align:center; color:#fff; margin-top: 3rem; border-bottom:1px dashed #333; padding-bottom:10px;">MY FAVORITE ARTISTS</h3>
-            <div class="music-grid" id="music-grid">
-                <div style="color:#666; text-align:center; width:100%;">Loading frequencies...</div>
-            </div>
+            <div class="music-grid" id="music-grid"><div style="color:#666; text-align:center; width:100%;">Loading...</div></div>
         </div>
     </section>
 
@@ -571,377 +363,285 @@
     <script>
         const GITHUB_USER = 'infinition';
         const GITHUB_REPO = 'infinition'; 
-        const ARTICLES_PATH = 'articles'; 
+        const ARTICLES_PATH = 'articles';
         const KB_PATH = 'kb'; 
-        // Path to the bands list on GitHub (Raw content)
         const BANDS_FILE_URL = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/bands/bands.md`;
 
         let mergedData = [];
+        let currentFlashcards = [];
+        let currentQuiz = null;
+        let cardIndex = 0;
 
-        // --- HELPER: FETCH LAST COMMIT DATE ---
-        async function fetchCommitDate(path) {
+        window.addEventListener('hashchange', handleHashChange);
+        function handleHashChange() {
+            const hash = window.location.hash;
+            if(hash.startsWith('#article:')) {
+                const articleFile = hash.replace('#article:', '');
+                if(mergedData.length === 0) { navigateTo('blog'); setTimeout(() => findAndOpenArticle(articleFile), 1500); } 
+                else { findAndOpenArticle(articleFile); }
+            } else if (hash === '#portfolio') navigateTo('portfolio');
+            else if (hash === '#blog') navigateTo('blog');
+            else if (hash === '#kb') navigateTo('kb');
+            else if (hash === '#music') navigateTo('music');
+            else navigateTo('portal');
+        }
+
+        function findAndOpenArticle(filename) {
+            const found = mergedData.find(a => a.file.includes(filename));
+            if(found) openArticle(found);
+        }
+
+        // --- INTERACTIVE MODULES ---
+        async function loadFlashcards(url) {
             try {
-                const response = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/commits?path=${path}&page=1&per_page=1`);
-                if (!response.ok) return null;
-                const data = await response.json();
-                if (data.length > 0) {
-                    return new Date(data[0].commit.committer.date).toISOString().split('T')[0];
-                }
-            } catch (e) {
-                console.warn("Rate limit or error fetching date for:", path);
+                const res = await fetch(url);
+                if(!res.ok) throw new Error();
+                currentFlashcards = await res.json();
+                cardIndex = 0;
+                document.getElementById('interactive-modal').style.display = 'flex';
+                renderFC();
+            } catch(e) { alert("Could not load Flashcards. Ensure 'filename_flashcard.json' exists."); }
+        }
+
+        function renderFC() {
+            const card = currentFlashcards[cardIndex];
+            const progress = ((cardIndex) / currentFlashcards.length) * 100;
+            const html = `
+                <div class="fc-container">
+                    <div class="fc-top-info"><div>Card ${cardIndex+1}</div><div class="fc-counter-badge">${cardIndex+1}/${currentFlashcards.length}</div></div>
+                    <div class="fc-progress-bg"><div class="fc-progress-fill" style="width:${progress}%"></div></div>
+                    <div class="fc-status"><i class="fas fa-check-circle"></i> Learning Mode</div>
+                    <div class="fc-scene" onclick="this.querySelector('.fc-card').classList.toggle('flipped')">
+                        <div class="fc-stack-2"></div><div class="fc-stack-1"></div>
+                        <div class="fc-card">
+                            <div class="fc-face"><div class="fc-q-badge"><div class="fc-q-icon"><i class="fas fa-question"></i></div>Question</div><div class="fc-text">${card.question}</div><div class="fc-tap-hint"><i class="fas fa-hand-pointer"></i> Tap to flip</div></div>
+                            <div class="fc-face fc-back"><div class="fc-text" style="color:var(--neon-green)">${card.answer}</div></div>
+                        </div>
+                    </div>
+                    <div class="fc-controls"><button class="fc-action-btn fc-btn-no" onclick="nextFC()"><i class="fas fa-times"></i></button><button class="fc-action-btn fc-btn-yes" onclick="nextFC()"><i class="fas fa-check"></i></button></div>
+                </div>`;
+            document.getElementById('modal-content-area').innerHTML = html;
+        }
+        function nextFC() {
+            if(cardIndex < currentFlashcards.length - 1) { cardIndex++; renderFC(); } 
+            else { document.getElementById('modal-content-area').innerHTML = `<div style="text-align:center;color:white;padding:50px;"><h2>Complete!</h2><button class="action-btn btn-flash" style="margin:20px auto;" onclick="closeModal()">Close</button></div>`; }
+        }
+
+        async function loadQuiz(url) {
+            try {
+                const res = await fetch(url);
+                if(!res.ok) throw new Error();
+                const data = await res.json();
+                const q = data[0]; // Demo first question
+                const html = `
+                    <div class="qz-container">
+                        <div class="qz-top-bar"><span>Quiz Mode</span><div style="cursor:pointer;" onclick="closeModal()">✕</div></div>
+                        <div class="qz-progress-bg"><div class="qz-progress-fill" style="width:10%"></div></div>
+                        <div class="qz-question-box"><div class="qz-label"><i class="fas fa-question"></i> Question 1</div><div class="qz-text">${q.question}</div></div>
+                        <div class="qz-options">
+                            ${q.options.map((opt, i) => `<div class="qz-option" onclick="this.classList.add(${opt.correct} ? 'correct' : 'wrong')"><div class="qz-letter">${String.fromCharCode(65+i)}</div><div>${opt.text}</div></div>`).join('')}
+                        </div>
+                        <button class="qz-next-btn" onclick="closeModal()">Next Question <i class="fas fa-arrow-right"></i></button>
+                    </div>`;
+                document.getElementById('interactive-modal').style.display = 'flex';
+                document.getElementById('modal-content-area').innerHTML = html;
+            } catch(e) { alert("Could not load Quiz. Ensure 'filename_quizz.json' exists."); }
+        }
+        function closeModal() { document.getElementById('interactive-modal').style.display = 'none'; }
+
+        // --- ARTICLE READER WITH DETECTION ---
+        async function openArticle(article) {
+            const reader = document.getElementById('article-reader');
+            document.getElementById('blog-view').style.display = 'none';
+            document.getElementById('kb-view').style.display = 'none';
+            reader.style.display = 'block';
+            
+            const shortName = article.file.split('/').pop();
+            window.history.pushState(null, null, `#article:${shortName}`);
+            const cleanContent = article.content.replace(/^# .*/m, '');
+            
+            // Auto-detect: Determine URL based on download_url (for Github API) or local path
+            let flashUrl, quizUrl;
+            if(article.download_url) {
+               flashUrl = article.download_url.replace('.md', '_flashcard.json');
+               quizUrl = article.download_url.replace('.md', '_quizz.json');
+            } else {
+               // fallback, assuming relative path matches
+               const baseName = article.file.replace('.md', '');
+               flashUrl = `${baseName}_flashcard.json`; 
+               quizUrl = `${baseName}_quizz.json`;
             }
-            return null;
-        }
 
-        // --- HELPER: FETCH README IMG ---
-        async function fetchReadmeImage(owner, repo, branch) {
-            try {
-                const readmeUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/README.md`;
-                const response = await fetch(readmeUrl);
-                if (!response.ok) return null;
-                const text = await response.text();
-                const imgRegex = /!\[.*?\]\((.*?)\)|<img.*?src=["'](.*?)["']/;
-                const match = text.match(imgRegex);
-                if (match) {
-                    let imgUrl = match[1] || match[2];
-                    if (imgUrl && !imgUrl.startsWith('http')) {
-                        if(imgUrl.startsWith('./')) imgUrl = imgUrl.substring(2);
-                        return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${imgUrl}`;
-                    }
-                    return imgUrl;
-                }
-            } catch (e) { return null; }
-            return null;
-        }
+            // Check existence (Fetch)
+            const check = async (u) => { 
+                try { 
+                    const r = await fetch(u); 
+                    return r.ok ? u : null; 
+                } catch { return null; } 
+            };
+            const [fUrl, qUrl] = await Promise.all([check(flashUrl), check(quizUrl)]);
 
-        // --- MUSIC: FETCH BANDS FROM FILE ---
-        async function fetchBandsList() {
-            try {
-                const response = await fetch(BANDS_FILE_URL);
-                if (!response.ok) {
-                    console.warn("Could not fetch bands list from " + BANDS_FILE_URL);
-                    return []; // Return empty if file not found
-                }
-                const text = await response.text();
-                // Split by newline and filter out empty lines
-                return text.split('\n').map(line => line.trim()).filter(line => line.length > 0);
-            } catch (e) {
-                console.error("Error fetching bands list:", e);
-                return [];
+            const shareUrl = window.location.href;
+            const shareHtml = `
+                <div class="article-toolbar">
+                    <button class="tool-btn" onclick="share('linkedin')"><i class="fab fa-linkedin"></i> Share</button>
+                    <button class="tool-btn" onclick="share('twitter')"><i class="fab fa-x-twitter"></i> Post</button>
+                    <button class="tool-btn" onclick="share('sms')"><i class="fas fa-comment-dots"></i> SMS</button>
+                    <button class="tool-btn" onclick="navigator.clipboard.writeText('${shareUrl}');alert('Link copied!')"><i class="fas fa-link"></i> Copy</button>
+                    <button class="tool-btn" style="margin-left:auto" onclick="navigateTo('blog')">✕ Close</button>
+                </div>`;
+
+            let interactiveHtml = '';
+            if(fUrl || qUrl) {
+                interactiveHtml = `<div style="display:flex; gap:15px; margin-bottom:30px;">`;
+                if(fUrl) interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('${fUrl}')"><i class="fas fa-layer-group"></i> Flashcards</button>`;
+                if(qUrl) interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('${qUrl}')"><i class="fas fa-graduation-cap"></i> Quiz</button>`;
+                interactiveHtml += `</div>`;
             }
+
+            document.getElementById('article-view').innerHTML = `
+                <div class="article-content">
+                    ${shareHtml}
+                    <div style="margin-bottom:2rem;"><span style="color:var(--neon-orange);font-family:var(--code-font);font-size:0.8rem;">DIR: /${article.file}</span><h1 style="font-family:var(--cyber-font);font-size:2rem;margin-top:0.5rem;">${article.title}</h1><div style="display:flex;align-items:center;gap:10px;margin-top:10px;opacity:0.6;font-size:0.8rem;"><i class="fas fa-calendar"></i> ${article.date}<span>// FABIEN POLLY</span></div></div>
+                    ${interactiveHtml}
+                    ${article.image ? `<img src="${article.image}" style="max-width:100%;border:1px solid #333;margin-bottom:2rem;">` : ''}
+                    <div class="article-body">${marked.parse(cleanContent)}</div>
+                    <div style="text-align:center;margin-top:3rem;"><button class="btn-link" onclick="navigateTo('blog')">BACK TO LOGS</button></div>
+                </div>`;
+            window.scrollTo(0,0);
         }
 
-        // --- MUSIC API (ITUNES VIA PROXY) ---
+        function share(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent("Check this out: ");
+            if(platform === 'linkedin') window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`);
+            if(platform === 'twitter') window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`);
+            if(platform === 'sms') window.open(`sms:?body=${text}${url}`);
+        }
+
+        // --- OTHER DATA FETCHERS (SAME AS BEFORE) ---
+        async function fetchCommitDate(path) { try { const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/commits?path=${path}&page=1&per_page=1`); if(!r.ok) return null; const d = await r.json(); if(d.length>0) return new Date(d[0].commit.committer.date).toISOString().split('T')[0]; } catch(e){} return null; }
+        async function fetchReadmeImage(o,r,b) { try { const res = await fetch(`https://raw.githubusercontent.com/${o}/${r}/${b}/README.md`); if(!res.ok) return null; const t = await res.text(); const m = t.match(/!\[.*?\]\((.*?)\)|<img.*?src=["'](.*?)["']/); if(m) { let u=m[1]||m[2]; if(u&&!u.startsWith('http')) return `https://raw.githubusercontent.com/${o}/${r}/${b}/${u.startsWith('./')?u.substring(2):u}`; return u; } } catch(e){} return null; }
+        async function fetchBandsList() { try { const r = await fetch(BANDS_FILE_URL); if(!r.ok) return []; const t = await r.text(); return t.split('\n').map(l=>l.trim()).filter(l=>l.length>0); } catch(e){ return []; } }
+        
         async function fetchMusicData() {
-            const container = document.getElementById('music-grid');
-            container.innerHTML = '';
-            
-            // 1. Get the list of bands dynamically from GitHub
+            const container = document.getElementById('music-grid'); container.innerHTML = '';
             const bands = await fetchBandsList();
-            
-            if (bands.length === 0) {
-                 container.innerHTML = '<div style="color:#888;">No bands found in bands/bands.md</div>';
-                 return;
-            }
-
-            // 2. Fetch data for each band
-            for (const band of bands) {
+            if(bands.length===0) { container.innerHTML='<div style="color:#888;">No bands found in bands/bands.md</div>'; return; }
+            for(const band of bands) {
                 try {
-                    const url = `https://corsproxy.io/?url=` + encodeURIComponent(`https://itunes.apple.com/search?term=${band}&entity=album&limit=1`);
-                    const res = await fetch(url);
-                    const data = await res.json();
-
-                    if (data.results && data.results.length > 0) {
-                        const album = data.results[0];
-                        const highResImg = album.artworkUrl100.replace('100x100bb', '600x600bb');
-                        
-                        const card = document.createElement('div');
-                        card.className = 'music-card';
-                        card.onclick = () => window.open(album.collectionViewUrl, '_blank');
-                        card.innerHTML = `
-                            <img src="${highResImg}" class="album-cover" alt="${album.collectionName}">
-                            <div class="music-info">
-                                <span class="band-name">${album.artistName}</span>
-                                <span class="album-name">${album.collectionName}</span>
-                            </div>
-                        `;
+            const searchUrl = 
+                `https://corsproxy.io/?url=` + 
+                encodeURIComponent(`https://itunes.apple.com/search?term=${band}&entity=musicArtist&limit=1`);
+                    const res = await fetch(url); const data = await res.json();
+                    if(data.results?.length>0) {
+                        const alb = data.results[0]; const img = alb.artworkUrl100.replace('100x100bb','600x600bb');
+                        const card = document.createElement('div'); card.className='music-card'; card.onclick=()=>window.open(alb.collectionViewUrl,'_blank');
+                        card.innerHTML = `<img src="${img}" class="album-cover"><div class="music-info"><span class="band-name">${alb.artistName}</span><span class="album-name">${alb.collectionName}</span></div>`;
                         container.appendChild(card);
                     }
-                } catch (e) {
-                    console.warn(`Could not fetch music for ${band}`, e);
-                }
+                } catch(e){}
             }
         }
 
-        // --- 1. DATA LOGS: FETCH ARTICLES (ARTICLES + KB FLATTENED) ---
         async function fetchAllMDRecursively(path) {
-            let allFiles = [];
-            try {
-                const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`;
-                const response = await fetch(url);
-                if (!response.ok) return [];
-                const items = await response.json();
-
-                for (const item of items) {
-                    if (item.type === 'dir') {
-                        const subFiles = await fetchAllMDRecursively(item.path);
-                        allFiles = allFiles.concat(subFiles);
-                    } else if (item.name.endsWith('.md')) {
-                        allFiles.push(item);
-                    }
-                }
-            } catch(e) { console.error(e); }
-            return allFiles;
+            let files = []; try { const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`); if(!r.ok) return []; const items = await r.json(); for(const i of items) { if(i.type==='dir') files = files.concat(await fetchAllMDRecursively(i.path)); else if(i.name.endsWith('.md')) files.push(i); } } catch(e){} return files;
         }
 
         async function fetchLocalDataLogs() {
-            const articles = await fetchAllMDRecursively(ARTICLES_PATH);
+            const arts = await fetchAllMDRecursively(ARTICLES_PATH);
             const kbs = await fetchAllMDRecursively(KB_PATH);
-            const allFiles = [...articles, ...kbs];
-
-            const processed = await Promise.all(allFiles.map(async (file) => {
-                const contentResp = await fetch(file.download_url);
-                const text = await contentResp.text();
-                const titleMatch = text.match(/^# (.*)/m);
-                const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
-                
-                let date = await fetchCommitDate(file.path);
-                if (!date) {
-                    const dateMatch = text.match(/(?:\*\*|__)?Date(?:\*\*|__)?:\s*(.*)/i);
-                    date = dateMatch ? dateMatch[1].trim() : 'Unknown Date';
-                }
-
-                return {
-                    id: file.sha, type: 'article', file: file.path, title: title, date: date,
-                    icon: file.path.startsWith('kb') ? 'fas fa-book-medical' : 'fas fa-file-alt', 
-                    image: null, content: text
-                };
+            const all = [...arts, ...kbs];
+            return Promise.all(all.map(async f => {
+                const r = await fetch(f.download_url); const t = await r.text();
+                const title = (t.match(/^# (.*)/m) || [])[1] || f.name.replace('.md','');
+                let date = await fetchCommitDate(f.path);
+                if(!date) date = (t.match(/(?:\*\*|__)?Date(?:\*\*|__)?:\s*(.*)/i) || [])[1]?.trim() || 'Unknown';
+                return { id: f.sha, type: 'article', file: f.path, title: title, date: date, icon: f.path.startsWith('kb')?'fas fa-book-medical':'fas fa-file-alt', image: null, content: t, download_url: f.download_url };
             }));
-            return processed;
         }
 
-        // --- 2. KB: FETCH RECURSIVE TREE (For Sidebar) ---
-        async function fetchKBTree(path = KB_PATH, parentElement = document.getElementById('kb-tree')) {
+        async function fetchKBTree(path = KB_PATH, parent = document.getElementById('kb-tree')) {
             try {
-                const url = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`;
-                const response = await fetch(url);
-                
-                if (!response.ok) {
-                    if(path === KB_PATH) parentElement.innerHTML = "<div style='color:red'>KB Folder not found on GitHub. Create a 'kb' folder.</div>";
-                    return;
-                }
-
-                const items = await response.json();
-                if(path === KB_PATH) parentElement.innerHTML = ""; 
-
-                items.sort((a, b) => (a.type === b.type ? 0 : a.type === 'dir' ? -1 : 1));
-
-                for (const item of items) {
-                    if (item.type === 'dir') {
-                        const folderDiv = document.createElement('div');
-                        folderDiv.className = 'tree-folder';
-                        folderDiv.innerHTML = `<i class="fas fa-folder"></i> ${item.name}`;
-                        const childrenDiv = document.createElement('div');
-                        childrenDiv.className = 'tree-children';
-                        folderDiv.onclick = (e) => {
-                            e.stopPropagation();
-                            childrenDiv.classList.toggle('open');
-                            const icon = folderDiv.querySelector('i');
-                            icon.classList.toggle('fa-folder');
-                            icon.classList.toggle('fa-folder-open');
-                        };
-                        parentElement.appendChild(folderDiv);
-                        parentElement.appendChild(childrenDiv);
-                        await fetchKBTree(item.path, childrenDiv);
-                    } else if (item.type === 'file' && item.name.endsWith('.md')) {
-                        const fileDiv = document.createElement('div');
-                        fileDiv.className = 'tree-item';
-                        fileDiv.innerHTML = `<i class="fas fa-file-lines"></i> ${item.name.replace('.md', '')}`;
-                        fileDiv.onclick = () => loadKBContent(item.download_url);
-                        parentElement.appendChild(fileDiv);
+                const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`);
+                if(!r.ok) { if(path===KB_PATH) parent.innerHTML="<div style='color:red'>KB Folder missing</div>"; return; }
+                const items = await r.json();
+                if(path===KB_PATH) parent.innerHTML="";
+                items.sort((a,b) => (a.type===b.type?0:a.type==='dir'?-1:1));
+                for(const i of items) {
+                    if(i.type==='dir') {
+                        const fDiv = document.createElement('div'); fDiv.className='tree-folder'; fDiv.innerHTML=`<i class="fas fa-folder"></i> ${i.name}`;
+                        const cDiv = document.createElement('div'); cDiv.className='tree-children';
+                        fDiv.onclick=(e)=>{ e.stopPropagation(); cDiv.classList.toggle('open'); };
+                        parent.appendChild(fDiv); parent.appendChild(cDiv); await fetchKBTree(i.path, cDiv);
+                    } else if(i.name.endsWith('.md')) {
+                        const fDiv = document.createElement('div'); fDiv.className='tree-item'; fDiv.innerHTML=`<i class="fas fa-file-lines"></i> ${i.name.replace('.md','')}`;
+                        fDiv.onclick = async () => { const r = await fetch(i.download_url); const t = await r.text(); openArticle({file: i.path, title: i.name.replace('.md',''), content: t, date: 'KB', download_url: i.download_url}); };
+                        parent.appendChild(fDiv);
                     }
                 }
-            } catch (e) { console.error("KB Fetch Error", e); }
+            } catch(e){}
         }
 
-        // KB SEARCH
-        document.getElementById('kb-search').addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase();
-            const items = document.querySelectorAll('.tree-item');
-            
-            if(!query) {
-                items.forEach(item => item.style.display = 'block');
-                document.querySelectorAll('.tree-folder').forEach(f => f.style.display = 'block');
-                document.querySelectorAll('.tree-children').forEach(c => c.classList.remove('open'));
-                return;
-            }
-
-            items.forEach(item => {
-                const text = item.innerText.toLowerCase();
-                if(text.includes(query)) {
-                    item.style.display = 'block';
-                    let parent = item.parentElement;
-                    while(parent.classList.contains('tree-children')) {
-                        parent.classList.add('open');
-                        if(parent.previousElementSibling && parent.previousElementSibling.classList.contains('tree-folder')) {
-                            parent.previousElementSibling.style.display = 'block';
-                        }
-                        parent = parent.parentElement;
-                    }
-                } else {
-                    item.style.display = 'none';
-                }
+        document.getElementById('kb-search').addEventListener('input', (e) => {
+            const q = e.target.value.toLowerCase();
+            document.querySelectorAll('.tree-item').forEach(i => {
+                if(i.innerText.toLowerCase().includes(q)) { i.style.display='block'; let p=i.parentElement; while(p.classList.contains('tree-children')){p.classList.add('open');if(p.previousElementSibling)p.previousElementSibling.style.display='block';p=p.parentElement;} } else i.style.display='none';
             });
         });
 
-        async function loadKBContent(url) {
-            const container = document.getElementById('kb-content-area');
-            container.innerHTML = '<div style="color:var(--neon-green)">> Downloading Knowledge Fragment...</div>';
-            try {
-                const res = await fetch(url);
-                const text = await res.text();
-                const cleanText = text.replace(/^# .*/m, ''); 
-                const titleMatch = text.match(/^# (.*)/m);
-                const title = titleMatch ? titleMatch[1] : 'Untitled Note';
-                container.innerHTML = `
-                    <h1 style="font-family:var(--cyber-font); color:var(--neon-purple); border-bottom:1px solid #333; padding-bottom:10px;">${title}</h1>
-                    <div class="article-body">${marked.parse(cleanText)}</div>
-                `;
-            } catch(e) { container.innerHTML = "Error loading content."; }
-        }
-
-        // --- GITHUB & ARTSTATION ---
         async function fetchGitHubRepos() {
-            try {
-                const response = await fetch('https://api.github.com/users/infinition/repos?sort=created&direction=desc');
-                if(!response.ok) return [];
-                const repos = await response.json();
-                return Promise.all(repos.map(async (repo) => {
-                    let img = await fetchReadmeImage(repo.owner.login, repo.name, repo.default_branch);
-                    if(!img) img = repo.owner.avatar_url;
-                    return { id: repo.id, type: 'repo', title: repo.name, date: repo.created_at.split('T')[0], icon: 'fab fa-github', image: img, content: repo.description || "", url: repo.html_url, file: 'git://repo' };
-                }));
-            } catch(e) { return []; }
+            try { const r = await fetch('https://api.github.com/users/infinition/repos?sort=created&direction=desc'); if(!r.ok) return []; const d = await r.json(); return Promise.all(d.map(async r => { let img = await fetchReadmeImage(r.owner.login, r.name, r.default_branch); if(!img) img = r.owner.avatar_url; return { id: r.id, type: 'repo', title: r.name, date: r.created_at.split('T')[0], icon: 'fab fa-github', image: img, content: r.description||"", url: r.html_url }; })); } catch(e){ return []; }
         }
 
         async function fetchArtStation() {
-            try {
-                const proxyUrl = 'https://corsproxy.io/?url=' + encodeURIComponent('https://www.artstation.com/users/infinition/projects.json?page=1');
-                const response = await fetch(proxyUrl);
-                if (!response.ok) return [];
-                const data = await response.json();
-                return data.data.map(item => ({
-                    id: `art-${item.id}`, type: 'artwork', file: `art_${item.hash_id}.png`, title: item.title, date: item.published_at.split('T')[0], icon: 'fab fa-artstation', image: item.cover.micro_square_image_url || item.cover.small_square_url, content: 'ArtStation Portfolio', url: item.permalink
-                }));
-            } catch(e) { return []; }
+            try { const url = 'https://corsproxy.io/?url=' + encodeURIComponent('https://www.artstation.com/users/infinition/projects.json?page=1'); const r = await fetch(url); if(!r.ok) return []; const d = await r.json(); return d.data.map(i => ({ id: `art-${i.id}`, type: 'artwork', file: `art_${i.hash_id}.png`, title: i.title, date: i.published_at.split('T')[0], icon: 'fab fa-artstation', image: i.cover.micro_square_image_url, content: 'ArtStation', url: i.permalink })); } catch(e){ return []; }
         }
 
-        // --- SCANNER LOGIC ---
         async function runScanSimulation() {
-            const output = document.getElementById('scan-output');
-            const listContainer = document.getElementById('article-list-container');
-            output.innerHTML = '> INITIALIZING PROTOCOLS...<br>> SCANNING FILESYSTEM (ARTICLES + KB)... <span class="blink">_</span>';
-            
-            const localData = await fetchLocalDataLogs();
-            renderArticles(localData); 
-
+            const out = document.getElementById('scan-output');
+            const list = document.getElementById('article-list-container');
+            out.innerHTML = '> SCANNING... <span class="blink">_</span>';
+            const local = await fetchLocalDataLogs();
+            renderArticles(local);
             setTimeout(async () => {
-                output.innerHTML += '<br>> FETCHING REPOS...';
+                out.innerHTML += '<br>> FETCHING EXTERNAL...';
                 const repos = await fetchGitHubRepos();
-                output.innerHTML += '<br>> SYNCING ARTSTATION...';
                 const arts = await fetchArtStation();
-
-                mergedData = [...localData, ...repos, ...arts];
-                mergedData.sort((a, b) => new Date(b.date) - new Date(a.date));
-                
+                mergedData = [...local, ...repos, ...arts];
+                mergedData.sort((a,b) => new Date(b.date) - new Date(a.date));
                 renderArticles(mergedData);
-                
-                output.innerHTML = `
-                    > SYSTEM READY.<br>
-                    > INDEXED: ${mergedData.length} NODES.<br>
-                    > SEARCH INPUT ACTIVE: <input type="text" id="console-search" class="console-input" placeholder="_" autocomplete="off">
-                `;
-                
-                document.getElementById('console-search').addEventListener('input', (e) => filterArticles(e.target.value));
+                out.innerHTML = `> READY. INDEXED: ${mergedData.length}.`;
             }, 500);
         }
 
-        function filterArticles(query) {
-            const q = query.toLowerCase();
-            const filtered = mergedData.filter(i => i.title.toLowerCase().includes(q) || (i.content && i.content.toLowerCase().includes(q)));
-            renderArticles(filtered);
-        }
-
-        function renderArticles(list) {
-            const container = document.getElementById('article-list-container');
-            container.innerHTML = '';
-            list.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'article-entry';
-                div.onclick = () => {
-                    if(item.type === 'repo' || item.type === 'artwork') window.open(item.url, '_blank');
-                    else openArticle(item);
-                };
-                
-                let thumb = '';
-                if (item.image) {
-                    thumb = `<img src="${item.image}" class="article-thumb">`;
-                } else {
-                    let fallbackIcon = item.type === 'repo' ? 'fab fa-github' : 'fas fa-file-lines';
-                    thumb = `<div class="article-thumb"><i class="${fallbackIcon} thumb-icon"></i></div>`;
-                }
-
-                let color = item.type === 'repo' ? 'var(--neon-orange)' : (item.type === 'artwork' ? 'var(--neon-blue)' : '#555');
-
-                div.innerHTML = `
-                    ${thumb}
-                    <div class="article-info">
-                        <div class="article-header"><i class="${item.icon} file-icon" style="color:${color}"></i> <span class="article-title">${item.title}</span></div>
-                        <span class="article-date">${item.date}</span>
-                        <div class="article-desc">${item.content.substring(0, 100)}...</div>
-                    </div>
-                `;
-                container.appendChild(div);
+        function renderArticles(items) {
+            const c = document.getElementById('article-list-container'); c.innerHTML = '';
+            items.forEach(item => {
+                const d = document.createElement('div'); d.className = 'article-entry';
+                d.onclick = () => { if(item.type==='repo'||item.type==='artwork') window.open(item.url,'_blank'); else openArticle(item); };
+                let thumb = item.image ? `<img src="${item.image}" class="article-thumb">` : `<div class="article-thumb"><i class="${item.type==='repo'?'fab fa-github':item.icon} thumb-icon"></i></div>`;
+                let col = item.type==='repo'?'var(--neon-orange)':(item.type==='artwork'?'var(--neon-blue)':'#555');
+                d.innerHTML = `${thumb}<div class="article-info"><div class="article-title">${item.title}</div><div class="article-date" style="color:${col}"><i class="${item.type==='repo'?'fab fa-github':item.icon}"></i> ${item.date}</div></div>`;
+                c.appendChild(d);
             });
-        }
-
-        function openArticle(article) {
-            document.getElementById('blog-view').style.display = 'none';
-            document.getElementById('article-reader').style.display = 'block';
-            const container = document.getElementById('article-view');
-            const cleanContent = article.content.replace(/^# .*/m, '');
-            container.innerHTML = `
-                <div class="article-content">
-                    <h1 style="font-family:var(--cyber-font); font-size:2rem;">${article.title}</h1>
-                    <div style="opacity:0.6; margin-bottom:2rem; font-size:0.8rem;"><i class="fas fa-calendar"></i> ${article.date}</div>
-                    ${article.image ? `<img src="${article.image}" style="max-width:100%; border:1px solid #333;">` : ''}
-                    <div class="article-body">${marked.parse(cleanContent)}</div>
-                    <div style="text-align:center; margin-top:3rem;"><button class="btn-link" onclick="navigateTo('blog')">BACK</button></div>
-                </div>
-            `;
-            window.scrollTo(0,0);
         }
 
         function navigateTo(viewId) {
             document.querySelectorAll('.view-section').forEach(el => { el.style.display = 'none'; el.classList.remove('active'); });
-            
-            if(viewId === 'portal') {
-                document.getElementById('portal-view').style.display = 'flex';
-                document.querySelector('.back-btn').style.display = 'none';
-            } else {
+            if(viewId === 'portal') { document.getElementById('portal-view').style.display = 'flex'; document.querySelector('.back-btn').style.display = 'none'; }
+            else { 
                 const target = document.getElementById(viewId + (viewId.endsWith('view') ? '' : '-view'));
                 if(target) { target.style.display = 'block'; target.classList.add('active'); }
                 document.querySelector('.back-btn').style.display = 'block';
             }
-
             if(viewId === 'blog') runScanSimulation();
             if(viewId === 'kb') fetchKBTree();
             if(viewId === 'music') fetchMusicData();
             window.scrollTo(0,0);
         }
 
-        // Init
-        navigateTo('portal');
+        if(window.location.hash) handleHashChange(); else navigateTo('portal');
     </script>
 </body>
 </html>
