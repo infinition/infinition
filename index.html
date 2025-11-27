@@ -218,101 +218,242 @@
 
         /* Portal Home */
         #portal-view { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .portal-ring { width: 300px; height: 300px; border: 2px dashed rgba(255,255,255,0.1); border-top: 2px solid var(--neon-blue); border-radius: 50%; position: absolute; animation: spin 15s linear infinite; box-shadow: 0 0 15px rgba(19, 175, 240, 0.1); }
+        .portal-ring { width: 300px; height: 300px; border: 2px dashed rgba(255,255,255,0.1); border-top: 2px solid var(--neon-blue); border-radius: 50%; position: absolute; animation: spin 15s linear infinite; box-shadow: 0 0 15px rgba(19, 175, 240, 0.1); pointer-events: none;}
         .portal-ring::after { content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; border: 1px solid rgba(255, 107, 0, 0.2); border-bottom: 2px solid var(--neon-orange); border-radius: 50%; animation: spin 10s linear infinite reverse; }
-        .portal-title { font-family: var(--cyber-font); font-size: 4rem; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 107, 0, 0.3); z-index: 10; }
+        
+        .portal-title { 
+            font-family: var(--cyber-font); 
+            font-size: 4rem; 
+            margin-bottom: 0.5rem; 
+            text-shadow: 0 0 20px rgba(255, 107, 0, 0.3); 
+            z-index: 10; 
+            cursor: pointer;
+            transition: all 0.3s;
+            user-select: none;
+            position: relative;
+        }
+        
+        /* HOVER PADLOCK EFFECT */
+        .portal-title:hover::after {
+            content: '\f023'; /* FontAwesome Lock Icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 1.5rem;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            color: var(--neon-red);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        /* GLITCH ANIMATION CLASS */
+        .glitch-active {
+            animation: glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+            color: var(--neon-red);
+        }
+        .glitch-active::before,
+        .glitch-active::after {
+            content: "INFINITION";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color); /* Matches bg to hide main text partially */
+        }
+        .glitch-active::before {
+            left: 2px;
+            text-shadow: -1px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        .glitch-active::after {
+            left: -2px;
+            text-shadow: -1px 0 #00fff9;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+          0% { clip: rect(30px, 9999px, 10px, 0); }
+          20% { clip: rect(70px, 9999px, 90px, 0); }
+          40% { clip: rect(10px, 9999px, 50px, 0); }
+          60% { clip: rect(80px, 9999px, 20px, 0); }
+          80% { clip: rect(40px, 9999px, 60px, 0); }
+          100% { clip: rect(60px, 9999px, 80px, 0); }
+        }
+        @keyframes glitch-anim2 {
+          0% { clip: rect(10px, 9999px, 30px, 0); }
+          20% { clip: rect(90px, 9999px, 70px, 0); }
+          40% { clip: rect(50px, 9999px, 10px, 0); }
+          60% { clip: rect(20px, 9999px, 80px, 0); }
+          80% { clip: rect(60px, 9999px, 40px, 0); }
+          100% { clip: rect(80px, 9999px, 60px, 0); }
+        }
+        @keyframes glitch-skew {
+            0% { transform: skew(0deg); }
+            20% { transform: skew(-2deg); }
+            40% { transform: skew(2deg); }
+            60% { transform: skew(-1deg); }
+            80% { transform: skew(1deg); }
+            100% { transform: skew(0deg); }
+        }
+
+        /* HIDDEN DATA UNLOCK ANIMATION */
+        #secret-data {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 1rem;
+            z-index: 20;
+        }
+        #secret-data.data-unlocked {
+            max-height: 200px;
+            opacity: 1;
+            transform: translateY(0);
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .badges-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .portal-menu { display: flex; gap: 2rem; margin-top: 3rem; z-index: 10; flex-wrap: wrap; justify-content: center; }
         .portal-btn { background: rgba(13, 18, 22, 0.8); border: 1px solid var(--text-color); color: var(--text-color); padding: 1.5rem 2rem; min-width: 200px; cursor: pointer; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; gap: 10px; }
         .portal-btn:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.05); box-shadow: 0 0 30px rgba(0,0,0,0.5); }
         
         .music-trigger { position: absolute; bottom: 40px; right: 40px; color: rgba(255, 255, 255, 0.6); cursor: pointer; transition: all 0.3s; z-index: 20; font-size: 1.5rem; border: 1px solid rgba(255,255,255,0.2); padding: 10px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); }
         .music-trigger:hover { color: var(--neon-red); border-color: var(--neon-red); box-shadow: 0 0 15px var(--neon-red); transform: scale(1.1); }
-.music-frame-container {
-    width: 100%;
-    max-width: 660px;
-    margin: 2rem auto 4rem auto;
-    padding: 0;
-    background: #000;
-    border: 1px solid #000000;
-    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
-    border-radius: 12px;
-    overflow: hidden;
-}
+        .music-frame-container {
+            width: 100%;
+            max-width: 660px;
+            margin: 2rem auto 4rem auto;
+            padding: 0;
+            background: #000;
+            border: 1px solid #000000;
+            box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+            border-radius: 12px;
+            overflow: hidden;
+        }
 
-/* On s'assure que l'iframe remplit bien le conteneur */
-.music-frame-container iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
-    display: block; /* Évite les espaces fantômes en bas */
-}        
+        /* On s'assure que l'iframe remplit bien le conteneur */
+        .music-frame-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            display: block; /* Évite les espaces fantômes en bas */
+        }        
         .music-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
         .music-card { background: #0d1216; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; transition: all 0.3s ease; cursor: pointer; position: relative; }
         .music-card:hover { transform: translateY(-5px); border-color: var(--neon-red); box-shadow: 0 0 15px rgba(255, 0, 60, 0.3); }
         .album-cover { width: 100%; aspect-ratio: 1; object-fit: cover; filter: grayscale(60%); transition: 0.3s; }
         .music-card:hover .album-cover { filter: grayscale(0%); }
         .music-info { padding: 0.3rem; background: rgba(0,0,0,0.9); position: absolute; bottom: 0; left: 0; right: 0; border-top: 1px solid rgba(255,255,255,0.1); }
-.band-name {
-    color: #fff;
-    font-weight: bold;
-    display: flex;
-    text-transform: capitalize;    
-    font-size: 0.9rem;
-    justify-content: center;
-}        /* .album-name { color: var(--neon-red); font-size: 0.75rem; } */
-/* --- TOOLBAR BUTTONS --- */
-.tool-btn {
-    /* Base */
-    display: inline-flex;
-    align-items: center;
-    gap: 8px; /* Espace entre l'icône et le texte */
-    
-    /* Typo */
-    font-family: var(--code-font);
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #888; /* Gris par défaut (discret) */
-    
-    /* Box Model */
-    padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.03); /* Très léger fond */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure subtile */
-    border-radius: 4px; /* Coins légèrement arrondis */
-    
-    /* Comportement */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
+        .band-name {
+            color: #fff;
+            font-weight: bold;
+            display: flex;
+            text-transform: capitalize;    
+            font-size: 0.9rem;
+            justify-content: center;
+        }        /* .album-name { color: var(--neon-red); font-size: 0.75rem; } */
+        /* --- TOOLBAR BUTTONS --- */
+        .tool-btn {
+            /* Base */
+            display: inline-flex;
+            align-items: center;
+            gap: 8px; /* Espace entre l'icône et le texte */
+            
+            /* Typo */
+            font-family: var(--code-font);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #888; /* Gris par défaut (discret) */
+            
+            /* Box Model */
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.03); /* Très léger fond */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure subtile */
+            border-radius: 4px; /* Coins légèrement arrondis */
+            
+            /* Comportement */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
 
-/* --- HOVER EFFECT --- */
-.tool-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff; /* Texte blanc */
-    border-color: var(--neon-blue); /* Bordure s'allume en bleu */
-    box-shadow: 0 0 10px rgba(19, 175, 240, 0.1); /* Légère lueur */
-    transform: translateY(-1px);
-}
+        /* --- HOVER EFFECT --- */
+        .tool-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff; /* Texte blanc */
+            border-color: var(--neon-blue); /* Bordure s'allume en bleu */
+            box-shadow: 0 0 10px rgba(19, 175, 240, 0.1); /* Légère lueur */
+            transform: translateY(-1px);
+        }
 
-/* --- BOUTON FERMER (SPÉCIFIQUE) --- */
-/* Si tu veux que le bouton 'Close' soit rouge au survol */
-.tool-btn[onclick*="navigateTo('blog')"]:hover {
-    border-color: var(--neon-red);
-    color: var(--neon-red);
-    box-shadow: 0 0 10px rgba(255, 0, 60, 0.1);
-}
+        /* --- BOUTON FERMER (SPÉCIFIQUE) --- */
+        /* Si tu veux que le bouton 'Close' soit rouge au survol */
+        .tool-btn[onclick*="navigateTo('blog')"]:hover {
+            border-color: var(--neon-red);
+            color: var(--neon-red);
+            box-shadow: 0 0 10px rgba(255, 0, 60, 0.1);
+        }
 
-/* Gestion de l'icône à l'intérieur */
-.tool-btn i {
-    font-size: 0.9rem;
-    transition: transform 0.2s;
-}
+        /* Gestion de l'icône à l'intérieur */
+        .tool-btn i {
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
 
-/* Petit mouvement de l'icône au survol */
-.tool-btn:hover i {
-    transform: scale(1.1);
-}
+        /* Petit mouvement de l'icône au survol */
+        .tool-btn:hover i {
+            transform: scale(1.1);
+        }
+        /* Music Reveal Styles */
+        #music-lock-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            border: 1px dashed rgba(255,255,255,0.2);
+            border-radius: 10px;
+            background: rgba(0,0,0,0.5);
+        }
+        #music-content {
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+        .reveal-btn {
+            background: transparent;
+            border: 2px solid var(--neon-red);
+            color: var(--neon-red);
+            padding: 15px 30px;
+            font-family: var(--code-font);
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.2);
+        }
+        .reveal-btn:hover {
+            background: var(--neon-red);
+            color: black;
+            box-shadow: 0 0 30px rgba(255, 0, 60, 0.6);
+        }
+
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         @media (max-width: 768px) {
             h1.port-h1 { font-size: 2.5rem; }
@@ -341,7 +482,36 @@
 
     <section id="portal-view" class="view-section active">
         <div class="portal-ring"></div>
-        <h1 class="portal-title">INFINITION</h1>
+        <h1 class="portal-title" onclick="unlockData()" title="Click to unlock data">INFINITION</h1>
+        
+        <!-- HIDDEN UNLOCKABLE DATA -->
+        <div id="secret-data">
+            <div class="badges-row">
+                <a href="https://www.linkedin.com/in/fabienpolly" target="_blank">
+                    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/infinition" target="_blank">
+                    <img src="https://img.shields.io/badge/Username-infinition-blue?style=for-the-badge&logo=github" alt="GitHub Profile">
+                </a>
+                <a href="https://github.com/infinition" target="_blank">
+                    <img src="https://img.shields.io/github/stars/infinition?style=for-the-badge&color=orange" alt="GitHub stars">
+                </a>
+            </div>
+            <div class="badges-row">
+                <a href="https://www.reddit.com/r/Bjorn_CyberViking" target="_blank">
+                    <img src="https://img.shields.io/badge/Reddit-Bjorn__CyberViking-orange?style=for-the-badge&logo=reddit" alt="Reddit">
+                </a>
+                <a href="https://discord.com/invite/B3ZH9taVfT" target="_blank">
+                    <img src="https://img.shields.io/discord/1259976765829414972?label=Discord&logo=discord&style=for-the-badge&color=7289DA" alt="Discord">
+                </a>
+            </div>
+            <div class="badges-row">
+                <a href="https://www.buymeacoffee.com/infinition" target="_blank">
+                    <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" >
+                </a>
+            </div>
+        </div>
+
         <p style="letter-spacing: 5px; opacity: 0.7;">FABIEN POLLY</p>
         <div class="portal-menu">
             <button class="portal-btn" onclick="navigateTo('portfolio')"><i class="fas fa-user-astronaut"></i><span>PROFILE</span><small>ACCESS CV & PROJECTS</small></button>
@@ -426,11 +596,20 @@
         <div class="container">
             <h1 class="port-h1" style="text-align:center; color: var(--neon-red); text-shadow: 2px 2px 0 #000;">AUDIO FREQUENCIES</h1>
             <p style="text-align:center; opacity:0.7; margin-bottom: 2rem;">Current Rotation & Inspirations</p>
-            <div class="music-frame-container">
-                <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/fr/playlist/fab/pl.u-6mo44JmF4kgllW?theme=dark"></iframe>
+            
+            <div id="music-lock-screen">
+                <button class="reveal-btn" onclick="revealMusic()">
+                    <i class="fas fa-unlock-alt"></i> DECRYPT AUDIO SUBSYSTEM
+                </button>
             </div>
-            <h3 style="text-align:center; color:#fff; margin-top: 3rem; border-bottom:1px dashed #333; padding-bottom:10px;"> 🤘 BANDS 🤘</h3>
-            <div class="music-grid" id="music-grid"><div style="color:#666; text-align:center; width:100%;">Loading...</div></div>
+
+            <div id="music-content">
+                <div class="music-frame-container">
+                    <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/fr/playlist/fab/pl.u-6mo44JmF4kgllW?theme=dark"></iframe>
+                </div>
+                <h3 style="text-align:center; color:#fff; margin-top: 3rem; border-bottom:1px dashed #333; padding-bottom:10px;"> 🤘 BANDS 🤘</h3>
+                <div class="music-grid" id="music-grid"><div style="color:#666; text-align:center; width:100%;">Loading...</div></div>
+            </div>
         </div>
     </section>
 
@@ -445,6 +624,7 @@
         let currentFlashcards = [];
         let currentQuiz = null;
         let cardIndex = 0;
+        let cachedBandsHTML = null; // CACHE POUR LA MUSIQUE
 
         window.addEventListener('hashchange', handleHashChange);
         function handleHashChange() {
@@ -458,6 +638,64 @@
             else if (hash === '#kb') navigateTo('kb');
             else if (hash === '#music') navigateTo('music');
             else navigateTo('portal');
+        }
+        
+        // --- DATA UNLOCK ---
+        function playDecipherSound() {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(100, ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.1);
+            osc.frequency.exponentialRampToValueAtTime(100, ctx.currentTime + 0.2);
+            
+            // Add noise for texture
+            const bufferSize = ctx.sampleRate * 0.2; // 0.2 seconds
+            const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+            const noise = ctx.createBufferSource();
+            noise.buffer = buffer;
+            const noiseGain = ctx.createGain();
+            noiseGain.gain.value = 0.2;
+
+            osc.connect(gain);
+            noise.connect(noiseGain);
+            noiseGain.connect(gain);
+            gain.connect(ctx.destination);
+            
+            osc.start();
+            noise.start();
+            
+            gain.gain.setValueAtTime(0.5, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+            
+            osc.stop(ctx.currentTime + 0.3);
+            noise.stop(ctx.currentTime + 0.3);
+        }
+
+        function unlockData() {
+            const el = document.getElementById('secret-data');
+            const title = document.querySelector('.portal-title');
+
+            if (!el.classList.contains('data-unlocked')) {
+                playDecipherSound();
+                title.classList.add('glitch-active');
+                
+                setTimeout(() => {
+                    el.classList.add('data-unlocked');
+                }, 300);
+
+                setTimeout(() => {
+                    title.classList.remove('glitch-active');
+                }, 600);
+            } else {
+                el.classList.remove('data-unlocked');
+            }
         }
 
         function findAndOpenArticle(filename) {
@@ -558,7 +796,7 @@
             const shareUrl = window.location.href;
             const shareHtml = `
                             <div class="article-toolbar">
-                                <button class="tool-btn" onclick="share('twitter')"><i class="fa-brands fa-x-twitter"></i> Post </button>
+                                <button class="tool-btn" onclick="share('twitter')"><i class="fab fa-twitter"></i> Post </button>
                                 <button class="tool-btn" onclick="share('linkedin')"><i class="fab fa-linkedin"></i> Share</button>
                                 <button class="tool-btn" onclick="share('email')"><i class="fas fa-envelope"></i> Email</button>
                                 <button class="tool-btn" onclick="share('sms')"><i class="fas fa-comment-dots"></i> SMS</button>
@@ -598,11 +836,24 @@
         async function fetchReadmeImage(o,r,b) { try { const res = await fetch(`https://raw.githubusercontent.com/${o}/${r}/${b}/README.md`); if(!res.ok) return null; const t = await res.text(); const m = t.match(/!\[.*?\]\((.*?)\)|<img.*?src=["'](.*?)["']/); if(m) { let u=m[1]||m[2]; if(u&&!u.startsWith('http')) return `https://raw.githubusercontent.com/${o}/${r}/${b}/${u.startsWith('./')?u.substring(2):u}`; return u; } } catch(e){} return null; }
         async function fetchBandsList() { try { const r = await fetch(BANDS_FILE_URL); if(!r.ok) return []; const t = await r.text(); return t.split('\n').map(l=>l.trim()).filter(l=>l.length>0); } catch(e){ return []; } }
         
-// --- MUSIC API (ITUNES VIA PROXY) ---
+        // --- MUSIC API (CACHED) ---
+        function revealMusic() {
+            playDecipherSound();
+            document.getElementById('music-lock-screen').style.display = 'none';
+            document.getElementById('music-content').style.display = 'block';
+            fetchMusicData();
+        }
+
         async function fetchMusicData() {
             const container = document.getElementById('music-grid');
-            container.innerHTML = '';
             
+            // USE CACHE IF AVAILABLE
+            if (cachedBandsHTML) {
+                container.innerHTML = cachedBandsHTML;
+                return;
+            }
+
+            container.innerHTML = '';
             const bands = await fetchBandsList();
             
             if (bands.length === 0) { 
@@ -612,23 +863,15 @@
 
             for (const band of bands) {
                 try {
-                    // 1. On demande 5 résultats pour avoir du choix (limit=5)
                     const searchUrl = `https://corsproxy.io/?url=` + encodeURIComponent(`https://itunes.apple.com/search?term=${band}&entity=album&limit=5`);
-                    
                     const res = await fetch(searchUrl);
                     const data = await res.json();
 
                     if (data.results && data.results.length > 0) {
-                        // 2. FILTRAGE INTELLIGENT
-                        // On cherche le premier album où le nom de l'artiste API inclut le nom de ton groupe
-                        // Ex: Si on cherche "Daft Punk", on ignore "The Weeknd" même si c'est le résultat #1
                         let bestMatch = data.results.find(album => 
                             album.artistName.toLowerCase().includes(band.toLowerCase())
                         );
-
-                        // Fallback : Si on ne trouve pas de correspondance exacte, on prend le premier résultat par défaut
                         const album = bestMatch || data.results[0];
-
                         const image = album.artworkUrl100 
                             ? album.artworkUrl100.replace('100x100bb', '600x600bb') 
                             : 'assets/placeholder-artist.png';
@@ -636,9 +879,6 @@
                         const card = document.createElement('div');
                         card.className = 'music-card';
                         card.onclick = () => window.open(album.artistViewUrl || album.collectionViewUrl, '_blank');
-
-                        // 3. AFFICHAGE : On utilise ${band} (ta liste) pour le titre principal
-                        // pour être sûr que le nom est correct, et album.collectionName pour l'album.
                         card.innerHTML = `
                             <img src="${image}" class="album-cover" alt="${band}">
                             <div class="music-info">
@@ -651,7 +891,10 @@
                     console.warn(`Could not fetch music for ${band}`, e); 
                 }
             }
+            // SAVE TO CACHE
+            cachedBandsHTML = container.innerHTML;
         }
+
         async function fetchAllMDRecursively(path) {
             let files = []; try { const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`); if(!r.ok) return []; const items = await r.json(); for(const i of items) { if(i.type==='dir') files = files.concat(await fetchAllMDRecursively(i.path)); else if(i.name.endsWith('.md')) files.push(i); } } catch(e){} return files;
         }
@@ -791,9 +1034,15 @@
                 if(target) { target.style.display = 'block'; target.classList.add('active'); }
                 document.querySelector('.back-btn').style.display = 'block';
             }
+            
+            // UPDATE URL HISTORY for better navigation
+            if(viewId !== 'portal' && window.location.hash !== '#' + viewId && !window.location.hash.startsWith('#article:')) {
+                 history.pushState(null, null, '#' + viewId);
+            }
+
             if(viewId === 'blog') runScanSimulation();
             if(viewId === 'kb') fetchKBTree();
-            if(viewId === 'music') fetchMusicData();
+            // Removed direct music fetch, now handled by reveal button
             window.scrollTo(0,0);
         }
 
