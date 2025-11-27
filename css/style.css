@@ -2160,9 +2160,18 @@ body.audio-playing .audio-toggle-btn {
 
     .kb-sidebar {
         width: 100%;
-        height: 200px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        position: relative;
+
+        /* SUPPRESSION des styles qui cachaient la sidebar */
+        max-height: unset;
+        opacity: 1;
+        overflow: visible;
+        transform: none;
+        margin-top: 10px;
+        pointer-events: auto;
     }
 
     .music-trigger {
