@@ -32,7 +32,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background-image:
-        linear-gradient(rgba(5, 10, 14, 0.96), rgba(5, 10, 14, 0.98)),
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         linear-gradient(0deg, rgba(255, 107, 0, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 107, 0, 0.03) 1px, transparent 1px);
     background-size: 100% 100%, 40px 40px, 40px 40px;
@@ -1527,13 +1527,13 @@ body.audio-playing .audio-toggle-btn {
     width: 200vw;
     height: 200vh;
     background-image:
-        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(0, 242, 255, 0.11) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.11) 1px, transparent 1px);
     background-size: 50px 50px;
     transform: rotateX(60deg) translateY(-20%) translateZ(-200px) translateX(-25%);
     animation: grid-move 30s linear infinite;
     z-index: 0;
-    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+    mask-image: none !important;
     pointer-events: none;
 }
 
@@ -1963,15 +1963,222 @@ body.audio-playing .audio-toggle-btn {
 
     .kb-sidebar {
         width: 100%;
-        height: 200px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        position: relative;
+
+        /* 2. ÉTAT CACHÉ (C'est ce qui manquait) */
+        max-height: 0;
+        /* Hauteur nulle au départ */
+        opacity: 0;
+        /* Invisible */
+        overflow: hidden;
+        /* Empêche le contenu de déborder */
+        transform: translateY(10px);
+        /* Légèrement décalé vers le bas */
+        margin-top: 0;
+        /* Pas de marge quand c'est fermé */
+        pointer-events: none;
+        /* Empêche de cliquer sur les liens invisibles */
+
+        /* 3. Animation fluide */
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .music-trigger {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
+    /* ÉTAT DÉVERROUILLÉ (Activé par JS via la classe .data-unlocked) */
+    #secret-data.data-unlocked {
+        max-height: 200px;
+        /* Suffisamment grand pour afficher le contenu */
+        opacity: 1;
+        /* Visible */
+        transform: translateY(0);
+        /* Revient à sa place */
+        margin-top: 15px;
+        /* Ajoute l'espace */
+        margin-bottom: 20px;
+        pointer-events: auto;
+        /* Réactive les clics */
     }
-}
+
+    /* badges individuels */
+    .cyber-badge {
+        color: rgba(255, 255, 255, 0.5);
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border-bottom: 1px solid transparent;
+    }
+
+    .cyber-badge:hover {
+        color: var(--neon-blue);
+        text-shadow: 0 0 8px var(--neon-blue);
+        border-bottom: 1px solid var(--neon-blue);
+        transform: translateY(-2px);
+    }
+
+    .cyber-badge i {
+        font-size: 0.9em;
+    }
+
+    /* --- UI DU BAS (Menu Futuriste) --- */
+    .portal-menu {
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 800px;
+        padding: 0 20px;
+        flex-wrap: wrap;
+    }
+
+    .portal-btn {
+        background: rgba(10, 15, 20, 0.7);
+        border: 1px solid rgba(0, 243, 255, 0.3);
+        color: var(--neon-blue);
+        padding: 15px 25px;
+        min-width: 140px;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-family: 'Share Tech Mono', monospace;
+        position: relative;
+        backdrop-filter: blur(4px);
+        clip-path: polygon(15px 0,
+                100% 0,
+                100% calc(100% - 15px),
+                calc(100% - 15px) 100%,
+                0 100%,
+                0 15px);
+    }
+
+    .portal-btn span {
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .portal-btn small {
+        font-size: 0.6rem;
+        opacity: 0.6;
+        letter-spacing: 1px;
+    }
+
+    .portal-btn i {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Hover Effect Scanline */
+    .portal-btn:hover {
+        background: rgba(0, 243, 255, 0.15);
+        border-color: var(--neon-blue);
+        box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+        transform: translateY(-5px);
+    }
+
+    .portal-btn:hover i {
+        color: var(--neon-blue);
+        text-shadow: 0 0 10px var(--neon-blue);
+    }
+
+    /* Barre décorative en bas des boutons */
+    .portal-btn::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+        opacity: 0.5;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+        h1.port-h1 {
+            font-size: 2.5rem;
+        }
+
+        .container::before {
+            display: none;
+        }
+
+        .portal-menu {
+            gap: 10px;
+        }
+
+        .portal-btn {
+            min-width: 30%;
+            padding: 10px;
+        }
+
+        .portal-btn span {
+            font-size: 0.8rem;
+        }
+
+        .portal-btn i {
+            font-size: 1.2rem;
+        }
+
+        .portal-title {
+            font-size: 3rem;
+            top: 20px;
+        }
+
+        /* On remonte un peu le centre sur mobile */
+        .reactor-container {
+            top: 50%;
+        }
+
+        .article-entry {
+            flex-direction: column;
+        }
+
+        .article-thumb {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 1rem;
+        }
+
+        .kb-container {
+            flex-direction: column;
+        }
+
+        .kb-sidebar {
+            width: 100%;
+            height: 200px;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .music-trigger {
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Mobile Music Grid: 3 per row */
+        .music-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .band-name {
+            font-size: 0.6rem;
+            padding: 2px;
+        }
+    }
