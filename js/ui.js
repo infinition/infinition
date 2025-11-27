@@ -133,7 +133,10 @@ async function openArticle(article) {
             ${interactiveHtml}
             ${article.image ? `<img src="${article.image}" style="max-width:100%;border:1px solid #333;margin-bottom:2rem;">` : ''}
             <div class="article-body">${marked.parse(cleanContent)}</div>
-            <div style="text-align:center;margin-top:3rem;"><button class="btn-link" onclick="navigateTo('blog')">BACK TO LOGS</button></div>
+            <div style="text-align:center;margin-top:3rem;">
+                <button class="btn-link" onclick="navigateTo('blog')">BACK TO LOGS</button>
+                <button class="btn-link" onclick="openInKB('${article.file}')" style="margin-left:10px; border-color:var(--neon-purple); color:var(--neon-purple);">SEE IN KB</button>
+            </div>
         </div>`;
     window.scrollTo(0, 0);
 }
