@@ -78,6 +78,9 @@ if (typeof window !== 'undefined') {
     init();
 }
 
+
+
+
 // --- CORE RENDER ---
 function renderGrid(data = library) {
     grid.innerHTML = '';

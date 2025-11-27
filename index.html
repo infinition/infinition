@@ -8,15 +8,288 @@
         content="Portal of Fabien Polly (Infinition) - AI Researcher, Quantum Expert, Hacker, 3D Artist & Skater">
     <title>FABIEN POLLY | INFINITION</title>
 
+    <!-- Polices existantes -->
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ajout Police "Hacker" pour l'UI du portail -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+    <!-- Ton CSS externe conservé -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS SPÉCIFIQUE AU NOUVEAU PORTAIL QUANTIQUE -->
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --neon-purple: #bc13fe;
+            --neon-green: #0aff00;
+            --alert-red: #ff0055;
+            --bg-dark: #05050a;
+            --core-size: 120px;
+            --ring-size: 340px;
+        }
+
+        /* Override spécifique pour la vue portail afin d'avoir la 3D et le fond hacker */
+        #portal-view {
+            background-color: var(--bg-dark);
+            perspective: 1000px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* --- 1. ARRIÈRE-PLAN GRID (HACKER VIBE) --- */
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200vw;
+            height: 200vh;
+            background-image:
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: rotateX(60deg) translateY(-20%) translateZ(-200px) translateX(-25%);
+            animation: grid-move 30s linear infinite;
+            z-index: 0;
+            mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+            pointer-events: none;
+        }
+
+        /* --- 2. STRUCTURE DU RÉACTEUR --- */
+        .reactor-container {
+            position: absolute;
+            /* Centré derrière le titre */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: var(--ring-size);
+            height: var(--ring-size);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            z-index: 1;
+            /* Derrière le texte mais devant la grille */
+            transition: all 0.5s ease-out;
+            pointer-events: none;
+            /* Laisse passer les clics vers le titre */
+        }
+
+        /* --- 3. CŒUR QUANTIQUE --- */
+        .quantum-core {
+            width: var(--core-size);
+            height: var(--core-size);
+            background: radial-gradient(circle, #fff 0%, var(--neon-blue) 40%, transparent 70%);
+            border-radius: 50%;
+            box-shadow:
+                0 0 30px var(--neon-blue),
+                0 0 60px var(--neon-purple),
+                inset 0 0 20px #fff;
+            animation: core-pulse 3s ease-in-out infinite alternate;
+            position: relative;
+            z-index: 20;
+        }
+
+        .quantum-core::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            filter: blur(4px);
+            opacity: 0.7;
+            animation: internal-instability 0.2s infinite;
+        }
+
+        /* --- 4. BOUCLIERS --- */
+        .shield-layer {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            pointer-events: none;
+            transition: border-color 0.5s, box-shadow 0.5s;
+        }
+
+        .segment-1 {
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid var(--neon-purple);
+            border-bottom: 2px dashed var(--neon-purple);
+            box-shadow: 0 0 10px rgba(188, 19, 254, 0.2);
+            animation: spin-tilt 20s linear infinite;
+        }
+
+        .segment-2 {
+            width: 80%;
+            height: 80%;
+            border-left: 4px solid var(--neon-blue);
+            border-right: 1px dotted var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+            animation: spin-tilt 10s linear infinite reverse;
+        }
+
+        .segment-3 {
+            width: 60%;
+            height: 60%;
+            border: 1px dashed var(--neon-green);
+            opacity: 0.6;
+            animation: spin 5s linear infinite;
+        }
+
+        .particle {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            animation: spin 8s linear infinite;
+        }
+
+        .particle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            background: var(--neon-green);
+            box-shadow: 0 0 10px var(--neon-green);
+            border-radius: 50%;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes grid-move {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 0 50px;
+            }
+        }
+
+        @keyframes core-pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        @keyframes internal-instability {
+            0% {
+                transform: translate(1px, 1px);
+            }
+
+            50% {
+                transform: translate(-1px, -1px);
+            }
+
+            100% {
+                transform: translate(1px, 1px);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin-tilt {
+            0% {
+                transform: rotate3d(1, 1, 1, 0deg);
+            }
+
+            100% {
+                transform: rotate3d(1, 1, 1, 360deg);
+            }
+        }
+
+        /* --- MODE ACTIF (MUSIQUE ON) --- */
+        .reactor-container.active-mode .quantum-core {
+            background: radial-gradient(circle, #fff 0%, var(--alert-red) 50%, transparent 70%);
+            box-shadow: 0 0 50px var(--alert-red), 0 0 100px var(--alert-red);
+            animation: core-pulse 0.2s ease-in-out infinite alternate;
+        }
+
+        .reactor-container.active-mode .segment-1 {
+            border-color: var(--alert-red);
+            border-bottom-color: transparent;
+            animation-duration: 2s;
+            box-shadow: 0 0 20px var(--alert-red);
+        }
+
+        .reactor-container.active-mode .segment-2 {
+            border-color: #ff9900;
+            animation-duration: 1.5s;
+        }
+
+        .reactor-container.active-mode .particle::before {
+            background: var(--alert-red);
+            box-shadow: 0 0 15px var(--alert-red);
+        }
+
+        .reactor-container.active-mode {
+            animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) infinite;
+        }
+
+        @keyframes shake {
+
+            10%,
+            90% {
+                transform: translate(-51%, -50%);
+            }
+
+            20%,
+            80% {
+                transform: translate(-49%, -50%);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate(-52%, -50%);
+            }
+
+            40%,
+            60% {
+                transform: translate(-48%, -50%);
+            }
+        }
+
+        /* Ajustements UI pour la lisibilité sur le nouveau portail */
+        .portal-title {
+            position: relative;
+            z-index: 10;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .portal-menu {
+            position: relative;
+            z-index: 10;
+        }
+
+        .sys-bar {
+            z-index: 100;
+        }
+    </style>
 </head>
+
+<!-- Audio -->
+<audio id="cymatics" preload="auto">
+    <source src="audio/cymatics.mp3" type="audio/mpeg">
+</audio>
 
 <body>
 
@@ -27,11 +300,27 @@
     <div class="sys-bar">
         <div class="sys-id">USER: GUEST // ID: 0xPOLLY_PORTAL</div>
         <div class="back-btn" onclick="navigateTo('portal')"><i class="fas fa-arrow-left"></i> RETURN TO ROOT</div>
-        <div class="sys-status"><i class="fas fa-circle" style="font-size: 8px;"></i> SYSTEM ONLINE</div>
+        <div class="sys-status">
+            <i class="fas fa-circle" style="font-size: 8px;"></i> SYSTEM ONLINE
+            <button id="audio-toggle" class="audio-toggle-btn" title="Audio Control">
+                <i class="fas fa-wave-square"></i>
+            </button>
+        </div>
     </div>
 
     <section id="portal-view" class="view-section active">
-        <div class="portal-ring"></div>
+        <!-- Grille Hacker en fond -->
+        <div class="cyber-grid"></div>
+
+        <!-- Le Nouveau Réacteur (Remplace .portal-ring) -->
+        <div class="reactor-container" id="reactor">
+            <div class="shield-layer segment-1"></div>
+            <div class="shield-layer segment-2"></div>
+            <div class="shield-layer segment-3"></div>
+            <div class="particle"></div>
+            <div class="quantum-core"></div>
+        </div>
+
         <h1 class="portal-title" onclick="unlockData()" title="Click to unlock data">INFINITION</h1>
 
         <!-- HIDDEN UNLOCKABLE DATA -->
@@ -69,7 +358,8 @@
             </div>
         </div>
 
-        <p style="letter-spacing: 5px; opacity: 0.7;">FABIEN POLLY</p>
+        <p style="letter-spacing: 5px; opacity: 0.7; position: relative; z-index: 10;">FABIEN POLLY</p>
+
         <div class="portal-menu">
             <button class="portal-btn" onclick="navigateTo('portfolio')"><i
                     class="fas fa-user-astronaut"></i><span>PROFILE</span><small>ACCESS CV & PROJECTS</small></button>
@@ -78,12 +368,15 @@
             <button class="portal-btn" onclick="navigateTo('kb')"><i
                     class="fas fa-network-wired"></i><span>KNOWLEDGE</span><small>DOCUMENTATION</small></button>
         </div>
-        <div class="music-trigger" onclick="navigateTo('music')" title="Audio Frequency"><i class="fas fa-music"></i>
+        <div class="bottom-icons-container" style="z-index: 100;">
+            <div class="music-trigger" onclick="window.location.href='csslib.html'" title="CSS Library"><i
+                    class="fas fa-palette"></i></div>
+            <div class="music-trigger" onclick="navigateTo('music')" title="Audio Frequency"><i
+                    class="fas fa-music"></i></div>
         </div>
-        <div class="music-trigger" onclick="window.location.href='csslib.html'" title="CSS Library"
-            style="right: 80px;"><i class="fas fa-palette"></i></div>
     </section>
 
+    <!-- SECTION PORTFOLIO -->
     <section id="portfolio-view" class="view-section">
         <main class="container">
             <div style="padding-top: 2rem; margin-bottom: 4rem;">
@@ -98,8 +391,7 @@
                     intersection: I maintain my executive role as a <strong>Cyber Director & CISO</strong>, while
                     simultaneously pushing the boundaries of technology as an <strong>Independent Researcher</strong> in
                     <strong>Quantum AI & Post-Quantum Security</strong>.<br><em>"I protect nuclear secrets by day and
-                        build digital consciousness by night."</em>
-                </p>
+                        build digital consciousness by night."</em></p>
                 <div style="margin-top: 2rem;">
                     <a href="https://www.linkedin.com/in/fabienpolly/" class="btn-link btn-oxford"><i
                             class="fab fa-linkedin"></i> LinkedIn</a>
@@ -225,6 +517,7 @@
         </main>
     </section>
 
+    <!-- SECTION BLOG -->
     <section id="blog-view" class="view-section">
         <div class="container">
             <div class="blog-header">
@@ -244,6 +537,7 @@
         <div class="container" id="article-view"></div>
     </section>
 
+    <!-- SECTION KB -->
     <section id="kb-view" class="view-section" style="padding-top: 60px; padding-bottom: 0;">
         <div class="kb-container">
             <div class="kb-sidebar">
@@ -265,6 +559,7 @@
         </div>
     </section>
 
+    <!-- SECTION MUSIC -->
     <section id="music-view" class="view-section">
         <div class="container">
             <h1 class="port-h1" style="text-align:center; color: var(--neon-red); text-shadow: 2px 2px 0 #000;">AUDIO
@@ -295,11 +590,96 @@
         </div>
     </section>
 
+    <!-- SCRIPTS EXTERNES CONSERVÉS -->
     <script src="js/config.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/api.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- SCRIPT D'ANIMATION ET AUDIO -->
+    <script>
+        let cymaticsStarted = false;
+
+        // Fonction mise à jour pour gérer le RÉACTEUR
+        function setRingActive(active) {
+            const reactor = document.getElementById('reactor');
+            if (!reactor) return;
+
+            if (active) {
+                reactor.classList.add('active-mode'); // Déclenche le mode Overclock/Rouge
+            } else {
+                reactor.classList.remove('active-mode'); // Retour au mode Bleu
+            }
+        }
+
+        function startCymatics() {
+            if (cymaticsStarted) return;
+            cymaticsStarted = true;
+
+            const audio = document.getElementById("cymatics");
+            const toggleBtn = document.getElementById("audio-toggle");
+
+            if (!audio) {
+                console.error("Audio #cymatics introuvable");
+                return;
+            }
+
+            audio.volume = 0.65;
+
+            audio.play().then(() => {
+                if (toggleBtn) {
+                    toggleBtn.style.display = "inline-flex";
+                    toggleBtn.innerHTML = '<i class="fas fa-wave-square"></i> MUTE';
+                }
+                setRingActive(true); // Active l'animation du réacteur
+            }).catch(err => {
+                console.log("Autoplay bloqué : ", err);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mock de navigateTo si js/main.js n'est pas là pour le test
+            if (typeof navigateTo === 'undefined') {
+                window.navigateTo = function (id) {
+                    console.log("Navigation simulée vers : " + id);
+                    document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+                    const target = document.getElementById(id + '-view');
+                    if (target) target.classList.add('active');
+                };
+            }
+
+            const title = document.querySelector('.portal-title');
+            if (title) {
+                title.addEventListener('click', startCymatics);
+            }
+
+            // Déclenche au clic n'importe où la première fois
+            document.body.addEventListener('click', startCymatics, { once: true });
+
+            const audioToggleBtn = document.getElementById('audio-toggle');
+            if (audioToggleBtn) {
+                audioToggleBtn.style.display = "none";
+
+                audioToggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Empêche de relancer startCymatics via le body
+                    const audio = document.getElementById("cymatics");
+                    if (!audio) return;
+
+                    if (audio.paused) {
+                        audio.play().then(() => {
+                            audioToggleBtn.innerHTML = '<i class="fas fa-wave-square"></i> MUTE';
+                            setRingActive(true);
+                        });
+                    } else {
+                        audio.pause();
+                        audioToggleBtn.innerHTML = '<i class="fas fa-play"></i> PLAY';
+                        setRingActive(false);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

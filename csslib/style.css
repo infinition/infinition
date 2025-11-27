@@ -734,6 +734,8 @@ input.tags-input:focus {
     animation: fadein 0.4s forwards, fadeout 0.4s 2.5s forwards;
 }
 
+
+
 @keyframes fadein {
     from {
         opacity: 0;
