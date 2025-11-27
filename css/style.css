@@ -1220,6 +1220,7 @@ h2.port-h2 {
 .music-trigger {
     color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
+
     transition: all 0.3s;
     z-index: 20;
     font-size: 1.5rem;
@@ -1404,7 +1405,7 @@ h2.port-h2 {
     gap: 25px;
     flex-direction: row;
     position: relative;
-    top: 75px;
+    top: 40px;
     margin-top: 15px;
 }
 
@@ -1765,12 +1766,44 @@ body.audio-playing .audio-toggle-btn {
 
 /* --- BADGES "DATA STREAM" --- */
 #secret-data {
+    /* 1. Layout (On garde votre structure) */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
     position: relative;
-    margin-top: 10px;
+
+    /* 2. ÉTAT CACHÉ (C'est ce qui manquait) */
+    max-height: 0;
+    /* Hauteur nulle au départ */
+    opacity: 0;
+    /* Invisible */
+    overflow: hidden;
+    /* Empêche le contenu de déborder */
+    transform: translateY(10px);
+    /* Légèrement décalé vers le bas */
+    margin-top: 0;
+    /* Pas de marge quand c'est fermé */
+    pointer-events: none;
+    /* Empêche de cliquer sur les liens invisibles */
+
+    /* 3. Animation fluide */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ÉTAT DÉVERROUILLÉ (Activé par JS via la classe .data-unlocked) */
+#secret-data.data-unlocked {
+    max-height: 200px;
+    /* Suffisamment grand pour afficher le contenu */
+    opacity: 1;
+    /* Visible */
+    transform: translateY(0);
+    /* Revient à sa place */
+    margin-top: 15px;
+    /* Ajoute l'espace */
+    margin-bottom: 20px;
+    pointer-events: auto;
+    /* Réactive les clics */
 }
 
 /* badges individuels */
@@ -1905,7 +1938,8 @@ body.audio-playing .audio-toggle-btn {
     }
 
     .portal-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        top: 20px;
     }
 
     /* On remonte un peu le centre sur mobile */
