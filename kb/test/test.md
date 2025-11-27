@@ -5,7 +5,8 @@ This is a test article for the knowledge base module.
 This article is intended to verify the functionality of the knowledge base system. It includes sample text and formatting to ensure that articles are rendered correctly within the application.
 
 ### Image 
-![Test Article Image](https://via.placeholder.com/600x300.png?text=Test+Article+Image)
+<img width="104" height="104" alt="bjorn-removebg-preview" src="https://github.com/user-attachments/assets/681893e1-1db4-4372-ac51-d8d460ea352c" />
+
 ### Code Snippet
 ```python
 def test_function():
