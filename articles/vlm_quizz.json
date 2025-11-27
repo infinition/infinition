@@ -1,15 +1,11 @@
 [
     {
-        "question": "What is the Uncertainty Principle?",
-        "answer": "We cannot know both position and momentum of a particle with perfect accuracy."
-    },
-    {
-        "question": "Who formulated the wave equation?",
-        "answer": "Erwin Schrödinger"
-    },
-    {
-        "question": "What is a Qubit?",
-        "answer": "The basic unit of quantum information."
+        "question": "Quelle est la principale caractéristique de la physique quantique mentionnée dans le texte ?",
+        "options": [
+            { "text": "Elle permet de comprendre le comportement des objets macroscopiques.", "correct": false },
+            { "text": "Elle a été formalisée au 18ème siècle.", "correct": false },
+            { "text": "Elle décrit les particules comme des ondes délocalisées dans l'espace.", "correct": true },
+            { "text": "Elle est basée sur le principe de la cocotte-minute.", "correct": false }
+        ]
     }
 ]
-
