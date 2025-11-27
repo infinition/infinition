@@ -127,13 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // 1. Check if we are in Portal View
         const portalView = document.getElementById('portal-view');
         // Check if portal view exists and is active (visible)
-        // We check style.display because classList might not be enough if managed by JS
         const isActive = portalView && (portalView.classList.contains('active') || getComputedStyle(portalView).display !== 'none');
 
         if (!isActive) return;
 
         // 2. Check if the click is on an interactive element
-        if (e.target.closest('button, a, input, textarea, select, .back-btn, .music-trigger, .portal-btn')) {
+        // We explicitly check for the audio toggle button ID as well to be safe
+        if (e.target.closest('button, a, input, textarea, select, .back-btn, .music-trigger, .portal-btn, #audio-toggle')) {
             return;
         }
 
