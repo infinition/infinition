@@ -10,6 +10,7 @@ function handleHashChange() {
     else if (hash === '#blog') navigateTo('blog');
     else if (hash === '#kb') navigateTo('kb');
     else if (hash === '#music') navigateTo('music');
+    else if (hash === '#csslib') navigateTo('csslib');
     else navigateTo('portal');
 }
 
@@ -34,6 +35,7 @@ function navigateTo(viewId) {
 
     if (viewId === 'blog') runScanSimulation();
     if (viewId === 'kb') initKB();
+    if (viewId === 'csslib') initCSSLib();
     // Removed direct music fetch, now handled by reveal button
     window.scrollTo(0, 0);
 }

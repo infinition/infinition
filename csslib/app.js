@@ -34,24 +34,27 @@ let currentEditId = null;
 let currentTab = 'html';
 let initialEditorState = {};
 
-const grid = document.getElementById('grid');
-const searchInput = document.getElementById('search-input');
-const modal = document.getElementById('modal-overlay');
-const modalPreview = document.getElementById('modal-preview-host');
-const tweaksPanel = document.getElementById('tweaks-panel');
-
-const inputs = {
-    title: document.getElementById('edit-title'),
-    tags: document.getElementById('edit-tags'),
-    html: document.getElementById('code-html'),
-    css: document.getElementById('code-css'),
-    js: document.getElementById('code-js'),
-    notes: document.getElementById('code-notes')
-};
+// Elements will be fetched in initCSSLib or on demand to avoid null references before DOM load
+let grid, searchInput, modal, modalPreview, tweaksPanel, inputs;
 
 // --- INIT ---
-// --- INIT ---
-async function init() {
+async function initCSSLib() {
+    // Re-fetch elements in case they weren't ready
+    grid = document.getElementById('csslib-grid');
+    searchInput = document.getElementById('csslib-search');
+    modal = document.getElementById('csslib-modal');
+    modalPreview = document.getElementById('csslib-preview-host');
+    tweaksPanel = document.getElementById('csslib-tweaks-panel');
+
+    inputs = {
+        title: document.getElementById('csslib-edit-title'),
+        tags: document.getElementById('csslib-edit-tags'),
+        html: document.getElementById('csslib-code-html'),
+        css: document.getElementById('csslib-code-css'),
+        js: document.getElementById('csslib-code-js'),
+        notes: document.getElementById('csslib-code-notes')
+    };
+
     try {
         // Try fetching local JSON first
         const res = await fetch('csslib/csslib.json');
@@ -61,28 +64,16 @@ async function init() {
             throw new Error("File not found or network error");
         }
     } catch (e) {
-        console.warn("Could not load csslib.json (likely due to file:// protocol restriction or missing file). Falling back to localStorage.", e);
+        console.warn("Could not load csslib.json. Falling back to localStorage.", e);
         library = JSON.parse(localStorage.getItem('ultimaLibData')) || [];
     }
 
-    // Ensure DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => renderGrid());
-    } else {
-        renderGrid();
-    }
+    renderGrid();
 }
-
-// Call init only if we are in a browser environment
-if (typeof window !== 'undefined') {
-    init();
-}
-
-
-
 
 // --- CORE RENDER ---
 function renderGrid(data = library) {
+    if (!grid) return;
     grid.innerHTML = '';
     if (data.length === 0) {
         grid.innerHTML = '<div style="color:#555; grid-column: 1/-1; text-align:center; padding-top:50px;">Aucun résultat trouvé 🕵️‍♂️</div>';
@@ -90,18 +81,18 @@ function renderGrid(data = library) {
     }
     data.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'card';
+        card.className = 'csslib-card';
 
         const tagsHtml = (item.tags && item.tags.length)
             ? item.tags.map(t => `<span class="tag-pill">${t.trim()}</span>`).join('')
             : '';
 
         card.innerHTML = `
-            <div class="card-preview" id="preview-${item.id}"></div>
-            <div class="card-info">
-                <div class="card-header-row"><div class="card-title">${item.title}</div></div>
+            <div class="csslib-card-preview" id="preview-${item.id}"></div>
+            <div class="csslib-card-info">
+                <div class="card-header-row"><div class="csslib-card-title">${item.title}</div></div>
                 <div class="tags-container">${tagsHtml}</div>
-                <div class="card-actions">
+                <div class="csslib-card-actions">
                     <button class="btn-icon" onclick="copyCode(${item.id}, 'css')">CSS</button>
                     <button class="btn-icon" onclick="copyCode(${item.id}, 'html')">HTML</button>
                     <button class="btn-icon" onclick="openEditor(${item.id})">✎</button>
@@ -128,6 +119,7 @@ function renderShadow(container, item) {
 }
 
 function filterGrid() {
+    if (!searchInput) return;
     const term = searchInput.value.toLowerCase();
     const filtered = library.filter(item =>
         item.title.toLowerCase().includes(term) ||
@@ -136,13 +128,14 @@ function filterGrid() {
     renderGrid(filtered);
 
     // Toggle clear button
-    const clearBtn = document.getElementById('clear-search-btn');
+    const clearBtn = document.getElementById('csslib-clear-btn');
     if (clearBtn) {
         clearBtn.style.display = term.length > 0 ? 'flex' : 'none';
     }
 }
 
 function clearSearch() {
+    if (!searchInput) return;
     searchInput.value = '';
     filterGrid();
     searchInput.focus();
@@ -150,7 +143,7 @@ function clearSearch() {
 
 // --- TAG DROPDOWN LOGIC ---
 function toggleTagMenu() {
-    const dropdown = document.getElementById('tag-dropdown');
+    const dropdown = document.getElementById('csslib-tag-dropdown');
     if (dropdown.classList.contains('active')) {
         hideDropdown();
     } else {
@@ -159,7 +152,7 @@ function toggleTagMenu() {
 }
 
 function showDropdown() {
-    const dropdown = document.getElementById('tag-dropdown');
+    const dropdown = document.getElementById('csslib-tag-dropdown');
     dropdown.innerHTML = '';
 
     // Collect all unique tags
@@ -193,15 +186,15 @@ function showDropdown() {
 }
 
 function hideDropdown() {
-    const dropdown = document.getElementById('tag-dropdown');
-    dropdown.classList.remove('active');
+    const dropdown = document.getElementById('csslib-tag-dropdown');
+    if (dropdown) dropdown.classList.remove('active');
     document.removeEventListener('click', closeDropdownOnClickOutside);
 }
 
 function closeDropdownOnClickOutside(e) {
-    const dropdown = document.getElementById('tag-dropdown');
-    const btn = document.getElementById('tag-menu-btn');
-    if (!dropdown.contains(e.target) && !btn.contains(e.target)) {
+    const dropdown = document.getElementById('csslib-tag-dropdown');
+    const btn = document.getElementById('csslib-tag-btn');
+    if (dropdown && btn && !dropdown.contains(e.target) && !btn.contains(e.target)) {
         hideDropdown();
     }
 }
@@ -209,7 +202,12 @@ function closeDropdownOnClickOutside(e) {
 // --- EDITOR LOGIC ---
 function openEditor(id = null) {
     currentEditId = id;
+    if (!modal) modal = document.getElementById('csslib-modal');
     modal.classList.add('active');
+
+    // Ensure inputs are initialized
+    if (!inputs) initCSSLib();
+
     if (id) {
         const item = library.find(x => x.id === id);
         inputs.title.value = item.title;
@@ -232,7 +230,7 @@ function openEditor(id = null) {
 }
 
 function closeEditor() {
-    modal.classList.remove('active');
+    if (modal) modal.classList.remove('active');
     currentEditId = null;
 }
 
@@ -255,6 +253,7 @@ function onCodeChange(type) {
 }
 
 function updatePreview() {
+    if (!modalPreview) modalPreview = document.getElementById('csslib-preview-host');
     if (!modalPreview.shadowRoot) modalPreview.attachShadow({ mode: 'open' });
     modalPreview.shadowRoot.innerHTML = `
         <style>
@@ -500,7 +499,7 @@ function saveItem() {
 }
 function deleteItem(id) { if (confirm('Supprimer ?')) { library = library.filter(x => x.id !== id); saveToStorage(); filterGrid(); } }
 function saveToStorage() { localStorage.setItem('ultimaLibData', JSON.stringify(library)); }
-function showToast(msg) { const t = document.getElementById('toast'); t.innerText = msg; t.className = "show"; setTimeout(() => t.className = "", 3000); }
+function showToast(msg) { const t = document.getElementById('csslib-toast'); t.innerText = msg; t.className = "show"; setTimeout(() => t.className = "", 3000); }
 function copyCode(id, type) {
     const item = library.find(x => x.id === id);
     if (item) navigator.clipboard.writeText(item[type]).then(() => showToast("Copié!"));
@@ -527,4 +526,4 @@ function exportData() {
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
 }
 
-document.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && e.key === 's' && modal.classList.contains('active')) { e.preventDefault(); saveItem(); } });
+document.addEventListener('keydown', e => { if ((e.ctrlKey || e.metaKey) && e.key === 's' && modal && modal.classList.contains('active')) { e.preventDefault(); saveItem(); } });
