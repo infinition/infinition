@@ -1,0 +1,903 @@
+[
+    {
+        "title": "AI Generated Component",
+        "tags": [
+            "ai-generated",
+            "random"
+        ],
+        "notes": "Généré par IA.",
+        "html": "<button class=\"ai-btn\">IA: c</button>",
+        "css": ".ai-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 50px; color: white; padding: 15px 30px; cursor: pointer; transition: 0.2s; } .ai-btn:hover { transform: scale(1.1); }",
+        "js": "",
+        "id": 1764006200983
+    },
+    {
+        "id": 1764006200984,
+        "title": "Neon Pulse Button",
+        "tags": [
+            "neon",
+            "glow"
+        ],
+        "notes": "Bouton néon avec pulsation lumineuse",
+        "html": "<button class=\"neon-pulse\">Neon</button>",
+        "css": ".neon-pulse{padding:14px 38px;border:none;color:#fff;background:#111;border-radius:12px;font-size:18px;position:relative;overflow:hidden;cursor:pointer}.neon-pulse::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,#00eaff 0%,transparent 60%);animation:pulse 2.2s infinite ease-out;opacity:.4}@keyframes pulse{0%{transform:scale(0.3)}100%{transform:scale(1)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200985,
+        "title": "Glassmorphism Frost Card",
+        "tags": [
+            "glass",
+            "blur"
+        ],
+        "notes": "Effet verre dépoli + reflets",
+        "html": "<div class=\"glass-card\"><h3>Frost</h3><p>Glassmorphism</p></div>",
+        "css": ".glass-card{padding:40px 60px;border-radius:32px;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px) saturate(180%);border:1px solid rgba(255,255,255,0.2);color:white;box-shadow:0 0 60px rgba(0,0,0,0.4)}",
+        "js": ""
+    },
+    {
+        "id": 1764006200986,
+        "title": "Hologram Scan Card",
+        "tags": [
+            "hologram",
+            "scan"
+        ],
+        "notes": "Effet holographique + balayage vertical",
+        "html": "<div class=\"holo-card\">HOLOGRAM</div>",
+        "css": ".holo-card{color:#00f3ff;text-transform:uppercase;padding:60px;font-size:32px;border:2px solid #00f3ff;border-radius:20px;position:relative;overflow:hidden;background:#020202}.holo-card::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:linear-gradient(180deg,transparent,rgba(0,255,255,0.3),transparent);animation:scan 3s linear infinite}@keyframes scan{0%{top:-100%}100%{top:100%}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200987,
+        "title": "Glitch Text",
+        "tags": [
+            "glitch",
+            "fx"
+        ],
+        "notes": "Effet glitch RGB animé",
+        "html": "<h2 class='glitch-text' data-text='GLITCH'>GLITCH</h2>",
+        "css": ".glitch-text{position:relative;font-size:48px;color:white;font-weight:900}.glitch-text::before,.glitch-text::after{content:attr(data-text);position:absolute;left:0}.glitch-text::before{color:#f00;animation:gl1 0.3s infinite}.glitch-text::after{color:#0ff;animation:gl2 0.45s infinite}@keyframes gl1{0%{transform:translate(0,0)}25%{transform:translate(2px,-2px)}50%{transform:translate(-2px,2px)}75%{transform:translate(3px,1px)}100%{transform:translate(0,0)}}@keyframes gl2{0%{transform:translate(0,0)}25%{transform:translate(-2px,2px)}50%{transform:translate(1px,-3px)}75%{transform:translate(2px,1px)}100%{transform:translate(0,0)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200988,
+        "title": "Shiny Chrome Button",
+        "tags": [
+            "chrome",
+            "metal"
+        ],
+        "notes": "Chromé liquide brillant",
+        "html": "<button class='chrome-btn'>Chrome</button>",
+        "css": ".chrome-btn{padding:14px 40px;font-size:20px;border:none;color:#111;background:linear-gradient(135deg,#e5e5e5,#aaaaaa,#ffffff,#777);border-radius:14px;box-shadow:inset 2px 2px 5px #fff,inset -3px -3px 8px #888;cursor:pointer;transition:0.2s}.chrome-btn:hover{filter:brightness(1.3)}",
+        "js": ""
+    },
+    {
+        "id": 1764006200989,
+        "title": "Liquid Blob Button",
+        "tags": [
+            "liquid",
+            "gooey"
+        ],
+        "notes": "Bouton liquide organique mouvant",
+        "html": "<button class='liquid-btn'><span>Liquid</span></button>",
+        "css": ".liquid-btn{position:relative;padding:18px 44px;font-size:20px;border:none;color:white;background:#4a00ff;border-radius:50px;overflow:hidden;cursor:pointer}.liquid-btn::before{content:'';position:absolute;width:140%;height:140%;top:-20%;left:-20%;background:radial-gradient(circle,#6a4cff 20%,transparent 70%);animation:blob 4s infinite ease-in-out}@keyframes blob{0%,100%{transform:translate(0,0)}50%{transform:translate(15px,25px)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200990,
+        "title": "Cyber Grid Background",
+        "tags": [
+            "cyberpunk",
+            "grid"
+        ],
+        "notes": "Grille futuriste animée",
+        "html": "<div class='cyber-grid'></div>",
+        "css": ".cyber-grid{width:100%;height:180px;background:#000;position:relative;overflow:hidden}.cyber-grid::before{content:'';position:absolute;top:0;left:0;width:200%;height:200%;background-image:linear-gradient(#0ff 1px,transparent 1px),linear-gradient(90deg,#0ff 1px,transparent 1px);background-size:40px 40px;animation:movegrid 6s linear infinite}@keyframes movegrid{0%{transform:translate(0,0)}100%{transform:translate(-40px,-40px)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200991,
+        "title": "CRT Retro Screen",
+        "tags": [
+            "CRT",
+            "retro"
+        ],
+        "notes": "Effet écran cathodique + scanline",
+        "html": "<div class=\"crt\">RETRO</div>",
+        "css": ".crt{color:#0f0;background:#111;padding:40px;font-size:42px;font-family:monospace;position:relative;overflow:hidden}.crt::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:100% 3px;mix-blend-mode:overlay;animation:flicker 0.12s infinite}@keyframes flicker{0%{opacity:.5}50%{opacity:.3}100%{opacity:.5}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200992,
+        "title": "Sci-Fi Border Card",
+        "tags": [
+            "sci-fi",
+            "border"
+        ],
+        "notes": "Bordure animée style interface futuriste",
+        "html": "<div class='sf-border'>DATA</div>",
+        "css": ".sf-border{padding:40px;font-size:32px;color:#00dfff;background:#020A14;border-radius:20px;position:relative}.sf-border::before{content:'';position:absolute;inset:0;border:3px solid transparent;border-radius:inherit;background:linear-gradient(120deg,transparent,#00dfff,transparent) border-box;mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0)}",
+        "js": ""
+    },
+    {
+        "id": 1764006200993,
+        "title": "Aurora Background",
+        "tags": [
+            "aurora",
+            "gradient"
+        ],
+        "notes": "Effet aurore boréale mouvant",
+        "html": "<div class='aurora'></div>",
+        "css": ".aurora{height:180px;background:radial-gradient(circle at 30% 30%,#6f00ff,transparent),radial-gradient(circle at 70% 60%,#00ffc8,transparent),radial-gradient(circle at 40% 80%,#ff009d,transparent);background-size:200% 200%;animation:aur 8s infinite linear}@keyframes aur{0%{background-position:0 0}100%{background-position:200% 200%}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200994,
+        "title": "Plasma Background",
+        "tags": [
+            "plasma",
+            "fx"
+        ],
+        "notes": "Gradient vivant style plasma",
+        "html": "<div class='plasma'></div>",
+        "css": ".plasma{height:180px;width:100%;background:conic-gradient(#ff00ff,#ff8800,#ff0,#00ff99,#00aaff,#ff00ff);background-size:200% 200%;animation:plas 5s infinite linear}@keyframes plas{100%{transform:rotate(360deg)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200995,
+        "title": "Shimmer Button",
+        "tags": [
+            "shimmer",
+            "shine"
+        ],
+        "notes": "Reflet animé à la Surface",
+        "html": "<button class='shimmer-btn'>Shine</button>",
+        "css": ".shimmer-btn{padding:14px 40px;border:none;color:white;background:#444;border-radius:10px;position:relative;overflow:hidden}.shimmer-btn::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,0.8) 50%,transparent 100%);animation:shimmer 2s infinite}@keyframes shimmer{100%{left:140%}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200996,
+        "title": "Electric Outline Text",
+        "tags": [
+            "electric",
+            "text"
+        ],
+        "notes": "Contour électrique vibrant",
+        "html": "<h3 class='electric'>ENERGY</h3>",
+        "css": ".electric{color:white;font-size:40px;text-shadow:0 0 12px #0ff,0 0 22px #00eaff,0 0 35px #00eaff;animation:elec 0.15s infinite alternate}@keyframes elec{to{text-shadow:0 0 18px #0ff,0 0 35px #00eaff,0 0 70px #00eaff}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200997,
+        "title": "Rainbow Border Button",
+        "tags": [
+            "rainbow",
+            "border"
+        ],
+        "notes": "Contour arc-en-ciel animé",
+        "html": "<button class='rainbow-btn'>Rainbow</button>",
+        "css": ".rainbow-btn{padding:16px 40px;border-radius:20px;border:4px solid transparent;background:linear-gradient(#222,#222) padding-box,linear-gradient(120deg,#ff0088,#ff0,#00ff9d,#00aaff,#ff00ff) border-box;background-size:300% 300%;animation:rb 5s infinite linear;color:white}@keyframes rb{100%{background-position:300% 0}}",
+        "js": ""
+    },
+    {
+        "id": 1764006200998,
+        "title": "Border Glow Card",
+        "tags": [
+            "glow",
+            "card"
+        ],
+        "notes": "Bordure lumineuse diffuse",
+        "html": "<div class='glow-card'>Glow</div>",
+        "css": ".glow-card{padding:40px;font-size:32px;color:white;position:relative;background:#222;border-radius:20px}.glow-card::before{content:'';position:absolute;inset:-6px;border-radius:inherit;background:linear-gradient(45deg,#ff008c,#00d1ff);filter:blur(25px);z-index:-1}",
+        "js": ""
+    },
+    {
+        "id": 1764006200999,
+        "title": "Neon Pulse Button",
+        "tags": [
+            "neon",
+            "glow"
+        ],
+        "notes": "Bouton néon avec pulsation lumineuse",
+        "html": "<button class=\"neon-pulse\">Neon</button>",
+        "css": ".neon-pulse{padding:14px 38px;border:none;color:#fff;background:#111;border-radius:12px;font-size:18px;position:relative;overflow:hidden;cursor:pointer}.neon-pulse::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,#00eaff 0%,transparent 60%);animation:pulse 2.2s infinite ease-out;opacity:.4}@keyframes pulse{0%{transform:scale(0.3)}100%{transform:scale(1)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201000,
+        "title": "Glassmorphism Frost Card",
+        "tags": [
+            "glass",
+            "blur"
+        ],
+        "notes": "Effet verre dépoli + reflets",
+        "html": "<div class=\"glass-card\"><h3>Frost</h3><p>Glassmorphism</p></div>",
+        "css": ".glass-card{padding:40px 60px;border-radius:32px;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px) saturate(180%);border:1px solid rgba(255,255,255,0.2);color:white;box-shadow:0 0 60px rgba(0,0,0,0.4)}",
+        "js": ""
+    },
+    {
+        "id": 1764006201001,
+        "title": "Hologram Scan Card",
+        "tags": [
+            "hologram",
+            "scan"
+        ],
+        "notes": "Effet holographique + balayage vertical",
+        "html": "<div class=\"holo-card\">HOLOGRAM</div>",
+        "css": ".holo-card{color:#00f3ff;text-transform:uppercase;padding:60px;font-size:32px;border:2px solid #00f3ff;border-radius:20px;position:relative;overflow:hidden;background:#020202}.holo-card::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:linear-gradient(180deg,transparent,rgba(0,255,255,0.3),transparent);animation:scan 3s linear infinite}@keyframes scan{0%{top:-100%}100%{top:100%}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201002,
+        "title": "Glitch Text",
+        "tags": [
+            "glitch",
+            "fx"
+        ],
+        "notes": "Effet glitch RGB animé",
+        "html": "<h2 class='glitch-text' data-text='GLITCH'>GLITCH</h2>",
+        "css": ".glitch-text{position:relative;font-size:48px;color:white;font-weight:900}.glitch-text::before,.glitch-text::after{content:attr(data-text);position:absolute;left:0}.glitch-text::before{color:#f00;animation:gl1 0.3s infinite}.glitch-text::after{color:#0ff;animation:gl2 0.45s infinite}@keyframes gl1{0%{transform:translate(0,0)}25%{transform:translate(2px,-2px)}50%{transform:translate(-2px,2px)}75%{transform:translate(3px,1px)}100%{transform:translate(0,0)}}@keyframes gl2{0%{transform:translate(0,0)}25%{transform:translate(-2px,2px)}50%{transform:translate(1px,-3px)}75%{transform:translate(2px,1px)}100%{transform:translate(0,0)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201003,
+        "title": "Shiny Chrome Button",
+        "tags": [
+            "chrome",
+            "metal"
+        ],
+        "notes": "Chromé liquide brillant",
+        "html": "<button class='chrome-btn'>Chrome</button>",
+        "css": ".chrome-btn{padding:14px 40px;font-size:20px;border:none;color:#111;background:linear-gradient(135deg,#e5e5e5,#aaaaaa,#ffffff,#777);border-radius:14px;box-shadow:inset 2px 2px 5px #fff,inset -3px -3px 8px #888;cursor:pointer;transition:0.2s}.chrome-btn:hover{filter:brightness(1.3)}",
+        "js": ""
+    },
+    {
+        "id": 1764006201004,
+        "title": "Liquid Blob Button",
+        "tags": [
+            "liquid",
+            "gooey"
+        ],
+        "notes": "Bouton liquide organique mouvant",
+        "html": "<button class='liquid-btn'><span>Liquid</span></button>",
+        "css": ".liquid-btn{position:relative;padding:18px 44px;font-size:20px;border:none;color:white;background:#4a00ff;border-radius:50px;overflow:hidden;cursor:pointer}.liquid-btn::before{content:'';position:absolute;width:140%;height:140%;top:-20%;left:-20%;background:radial-gradient(circle,#6a4cff 20%,transparent 70%);animation:blob 4s infinite ease-in-out}@keyframes blob{0%,100%{transform:translate(0,0)}50%{transform:translate(15px,25px)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201005,
+        "title": "Cyber Grid Background",
+        "tags": [
+            "cyberpunk",
+            "grid"
+        ],
+        "notes": "Grille futuriste animée",
+        "html": "<div class='cyber-grid'></div>",
+        "css": ".cyber-grid{width:100%;height:180px;background:#000;position:relative;overflow:hidden}.cyber-grid::before{content:'';position:absolute;top:0;left:0;width:200%;height:200%;background-image:linear-gradient(#0ff 1px,transparent 1px),linear-gradient(90deg,#0ff 1px,transparent 1px);background-size:40px 40px;animation:movegrid 6s linear infinite}@keyframes movegrid{0%{transform:translate(0,0)}100%{transform:translate(-40px,-40px)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201006,
+        "title": "CRT Retro Screen",
+        "tags": [
+            "CRT",
+            "retro"
+        ],
+        "notes": "Effet écran cathodique + scanline",
+        "html": "<div class=\"crt\">RETRO</div>",
+        "css": ".crt{color:#0f0;background:#111;padding:40px;font-size:42px;font-family:monospace;position:relative;overflow:hidden}.crt::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:100% 3px;mix-blend-mode:overlay;animation:flicker 0.12s infinite}@keyframes flicker{0%{opacity:.5}50%{opacity:.3}100%{opacity:.5}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201007,
+        "title": "Sci-Fi Border Card",
+        "tags": [
+            "sci-fi",
+            "border"
+        ],
+        "notes": "Bordure animée style interface futuriste",
+        "html": "<div class='sf-border'>DATA</div>",
+        "css": ".sf-border{padding:40px;font-size:32px;color:#00dfff;background:#020A14;border-radius:20px;position:relative}.sf-border::before{content:'';position:absolute;inset:0;border:3px solid transparent;border-radius:inherit;background:linear-gradient(120deg,transparent,#00dfff,transparent) border-box;mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0)}",
+        "js": ""
+    },
+    {
+        "id": 1764006201008,
+        "title": "Aurora Background",
+        "tags": [
+            "aurora",
+            "gradient"
+        ],
+        "notes": "Effet aurore boréale mouvant",
+        "html": "<div class='aurora'></div>",
+        "css": ".aurora{height:180px;background:radial-gradient(circle at 30% 30%,#6f00ff,transparent),radial-gradient(circle at 70% 60%,#00ffc8,transparent),radial-gradient(circle at 40% 80%,#ff009d,transparent);background-size:200% 200%;animation:aur 8s infinite linear}@keyframes aur{0%{background-position:0 0}100%{background-position:200% 200%}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201009,
+        "title": "Plasma Background",
+        "tags": [
+            "plasma",
+            "fx"
+        ],
+        "notes": "Gradient vivant style plasma",
+        "html": "<div class='plasma'></div>",
+        "css": ".plasma{height:180px;width:100%;background:conic-gradient(#ff00ff,#ff8800,#ff0,#00ff99,#00aaff,#ff00ff);background-size:200% 200%;animation:plas 5s infinite linear}@keyframes plas{100%{transform:rotate(360deg)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201010,
+        "title": "Shimmer Button",
+        "tags": [
+            "shimmer",
+            "shine"
+        ],
+        "notes": "Reflet animé à la Surface",
+        "html": "<button class='shimmer-btn'>Shine</button>",
+        "css": ".shimmer-btn{padding:14px 40px;border:none;color:white;background:#444;border-radius:10px;position:relative;overflow:hidden}.shimmer-btn::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,0.8) 50%,transparent 100%);animation:shimmer 2s infinite}@keyframes shimmer{100%{left:140%}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201011,
+        "title": "Electric Outline Text",
+        "tags": [
+            "electric",
+            "text"
+        ],
+        "notes": "Contour électrique vibrant",
+        "html": "<h3 class='electric'>ENERGY</h3>",
+        "css": ".electric{color:white;font-size:40px;text-shadow:0 0 12px #0ff,0 0 22px #00eaff,0 0 35px #00eaff;animation:elec 0.15s infinite alternate}@keyframes elec{to{text-shadow:0 0 18px #0ff,0 0 35px #00eaff,0 0 70px #00eaff}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201012,
+        "title": "Rainbow Border Button",
+        "tags": [
+            "rainbow",
+            "border"
+        ],
+        "notes": "Contour arc-en-ciel animé",
+        "html": "<button class='rainbow-btn'>Rainbow</button>",
+        "css": ".rainbow-btn{padding:16px 40px;border-radius:20px;border:4px solid transparent;background:linear-gradient(#222,#222) padding-box,linear-gradient(120deg,#ff0088,#ff0,#00ff9d,#00aaff,#ff00ff) border-box;background-size:300% 300%;animation:rb 5s infinite linear;color:white}@keyframes rb{100%{background-position:300% 0}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201013,
+        "title": "Border Glow Card",
+        "tags": [
+            "glow",
+            "card"
+        ],
+        "notes": "Bordure lumineuse diffuse",
+        "html": "<div class='glow-card'>Glow</div>",
+        "css": ".glow-card{padding:40px;font-size:32px;color:white;position:relative;background:#222;border-radius:20px}.glow-card::before{content:'';position:absolute;inset:-6px;border-radius:inherit;background:linear-gradient(45deg,#ff008c,#00d1ff);filter:blur(25px);z-index:-1}",
+        "js": ""
+    },
+    {
+        "id": 1764006201014,
+        "title": "Magnetic CTA Button",
+        "tags": [
+            "button",
+            "magnetic",
+            "hover"
+        ],
+        "notes": "Bouton qui suit légèrement la souris au survol",
+        "html": "<button class='magnetic-btn'>Call To Action</button>",
+        "css": ".magnetic-btn{padding:16px 42px;border-radius:999px;border:none;background:linear-gradient(135deg,#6a11cb,#2575fc);color:#fff;font-weight:700;letter-spacing:.03em;cursor:pointer;position:relative;overflow:hidden;transform:translate3d(0,0,0);transition:transform .15s,box-shadow .15s;box-shadow:0 14px 35px rgba(0,0,0,.45)}.magnetic-btn::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 0%,rgba(255,255,255,.4),transparent 60%);opacity:.4;mix-blend-mode:screen}",
+        "js": "const btn=this.shadowRoot.querySelector('.magnetic-btn');if(btn){btn.addEventListener('mousemove',function(e){const r=btn.getBoundingClientRect();const x=e.clientX-(r.left+r.width/2);const y=e.clientY-(r.top+r.height/2);btn.style.transform='translate('+x/18+'px,'+y/18+'px) scale(1.02)';});btn.addEventListener('mouseleave',function(){btn.style.transform='translate(0,0) scale(1)';});}"
+    },
+    {
+        "id": 1764006201015,
+        "title": "3D Tilt Card",
+        "tags": [
+            "card",
+            "3d",
+            "hover"
+        ],
+        "notes": "Carte qui bascule en 3D au survol",
+        "html": "<div class='tilt-card'><h3>3D Tilt</h3><p>Survole pour pencher la carte.</p></div>",
+        "css": ".tilt-card{width:260px;padding:26px 24px;border-radius:20px;background:linear-gradient(145deg,#1c1c24,#101018);border:1px solid #2d2d3a;color:#f9f9ff;box-shadow:0 22px 45px rgba(0,0,0,.55);transform-style:preserve-3d;transform:perspective(600px) rotateX(0) rotateY(0);transition:transform .2s ease-out,box-shadow .2s}.tilt-card h3{margin-bottom:8px;font-size:1.1rem}.tilt-card p{font-size:.85rem;color:#9b9bb0}",
+        "js": "const card=this.shadowRoot.querySelector('.tilt-card');if(card){card.addEventListener('mousemove',function(e){const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-0.5;const y=(e.clientY-r.top)/r.height-0.5;card.style.transform='perspective(600px) rotateX('+(-y*10)+'deg) rotateY('+(x*12)+'deg)';});card.addEventListener('mouseleave',function(){card.style.transform='perspective(600px) rotateX(0deg) rotateY(0deg)';});}"
+    },
+    {
+        "id": 1764006201016,
+        "title": "Ripple Click Button",
+        "tags": [
+            "button",
+            "ripple",
+            "click"
+        ],
+        "notes": "Ripple matérial au clic",
+        "html": "<button class='ripple-btn'>Ripple</button>",
+        "css": ".ripple-btn{position:relative;overflow:hidden;border:none;border-radius:12px;padding:14px 36px;background:#222;color:#f5f5f5;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:background .15s,transform .1s}.ripple-btn:active{transform:scale(.97)}.ripple-btn span.ripple{position:absolute;border-radius:50%;transform:scale(0);background:rgba(255,255,255,.4);animation:rippleAnim .6s ease-out;pointer-events:none}@keyframes rippleAnim{to{transform:scale(3);opacity:0}}",
+        "js": "const rb=this.shadowRoot.querySelector('.ripple-btn');if(rb){rb.addEventListener('click',function(e){const rect=rb.getBoundingClientRect();const r=document.createElement('span');r.className='ripple';const size=Math.max(rect.width,rect.height);r.style.width=size+'px';r.style.height=size+'px';r.style.left=e.clientX-rect.left-size/2+'px';r.style.top=e.clientY-rect.top-size/2+'px';rb.appendChild(r);setTimeout(function(){r.remove();},550);});}"
+    },
+    {
+        "id": 1764006201017,
+        "title": "Morphing Pill Toggle",
+        "tags": [
+            "toggle",
+            "pill",
+            "css-only"
+        ],
+        "notes": "Toggle en pilule, morphing sans JS",
+        "html": "<label class='pill-toggle'><input type='checkbox'><span class='pill-track'><span class='pill-thumb'></span></span><span class='pill-text'>Mode</span></label>",
+        "css": ".pill-toggle{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font-size:.9rem;color:#eaeaf5}.pill-toggle input{display:none}.pill-track{width:64px;height:32px;background:#272739;border-radius:999px;position:relative;padding:3px;box-shadow:0 0 0 1px #34344a inset;transition:.25s}.pill-thumb{position:absolute;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#ffffff,#b9b9ff);box-shadow:0 6px 16px rgba(0,0,0,.5);top:3px;left:3px;transition:.25s}.pill-toggle input:checked+.pill-track{background:linear-gradient(135deg,#22c1c3,#7f00ff);box-shadow:0 0 0 1px rgba(127,0,255,.65) inset}.pill-toggle input:checked+.pill-track .pill-thumb{left:35px;background:linear-gradient(135deg,#fff,#ffe5ff)}.pill-text{opacity:.7;transition:.25s}.pill-toggle input:checked~.pill-text{opacity:1;color:#a88cff}",
+        "js": ""
+    },
+    {
+        "id": 1764006201018,
+        "title": "Neon Range Slider",
+        "tags": [
+            "range",
+            "neon",
+            "control"
+        ],
+        "notes": "Slider néon custom complet",
+        "html": "<div class='range-wrap'><input type='range' class='neon-range' min='0' max='100' value='50'><div class='range-value'>50%</div></div>",
+        "css": ".range-wrap{width:260px;display:flex;flex-direction:column;gap:8px;color:#e6e6ff;font-size:.85rem}.neon-range{width:100%;-webkit-appearance:none;background:transparent}.neon-range:focus{outline:none}.neon-range::-webkit-slider-runnable-track{height:6px;background:#181828;border-radius:999px;box-shadow:0 0 0 1px #2d2d44 inset}.neon-range::-webkit-slider-thumb{-webkit-appearance:none;margin-top:-6px;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle,#00fff2 0,#00c9ff 40%,#0066ff 70%,transparent 71%);box-shadow:0 0 14px rgba(0,255,242,.9);cursor:pointer;border:none}.neon-range::-moz-range-track{height:6px;background:#181828;border-radius:999px}.neon-range::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#00fff2;box-shadow:0 0 14px rgba(0,255,242,.9);border:none;cursor:pointer}.range-value{align-self:flex-end;color:#9a9ac7}",
+        "js": "const r=this.shadowRoot.querySelector('.neon-range');const v=this.shadowRoot.querySelector('.range-value');if(r&&v){const upd=function(){v.textContent=r.value+'%';};r.addEventListener('input',upd);upd();}"
+    },
+    {
+        "id": 1764006201019,
+        "title": "Segmented Control",
+        "tags": [
+            "segmented",
+            "tabs"
+        ],
+        "notes": "Boutons segmentés avec état actif",
+        "html": "<div class='segmented'><button data-value='one' class='seg-btn active'>One</button><button data-value='two' class='seg-btn'>Two</button><button data-value='three' class='seg-btn'>Three</button></div>",
+        "css": ".segmented{display:inline-flex;padding:4px;border-radius:999px;background:#151520;box-shadow:0 10px 30px rgba(0,0,0,.5);gap:4px}.seg-btn{border:none;border-radius:999px;padding:8px 16px;font-size:.8rem;color:#a5a5c8;background:transparent;cursor:pointer;position:relative;transition:.2s}.seg-btn.active{background:linear-gradient(135deg,#7f00ff,#22c1c3);color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.7)}.seg-btn:not(.active):hover{background:rgba(255,255,255,.03);color:#d0d0ff}",
+        "js": "const seg=this.shadowRoot.querySelectorAll('.seg-btn');if(seg.length){seg.forEach(function(b){b.addEventListener('click',function(){seg.forEach(function(o){o.classList.remove('active');});b.classList.add('active');});});}"
+    },
+    {
+        "id": 1764006201020,
+        "title": "Notification Badge Button",
+        "tags": [
+            "badge",
+            "button"
+        ],
+        "notes": "Bouton avec badge de notif animé",
+        "html": "<button class='notif-btn'>Inbox<span class='notif-dot'>3</span></button>",
+        "css": ".notif-btn{position:relative;border:none;border-radius:999px;padding:10px 28px;background:#1d1d29;color:#f5f5ff;font-size:.9rem;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 14px 30px rgba(0,0,0,.55);transition:.15s}.notif-btn:hover{background:#262638;transform:translateY(-1px)}.notif-dot{min-width:20px;height:20px;border-radius:999px;background:linear-gradient(135deg,#ff3366,#ff9a44);color:#fff;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px #1d1d29,0 0 16px rgba(255,77,120,.9);animation:ping-badge 1.4s infinite}@keyframes ping-badge{0%{transform:scale(1);opacity:1}70%{transform:scale(1.4);opacity:0}100%{transform:scale(1.4);opacity:0}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201021,
+        "title": "Sun Moon Switch",
+        "tags": [
+            "switch",
+            "theme"
+        ],
+        "notes": "Switch jour/nuit avec icônes",
+        "html": "<label class='theme-switch'><input type='checkbox'><span class='track'><span class='icon sun'>☀</span><span class='icon moon'>☾</span><span class='thumb'></span></span></label>",
+        "css": ".theme-switch{cursor:pointer;display:inline-block}.theme-switch input{display:none}.track{width:74px;height:34px;border-radius:999px;background:linear-gradient(135deg,#1b1b26,#090910);position:relative;overflow:hidden;box-shadow:0 0 0 1px #2b2b3b inset,0 18px 35px rgba(0,0,0,.7)}.icon{position:absolute;top:50%;transform:translateY(-50%);font-size:.9rem;opacity:.6;transition:.25s}.icon.sun{left:10px;color:#ffd76a}.icon.moon{right:10px;color:#9fa8ff;opacity:0}.thumb{position:absolute;width:30px;height:30px;border-radius:999px;background:radial-gradient(circle at 30% 30%,#fff, #d0d0ff);top:2px;left:2px;box-shadow:0 8px 20px rgba(0,0,0,.7);transition:.25s}.theme-switch input:checked+.track .thumb{left:42px}.theme-switch input:checked+.track .sun{opacity:0}.theme-switch input:checked+.track .moon{opacity:1}",
+        "js": ""
+    },
+    {
+        "id": 1764006201022,
+        "title": "Gradient Progress Bar",
+        "tags": [
+            "progress",
+            "gradient"
+        ],
+        "notes": "Barre de progression cliquable",
+        "html": "<div class='prog-wrap'><div class='prog-label'>42%</div><div class='prog-bar'><div class='prog-fill'></div></div></div>",
+        "css": ".prog-wrap{width:260px;display:flex;flex-direction:column;gap:6px;color:#e3e3ff;font-size:.8rem}.prog-label{align-self:flex-end;color:#a1a1cf}.prog-bar{width:100%;height:8px;border-radius:999px;background:#161621;overflow:hidden;cursor:pointer;box-shadow:0 0 0 1px #26263b inset}.prog-fill{height:100%;width:42%;background:linear-gradient(90deg,#ff7a18,#af002d 70%,#319197);box-shadow:0 0 16px rgba(255,122,24,.7);transition:width .2s}",
+        "js": "const bar=this.shadowRoot.querySelector('.prog-bar');const fill=this.shadowRoot.querySelector('.prog-fill');const lab=this.shadowRoot.querySelector('.prog-label');if(bar&&fill&&lab){bar.addEventListener('click',function(e){const r=bar.getBoundingClientRect();let p=(e.clientX-r.left)/r.width;p=Math.max(0,Math.min(1,p));const pct=Math.round(p*100);fill.style.width=pct+'%';lab.textContent=pct+'%';});}"
+    },
+    {
+        "id": 1764006201023,
+        "title": "Bouncing Loader Dots",
+        "tags": [
+            "loader",
+            "dots"
+        ],
+        "notes": "Loader 3 points rebondissants",
+        "html": "<div class='dots-loader'><span></span><span></span><span></span></div>",
+        "css": ".dots-loader{display:flex;gap:8px;align-items:flex-end}.dots-loader span{width:9px;height:9px;border-radius:50%;background:#a45eff;animation:bounceDot .6s infinite alternate}.dots-loader span:nth-child(2){animation-delay:.1s}.dots-loader span:nth-child(3){animation-delay:.2s}@keyframes bounceDot{0%{transform:translateY(0);opacity:.4}100%{transform:translateY(-7px);opacity:1}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201024,
+        "title": "Floating Label Input",
+        "tags": [
+            "input",
+            "floating-label"
+        ],
+        "notes": "Champ avec label flottant",
+        "html": "<label class='float-field'><input type='text' placeholder=' '><span class='label'>Username</span></label>",
+        "css": ".float-field{position:relative;display:inline-block;font-size:.85rem}.float-field input{background:#15151f;border-radius:10px;border:1px solid #33334a;padding:12px 14px 10px;color:#f5f5ff;min-width:220px;outline:none;transition:.18s}.float-field .label{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#77779b;pointer-events:none;transition:.18s;padding:0 4px;background:transparent}.float-field input:focus{border-color:#7f00ff;box-shadow:0 0 0 1px rgba(127,0,255,.5)}.float-field input:not(:placeholder-shown),.float-field input:focus{padding-top:18px;padding-bottom:6px}.float-field input:not(:placeholder-shown)+.label,.float-field input:focus+.label{top:2px;font-size:.7rem;color:#a78bff;background:#15151f}",
+        "js": ""
+    },
+    {
+        "id": 1764006201025,
+        "title": "Tag Chip Row",
+        "tags": [
+            "chips",
+            "tags"
+        ],
+        "notes": "Ligne de chips interactifs",
+        "html": "<div class='chip-row'><button class='chip active'>Design</button><button class='chip'>Motion</button><button class='chip'>Code</button></div>",
+        "css": ".chip-row{display:flex;gap:8px;flex-wrap:wrap}.chip{border-radius:999px;border:1px solid #34344b;background:#161621;color:#c6c6f5;font-size:.75rem;padding:6px 12px;cursor:pointer;transition:.18s;box-shadow:none}.chip:hover{background:#202032;border-color:#4b4b6b}.chip.active{background:linear-gradient(135deg,#ff7eb3,#8e44ff);color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(0,0,0,.7)}",
+        "js": "const chips=this.shadowRoot.querySelectorAll('.chip');if(chips.length){chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(o){o.classList.remove('active');});c.classList.add('active');});});}"
+    },
+    {
+        "id": 1764006201026,
+        "title": "Expandable Info Card",
+        "tags": [
+            "card",
+            "expand"
+        ],
+        "notes": "Carte qui s'étend au clic",
+        "html": "<div class='exp-card'><div class='exp-header'><span>Details</span><button class='exp-toggle'>▼</button></div><div class='exp-body'>Contenu additionnel avec des infos détaillées.</div></div>",
+        "css": ".exp-card{width:260px;border-radius:18px;background:#171722;border:1px solid #2c2c3c;color:#f4f4ff;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.7);font-size:.85rem}.exp-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer}.exp-toggle{border:none;background:transparent;color:#9a9ad0;font-size:.8rem;cursor:pointer;transition:.18s}.exp-card.open .exp-toggle{transform:rotate(180deg)}.exp-body{max-height:0;padding:0 16px;overflow:hidden;color:#b6b6e0;transition:max-height .25s ease,padding-bottom .25s}.exp-card.open .exp-body{max-height:200px;padding-bottom:14px}",
+        "js": "const card=this.shadowRoot.querySelector('.exp-card');if(card){const header=card.querySelector('.exp-header');header.addEventListener('click',function(){card.classList.toggle('open');});}"
+    },
+    {
+        "id": 1764006201027,
+        "title": "Pill Navigation",
+        "tags": [
+            "nav",
+            "pill"
+        ],
+        "notes": "Navigation pill avec soulignement fluide",
+        "html": "<div class='pill-nav'><button class='pill-item active'>Overview</button><button class='pill-item'>Stats</button><button class='pill-item'>Settings</button><span class='pill-underline'></span></div>",
+        "css": ".pill-nav{position:relative;display:inline-flex;background:#14141f;border-radius:999px;padding:4px;gap:4px}.pill-item{position:relative;z-index:1;border:none;background:transparent;color:#9f9fce;font-size:.8rem;padding:8px 16px;border-radius:999px;cursor:pointer;transition:.18s}.pill-item.active{color:#fff}.pill-item:hover{color:#dcdcff}.pill-underline{position:absolute;height:26px;width:0;top:4px;left:4px;border-radius:999px;background:linear-gradient(135deg,#7f00ff,#22c1c3);transition:.22s;z-index:0}",
+        "js": "const nav=this.shadowRoot.querySelector('.pill-nav');if(nav){const items=this.shadowRoot.querySelectorAll('.pill-item');const underline=this.shadowRoot.querySelector('.pill-underline');const refresh=function(btn){const r=btn.getBoundingClientRect();const nr=nav.getBoundingClientRect();underline.style.width=r.width+'px';underline.style.left=(r.left-nr.left)+'px';};items.forEach(function(b){if(b.classList.contains('active')){setTimeout(function(){refresh(b);},0);}b.addEventListener('click',function(){items.forEach(function(o){o.classList.remove('active');});b.classList.add('active');refresh(b);});});}"
+    },
+    {
+        "id": 1764006201028,
+        "title": "Avatar Stack Hover",
+        "tags": [
+            "avatar",
+            "hover"
+        ],
+        "notes": "Stack d'avatars avec pop au survol",
+        "html": "<div class='avatar-stack'><div class='avatar'>A</div><div class='avatar'>B</div><div class='avatar'>C</div></div>",
+        "css": ".avatar-stack{display:flex}.avatar-stack .avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#ff7eb3,#8e44ff);border:2px solid #050510;color:#fff;font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-left:-10px;box-shadow:0 10px 20px rgba(0,0,0,.65);transition:.18s;cursor:pointer}.avatar-stack .avatar:first-child{margin-left:0}.avatar-stack .avatar:hover{transform:translateY(-4px) scale(1.05);z-index:3}",
+        "js": ""
+    },
+    {
+        "id": 1764006201029,
+        "title": "Skeleton Loader Card",
+        "tags": [
+            "loader",
+            "skeleton"
+        ],
+        "notes": "Card skeleton avec shimmer",
+        "html": "<div class='skel-card'><div class='skel-avatar'></div><div class='skel-line w1'></div><div class='skel-line w2'></div><div class='skel-line w3'></div></div>",
+        "css": ".skel-card{width:260px;padding:16px;border-radius:16px;background:#161621;overflow:hidden;position:relative}.skel-avatar{width:42px;height:42px;border-radius:50%;background:#202031;margin-bottom:12px}.skel-line{height:10px;border-radius:999px;background:#202031;margin-bottom:8px}.skel-line.w1{width:70%}.skel-line.w2{width:90%}.skel-line.w3{width:55%}.skel-card::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,0),rgba(255,255,255,0.12),rgba(255,255,255,0));animation:skel-shine 1.4s infinite}@keyframes skel-shine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201030,
+        "title": "Glass Toast Notification",
+        "tags": [
+            "toast",
+            "glass"
+        ],
+        "notes": "Petit toast glassmorphism avec fermeture",
+        "html": "<div class='toast'><div class='toast-text'>Saved successfully</div><button class='toast-close'>✕</button></div>",
+        "css": ".toast{min-width:220px;padding:10px 14px;border-radius:14px;background:rgba(15,15,25,0.8);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;gap:10px;color:#eaeaff;font-size:.8rem;box-shadow:0 14px 36px rgba(0,0,0,.8);animation:toast-in .25s ease-out}@keyframes toast-in{from{transform:translateY(10px);opacity:0}to{transform:translateY(0);opacity:1}}.toast-close{border:none;background:transparent;color:#9d9dd4;font-size:.8rem;cursor:pointer;padding:4px;border-radius:6px;transition:.15s}.toast-close:hover{background:rgba(255,255,255,0.05);color:#fff}",
+        "js": "const t=this.shadowRoot.querySelector('.toast');const c=this.shadowRoot.querySelector('.toast-close');if(t&&c){c.addEventListener('click',function(){t.style.opacity='0';t.style.transform='translateY(10px)';setTimeout(function(){t.remove();},200);});}"
+    },
+    {
+        "id": 1764006201031,
+        "title": "Radial FAB Menu",
+        "tags": [
+            "fab",
+            "menu"
+        ],
+        "notes": "Bouton flottant qui ouvre un petit menu radial",
+        "html": "<div class='fab-wrap'><button class='fab-main'>+</button><button class='fab-item i1'>✉</button><button class='fab-item i2'>★</button><button class='fab-item i3'>⚙</button></div>",
+        "css": ".fab-wrap{position:relative;width:70px;height:70px}.fab-main{position:absolute;bottom:0;right:0;width:52px;height:52px;border-radius:50%;border:none;background:linear-gradient(135deg,#ff7eb3,#8e44ff);color:#fff;font-size:1.6rem;cursor:pointer;box-shadow:0 18px 35px rgba(0,0,0,.8);transition:.2s}.fab-item{position:absolute;width:38px;height:38px;border-radius:50%;border:none;background:#22223a;color:#fff;font-size:.9rem;opacity:0;pointer-events:none;transform:translate(0,0) scale(.4);transition:.22s cubic-bezier(0.2,0.7,0.3,1.4);box-shadow:0 10px 24px rgba(0,0,0,.7)}.fab-wrap.open .fab-main{transform:rotate(45deg)}.fab-wrap.open .fab-item{opacity:1;pointer-events:auto;transform:scale(1)}.fab-wrap.open .fab-item.i1{transform:translate(-52px,-6px) scale(1)}.fab-wrap.open .fab-item.i2{transform:translate(-36px,-46px) scale(1)}.fab-wrap.open .fab-item.i3{transform:translate(4px,-60px) scale(1)}",
+        "js": "const wrap=this.shadowRoot.querySelector('.fab-wrap');const main=this.shadowRoot.querySelector('.fab-main');if(wrap&&main){main.addEventListener('click',function(){wrap.classList.toggle('open');});}"
+    },
+    {
+        "id": 1764006201032,
+        "title": "Stepper Timeline",
+        "tags": [
+            "stepper",
+            "timeline"
+        ],
+        "notes": "Timeline verticale cliquable",
+        "html": "<div class='stepper'><div class='step active'>1</div><div class='step'>2</div><div class='step'>3</div></div>",
+        "css": ".stepper{display:flex;flex-direction:column;gap:10px;position:relative;padding-left:18px}.stepper::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:#29293b}.step{width:22px;height:22px;border-radius:50%;background:#202032;border:2px solid #464666;color:#b4b4da;font-size:.75rem;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;z-index:1;transition:.18s}.step.active{background:linear-gradient(135deg,#22c1c3,#7f00ff);border-color:transparent;color:#fff;box-shadow:0 0 12px rgba(127,0,255,.8)}",
+        "js": "const steps=this.shadowRoot.querySelectorAll('.step');if(steps.length){steps.forEach(function(s){s.addEventListener('click',function(){steps.forEach(function(o){o.classList.remove('active');});s.classList.add('active');});});}"
+    },
+    {
+        "id": 1764006201033,
+        "title": "Input Neon Focus",
+        "tags": [
+            "input",
+            "focus"
+        ],
+        "notes": "Input avec halo néon au focus",
+        "html": "<input class='neon-input' placeholder='Type here...'>",
+        "css": ".neon-input{background:#11111a;border-radius:12px;border:1px solid #33334d;padding:10px 14px;min-width:220px;color:#f5f5ff;font-size:.85rem;outline:none;transition:.18s,box-shadow .18s}.neon-input::placeholder{color:#5e5e84}.neon-input:focus{border-color:#00d2ff;box-shadow:0 0 0 1px rgba(0,210,255,.6),0 0 22px rgba(0,210,255,.45)}",
+        "js": ""
+    },
+    {
+        "id": 1764006201034,
+        "title": "Pulse Status Badge",
+        "tags": [
+            "badge",
+            "status"
+        ],
+        "notes": "Petit badge status avec pulse",
+        "html": "<div class='status'><span class='dot'></span> Online</div>",
+        "css": ".status{display:inline-flex;align-items:center;gap6px:;gap:6px;font-size:.8rem;color:#cfd3ff}.status .dot{width:9px;height:9px;border-radius:50%;background:#2ed573;box-shadow:0 0 0 0 rgba(46,213,115,.8);animation:statusPulse 1.6s infinite}@keyframes statusPulse{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,213,115,.7)}70%{transform:scale(1.6);box-shadow:0 0 0 8px rgba(46,213,115,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,213,115,0)}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201035,
+        "title": "Press Depth Card",
+        "tags": [
+            "card",
+            "press"
+        ],
+        "notes": "Carte qui s'enfonce subtilement au clic",
+        "html": "<div class='press-card'><h4>Press Me</h4><p>Click pour voir l'effet de profondeur.</p></div>",
+        "css": ".press-card{width:240px;padding:18px;border-radius:18px;background:#151521;border:1px solid #2d2d3c;color:#f5f5ff;box-shadow:0 18px 32px rgba(0,0,0,.75);cursor:pointer;transition:transform .1s,box-shadow .1s,font-weight .1s;font-size:.85rem}.press-card h4{margin-bottom:6px}.press-card:active{transform:translateY(3px);box-shadow:0 10px 18px rgba(0,0,0,.6)}",
+        "js": ""
+    },
+    {
+        "id": 1764006201036,
+        "title": "Parallax Image Card",
+        "tags": [
+            "card",
+            "parallax"
+        ],
+        "notes": "Parallaxe léger sur image au survol",
+        "html": "<div class='px-card'><div class='px-img'></div><div class='px-content'><h4>Parallax</h4><p>Image qui bouge avec la souris.</p></div></div>",
+        "css": ".px-card{width:260px;border-radius:20px;overflow:hidden;background:#11111a;color:#f4f4ff;box-shadow:0 20px 40px rgba(0,0,0,.8);font-size:.85rem}.px-img{height:120px;background-image:linear-gradient(135deg,#ff7eb3,#8e44ff);background-size:140% 140%;transition:transform .15s,background-position .15s}.px-content{padding:14px 16px}",
+        "js": "const pc=this.shadowRoot.querySelector('.px-card');const im=this.shadowRoot.querySelector('.px-img');if(pc&&im){pc.addEventListener('mousemove',function(e){const r=pc.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-0.5;const y=(e.clientY-r.top)/r.height-0.5;im.style.transform='translate('+(x*10)+'px,'+(y*10)+'px)';im.style.backgroundPosition=(50+x*10)+'% '+(50+y*10)+'%';});pc.addEventListener('mouseleave',function(){im.style.transform='translate(0,0)';im.style.backgroundPosition='50% 50%';});}"
+    },
+    {
+        "id": 1764006201037,
+        "title": "Neon Checkbox List",
+        "tags": [
+            "checkbox",
+            "list"
+        ],
+        "notes": "Liste de checkbox modernisée",
+        "html": "<div class='check-list'><label><input type='checkbox' checked><span class='box'></span><span class='txt'>Email alerts</span></label><label><input type='checkbox'><span class='box'></span><span class='txt'>Push notifications</span></label></div>",
+        "css": ".check-list{display:flex;flex-direction:column;gap:8px;font-size:.8rem;color:#d8d8ff}.check-list label{display:flex;align-items:center;gap:8px;cursor:pointer}.check-list input{display:none}.check-list .box{width:16px;height:16px;border-radius:4px;border:1px solid #44445f;background:#11111a;box-shadow:0 0 0 1px #25253b inset;position:relative;transition:.18s}.check-list .box::after{content:'✔';position:absolute;left:2px;top:-2px;font-size:.9rem;color:#00eaff;opacity:0;transform:scale(.4);transition:.18s}.check-list input:checked+.box{border-color:#00eaff;box-shadow:0 0 12px rgba(0,234,255,.7)}.check-list input:checked+.box::after{opacity:1;transform:scale(.9)}.check-list .txt{opacity:.8}.check-list label:hover .txt{opacity:1}",
+        "js": ""
+    },
+    {
+        "id": 1764006201038,
+        "title": "Ticked Range Slider",
+        "tags": [
+            "range",
+            "ticks"
+        ],
+        "notes": "Slider avec repères visuels",
+        "html": "<div class='tick-range'><input type='range' min='0' max='4' value='2'><div class='ticks'><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>",
+        "css": ".tick-range{width:260px;color:#b6b6dd;font-size:.75rem}.tick-range input{width:100%;-webkit-appearance:none;background:transparent;margin-bottom:4px}.tick-range input:focus{outline:none}.tick-range input::-webkit-slider-runnable-track{height:4px;border-radius:999px;background:#24243a}.tick-range input::-webkit-slider-thumb{-webkit-appearance:none;margin-top:-6px;width:14px;height:14px;border-radius:50%;background:#7f00ff;box-shadow:0 0 12px rgba(127,0,255,.8);border:none;cursor:pointer}.tick-range input::-moz-range-track{height:4px;border-radius:999px;background:#24243a}.tick-range input::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#7f00ff;border:none;box-shadow:0 0 12px rgba(127,0,255,.8);cursor:pointer}.ticks{display:flex;justify-content:space-between;color:#666689}",
+        "js": ""
+    },
+    {
+        "id": 1764006201039,
+        "title": "Confetti Click Button",
+        "tags": [
+            "button",
+            "confetti"
+        ],
+        "notes": "Petit effet confetti au clic",
+        "html": "<button class='confetti-btn'>Yay!</button>",
+        "css": ".confetti-btn{padding:14px 30px;border-radius:999px;border:none;background:linear-gradient(135deg,#ff9966,#ff5e62);color:#fff;font-weight:700;cursor:pointer;position:relative;overflow:hidden;box-shadow:0 18px 35px rgba(0,0,0,.8);transition:.15s}.confetti-piece{position:absolute;width:6px;height:10px;border-radius:2px;background:#fff;opacity:0;pointer-events:none;animation:confetti-fall .7s ease-out forwards}@keyframes confetti-fall{0%{transform:translateY(0) rotate(0deg);opacity:1}100%{transform:translateY(26px) rotate(260deg);opacity:0}}",
+        "js": "const cb=this.shadowRoot.querySelector('.confetti-btn');if(cb){cb.addEventListener('click',function(){for(let i=0;i<6;i++){const p=document.createElement('span');p.className='confetti-piece';p.style.left=10+Math.random()*60+'%';p.style.top='10%';p.style.background=['#ffdd59','#ff6b81','#1e90ff','#2ed573'][i%4];cb.appendChild(p);setTimeout(function(){p.remove();},650);}});}"
+    },
+    {
+        "id": 1764006201040,
+        "title": "Avatar Pulse Ring",
+        "tags": [
+            "avatar",
+            "ring"
+        ],
+        "notes": "Avatar avec anneaux pulsants",
+        "html": "<div class='ring-avatar'>FP</div>",
+        "css": ".ring-avatar{width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 30% 20%,#fff,#c4c4ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#26263f;position:relative;box-shadow:0 18px 35px rgba(0,0,0,.8)}.ring-avatar::before,.ring-avatar::after{content:'';position:absolute;inset:-6px;border-radius:inherit;border:2px solid rgba(164,94,255,.6);opacity:.7;animation:ringPulse 2s infinite;pointer-events:none}.ring-avatar::after{animation-delay:1s}@keyframes ringPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.3);opacity:0}}",
+        "js": ""
+    },
+    {
+        "id": 1764006201041,
+        "title": "Underline Tabs",
+        "tags": [
+            "tabs",
+            "underline"
+        ],
+        "notes": "Tabs simples avec underline animé",
+        "html": "<div class='u-tabs'><button class='t active'>Home</button><button class='t'>Library</button><button class='t'>Profile</button><span class='line'></span></div>",
+        "css": ".u-tabs{position:relative;display:inline-flex;gap:18px;font-size:.85rem;color:#9c9ccc}.u-tabs .t{border:none;background:transparent;color:inherit;padding:6px 0;cursor:pointer;position:relative}.u-tabs .t.active{color:#ffffff}.u-tabs .t:hover{color:#d2d2ff}.u-tabs .line{position:absolute;bottom:0;height:2px;width:0;background:linear-gradient(90deg,#22c1c3,#7f00ff);border-radius:999px;transition:.18s}",
+        "js": "const ut=this.shadowRoot.querySelector('.u-tabs');if(ut){const btns=this.shadowRoot.querySelectorAll('.u-tabs .t');const line=this.shadowRoot.querySelector('.u-tabs .line');const setPos=function(b){const r=b.getBoundingClientRect();const nr=ut.getBoundingClientRect();line.style.width=r.width+'px';line.style.left=(r.left-nr.left)+'px';};btns.forEach(function(b){if(b.classList.contains('active')){setTimeout(function(){setPos(b);},0);}b.addEventListener('click',function(){btns.forEach(function(o){o.classList.remove('active');});b.classList.add('active');setPos(b);});});}"
+    },
+    {
+        "id": 1764006201042,
+        "title": "Corner Fold Card",
+        "tags": [
+            "card",
+            "corner"
+        ],
+        "notes": "Petit pli en coin au survol",
+        "html": "<div class='fold-card'><div class='fold-corner'></div><h4>Folded Corner</h4><p>Survole pour voir le pli.</p></div>",
+        "css": ".fold-card{position:relative;width:230px;padding:16px;border-radius:14px;background:#171722;color:#f5f5ff;border:1px solid #2b2b3b;overflow:hidden;font-size:.85rem;transition:.18s}.fold-card:hover{box-shadow:0 18px 32px rgba(0,0,0,.8)}.fold-card h4{margin-bottom:6px}.fold-corner{position:absolute;top:0;right:0;width:26px;height:26px;background:linear-gradient(135deg,#7f00ff,#22c1c3);clip-path:polygon(100% 0,0 0,100% 100%);transform-origin:100% 0;transform:translateY(-100%);transition:.2s}.fold-card:hover .fold-corner{transform:translateY(0)}",
+        "js": ""
+    },
+    {
+        "id": 1764006201043,
+        "title": "Frosted Hover Overlay",
+        "tags": [
+            "card",
+            "overlay"
+        ],
+        "notes": "Overlay flouté qui apparait au survol",
+        "html": "<div class='ov-card'><div class='ov-body'>Hover Overlay</div><div class='ov-layer'>More details appear here ✨</div></div>",
+        "css": ".ov-card{position:relative;width:240px;height:120px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#1b1b29,#10101a);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;box-shadow:0 20px 38px rgba(0,0,0,.8);text-align:center}.ov-layer{position:absolute;inset:0;background:rgba(10,10,25,0.7);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;font-size:.8rem;opacity:0;transform:translateY(8px);transition:.2s}.ov-card:hover .ov-layer{opacity:1;transform:translateY(0)}",
+        "js": ""
+    },
+    {
+        "id": 1764006201044,
+        "title": "Icon Ghost Button",
+        "tags": [
+            "button",
+            "icon"
+        ],
+        "notes": "Bouton ghost avec icône et feedback hover",
+        "html": "<button class='ghost-icn'>⚙ Settings</button>",
+        "css": ".ghost-icn{border-radius:999px;border:1px solid #3a3a4f;background:transparent;color:#b8b8df;padding:8px 18px;font-size:.8rem;display:inline-flex;align-items:center;gap:6px;cursor:pointer;transition:.18s;box-shadow:none}.ghost-icn:hover{background:#212132;border-color:#5c5c7d;color:#ffffff;box-shadow:0 10px 24px rgba(0,0,0,.7)}.ghost-icn:active{transform:translateY(1px);box-shadow:0 5px 12px rgba(0,0,0,.7)}",
+        "js": ""
+    },
+    {
+        "id": 1764006201045,
+        "title": "Minimal Tooltip Button",
+        "tags": [
+            "tooltip",
+            "button"
+        ],
+        "notes": "Tooltip pure CSS au survol",
+        "html": "<button class='tip-btn' data-tip='Copier dans le presse-papiers'>Copy</button>",
+        "css": ".tip-btn{position:relative;border-radius:8px;border:none;padding:8px 16px;background:#1a1a26;color:#f2f2ff;font-size:.8rem;cursor:pointer}.tip-btn::after{content:attr(data-tip);position:absolute;left:50%;bottom:110%;transform:translateX(-50%) translateY(4px);background:#05050a;color:#fefeff;font-size:.7rem;padding:4px 8px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:.16s;box-shadow:0 8px 20px rgba(0,0,0,.8)}.tip-btn:hover::after{opacity:1;transform:translateX(-50%) translateY(0)}",
+        "js": ""
+    },
+    {
+        "id": 1764006201046,
+        "title": "Pill Multi Toggle",
+        "tags": [
+            "toggle",
+            "multi"
+        ],
+        "notes": "3 états dans un switch multi",
+        "html": "<div class='multi-toggle'><button class='m-pill active'>Low</button><button class='m-pill'>Med</button><button class='m-pill'>High</button></div>",
+        "css": ".multi-toggle{display:inline-flex;padding:3px;border-radius:999px;background:#14141f;gap:3px}.m-pill{border:none;border-radius:999px;padding:6px 14px;font-size:.75rem;color:#a0a0c8;background:transparent;cursor:pointer;transition:.16s}.m-pill.active{background:linear-gradient(135deg,#22c1c3,#7f00ff);color:#fff;box-shadow:0 10px 20px rgba(0,0,0,.7)}",
+        "js": "const mp=this.shadowRoot.querySelectorAll('.m-pill');if(mp.length){mp.forEach(function(b){b.addEventListener('click',function(){mp.forEach(function(o){o.classList.remove('active');});b.classList.add('active');});});}"
+    },
+    {
+        "id": 1764006201047,
+        "title": "Lined Vertical Timeline",
+        "tags": [
+            "timeline",
+            "vertical"
+        ],
+        "notes": "Timeline avec puces lumineuses",
+        "html": "<div class='v-timeline'><div class='dot done'></div><div class='dot current'></div><div class='dot'></div></div>",
+        "css": ".v-timeline{position:relative;padding-left:10px;display:flex;flex-direction:column;gap:14px}.v-timeline::before{content:'';position:absolute;left:4px;top:4px;bottom:4px;width:2px;background:#25253a}.dot{width:10px;height:10px;border-radius:50%;background:#2f2f45;border:2px solid #505072;box-shadow:none;transition:.18s}.dot.done{background:#2ed573;border-color:#48ff94;box-shadow:0 0 10px rgba(46,213,115,.8)}.dot.current{background:#00eaff;border-color:#00eaff;box-shadow:0 0 10px rgba(0,234,255,.8)}",
+        "js": ""
+    },
+    {
+        "id": 1764006201048,
+        "title": "Soft Shadow CTA",
+        "tags": [
+            "button",
+            "soft-shadow"
+        ],
+        "notes": "Bouton CTA très doux et moderne",
+        "html": "<button class='soft-cta'>Get Started</button>",
+        "css": ".soft-cta{padding:14px 34px;border-radius:999px;border:none;background:linear-gradient(135deg,#fdfbfb,#ebedee);color:#33334a;font-weight:700;font-size:.9rem;cursor:pointer;box-shadow:0 14px 35px rgba(0,0,0,.25);transition:.18s}.soft-cta:hover{transform:translateY(-1px);box-shadow:0 18px 40px rgba(0,0,0,.35)}.soft-cta:active{transform:translateY(1px);box-shadow:0 8px 20px rgba(0,0,0,.35)}",
+        "js": ""
+    },
+    {
+        "id": 1764077805258,
+        "title": "Moteur continu",
+        "tags": [
+            "servo"
+        ],
+        "notes": "",
+        "html": "<div class=\"control-card\">\n  <div class=\"control-title\">Contrôle Continu</div>\n\n  <!-- Légendes -->\n  <div class=\"labels\">\n    <span>Anti-Horaire (-100)</span>\n    <span>Arrêt</span>\n    <span>Horaire (+100)</span>\n  </div>\n\n  <!-- Conteneur Slider -->\n  <div class=\"slider-track\">\n    <!-- Repère central -->\n    <div class=\"center-marker\"></div>\n    \n    <!-- Barre colorée qui bouge -->\n    <div id=\"dynamicBar\" class=\"dynamic-bar\"></div>\n    \n    <!-- Input invisible -->\n    <input type=\"range\" id=\"speedInput\" class=\"range-input\" min=\"-100\" max=\"100\" value=\"0\">\n    \n    <!-- Affichage Texte -->\n    <div id=\"valueText\" class=\"value-display\" style=\"color: #64748b;\">HALT</div>\n  </div>\n</div>",
+        "css": "/* Le conteneur principal (carte) */\n.control-card {\n  width: 100%;\n  max-width: 400px; /* Ajustable */\n  background-color: #1e293b; /* slate-800 */\n  padding: 1rem;\n  border-radius: 0.75rem; /* xl */\n  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  color: #e2e8f0;\n}\n\n/* Titre */\n.control-title {\n  font-size: 0.75rem; /* xs */\n  color: #94a3b8; /* slate-400 */\n  margin-bottom: 1rem;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  text-align: center;\n}\n\n/* Légendes (Anti-horaire / Arrêt / Horaire) */\n.labels {\n  display: flex;\n  justify-content: space-between;\n  font-size: 10px;\n  font-weight: 700;\n  text-transform: uppercase;\n  color: #64748b; /* slate-500 */\n  margin-bottom: 0.25rem;\n  padding: 0 0.25rem;\n}\n\n/* La piste du slider */\n.slider-track {\n  position: relative;\n  height: 2.5rem; /* h-10 */\n  background-color: #0f172a; /* slate-900 */\n  border-radius: 9999px; /* full */\n  border: 1px solid #334155; /* slate-700 */\n  display: flex;\n  align-items: center;\n  overflow: hidden;\n}\n\n/* Marqueur central (Point Zéro) */\n.center-marker {\n  position: absolute;\n  left: 50%;\n  top: 0;\n  bottom: 0;\n  width: 2px;\n  background-color: rgba(255, 255, 255, 0.2);\n  z-index: 10;\n}\n\n/* La barre dynamique (couleur) */\n.dynamic-bar {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  transition: all 0.1s ease;\n  z-index: 5;\n  /* Les styles left/right/color sont gérés par JS */\n}\n\n/* L'input range (invisible mais interactif) */\n.range-input {\n  position: absolute;\n  inset: 0; /* top:0, right:0, bottom:0, left:0 */\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  cursor: e-resize; /* Curseur gauche-droite */\n  z-index: 20;\n  margin: 0;\n}\n\n/* Texte superposé (valeur) */\n.value-display {\n  width: 100%;\n  text-align: center;\n  font-size: 0.875rem; /* sm */\n  font-family: monospace;\n  font-weight: 700;\n  z-index: 10;\n  pointer-events: none; /* Laisse passer le clic vers l'input */\n  /* Couleur gérée par JS */\n}",
+        "js": "const speedInput = document.getElementById('speedInput');\nconst dynamicBar = document.getElementById('dynamicBar');\nconst valueText = document.getElementById('valueText');\n\nfunction updateSlider() {\n  const val = parseInt(speedInput.value);\n  \n  // 1. Calcul de la largeur (valeur absolue)\n  // On divise par 2 car 100% de vitesse = 50% de la largeur totale du slider\n  const widthPercentage = Math.abs(val) / 2;\n  dynamicBar.style.width = widthPercentage + '%';\n\n  // 2. Gestion Direction et Couleur\n  if (val > 0) {\n    // Vers la droite (Positif)\n    dynamicBar.style.left = '50%';\n    dynamicBar.style.right = 'auto';\n    dynamicBar.style.backgroundColor = 'rgba(16, 185, 129, 0.5)'; // Emerald (Vert)\n    \n    valueText.textContent = '+' + val + '%';\n    valueText.style.color = '#fff';\n  } \n  else if (val < 0) {\n    // Vers la gauche (Négatif)\n    dynamicBar.style.left = 'auto';\n    dynamicBar.style.right = '50%';\n    dynamicBar.style.backgroundColor = 'rgba(239, 68, 68, 0.5)'; // Red (Rouge)\n    \n    valueText.textContent = val + '%';\n    valueText.style.color = '#fff';\n  } \n  else {\n    // Zéro (Arrêt)\n    dynamicBar.style.width = '0';\n    \n    valueText.textContent = 'HALT';\n    valueText.style.color = '#64748b'; // Slate 500 (Gris)\n  }\n}\n\n// Écouteur d'événement\nspeedInput.addEventListener('input', updateSlider);\n\n// Initialisation\nupdateSlider();"
+    },
+    {
+        "id": 1764077916214,
+        "title": "Pince",
+        "tags": [
+            "servo"
+        ],
+        "notes": "",
+        "html": "<div class=\"gripper-card\">\n  <div class=\"gripper-title\">Visualisation Pince</div>\n  \n  <!-- Zone visuelle -->\n  <div class=\"visual-area\">\n    <!-- Mâchoire Gauche -->\n    <div id=\"jawLeft\" class=\"jaw jaw-left\">\n      <div class=\"jaw-detail\"></div>\n    </div>\n\n    <!-- Mâchoire Droite -->\n    <div id=\"jawRight\" class=\"jaw jaw-right\">\n      <div class=\"jaw-detail\"></div>\n    </div>\n\n    <div class=\"state-text\">GRIPPER STATE</div>\n  </div>\n\n  <!-- Contrôle Slider -->\n  <input type=\"range\" id=\"gripInput\" class=\"range-slider\" min=\"0\" max=\"60\" value=\"30\">\n  \n  <!-- Affichage valeur (Optionnel) -->\n  <div style=\"text-align: center; font-size: 12px; color: #64748b;\">\n    Ouverture: <span id=\"gripValue\" style=\"color: #fff; font-weight: bold;\">30</span>\n  </div>\n</div>",
+        "css": "/* Le conteneur principal */\n.gripper-card {\n  width: 100%;\n  max-width: 300px;\n  background-color: #1e293b; /* slate-800 */\n  padding: 1rem;\n  border-radius: 0.75rem; /* xl */\n  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);\n  font-family: sans-serif;\n  color: #e2e8f0;\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n\n.gripper-title {\n  font-size: 0.75rem; /* xs */\n  color: #94a3b8; /* slate-400 */\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  text-align: center;\n}\n\n/* Zone de visualisation */\n.visual-area {\n  width: 100%;\n  height: 6rem; /* h-24 */\n  background-color: #0f172a; /* slate-900 */\n  border-radius: 0.25rem;\n  border: 1px solid #334155; /* slate-700 */\n  position: relative;\n  overflow: hidden;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n/* Les mâchoires */\n.jaw {\n  position: absolute;\n  height: 3rem; /* h-12 */\n  width: 1rem; /* w-4 */\n  background-color: #06b6d4; /* cyan-500 */\n  transition: all 0.1s ease-out;\n  box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);\n  top: 50%;\n  transform: translateY(-50%); /* Centrage vertical */\n}\n\n.jaw-left {\n  border-top-left-radius: 0.25rem;\n  border-bottom-left-radius: 0.25rem;\n  border-right: 1px solid rgba(0,0,0,0.2);\n  /* Position 'right' gérée par JS */\n}\n\n.jaw-right {\n  border-top-right-radius: 0.25rem;\n  border-bottom-right-radius: 0.25rem;\n  border-left: 1px solid rgba(0,0,0,0.2);\n  /* Position 'left' gérée par JS */\n}\n\n/* Détails graphiques sur les mâchoires (grips) */\n.jaw-detail {\n  position: absolute;\n  top: 0.5rem;\n  width: 0.25rem; /* w-1 */\n  height: 2rem; /* h-8 */\n  background-color: rgba(0,0,0,0.3);\n}\n\n.jaw-left .jaw-detail { right: 0; border-top-left-radius: 2px; border-bottom-left-radius: 2px; }\n.jaw-right .jaw-detail { left: 0; border-top-right-radius: 2px; border-bottom-right-radius: 2px; }\n\n/* Texte d'état */\n.state-text {\n  position: absolute;\n  bottom: 0.5rem;\n  font-size: 10px;\n  color: #475569; /* slate-600 */\n  font-family: monospace;\n}\n\n/* Slider Standard Stylisé */\n.range-slider {\n  width: 100%;\n  height: 0.5rem; /* h-2 */\n  background: #334155; /* slate-700 */\n  border-radius: 0.5rem;\n  outline: none;\n  -webkit-appearance: none;\n  cursor: pointer;\n}\n\n.range-slider::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  width: 1.25rem;\n  height: 1.25rem;\n  border-radius: 50%;\n  background: #06b6d4; /* cyan-500 */\n  cursor: pointer;\n  transition: background .15s ease-in-out;\n}\n\n.range-slider::-webkit-slider-thumb:hover {\n  background: #22d3ee; /* cyan-400 */\n  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.2);\n}",
+        "js": "const gripInput = document.getElementById('gripInput');\nconst jawLeft = document.getElementById('jawLeft');\nconst jawRight = document.getElementById('jawRight');\nconst gripValue = document.getElementById('gripValue');\n\nfunction updateGripper() {\n  const value = parseInt(gripInput.value);\n  const max = parseInt(gripInput.max);\n  \n  // Calcul du pourcentage d'ouverture (0% = ouvert, 100% = fermé)\n  // Ou l'inverse selon votre logique mécanique. Ici : value 0 = ouvert.\n  const percentage = (value / max) * 100;\n\n  // Mise à jour du texte\n  gripValue.textContent = value;\n\n  // Calcul de la position CSS\n  // calc(50% + Xpx) : On part du centre et on ajoute un décalage.\n  // Plus le pourcentage est élevé (fermé), plus le décalage est petit (proche du centre).\n  // 40px est l'écartement max, 4px l'écartement min (au contact).\n  const offset = Math.max(4, 40 - (percentage / 100) * 40);\n\n  // Appliquer les styles\n  jawLeft.style.right = `calc(50% + ${offset}px)`;\n  jawRight.style.left = `calc(50% + ${offset}px)`;\n  \n  // Changement de couleur dynamique (optionnel - devient plus rouge si très serré)\n  if (percentage > 90) {\n      jawLeft.style.backgroundColor = '#ef4444'; // rouge\n      jawRight.style.backgroundColor = '#ef4444';\n  } else {\n      jawLeft.style.backgroundColor = '#06b6d4'; // cyan\n      jawRight.style.backgroundColor = '#06b6d4';\n  }\n}\n\n// Écouteur\ngripInput.addEventListener('input', updateGripper);\n\n// Init\nupdateGripper();"
+    },
+    {
+        "id": 1764077990297,
+        "title": "Jauge 360",
+        "tags": [
+            "servo"
+        ],
+        "notes": "",
+        "html": "<div class=\"gauge-card\">\n  <div class=\"gauge-title\">Contrôle Servo 360°</div>\n  \n  <div class=\"gauge-container\" id=\"gaugeContainer\">\n    <svg width=\"200\" height=\"200\" id=\"gaugeSvg\">\n      <!-- Cercle de fond -->\n      <circle cx=\"100\" cy=\"100\" r=\"90\" class=\"gauge-bg-ring\" />\n      \n      <!-- Arc de la zone autorisée (Min à Max) -->\n      <path id=\"rangeArc\" class=\"gauge-range-arc\" />\n\n      <!-- Arc de la valeur actuelle -->\n      <path id=\"valueArc\" class=\"gauge-value-arc\" />\n\n      <!-- Marqueurs Min/Max -->\n      <line id=\"minMarker\" class=\"gauge-marker\" x1=\"100\" y1=\"10\" x2=\"100\" y2=\"25\" />\n      <line id=\"maxMarker\" class=\"gauge-marker\" x1=\"100\" y1=\"10\" x2=\"100\" y2=\"25\" />\n\n      <!-- Texte central -->\n      <text id=\"valueText\" x=\"100\" y=\"105\" class=\"gauge-text\">90°</text>\n      \n      <!-- Aiguille (Group pour rotation facile) -->\n      <g id=\"needleGroup\">\n          <circle cx=\"100\" cy=\"15\" r=\"6\" class=\"needle-circle\" />\n      </g>\n    </svg>\n  </div>\n\n  <div class=\"gauge-hint\">Cliquez & Glissez pour ajuster</div>\n  \n  <!-- Inputs cachés pour configurer la jauge (utiles pour l'intégration backend) -->\n  <input type=\"hidden\" id=\"gaugeMin\" value=\"0\">\n  <input type=\"hidden\" id=\"gaugeMax\" value=\"180\">\n  <input type=\"hidden\" id=\"gaugeValue\" value=\"90\">\n</div>",
+        "css": "/* Conteneur principal */\n.gauge-card {\n  width: 100%;\n  max-width: 300px;\n  background-color: #1e293b; /* slate-800 */\n  padding: 1.5rem;\n  border-radius: 0.75rem; /* xl */\n  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);\n  font-family: monospace; /* Look plus technique */\n  color: #e2e8f0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  user-select: none; /* Empêche la sélection de texte pendant le drag */\n}\n\n.gauge-title {\n  font-family: sans-serif;\n  font-size: 0.75rem;\n  color: #94a3b8;\n  font-weight: 700;\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  margin-bottom: 1rem;\n}\n\n/* Zone SVG */\n.gauge-container {\n  position: relative;\n  cursor: crosshair; /* Curseur de précision */\n  touch-action: none; /* Empêche le scroll sur mobile pendant l'interaction */\n}\n\n/* Styles SVG spécifiques */\n.gauge-bg-ring {\n  fill: none;\n  stroke: #0f172a; /* slate-900 */\n  stroke-width: 12;\n}\n\n.gauge-range-arc {\n  fill: none;\n  stroke: #0e7490; /* cyan-700 */\n  stroke-width: 12;\n  opacity: 0.3;\n  stroke-linecap: round;\n}\n\n.gauge-value-arc {\n  fill: none;\n  stroke: #22d3ee; /* cyan-400 */\n  stroke-width: 12;\n  stroke-linecap: round;\n  filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.5)); /* Glow effect */\n  transition: d 0.05s linear; /* Animation fluide du chemin */\n}\n\n.gauge-marker {\n  stroke: #64748b; /* slate-500 */\n  stroke-width: 2;\n}\n\n.gauge-text {\n  font-size: 24px;\n  font-weight: bold;\n  fill: #fff;\n  text-anchor: middle;\n}\n\n/* Aiguille */\n.needle-circle {\n  fill: #fff;\n  stroke: #22d3ee;\n  stroke-width: 2;\n}\n\n.needle-group {\n  transition: transform 0.05s linear;\n}\n\n.gauge-hint {\n  margin-top: 1rem;\n  font-size: 10px;\n  color: #64748b;\n  font-family: sans-serif;\n}",
+        "js": "// Configuration\nconst SIZE = 200;\nconst CENTER = SIZE / 2;\nconst RADIUS = CENTER - 10; // 90\n\n// Éléments DOM\nconst gaugeContainer = document.getElementById('gaugeContainer');\nconst rangeArc = document.getElementById('rangeArc');\nconst valueArc = document.getElementById('valueArc');\nconst minMarker = document.getElementById('minMarker');\nconst maxMarker = document.getElementById('maxMarker');\nconst valueText = document.getElementById('valueText');\nconst needleGroup = document.getElementById('needleGroup');\nconst inputMin = document.getElementById('gaugeMin');\nconst inputMax = document.getElementById('gaugeMax');\nconst inputValue = document.getElementById('gaugeValue');\n\nlet isDragging = false;\n\n// --- FONCTIONS MATHÉMATIQUES ---\n\n// Convertit polaire (angle/rayon) -> cartésien (x/y)\nfunction polarToCartesian(centerX, centerY, radius, angleInDegrees) {\n  // -90 pour commencer à midi (en haut)\n  const angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;\n  return {\n    x: centerX + (radius * Math.cos(angleInRadians)),\n    y: centerY + (radius * Math.sin(angleInRadians))\n  };\n}\n\n// Crée la définition du chemin SVG (d) pour un arc\nfunction describeArc(x, y, radius, startAngle, endAngle) {\n    const start = polarToCartesian(x, y, radius, endAngle);\n    const end = polarToCartesian(x, y, radius, startAngle);\n    const largeArcFlag = endAngle - startAngle <= 180 ? \"0\" : \"1\";\n    return [\n        \"M\", start.x, start.y, \n        \"A\", radius, radius, 0, largeArcFlag, 0, end.x, end.y\n    ].join(\" \");\n}\n\n// --- LOGIQUE D'AFFICHAGE ---\n\nfunction updateGaugeDisplay() {\n    const min = parseInt(inputMin.value);\n    const max = parseInt(inputMax.value);\n    const val = parseInt(inputValue.value);\n\n    // 1. Dessiner l'arc de plage (Min -> Max)\n    rangeArc.setAttribute(\"d\", describeArc(CENTER, CENTER, RADIUS, min, max));\n\n    // 2. Dessiner l'arc de valeur (0 -> Val)\n    // Note: On pourrait aussi faire (Min -> Val) selon le besoin\n    valueArc.setAttribute(\"d\", describeArc(CENTER, CENTER, RADIUS, 0, val));\n\n    // 3. Positionner les marqueurs\n    minMarker.setAttribute(\"transform\", `rotate(${min} ${CENTER} ${CENTER})`);\n    maxMarker.setAttribute(\"transform\", `rotate(${max} ${CENTER} ${CENTER})`);\n\n    // 4. Positionner l'aiguille\n    needleGroup.setAttribute(\"transform\", `rotate(${val} ${CENTER} ${CENTER})`);\n\n    // 5. Mettre à jour le texte\n    valueText.textContent = val + \"°\";\n}\n\n// --- LOGIQUE D'INTERACTION ---\n\nfunction handleInteraction(e) {\n    e.preventDefault(); // Empêche le scroll tactile\n    const rect = gaugeContainer.getBoundingClientRect();\n    \n    // Support Souris & Touch\n    const clientX = e.touches ? e.touches[0].clientX : e.clientX;\n    const clientY = e.touches ? e.touches[0].clientY : e.clientY;\n\n    const x = clientX - rect.left - CENTER;\n    const y = clientY - rect.top - CENTER;\n\n    // Calcul de l'angle (atan2 renvoie des radians entre -PI et PI)\n    let angle = Math.atan2(y, x) * (180 / Math.PI);\n    angle = angle + 90; // Réorienter : 0 en haut\n    if (angle < 0) angle += 360; // Normaliser 0-360\n\n    // Contraintes Min/Max\n    const min = parseInt(inputMin.value);\n    const max = parseInt(inputMax.value);\n\n    // Logique \"sticky\" : ne saute pas directement de 359 à 0 si on est hors zone\n    // Si on est dans la zone interdite, on colle à la borne la plus proche\n    if (angle > max && angle < 360 - (360-max)/2) angle = max;\n    if (angle < min && angle > min/2) angle = min;\n    \n    // Mise à jour si dans les limites\n    if (angle >= min && angle <= max) {\n        inputValue.value = Math.round(angle);\n        updateGaugeDisplay();\n        \n        // Callback possible ici : console.log(\"Nouvel angle:\", Math.round(angle));\n    }\n}\n\n// Écouteurs d'événements\ngaugeContainer.addEventListener('mousedown', (e) => {\n    isDragging = true;\n    handleInteraction(e);\n});\n\nwindow.addEventListener('mousemove', (e) => {\n    if (isDragging) handleInteraction(e);\n});\n\nwindow.addEventListener('mouseup', () => {\n    isDragging = false;\n});\n\n// Support Tactile\ngaugeContainer.addEventListener('touchstart', (e) => {\n    isDragging = true;\n    handleInteraction(e);\n}, { passive: false });\n\nwindow.addEventListener('touchmove', (e) => {\n    if (isDragging) handleInteraction(e);\n}, { passive: false });\n\nwindow.addEventListener('touchend', () => {\n    isDragging = false;\n});\n\n\n// Initialisation\nupdateGaugeDisplay();"
+    },
+    {
+        "id": 1764078119925,
+        "title": "Gestion Série (Arduino) et Export de Code.",
+        "tags": [
+            "arduino"
+        ],
+        "notes": "",
+        "html": "<div class=\"serial-card\">\n  <!-- Indicateur d'état -->\n  <div class=\"serial-status\">\n    <span class=\"status-text\" id=\"statusText\">DÉCONNECTÉ</span>\n    <div class=\"status-dot\" id=\"statusDot\"></div>\n  </div>\n\n  <!-- Actions -->\n  <div class=\"btn-group\">\n    <button id=\"btnConnect\" class=\"btn btn-primary\">\n      <span>🔌 Connecter USB</span>\n    </button>\n    <button id=\"btnDownload\" class=\"btn btn-secondary\">\n      <span>⬇️ Code .INO</span>\n    </button>\n  </div>\n\n  <!-- Mini Console de débogage -->\n  <div class=\"console-log\" id=\"consoleLog\">\n    > Prêt à connecter...\n  </div>\n</div>",
+        "css": "/* Carte de connexion */\n.serial-card {\n  width: 100%;\n  max-width: 400px;\n  background-color: #1e293b; /* slate-800 */\n  padding: 1rem;\n  border-radius: 0.75rem;\n  color: #e2e8f0;\n  font-family: sans-serif;\n  display: flex;\n  flex-direction: column;\n  gap: 0.75rem;\n}\n\n.serial-status {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background-color: #0f172a; /* slate-900 */\n  padding: 0.75rem;\n  border-radius: 0.5rem;\n  border: 1px solid #334155;\n}\n\n.status-dot {\n  width: 0.75rem;\n  height: 0.75rem;\n  border-radius: 50%;\n  background-color: #ef4444; /* Rouge (déconnecté) */\n  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);\n  transition: background-color 0.3s;\n}\n\n.status-dot.connected {\n  background-color: #10b981; /* Vert (connecté) */\n  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);\n}\n\n.status-text {\n  font-size: 0.875rem;\n  font-weight: bold;\n  font-family: monospace;\n}\n\n/* Boutons */\n.btn-group {\n  display: flex;\n  gap: 0.5rem;\n}\n\n.btn {\n  flex: 1;\n  padding: 0.6rem;\n  border: none;\n  border-radius: 0.5rem;\n  font-size: 0.875rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.2s;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n}\n\n.btn-primary {\n  background-color: rgba(6, 182, 212, 0.1);\n  color: #22d3ee;\n  border: 1px solid rgba(6, 182, 212, 0.5);\n}\n\n.btn-primary:hover {\n  background-color: rgba(6, 182, 212, 0.2);\n  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);\n}\n\n.btn-secondary {\n  background-color: rgba(148, 163, 184, 0.1);\n  color: #cbd5e1;\n  border: 1px solid rgba(148, 163, 184, 0.3);\n}\n\n.btn-secondary:hover {\n  background-color: rgba(148, 163, 184, 0.2);\n}\n\n.btn:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n  filter: grayscale(1);\n}\n\n/* Console Logs */\n.console-log {\n  height: 100px;\n  background-color: #0b1121;\n  border-radius: 0.25rem;\n  padding: 0.5rem;\n  font-family: monospace;\n  font-size: 0.75rem;\n  color: #64748b;\n  overflow-y: auto;\n  border-top: 1px solid #334155;\n}",
+        "js": "// --- Éléments DOM ---\nconst btnConnect = document.getElementById('btnConnect');\nconst btnDownload = document.getElementById('btnDownload');\nconst statusText = document.getElementById('statusText');\nconst statusDot = document.getElementById('statusDot');\nconst consoleLog = document.getElementById('consoleLog');\n\n// --- État ---\nlet port;\nlet writer;\nlet isConnected = false;\n\n// Variables fictives pour l'exemple (normalement, elles viennent de vos jauges/sliders)\nconst servoData = {\n    base: 90,\n    shoulder: 45,\n    elbow: 135,\n    grip: 30\n};\n\n// --- Utilitaires ---\nfunction log(msg) {\n    const line = document.createElement('div');\n    line.textContent = `> ${msg}`;\n    consoleLog.appendChild(line);\n    consoleLog.scrollTop = consoleLog.scrollHeight;\n}\n\n// --- 1. Web Serial API (Connexion) ---\nasync function connectSerial() {\n    if (!(\"serial\" in navigator)) {\n        alert(\"Votre navigateur ne supporte pas le Web Serial API (Utilisez Chrome ou Edge).\");\n        return;\n    }\n\n    try {\n        // Demande à l'utilisateur de choisir le port\n        port = await navigator.serial.requestPort();\n        await port.open({ baudRate: 9600 });\n        \n        // Configuration du Writer\n        const textEncoder = new TextEncoderStream();\n        const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);\n        writer = textEncoder.writable.getWriter();\n\n        isConnected = true;\n        updateUI(true);\n        log(\"Connecté à l'Arduino !\");\n\n        // Lancement de la boucle d'envoi de données\n        startDataLoop();\n\n    } catch (err) {\n        console.error(err);\n        log(\"Erreur: \" + err.message);\n        updateUI(false);\n    }\n}\n\nfunction updateUI(connected) {\n    if (connected) {\n        statusText.textContent = \"EN LIGNE (9600)\";\n        statusText.style.color = \"#10b981\";\n        statusDot.classList.add('connected');\n        btnConnect.disabled = true;\n        btnConnect.innerHTML = \"<span>✅ Connecté</span>\";\n    } else {\n        statusText.textContent = \"DÉCONNECTÉ\";\n        statusText.style.color = \"#cbd5e1\";\n        statusDot.classList.remove('connected');\n        btnConnect.disabled = false;\n        btnConnect.innerHTML = \"<span>🔌 Connecter USB</span>\";\n    }\n}\n\n// Boucle d'envoi (Throttling à 50ms pour ne pas saturer l'Arduino)\nasync function startDataLoop() {\n    while (isConnected && port.writable) {\n        try {\n            // Format CSV simple : \"90,45,135,30\\n\"\n            // Dans une vraie app, lisez ici les valeurs actuelles de vos inputs\n            const dataString = `${servoData.base},${servoData.shoulder},${servoData.elbow},${servoData.grip}\\n`;\n            \n            await writer.write(dataString);\n            \n            // Attendre 100ms\n            await new Promise(r => setTimeout(r, 100));\n        } catch (e) {\n            log(\"Erreur d'écriture, déconnexion...\");\n            isConnected = false;\n            updateUI(false);\n            break;\n        }\n    }\n}\n\n// --- 2. Générateur de fichier .INO ---\nfunction generateArduinoCode() {\n    const code = `\n/*\n * Code généré par ServoCore Studio\n * Réception Série CSV -> Servos\n */\n#include <Servo.h>\n\n// Configuration\nServo sBase, sShoulder, sElbow, sGrip;\n\nvoid setup() {\n  Serial.begin(9600);\n  \n  // Attachement des pins (A adapter)\n  sBase.attach(3);\n  sShoulder.attach(5);\n  sElbow.attach(6);\n  sGrip.attach(9);\n  \n  // Position initiale\n  sBase.write(90);\n  sShoulder.write(90);\n}\n\nvoid loop() {\n  if (Serial.available() > 0) {\n    // Lecture format: \"val1,val2,val3,val4\"\n    int val1 = Serial.parseInt();\n    int val2 = Serial.parseInt();\n    int val3 = Serial.parseInt();\n    int val4 = Serial.parseInt();\n\n    if (Serial.read() == '\\\\n') {\n      sBase.write(val1);\n      sShoulder.write(val2);\n      sElbow.write(val3);\n      sGrip.write(val4);\n    }\n  }\n}\n    `;\n\n    // Création du Blob et téléchargement\n    const blob = new Blob([code], { type: 'text/x-c++src' });\n    const url = URL.createObjectURL(blob);\n    const a = document.createElement('a');\n    a.href = url;\n    a.download = \"robot_controller.ino\";\n    document.body.appendChild(a);\n    a.click();\n    document.body.removeChild(a);\n    URL.revokeObjectURL(url);\n    \n    log(\"Fichier .INO généré !\");\n}\n\n// --- Écouteurs ---\nbtnConnect.addEventListener('click', connectSerial);\nbtnDownload.addEventListener('click', generateArduinoCode);"
+    },
+    {
+        "id": 1764078224728,
+        "title": "Sans Titre",
+        "tags": [],
+        "notes": "",
+        "html": "<!-- SCÈNE VISUELLE -->\n<div class=\"robot-scene\" id=\"scene\">\n  \n  <!-- 1. BASE -->\n  <div class=\"arm-base\">\n    <div class=\"joint-turret\"> <!-- Rotation Z (simulée ou réelle) -->\n      \n      <!-- 2. BRAS SUPÉRIEUR (Épaule) -->\n      <div class=\"arm-upper\" id=\"linkShoulder\">\n        \n        <!-- 3. AVANT-BRAS (Coude) -->\n        <div class=\"joint-elbow\">\n          <div class=\"arm-forearm\" id=\"linkForearm\">\n            \n            <!-- 4. MAIN (Poignet) -->\n            <div class=\"joint-wrist\">\n              <div class=\"gripper-assembly\" id=\"linkWrist\">\n                <!-- Pince -->\n                <div class=\"claw claw-left\"></div>\n                <div class=\"claw claw-right\"></div>\n              </div>\n            </div>\n\n          </div>\n        </div>\n\n      </div>\n\n    </div>\n  </div>\n\n</div>\n\n<!-- CONTRÔLES -->\n<div class=\"controls-panel\">\n  <div class=\"control-group\">\n    <div class=\"slider-label\">\n      <span>Épaule</span>\n      <span id=\"valShoulder\">0°</span>\n    </div>\n    <input type=\"range\" id=\"inShoulder\" min=\"-90\" max=\"90\" value=\"0\">\n  </div>\n\n  <div class=\"control-group\">\n    <div class=\"slider-label\">\n      <span>Coude</span>\n      <span id=\"valElbow\">0°</span>\n    </div>\n    <input type=\"range\" id=\"inElbow\" min=\"-135\" max=\"135\" value=\"45\">\n  </div>\n\n  <div class=\"control-group\">\n    <div class=\"slider-label\">\n      <span>Poignet</span>\n      <span id=\"valWrist\">0°</span>\n    </div>\n    <input type=\"range\" id=\"inWrist\" min=\"-90\" max=\"90\" value=\"0\">\n  </div>\n\n  <div class=\"control-group\">\n    <div class=\"slider-label\">\n      <span>Pince</span>\n      <span id=\"valGrip\">Fermée</span>\n    </div>\n    <input type=\"range\" id=\"inGrip\" min=\"0\" max=\"45\" value=\"0\">\n  </div>\n</div>",
+        "css": "/* Conteneur de la scène */\n.robot-scene {\n  width: 100%;\n  max-width: 500px;\n  height: 400px; /* Espace pour bouger */\n  background-color: #0f172a; /* slate-900 */\n  border-radius: 1rem;\n  border: 1px solid #334155;\n  position: relative;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end; /* Le robot est posé au sol */\n  font-family: sans-serif;\n  user-select: none;\n}\n\n/* Grille de fond décorative */\n.robot-scene::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  background-image: \n    linear-gradient(#1e293b 1px, transparent 1px),\n    linear-gradient(90deg, #1e293b 1px, transparent 1px);\n  background-size: 20px 20px;\n  opacity: 0.3;\n  pointer-events: none;\n}\n\n/* --- STRUCTURE DU BRAS --- */\n/* Chaque partie est contenue dans la précédente pour hériter de la rotation */\n\n/* 1. Base (Fixe au sol) */\n.arm-base {\n  width: 80px;\n  height: 40px;\n  background: #1e293b;\n  border: 1px solid #475569;\n  border-bottom: none;\n  border-radius: 8px 8px 0 0;\n  position: relative;\n  z-index: 10;\n  display: flex;\n  justify-content: center;\n  margin-bottom: 0; /* Collé au bas */\n  box-shadow: 0 0 20px rgba(0,0,0,0.5);\n}\n\n/* Jointure Tournante (Tourelle) */\n.joint-turret {\n  width: 60px;\n  height: 40px;\n  background: #334155;\n  border-radius: 50%;\n  position: absolute;\n  bottom: 20px; /* Relevé */\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  /* Rotation Base */\n  transform: rotate(var(--rot-base, 0deg)); \n  transition: transform 0.1s linear;\n}\n\n/* 2. Épaule (Premier segment long) */\n.arm-upper {\n  width: 20px;\n  height: 120px;\n  background: #0ea5e9; /* sky-500 */\n  border: 1px solid #0284c7;\n  border-radius: 10px;\n  position: absolute;\n  bottom: 20px; /* Ancre dans la tourelle */\n  transform-origin: bottom center; /* PIVOT */\n  transform: rotate(var(--rot-shoulder, 0deg));\n  transition: transform 0.1s linear;\n  box-shadow: inset 5px 0 10px rgba(0,0,0,0.2);\n}\n\n/* Déco Épaule */\n.arm-upper::after {\n  content: '';\n  position: absolute;\n  top: 10px; left: 5px; right: 5px; bottom: 10px;\n  border: 1px dashed rgba(255,255,255,0.3);\n  border-radius: 5px;\n}\n\n/* 3. Coude (Jointure + Avant-bras) */\n.joint-elbow {\n  width: 30px;\n  height: 30px;\n  background: #e2e8f0;\n  border: 4px solid #334155;\n  border-radius: 50%;\n  position: absolute;\n  top: -15px; /* Centré sur le haut du bras */\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: 2;\n}\n\n.arm-forearm {\n  width: 16px;\n  height: 90px;\n  background: #06b6d4; /* cyan-500 */\n  border: 1px solid #0891b2;\n  border-radius: 8px;\n  position: absolute;\n  top: 15px; /* Part du centre du coude */\n  left: 50%;\n  transform: translateX(-50%) rotate(var(--rot-elbow, 0deg)); /* Rotation relative */\n  transform-origin: top center; /* PIVOT */\n  transition: transform 0.1s linear;\n}\n\n/* 4. Poignet et Pince */\n.joint-wrist {\n  width: 24px;\n  height: 24px;\n  background: #e2e8f0;\n  border: 3px solid #334155;\n  border-radius: 50%;\n  position: absolute;\n  bottom: -12px;\n  left: 50%;\n  transform: translateX(-50%);\n}\n\n.gripper-assembly {\n  position: absolute;\n  top: 10px; /* Sous le poignet */\n  left: 50%;\n  transform: translateX(-50%) rotate(var(--rot-wrist, 0deg));\n  transform-origin: top center;\n  transition: transform 0.1s linear;\n  width: 40px;\n  height: 40px;\n}\n\n/* Les doigts de la pince */\n.claw {\n  width: 6px;\n  height: 25px;\n  background: #ef4444; /* red-500 */\n  position: absolute;\n  top: 5px;\n  transition: transform 0.1s;\n}\n\n.claw-left {\n  left: 10px;\n  border-radius: 0 0 0 10px;\n  transform-origin: top right;\n  transform: rotate(var(--grip-angle, 0deg)); /* Ouverture */\n}\n\n.claw-right {\n  right: 10px;\n  border-radius: 0 0 10px 0;\n  transform-origin: top left;\n  transform: rotate(calc(var(--grip-angle, 0deg) * -1)); /* Miroir */\n}\n\n/* --- Panneau de contrôle CSS --- */\n.controls-panel {\n  width: 100%;\n  max-width: 500px;\n  background: #1e293b;\n  padding: 1rem;\n  border-radius: 0.5rem;\n  margin-top: 1rem;\n  color: #e2e8f0;\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 1rem;\n  font-size: 0.8rem;\n}\n\n.control-group {\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n}\n\n.slider-label {\n  display: flex;\n  justify-content: space-between;\n  font-weight: bold;\n  color: #94a3b8;\n}\n\ninput[type=\"range\"] {\n  width: 100%;\n  height: 6px;\n  background: #334155;\n  border-radius: 3px;\n  appearance: none;\n  outline: none;\n}\n\ninput[type=\"range\"]::-webkit-slider-thumb {\n  appearance: none;\n  width: 16px;\n  height: 16px;\n  background: #22d3ee;\n  border-radius: 50%;\n  cursor: pointer;\n  box-shadow: 0 0 10px rgba(34, 211, 238, 0.4);\n}",
+        "js": "// Sélection des inputs\nconst inShoulder = document.getElementById('inShoulder');\nconst inElbow = document.getElementById('inElbow');\nconst inWrist = document.getElementById('inWrist');\nconst inGrip = document.getElementById('inGrip');\n\n// Sélection des labels de valeur\nconst valShoulder = document.getElementById('valShoulder');\nconst valElbow = document.getElementById('valElbow');\nconst valWrist = document.getElementById('valWrist');\nconst valGrip = document.getElementById('valGrip');\n\n// Sélection des éléments du bras (pour appliquer les styles)\nconst linkShoulder = document.getElementById('linkShoulder');\nconst linkForearm = document.getElementById('linkForearm');\nconst linkWrist = document.getElementById('linkWrist');\n// La scène racine peut aussi stocker les variables si on veut une portée globale\nconst scene = document.getElementById('scene');\n\nfunction updateArm() {\n  // 1. Récupération des valeurs\n  const vShoulder = inShoulder.value;\n  const vElbow = inElbow.value;\n  const vWrist = inWrist.value;\n  const vGrip = inGrip.value;\n\n  // 2. Mise à jour des textes\n  valShoulder.textContent = `${vShoulder}°`;\n  valElbow.textContent = `${vElbow}°`;\n  valWrist.textContent = `${vWrist}°`;\n  valGrip.textContent = vGrip > 40 ? \"Ouverte\" : (vGrip < 5 ? \"Fermée\" : `${Math.round((vGrip/45)*100)}%`);\n\n  // 3. Application aux Variables CSS\n  // On applique directement sur l'élément concerné pour la performance\n  \n  // Épaule : Rotation\n  linkShoulder.style.setProperty('--rot-shoulder', `${vShoulder}deg`);\n  \n  // Coude : Rotation\n  linkForearm.style.setProperty('--rot-elbow', `${vElbow}deg`);\n  \n  // Poignet : Rotation\n  linkWrist.style.setProperty('--rot-wrist', `${vWrist}deg`);\n  \n  // Pince : Angle d'ouverture (appliqué à la scène ou au wrapper de la pince)\n  // Comme les griffes sont enfants de linkWrist, on peut mettre la variable sur linkWrist\n  linkWrist.style.setProperty('--grip-angle', `${vGrip}deg`);\n}\n\n// Écouteurs d'événements (Input pour temps réel, Change pour fin de glissement)\nconst inputs = [inShoulder, inElbow, inWrist, inGrip];\ninputs.forEach(input => {\n  input.addEventListener('input', updateArm);\n});\n\n// Initialisation au chargement\nupdateArm();"
+    },
+    {
+        "id": 1764159233754,
+        "title": "Animated login form",
+        "tags": [
+            "login"
+        ],
+        "notes": "",
+        "html": "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>Animated Login Form - CSS</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n\n  </head>\n    \n  <body>\n  <!--ring div starts here-->\n<div class=\"ring\">\n  <i style=\"--clr:#00ff0a;\"></i>\n  <i style=\"--clr:#ff0057;\"></i>\n  <i style=\"--clr:#fffd44;\"></i>\n  <div class=\"login\">\n    <h2>Login</h2>\n    <div class=\"inputBx\">\n      <input type=\"text\" placeholder=\"Username\">\n    </div>\n    <div class=\"inputBx\">\n      <input type=\"password\" placeholder=\"Password\">\n    </div>\n    <div class=\"inputBx\">\n      <input type=\"submit\" value=\"Sign in\">\n    </div>\n    <div class=\"links\">\n      <a href=\"#\">Forget Password</a>\n      <a href=\"#\">Signup</a>\n    </div>\n  </div>\n</div>\n<!--ring div ends here-->\n    \n  </body>\n  \n</html>\n",
+        "css": "@import url(\"https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap\");\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: \"Quicksand\", sans-serif;\n}\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  background: #111;\n  width: 100%;\n  overflow: hidden;\n}\n.ring {\n  position: relative;\n  width: 500px;\n  height: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.ring i {\n  position: absolute;\n  inset: 0;\n  border: 2px solid #fff;\n  transition: 0.5s;\n}\n.ring i:nth-child(1) {\n  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;\n  animation: animate 6s linear infinite;\n}\n.ring i:nth-child(2) {\n  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;\n  animation: animate 4s linear infinite;\n}\n.ring i:nth-child(3) {\n  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;\n  animation: animate2 10s linear infinite;\n}\n.ring:hover i {\n  border: 6px solid var(--clr);\n  filter: drop-shadow(0 0 20px var(--clr));\n}\n@keyframes animate {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n@keyframes animate2 {\n  0% {\n    transform: rotate(360deg);\n  }\n  100% {\n    transform: rotate(0deg);\n  }\n}\n.login {\n  position: absolute;\n  width: 300px;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 20px;\n}\n.login h2 {\n  font-size: 2em;\n  color: #fff;\n}\n.login .inputBx {\n  position: relative;\n  width: 100%;\n}\n.login .inputBx input {\n  position: relative;\n  width: 100%;\n  padding: 12px 20px;\n  background: transparent;\n  border: 2px solid #fff;\n  border-radius: 40px;\n  font-size: 1.2em;\n  color: #fff;\n  box-shadow: none;\n  outline: none;\n}\n.login .inputBx input[type=\"submit\"] {\n  width: 100%;\n  background: #0078ff;\n  background: linear-gradient(45deg, #ff357a, #fff172);\n  border: none;\n  cursor: pointer;\n}\n.login .inputBx input::placeholder {\n  color: rgba(255, 255, 255, 0.75);\n}\n.login .links {\n  position: relative;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 20px;\n}\n.login .links a {\n  color: #fff;\n  text-decoration: none;\n}",
+        "js": ""
+    },
+    {
+        "title": "heart-particle-animation",
+        "tags": [
+            "imported"
+        ],
+        "html": "<svg viewBox=\"0 0 600 552\">\n      <path d=\"M300,107.77C284.68,55.67,239.76,0,162.31,0,64.83,0,0,82.08,0,171.71c0,.48,0,.95,0,1.43-.52,19.5,0,217.94,299.87,379.69v0l0,0,.05,0,0,0,0,0v0C600,391.08,600.48,192.64,600,173.14c0-.48,0-.95,0-1.43C600,82.08,535.17,0,437.69,0,360.24,0,315.32,55.67,300,107.77\" fill=\"#ee5282\"></path>\n    </svg>",
+        "css": "\n      body {\n        margin: 0;\n        overflow: hidden;\n      }\n\n      .controls {\n        position: absolute;\n        top: 0;\n        left: 0;\n        z-index: 1;\n      }\n\n      canvas {\n        position: absolute;\n      }\n\n      svg {\n        position: absolute;\n        display: none;\n      }\n    ",
+        "js": "await load(\"https://cdn.jsdelivr.net/npm/three@0.136.0/build/three.min.js\");\nawait load(\"https://cdn.jsdelivr.net/npm/three@0.136.0/examples/js/controls/OrbitControls.js\");\nawait load(\"https://unpkg.co/gsap@3/dist/gsap.min.js\");\n\n      console.clear();\n      /* SETUP */\n      const scene = new THREE.Scene();\n      const camera = new THREE.PerspectiveCamera(\n        75,\n        window.innerWidth / window.innerHeight,\n        0.1,\n        5000\n      );\n      camera.position.z = 500;\n\n      const renderer = new THREE.WebGLRenderer();\n      renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);\n      renderer.setSize(window.innerWidth, window.innerHeight);\n      document.body.appendChild(renderer.domElement);\n\n      /* CONTROLS */\n      const controlsWebGL = new THREE.OrbitControls(camera, renderer.domElement);\n\n      /* PARTICLES */\n      // Create a global gsap timeline that contains all tweens\n      const tl = gsap.timeline({\n        repeat: -1,\n        yoyo: true\n      });\n\n      const path = document.querySelector(\"path\");\n      const length = path.getTotalLength();\n      const vertices = [];\n      for (let i = 0; i < length; i += 0.1) {\n        const point = path.getPointAtLength(i);\n        const vector = new THREE.Vector3(point.x, -point.y, 0);\n        vector.x += (Math.random() - 0.5) * 30;\n        vector.y += (Math.random() - 0.5) * 30;\n        vector.z += (Math.random() - 0.5) * 70;\n        vertices.push(vector);\n        // Create a tween for that vector\n        tl.from(vector, {\n            x: 600 / 2, // Center X of the heart\n            y: -552 / 2, // Center Y of the heart\n            z: 0, // Center of the scene\n            ease: \"power2.inOut\",\n            duration: \"random(2, 5)\" // Random duration\n          },\n          i * 0.002 // Delay calculated from the distance along the path\n        );\n      }\n      const geometry = new THREE.BufferGeometry().setFromPoints(vertices);\n      const material = new THREE.PointsMaterial( { color: 0xee5282, blending: THREE.AdditiveBlending, size: 3 } );\n      const particles = new THREE.Points(geometry, material);\n      // Offset the particles in the scene based on the viewbox values\n      particles.position.x -= 600 / 2;\n      particles.position.y += 552 / 2;\n      scene.add(particles);\n\n      gsap.fromTo(scene.rotation, {\n        y: -0.2\n      }, {\n        y: 0.2,\n        repeat: -1,\n        yoyo: true,\n        ease: 'power2.inOut',\n        duration: 3\n      });\n\n      /* RENDERING */\n      function render() {\n        requestAnimationFrame(render);\n        // Update the geometry from the animated vertices\n        geometry.setFromPoints(vertices);\n        renderer.render(scene, camera);\n      }\n\n      /* EVENTS */\n      function onWindowResize() {\n        camera.aspect = window.innerWidth / window.innerHeight;\n        camera.updateProjectionMatrix();\n        renderer.setSize(window.innerWidth, window.innerHeight);\n      }\n      window.addEventListener(\"resize\", onWindowResize, false);\n\n      requestAnimationFrame(render);\n    \n",
+        "id": 1764160841726
+    },
+    {
+        "title": "animated_login_form1",
+        "tags": [
+            "imported"
+        ],
+        "html": "<!--ring div starts here-->\n<div class=\"ring\">\n  <i style=\"--clr:#00ff0a;\"></i>\n  <i style=\"--clr:#ff0057;\"></i>\n  <i style=\"--clr:#fffd44;\"></i>\n  <div class=\"login\">\n    <h2>Login</h2>\n    <div class=\"inputBx\">\n      <input type=\"text\" placeholder=\"Username\">\n    </div>\n    <div class=\"inputBx\">\n      <input type=\"password\" placeholder=\"Password\">\n    </div>\n    <div class=\"inputBx\">\n      <input type=\"submit\" value=\"Sign in\">\n    </div>\n    <div class=\"links\">\n      <a href=\"#\">Forget Password</a>\n      <a href=\"#\">Signup</a>\n    </div>\n  </div>\n</div>\n<!--ring div ends here-->",
+        "css": "@import url(\"https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap\");\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: \"Quicksand\", sans-serif;\n}\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  background: #111;\n  width: 100%;\n  overflow: hidden;\n}\n.ring {\n  position: relative;\n  width: 500px;\n  height: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.ring i {\n  position: absolute;\n  inset: 0;\n  border: 2px solid #fff;\n  transition: 0.5s;\n}\n.ring i:nth-child(1) {\n  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;\n  animation: animate 6s linear infinite;\n}\n.ring i:nth-child(2) {\n  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;\n  animation: animate 4s linear infinite;\n}\n.ring i:nth-child(3) {\n  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;\n  animation: animate2 10s linear infinite;\n}\n.ring:hover i {\n  border: 6px solid var(--clr);\n  filter: drop-shadow(0 0 20px var(--clr));\n}\n@keyframes animate {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n@keyframes animate2 {\n  0% {\n    transform: rotate(360deg);\n  }\n  100% {\n    transform: rotate(0deg);\n  }\n}\n.login {\n  position: absolute;\n  width: 300px;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 20px;\n}\n.login h2 {\n  font-size: 2em;\n  color: #fff;\n}\n.login .inputBx {\n  position: relative;\n  width: 100%;\n}\n.login .inputBx input {\n  position: relative;\n  width: 100%;\n  padding: 12px 20px;\n  background: transparent;\n  border: 2px solid #fff;\n  border-radius: 40px;\n  font-size: 1.2em;\n  color: #fff;\n  box-shadow: none;\n  outline: none;\n}\n.login .inputBx input[type=\"submit\"] {\n  width: 100%;\n  background: #0078ff;\n  background: linear-gradient(45deg, #ff357a, #fff172);\n  border: none;\n  cursor: pointer;\n}\n.login .inputBx input::placeholder {\n  color: rgba(255, 255, 255, 0.75);\n}\n.login .links {\n  position: relative;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 20px;\n}\n.login .links a {\n  color: #fff;\n  text-decoration: none;\n}\n\n",
+        "js": "\n",
+        "id": 1764161748912
+    },
+    {
+        "title": "Animated-Credit_Card-tcw",
+        "tags": [
+            "imported"
+        ],
+        "html": "<main>\n            <section id=\"card\" class=\"card\">\n                <div id=\"highlight\"></div>\n                <section class=\"card__front\">\n                    <div class=\"card__header\">\n                        <div>CreditCard</div>\n                        <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"40\" width=\"60\" id=\"svg895\" version=\"1.1\" viewBox=\"-96 -98.908 832 593.448\">\n                            <defs id=\"defs879\">\n                                \n                            </defs>\n                            <path id=\"rect887\" display=\"inline\" fill=\"#ff5f00\" stroke-width=\"5.494\" d=\"M224.833 42.298h190.416v311.005H224.833z\"></path>\n                            <path id=\"path889\" d=\"M244.446 197.828a197.448 197.448 0 0175.54-155.475 197.777 197.777 0 100 311.004 197.448 197.448 0 01-75.54-155.53z\" fill=\"#eb001b\" stroke-width=\"5.494\"></path>\n                            <path id=\"path891\" d=\"M621.101 320.394v-6.372h2.747v-1.319h-6.537v1.319h2.582v6.373zm12.691 0v-7.69h-1.978l-2.307 5.493-2.308-5.494h-1.977v7.691h1.428v-5.823l2.143 5h1.483l2.143-5v5.823z\" class=\"e\" fill=\"#f79e1b\" stroke-width=\"5.494\"></path>\n                            <path id=\"path893\" d=\"M640 197.828a197.777 197.777 0 01-320.015 155.474 197.777 197.777 0 000-311.004A197.777 197.777 0 01640 197.773z\" class=\"e\" fill=\"#f79e1b\" stroke-width=\"5.494\"></path>\n                        </svg>\n                    </div>\n                    <div id=\"card_number\" class=\"card__number\">\n                        <span>#<br></span>\n                        <span>#<br></span>\n                        <span>#<br></span>\n                        <span>#<br></span>\n\n                        <span>#<br></span>\n                        <span>#<br></span>\n                        <span>#<br></span>\n                        <span>#<br></span>\n\n                        <span>#<br></span>\n                        <span>#<br></span>\n                        <span>#<br></span>\n                        <span>#<br></span>\n\n                        <span>#<br></span>\n                        <span>#<br></span>\n                        <span>#<br></span>\n                        <span>#<br></span>\n                    </div>\n                    <div class=\"card__footer\">\n                        <div class=\"card__holder\">\n                            <div class=\"card__section__title\">Card Holder</div>\n                            <div id=\"card_holder\">Name on card</div>\n                        </div>\n                        <div class=\"card__expires\">\n                            <div class=\"card__section__title\">Expires</div>\n                            <span id=\"card_expires_month\">MM</span>/<span id=\"card_expires_year\">YY</span>\n                        </div>\n                    </div>\n                </section>\n                <section class=\"card__back\">\n                    <div class=\"card__hide_line\"></div>\n\n                    <div class=\"card_cvv\">\n                        <span>CVV</span>\n                        <div id=\"card_cvv_field\" class=\"card_cvv_field\"></div>\n                    </div>\n                </section>\n            </section>\n\n            <form class=\"form\">\n                <div>\n                    <label for=\"number\">Card Number</label>\n                    <input id=\"number\" type=\"number\">\n                </div>\n                <div>\n                    <label for=\"holder\">Card Holder</label>\n                    <input id=\"holder\" type=\"text\">\n                </div>\n                <div class=\"filed__group\">\n                    <div>\n                        <label for=\"expiration_month\">Expiration Date</label>\n                        <div class=\"filed__date\">\n                            <select id=\"expiration_month\">\n                                <option selected=\"\" disabled=\"\">Month</option>\n                                <option>01</option>\n                                <option>02</option>\n                                <option>03</option>\n                                <option>04</option>\n                                <option>05</option>\n                                <option>06</option>\n                                <option>07</option>\n                                <option>08</option>\n                                <option>09</option>\n                                <option>10</option>\n                                <option>11</option>\n                                <option>12</option>\n                            </select>\n                            <select id=\"expiration_year\">\n                                <option selected=\"\" disabled=\"\">Year</option>\n                                <option>2023</option>\n                                <option>2024</option>\n                                <option>2025</option>\n                                <option>2026</option>\n                                <option>2027</option>\n                                <option>2028</option>\n                                <option>2029</option>\n                                <option>2030</option>\n                                <option>2031</option>\n                                <option>2032</option>\n                            </select>\n                        </div>\n                    </div>\n                    <div>\n                        <label for=\"cvv\">CVV</label>\n                        <input id=\"cvv\" type=\"number\">\n                    </div>\n                </div>\n            </form>\n        </main>",
+        "css": ":root {font-family: 'Poppins', sans-serif;\n  line-height: 1.5;\n  font-weight: 400;\n\n  color-scheme: #000;\n  background-color: #242424;\n\n  font-synthesis: none;\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-text-size-adjust: 100%;\n}\n\n* {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Poppins', sans-serif;\n  width: 100vw;\n  height: 100vh;\n  background: #fbfcff;\n  padding: 24px;\n  margin: 0;\n  display: flex;\n  align-items:center;\n  justify-content: center;\n}\n\n#highlight {\n  position: absolute;\n  border: 1px solid #fff;\n  border-radius: 12px;\n  z-index: 1;\n  width: 0;\n  height: 0;\n  top: 0;\n  left: 0;\n  box-shadow: 0 0 5px #fff;\n  transition: .3s;\n}\n\n#highlight.highlight__number {\n  width: 346px;\n  height: 40px;\n  top: 92px;\n  left: 18px;\n}\n\n#highlight.highlight__holder {\n  width: 264px;\n  height: 56px;\n  top: 156px;\n  left: 18px;\n}\n\n#highlight.highlight__expire {\n  width: 86px;\n  height: 56px;\n  top: 156px;\n  left: 323px;\n}\n\n#highlight.highlight__cvv {\n  width: 381px;\n  height: 91px;\n  top: 83px;\n  left: 18px;\n}\n\n#highlight.hidden {\n  display: none;\n}\n\n.card { \n  position: relative;\n  max-width: 420px;\n  margin: 0 auto;\n  transform-style: preserve-3d;\n  transition: 1s;\n}\n\n.card:hover,\n.card.flip {\n  transform: rotateY(180deg);\n}\n\n.card:hover #highlight {\n  display: none;\n}\n\n.card__front,\n.card__back {\n  width: 100%;\n  max-width: 420px;\n  height: 233px;\n  border-radius: 20px;\n  padding: 24px 30px 30px;\n  background: linear-gradient(to right bottom, #323941, #061018);\n  box-shadow: 0 33px 50px -15px rgba(50,55,63,.66);\n  color: #fff;\n  overflow: hidden;\n  margin: 0 auto;\n  backface-visibility: hidden;\n}\n\n@media (max-width: 450px) {\n  .card__front,\n  .card__back{\n    padding: 8px 12px 16px;\n    height: 206px;\n  }\n}\n\n.card__back {\n  position: absolute;\n  top: 0;\n  left: 0;\n  transform: rotateY(180deg);\n  padding: 24px 0 0;\n}\n\n.card__front {\n  position: relative;\n}\n\n.card__front:before,\n.card__back:before {\n  content: \"\";\n  position: absolute;\n  border: 16px solid #ff6be7;\n  border-radius: 100%;\n  left: -17%;\n  top: -45px;\n  height: 300px;\n  width: 300px;\n  filter: blur(13px);\n}\n\n.card__front:after,\n.card__back:after {\n  content: \"\";\n  position: absolute;\n  border: 16px solid #7288ff;\n  border-radius: 100%;\n  width: 300px;\n  top: 55%;\n  left: -200px;\n  height: 300px;\n  filter: blur(13px);\n}\n\n.card__hide_line {\n  height: 40px;\n  width: 100%;\n  background-color: #6b7280;\n  position: relative;\n  z-index: 1;\n}\n\n.card_cvv {\n  position: relative;\n  z-index: 1;\n  margin-top: 24px;\n  padding: 0 32px;\n  display: flex;\n  flex-direction: column;\n  align-items: end;\n  font-size: 14px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n\n.card_cvv_field {\n  margin-top: 6px;\n  background-color: #fff;\n  border-radius: 12px;\n  height: 44px;\n  width: 100%;\n  color: #000;\n  display: flex;\n  align-items: center;\n  justify-content: end;\n  padding: 0 12px;\n  font-size: 25px;\n  line-height: 21px;\n}\n\n.card__header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 600;\n  margin-bottom: 32px;\n  position: relative;\n  z-index: 1;\n}\n\n.card__number {\n  /* word-spacing: 10px; */\n  font-size: 22px;\n  margin-bottom: 32px;\n  position: relative;\n  z-index: 1;\n  display: flex;\n  height: 33px;\n  overflow: hidden;\n}\n\n.card__number span {\n  display: flex;\n  flex-direction: column;\n  transition: .2s;\n}\n\n.card__number span.filed { \n  transform: translateY(-33px);\n}\n\n.card__number span:nth-child(4n) {\n  margin-right: 10px;\n}\n\n.card__footer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  position: relative;\n  z-index: 1;\n}\n\n.card__holder {\n  text-transform: uppercase;\n}\n\n.card__section__title {\n  font-size: 14px;\n  font-weight: 600;\n  text-transform: uppercase;\n}\n\n.form {\n  border-radius: 12px;\n  background: #fff;\n  max-width: 600px;\n  margin: -130px auto 0;\n  padding: 180px 32px 32px;\n  border: 1px solid #f1f1f1;\n  box-shadow: 0 0 40px rgba(50,55,63,.16);\n  display: grid;\n  gap: 12px;\n}\n\nlabel {\n  display: block;\n  margin: 14px 0 4px;\n  color: #0d0c22;\n  font-weight: 500;\n}\n\ninput, select {\n  height: 52px;\n  display: block;\n  width: 100%;\n  border: 1px solid #6b7280;\n  padding: 18px 20px;\n  transition: outline 200ms ease, box-shadow 200ms ease;\n  border-radius: 12px;\n  outline: none;\n  background-color: #fff;\n  color: #0d0c22;\n  font-size: 16px;\n}\n\ninput:focus,\nselect:focus {\n  border: 1px solid #000;   \n  outline: 4px solid rgba(0,0,0,.1);\n}\n\nselect {\n  padding: 0 20px;\n}\n\n.filed__group {\n  display: grid;\n  grid-template-columns: 2fr 1fr;\n  gap: 24px;\n}\n\n.filed__date {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 12px;\n}\n\n\n                                    .e {\n                                        fill: #f79e1b;\n                                    }\n                                ",
+        "js": "document.getElementById(\"number\").addEventListener(\"focus\", (e) => {\n    document.getElementById(\"card\").classList.remove('flip')\n    document.getElementById(\"highlight\").className = 'highlight__number'\n})\n\ndocument.getElementById(\"holder\").addEventListener(\"focus\", (e) => {\n    document.getElementById(\"card\").classList.remove('flip')\n    document.getElementById(\"highlight\").className = 'highlight__holder'\n})\n\ndocument.getElementById(\"expiration_month\").addEventListener(\"focus\", (e) => {\n    document.getElementById(\"card\").classList.remove('flip')\n    document.getElementById(\"highlight\").className = 'highlight__expire'\n})\n\ndocument.getElementById(\"expiration_year\").addEventListener(\"focus\", (e) => {\n    document.getElementById(\"card\").classList.remove('flip')\n    document.getElementById(\"highlight\").className = 'highlight__expire'\n})\n\ndocument.getElementById(\"cvv\").addEventListener(\"focus\", (e) => {\n    document.getElementById(\"card\").classList.add('flip')\n    document.getElementById(\"highlight\").className = 'highlight__cvv'\n})\n\ndocument.getElementById(\"cvv\").addEventListener(\"focusout\", (e) => {\n    document.getElementById(\"card\").classList.remove('flip')\n    document.getElementById(\"highlight\").className = 'hidden'\n})\n\nlet enteredCardNumbers = 0\n\ndocument.getElementById(\"number\").addEventListener(\"input\", (e) => {\n    const value = e.target.value\n\n    if(enteredCardNumbers > value.length) {\n        document.getElementById('card_number').children[15 - (15 - value.length)].classList.remove('filed')\n        document.getElementById('card_number').children[value.length].innerHTML = \"#<br>\"\n    }\n    else {\n        if(value.length > 4 && value.length < 13) {\n            document.getElementById('card_number').children[value.length - 1].innerText += \"*\"\n        }else {\n            document.getElementById('card_number').children[value.length - 1].innerText += value.slice(-1)\n        }    \n\n        document.getElementById('card_number').children[value.length - 1].classList.add('filed')\n    }\n\n    enteredCardNumbers = value.length\n\n})\n\ndocument.getElementById(\"holder\").addEventListener(\"input\", (e) => {\n    document.getElementById('card_holder').innerText = e.target.value\n})\n\ndocument.getElementById(\"cvv\").addEventListener(\"input\", (e) => {\n    document.getElementById('card_cvv_field').innerText = Array(e.target.value.length+1).join(\"*\")\n})\n\ndocument.getElementById(\"expiration_month\").addEventListener(\"change\", (e) => {\n    document.getElementById('card_expires_month').innerText = e.target.value\n})\n\ndocument.getElementById(\"expiration_year\").addEventListener(\"change\", (e) => {\n    document.getElementById('card_expires_year').innerText = e.target.value.slice(-2)\n})\n\nawait load(\"file:///C:/Users/Nephystos/iCloudDrive/script.js\");\n",
+        "id": 1764161757389
+    },
+    {
+        "title": "animated-login-register_form_tcw 2",
+        "tags": [
+            "imported"
+        ],
+        "html": "<div class=\"container\">\n        <div class=\"curved-shape\"></div>\n        <div class=\"curved-shape2\"></div>\n        <div class=\"form-box Login\">\n            <h2 class=\"animation\" style=\"--D:0; --S:21\">Login</h2>\n            <form action=\"#\">\n                <div class=\"input-box animation\" style=\"--D:1; --S:22\">\n                    <input type=\"text\" required=\"\">\n                    <label for=\"\">Username</label>\n                    <box-icon type=\"solid\" name=\"user\" color=\"gray\"></box-icon>\n                </div>\n\n                <div class=\"input-box animation\" style=\"--D:2; --S:23\">\n                    <input type=\"password\" required=\"\">\n                    <label for=\"\">Password</label>\n                    <box-icon name=\"lock-alt\" type=\"solid\" color=\"gray\"></box-icon>\n                </div>\n\n                <div class=\"input-box animation\" style=\"--D:3; --S:24\">\n                    <button class=\"btn\" type=\"submit\">Login</button>\n                </div>\n\n                <div class=\"regi-link animation\" style=\"--D:4; --S:25\">\n                    <p>Don't have an account? <br> <a href=\"#\" class=\"SignUpLink\">Sign Up</a></p>\n                </div>\n            </form>\n        </div>\n\n        <div class=\"info-content Login\">\n            <h2 class=\"animation\" style=\"--D:0; --S:20\">WELCOME BACK!</h2>\n            <p class=\"animation\" style=\"--D:1; --S:21\">We are happy to have you with us again. If you need anything, we are here to help.</p>\n        </div>\n\n        <div class=\"form-box Register\">\n            <h2 class=\"animation\" style=\"--li:17; --S:0\">Register</h2>\n            <form action=\"#\">\n                <div class=\"input-box animation\" style=\"--li:18; --S:1\">\n                    <input type=\"text\" required=\"\">\n                    <label for=\"\">Username</label>\n                    <box-icon type=\"solid\" name=\"user\" color=\"gray\"></box-icon>\n                </div>\n\n                <div class=\"input-box animation\" style=\"--li:19; --S:2\">\n                    <input type=\"email\" required=\"\">\n                    <label for=\"\">Email</label>\n                    <box-icon name=\"envelope\" type=\"solid\" color=\"gray\"></box-icon>\n                </div>\n\n                <div class=\"input-box animation\" style=\"--li:19; --S:3\">\n                    <input type=\"password\" required=\"\">\n                    <label for=\"\">Password</label>\n                    <box-icon name=\"lock-alt\" type=\"solid\" color=\"gray\"></box-icon>\n                </div>\n\n                <div class=\"input-box animation\" style=\"--li:20; --S:4\">\n                    <button class=\"btn\" type=\"submit\">Register</button>\n                </div>\n\n                <div class=\"regi-link animation\" style=\"--li:21; --S:5\">\n                    <p>Don't have an account? <br> <a href=\"#\" class=\"SignInLink\">Sign In</a></p>\n                </div>\n            </form>\n        </div>\n\n        <div class=\"info-content Register\">\n            <h2 class=\"animation\" style=\"--li:17; --S:0\">WELCOME!</h2>\n            <p class=\"animation\" style=\"--li:18; --S:1\">We’re delighted to have you here. If you need any assistance, feel free to reach out.</p>\n        </div>\n\n    </div>",
+        "css": "@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n    font-family: 'Poppins', sans-serif;\n    color: #fff;\n}\n\nbody{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    min-height: 100vh;\n    background: #25252b;\n}\n\n.container{\n    position: relative;\n    width: 750px;\n    height: 450px;\n    border: 2px solid #e46033;\n    box-shadow: 0 0 25px #e46033;\n    overflow: hidden;\n}\n\n.container .form-box{\n    position: absolute;\n    top: 0;\n    width: 50%;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n}\n\n.form-box.Login{\n    left: 0;\n    padding: 0 40px;\n}\n\n.form-box.Login .animation{\n    transform: translateX(0%);\n    transition: .7s;\n    opacity: 1;\n    transition-delay: calc(.1s * var(--S));\n}\n\n.container.active .form-box.Login .animation{\n    transform: translateX(-120%);\n    opacity: 0;\n    transition-delay: calc(.1s * var(--D));\n}\n\n.form-box.Register{\n    /* display: none; */\n    right: 0;\n    padding: 0 60px;\n}\n\n.form-box.Register .animation{\n    transform: translateX(120%);\n    transition: .7s ease;\n    opacity: 0;\n    filter: blur(10px);\n    transition-delay: calc(.1s * var(--S));\n}\n\n.container.active .form-box.Register .animation{\n    transform: translateX(0%);\n    opacity: 1;\n    filter: blur(0px);\n    transition-delay: calc(.1s * var(--li));\n}\n\n.form-box h2{\n    font-size: 32px;\n    text-align: center;\n}\n\n.form-box .input-box{\n    position: relative;\n    width: 100%;\n    height: 50px;\n    margin-top: 25px;\n}\n\n.input-box input{\n    width: 100%;\n    height: 100%;\n    background: transparent;\n    border: none;\n    outline: none;\n    font-size: 16px;\n    color: #fff;\n    font-weight: 600;\n    border-bottom: 2px solid #fff;\n    padding-right: 23px;\n    transition: .5s;\n}\n\n.input-box input:focus,\n.input-box input:valid{\n    border-bottom: 2px solid #e46033;\n}\n\n.input-box label{\n    position: absolute;\n    top: 50%;\n    left: 0;\n    transform: translateY(-50%);\n    font-size: 16px;\n    color: #fff;\n    transition: .5s;\n}\n\n.input-box input:focus ~ label,\n.input-box input:valid ~ label{\n    top: -5px;\n    color: #e46033;\n}\n\n.input-box box-icon{\n    position: absolute;\n    top: 50%;\n    right: 0;\n    font-size: 18px;\n    transform: translateY(-50%);\n    color: #fff;\n}\n\n.input-box input:focus ~ box-icon,\n.input-box input:valid ~ box-icon{\n    color: #e46033;\n}\n\n.btn{\n    position: relative;\n    width: 100%;\n    height: 45px;\n    background: transparent;\n    border-radius: 40px;\n    cursor: pointer;\n    font-size: 16px;\n    font-weight: 600;\n    border: 2px solid #e46033;\n    overflow: hidden;\n    z-index: 1;    \n}\n\n.btn::before{\n    content: \"\";\n    position: absolute;\n    height: 300%;\n    width: 100%;\n    background: linear-gradient(#25252b, #e46033, #25252b, #e46033);\n    top: -100%;\n    left: 0;\n    z-index: -1;\n    transition: .5s;\n}\n\n.btn:hover:before{\n    top: 0;\n}\n\n.regi-link{\n    font-size: 14px;\n    text-align: center;\n    margin: 20px 0 10px;\n}\n\n.regi-link a{\n    text-decoration: none;\n    color: #e46033;\n    font-weight: 600;\n}\n\n.regi-link a:hover{\n    text-decoration: underline;\n}\n\n.info-content{\n    position: absolute;\n    top: 0;\n    height: 100%;\n    width: 50%;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n}\n\n.info-content.Login{\n    right: 0;\n    text-align: right;\n    padding: 0 40px 60px 150px;\n}\n\n.info-content.Login .animation{\n    transform: translateX(0);\n    transition: .7s ease;\n    transition-delay: calc(.1s * var(--S));\n    opacity: 1;\n    filter: blur(0px);\n}\n\n.container.active .info-content.Login .animation{\n    transform: translateX(120%);\n    opacity: 0;\n    filter: blur(10px);\n    transition-delay: calc(.1s * var(--D));\n}\n\n.info-content.Register{\n    /* display: none; */\n    left: 0;\n    text-align: left;\n    padding: 0 150px 60px 38px;\n    pointer-events: none;\n}\n\n.info-content.Register .animation{\n    transform: translateX(-120%);\n    transition: .7s ease;\n    opacity: 0;\n    filter: blur(10PX);\n    transition-delay: calc(.1s * var(--S));\n}\n\n.container.active .info-content.Register .animation{\n    transform: translateX(0%);\n    opacity: 1;\n    filter: blur(0);\n    transition-delay: calc(.1s * var(--li));\n}\n\n.info-content h2{\n    text-transform: uppercase;\n    font-size: 36px;\n    line-height: 1.3;\n}\n\n.info-content p{\n    font-size: 16px;\n}\n\n.container .curved-shape{\n    position: absolute;\n    right: 0;\n    top: -5px;\n    height: 600px;\n    width: 850px;\n    background: linear-gradient(45deg, #25252b, #e46033);\n    /*transform: rotate(10deg) skewY(40deg);*/\n    transform: rotate(10deg) skewY(40deg);\n    transform-origin: bottom right;\n    transition: 1.5s ease;\n    transition-delay: 1.6s;\n}\n\n.container.active .curved-shape{\n    transform: rotate(0deg) skewY(0deg);\n    transition-delay: .5s;\n}\n\n.container .curved-shape2{\n    position: absolute;\n    left: 250px;\n    top: 100%;\n    height: 700px;\n    width: 850px;\n    background: #25252b;\n    border-top: 3px solid #e46033;\n    transform: rotate(0deg) skewY(0deg);\n    transform-origin: bottom left;\n    transition: 1.5s ease;\n    transition-delay: .5s;\n}\n\n.container.active .curved-shape2{\n    transform: rotate(-11deg) skewY(-41deg);\n    transition-delay: 1.2s;\n}\n\n",
+        "js": "const container = document.querySelector('.container');\nconst LoginLink = document.querySelector('.SignInLink');\nconst RegisterLink = document.querySelector('.SignUpLink');\n\nRegisterLink.addEventListener('click', () =>{\n    container.classList.add('active');\n})\n\nLoginLink.addEventListener('click', () => {\n    container.classList.remove('active');\n})\n\nawait load(\"file:///C:/Users/Nephystos/iCloudDrive/index.js\");\nawait load(\"https://unpkg.com/boxicons@2.1.4/dist/boxicons.js\");\nawait load(\"file:///C:/Users/Nephystos/iCloudDrive/script.js\");\n",
+        "id": 1764161806217
+    }
+]

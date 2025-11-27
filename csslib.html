@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSLib by INFINITION</title>
+    <link rel="stylesheet" href="csslib/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-left">
+            <div class="logo"><i class="fas fa-palette"></i> CSSLib <small
+                    style="font-size:0.8rem; color:var(--neon-purple); font-family:var(--code-font);">by
+                    INFINITION</small></div>
+
+            <div class="bars-container">
+                <div class="input-wrapper">
+                    <span class="icon-left"><i class="fas fa-search"></i></span>
+                    <input type="text" id="search-input" class="std-input" placeholder="Search components..."
+                        oninput="filterGrid()">
+                </div>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <input type="file" id="import-file-replace" style="display: none;" accept=".json"
+                onchange="importDataReplace(this)">
+            <input type="file" id="import-file-append" style="display: none;" accept=".json"
+                onchange="importDataAppend(this)">
+
+            <button class="btn" onclick="document.getElementById('import-file-replace').click()"><i
+                    class="fas fa-file-import"></i> Import</button>
+            <button class="btn" onclick="exportData()"><i class="fas fa-save"></i> Export</button>
+            <button class="btn btn-primary" onclick="openEditor()"><i class="fas fa-plus"></i> New</button>
+            <button class="btn btn-warning" onclick="window.location.href='index.html'"><i
+                    class="fas fa-sign-out-alt"></i> Exit</button>
+        </div>
+    </header>
+
+    <div class="grid-container" id="grid"></div>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-header-inputs">
+                    <input type="text" id="edit-title" class="title-input" placeholder="Component Name...">
+                    <input type="text" id="edit-tags" class="tags-input" placeholder="Tags (comma separated)...">
+                </div>
+                <button class="btn-icon" onclick="closeEditor()"
+                    style="width:auto; padding: 8px 12px; font-size: 1rem;">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="editor-container">
+                    <div class="tabs">
+                        <div class="tab active" onclick="switchTab('html', event)">HTML</div>
+                        <div class="tab" onclick="switchTab('css', event)">CSS</div>
+                        <div class="tab" onclick="switchTab('js', event)">JS</div>
+                        <div class="tab" onclick="switchTab('notes', event)">NOTES</div>
+                    </div>
+
+                    <div class="code-wrapper">
+                        <textarea id="code-html" class="code-area active" placeholder="HTML Code..."
+                            oninput="onCodeChange('html')"></textarea>
+                        <textarea id="code-css" class="code-area" placeholder="CSS Code..."
+                            oninput="onCodeChange('css')"></textarea>
+                        <textarea id="code-js" class="code-area" placeholder="JavaScript Code..."
+                            oninput="onCodeChange('js')"></textarea>
+                        <textarea id="code-notes" class="code-area" placeholder="Write your notes here..."></textarea>
+
+                        <div id="tweaks-panel" class="tweaks-panel">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-container">
+                    <div id="modal-preview-host"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="footer-left">
+                    <button class="btn btn-warning" onclick="resetEditor()">↺ Reset</button>
+                </div>
+                <div class="footer-right">
+                    <button class="btn" onclick="closeEditor()">Cancel</button>
+                    <button class="btn btn-primary" onclick="saveItem()">Save (Ctrl+S)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast">Notification</div>
+
+    <script src="csslib/app.js"></script>
+</body>
+
+</html>
