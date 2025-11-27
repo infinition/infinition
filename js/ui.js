@@ -167,8 +167,19 @@ async function openKBArticle(article) {
         interactiveHtml += `</div>`;
     }
 
+    const shareUrl = window.location.href;
+    const shareHtml = `
+                    <div class="article-toolbar">
+                        <button class="tool-btn" onclick="share('twitter')"><i class="fab fa-twitter"></i> Post </button>
+                        <button class="tool-btn" onclick="share('linkedin')"><i class="fab fa-linkedin"></i> Share</button>
+                        <button class="tool-btn" onclick="share('email')"><i class="fas fa-envelope"></i> Email</button>
+                        <button class="tool-btn" onclick="share('sms')"><i class="fas fa-comment-dots"></i> SMS</button>
+                        <button class="tool-btn" onclick="navigator.clipboard.writeText('${shareUrl}');alert('Link copied!')"><i class="fas fa-link"></i> Copy</button>
+                    </div>`;
+
     container.innerHTML = `
         <div class="article-content" style="max-width: 100%; padding: 0;">
+            ${shareHtml}
             <div style="margin-bottom:2rem;"><span style="color:var(--neon-purple);font-family:var(--code-font);font-size:0.8rem;">KB NODE: /${article.file}</span><h1 style="font-family:var(--cyber-font);font-size:2rem;margin-top:0.5rem;">${article.title}</h1></div>
             ${interactiveHtml}
             ${article.image ? `<img src="${article.image}" style="max-width:100%;border:1px solid #333;margin-bottom:2rem;">` : ''}
