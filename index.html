@@ -6,12 +6,9 @@
     <meta name="description" content="Portal of Fabien Polly (Infinition) - AI Researcher, Quantum Expert, Hacker, 3D Artist & Skater">
     <title>FABIEN POLLY | INFINITION</title>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Marked.js for Markdown Parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
@@ -195,7 +192,11 @@
         .article-info { flex: 1; }
         .article-title { font-family: var(--cyber-font); font-size: 1.1rem; font-weight: bold; line-height: 1.3; }
         .article-date { font-family: var(--code-font); font-size: 0.8rem; opacity: 0.5; display: block; margin-top: 0.2rem;}
-        
+        /* Restored CSS from old file */
+        .article-desc { margin-top: 10px; font-size: 0.9rem; opacity: 0.7; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; color: #bbb; }
+        .article-header { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+        .file-icon { font-size: 1rem; }
+
         .kb-container { display: flex; height: calc(100vh - 60px); }
         .kb-sidebar { width: 300px; background: #090d10; border-right: 1px solid rgba(255,255,255,0.1); overflow-y: auto; padding: 1rem; font-family: var(--code-font); font-size: 0.9rem; display: flex; flex-direction: column;}
         .kb-main { flex: 1; overflow-y: auto; padding: 2rem; background: var(--bg-color); }
@@ -226,16 +227,92 @@
         
         .music-trigger { position: absolute; bottom: 40px; right: 40px; color: rgba(255, 255, 255, 0.6); cursor: pointer; transition: all 0.3s; z-index: 20; font-size: 1.5rem; border: 1px solid rgba(255,255,255,0.2); padding: 10px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); }
         .music-trigger:hover { color: var(--neon-red); border-color: var(--neon-red); box-shadow: 0 0 15px var(--neon-red); transform: scale(1.1); }
-        .music-frame-container { width: 100%; max-width: 800px; margin: 2rem auto 4rem auto; border: 1px solid var(--neon-red); padding: 10px; background: rgba(0, 0, 0, 0.3); box-shadow: 0 0 30px rgba(255, 0, 60, 0.1); border-radius: 8px; text-align: center; }
+.music-frame-container {
+    width: 100%;
+    max-width: 660px;
+    margin: 2rem auto 4rem auto;
+    padding: 0;
+    background: #000;
+    border: 1px solid #000000;
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* On s'assure que l'iframe remplit bien le conteneur */
+.music-frame-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    display: block; /* Évite les espaces fantômes en bas */
+}        
         .music-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
         .music-card { background: #0d1216; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; transition: all 0.3s ease; cursor: pointer; position: relative; }
         .music-card:hover { transform: translateY(-5px); border-color: var(--neon-red); box-shadow: 0 0 15px rgba(255, 0, 60, 0.3); }
         .album-cover { width: 100%; aspect-ratio: 1; object-fit: cover; filter: grayscale(60%); transition: 0.3s; }
         .music-card:hover .album-cover { filter: grayscale(0%); }
-        .music-info { padding: 0.8rem; background: rgba(0,0,0,0.9); position: absolute; bottom: 0; left: 0; right: 0; border-top: 1px solid rgba(255,255,255,0.1); }
-        .band-name { color: #fff; font-weight: bold; display: block; font-size: 0.9rem; }
-        .album-name { color: var(--neon-red); font-size: 0.75rem; }
+        .music-info { padding: 0.3rem; background: rgba(0,0,0,0.9); position: absolute; bottom: 0; left: 0; right: 0; border-top: 1px solid rgba(255,255,255,0.1); }
+.band-name {
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    text-transform: capitalize;    
+    font-size: 0.9rem;
+    justify-content: center;
+}        /* .album-name { color: var(--neon-red); font-size: 0.75rem; } */
+/* --- TOOLBAR BUTTONS --- */
+.tool-btn {
+    /* Base */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Espace entre l'icône et le texte */
+    
+    /* Typo */
+    font-family: var(--code-font);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #888; /* Gris par défaut (discret) */
+    
+    /* Box Model */
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.03); /* Très léger fond */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure subtile */
+    border-radius: 4px; /* Coins légèrement arrondis */
+    
+    /* Comportement */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
 
+/* --- HOVER EFFECT --- */
+.tool-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff; /* Texte blanc */
+    border-color: var(--neon-blue); /* Bordure s'allume en bleu */
+    box-shadow: 0 0 10px rgba(19, 175, 240, 0.1); /* Légère lueur */
+    transform: translateY(-1px);
+}
+
+/* --- BOUTON FERMER (SPÉCIFIQUE) --- */
+/* Si tu veux que le bouton 'Close' soit rouge au survol */
+.tool-btn[onclick*="navigateTo('blog')"]:hover {
+    border-color: var(--neon-red);
+    color: var(--neon-red);
+    box-shadow: 0 0 10px rgba(255, 0, 60, 0.1);
+}
+
+/* Gestion de l'icône à l'intérieur */
+.tool-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+/* Petit mouvement de l'icône au survol */
+.tool-btn:hover i {
+    transform: scale(1.1);
+}
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         @media (max-width: 768px) {
             h1.port-h1 { font-size: 2.5rem; }
@@ -252,19 +329,16 @@
 </head>
 <body>
 
-    <!-- INTERACTIVE MODAL (App-like) -->
     <div id="interactive-modal" class="modal-overlay">
         <div class="modal-content" id="modal-content-area"></div>
     </div>
 
-    <!-- SYSTEM BAR -->
     <div class="sys-bar">
         <div class="sys-id">USER: GUEST // ID: 0xPOLLY_PORTAL</div>
         <div class="back-btn" onclick="navigateTo('portal')"><i class="fas fa-arrow-left"></i> RETURN TO ROOT</div>
         <div class="sys-status"><i class="fas fa-circle" style="font-size: 8px;"></i> SYSTEM ONLINE</div>
     </div>
 
-    <!-- VIEW 1: PORTAL HOME -->
     <section id="portal-view" class="view-section active">
         <div class="portal-ring"></div>
         <h1 class="portal-title">INFINITION</h1>
@@ -277,7 +351,6 @@
         <div class="music-trigger" onclick="navigateTo('music')" title="Audio Frequency"><i class="fas fa-music"></i></div>
     </section>
 
-    <!-- VIEW 2: PORTFOLIO -->
     <section id="portfolio-view" class="view-section">
         <main class="container">
             <div style="padding-top: 2rem; margin-bottom: 4rem;">
@@ -318,27 +391,24 @@
         </main>
     </section>
 
-    <!-- VIEW 3: DATA LOGS -->
-<section id="blog-view" class="view-section">
-    <div class="container">
-        <div class="blog-header">
-            <h1 class="port-h1">DATA LOGS</h1>
-            <p>Personal Research Notes & Live Repositories</p>
-            <button class="action-btn" onclick="runScanSimulation(true)" style="margin: 10px auto; background: transparent; border: 1px solid #333; font-size: 0.8rem;">
-                <i class="fas fa-sync-alt"></i> REFRESH DATA
-            </button>
+    <section id="blog-view" class="view-section">
+        <div class="container">
+            <div class="blog-header">
+                <h1 class="port-h1">DATA LOGS</h1>
+                <p>Personal Research Notes & Live Repositories</p>
+                <button class="action-btn" onclick="runScanSimulation(true)" style="margin: 10px auto; background: transparent; border: 1px solid #333; font-size: 0.8rem;">
+                    <i class="fas fa-sync-alt"></i> REFRESH DATA
+                </button>
+            </div>
+            <div class="console-output" id="scan-output">> INITIALIZING...</div>
+            <div class="article-list" id="article-list-container"></div>
         </div>
-        <div class="console-output" id="scan-output">> INITIALIZING...</div>
-        <div class="article-list" id="article-list-container"></div>
-    </div>
-</section>
+    </section>
 
-    <!-- VIEW 4: ARTICLE READER -->
     <section id="article-reader" class="view-section">
         <div class="container" id="article-view"></div>
     </section>
 
-    <!-- VIEW 5: KNOWLEDGE BASE -->
     <section id="kb-view" class="view-section" style="padding-top: 60px; padding-bottom: 0;">
         <div class="kb-container">
             <div class="kb-sidebar">
@@ -352,20 +422,18 @@
         </div>
     </section>
 
-    <!-- VIEW 6: MUSIC SECTION -->
     <section id="music-view" class="view-section">
         <div class="container">
             <h1 class="port-h1" style="text-align:center; color: var(--neon-red); text-shadow: 2px 2px 0 #000;">AUDIO FREQUENCIES</h1>
             <p style="text-align:center; opacity:0.7; margin-bottom: 2rem;">Current Rotation & Inspirations</p>
             <div class="music-frame-container">
-                <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/fr/playlist/fab/pl.u-6mo44JmF4kgllW"></iframe>
+                <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/fr/playlist/fab/pl.u-6mo44JmF4kgllW?theme=dark"></iframe>
             </div>
-            <h3 style="text-align:center; color:#fff; margin-top: 3rem; border-bottom:1px dashed #333; padding-bottom:10px;">MY FAVORITE ARTISTS</h3>
+            <h3 style="text-align:center; color:#fff; margin-top: 3rem; border-bottom:1px dashed #333; padding-bottom:10px;"> 🤘 BANDS 🤘</h3>
             <div class="music-grid" id="music-grid"><div style="color:#666; text-align:center; width:100%;">Loading...</div></div>
         </div>
     </section>
 
-    <!-- JS -->
     <script>
         const GITHUB_USER = 'infinition';
         const GITHUB_REPO = 'infinition'; 
@@ -489,14 +557,14 @@
 
             const shareUrl = window.location.href;
             const shareHtml = `
-                <div class="article-toolbar">
-                    <button class="tool-btn" onclick="share('linkedin')"><i class="fab fa-linkedin"></i> Share</button>
-                    <button class="tool-btn" onclick="share('twitter')"><i class="fab fa-x-twitter"></i> Post</button>
-                    <button class="tool-btn" onclick="share('sms')"><i class="fas fa-comment-dots"></i> SMS</button>
-                    <button class="tool-btn" onclick="navigator.clipboard.writeText('${shareUrl}');alert('Link copied!')"><i class="fas fa-link"></i> Copy</button>
-                    <button class="tool-btn" style="margin-left:auto" onclick="navigateTo('blog')">✕ Close</button>
-                </div>`;
-
+                            <div class="article-toolbar">
+                                <button class="tool-btn" onclick="share('twitter')"><i class="fa-brands fa-x-twitter"></i> Post </button>
+                                <button class="tool-btn" onclick="share('linkedin')"><i class="fab fa-linkedin"></i> Share</button>
+                                <button class="tool-btn" onclick="share('email')"><i class="fas fa-envelope"></i> Email</button>
+                                <button class="tool-btn" onclick="share('sms')"><i class="fas fa-comment-dots"></i> SMS</button>
+                                <button class="tool-btn" onclick="navigator.clipboard.writeText('${shareUrl}');alert('Link copied!')"><i class="fas fa-link"></i> Copy</button>
+                                <button class="tool-btn" style="margin-left:auto" onclick="navigateTo('blog')">✕ Close</button>
+                            </div>`;
             let interactiveHtml = '';
             if(fUrl || qUrl) {
                 interactiveHtml = `<div style="display:flex; gap:15px; margin-bottom:30px;">`;
@@ -525,61 +593,65 @@
             if(platform === 'sms') window.open(`sms:?body=${text}${url}`);
         }
 
-        // --- OTHER DATA FETCHERS (SAME AS BEFORE) ---
+        // --- OTHER DATA FETCHERS ---
         async function fetchCommitDate(path) { try { const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/commits?path=${path}&page=1&per_page=1`); if(!r.ok) return null; const d = await r.json(); if(d.length>0) return new Date(d[0].commit.committer.date).toISOString().split('T')[0]; } catch(e){} return null; }
         async function fetchReadmeImage(o,r,b) { try { const res = await fetch(`https://raw.githubusercontent.com/${o}/${r}/${b}/README.md`); if(!res.ok) return null; const t = await res.text(); const m = t.match(/!\[.*?\]\((.*?)\)|<img.*?src=["'](.*?)["']/); if(m) { let u=m[1]||m[2]; if(u&&!u.startsWith('http')) return `https://raw.githubusercontent.com/${o}/${r}/${b}/${u.startsWith('./')?u.substring(2):u}`; return u; } } catch(e){} return null; }
         async function fetchBandsList() { try { const r = await fetch(BANDS_FILE_URL); if(!r.ok) return []; const t = await r.text(); return t.split('\n').map(l=>l.trim()).filter(l=>l.length>0); } catch(e){ return []; } }
         
 // --- MUSIC API (ITUNES VIA PROXY) ---
-async function fetchMusicData() {
-    const container = document.getElementById('music-grid');
-    container.innerHTML = '';
-    
-    // 1. Get the list of bands dynamically from GitHub
-    const bands = await fetchBandsList();
-    
-    if (bands.length === 0) {
-         container.innerHTML = '<div style="color:#888;">No bands found in bands/bands.md</div>';
-         return;
-    }
-
-    // 2. Fetch data for each band
-    for (const band of bands) {
-        try {
-            const searchUrl = 
-                `https://corsproxy.io/?url=` + 
-                encodeURIComponent(`https://itunes.apple.com/search?term=${band}&entity=musicArtist&limit=1`);
-
-            const res = await fetch(searchUrl);
-            const data = await res.json();
-
-            if (data.results && data.results.length > 0) {
-                const artist = data.results[0];
-
-                // Some artists don't have artworkUrl100 — fallback to a placeholder
-                const image = artist.artworkUrl100
-                    ? artist.artworkUrl100.replace('100x100bb', '600x600bb')
-                    : 'assets/placeholder-artist.png';
-
-                const card = document.createElement('div');
-                card.className = 'music-card';
-                card.onclick = () => window.open(artist.artistLinkUrl, '_blank');
-
-                card.innerHTML = `
-                    <img src="${image}" class="album-cover" alt="${artist.artistName}">
-                    <div class="music-info">
-                        <span class="band-name">${artist.artistName}</span>
-                        <span class="album-name">Artist</span>
-                    </div>
-                `;
-                container.appendChild(card);
+        async function fetchMusicData() {
+            const container = document.getElementById('music-grid');
+            container.innerHTML = '';
+            
+            const bands = await fetchBandsList();
+            
+            if (bands.length === 0) { 
+                container.innerHTML = '<div style="color:#888;">No bands found in bands/bands.md</div>'; 
+                return; 
             }
-        } catch (e) {
-            console.warn(`Could not fetch music for ${band}`, e);
-        }
-    }
-}
 
+            for (const band of bands) {
+                try {
+                    // 1. On demande 5 résultats pour avoir du choix (limit=5)
+                    const searchUrl = `https://corsproxy.io/?url=` + encodeURIComponent(`https://itunes.apple.com/search?term=${band}&entity=album&limit=5`);
+                    
+                    const res = await fetch(searchUrl);
+                    const data = await res.json();
+
+                    if (data.results && data.results.length > 0) {
+                        // 2. FILTRAGE INTELLIGENT
+                        // On cherche le premier album où le nom de l'artiste API inclut le nom de ton groupe
+                        // Ex: Si on cherche "Daft Punk", on ignore "The Weeknd" même si c'est le résultat #1
+                        let bestMatch = data.results.find(album => 
+                            album.artistName.toLowerCase().includes(band.toLowerCase())
+                        );
+
+                        // Fallback : Si on ne trouve pas de correspondance exacte, on prend le premier résultat par défaut
+                        const album = bestMatch || data.results[0];
+
+                        const image = album.artworkUrl100 
+                            ? album.artworkUrl100.replace('100x100bb', '600x600bb') 
+                            : 'assets/placeholder-artist.png';
+
+                        const card = document.createElement('div');
+                        card.className = 'music-card';
+                        card.onclick = () => window.open(album.artistViewUrl || album.collectionViewUrl, '_blank');
+
+                        // 3. AFFICHAGE : On utilise ${band} (ta liste) pour le titre principal
+                        // pour être sûr que le nom est correct, et album.collectionName pour l'album.
+                        card.innerHTML = `
+                            <img src="${image}" class="album-cover" alt="${band}">
+                            <div class="music-info">
+                                <span class="band-name">${band}</span>
+                            </div>`;
+                        
+                        container.appendChild(card);
+                    }
+                } catch (e) { 
+                    console.warn(`Could not fetch music for ${band}`, e); 
+                }
+            }
+        }
         async function fetchAllMDRecursively(path) {
             let files = []; try { const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`); if(!r.ok) return []; const items = await r.json(); for(const i of items) { if(i.type==='dir') files = files.concat(await fetchAllMDRecursively(i.path)); else if(i.name.endsWith('.md')) files.push(i); } } catch(e){} return files;
         }
@@ -634,16 +706,16 @@ async function fetchMusicData() {
             try { const url = 'https://corsproxy.io/?url=' + encodeURIComponent('https://www.artstation.com/users/infinition/projects.json?page=1'); const r = await fetch(url); if(!r.ok) return []; const d = await r.json(); return d.data.map(i => ({ id: `art-${i.id}`, type: 'artwork', file: `art_${i.hash_id}.png`, title: i.title, date: i.published_at.split('T')[0], icon: 'fab fa-artstation', image: i.cover.micro_square_image_url, content: 'ArtStation', url: i.permalink })); } catch(e){ return []; }
         }
 
-async function runScanSimulation(forceRefresh = false) {
+        async function runScanSimulation(forceRefresh = false) {
             const out = document.getElementById('scan-output');
             const list = document.getElementById('article-list-container');
             
             // --- SYSTEME DE CACHE ---
             // Si on ne force pas le refresh ET qu'on a déjà des données en mémoire
             if (!forceRefresh && mergedData.length > 0) {
-                out.innerHTML = '> RESTORING CACHED DATA...';
+                out.innerHTML = `> RESTORING CACHED DATA...<br>> CACHE LOADED. ITEMS: ${mergedData.length} (INSTANT ACCESS)<br>> SEARCH INPUT ACTIVE: <input type="text" id="console-search" class="console-input" placeholder="_" autocomplete="off">`;
                 renderArticles(mergedData);
-                out.innerHTML = `> CACHE LOADED. ITEMS: ${mergedData.length} (INSTANT ACCESS)`;
+                document.getElementById('console-search').addEventListener('input', (e) => filterArticles(e.target.value));
                 return; // On arrête la fonction ici, pas de fetch !
             }
             // ------------------------
@@ -666,19 +738,48 @@ async function runScanSimulation(forceRefresh = false) {
                 mergedData.sort((a,b) => new Date(b.date) - new Date(a.date));
                 
                 renderArticles(mergedData);
-                out.innerHTML = `> READY. INDEXED: ${mergedData.length}.`;
+                out.innerHTML = `> READY. INDEXED: ${mergedData.length}.<br>> SEARCH INPUT ACTIVE: <input type="text" id="console-search" class="console-input" placeholder="_" autocomplete="off">`;
+                document.getElementById('console-search').addEventListener('input', (e) => filterArticles(e.target.value));
             }, 500);
         }
 
+        function filterArticles(query) {
+            const q = query.toLowerCase();
+            const filtered = mergedData.filter(i => i.title.toLowerCase().includes(q) || (i.content && i.content.toLowerCase().includes(q)));
+            renderArticles(filtered);
+        }
+
+        // VERSION "ANCIEN FICHIER" - AVEC DESCRIPTION ET ICONES COLOREES
         function renderArticles(items) {
-            const c = document.getElementById('article-list-container'); c.innerHTML = '';
+            const container = document.getElementById('article-list-container');
+            container.innerHTML = '';
             items.forEach(item => {
-                const d = document.createElement('div'); d.className = 'article-entry';
-                d.onclick = () => { if(item.type==='repo'||item.type==='artwork') window.open(item.url,'_blank'); else openArticle(item); };
-                let thumb = item.image ? `<img src="${item.image}" class="article-thumb">` : `<div class="article-thumb"><i class="${item.type==='repo'?'fab fa-github':item.icon} thumb-icon"></i></div>`;
-                let col = item.type==='repo'?'var(--neon-orange)':(item.type==='artwork'?'var(--neon-blue)':'#555');
-                d.innerHTML = `${thumb}<div class="article-info"><div class="article-title">${item.title}</div><div class="article-date" style="color:${col}"><i class="${item.type==='repo'?'fab fa-github':item.icon}"></i> ${item.date}</div></div>`;
-                c.appendChild(d);
+                const div = document.createElement('div');
+                div.className = 'article-entry';
+                div.onclick = () => {
+                    if(item.type === 'repo' || item.type === 'artwork') window.open(item.url, '_blank');
+                    else openArticle(item);
+                };
+                
+                let thumb = '';
+                if (item.image) {
+                    thumb = `<img src="${item.image}" class="article-thumb">`;
+                } else {
+                    let fallbackIcon = item.type === 'repo' ? 'fab fa-github' : 'fas fa-file-lines';
+                    thumb = `<div class="article-thumb"><i class="${fallbackIcon} thumb-icon"></i></div>`;
+                }
+
+                let color = item.type === 'repo' ? 'var(--neon-orange)' : (item.type === 'artwork' ? 'var(--neon-blue)' : '#555');
+
+                div.innerHTML = `
+                    ${thumb}
+                    <div class="article-info">
+                        <div class="article-header"><i class="${item.icon} file-icon" style="color:${color}"></i> <span class="article-title">${item.title}</span></div>
+                        <span class="article-date">${item.date}</span>
+                        <div class="article-desc">${item.content.substring(0, 100)}...</div>
+                    </div>
+                `;
+                container.appendChild(div);
             });
         }
 
