@@ -1,0 +1,110 @@
+window.addEventListener('hashchange', handleHashChange);
+
+function handleHashChange() {
+    const hash = window.location.hash;
+    if (hash.startsWith('#article:')) {
+        const articleFile = hash.replace('#article:', '');
+        if (mergedData.length === 0) { navigateTo('blog'); setTimeout(() => findAndOpenArticle(articleFile), 1500); }
+        else { findAndOpenArticle(articleFile); }
+    } else if (hash === '#portfolio') navigateTo('portfolio');
+    else if (hash === '#blog') navigateTo('blog');
+    else if (hash === '#kb') navigateTo('kb');
+    else if (hash === '#music') navigateTo('music');
+    else navigateTo('portal');
+}
+
+function findAndOpenArticle(filename) {
+    const found = mergedData.find(a => a.file.includes(filename));
+    if (found) openArticle(found);
+}
+
+function navigateTo(viewId) {
+    document.querySelectorAll('.view-section').forEach(el => { el.style.display = 'none'; el.classList.remove('active'); });
+    if (viewId === 'portal') { document.getElementById('portal-view').style.display = 'flex'; document.querySelector('.back-btn').style.display = 'none'; }
+    else {
+        const target = document.getElementById(viewId + (viewId.endsWith('view') ? '' : '-view'));
+        if (target) { target.style.display = 'block'; target.classList.add('active'); }
+        document.querySelector('.back-btn').style.display = 'block';
+    }
+
+    // UPDATE URL HISTORY for better navigation
+    if (viewId !== 'portal' && window.location.hash !== '#' + viewId && !window.location.hash.startsWith('#article:')) {
+        history.pushState(null, null, '#' + viewId);
+    }
+
+    if (viewId === 'blog') runScanSimulation();
+    if (viewId === 'kb') initKB();
+    // Removed direct music fetch, now handled by reveal button
+    window.scrollTo(0, 0);
+}
+
+async function runScanSimulation(forceRefresh = false) {
+    const out = document.getElementById('scan-output');
+    const list = document.getElementById('article-list-container');
+
+    // --- SYSTEME DE CACHE ---
+    // Si on ne force pas le refresh ET qu'on a déjà des données en mémoire
+    if (!forceRefresh && mergedData.length > 0) {
+        out.innerHTML = `> RESTORING CACHED DATA...<br>> CACHE LOADED. ITEMS: ${mergedData.length} (INSTANT ACCESS)<br>> SEARCH INPUT ACTIVE: <input type="text" id="console-search" class="console-input" placeholder="_" autocomplete="off">`;
+        renderArticles(mergedData);
+        document.getElementById('console-search').addEventListener('input', (e) => filterArticles(e.target.value));
+        return; // On arrête la fonction ici, pas de fetch !
+    }
+    // ------------------------
+
+    out.innerHTML = '> SCANNING... <span class="blink">_</span>';
+    // On vide la liste visuelle seulement si on fait un vrai scan
+    if (forceRefresh) list.innerHTML = '';
+
+    const local = await fetchLocalDataLogs();
+
+    // Si on force le refresh, on veut voir l'étape intermédiaire
+    renderArticles(local);
+
+    setTimeout(async () => {
+        out.innerHTML += '<br>> FETCHING EXTERNAL...';
+        const repos = await fetchGitHubRepos();
+        const arts = await fetchArtStation();
+
+        mergedData = [...local, ...repos, ...arts];
+        mergedData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        renderArticles(mergedData);
+        out.innerHTML = `> READY. INDEXED: ${mergedData.length}.<br>> SEARCH INPUT ACTIVE: <input type="text" id="console-search" class="console-input" placeholder="_" autocomplete="off">`;
+        document.getElementById('console-search').addEventListener('input', (e) => filterArticles(e.target.value));
+    }, 500);
+}
+
+async function openInKB(filename) {
+    navigateTo('kb');
+    // Ensure data is loaded (initKB called by navigateTo might still be running, but mergedData check handles it)
+    // We need to wait for mergedData to be populated if it's not.
+    if (mergedData.length === 0) {
+        // Wait a bit or rely on initKB to finish. 
+        // Since initKB is async and not awaited in navigateTo, we might race.
+        // Let's manually ensure initKB finishes if we are here.
+        await initKB();
+    }
+
+    const article = mergedData.find(a => a.file === filename);
+    if (article) {
+        openKBArticle(article);
+    }
+}
+
+document.getElementById('kb-search').addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase();
+    if (q.length > 0) {
+        const filtered = mergedData.filter(i =>
+            i.type === 'article' && (
+                i.title.toLowerCase().includes(q) ||
+                (i.content && i.content.toLowerCase().includes(q))
+            )
+        );
+        renderKBTree(filtered);
+    } else {
+        renderKBTree(mergedData);
+    }
+});
+
+if (window.location.hash) handleHashChange(); else navigateTo('portal');
