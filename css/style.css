@@ -1,6 +1,6 @@
 /* --- GLOBAL CONFIG --- */
 :root {
-    --bg-color: #050a0e;
+    --bg-color: #060606;
     --card-bg: #0d1216;
     --text-color: #e6e6e6;
     --neon-orange: #FF6B00;
@@ -11,7 +11,10 @@
     --cyber-font: 'Cinzel', serif;
     --code-font: 'JetBrains Mono', monospace;
     --ui-font: 'Inter', sans-serif;
-
+    --alert-red: #ff0055;
+    --bg-dark: #060606;
+    --core-size: 120px;
+    --ring-size: 340px;
     /* App Colors */
     --quiz-gradient: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
 }
@@ -443,14 +446,15 @@ body {
     left: 0;
     right: 0;
     padding: 10px 20px;
-    background: rgba(5, 10, 14, 0.95);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgb(9 13 16);
+    border-bottom: 1px solid rgb(14 88 119);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
     font-size: 0.8rem;
     backdrop-filter: blur(5px);
+    z-index: 100;
+    /* valeur finale consolidée */
 }
 
 .sys-status {
@@ -1058,41 +1062,7 @@ h2.port-h2 {
     font-style: italic;
 }
 
-/* Portal Home */
-#portal-view {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.portal-ring {
-    width: 300px;
-    height: 300px;
-    border: 2px dashed rgba(255, 255, 255, 0.1);
-    border-top: 2px solid var(--neon-blue);
-    border-radius: 50%;
-    position: absolute;
-    animation: spin 15s linear infinite;
-    box-shadow: 0 0 15px rgba(19, 175, 240, 0.1);
-    pointer-events: none;
-}
-
-.portal-ring::after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border: 1px solid rgba(255, 107, 0, 0.2);
-    border-bottom: 2px solid var(--neon-orange);
-    border-radius: 50%;
-    animation: spin 10s linear infinite reverse;
-}
-
+/* --- PORTAL TITLE & GLITCH --- */
 .portal-title {
     font-family: var(--cyber-font);
     font-size: 4rem;
@@ -1103,6 +1073,7 @@ h2.port-h2 {
     transition: all 0.3s;
     user-select: none;
     position: relative;
+    line-height: 1;
 }
 
 /* HOVER PADLOCK EFFECT */
@@ -1134,7 +1105,6 @@ h2.port-h2 {
     width: 100%;
     height: 100%;
     background: var(--bg-color);
-    /* Matches bg to hide main text partially */
 }
 
 .glitch-active::before {
@@ -1230,20 +1200,7 @@ h2.port-h2 {
 }
 
 /* HIDDEN DATA UNLOCK ANIMATION */
-#secret-data {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transform: translateY(20px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 1rem;
-    z-index: 20;
-}
-
+/* on garde uniquement l'état .data-unlocked, la base est redéfinie plus bas */
 #secret-data.data-unlocked {
     max-height: 27px;
     opacity: 1;
@@ -1259,44 +1216,14 @@ h2.port-h2 {
     justify-content: center;
 }
 
-.portal-menu {
-    display: flex;
-    gap: 2rem;
-    margin-top: 3rem;
-    z-index: 10;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: relative;
-    bottom: -60px;
-}
-
-.portal-btn {
-    background: rgba(13, 18, 22, 0.8);
-    border: 1px solid var(--text-color);
-    color: var(--text-color);
-    padding: 1.5rem 2rem;
-    min-width: 200px;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.portal-btn:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-}
-
+/* --- MUSIC / PORTAL MUSIC AREA --- */
 .music-trigger {
     color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
     transition: all 0.3s;
     z-index: 20;
     font-size: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgb(16 122 167);
     padding: 10px;
     border-radius: 50%;
     width: 50px;
@@ -1326,13 +1253,11 @@ h2.port-h2 {
     overflow: hidden;
 }
 
-/* On s'assure que l'iframe remplit bien le conteneur */
 .music-frame-container iframe {
     width: 100%;
     height: 450px;
     border: none;
     display: block;
-    /* Évite les espaces fantômes en bas */
 }
 
 .music-grid {
@@ -1389,33 +1314,20 @@ h2.port-h2 {
     justify-content: center;
 }
 
-/* .album-name { color: var(--neon-red); font-size: 0.75rem; } */
 /* --- TOOLBAR BUTTONS --- */
 .tool-btn {
-    /* Base */
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    /* Espace entre l'icône et le texte */
-
-    /* Typo */
     font-family: var(--code-font);
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     color: #888;
-    /* Gris par défaut (discret) */
-
-    /* Box Model */
     padding: 8px 16px;
     background: rgba(255, 255, 255, 0.03);
-    /* Très léger fond */
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Bordure subtile */
     border-radius: 4px;
-    /* Coins légèrement arrondis */
-
-    /* Comportement */
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -1425,23 +1337,19 @@ h2.port-h2 {
 .tool-btn:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
-    /* Texte blanc */
     border-color: var(--neon-blue);
-    /* Bordure s'allume en bleu */
     box-shadow: 0 0 10px rgba(19, 175, 240, 0.1);
-    /* Légère lueur */
     transform: translateY(-1px);
 }
 
-/* --- BOUTON FERMER (SPÉCIFIQUE) --- */
-/* Si tu veux que le bouton 'Close' soit rouge au survol */
+/* Bouton "Close" spécifique */
 .tool-btn[onclick*="navigateTo('blog')"]:hover {
     border-color: var(--neon-red);
     color: var(--neon-red);
     box-shadow: 0 0 10px rgba(255, 0, 60, 0.1);
 }
 
-/* Gestion de l'icône à l'intérieur */
+/* Icone à l'intérieur */
 .tool-btn i {
     font-size: 0.9rem;
     transition: transform 0.2s;
@@ -1452,7 +1360,7 @@ h2.port-h2 {
     transform: scale(1.1);
 }
 
-/* Music Reveal Styles */
+/* --- Music Reveal Styles --- */
 #music-lock-screen {
     display: flex;
     flex-direction: column;
@@ -1490,19 +1398,20 @@ h2.port-h2 {
     box-shadow: 0 0 30px rgba(255, 0, 60, 0.6);
 }
 
+/* merged: base + extension */
 .bottom-icons-container {
     display: flex;
     gap: 25px;
-    top: 75px;
     flex-direction: row;
     position: relative;
+    top: 75px;
+    margin-top: 15px;
 }
 
-/* --- AUDIO TOGGLE BTN (discret à droite de SYSTEM ONLINE) --- */
+/* --- AUDIO TOGGLE BTN --- */
 .audio-toggle-btn {
     margin-left: 10px;
     display: none;
-    /* visible seulement quand audio joue */
     align-items: center;
     justify-content: center;
     padding: 4px 8px;
@@ -1532,17 +1441,24 @@ body.audio-playing .audio-toggle-btn {
     display: inline-flex;
 }
 
-/* Portal Home */
+/* --- PORTAL HOME (LAYOUT) --- */
+/* version fusionnée / finale */
 #portal-view {
     height: 100vh;
+    background-color: var(--bg-dark);
+    perspective: 1000px;
+    overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    /* dernier état */
     align-items: center;
     text-align: center;
+    padding: 8vh 0 10vh 0;
 }
 
-/* État par défaut : spin léger, glow discret */
+/* État par défaut : spin léger, glow discret (version la plus récente) */
 .portal-ring {
     width: 300px;
     height: 300px;
@@ -1602,6 +1518,162 @@ body.audio-playing .audio-toggle-btn {
     }
 }
 
+/* --- 1. ARRIÈRE-PLAN GRID (HACKER VIBE) --- */
+.cyber-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200vw;
+    height: 200vh;
+    background-image:
+        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: rotateX(60deg) translateY(-20%) translateZ(-200px) translateX(-25%);
+    animation: grid-move 30s linear infinite;
+    z-index: 0;
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+    pointer-events: none;
+}
+
+/* --- 2. STRUCTURE DU RÉACTEUR (CENTRE ABSOLU) --- */
+.reactor-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--ring-size);
+    height: var(--ring-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+}
+
+/* --- 3. CŒUR QUANTIQUE --- */
+.quantum-core {
+    width: var(--core-size);
+    height: var(--core-size);
+    background: radial-gradient(circle, #fff 0%, var(--neon-blue) 40%, transparent 70%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 30px var(--neon-blue),
+        0 0 60px var(--neon-purple),
+        inset 0 0 20px #fff;
+    animation: core-pulse 3s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 20;
+}
+
+.quantum-core::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    filter: blur(4px);
+    opacity: 0.7;
+    animation: internal-instability 0.2s infinite;
+}
+
+/* --- 4. BOUCLIERS --- */
+.shield-layer {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    pointer-events: none;
+    transition: border-color 0.5s, box-shadow 0.5s;
+}
+
+.segment-1 {
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid var(--neon-purple);
+    border-bottom: 2px dashed var(--neon-purple);
+    box-shadow: 0 0 10px rgba(188, 19, 254, 0.2);
+    animation: spin-tilt 20s linear infinite;
+}
+
+.segment-2 {
+    width: 80%;
+    height: 80%;
+    border-left: 4px solid var(--neon-blue);
+    border-right: 1px dotted var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+    animation: spin-tilt 10s linear infinite reverse;
+}
+
+.segment-3 {
+    width: 60%;
+    height: 60%;
+    border: 1px dashed var(--neon-green);
+    opacity: 0.6;
+    animation: spin 5s linear infinite;
+}
+
+.particle {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    animation: spin 8s linear infinite;
+}
+
+.particle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+    border-radius: 50%;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes grid-move {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 50px;
+    }
+}
+
+@keyframes core-pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+@keyframes internal-instability {
+    0% {
+        transform: translate(1px, 1px);
+    }
+
+    50% {
+        transform: translate(-1px, -1px);
+    }
+
+    100% {
+        transform: translate(1px, 1px);
+    }
+}
+
+/* spin final (ancienne version supprimée) */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -1612,7 +1684,200 @@ body.audio-playing .audio-toggle-btn {
     }
 }
 
+@keyframes spin-tilt {
+    0% {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
 
+    100% {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
+/* --- MODE ACTIF (MUSIQUE ON) --- */
+.reactor-container.active-mode .quantum-core {
+    background: radial-gradient(circle, #fff 0%, var(--alert-red) 50%, transparent 70%);
+    box-shadow: 0 0 50px var(--alert-red), 0 0 100px var(--alert-red);
+    animation: core-pulse 0.2s ease-in-out infinite alternate;
+}
+
+.reactor-container.active-mode .segment-1 {
+    border-color: var(--alert-red);
+    border-bottom-color: transparent;
+    animation-duration: 2s;
+    box-shadow: 0 0 20px var(--alert-red);
+}
+
+.reactor-container.active-mode .segment-2 {
+    border-color: #ff9900;
+    animation-duration: 1.5s;
+}
+
+.reactor-container.active-mode .particle::before {
+    background: var(--alert-red);
+    box-shadow: 0 0 15px var(--alert-red);
+}
+
+.reactor-container.active-mode {
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) infinite;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate(-51%, -50%);
+    }
+
+    20%,
+    80% {
+        transform: translate(-49%, -50%);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate(-52%, -50%);
+    }
+
+    40%,
+    60% {
+        transform: translate(-48%, -50%);
+    }
+}
+
+/* --- UI DU HAUT (Titre & Badges) --- */
+.top-section-ui {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.sub-identity {
+    letter-spacing: 5px;
+    opacity: 0.8;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+/* --- BADGES "DATA STREAM" --- */
+#secret-data {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: relative;
+    margin-top: 10px;
+}
+
+/* badges individuels */
+.cyber-badge {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid transparent;
+}
+
+.cyber-badge:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 8px var(--neon-blue);
+    border-bottom: 1px solid var(--neon-blue);
+    transform: translateY(-2px);
+}
+
+.cyber-badge i {
+    font-size: 0.9em;
+}
+
+/* --- UI DU BAS (Menu Futuriste) --- */
+.portal-menu {
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.portal-btn {
+    background: rgba(10, 15, 20, 0.7);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    color: var(--neon-blue);
+    padding: 15px 25px;
+    min-width: 140px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: 'Share Tech Mono', monospace;
+    position: relative;
+    backdrop-filter: blur(4px);
+    clip-path: polygon(15px 0,
+            100% 0,
+            100% calc(100% - 15px),
+            calc(100% - 15px) 100%,
+            0 100%,
+            0 15px);
+}
+
+.portal-btn span {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.portal-btn small {
+    font-size: 0.6rem;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+.portal-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hover Effect Scanline */
+.portal-btn:hover {
+    background: rgba(0, 243, 255, 0.15);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.portal-btn:hover i {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Barre décorative en bas des boutons */
+.portal-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    opacity: 0.5;
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     h1.port-h1 {
         font-size: 2.5rem;
@@ -1623,11 +1888,29 @@ body.audio-playing .audio-toggle-btn {
     }
 
     .portal-menu {
-        flex-direction: column;
+        gap: 10px;
     }
 
     .portal-btn {
-        min-width: 100%;
+        min-width: 30%;
+        padding: 10px;
+    }
+
+    .portal-btn span {
+        font-size: 0.8rem;
+    }
+
+    .portal-btn i {
+        font-size: 1.2rem;
+    }
+
+    .portal-title {
+        font-size: 2.5rem;
+    }
+
+    /* On remonte un peu le centre sur mobile */
+    .reactor-container {
+        top: 50%;
     }
 
     .article-entry {
