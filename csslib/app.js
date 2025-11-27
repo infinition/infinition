@@ -131,6 +131,76 @@ function filterGrid() {
         (item.tags || []).some(t => t.toLowerCase().includes(term))
     );
     renderGrid(filtered);
+
+    // Toggle clear button
+    const clearBtn = document.getElementById('clear-search-btn');
+    if (clearBtn) {
+        clearBtn.style.display = term.length > 0 ? 'flex' : 'none';
+    }
+}
+
+function clearSearch() {
+    searchInput.value = '';
+    filterGrid();
+    searchInput.focus();
+}
+
+// --- TAG DROPDOWN LOGIC ---
+function toggleTagMenu() {
+    const dropdown = document.getElementById('tag-dropdown');
+    if (dropdown.classList.contains('active')) {
+        hideDropdown();
+    } else {
+        showDropdown();
+    }
+}
+
+function showDropdown() {
+    const dropdown = document.getElementById('tag-dropdown');
+    dropdown.innerHTML = '';
+
+    // Collect all unique tags
+    const allTags = new Set();
+    library.forEach(item => {
+        if (item.tags) item.tags.forEach(t => allTags.add(t.trim()));
+    });
+
+    const sortedTags = Array.from(allTags).sort();
+
+    if (sortedTags.length === 0) {
+        dropdown.innerHTML = '<div style="padding:10px; color:#666;">No tags found</div>';
+    } else {
+        sortedTags.forEach(tag => {
+            const div = document.createElement('div');
+            div.className = 'tag-option';
+            div.innerHTML = `<i class="fas fa-tag"></i> ${tag}`;
+            div.onclick = () => {
+                searchInput.value = tag;
+                filterGrid();
+                hideDropdown();
+            };
+            dropdown.appendChild(div);
+        });
+    }
+
+    dropdown.classList.add('active');
+
+    // Close on click outside
+    document.addEventListener('click', closeDropdownOnClickOutside);
+}
+
+function hideDropdown() {
+    const dropdown = document.getElementById('tag-dropdown');
+    dropdown.classList.remove('active');
+    document.removeEventListener('click', closeDropdownOnClickOutside);
+}
+
+function closeDropdownOnClickOutside(e) {
+    const dropdown = document.getElementById('tag-dropdown');
+    const btn = document.getElementById('tag-menu-btn');
+    if (!dropdown.contains(e.target) && !btn.contains(e.target)) {
+        hideDropdown();
+    }
 }
 
 // --- EDITOR LOGIC ---

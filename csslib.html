@@ -21,10 +21,22 @@
                     INFINITION</small></div>
 
             <div class="bars-container">
-                <div class="input-wrapper">
-                    <span class="icon-left"><i class="fas fa-search"></i></span>
-                    <input type="text" id="search-input" class="std-input" placeholder="Search components..."
-                        oninput="filterGrid()">
+                <div class="search-group"
+                    style="position: relative; display: flex; align-items: center; gap: 10px; flex: 1;">
+                    <button id="tag-menu-btn" class="btn-icon-large" title="Filter by Tag" onclick="toggleTagMenu()"><i
+                            class="fas fa-hashtag"></i></button>
+
+                    <div class="input-wrapper" style="flex: 1;">
+                        <span class="icon-left"><i class="fas fa-search"></i></span>
+                        <input type="text" id="search-input" class="std-input" placeholder="Search components..."
+                            oninput="filterGrid()">
+                        <button id="clear-search-btn" class="clear-btn" onclick="clearSearch()"
+                            style="display: none;"><i class="fas fa-times"></i></button>
+                    </div>
+
+                    <div id="tag-dropdown" class="tag-dropdown">
+                        <!-- Tags injected by JS -->
+                    </div>
                 </div>
             </div>
         </div>

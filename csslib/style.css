@@ -731,6 +731,202 @@ input.tags-input:focus {
 
 #toast.show {
     visibility: visible;
+    animation: fadein 0.4s forwards, fadeout 0.4s 2.5s forwards;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* Color visualizer background */
+.color-dot {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+select.tweak-select {
+    width: 100%;
+    background: #2a2a33;
+    border: 1px solid #3a3a45;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    outline: none;
+    cursor: pointer;
+    font-family: var(--code-font);
+}
+
+select.tweak-select:hover {
+    border-color: var(--text-muted);
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    outline: none;
+    margin-top: 5px;
+    display: block;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Preview Area */
+#modal-preview-host {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-footer {
+    padding: 15px;
+    border-top: 1px solid #2a2a33;
+    background: #15151a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-right {
+    display: flex;
+    gap: 10px;
+}
+
+input.title-input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    outline: none;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    transition: border 0.3s;
+    padding-bottom: 5px;
+    font-family: var(--code-font);
+}
+
+input.title-input:focus {
+    border-color: var(--accent);
+}
+
+input.tags-input {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    outline: none;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    transition: border 0.3s;
+    padding-bottom: 5px;
+    font-family: var(--code-font);
+}
+
+input.tags-input:focus {
+    border-color: var(--accent);
+    color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .header-left {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .bars-container {
+        flex-direction: column;
+    }
+
+    .modal-body {
+        flex-direction: column-reverse;
+    }
+
+    .editor-container {
+        height: 60%;
+        border-right: none;
+        border-top: 1px solid #333;
+        min-width: auto;
+    }
+
+    .preview-container {
+        height: 40%;
+    }
+
+    .code-wrapper {
+        flex-direction: column;
+    }
+
+    .tweaks-panel {
+        width: 100%;
+        height: 150px;
+        border-left: none;
+        border-top: 1px solid #333;
+    }
+}
+
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: var(--accent);
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 12px 24px;
+    position: fixed;
+    z-index: 2000;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(189, 0, 255, 0.4);
+    font-weight: 600;
+    font-family: var(--code-font);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#toast.show {
+    visibility: visible;
     animation: fadein 0.4s, fadeout 0.4s 2.5s;
 }
 
@@ -755,5 +951,124 @@ input.tags-input:focus {
     to {
         bottom: 0;
         opacity: 0;
+    }
+}
+
+/* --- SEARCH ENHANCEMENTS --- */
+.btn-icon-large {
+    background: var(--input-bg);
+    border: 1px solid #3a3a45;
+    color: var(--text-muted);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+}
+
+.btn-icon-large:hover {
+    background: #3a3a45;
+    color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(189, 0, 255, 0.2);
+}
+
+.clear-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.clear-btn:hover {
+    color: var(--danger);
+}
+
+.tag-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 250px;
+    background: #15151a;
+    border: 1px solid #3a3a45;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.tag-dropdown.active {
+    display: flex;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.tag-option {
+    padding: 10px 15px;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tag-option:hover {
+    background: #2a2a33;
+    color: #fff;
+}
+
+.tag-option i {
+    font-size: 0.8rem;
+    color: var(--accent);
+    opacity: 0.7;
+}
+
+/* Scrollbar for dropdown */
+.tag-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tag-dropdown::-webkit-scrollbar-track {
+    background: #15151a;
+}
+
+.tag-dropdown::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+
+.tag-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
