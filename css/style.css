@@ -1245,7 +1245,7 @@ h2.port-h2 {
 }
 
 #secret-data.data-unlocked {
-    max-height: 200px;
+    max-height: 27px;
     opacity: 1;
     transform: translateY(0);
     margin-top: 10px;
@@ -1266,6 +1266,8 @@ h2.port-h2 {
     z-index: 10;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+    bottom: -60px;
 }
 
 .portal-btn {
@@ -1491,7 +1493,7 @@ h2.port-h2 {
 .bottom-icons-container {
     display: flex;
     gap: 25px;
-    top: 50px;
+    top: 75px;
     flex-direction: row;
     position: relative;
 }

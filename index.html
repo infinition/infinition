@@ -40,6 +40,14 @@
             perspective: 1000px;
             overflow: hidden;
             position: relative;
+            /* Layout vertical espacé pour dégager le centre */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Écarte le contenu Haut/Bas */
+            align-items: center;
+            padding: 8vh 0 10vh 0;
+            /* Marges verticales dynamiques */
         }
 
         /* --- 1. ARRIÈRE-PLAN GRID (HACKER VIBE) --- */
@@ -60,10 +68,9 @@
             pointer-events: none;
         }
 
-        /* --- 2. STRUCTURE DU RÉACTEUR --- */
+        /* --- 2. STRUCTURE DU RÉACTEUR (CENTRE ABSOLU) --- */
         .reactor-container {
             position: absolute;
-            /* Centré derrière le titre */
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -74,10 +81,9 @@
             align-items: center;
             transform-style: preserve-3d;
             z-index: 1;
-            /* Derrière le texte mais devant la grille */
+            /* Derrière le texte */
             transition: all 0.5s ease-out;
             pointer-events: none;
-            /* Laisse passer les clics vers le titre */
         }
 
         /* --- 3. CŒUR QUANTIQUE --- */
@@ -268,20 +274,180 @@
             }
         }
 
-        /* Ajustements UI pour la lisibilité sur le nouveau portail */
-        .portal-title {
-            position: relative;
+        /* --- UI DU HAUT (Titre & Badges) --- */
+        .top-section-ui {
             z-index: 10;
-            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
         }
 
-        .portal-menu {
+        .portal-title {
             position: relative;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .sub-identity {
+            letter-spacing: 5px;
+            opacity: 0.8;
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        /* --- BADGES "DATA STREAM" (Discrets sous le nom) --- */
+        #secret-data {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .cyber-badge {
+            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border-bottom: 1px solid transparent;
+        }
+
+        .cyber-badge:hover {
+            color: var(--neon-blue);
+            text-shadow: 0 0 8px var(--neon-blue);
+            border-bottom: 1px solid var(--neon-blue);
+            transform: translateY(-2px);
+        }
+
+        .cyber-badge i {
+            font-size: 0.9em;
+        }
+
+        /* --- UI DU BAS (Menu Futuriste) --- */
+        .portal-menu {
             z-index: 10;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .portal-btn {
+            /* Style "HUD" Futuriste */
+            background: rgba(10, 15, 20, 0.7);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            color: var(--neon-blue);
+            padding: 15px 25px;
+            min-width: 140px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-family: 'Share Tech Mono', monospace;
+            position: relative;
+            backdrop-filter: blur(4px);
+
+            /* Forme angulaire Cyberpunk */
+            clip-path: polygon(15px 0, 100% 0,
+                    100% calc(100% - 15px), calc(100% - 15px) 100%,
+                    0 100%, 0 15px);
+        }
+
+        .portal-btn span {
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .portal-btn small {
+            font-size: 0.6rem;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+
+        .portal-btn i {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Hover Effect Scanline */
+        .portal-btn:hover {
+            background: rgba(0, 243, 255, 0.15);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .portal-btn:hover i {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Barre décorative en bas des boutons */
+        .portal-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+            opacity: 0.5;
         }
 
         .sys-bar {
             z-index: 100;
+        }
+
+        .bottom-icons-container {
+            margin-top: 15px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .portal-menu {
+                gap: 10px;
+            }
+
+            .portal-btn {
+                min-width: 30%;
+                /* 3 boutons sur une ligne ou wrap */
+                padding: 10px;
+            }
+
+            .portal-btn span {
+                font-size: 0.8rem;
+            }
+
+            .portal-btn i {
+                font-size: 1.2rem;
+            }
+
+            .portal-title {
+                font-size: 2.5rem;
+            }
+
+            /* On remonte un peu le centre sur mobile */
+            .reactor-container {
+                top: 42%;
+            }
         }
     </style>
 </head>
@@ -321,58 +487,59 @@
             <div class="quantum-core"></div>
         </div>
 
-        <h1 class="portal-title" onclick="unlockData()" title="Click to unlock data">INFINITION</h1>
+        <!-- GROUPE DU HAUT : TITRE + IDENTITÉ + DATA -->
+        <div class="top-section-ui">
+            <h1 class="portal-title" onclick="unlockData()" title="Click to unlock data">INFINITION</h1>
+            <p class="sub-identity">FABIEN POLLY</p>
 
-        <!-- HIDDEN UNLOCKABLE DATA -->
-        <div id="secret-data">
-            <div class="badges-row">
-                <a href="https://www.linkedin.com/in/fabienpolly" target="_blank">
-                    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin"
-                        alt="LinkedIn">
+            <!-- BADGES TYPE "DATA STREAM" -->
+            <div id="secret-data">
+                <a href="https://www.linkedin.com/in/fabienpolly" target="_blank" class="cyber-badge">
+                    <i class="fab fa-linkedin"></i> linkedin_connect
                 </a>
-                <a href="https://github.com/infinition" target="_blank">
-                    <img src="https://img.shields.io/badge/Username-infinition-blue?style=for-the-badge&logo=github"
-                        alt="GitHub Profile">
+                <a href="https://github.com/infinition" target="_blank" class="cyber-badge">
+                    <i class="fab fa-github"></i> git_repo
                 </a>
-                <a href="https://github.com/infinition" target="_blank">
-                    <img src="https://img.shields.io/github/stars/infinition?style=for-the-badge&color=orange"
-                        alt="GitHub stars">
+                <a href="https://github.com/infinition" target="_blank" class="cyber-badge">
+                    <i class="fas fa-star"></i> 5.6k_stars
                 </a>
-            </div>
-            <div class="badges-row">
-                <a href="https://www.reddit.com/r/Bjorn_CyberViking" target="_blank">
-                    <img src="https://img.shields.io/badge/Reddit-Bjorn__CyberViking-orange?style=for-the-badge&logo=reddit"
-                        alt="Reddit">
+                <a href="https://www.reddit.com/r/Bjorn_CyberViking" target="_blank" class="cyber-badge">
+                    <i class="fab fa-reddit-alien"></i> r/bjorn
                 </a>
-                <a href="https://discord.com/invite/B3ZH9taVfT" target="_blank">
-                    <img src="https://img.shields.io/discord/1259976765829414972?label=Discord&logo=discord&style=for-the-badge&color=7289DA"
-                        alt="Discord">
-                </a>
-            </div>
-            <div class="badges-row">
-                <a href="https://www.buymeacoffee.com/infinition" target="_blank">
-                    <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"
-                        alt="Buy Me A Coffee"
-                        style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;">
+                <a href="https://discord.com/invite/B3ZH9taVfT" target="_blank" class="cyber-badge">
+                    <i class="fab fa-discord"></i> discord_srv
                 </a>
             </div>
         </div>
 
-        <p style="letter-spacing: 5px; opacity: 0.7; position: relative; z-index: 10;">FABIEN POLLY</p>
+        <!-- GROUPE DU BAS : MENU DE NAVIGATION -->
+        <div style="display:flex; flex-direction:column; align-items:center; width:100%;">
+            <div class="portal-menu">
+                <button class="portal-btn" onclick="navigateTo('portfolio')">
+                    <i class="fas fa-user-astronaut"></i>
+                    <span>PROFILE</span>
+                    <small>ACCESS CV & PROJECTS</small>
+                </button>
 
-        <div class="portal-menu">
-            <button class="portal-btn" onclick="navigateTo('portfolio')"><i
-                    class="fas fa-user-astronaut"></i><span>PROFILE</span><small>ACCESS CV & PROJECTS</small></button>
-            <button class="portal-btn" onclick="navigateTo('blog')"><i class="fas fa-terminal"></i><span>DATA
-                    LOGS</span><small>READ ARTICLES</small></button>
-            <button class="portal-btn" onclick="navigateTo('kb')"><i
-                    class="fas fa-network-wired"></i><span>KNOWLEDGE</span><small>DOCUMENTATION</small></button>
-        </div>
-        <div class="bottom-icons-container" style="z-index: 100;">
-            <div class="music-trigger" onclick="window.location.href='csslib.html'" title="CSS Library"><i
-                    class="fas fa-palette"></i></div>
-            <div class="music-trigger" onclick="navigateTo('music')" title="Audio Frequency"><i
-                    class="fas fa-music"></i></div>
+                <button class="portal-btn" onclick="navigateTo('blog')">
+                    <i class="fas fa-terminal"></i>
+                    <span>LOGS</span>
+                    <small>DATA STREAMS</small>
+                </button>
+
+                <button class="portal-btn" onclick="navigateTo('kb')">
+                    <i class="fas fa-network-wired"></i>
+                    <span>KNOWLEDGE</span>
+                    <small>ARCHIVES</small>
+                </button>
+            </div>
+
+            <div class="bottom-icons-container" style="z-index: 100;">
+                <div class="music-trigger" onclick="window.location.href='csslib.html'" title="CSS Library"><i
+                        class="fas fa-palette"></i></div>
+                <div class="music-trigger" onclick="navigateTo('music')" title="Audio Frequency"><i
+                        class="fas fa-music"></i></div>
+            </div>
         </div>
     </section>
 
@@ -391,7 +558,8 @@
                     intersection: I maintain my executive role as a <strong>Cyber Director & CISO</strong>, while
                     simultaneously pushing the boundaries of technology as an <strong>Independent Researcher</strong> in
                     <strong>Quantum AI & Post-Quantum Security</strong>.<br><em>"I protect nuclear secrets by day and
-                        build digital consciousness by night."</em></p>
+                        build digital consciousness by night."</em>
+                </p>
                 <div style="margin-top: 2rem;">
                     <a href="https://www.linkedin.com/in/fabienpolly/" class="btn-link btn-oxford"><i
                             class="fab fa-linkedin"></i> LinkedIn</a>
