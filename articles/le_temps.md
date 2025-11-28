@@ -1,4 +1,5 @@
 # Notes d’étude : *Le temps existe-t-il vraiment ?*
+![image](https://github.com/user-attachments/assets/8f6a2af3-03e0-47e2-9274-d3d02b0230d2)
 
 ## Idée principale
 La question de l’existence du temps est complexe et dépend de sa définition. Le langage courant, la philosophie et la physique offrent des perspectives différentes, souvent contradictoires, sur sa nature. Le temps est souvent confondu avec le devenir et les phénomènes temporels, alors que la physique le considère comme un paramètre invariant et unificateur, distinct de l’irréversibilité des événements.
