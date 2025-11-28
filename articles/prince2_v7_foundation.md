@@ -587,3 +587,133 @@ Ensemble d’activités structurées transformant des intrants en extrants pour 
 
 - On ne commence jamais le travail technique (Gérer la livraison des produits) sans autorisation d’un lot de travaux dans Contrôler une séquence.
 - Les séquences ne se chevauchent pas, mais des lots de travaux peuvent se chevaucher au sein d’une séquence.
+
+# PRINCE2® 7 – Révision Express (Q/R Essentielles)
+
+## 1. Généralités & Contexte
+
+**Q1. Quels sont les cinq éléments intégrés de PRINCE2 7 ?**  
+R : Les Principes, les Personnes, les Pratiques, les Processus et le Contexte du projet.
+
+**Q2. Comment PRINCE2 définit-il un projet ?**  
+R : Une organisation temporaire créée en vue de livrer un ou plusieurs produits commerciaux conformément à un Cas d’Affaires convenu.
+
+**Q3. Quelles sont les 5 caractéristiques d’un projet selon PRINCE2 ?**  
+R : Changement, Temporaire, Transfonctionnel, Unique, Incertain.
+
+**Q4. Quels sont les 7 aspects de la performance à gérer dans PRINCE2 ?**  
+R : Coûts, Délais, Qualité, Périmètre, Risques, Bénéfices, Durabilité.
+
+**Q5. Comment PRINCE2 7 définit-elle une tolérance ?**  
+R : Déviation permise autour d’un objectif sans devoir escalader au niveau de management supérieur.
+
+---
+
+## 2. Principes PRINCE2 (Mindset)
+
+**Q6. Combien de principes PRINCE2 doivent être appliqués pour que la méthode soit considérée utilisée ?**  
+R : Les 7 principes doivent tous être appliqués.
+
+**Q7. Quel est le principe "Justification continue pour l’entreprise" ?**  
+R : Il doit y avoir une raison valable de commencer ET de continuer le projet, documentée dans le Cas d’Affaires.
+
+**Q8. Quel est le principe "Tirer les leçons de l’expérience" ?**  
+R : Apprendre du passé (avant), enregistrer pendant (durant) et transmettre (après) les leçons.
+
+**Q9. Quel principe PRINCE2 met l’accent sur la clarté des responsabilités ?**  
+R : Le principe "Rôles, responsabilités et relations définis".
+
+**Q10. Que signifie le principe "Management par séquences" ?**  
+R : Découper le projet en séquences de management pour mieux planifier, suivre et contrôler.
+
+**Q11. Que signifie le principe "Management par exception" ?**  
+R : Définir des tolérances ; tant qu’elles ne sont pas dépassées, le niveau inférieur gère. En cas de dépassement, on escalade.
+
+**Q12. Quel est le principe "Focalisation produit" ?**  
+R : Définir le QUOI (produits et qualité) avant le COMMENT (activités).
+
+**Q13. Que signifie le principe d’"Adaptation au contexte (Tailoring)" ?**  
+R : Adapter PRINCE2 à la taille, la complexité, les risques et la culture du projet, tout en respectant les 7 principes.
+
+---
+
+## 3. Personnes (People)
+
+**Q14. Comment PRINCE2 définit-il une partie prenante ?**  
+R : Toute personne, groupe ou organisation qui peut affecter, être affecté ou avoir le sentiment d’être affecté par le projet.
+
+**Q15. Quels sont les trois grands domaines d’activités axées sur les personnes dans PRINCE2 7 ?**  
+R : La conduite du changement, la direction d’équipes performantes et la communication.
+
+**Q16. Quelle est la différence entre Leadership et Management dans PRINCE2 ?**  
+R : Leadership : orienté humain, vision, motivation. Management : orienté tâche, instruction, contrôle, exécution.
+
+---
+
+## 4. Pratiques (Thèmes) – Vue d’ensemble
+
+**Q17. Quelles sont les 7 pratiques PRINCE2 7 ?**  
+R : Organisation, Cas d’Affaire, Qualité, Plans, Risques, Progression, Incidences.
+
+**Q18. Quel est le but du thème Cas d’Affaire (Business Case) ?**  
+R : Justifier le projet en vérifiant s’il est souhaitable, viable et réalisable.
+
+**Q19. Quel est le but du thème Organisation ?**  
+R : Définir la structure de responsabilité du projet (qui est responsable de quoi).
+
+**Q20. Quel est le but du thème Qualité ?**  
+R : S’assurer que les produits du projet répondent aux attentes et exigences définies.
+
+**Q21. Quels sont les 4 niveaux de plans PRINCE2 ?**  
+R : Plan de Projet, Plan de Séquence, Plan d’Équipe (optionnel) et Plan d’Exception.
+
+**Q22. Quel est le but du thème Risques ?**  
+R : Gérer l’incertitude qui peut impacter les objectifs du projet.
+
+**Q23. Quels sont les 3 types d’incidences dans PRINCE2 ?**  
+R : Requête de changement, Hors-spécification, Problème/Préoccupation.
+
+**Q24. Quel est le but du thème Progression (Progress) ?**  
+R : Surveiller l’avancement par rapport aux plans et contrôler les écarts.
+
+---
+
+## 5. Processus PRINCE2 (Chronologie)
+
+**Q25. Quels sont les 7 processus PRINCE2 7 ?**  
+R : Élaborer le projet, Diriger le projet, Initialiser le projet, Contrôler une séquence, Gérer la livraison des produits, Gérer une limite de séquence, Clore le projet.
+
+**Q26. Quel est l’objectif du processus "Élaborer le projet" (SU) ?**  
+R : Vérifier si le projet est viable et vaut la peine d’être planifié (pré-projet).
+
+**Q27. Quel est l’objectif du processus "Initialiser le projet" (IP) ?**  
+R : Établir les bases solides du projet et créer la DIP (PID).
+
+**Q28. Quel est l’objectif du processus "Contrôler une séquence" (CS) ?**  
+R : Gérer le travail au jour le jour pendant une séquence, dans les tolérances définies.
+
+**Q29. Quel est l’objectif du processus "Gérer la livraison des produits" (MP) ?**  
+R : S’assurer que les équipes produisent et livrent les produits prévus selon les exigences de qualité.
+
+**Q30. Quel est l’objectif du processus "Clore le projet" (CP) ?**  
+R : Assurer une clôture contrôlée du projet, confirmer l’acceptation et consigner les leçons.
+
+---
+
+## 6. Rôles & Documents clés
+
+**Q31. Quels sont les 3 intérêts à représenter dans l’organisation PRINCE2 ?**  
+R : L’Entreprise (Business), l’Utilisateur et le Fournisseur.
+
+**Q32. Quel est le rôle de l’Exécutif (Sponsor) ?**  
+R : Responsable ultime du projet, du Cas d’Affaires et du rapport qualité/prix (Value for Money).
+
+**Q33. Qu’est-ce que la DIP (Documentation d’Initialisation du Projet) ?**  
+R : Le "contrat" du projet : Cas d’Affaires détaillé, Plan de Projet et Approches de Gestion (qualité, risques, incidences, communication, etc.).
+
+**Q34. Qu’est-ce qu’un Lot de Travaux (Work Package) ?**  
+R : Instructions données par le Chef de Projet au Chef d’Équipe, décrivant le travail à effectuer et les exigences qualité.
+
+**Q35. Quels sont les trois registres de base maintenus tout au long du projet PRINCE2 ?**  
+R : Le Registre des Risques, le Registre des Incidences et le Registre Qualité.
+
