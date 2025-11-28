@@ -39,10 +39,10 @@
     <div class="cyber-grid"></div>
 
     <div class="sys-bar">
-        <div class="sys-id">ID: 0xPOLLY_F</div>
+        <div class="sys-id">ID: Loading...</div>
         <div class="back-btn" onclick="navigateTo('portal')"><i class="fas fa-arrow-left"></i> ROOT</div>
         <div class="sys-status">
-            <i class="fas fa-circle" style="font-size: 8px;"></i> <span id="sys-msg">SYSTEM STABLE</span>
+            <i class="fas fa-circle" style="font-size: 8px;"></i> <span id="sys-msg">SYS STABLE</span>
             <button id="audio-toggle" class="audio-toggle-btn" title="Audio Control">
                 <i class="fas fa-wave-square"></i>
             </button>
@@ -129,7 +129,7 @@
                 <span class="tagline"><span class="highlight-orange">Cyber Director & CISO</span> // <span
                         class="highlight-purple">Independent Researcher</span> // <span class="highlight-blue">Creative
                         Tech</span> // <span class="highlight-red">Skater</span></span>
-                <p style="max-width: 750px; margin-top: 1.5rem;">My journey started as an <strong>Ethical
+                <p style="margin-top: 1.5rem;">My journey started as an <strong>Ethical
                         Hacker</strong>, breaking systems to understand them... Today, I operate at a unique
                     intersection: I maintain my executive role as a <strong>Cyber Director & CISO</strong>, while
                     simultaneously pushing the boundaries of technology as an <strong>Independent Researcher</strong> in
@@ -447,7 +447,15 @@
     <script src="js/main.js"></script>
     <script src="js/portal.js"></script>
     <script src="csslib/app.js"></script>
+    <script>
 
+        fetch("https://api.ipify.org?format=json")
+            .then(res => res.json())
+            .then(data => {
+                document.querySelector(".sys-id").textContent = "ID: " + data.ip;
+            });
+
+    </script>
 
 </body>
 

@@ -18,7 +18,7 @@ function unlockData() {
     }
 }
 
-// --- INTERACTIVE MODULES ---
+
 // --- INTERACTIVE MODULES ---
 let currentScore = 0;
 let sessionType = ''; // 'flashcard' or 'quiz'

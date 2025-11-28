@@ -9,14 +9,14 @@ function setRingActive(active) {
 
     if (active) {
         reactor.classList.add('active-mode'); // Overclock Mode (Red)
-        if (sysMsg) sysMsg.innerText = "SYSTEM OVERLOAD";
+        if (sysMsg) sysMsg.innerText = "SYS OVERLOAD";
         if (sysStatus) {
             sysStatus.style.color = 'var(--neon-red)';
             sysStatus.style.textShadow = '0 0 10px var(--neon-red)';
         }
     } else {
         reactor.classList.remove('active-mode'); // Stable Mode (Blue)
-        if (sysMsg) sysMsg.innerText = "SYSTEM STABLE";
+        if (sysMsg) sysMsg.innerText = "SYS STABLE";
         if (sysStatus) {
             sysStatus.style.color = 'var(--neon-blue)';
             sysStatus.style.textShadow = '0 0 10px var(--neon-blue)';
