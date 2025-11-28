@@ -580,6 +580,13 @@ body {
     position: relative;
 }
 
+.contact-btns {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
 h1.port-h1 {
     font-family: var(--cyber-font);
     font-size: 3.5rem;
