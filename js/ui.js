@@ -334,6 +334,15 @@ function renderArticles(items) {
         let thumb = '';
         if (item.image) {
             thumb = `<img src="${item.image}" class="article-thumb">`;
+        } else if (item.content) {
+            // Try to find first image in markdown
+            const imgMatch = item.content.match(/!\[.*?\]\((.*?)\)/) || item.content.match(/<img.*?src=["'](.*?)["']/);
+            if (imgMatch && imgMatch[1]) {
+                thumb = `<img src="${imgMatch[1]}" class="article-thumb">`;
+            } else {
+                let fallbackIcon = item.type === 'repo' ? 'fab fa-github' : 'fas fa-file-lines';
+                thumb = `<div class="article-thumb"><i class="${fallbackIcon} thumb-icon"></i></div>`;
+            }
         } else {
             let fallbackIcon = item.type === 'repo' ? 'fab fa-github' : 'fas fa-file-lines';
             thumb = `<div class="article-thumb"><i class="${fallbackIcon} thumb-icon"></i></div>`;

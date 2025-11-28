@@ -938,7 +938,6 @@ h2.port-h2 {
     transition: all 0.2s;
     cursor: pointer;
     margin-bottom: 1rem;
-    gap: 1.5rem;
 }
 
 .article-entry:hover {
@@ -950,6 +949,7 @@ h2.port-h2 {
     width: 100px;
     height: 100px;
     object-fit: cover;
+    margin-right: 10px;
     border: 1px solid #333;
     opacity: 0.7;
     transition: all 0.3s;
@@ -2192,13 +2192,28 @@ body.audio-playing .audio-toggle-btn {
     display: block;
 }
 
+/* article-list  2 card per row in mobile */
+@media (max-width: 768px) {
+    .article-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .article-body {
     margin-top: 1rem;
     font-family: sans-serif;
     line-height: 1.8;
     color: #ccc;
-    max-width: fit-content;
-    padding: 10px 10px 10px 10px;
+    max-width: 100%;
+    padding: 10px;
+}
+
+.article-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 4px;
 }
 
 .article-body h1 {
