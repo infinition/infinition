@@ -965,7 +965,7 @@ h2.port-h2 {
     flex: 1;
     overflow-y: auto;
     padding: 2rem;
-    background: var(--bg-color);
+    background: #06060626;
 }
 
 .kb-search-box {
@@ -1446,7 +1446,7 @@ body.audio-playing .audio-toggle-btn {
 /* version fusionnée / finale */
 #portal-view {
     height: 100vh;
-    background-color: var(--bg-dark);
+    background-color: #06060626;
     perspective: 1000px;
     overflow: hidden;
     position: relative;
@@ -1521,21 +1521,37 @@ body.audio-playing .audio-toggle-btn {
 
 /* --- 1. ARRIÈRE-PLAN GRID (HACKER VIBE) --- */
 .cyber-grid {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed;
+    left: -50vw;
+    top: 50vh;
     width: 200vw;
     height: 200vh;
+
     background-image:
         linear-gradient(rgba(0, 242, 255, 0.11) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 243, 255, 0.11) 1px, transparent 1px);
     background-size: 50px 50px;
-    transform: rotateX(60deg) translateY(-20%) translateZ(-200px) translateX(-25%);
-    animation: grid-move 30s linear infinite;
-    z-index: 0;
-    mask-image: none !important;
+
+    transform-origin: 50% 0%;
+    transform: perspective(900px) rotateX(78deg);
+    animation: grid-move 10s linear infinite;
+
+    /* --- FADE SUR LES 10% DU "LOIN" (haut du plan) --- */
+    -webkit-mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            /* totalement transparent au tout début */
+            rgba(0, 0, 0, 1) 10%,
+            /* à partir de 10% : opaque */
+            rgba(0, 0, 0, 1) 100%);
+    mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 10%,
+            rgba(0, 0, 0, 1) 100%);
+
     pointer-events: none;
+    z-index: -1;
 }
+
 
 /* --- 2. STRUCTURE DU RÉACTEUR (CENTRE ABSOLU) --- */
 .reactor-container {
