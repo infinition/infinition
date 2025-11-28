@@ -1,6 +1,493 @@
-
-
 [
+    {
+        "question": "Quels sont les cinq éléments intégrés de PRINCE2 7 ?",
+        "answer": "Les Principes, les Personnes, les Pratiques, les Processus et le Contexte du projet."
+    },
+    {
+        "question": "Quel est l'objectif global de la formation PRINCE2 7 Foundation ?",
+        "answer": "Acquérir les fondamentaux de la gestion de projet selon PRINCE2, en comprenant ses principes, personnes, pratiques, processus, le contexte du projet et les exigences de l'examen Foundation."
+    },
+    {
+        "question": "Qui est Caroline Naudin dans le contexte de la formation PRINCE2 7 Foundation ?",
+        "answer": "La formatrice officielle PRINCE2 7 Foundation, avec environ 12 ans d'expérience en gestion de projet et PMO à l'international."
+    },
+    {
+        "question": "Sur quel matériel officiel s'appuie la formation PRINCE2 7 Foundation ?",
+        "answer": "Sur les OTMs PeopleCert : eBook PRINCE2 7, manuel de l'apprenant, guide de référence rapide, programme de formation, exemples d'examens et enquête post-cours."
+    },
+    {
+        "question": "Quelles règles de base sont recommandées pour bien suivre la formation PRINCE2 7 Foundation ?",
+        "answer": "Participer activement, respecter les horaires, écouter avec bienveillance et garder la caméra allumée pour favoriser les échanges."
+    },
+    {
+        "question": "D'où vient la méthode PRINCE2 ?",
+        "answer": "Elle est issue de la méthode PROMPT et a été formalisée par le gouvernement du Royaume-Uni."
+    },
+    {
+        "question": "Que signifie l'acronyme PRINCE2 ?",
+        "answer": "PRojects IN Controlled Environments (Projets en environnements maîtrisés)."
+    },
+    {
+        "question": "Quelle est la nature de PRINCE2 en tant que méthode ?",
+        "answer": "C'est une méthode structurée, adaptable et évolutive, basée sur les bonnes pratiques, qui fournit un cadre de gouvernance pour tout type de projet."
+    },
+    {
+        "question": "Pourquoi dit-on que PRINCE2 est universelle ?",
+        "answer": "Parce qu'elle est applicable à tout type de projet, dans tout secteur et quelle que soit la taille de l'organisation."
+    },
+    {
+        "question": "Pourquoi PRINCE2 est-elle qualifiée de flexible ?",
+        "answer": "Parce qu'elle s'adapte aux spécificités de chaque projet, notamment son contexte, sa taille, sa complexité et son niveau de risque."
+    },
+    {
+        "question": "En quoi PRINCE2 est-elle axée sur les résultats ?",
+        "answer": "Elle met l'accent sur la livraison de produits et de bénéfices plutôt que sur les seules activités."
+    },
+    {
+        "question": "Quel avantage PRINCE2 apporte-t-elle en termes de langage ?",
+        "answer": "Elle fournit un langage et des concepts communs qui facilitent la communication dans les équipes projet."
+    },
+    {
+        "question": "Quel est le lien entre PRINCE2 et la maturité organisationnelle ?",
+        "answer": "L'utilisation de PRINCE2 contribue à améliorer la capacité globale de gestion de projet de l'organisation."
+    },
+    {
+        "question": "Quel est le but d'un projet pour l'entreprise selon PRINCE2 7 ?",
+        "answer": "Renforcer ou améliorer les opérations courantes de l'organisation."
+    },
+    {
+        "question": "Quelle est la définition de la gestion de projet selon la formation PRINCE2 7 ?",
+        "answer": "L'application de méthodes, d'outils, de techniques et de compétences pour prévoir, planifier, déléguer, motiver, contrôler et surveiller un projet."
+    },
+    {
+        "question": "Quelles sont les activités clés de la gestion de projet selon PRINCE2 7 ?",
+        "answer": "Prévoir, planifier, déléguer, motiver, contrôler, surveiller, analyser, agir, décider ou escalader et communiquer."
+    },
+    {
+        "question": "Selon PRINCE2 7, quelle est la clé de succès de la gestion de projet ?",
+        "answer": "Transmettre l'information juste, au bon moment et aux personnes adéquates pour prendre les bonnes décisions."
+    },
+    {
+        "question": "Quelles sont les 7 variables de performance d'un projet PRINCE2 ?",
+        "answer": "Coûts, Périmètre, Délais, Durabilité, Bénéfices, Risques et Qualité."
+    },
+    {
+        "question": "À quoi servent les KPI dans PRINCE2 7 ?",
+        "answer": "À mesurer l'avancement du projet par rapport à ce qui était planifié, en lien avec les critères d'acceptation."
+    },
+    {
+        "question": "Comment PRINCE2 7 définit-elle une tolérance ?",
+        "answer": "Comme la déviation permise autour d'un objectif sans devoir escalader au niveau de management supérieur."
+    },
+    {
+        "question": "Que représente une tolérance pour un niveau de management PRINCE2 ?",
+        "answer": "La marge de manœuvre et l'autonomie de décision en termes de coût, délai, qualité, périmètre, durabilité, risque et bénéfice."
+    },
+    {
+        "question": "Qu'est-ce qu'une exception dans PRINCE2 7 ?",
+        "answer": "Une situation où une déviation au-delà du niveau de tolérance est prévisible ou déjà présente et doit être remontée au management."
+    },
+    {
+        "question": "Citez trois caractéristiques d'un bon projet selon la formation PRINCE2 7.",
+        "answer": "Il est pertinent, bien planifié, bien managé, dans les délais, dans le budget, avec des buts clairs et apportant de la valeur."
+    },
+    {
+        "question": "Quels sont les cinq éléments intégrés de PRINCE2 et à quoi servent-ils ensemble ?",
+        "answer": "Les Principes, Personnes, Pratiques, Processus et Contexte ; ensemble, ils fournissent un cadre cohérent pour gérer un projet de bout en bout."
+    },
+    {
+        "question": "Qu'est-ce que le contexte du projet dans PRINCE2 7 ?",
+        "answer": "L'environnement dans lequel le projet s'inscrit, qui influence la façon d'appliquer les principes, pratiques et processus."
+    },
+    {
+        "question": "Quels sont les principaux types de contexte pris en compte par PRINCE2 7 ?",
+        "answer": "Contexte organisationnel, commercial, méthode de livraison, échelle du projet et contexte de durabilité."
+    },
+    {
+        "question": "Comment PRINCE2 définit-elle le portefeuille d'une organisation ?",
+        "answer": "Comme la totalité de l'investissement d'une entreprise dans les changements nécessaires pour atteindre ses objectifs stratégiques."
+    },
+    {
+        "question": "Comment PRINCE2 7 définit-elle un programme ?",
+        "answer": "Comme une structure organisationnelle temporaire et souple destinée à coordonner un ensemble de projets pour livrer des résultats et bénéfices stratégiques."
+    },
+    {
+        "question": "Quels sont les trois acteurs indispensables dans le contexte commercial d'un projet PRINCE2 ?",
+        "answer": "L'entreprise (mandat et gouvernance), le fournisseur (ressources et expertise) et l'utilisateur (besoins fonctionnels et utilisation des livrables)."
+    },
+    {
+        "question": "Quelles sont les trois grandes méthodes de livraison reconnues par PRINCE2 7 ?",
+        "answer": "Linéaire-séquentielle, itérative-incrémentielle (agile) et hybride."
+    },
+    {
+        "question": "Qu'est-ce qu'un produit de projet dans PRINCE2 ?",
+        "answer": "Un élément tangible ou intangible qui peut être décrit à l'avance, créé et testé."
+    },
+    {
+        "question": "Quelle est la différence entre produits de management et produits spécialistes ?",
+        "answer": "Les produits de management servent à gérer et contrôler le projet, tandis que les produits spécialistes sont les livrables qui génèrent le changement et les bénéfices attendus."
+    },
+    {
+        "question": "Qu'est-ce qu'un document de référence dans PRINCE2 ?",
+        "answer": "Un produit de management qui définit tout le projet, validé par le comité de pilotage, servant de référence pour évaluer la performance et soumis à la maîtrise des changements (ex: DIP)."
+    },
+    {
+        "question": "À quoi servent les registres dans PRINCE2 ?",
+        "answer": "À centraliser des informations opérationnelles en évolution, comme les risques, incidences, qualité ou produits, chaque élément étant identifiable."
+    },
+    {
+        "question": "Quelle est la finalité principale de la Documentation d'Initialisation de Projet (DIP) ?",
+        "answer": "Fournir une base solide pour s'engager sur le projet et une source unique de référence pour son évaluation continue."
+    },
+    {
+        "question": "Quels éléments principaux contient la DIP PRINCE2 7 ?",
+        "answer": "Définition du projet, cas d'affaire, description des rôles, plan de projet, approche de projet, structure de l'équipe, approches de management et décisions d'adaptation."
+    },
+    {
+        "question": "Qu'est-ce que le journal du projet dans PRINCE2 7 ?",
+        "answer": "Un ensemble d'enregistrements évolutifs regroupant journal de bord, journal des leçons, registre des produits, registre qualité, registre des risques et registre des incidences."
+    },
+    {
+        "question": "Quels sujets ne sont pas couverts par PRINCE2 selon le manuel ?",
+        "answer": "Les aspects spécialistes, les soft skills et les techniques détaillées."
+    },
+    {
+        "question": "Comment PRINCE2 7 définit-elle un principe ?",
+        "answer": "Comme une ligne directrice obligatoire qui détermine si un projet est réellement géré selon PRINCE2."
+    },
+    {
+        "question": "Pourquoi les principes PRINCE2 sont-ils dits universels ?",
+        "answer": "Parce qu'ils s'appliquent à tous les projets, quels que soient le secteur, la taille ou le contexte."
+    },
+    {
+        "question": "Quel est le rôle de l'Exécutif dans le principe de justification continue ?",
+        "answer": "S'assurer, avec le comité de pilotage, que le projet vaut la peine d'être démarré et poursuivi et que la justification reste valide."
+    },
+    {
+        "question": "Quelles conditions doit remplir la justification d'un projet PRINCE2 ?",
+        "answer": "Répondre à un besoin clair, proposer des résultats réalistes et mesurables et présenter un retour sur investissement attendu."
+    },
+    {
+        "question": "Sous quelle forme est généralement consignée la justification d'un projet PRINCE2 ?",
+        "answer": "Dans un cas d'affaire viable, quantifiable et approuvé par le comité de pilotage."
+    },
+    {
+        "question": "Quel est l'objectif du principe 'Tirer les leçons de l'expérience' ?",
+        "answer": "Capitaliser les expériences passées pour éviter de répéter les mêmes erreurs et améliorer la gestion des projets."
+    },
+    {
+        "question": "À quels moments du cycle de vie du projet PRINCE2 les leçons doivent-elles être collectées ?",
+        "answer": "Au démarrage (recherche d'expériences), à chaque fin de séquence (bilans intermédiaires) et en fin de projet (bilan final)."
+    },
+    {
+        "question": "Que garantit le principe 'Rôles, responsabilités et relations définis' ?",
+        "answer": "Que les rôles et responsabilités de chacun sont clairement définis, explicités, validés et compris par tous."
+    },
+    {
+        "question": "Quels sont les trois grands intérêts représentés au comité de pilotage selon PRINCE2 ?",
+        "answer": "L'Entreprise (sponsors), les Utilisateurs et les Fournisseurs."
+    },
+    {
+        "question": "Comment PRINCE2 définit-elle une partie prenante ?",
+        "answer": "Toute personne, groupe ou organisation qui peut affecter, être affecté ou avoir le sentiment d'être affecté par le projet."
+    },
+    {
+        "question": "Quel est le principe de management par séquence ?",
+        "answer": "Planifier, suivre et contrôler le projet séquence par séquence plutôt que sur un bloc unique."
+    },
+    {
+        "question": "Quelles règles PRINCE2 pose sur les séquences de management ?",
+        "answer": "Les séquences ne se chevauchent pas et chaque projet PRINCE2 doit comporter au moins deux séquences."
+    },
+    {
+        "question": "Quel est le rôle du comité de pilotage à la fin de chaque séquence ?",
+        "answer": "Examiner l'avancement, revoir le cas d'affaire et les risques et approuver le plan de la séquence suivante ou arrêter le projet."
+    },
+    {
+        "question": "Pourquoi n'est-il pas nécessaire de planifier tout le projet dans le détail dès le début ?",
+        "answer": "Parce que PRINCE2 préconise une planification détaillée au niveau des séquences, avec un horizon de planification raisonnable."
+    },
+    {
+        "question": "Quels sont les quatre niveaux de management pris en compte dans le management par exception ?",
+        "answer": "La direction de l'entreprise, le comité de pilotage, le chef de projet et les chefs d'équipe."
+    },
+    {
+        "question": "Qu'est-ce qu'un seuil de tolérance dans PRINCE2 ?",
+        "answer": "Une déviation admissible (+/-) par rapport au plan, qui délimite l'autorité déléguée à un niveau de management."
+    },
+    {
+        "question": "Que se passe-t-il en cas de dépassement des seuils de tolérance dans PRINCE2 ?",
+        "answer": "Un mécanisme d'alerte est déclenché et une exception est remontée au niveau de management supérieur, généralement au comité de pilotage."
+    },
+    {
+        "question": "En quoi consiste le principe de focalisation produit dans PRINCE2 ?",
+        "answer": "À se concentrer sur la définition et la livraison des produits et surtout sur leurs exigences de qualité pour générer les bénéfices attendus."
+    },
+    {
+        "question": "Quel est l'intérêt de documenter tôt la Description du Produit de projet ?",
+        "answer": "Assurer une compréhension partagée du périmètre, des critères qualité et du mode de validation entre toutes les parties prenantes."
+    },
+    {
+        "question": "Que signifie 'Adapter en fonction du projet' dans PRINCE2 7 ?",
+        "answer": "Ajuster la méthode PRINCE2 à l'environnement, à la taille, à la complexité, à l'importance et au niveau de risque du projet, tant que les principes restent appliqués."
+    },
+    {
+        "question": "Quelle est la différence entre appliquer et adapter PRINCE2 ?",
+        "answer": "Appliquer consiste à utiliser la méthode telle qu'elle est prévue (rôles, séquences, tolérances), adapter consiste à modifier certains éléments (terminologie, techniques) pour mieux coller au contexte."
+    },
+    {
+        "question": "Quels sont les trois grands domaines d'activités axées sur les personnes dans PRINCE2 7 ?",
+        "answer": "La conduite du changement, la direction d'équipes performantes et la communication."
+    },
+    {
+        "question": "Comment PRINCE2 définit-elle la gestion du changement organisationnel ?",
+        "answer": "Comme le moyen par lequel une organisation passe de l'état actuel à un état cible en accompagnant les personnes impactées."
+    },
+    {
+        "question": "Quel document décrit l'approche de gestion du changement dans PRINCE2 7 ?",
+        "answer": "L'approche de gestion du changement, généralement incluse dans la DIP, qui décrit états actuel, provisoire et cible et les activités de transition."
+    },
+    {
+        "question": "Comment PRINCE2 décrit-elle le leadership dans le contexte des équipes ?",
+        "answer": "Comme l'art de motiver, influencer et co-créer pour atteindre les objectifs du projet."
+    },
+    {
+        "question": "Qu'est-ce que la co-création dans PRINCE2 7 ?",
+        "answer": "Une forme de collaboration qui implique directement les utilisateurs et influenceurs clés dans la conception des produits et des méthodes de travail."
+    },
+    {
+        "question": "Qu'est-ce que l'intelligence culturelle dans PRINCE2 7 ?",
+        "answer": "La capacité à établir des relations et à travailler efficacement au-delà des cultures et des frontières organisationnelles."
+    },
+    {
+        "question": "Quels sont les principaux défis humains évoqués dans la direction d'équipes projet ?",
+        "answer": "L'autorité formelle limitée, les priorités concurrentes, les rapports hiérarchiques multiples et les tensions hiérarchiques."
+    },
+    {
+        "question": "Quel est le rôle de l'approche de gestion de la communication dans PRINCE2 7 ?",
+        "answer": "Définir à qui, pourquoi, quoi, qui, comment et quand communiquer pendant le projet."
+    },
+    {
+        "question": "Quels éléments une approche de gestion de la communication doit-elle couvrir ?",
+        "answer": "L'analyse des parties prenantes, les objectifs de communication, les activités, les responsabilités, les moyens de communication et la fréquence."
+    },
+    {
+        "question": "Pourquoi l'adhésion des parties prenantes est-elle critique dans PRINCE2 7 ?",
+        "answer": "Parce qu'elles peuvent soutenir ou bloquer le projet, et que les influenceurs clés conditionnent la réussite de la relation entre projet et organisation."
+    },
+    {
+        "question": "Comment PRINCE2 7 définit-elle la culture d'un projet ?",
+        "answer": "Comme l'ensemble des attitudes, valeurs, buts et méthodes de travail partagés qui caractérisent un groupe de personnes sur le projet."
+    },
+    {
+        "question": "Quelle est la finalité globale des pratiques PRINCE2 ?",
+        "answer": "Décrire les aspects de la gestion de projet à traiter en continu pour planifier, mettre en place, surveiller et corriger le projet."
+    },
+    {
+        "question": "Quelles sont les 7 pratiques PRINCE2 7 ?",
+        "answer": "Organisation, Cas d'affaire, Qualité, Plans, Risques, Progression et Incidences."
+    },
+    {
+        "question": "Quelle est la finalité de la pratique Organisation ?",
+        "answer": "Définir et établir la structure d'imputabilité et de responsabilité pour le projet."
+    },
+    {
+        "question": "Quels sont les quatre niveaux organisationnels de management dans PRINCE2 ?",
+        "answer": "Commanditaire (au-dessus du projet), Direction (comité de pilotage), Management (chef de projet) et Livraison (chefs d'équipe)."
+    },
+    {
+        "question": "Qui est imputable de la réussite du projet dans PRINCE2 ?",
+        "answer": "Le comité de pilotage, et en particulier l'Exécutif en tant qu'imputable unique."
+    },
+    {
+        "question": "Pourquoi l'assurance projet doit-elle être indépendante du chef de projet ?",
+        "answer": "Pour garantir une vision objective de la performance du projet et éviter les conflits d'intérêt."
+    },
+    {
+        "question": "Quels sont les trois principaux produits de management associés à la pratique Organisation ?",
+        "answer": "La structure de l'équipe de management de projet, les descriptions de rôle et l'approche de gestion commerciale."
+    },
+    {
+        "question": "Quelle est la finalité de la pratique Cas d'affaire ?",
+        "answer": "Établir des mécanismes pour juger si le projet est et demeure souhaitable, viable et réalisable."
+    },
+    {
+        "question": "Quels sont les trois jalons principaux du cycle de vie du cas d'affaire ?",
+        "answer": "Le mandat de projet, l'exposé du projet (cas d'affaire ébauché) et le cas d'affaire complet."
+    },
+    {
+        "question": "Quels éléments figure-t-on dans un cas d'affaire PRINCE2 complet ?",
+        "answer": "Un résumé exécutif, les raisons, les options, les bénéfices et contre-bénéfices, les coûts, la durée, les risques majeurs et l'évaluation de l'investissement."
+    },
+    {
+        "question": "À quoi sert l'approche de gestion des bénéfices ?",
+        "answer": "À définir comment, quand et par qui les bénéfices seront mesurés, suivis et confirmés."
+    },
+    {
+        "question": "Que décrit l'approche de gestion de la durabilité ?",
+        "answer": "Les actions, revues et contrôles pour atteindre les objectifs de performance de durabilité du projet."
+    },
+    {
+        "question": "Comment PRINCE2 définit-elle un bénéfice ?",
+        "answer": "Comme une amélioration mesurable résultant d'un changement, obtenue grâce à l'utilisation des livrables du projet."
+    },
+    {
+        "question": "Comment PRINCE2 définit-elle un contre-bénéfice ?",
+        "answer": "Comme une dégradation mesurable résultant d'un changement, perçue comme un effet négatif du projet."
+    },
+    {
+        "question": "Quelle est la finalité de la pratique Qualité ?",
+        "answer": "Documenter les exigences des utilisateurs pour les produits du projet et établir comment elles seront satisfaites."
+    },
+    {
+        "question": "Comment PRINCE2 définit-elle la qualité ?",
+        "answer": "Comme le degré selon lequel un ensemble de caractéristiques inhérentes satisfait aux exigences."
+    },
+    {
+        "question": "Quelle est la différence entre planification de la qualité et contrôle de la qualité ?",
+        "answer": "La planification de la qualité définit les exigences et méthodes, le contrôle de la qualité vérifie que les produits livrés y sont conformes."
+    },
+    {
+        "question": "Quel est le rôle de l'assurance qualité dans PRINCE2 7 ?",
+        "answer": "Vérifier de manière systématique et planifiée que les produits répondront aux spécifications de qualité, en étant généralement indépendante du projet."
+    },
+    {
+        "question": "Quel est l'objectif principal de la structure de décomposition du produit (PBS) ?",
+        "answer": "Lister et organiser de manière hiérarchique tous les produits à réaliser dans le projet."
+    },
+    {
+        "question": "Quelle est la finalité de la pratique Plans ?",
+        "answer": "Décrire comment les produits seront livrés, par qui, quand, à quel coût et avec quel niveau de qualité pour satisfaire le cas d'affaire."
+    },
+    {
+        "question": "Quelle est la finalité de la pratique Risque ?",
+        "answer": "Identifier, évaluer et contrôler les incertitudes qui peuvent affecter les objectifs du projet."
+    },
+    {
+        "question": "Qu'est-ce que la culture du risque dans PRINCE2 7 ?",
+        "answer": "La manière dont une organisation perçoit, discute et gère les risques, notamment son appétit et son seuil d'exposition au risque."
+    },
+    {
+        "question": "Quelle est la différence entre appétit pour le risque et seuil d'exposition au risque ?",
+        "answer": "L'appétit pour le risque décrit le niveau de risque acceptable, le seuil d'exposition est le niveau à ne pas dépasser sans action."
+    },
+    {
+        "question": "Qui doit être clairement identifié pour chaque risque dans PRINCE2 ?",
+        "answer": "Un propriétaire du risque (responsable du suivi) et un exécuteur pour les actions de réponse si nécessaire."
+    },
+    {
+        "question": "Quelle est la finalité de la pratique Progression ?",
+        "answer": "Mettre en place des mécanismes pour surveiller les réalisations, prévoir les objectifs et contrôler les écarts par rapport aux plans."
+    },
+    {
+        "question": "Quels sont les deux grands types de contrôles de progression dans PRINCE2 ?",
+        "answer": "Les contrôles déclenchés par des événements et les contrôles pilotés par le temps."
+    },
+    {
+        "question": "Quel est l'intérêt de l'approche de gestion des données et du numérique dans PRINCE2 7 ?",
+        "answer": "Décrire comment les technologies numériques et les données seront utilisées pour soutenir le management du projet et la prise de décision."
+    },
+    {
+        "question": "Quels types de rapports PRINCE2 existent pour suivre la progression ?",
+        "answer": "Rapport de contrôle, rapport de synthèse, rapport de fin de séquence, rapport d'incidence, rapport d'exception, rapport de fin de projet et rapport des leçons."
+    },
+    {
+        "question": "Quelle est la finalité de la pratique Incidences ?",
+        "answer": "Recueillir et évaluer les incidences et contrôler les changements apportés à la base de référence du projet."
+    },
+    {
+        "question": "Comment PRINCE2 définit-elle une incidence ?",
+        "answer": "Comme un événement non planifié, pertinent pour le projet, qui requiert l'attention du management de projet."
+    },
+    {
+        "question": "Quels types d'incidences supplémentaires, en plus des trois de base, sont évoqués dans PRINCE2 7 ?",
+        "answer": "Problème, Préoccupation, Opportunité commerciale et Événement externe."
+    },
+    {
+        "question": "Qu'est-ce que la base de référence du projet dans PRINCE2 ?",
+        "answer": "L'ensemble des versions approuvées des produits de management et des produits spécialistes soumis au contrôle des changements."
+    },
+    {
+        "question": "Quelles sont les cinq étapes de la technique de gestion des incidences ?",
+        "answer": "Saisir, Évaluer, Recommander, Décider et Implémenter."
+    },
+    {
+        "question": "Quel est le rôle de l'Autorité de changement dans PRINCE2 ?",
+        "answer": "Décider d'approuver, rejeter ou reporter certaines requêtes de changement ou hors-spécifications dans les limites d'un budget de changement."
+    },
+    {
+        "question": "Comment PRINCE2 définit-elle un processus ?",
+        "answer": "Comme un ensemble d'activités structurées conçu pour atteindre un objectif spécifique à partir d'éléments d'entrée définis."
+    },
+    {
+        "question": "Quels sont les 7 processus PRINCE2 7 ?",
+        "answer": "Élaborer le projet, Diriger le projet, Initialiser le projet, Contrôler une séquence, Gérer la livraison des produits, Gérer une limite de séquence et Clore le projet."
+    },
+    {
+        "question": "Quel est l'objectif du processus Élaborer le projet ?",
+        "answer": "S'assurer avant l'initialisation que le projet est viable et qu'il vaut la peine d'être planifié."
+    },
+    {
+        "question": "Quels sont les principaux intrants et extrants du processus Élaborer le projet ?",
+        "answer": "Intrant : mandat de projet ; extrants : exposé du projet, plan de séquence d'initialisation et journal du projet initialisé."
+    },
+    {
+        "question": "Quel est l'objectif du processus Diriger le projet ?",
+        "answer": "Permettre au comité de pilotage d'être imputable de la réussite du projet en prenant les décisions clés et en contrôlant le projet au global."
+    },
+    {
+        "question": "Quels types de décisions sont pris dans le processus Diriger le projet ?",
+        "answer": "Autoriser l'initialisation, autoriser le projet, autoriser des plans de séquence ou d'exception, donner des orientations et autoriser la clôture."
+    },
+    {
+        "question": "Quel est l'objectif du processus Initialiser le projet ?",
+        "answer": "Établir une base de référence solide pour le projet afin que tous comprennent les motifs, le périmètre, la durée, la qualité, les risques, le changement, la communication et les contrôles."
+    },
+    {
+        "question": "Quels sont les principaux extrants du processus Initialiser le projet ?",
+        "answer": "La DIP complète, les approches de management, le plan de projet, le cas d'affaire détaillé et les registres initiaux (risques, qualité, produits, incidences)."
+    },
+    {
+        "question": "Quel est l'objectif du processus Contrôler une séquence ?",
+        "answer": "Affecter le travail, suivre sa réalisation, gérer incidences et risques, rendre compte de la progression et maintenir la séquence dans ses tolérances."
+    },
+    {
+        "question": "Quels extrants typiques produit le processus Contrôler une séquence ?",
+        "answer": "Lots de travaux autorisés, rapports de synthèse, mises à jour du plan de séquence, rapports d'incidence ou d'exception et mises à jour du journal du projet."
+    },
+    {
+        "question": "Quel est l'objectif du processus Gérer la livraison des produits ?",
+        "answer": "Assurer le lien entre chef de projet et chef d'équipe pour accepter, exécuter, contrôler et livrer les lots de travaux selon les exigences convenues."
+    },
+    {
+        "question": "Quels sont les extrants principaux du processus Gérer la livraison des produits ?",
+        "answer": "Produits spécialistes terminés et approuvés, registres qualité et des produits mis à jour, lots de travaux achevés et rapports de contrôle."
+    },
+    {
+        "question": "Quel est l'objectif du processus Gérer une limite de séquence ?",
+        "answer": "Fournir au comité de pilotage les informations nécessaires pour décider de la poursuite du projet, mettre à jour le plan de projet et le cas d'affaire et préparer la séquence suivante."
+    },
+    {
+        "question": "Quels sont les extrants typiques du processus Gérer une limite de séquence ?",
+        "answer": "Rapport de fin de séquence, plan de séquence suivant, descriptions de produits mises à jour, plan d'exception éventuel et mises à jour de la DIP et du cas d'affaire."
+    },
+    {
+        "question": "Quel est l'objectif du processus Clore le projet ?",
+        "answer": "Confirmer l'acceptation du produit de projet, évaluer les performances, préparer la poursuite de la gestion des bénéfices et clore le projet de façon ordonnée."
+    },
+    {
+        "question": "Quels sont les extrants principaux du processus Clore le projet ?",
+        "answer": "Rapport de fin de projet, rapport des leçons, approches de gestion des bénéfices et de la durabilité mises à jour et documents du projet archivés."
+    },
+    {
+        "question": "Quelles sont les caractéristiques principales de l'examen PRINCE2 7 Foundation ?",
+        "answer": "Examen à livre fermé, 60 minutes, 60 questions à choix multiples, seuil de réussite de 60 % (36/60)."
+    },
+    {
+        "question": "Quels conseils sont donnés pour réussir l'examen PRINCE2 Foundation ?",
+        "answer": "Lire attentivement les questions, gérer son temps, choisir la meilleure réponse, éviter de changer trop souvent de réponse et utiliser une feuille pour prendre des notes en examen numérique."
+    },
+
     {
         "question": "Comment PRINCE2 définit-il un projet ?",
         "answer": "Un projet est une organisation temporaire créée en vue de livrer un ou plusieurs produits commerciaux conformément à un Cas d'Affaires convenu."
