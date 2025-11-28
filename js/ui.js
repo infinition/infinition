@@ -178,7 +178,7 @@ async function openKBArticle(article) {
                     </div>`;
 
     container.innerHTML = `
-        <div class="article-content" style="max-width: 100%; padding: 0;">
+        <div class="article-content" style="max-width: 100%; padding: 10px;">
             ${shareHtml}
             <div style="margin-bottom:2rem;"><span style="color:var(--neon-purple);font-family:var(--code-font);font-size:0.8rem;">KB NODE: /${article.file}</span><h1 style="font-family:var(--cyber-font);font-size:2rem;margin-top:0.5rem;">${article.title}</h1></div>
             ${interactiveHtml}
