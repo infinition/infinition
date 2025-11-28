@@ -39,7 +39,13 @@ function renderFC() {
     const progress = ((cardIndex) / currentFlashcards.length) * 100;
     const html = `
         <div class="fc-container">
-            <div class="fc-top-info"><div>Card ${cardIndex + 1}</div><div class="fc-counter-badge">${cardIndex + 1}/${currentFlashcards.length}</div></div>
+            <div class="fc-top-info">
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <div>Card ${cardIndex + 1}</div>
+                    <div class="fc-counter-badge">${cardIndex + 1}/${currentFlashcards.length}</div>
+                </div>
+                <div onclick="closeModal()" style="cursor:pointer; padding:5px; font-size:1.2rem;">✕</div>
+            </div>
             <div class="fc-progress-bg"><div class="fc-progress-fill" style="width:${progress}%"></div></div>
             <div class="fc-status"><i class="fas fa-check-circle"></i> Learning Mode</div>
             <div class="fc-scene" onclick="this.querySelector('.fc-card').classList.toggle('flipped')">
