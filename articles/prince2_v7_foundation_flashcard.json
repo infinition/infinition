@@ -1,0 +1,688 @@
+
+
+[
+    {
+        "question": "Comment PRINCE2 définit-il un projet ?",
+        "answer": "Un projet est une organisation temporaire créée en vue de livrer un ou plusieurs produits commerciaux conformément à un Cas d'Affaires convenu."
+    },
+    {
+        "question": "Quelle est la définition d'un projet selon PRINCE2 ?",
+        "answer": "Une organisation temporaire créée en vue de livrer un ou plusieurs produits commerciaux conformément à un Cas d'Affaires convenu."
+    },
+    {
+        "question": "Quelles sont les 5 caractéristiques d'un projet selon PRINCE2 ?",
+        "answer": "Changement, Temporaire, Transfonctionnel, Unique, Incertain."
+    },
+    {
+        "question": "Quelles sont les 5 caractéristiques d'un projet ?",
+        "answer": "Changement, Temporaire, Transfonctionnel, Unique, Incertain."
+    },
+    {
+        "question": "Que signifie la caractéristique Changement pour un projet PRINCE2 ?",
+        "answer": "Le projet introduit un changement par rapport à la situation actuelle."
+    },
+    {
+        "question": "Que signifie la caractéristique Temporaire pour un projet PRINCE2 ?",
+        "answer": "Le projet a un début et une fin définis."
+    },
+    {
+        "question": "Que signifie la caractéristique Transfonctionnel pour un projet PRINCE2 ?",
+        "answer": "Le projet implique plusieurs compétences, départements ou fonctions."
+    },
+    {
+        "question": "Que signifie la caractéristique Unique pour un projet PRINCE2 ?",
+        "answer": "Le projet n'a jamais été réalisé exactement de la même manière auparavant."
+    },
+    {
+        "question": "Que signifie la caractéristique Incertain pour un projet PRINCE2 ?",
+        "answer": "Le projet comporte des risques et des incertitudes."
+    },
+    {
+        "question": "Quels sont les 7 aspects de la performance à gérer dans PRINCE2 ?",
+        "answer": "Coûts, Délais, Qualité, Périmètre, Risques, Bénéfices, Durabilité."
+    },
+    {
+        "question": "Quels sont les 7 aspects de la performance à gérer ?",
+        "answer": "Coûts, Délais, Qualité, Périmètre, Risques, Bénéfices, Durabilité."
+    },
+    {
+        "question": "Que recouvre l'aspect Coûts dans PRINCE2 ?",
+        "answer": "La gestion du budget du projet."
+    },
+    {
+        "question": "Que recouvre l'aspect Délais dans PRINCE2 ?",
+        "answer": "La gestion du temps et des échéances du projet."
+    },
+    {
+        "question": "Que recouvre l'aspect Qualité dans PRINCE2 ?",
+        "answer": "La conformité des produits aux exigences définies."
+    },
+    {
+        "question": "Que recouvre l'aspect Périmètre dans PRINCE2 ?",
+        "answer": "Ce qui est inclus ou non dans le projet (le scope)."
+    },
+    {
+        "question": "Que recouvre l'aspect Risques dans PRINCE2 ?",
+        "answer": "La gestion des incertitudes menaçant ou améliorant les objectifs du projet."
+    },
+    {
+        "question": "Que recouvre l'aspect Bénéfices dans PRINCE2 ?",
+        "answer": "La valeur attendue pour l'entreprise grâce au projet."
+    },
+    {
+        "question": "Que recouvre l'aspect Durabilité dans PRINCE2 v7 ?",
+        "answer": "L'impact environnemental et social du projet, aspect ajouté en v7."
+    },
+    {
+        "question": "Combien de principes PRINCE2 doivent être appliqués pour que la méthode soit considérée utilisée ?",
+        "answer": "Les 7 principes doivent tous être appliqués."
+    },
+    {
+        "question": "Quel est le principe 'Justification continue pour l'entreprise' ?",
+        "answer": "Il doit y avoir une raison valable de commencer ET de continuer le projet (documentée dans le Cas d'Affaires)."
+    },
+    {
+        "question": "Quel principe PRINCE2 impose de maintenir une raison valable de commencer et continuer le projet ?",
+        "answer": "Le principe de justification continue pour l'entreprise."
+    },
+    {
+        "question": "Dans quel document la justification continue du projet est-elle principalement consignée ?",
+        "answer": "Dans le Cas d'Affaires."
+    },
+    {
+        "question": "Quel est le principe 'Leçons tirées de l'expérience' ?",
+        "answer": "Apprendre du passé (avant), enregistrer pendant (durant) et transmettre (après)."
+    },
+    {
+        "question": "Quel principe PRINCE2 demande d'apprendre avant, pendant et après le projet ?",
+        "answer": "Le principe des leçons tirées de l'expérience."
+    },
+    {
+        "question": "Quel principe PRINCE2 met l'accent sur la clarté des responsabilités ?",
+        "answer": "Le principe rôles et responsabilités définis."
+    },
+    {
+        "question": "Quel est le principe 'Management par exception' ?",
+        "answer": "Définir des tolérances. Si on reste dedans, le niveau inférieur gère. Si on dépasse, on escalade (Exception)."
+    },
+    {
+        "question": "Que signifie le principe de Management par exception ?",
+        "answer": "On définit des tolérances pour chaque niveau ; tant qu'elles ne sont pas dépassées, le niveau inférieur gère. En cas de dépassement, on escalade au niveau supérieur."
+    },
+    {
+        "question": "Quel est le principe 'Focalisation produit' ?",
+        "answer": "Définir le QUOI (qualité/caractéristiques) avant de définir le COMMENT (activités)."
+    },
+    {
+        "question": "Quel principe PRINCE2 demande de se concentrer d'abord sur le QUOI avant le COMMENT ?",
+        "answer": "Le principe de focalisation produit."
+    },
+    {
+        "question": "Que signifie le principe 'Management par séquences' ?",
+        "answer": "On découpe le projet en blocs de gestion pour mieux contrôler la planification, la surveillance et le contrôle."
+    },
+    {
+        "question": "Quel principe PRINCE2 recommande de découper le projet en blocs pour le contrôler ?",
+        "answer": "Le principe de management par séquences."
+    },
+    {
+        "question": "Que signifie le principe d'Adaptation au contexte (Tailoring) ?",
+        "answer": "Adapter la méthode PRINCE2 à la taille, la complexité, les risques et la culture du projet."
+    },
+    {
+        "question": "Combien de pratiques (thèmes) PRINCE2 doivent être gérées en continu ?",
+        "answer": "7 pratiques (ou thèmes)."
+    },
+    {
+        "question": "Dans PRINCE2 v7, quel thème met les personnes au centre de la méthode ?",
+        "answer": "Le thème People (Les Personnes)."
+    },
+    {
+        "question": "Comment PRINCE2 décrit-il la culture dans un projet ?",
+        "answer": "Comme l'ensemble des valeurs, attitudes et méthodes de travail partagées."
+    },
+    {
+        "question": "Quel est l'impact du Chef de Projet sur la culture de l'équipe ?",
+        "answer": "Le Chef de Projet influence la culture de l'équipe par son style de management et de leadership."
+    },
+    {
+        "question": "Quelle est la différence entre Leadership et Management dans PRINCE2 ?",
+        "answer": "Leadership : orienté humain, vision, motivation. Management : orienté tâche, instruction, contrôle."
+    },
+    {
+        "question": "Comment se caractérise le leadership dans PRINCE2 ?",
+        "answer": "Il est orienté humain, vision, motivation, innovation."
+    },
+    {
+        "question": "Comment se caractérise le management dans PRINCE2 ?",
+        "answer": "Il est orienté tâche, instruction, contrôle, exécution."
+    },
+    {
+        "question": "Pourquoi un Chef de Projet PRINCE2 a-t-il besoin à la fois de leadership et de management ?",
+        "answer": "Parce qu'il doit à la fois motiver les personnes et organiser l'exécution des tâches."
+    },
+    {
+        "question": "Que signifie Collaboration et Co-création dans PRINCE2 v7 ?",
+        "answer": "Travailler ensemble pour définir les méthodes de travail et les solutions, afin d'augmenter l'adhésion."
+    },
+    {
+        "question": "Qu'est-ce que la Conduite du changement (Change Management) ?",
+        "answer": "Accompagner les utilisateurs pour qu'ils adoptent le changement (transition état actuel -> futur). Ne pas confondre avec les Incidences."
+    },
+    {
+        "question": "Que recouvre la Conduite du changement (Change Management) dans PRINCE2 ?",
+        "answer": "Accompagner les utilisateurs pour qu'ils adoptent le changement entre l'état actuel et l'état futur."
+    },
+    {
+        "question": "Avec quoi ne faut-il pas confondre la Conduite du changement dans PRINCE2 ?",
+        "answer": "Avec la maîtrise des changements, qui concerne les incidences et demandes de changement."
+    },
+    {
+        "question": "Quel est le but de la pratique 'Cas d'Affaires' ?",
+        "answer": "Justifier que le projet est Souhaitable, Viable et Réalisable."
+    },
+    {
+        "question": "Quel est le but du thème Cas d'Affaires (Business Case) ?",
+        "answer": "Justifier le projet en vérifiant s'il est souhaitable, viable et réalisable."
+    },
+    {
+        "question": "Quels éléments principaux contient le Cas d'Affaires PRINCE2 ?",
+        "answer": "Coûts, Bénéfices, Risques, Contre-bénéfices."
+    },
+    {
+        "question": "Qu'est-ce qu'un contre-bénéfice dans un Cas d'Affaires PRINCE2 ?",
+        "answer": "Un effet négatif perçu comme résultant du projet."
+    },
+    {
+        "question": "Quel document décrit comment et quand mesurer les bénéfices dans PRINCE2 ?",
+        "answer": "L'Approche de la gestion des bénéfices."
+    },
+    {
+        "question": "Quel document décrit comment gérer la durabilité dans PRINCE2 v7 ?",
+        "answer": "L'Approche de la gestion de la durabilité."
+    },
+    {
+        "question": "Quel est le but du thème Organisation dans PRINCE2 ?",
+        "answer": "Définir la structure de responsabilité du projet, c'est-à-dire qui est responsable de quoi."
+    },
+    {
+        "question": "Quels sont les 3 intérêts représentés au Comité de Pilotage ?",
+        "answer": "Entreprise (Business), Utilisateur, Fournisseur."
+    },
+    {
+        "question": "Quels sont les trois intérêts à représenter dans l'organisation PRINCE2 ?",
+        "answer": "L'Entreprise (Business), l'Utilisateur et le Fournisseur."
+    },
+    {
+        "question": "Quel intérêt représente l'Entreprise (Business) dans PRINCE2 ?",
+        "answer": "L'intérêt du payeur et de la rentabilité, représenté par l'Exécutif."
+    },
+    {
+        "question": "Quel intérêt représente l'Utilisateur dans PRINCE2 ?",
+        "answer": "Ceux qui utiliseront les produits du projet, représentés par l'Utilisateur Principal."
+    },
+    {
+        "question": "Quel intérêt représente le Fournisseur dans PRINCE2 ?",
+        "answer": "Ceux qui fournissent les ressources et créent les produits, représentés par le Fournisseur Principal."
+    },
+    {
+        "question": "Quel est le rôle de l'Exécutif (Sponsor) ?",
+        "answer": "Responsable ultime du projet, du Cas d'Affaires et du rapport qualité/prix (Value for Money)."
+    },
+    {
+        "question": "Quel est le rôle principal de l'Exécutif dans PRINCE2 ?",
+        "answer": "Être responsable du Cas d'Affaires et du rapport qualité/prix pour l'organisation."
+    },
+    {
+        "question": "Quel est le rôle principal du Comité de Pilotage (Project Board) ?",
+        "answer": "Diriger le projet, prendre les décisions clés et autoriser les grandes étapes."
+    },
+    {
+        "question": "Quels rôles composent le Comité de Pilotage PRINCE2 ?",
+        "answer": "L'Exécutif, l'Utilisateur Principal et le Fournisseur Principal."
+    },
+    {
+        "question": "Quel est le rôle principal du Chef de Projet dans PRINCE2 ?",
+        "answer": "Gérer le projet au quotidien par séquence et veiller à la livraison des produits dans les tolérances."
+    },
+    {
+        "question": "Quel est le rôle principal du Chef d'Équipe dans PRINCE2 ?",
+        "answer": "Gérer les spécialistes et produire les livrables du projet selon le Lot de Travaux."
+    },
+    {
+        "question": "Qui ne peut absolument PAS être l'Assurance Projet ?",
+        "answer": "Le Chef de Projet."
+    },
+    {
+        "question": "Quel est le rôle de l'Assurance Projet dans PRINCE2 ?",
+        "answer": "Vérifier de manière indépendante que le projet est géré correctement ; ce rôle ne peut pas être tenu par le Chef de Projet."
+    },
+    {
+        "question": "De qui relève l'Assurance Projet dans PRINCE2 ?",
+        "answer": "De la responsabilité du Comité de Pilotage, qui peut la déléguer."
+    },
+    {
+        "question": "Quel est le rôle principal du Support Projet dans PRINCE2 ?",
+        "answer": "Fournir une aide administrative, gérer la configuration et soutenir les outils et méthodes."
+    },
+    {
+        "question": "Quel est le but de la pratique 'Qualité' ?",
+        "answer": "S'assurer que les produits répondent aux attentes."
+    },
+    {
+        "question": "Quel est le but du thème Qualité dans PRINCE2 ?",
+        "answer": "S'assurer que les produits du projet répondent aux attentes et exigences définies."
+    },
+    {
+        "question": "Que sont les attentes qualité du client dans PRINCE2 ?",
+        "answer": "Des attentes de haut niveau, par exemple rapidité ou sécurité."
+    },
+    {
+        "question": "Que sont les critères d'acceptation dans PRINCE2 ?",
+        "answer": "Des critères mesurables permettant de juger si le produit du projet est acceptable."
+    },
+    {
+        "question": "Où sont définis les Critères d'acceptation ?",
+        "answer": "Dans la Description du Produit du Projet."
+    },
+    {
+        "question": "Dans quel document les critères d'acceptation sont-ils définis ?",
+        "answer": "Dans la Description du Produit du Projet."
+    },
+    {
+        "question": "Que sont les spécifications qualité dans PRINCE2 ?",
+        "answer": "Les détails techniques décrivant comment la qualité sera atteinte."
+    },
+    {
+        "question": "Quelle est la différence entre Assurance Qualité et Assurance Projet ?",
+        "answer": "L'Assurance Qualité est une fonction de l'entreprise (indépendante). L'Assurance Projet vérifie pour le Comité de Pilotage."
+    },
+    {
+        "question": "Quelle est la différence entre Assurance Qualité et Assurance Projet dans PRINCE2 ?",
+        "answer": "L'Assurance Qualité est une fonction organisationnelle indépendante du projet ; l'Assurance Projet vérifie la bonne application de PRINCE2 au sein du projet."
+    },
+    {
+        "question": "À quoi sert le Registre Qualité dans PRINCE2 ?",
+        "answer": "À consigner les tests de qualité effectués et leurs résultats."
+    },
+    {
+        "question": "Quel est le but du thème Plans dans PRINCE2 ?",
+        "answer": "Faciliter la communication et le contrôle en indiquant quoi faire, comment, qui et quand."
+    },
+    {
+        "question": "Quels sont les 4 niveaux de plans ?",
+        "answer": "Plan de Projet, Plan de Séquence, Plan d'Équipe (optionnel), Plan d'Exception."
+    },
+    {
+        "question": "Quels sont les quatre types de plans PRINCE2 ?",
+        "answer": "Plan de Projet, Plan de Séquence, Plan d'Équipe et Plan d'Exception."
+    },
+    {
+        "question": "À quoi sert le Plan de Projet dans PRINCE2 ?",
+        "answer": "À donner une vue d'ensemble du projet, destinée au Comité de Pilotage."
+    },
+    {
+        "question": "À quoi sert le Plan de Séquence dans PRINCE2 ?",
+        "answer": "À détailler les travaux à réaliser dans la séquence en cours pour le Chef de Projet."
+    },
+    {
+        "question": "À quoi sert le Plan d'Équipe dans PRINCE2 ?",
+        "answer": "À détailler précisément le travail d'une équipe, géré par le Chef d'Équipe (plan optionnel)."
+    },
+    {
+        "question": "Quand utilise-t-on un Plan d'Exception dans PRINCE2 ?",
+        "answer": "Quand une tolérance d'un plan existant est dépassée, pour remplacer ce plan."
+    },
+    {
+        "question": "Quelle est la première étape de la planification basée sur le produit ?",
+        "answer": "Définir et analyser les produits (PBS - Structure de décomposition du produit)."
+    },
+    {
+        "question": "Quelles sont les étapes de la planification basée sur le produit dans PRINCE2 ?",
+        "answer": "Définir et analyser les produits (PBS), identifier les activités et dépendances, préparer les estimations, préparer le calendrier."
+    },
+    {
+        "question": "Quel est le but du thème Risques dans PRINCE2 ?",
+        "answer": "Gérer l'incertitude qui peut impacter les objectifs du projet."
+    },
+    {
+        "question": "Comment PRINCE2 définit-il un risque ?",
+        "answer": "Comme un événement incertain qui, s'il se produit, aura un impact positif ou négatif sur les objectifs."
+    },
+    {
+        "question": "Quels sont les deux types de risques ?",
+        "answer": "Menace (impact négatif) et Opportunité (impact positif)."
+    },
+    {
+        "question": "Quelle est la différence entre menace et opportunité dans la gestion des risques PRINCE2 ?",
+        "answer": "Une menace a un impact négatif, une opportunité a un impact positif."
+    },
+    {
+        "question": "Quelles sont les étapes de la procédure de gestion des risques PRINCE2 ?",
+        "answer": "Identifier, Évaluer (Probabilité, Impact, Proximité), Planifier les réponses, Implémenter les réponses."
+    },
+    {
+        "question": "Quelles sont les réponses possibles aux Menaces ?",
+        "answer": "Éviter, Réduire, Transférer, Partager, Accepter."
+    },
+    {
+        "question": "Quelles sont les réponses possibles aux Opportunités ?",
+        "answer": "Exploiter, Améliorer, Partager, Rejeter."
+    },
+    {
+        "question": "Citez trois réponses possibles à une menace dans PRINCE2.",
+        "answer": "Éviter, Réduire, Transférer (et aussi Partager, Accepter, Préparer des plans de contingence)."
+    },
+    {
+        "question": "Citez deux réponses possibles à une opportunité dans PRINCE2.",
+        "answer": "Exploiter, Améliorer (et aussi Partager, Rejeter)."
+    },
+    {
+        "question": "Qu'est-ce que le budget risque dans PRINCE2 ?",
+        "answer": "Une provision financière destinée à mettre en œuvre les réponses aux risques."
+    },
+    {
+        "question": "Quel est le but du thème Incidences (Issues) dans PRINCE2 ?",
+        "answer": "Gérer tout événement imprévu ou demande de changement pendant le projet."
+    },
+    {
+        "question": "Quels sont les 3 types d'incidences ?",
+        "answer": "Requête de changement, Hors-spécification, Problème/Préoccupation."
+    },
+    {
+        "question": "Quels sont les trois types d'incidences dans PRINCE2 ?",
+        "answer": "Requête de changement, Hors-spécification et Problème ou Préoccupation."
+    },
+    {
+        "question": "Qu'est-ce qu'une requête de changement dans PRINCE2 ?",
+        "answer": "Une demande de modification d'une exigence, souvent avec un coût associé."
+    },
+    {
+        "question": "Qu'est-ce qu'un hors-spécification (Off-spec) dans PRINCE2 ?",
+        "answer": "Un produit non conforme aux exigences ou un produit manquant qui devait être livré."
+    },
+    {
+        "question": "Qu'est-ce qu'un Problème ou Préoccupation dans PRINCE2 ?",
+        "answer": "Un souci non prévu, par exemple un membre de l'équipe qui a un accident."
+    },
+    {
+        "question": "Qui est l'Autorité de Changement ?",
+        "answer": "Rôle (souvent délégué par le Comité) qui décide d'approuver ou refuser les changements via un budget dédié."
+    },
+    {
+        "question": "Quel est le rôle de l'Autorité de Changement dans PRINCE2 ?",
+        "answer": "Décider d'approuver ou de rejeter certaines demandes de changement selon un budget de changement délégué."
+    },
+    {
+        "question": "Qu'est-ce que la gestion de la configuration dans PRINCE2 ?",
+        "answer": "La gestion des versions, du statut et des références des produits, souvent assurée par le Support Projet."
+    },
+    {
+        "question": "Quand escalade-t-on une Exception ?",
+        "answer": "Immédiatement, dès qu'on prévoit de dépasser une tolérance (Coût, Délai, Qualité, etc.)."
+    },
+    {
+        "question": "Quel est le but du thème Progression (Progress) dans PRINCE2 ?",
+        "answer": "Surveiller l'avancement par rapport aux plans et contrôler les écarts."
+    },
+    {
+        "question": "Quels sont les deux types de contrôles principaux dans PRINCE2 ?",
+        "answer": "Contrôles pilotés par l'événement et contrôles pilotés par le temps."
+    },
+    {
+        "question": "Donnez un exemple de contrôle piloté par l'événement dans PRINCE2.",
+        "answer": "La fin d'une séquence ou le traitement d'une exception."
+    },
+    {
+        "question": "Donnez un exemple de contrôle piloté par le temps dans PRINCE2.",
+        "answer": "Un rapport régulier d'avancement envoyé à une fréquence définie."
+    },
+    {
+        "question": "Que se passe-t-il en cas de prévision de dépassement d'une tolérance dans PRINCE2 ?",
+        "answer": "Une exception est déclarée et l'information est escaladée au niveau de management supérieur."
+    },
+    {
+        "question": "Quel est le flux d'escalade d'une exception depuis une équipe dans PRINCE2 ?",
+        "answer": "Chef d'équipe vers Chef de Projet, puis Chef de Projet vers Comité de Pilotage, puis Comité de Pilotage vers la Direction si nécessaire."
+    },
+    {
+        "question": "Quel est l'objectif global du processus Élaborer le projet (SU) ?",
+        "answer": "Vérifier que le projet potentiel est viable et qu'il vaut la peine d'être lancé."
+    },
+    {
+        "question": "Quel est l'objectif du processus 'Élaborer le projet' (Starting Up) ?",
+        "answer": "Vérifier si le projet est viable et vaut la peine d'être planifié (Pré-projet)."
+    },
+    {
+        "question": "À quel moment a lieu le processus Élaborer le projet (SU) ?",
+        "answer": "Pendant la phase de pré-projet."
+    },
+    {
+        "question": "Quels rôles sont principalement impliqués dans Élaborer le projet (SU) ?",
+        "answer": "L'Exécutif et le Chef de Projet."
+    },
+    {
+        "question": "Quel est le document clé produit lors de 'Élaborer le projet' ?",
+        "answer": "L'Exposé du Projet (Project Brief)."
+    },
+    {
+        "question": "Quelle est la principale sortie du processus Élaborer le projet (SU) ?",
+        "answer": "L'Exposé du Projet (Project Brief) et le Plan de la séquence d'initialisation."
+    },
+    {
+        "question": "Quel est l'objectif du processus Diriger le projet (DP) ?",
+        "answer": "Permettre au Comité de Pilotage de prendre les décisions majeures et d'exercer un contrôle global sur le projet."
+    },
+    {
+        "question": "Qui agit dans le processus 'Diriger le projet' ?",
+        "answer": "Uniquement le Comité de Pilotage."
+    },
+    {
+        "question": "Qui est responsable du processus Diriger le projet (DP) ?",
+        "answer": "Uniquement le Comité de Pilotage."
+    },
+    {
+        "question": "Quels types de décisions sont prises dans le processus Diriger le projet (DP) ?",
+        "answer": "Autoriser l'initialisation, le projet, chaque séquence, la clôture et les réponses aux exceptions."
+    },
+    {
+        "question": "Quel est l'objectif du processus 'Initialiser le projet' ?",
+        "answer": "Planifier le projet, définir les approches de gestion et créer la DIP."
+    },
+    {
+        "question": "Quel est l'objectif du processus Initialiser le projet (IP) ?",
+        "answer": "Établir les bases solides du projet en définissant comment il sera géré."
+    },
+    {
+        "question": "Qui conduit principalement le processus Initialiser le projet (IP) ?",
+        "answer": "Le Chef de Projet."
+    },
+    {
+        "question": "Que contient la DIP (Documentation d'Initialisation du Projet) ?",
+        "answer": "Le Cas d'Affaires détaillé, le Plan de Projet et les Approches de Gestion (Qualité, Risque, etc.)."
+    },
+    {
+        "question": "Quel document clé est produit par le processus Initialiser le projet (IP) ?",
+        "answer": "La Documentation d'Initialisation du Projet (DIP ou PID)."
+    },
+    {
+        "question": "Pourquoi la DIP (PID) est-elle appelée le contrat du projet ?",
+        "answer": "Parce qu'elle définit la manière dont le projet doit être géré, ses objectifs, ses plans et ses approches de gestion."
+    },
+    {
+        "question": "Que fait le Chef de Projet dans 'Contrôler une séquence' ?",
+        "answer": "Autorise les Lots de Travaux, gère les risques/incidences, fait des rapports de synthèse, escalade les exceptions."
+    },
+    {
+        "question": "Quel est l'objectif du processus Contrôler une séquence (CS) ?",
+        "answer": "Gérer le travail au jour le jour du projet pendant une séquence."
+    },
+    {
+        "question": "Qui est responsable du processus Contrôler une séquence (CS) ?",
+        "answer": "Le Chef de Projet."
+    },
+    {
+        "question": "Citez deux activités clés du processus Contrôler une séquence (CS).",
+        "answer": "Autoriser les Lots de Travaux et gérer les incidences et risques."
+    },
+    {
+        "question": "Quel est l'objectif du processus 'Gérer la livraison des produits' ?",
+        "answer": "S'assurer que les équipes produisent et livrent les produits prévus selon les exigences de qualité."
+    },
+    {
+        "question": "Quel est le rôle principal dans le processus 'Gérer la livraison des produits' ?",
+        "answer": "Le Chef d'Équipe."
+    },
+    {
+        "question": "Qui est responsable du processus Gérer la livraison des produits (MP) ?",
+        "answer": "Le Chef d'Équipe."
+    },
+    {
+        "question": "Quelles sont les grandes étapes du processus Gérer la livraison des produits (MP) ?",
+        "answer": "Accepter le Lot de Travaux, exécuter le travail, livrer les produits après tests de qualité."
+    },
+    {
+        "question": "Quand utilise-t-on le processus 'Gérer une limite de séquence' ?",
+        "answer": "À la fin d'une séquence (pour planifier la suivante) OU en cas d'Exception."
+    },
+    {
+        "question": "Quel est l'objectif du processus Gérer une limite de séquence (SB) ?",
+        "answer": "Fournir au Comité de Pilotage les informations nécessaires pour décider de la poursuite du projet à la séquence suivante."
+    },
+    {
+        "question": "Quand le processus Gérer une limite de séquence (SB) est-il utilisé ?",
+        "answer": "À la fin de chaque séquence ou en cas de séquence d'exception."
+    },
+    {
+        "question": "Citez deux activités du processus Gérer une limite de séquence (SB).",
+        "answer": "Rédiger le rapport de fin de séquence et préparer le plan de la séquence suivante."
+    },
+    {
+        "question": "Que se passe-t-il dans 'Clore le projet' ?",
+        "answer": "Remise des produits, évaluation (Rapport de fin de projet), archivage, notification de clôture."
+    },
+    {
+        "question": "Quel est l'objectif du processus Clore le projet (CP) ?",
+        "answer": "Assurer une clôture contrôlée du projet, qu'il arrive à terme ou soit arrêté prématurément."
+    },
+    {
+        "question": "Qui conduit principalement le processus Clore le projet (CP) ?",
+        "answer": "Le Chef de Projet."
+    },
+    {
+        "question": "Citez deux activités du processus Clore le projet (CP).",
+        "answer": "Remettre les produits et évaluer le projet dans un rapport de fin de projet."
+    },
+    {
+        "question": "Qu'est-ce qu'un Mandat de projet ?",
+        "answer": "Le déclencheur du projet qui vient de l'extérieur (client/direction)."
+    },
+    {
+        "question": "Quel produit de management déclenche un projet PRINCE2 ?",
+        "answer": "Le Mandat de projet."
+    },
+    {
+        "question": "Qui fournit généralement le Mandat de projet ?",
+        "answer": "La Direction ou le Client."
+    },
+    {
+        "question": "Quel est le but de l'Exposé du projet (Project Brief) ?",
+        "answer": "Servir de base pour démarrer l'initialisation en donnant une première vue du projet et du Cas d'Affaires."
+    },
+    {
+        "question": "Qui est responsable de l'Exposé du projet (Brief) dans PRINCE2 ?",
+        "answer": "Le Chef de Projet, avec validation par l'Exécutif."
+    },
+    {
+        "question": "Quelles sont les principales composantes de la DIP (PID) ?",
+        "answer": "Le Cas d'Affaires détaillé, le Plan de Projet et les approches ou stratégies de gestion (qualité, risque, changement, communication, etc.)."
+    },
+    {
+        "question": "Qui est responsable du Cas d'Affaires dans PRINCE2 ?",
+        "answer": "L'Exécutif."
+    },
+    {
+        "question": "Qu'est-ce qu'un Lot de Travaux (Work Package) ?",
+        "answer": "Instructions données par le Chef de Projet au Chef d'équipe (contient les exigences qualité)."
+    },
+    {
+        "question": "Qu'est-ce qu'un Lot de Travaux (Work Package) dans PRINCE2 ?",
+        "answer": "Un ensemble d'instructions du Chef de Projet au Chef d'Équipe décrivant le travail à effectuer et les exigences de qualité."
+    },
+    {
+        "question": "Qu'est-ce qu'un Rapport de Synthèse (Highlight Report) ?",
+        "answer": "Rapport régulier (piloté par le temps) du Chef de Projet vers le Comité de Pilotage."
+    },
+    {
+        "question": "Quel est le but d'un Rapport de Synthèse (Highlight Report) ?",
+        "answer": "Informer régulièrement le Comité de Pilotage de l'avancement du projet à un niveau de synthèse."
+    },
+    {
+        "question": "Qu'est-ce qu'un Rapport de Contrôle (Checkpoint Report) ?",
+        "answer": "Rapport régulier de l'Équipe vers le Chef de Projet."
+    },
+    {
+        "question": "Quel est le but d'un Rapport de Contrôle (Checkpoint Report) ?",
+        "answer": "Informer le Chef de Projet de l'avancement détaillé du travail par l'équipe."
+    },
+    {
+        "question": "Quels sont les trois registres de base maintenus tout au long du projet PRINCE2 ?",
+        "answer": "Le Registre des Risques, le Registre des Incidences et le Registre Qualité."
+    },
+    {
+        "question": "Quelle confusion fréquente existe entre Assurance Projet et Support Projet ?",
+        "answer": "L'Assurance Projet vérifie de manière indépendante, tandis que le Support Projet assiste administrativement et techniquement."
+    },
+    {
+        "question": "Quelle confusion fréquente existe entre Cas d'Affaires et Plan de Projet ?",
+        "answer": "Le Cas d'Affaires justifie le projet ; le Plan de Projet détaille calendrier, coûts et livrables."
+    },
+    {
+        "question": "Quelle confusion fréquente existe entre Produit Spécialiste et Produit de Management ?",
+        "answer": "Un Produit Spécialiste est un livrable final pour l'utilisateur, alors qu'un Produit de Management est un document de gestion du projet."
+    },
+    {
+        "question": "Quelle confusion fréquente existe entre Exposé du projet et DIP ?",
+        "answer": "L'Exposé du projet est produit avant l'initialisation, la DIP est produite après l'initialisation et détaille la gestion du projet."
+    },
+    {
+        "question": "Selon PRINCE2, qui décide si une question touche les objectifs du projet ?",
+        "answer": "Le Comité de Pilotage."
+    },
+    {
+        "question": "Qui décide si cela touche les objectifs d'une séquence (dans les tolérances) ?",
+        "answer": "Le Chef de Projet."
+    },
+    {
+        "question": "Selon PRINCE2, qui décide si une question touche les objectifs d'une séquence dans les tolérances ?",
+        "answer": "Le Chef de Projet."
+    },
+    {
+        "question": "Qui décide si cela touche les objectifs du projet (dépassant les tolérances de séquence) ?",
+        "answer": "Le Comité de Pilotage."
+    },
+    {
+        "question": "Selon PRINCE2, qui décide pour les détails techniques d'un Lot de Travaux dans les tolérances ?",
+        "answer": "Le Chef d'Équipe."
+    },
+    {
+        "question": "Selon PRINCE2, qui doit être impliqué si les tolérances du projet sont dépassées ?",
+        "answer": "La Direction de l'entreprise ou le Programme au-dessus du projet."
+    },
+    {
+        "question": "Quelle est la différence entre Imputable (Accountable) et Responsable (Responsible) ?",
+        "answer": "Imputable = Celui qui rend des comptes (souvent 1 seul, ex: Exécutif). Responsable = Celui qui fait le travail."
+    },
+    {
+        "question": "Que signifie le terme Imputable (Accountable) dans la matrice de responsabilités ?",
+        "answer": "La personne qui rend des comptes pour un résultat ; en général une seule personne, par exemple l'Exécutif."
+    },
+    {
+        "question": "Que signifie le terme Responsable (Responsible) dans la matrice de responsabilités ?",
+        "answer": "La ou les personnes qui réalisent effectivement le travail."
+    },
+    {
+        "question": "Quelle chronologie importante PRINCE2 rappelle concernant la livraison ?",
+        "answer": "On ne commence jamais le travail technique (Gérer la livraison des produits) sans l'autorisation d'un Lot de Travaux par le Chef de Projet (Contrôler une séquence)."
+    }
+]
