@@ -1,258 +1,589 @@
-# Dossier de Révision PRINCE2 v7 Foundation
+# Dossier de Révision PRINCE2® 7 Foundation
 
-## 1. Introduction et Concepts Clés
+## 0. Examen PRINCE2® 7 Foundation
 
-### Définition d'un Projet
-Un projet est une organisation temporaire créée en vue de livrer un ou plusieurs produits commerciaux conformément à un Cas d'Affaires (Business Case) convenu.
+- Type d’examen :
+  - À livre fermé
+  - 60 minutes
+  - 60 questions
+  - QCM
+  - Score de réussite : 60 % (36/60)
+- Conseils généraux :
+  - Lire entièrement la question puis les réponses.
+  - Chercher la meilleure réponse, pas juste une réponse possible.
+  - Éviter de changer trop souvent de réponse (sauf erreur évidente).
+  - Gérer le temps (~1 minute par question).
+  - En examen numérique : prévoir une feuille pour schémas, notes rapides.
 
-**5 Caractéristiques :**
-- Changement (introduit un changement).
-- Temporaire (a un début et une fin).
-- Transfonctionnel (implique plusieurs compétences/départements).
-- Unique (jamais fait exactement la même chose avant).
-- Incertain (comporte des risques).
+⸻
 
-### Les 7 Aspects de la Performance (Les objectifs à gérer)
+## 1. Introduction, PRINCE2 et Concepts Clés
+
+### Qu’est-ce que PRINCE2® ?
+
+- Signification : PRojects IN Controlled Environments.
+- Origine : dérive de PROMPT, formalisée par le gouvernement du Royaume-Uni.
+- Nature :
+  - Méthode structurée, adaptable, évolutive.
+  - Basée sur des bonnes pratiques reconnues.
+  - Applicable à tout type de projet, y compris en contexte agile.
+  - Fournit une gouvernance et une organisation du projet.
+- Bénéfices clés :
+  - Universelle : tous secteurs, toutes tailles.
+  - Flexible : adaptation au contexte.
+  - Axée résultats : focalisation sur produits & bénéfices.
+  - Langage commun : facilite la communication.
+  - Maturité organisationnelle : améliore la capacité globale de gestion de projet.
+  - S’intègre avec d’autres cadres de management.
+
+### Définition d’un Projet
+
+Une organisation temporaire créée en vue de livrer un ou plusieurs produits commerciaux conformément à un Cas d’Affaires (Business Case) convenu.
+
+- But en entreprise : renforcer ou améliorer les opérations courantes.
+
+#### 5 Caractéristiques :
+
+- Changement : introduit une modification dans la BAU.
+- Temporaire : début et fin définis.
+- Transfonctionnel / inter-fonctionnel : implique plusieurs fonctions/départements.
+- Unique : chaque projet est différent.
+- Incertain : comporte des risques / inconnues.
+
+### Gestion de projet
+
+Application de méthodes, outils, techniques et compétences pour prévoir, planifier, déléguer, motiver, contrôler et surveiller un projet.
+
+- Prévoir : activités, ressources, coûts, livrables, risques, bénéfices…
+- Planifier : périmètre, objectifs, rôles, responsabilités…
+- Déléguer, motiver : faire travailler les équipes.
+- Contrôler, surveiller : mesurer, comparer au plan, agir ou escalader.
+- Clé de succès : transmettre la bonne info, au bon moment, aux bonnes personnes.
+
+### 7 Aspects / Variables de Performance
+
 Le Chef de Projet doit gérer et surveiller :
-- Coûts (Budget).
-- Délais (Temps).
-- Qualité (Conformité aux exigences).
-- Périmètre (Scope - ce qui est inclus ou non).
-- Risques (Incertitudes).
-- Bénéfices (Valeur pour l'entreprise).
-- Durabilité (Sustainability - Impact environnemental/social). **Nouveauté v7.**
 
----
+- Coûts
+- Périmètre
+- Délais
+- Durabilité (Nouveauté v7)
+- Bénéfices
+- Risques
+- Qualité
 
-## 2. Les 7 Principes (Le "Mindset")
-Ils doivent tous être appliqués pour que ce soit du PRINCE2.
+Des KPI sont définis pour suivre ces aspects (alignés sur les critères d’acceptation).
 
-- **Justification continue pour l'entreprise** : Il doit y avoir une raison valable de commencer ET de continuer le projet (documenté dans le Cas d'Affaires).
-- **Leçons tirées de l'expérience** : Apprendre du passé (avant), enregistrer pendant (durant) et transmettre (après).
-- **Rôles et responsabilités définis** : Tout le monde doit savoir qui fait quoi (Utilisateur, Fournisseur, Business).
-- **Management par séquences** : On découpe le projet en blocs de gestion pour mieux contrôler (Planifier, surveiller, contrôler étape par étape).
-- **Management par exception** : On définit des tolérances. Si on reste dedans, le niveau inférieur gère. Si on dépasse, on escalade au niveau supérieur (Exception).
-- **Focalisation produit** : On définit le "QUOI" (la qualité et les caractéristiques du produit) avant de définir le "COMMENT" (les activités).
-- **Adaptation au contexte (Tailoring)** : Adapter la méthode à la taille, complexité, risques et culture du projet.
+### Tolérances & Exceptions
 
----
+- Tolérance : déviation permise autour d’un objectif (coût, délai, qualité, périmètre, durabilité, risque, bénéfices) sans escalade.
+- Rôle : marge de manœuvre et autonomie donnée à chaque niveau.
+- Exception : lorsque la déviation prévisible ou réelle dépasse la tolérance → escalade obligatoire.
 
-## 3. Les Personnes (People) - Nouveauté v7
-La gestion des parties prenantes est au cœur de la méthode.
+### Qu’est-ce qu’un “bon projet” ?
 
-### Concepts Clés
-- **Culture** : Ensemble des valeurs, attitudes et méthodes de travail partagées. Le Chef de Projet influence la culture de l'équipe.
-- **Leadership vs Management :**
-  - Leadership : Orienté humain, vision, motivation, innovation.
-  - Management : Orienté tâche, instruction, contrôle, exécution.
-  - **Exam Tip : Un bon CP a besoin des deux.**
-- **Collaboration et Co-création** : Travailler ensemble pour définir les méthodes de travail et les solutions (augmente l'adhésion).
-- **Conduite du changement (Change Management)** : Accompagner les utilisateurs pour qu'ils adoptent le changement (transition état actuel -> état futur). Ne pas confondre avec la Maîtrise des changements (Incidences).
+Un bon projet est :
 
----
+- Pertinent, bien planifié, bien managé.
+- Dans les délais et dans le budget.
+- Avec des objectifs et buts clairs.
+- Aligné au besoin et aux objectifs de l’organisation.
+- Apportant de la valeur / des bénéfices.
+- Avec des parties prenantes impliquées.
 
-## 4. Les 7 Pratiques (Thèmes)
-Ce sont les aspects du projet qu'il faut gérer en continu.
+⸻
 
----
+## 2. Les 5 éléments intégrés de PRINCE2
 
-### 1. Cas d'Affaires (Business Case)
-- **But** : Justifier le projet (Est-il Souhaitable, Viable, Réalisable ?).
-- **Contenu** : Coûts, Bénéfices, Risques, Contre-bénéfices (effets négatifs perçus comme résultat).
-- **Documents :**
-  - Cas d'Affaires : Justification.
-  - Approche de la gestion des bénéfices : Comment et quand mesurer les bénéfices (souvent après le projet).
-  - Approche de la gestion de la durabilité.
+1. **Principes**  
+   Lignes directrices obligatoires, universelles, qui définissent ce qu’est un projet PRINCE2.
+2. **Personnes**  
+   Toutes les personnes qui travaillent sur le projet ou sont concernées par lui.
+3. **Pratiques**  
+   Aspects de la gestion de projet à traiter en continu :  
+   Organisation, Cas d’affaire, Qualité, Plans, Risques, Incidences, Progression.
+4. **Processus**  
+   Approche structurée de management de projet :
+   - Élaborer le projet
+   - Diriger le projet
+   - Initialiser le projet
+   - Contrôler une séquence
+   - Gérer la livraison des produits
+   - Gérer une limite de séquence
+   - Clore le projet
+5. **Contexte du projet**  
+   Influence la manière d’appliquer principes, pratiques et processus :
+   - Contexte organisationnel (portefeuille, programme, projet)
+   - Contexte commercial (entreprise, fournisseur, utilisateur)
+   - Méthode de livraison (linéaire, itératif/agile, hybride)
+   - Échelle du projet
+   - Durabilité (objectifs de développement durable, etc.)
 
----
+⸻
 
-### 2. Organisation
-- **But** : Définir la structure de responsabilité (Qui est responsable de quoi).
+## 3. Les 7 Principes PRINCE2 (Mindset)
 
-#### Les 3 Intérêts à représenter :
-- Entreprise (Business) : Le "Payeur", rentabilité (Exécutif).
-- Utilisateur : Ceux qui utilisent le produit (Utilisateur Principal).
-- Fournisseur : Ceux qui créent le produit (Fournisseur Principal).
+Ils doivent tous être appliqués pour qu’un projet soit PRINCE2.
 
-#### L'Équipe de Gestion de Projet :
-- **Comité de Pilotage (Project Board)** : Dirige, décide, autorise. (Inclut Exécutif + Utilisateur Principal + Fournisseur Principal).
-- **Exécutif (Sponsor)** : Le chef ultime, responsable du Cas d'Affaires et du rapport qualité/prix ("Value for Money").
-- **Chef de Projet** : Gère le quotidien, management par séquence.
-- **Chef d'équipe** : Produit les livrables, gère les spécialistes.
-- **Assurance Projet** : Vérifie indépendamment (Audit). Ne peut pas être le Chef de Projet. Responsabilité du Comité de Pilotage (qui peut la déléguer).
-- **Support Projet** : Aide administrative, gestion de la configuration, conseils outils. (Peut être fait par le CP ou délégué).
+### 1. Justification continue pour l’entreprise
 
----
+- Il doit y avoir une raison valable de commencer ET de continuer le projet.
+- La justification :
+  - Répond à un besoin clair.
+  - Propose des résultats réalistes et mesurables.
+  - Donne un ROI attendu.
+- Elle est :
+  - Documentée dans un Cas d’Affaires viable.
+  - Révisée régulièrement.
+  - Motif possible d’arrêter le projet si elle n’est plus valide.
+- Rôle clé : l’Exécutif (Sponsor), avec le Comité de Pilotage.
+
+### 2. Tirer les leçons de l’expérience
+
+- Objectif : ne pas répéter les erreurs, tirer profit des projets précédents et en cours.
+- Avant : rechercher leçons passées (projets similaires).
+- Pendant : bilans intermédiaires, surtout en fin de séquence.
+- Après : bilan final, consigné dans le Rapport des leçons et réutilisé.
+
+### 3. Rôles, responsabilités et relations définis
+
+- Chaque rôle et responsabilité doit être clair, explicite et validé.
+- Un individu peut avoir plusieurs rôles ; un rôle peut être partagé.
+- Les 3 intérêts clés représentés au Comité de Pilotage :
+  - Entreprise : sponsors, valeur de l’investissement.
+  - Utilisateur : bénéfices attendus, exploitation des produits.
+  - Fournisseur : ressources & expertise.
+- Partie prenante : toute personne/groupe/organisation affectant ou se sentant affecté par le projet.
+
+### 4. Management par séquences
+
+- Le projet est planifié, suivi et contrôlé séquence par séquence.
+- Les séquences :
+  - Sont définies selon taille/complexité, points de décision, standards de l’organisation.
+  - Ne se chevauchent pas.
+  - Un projet PRINCE2 a au moins deux séquences.
+- En fin de séquence, le Comité de Pilotage :
+  - Revoit le cas d’affaire, les risques, la progression.
+  - Décide de poursuivre, adapter ou arrêter.
+- On ne planifie pas tout dans le détail dès le début : horizon de planification par séquence.
+
+### 5. Management par exception
+
+- Plusieurs niveaux de management :  
+  Direction de l’entreprise → Comité de Pilotage → Chef de Projet → Chefs d’équipe.
+- Pour chaque niveau, un périmètre d’autorité est défini à travers des tolérances :
+  - Coût, délai, qualité, périmètre, durabilité, risque, bénéfices.
+- Au-delà de la tolérance → Exception → escalade au niveau supérieur.
+
+### 6. Focalisation produit
+
+- On se concentre sur :
+  - La définition des produits.
+  - Leurs besoins en qualité.
+- Priorité aux produits → les activités en découlent.
+- Description du Produit de Projet :
+  - Finalité, composition, origine, format.
+  - Critères qualité et méthode de contrôle qualité.
+- Réduit les risques de désaccord sur les attentes et clarifie le périmètre.
+
+### 7. Adapter en fonction du projet
+
+- PRINCE2 est flexible et doit être adaptée :
+  - Environnement, taille, complexité, importance, niveau de risque, méthode de livraison.
+- Appliquer : utiliser la méthode (rôles, séquences, tolérances…).
+- Adapter : modifier des éléments (terminologie, techniques) tout en respectant les principes.
+- Le niveau de formalité/contrôle est ajusté (projet simple vs complexe).
+
+⸻
+
+## 4. Les Personnes (People) – Nouveauté v7
+
+### Définition de Partie Prenante
+
+Toute personne, tout groupe ou toute organisation qui peut affecter ou être affecté ou avoir le sentiment d’être affecté par le projet.
+
+Exemples : entrepreneur, syndicat, finance, public, régulateur, juridique, auditeur…
+
+### Les personnes au centre
+
+Trois grands axes :
+
+#### 1. Conduite du changement réussi
+
+- Le projet modifie la BAU, les routines et responsabilités.
+- La qualité du changement dépend :
+  - Des aptitudes de l’équipe.
+  - De la force des relations avec les personnes impactées.
+- Gestion du changement :
+  - Transition de l’état actuel à l’état cible.
+  - Décrite dans l’approche de gestion du changement (dans la DIP).
+
+#### 2. Direction d’équipes performantes
+
+- Leadership : motiver, influencer, co-créer, donner une vision.
+- Management : organiser, assigner, contrôler les tâches.
+- Collaboration : personnes de tout l’écosystème travaillant ensemble.
+- Co-création : implication directe des utilisateurs/influenceurs dans la conception.
+- Défis : autorité limitée, priorités concurrentes, double hiérarchie, tensions.
+- Intelligence culturelle : travailler au-delà des cultures et organisations.
+- Cohésion (équipes virtuelles) : rencontres régulières, moments de co-localisation, outils collaboratifs.
+
+#### 3. Communication
+
+- Approche de gestion de la communication (définie lors de l’initialisation) :
+  - À qui ? Pourquoi ? Quoi ? Qui ? Comment ? Quand ?
+- Exemples : réunions, rapports de performance, échanges documentaires, accompagnement au changement.
+
+⸻
+
+## 5. Les 7 Pratiques PRINCE2 (Thèmes)
+
+Aspects du projet à gérer en continu pendant tout le cycle de vie.
+
+### 1. Organisation
+
+- Finalité : définir la structure d’imputabilité et de responsabilité.
+- Niveaux de management :
+  1. Commanditaire : au-dessus du projet.
+  2. Direction : Comité de Pilotage (Project Board).
+  3. Management : Chef de Projet.
+  4. Livraison : Chefs d’équipe.
+- Rôles principaux :
+  - Comité de Pilotage : imputable du succès, autorité globale.
+  - Exécutif (imputable unique, represente l’Entreprise).
+  - Utilisateur(s) principal(aux).
+  - Fournisseur(s) principal(aux).
+  - Chef de Projet : gestion quotidienne, dans les tolérances.
+  - Chef(s) d’équipe : livraison des lots de travaux.
+  - Assurance Projet : vérifie pour l’Entreprise, l’Utilisateur et le Fournisseur ; indépendante du CP.
+  - Support Projet : support administratif, outils, planification (peut être un PMO).
+- Produits de management :
+  - Structure de l’équipe de management de projet.
+  - Descriptions de rôle.
+  - Approche de gestion commerciale.
+
+⸻
+
+### 2. Cas d’affaire (Business Case)
+
+- Finalité : juger si le projet est et reste souhaitable, viable et réalisable.
+- Questions : coût, bénéfices, périmètre, qualité, durée, risques, durabilité.
+- Cycle de vie du Cas d’Affaire :
+  - Mandat de projet → attentes & contraintes.
+  - Exposé du projet → ébauche du cas d’affaire.
+  - Cas d’affaire complet → dans la DIP, révisé aux limites de séquence.
+- Contenu du Cas d’Affaire :
+  - Résumé exécutif.
+  - Raisons, options possibles.
+  - Bénéfices & contre-bénéfices attendus.
+  - Coûts, durée, principaux risques.
+  - Évaluation de l’investissement.
+- Produits associés :
+  - Exposé du projet.
+  - Cas d’affaire.
+  - Approche de gestion des bénéfices.
+  - Approche de gestion de la durabilité.
+
+⸻
 
 ### 3. Qualité
-- **But** : S'assurer que les produits répondent aux attentes.
 
-#### Concepts :
-- Attentes qualité du client : Haut niveau (ex: rapide, sécurisé).
-- Critères d'acceptation : Mesurables (ex: réponse < 2 sec), définis dans la Description du Produit du Projet.
-- Spécifications qualité : Détails techniques.
+- Finalité : documenter les exigences des utilisateurs et définir comment les satisfaire.
+- Définitions :
+  - Qualité : degré de satisfaction des exigences.
+  - Exigence : besoin ou attente documentée.
+- Management de la qualité :
+  - Planification de la qualité : approche de gestion de la qualité + descriptions de produits.
+  - Assurance qualité : fonction indépendante, vérifie la conformité aux normes.
+  - Assurance projet : interne au projet, mais indépendante du CP.
+  - Contrôle qualité : tests, revues, inspections.
+- Documentation des livrables :
+  - Description du produit de projet : exigences qualité, critères d’acceptation, spécifs, tolérances.
+  - Descriptions de produits : spécifs détaillées & tolérances.
+- Produits de management :
+  - Approche de gestion de la qualité.
+  - Descriptions de produit.
+  - Registre qualité.
+  - Registre des produits.
+  - Description du produit de projet.
 
-- Assurance Qualité (Organisationnelle) vs Assurance Projet (Projet) : L'Assurance Qualité est une fonction de l'entreprise (indépendante du projet).
-- Processus Qualité : Planifier la qualité → Contrôle qualité (Tests).
-- Registre Qualité : Journal des tests effectués et résultats.
-
----
+⸻
 
 ### 4. Plans
-- **But** : Faciliter la communication et le contrôle (Quoi, Comment, Qui, Quand).
 
-#### Niveaux de plans :
-- Plan de Projet : Haut niveau, pour le Comité de Pilotage.
-- Plan de Séquence : Détaillé pour la séquence en cours, pour le Chef de Projet.
-- Plan d'Équipe (Optionnel) : Très détaillé, pour le Chef d'Équipe.
-- Plan d'Exception : Remplace un plan (Projet ou Séquence) en cas de dépassement de tolérance.
+- Finalité : faciliter communication & contrôle en décrivant quoi, pourquoi, où, quand, comment, qui, combien.
+- Types de plans :
+  - Plan de Projet : vue globale, pour le Comité de Pilotage.
+  - Plan de Séquence : détaillé, pour la séquence, pour le CP (Chef de Projet).
+  - Plan d’Équipe (optionnel) : détail pour une équipe.
+  - Plan d’Exception : remplace un plan si tolérances dépassées.
+- Technique de planification :
+  1. Définir et analyser les produits (PBS, critères qualité, etc.).
+  2. Organiser les lots de travaux (WBS).
+  3. Analyser les risques.
+  4. Préparer les estimations.
+  5. Préparer le calendrier.
+  6. Préparer le budget (y compris budgets de risque et de changement).
+  7. Documenter le plan.
+- Planification basée sur les produits (cohérent avec “Focalisation produit”) :
+  - On commence par les produits requis, puis on en déduit activités, ressources, calendrier.
+  - Utilise :
+    - PBS (Product Breakdown Structure).
+    - Diagramme de flux des produits.
 
-#### Planification basée sur le produit :
-- Définir et analyser les produits (PBS - Structure de décomposition du produit).
-- Identifier les activités et dépendances.
-- Préparer les estimations.
-- Préparer le calendrier.
+⸻
 
----
+### 5. Risque
 
-### 5. Risques
-- **But** : Gérer l'incertitude.
+- Finalité : identifier, évaluer et contrôler les incertitudes.
+- Définition :
+  - Un événement incertain qui affecterait les objectifs du projet (en bien ou en mal).
+  - Menace (impact négatif), opportunité (impact positif).
+- Processus de gestion des risques :
+  1. Définir l’approche de gestion des risques.
+  2. Identifier les risques (registre des risques).
+  3. Analyser (probabilité, impact, proximité, criticité).
+  4. Planifier les réponses (préventives, curatives).
+  5. Implémenter et suivre.
+  6. Réviser en continu.
+- Réponses aux menaces :
+  - Éviter, Réduire, Transférer, Partager, Accepter.
+- Réponses aux opportunités :
+  - Exploiter, Améliorer, Partager, Accepter/Rejeter.
+- Budget de risque : provision financière pour les réponses aux risques.
+- Produits de management :
+  - Approche de la gestion des risques.
+  - Registre des risques.
 
-#### Définition : Événement incertain.
-- Menace : Impact négatif.
-- Opportunité : Impact positif.
+⸻
 
-#### Procédure : 
-Identifier → Évaluer (Probabilité/Impact/Proximité) → Planifier (Réponses) → Implémenter.
+### 6. Progression
 
-#### Réponses aux Menaces :
-Éviter, Réduire, Transférer (Assurance/Pénalité), Partager, Accepter, Préparer des plans de contingence.
+- Finalité : surveiller, comparer au plan, prévoir et contrôler les écarts.
+- Progression :
+  - Mesure de la réalisation des objectifs d’un plan par rapport aux cibles de performance.
+- Types de contrôles :
+  - Pilotés par le temps : rapports périodiques (ex : rapports de contrôle, rapports de synthèse).
+  - Déclenchés par événement : fin de séquence, exception, fin de projet.
+- Tolérances déléguées :
+  - Couche entreprise → tolérances de projet.
+  - Comité de Pilotage → tolérances de séquence.
+  - Chef de Projet → tolérances de lots de travaux.
+- Rapports PRINCE2 :
+  - Rapport de contrôle (Checkpoint).
+  - Rapport de synthèse (Highlight).
+  - Rapport de fin de séquence.
+  - Rapport d’incidence.
+  - Rapport d’exception.
+  - Rapport de fin de projet.
+  - Rapport des leçons.
 
-#### Réponses aux Opportunités :
-Exploiter, Améliorer, Partager, Rejeter.
+⸻
 
-- Budget Risque : Provision financière pour gérer les risques.
+### 7. Incidences (Issues / Changement)
 
----
+- Finalité : saisir, évaluer et contrôler les incidences et les changements.
+- Définitions :
+  - Incidence : événement non planifié, pertinent pour le projet.
+  - Changement : modification d’un produit approuvé (base de référence).
+- Base de référence : versions approuvées des produits (management + spécialistes) soumis au contrôle des changements.
+- Types d’incidences :
+  - Requête de changement.
+  - Hors-spécification (produit manquant ou non conforme).
+  - Problème.
+  - Préoccupation.
+  - Opportunité commerciale.
+  - Événement externe.
+- Technique de gestion des incidences :
+  1. Saisir (type, sévérité, enregistrement).
+  2. Évaluer (impact sur cas d’affaire & risques).
+  3. Recommander (options, escalade si besoin).
+  4. Décider (approuver, rejeter, plan d’exception…).
+  5. Implémenter (actions, MAJ registres et base de référence).
+- Autorité de Changement :
+  - Déléguée par le Comité de Pilotage.
+  - Peut être le Chef de Projet pour certains seuils/budget.
+- Produits de management :
+  - Approche de gestion des incidences.
+  - Registre des incidences.
+  - Rapport d’exception.
+  - Rapport d’incidence.
+  - Journal de bord.
 
-### 6. Incidences (Issues - Changement)
-- **But** : Gérer tout événement imprévu ou demande de changement.
+⸻
 
-#### 3 Types d'incidences :
-- Requête de changement : Modification d'une exigence (souvent payant).
-- Hors-spécification (Off-spec) : Produit non conforme ou manquant.
-- Problème/Préoccupation : Autre souci (ex: Michel tombe de l'échelle).
+## 6. Les 7 Processus PRINCE2 (Temps / Chronologie)
 
-- Autorité de Changement : Rôle (souvent délégué par le Comité) qui décide d'approuver ou refuser les petits changements (budget changement).
-- Gestion de la configuration : Gérer les versions des produits (responsabilité du Support Projet).
+Ensemble d’activités structurées transformant des intrants en extrants pour atteindre un objectif de gestion.
 
----
+### Vue globale
 
-### 7. Progression
-- **But** : Surveiller l'avancement par rapport au plan et contrôler les écarts.
+1. Élaborer le projet (Pré-projet) – vérifier que le projet vaut la peine.
+2. Diriger le projet – pilotage global par le Comité.
+3. Initialiser le projet – mettre en place des bases solides (DIP).
+4. Contrôler une séquence – gestion quotidienne par le CP.
+5. Gérer la livraison des produits – travail des équipes.
+6. Gérer une limite de séquence – bilan de séquence, plan suivant.
+7. Clore le projet – clôture ordonnée, transfert & leçons.
 
-#### Contrôles :
-- Pilotés par l'événement : (ex: Fin de séquence, Exception).
-- Pilotés par le temps : (ex: Rapports réguliers).
+⸻
 
-#### Exceptions :
-Si on prévoit de dépasser une tolérance (Coût, Délai, Qualité...), on escalade immédiatement.
-- Chef d'équipe → alerte Chef de Projet (Incidence).
-- Chef de Projet → alerte Comité de Pilotage (Rapport d'Exception).
-- Comité de Pilotage → alerte Direction (si tolérance projet dépassée).
+### 1. Élaborer le projet (Starting Up – SU)
 
----
+- Quand ? Pré-projet.
+- Qui ? Exécutif + Chef de Projet.
+- Finalité : s’assurer que le projet est viable et mérite d’être initialisé.
+- Intrants : Mandat de projet.
+- Activités :
+  - Nommer Exécutif & Chef de Projet.
+  - Examiner les leçons précédentes.
+  - Définir l’équipe de management de projet.
+  - Préparer l’ébauche du Cas d’Affaire.
+  - Choisir l’approche de projet.
+  - Assembler l’Exposé du Projet.
+  - Planifier la séquence d’initialisation.
+- Extrants :
+  - Exposé du Projet.
+  - Plan de séquence d’initialisation.
+  - Journal du Projet initial (journal de bord, leçons).
 
-## 5. Les 7 Processus (Le déroulement temporel)
+⸻
 
-### 1. Élaborer le projet (Starting Up - SU)
-- **Quand ?** Pré-projet.
-- **Qui ?** Exécutif et Chef de Projet.
-- **Quoi ?** Vérifier si le projet est viable et vaut la peine.
-- **Sortie :** Exposé du Projet (Project Brief) + Plan de la séquence d'initialisation.
+### 2. Diriger le projet (Directing – DP)
 
-### 2. Diriger le projet (Directing - DP)
-- **Quand ?** Du début à la fin (au-dessus des séquences).
-- **Qui ?** Comité de Pilotage uniquement.
-- **Quoi ?** Prendre les décisions clés (Autoriser l'initialisation, Autoriser le projet, Autoriser une séquence, Autoriser la clôture, Décider sur les Exceptions).
+- Quand ? Du début à la fin (au-dessus des séquences).
+- Qui ? Comité de Pilotage uniquement.
+- Finalité : permettre au CoPil d’être imputable du succès en prenant toutes les décisions clés.
+- Intrants : Exposé du Projet, DIP, plans de séquence, rapports (synthèse, exception, fin de projet…).
+- Activités :
+  - Autoriser l’initialisation.
+  - Autoriser le projet.
+  - Autoriser les plans de séquence / d’exception.
+  - Fournir des orientations régulières.
+  - Autoriser la clôture.
+- Extrants : décisions, autorisations, directions.
 
-### 3. Initialiser le projet (Initiating - IP)
-- **Quand ?** Séquence 1 (Planification).
-- **Qui ?** Chef de Projet.
-- **Quoi ?** Créer les fondations solides. Définir toutes les Approches de Gestion (Qualité, Risque, Changement, Communication).
-- **Sortie :** DIP (Documentation d'Initialisation du Projet / PID). C'est le contrat du projet.
+⸻
 
-### 4. Contrôler une séquence (Controlling a Stage - CS)
-- **Quand ?** Pendant chaque séquence de livraison.
-- **Qui ?** Chef de Projet.
-- **Quoi ?** Travail quotidien du CP.
-  - Autoriser les Lots de Travaux (donner du travail aux équipes).
-  - Recevoir les Rapports de Contrôle (avancement).
-  - Gérer les incidences et risques.
-  - Faire des Rapports de Synthèse (Highlight Reports) pour le Comité.
-  - Escalader les exceptions.
+### 3. Initialiser le projet (Initiating – IP)
 
-### 5. Gérer la livraison des produits (Managing Product Delivery - MP)
-- **Quand ?** Pendant l'exécution technique.
-- **Qui ?** Chef d'Équipe.
-- **Quoi ?** Construire les produits.
-  - Accepter le Lot de Travaux.
+- Quand ? Séquence 1 (initialisation).
+- Qui ? Chef de Projet.
+- Finalité : établir une base de référence solide pour le projet (la DIP).
+- Intrants : Exposé du Projet, plan d’initialisation, journal du projet.
+- Activités :
+  - Définir les besoins d’adaptation.
+  - Définir les approches de management (qualité, risques, incidences, communication, données…).
+  - Établir les contrôles du projet.
+  - Préparer le Plan de Projet.
+  - Compléter le Cas d’Affaire.
+  - Assembler la DIP.
+- Extrants :
+  - DIP complète (cas d’affaire, plan de projet, approches, description du produit de projet, structure d’équipe).
+  - Registres : risques, produits, qualité, incidences.
+
+⸻
+
+### 4. Contrôler une séquence (Controlling a Stage – CS)
+
+- Quand ? Pendant chaque séquence de livraison.
+- Qui ? Chef de Projet.
+- Finalité : gérer le travail quotidien pour rester dans les tolérances de la séquence.
+- Activités clés :
+  - Autoriser les Lots de Travaux.
+  - Suivre leur exécution (rapports de contrôle).
+  - Gérer risques & incidences.
+  - Mettre à jour le plan de séquence.
+  - Produire des Rapports de Synthèse.
+  - Remonter les exceptions.
+
+⸻
+
+### 5. Gérer la livraison des produits (Managing Product Delivery – MP)
+
+- Quand ? Pendant l’exécution technique.
+- Qui ? Chef(s) d’Équipe.
+- Finalité : assurer la livraison des produits selon les exigences convenues.
+- Activités clés :
+  - Accepter un Lot de Travaux.
   - Exécuter le travail.
-  - Livrer (après tests qualité).
+  - Contrôler & tester la qualité.
+  - Notifier la fin du Lot de Travaux.
+- Rôles :
+  - CP : autorise, surveille, reçoit les lots terminés.
+  - Chef d’équipe : accepte, exécute, livre, rapporte.
 
-### 6. Gérer une limite de séquence (Managing a Stage Boundary - SB)
-- **Quand ?** À la fin d'une séquence (avant la suivante) OU en cas d'Exception.
-- **Qui ?** Chef de Projet.
-- **Quoi ?**
-  - Faire le Rapport de fin de séquence.
-  - Créer le Plan de la séquence suivante.
-  - Mettre à jour le Cas d'Affaires et le Plan de Projet.
-  - Si exception : Créer un Plan d'Exception.
+⸻
 
-### 7. Clore le projet (Closing - CP)
-- **Quand ?** À la fin du projet (ou arrêt prématuré).
-- **Qui ?** Chef de Projet.
-- **Quoi ?**
-  - Remettre les produits.
+### 6. Gérer une limite de séquence (Managing a Stage Boundary – SB)
+
+- Quand ? À la fin d’une séquence ou en cas d’Exception.
+- Qui ? Chef de Projet.
+- Finalité : fournir au CoPil les infos pour décider de poursuivre ou non.
+- Activités clés :
+  - Évaluer la séquence écoulée (Rapport de fin de séquence).
+  - Préparer le plan de la séquence suivante.
+  - Mettre à jour le Plan de Projet.
+  - Mettre à jour le Cas d’Affaire.
+  - Préparer un Plan d’Exception si nécessaire.
+
+⸻
+
+### 7. Clore le projet (Closing a Project – CP)
+
+- Quand ? Fin de projet ou clôture anticipée.
+- Qui ? Chef de Projet.
+- Finalité :
+  - Confirmer l’acceptation du produit de projet.
+  - Clore le projet de manière ordonnée.
+  - Transférer responsabilités & informations pour les bénéfices post-projet.
+- Activités clés :
+  - Confirmer l’acceptation par l’Utilisateur.
   - Évaluer le projet (Rapport de fin de projet).
-  - Archiver.
-  - Projet de notification de clôture (recommandation au Comité).
+  - Consigner les leçons (Rapport des leçons).
+  - Mettre à jour & transférer l’approche de gestion des bénéfices/durabilité.
+  - Archiver DIP, plans et journal du projet.
 
----
+⸻
 
-## 6. Produits de Management (Documents Clés)
+## 7. Produits de Management (Documents clés)
 
-| Produit | Description | Responsable principal |
-|---|---|---|
-| Mandat de projet | Déclencheur du projet (vient de l'extérieur). | Direction / Client |
-| Exposé du projet (Brief) | Base pour démarrer l'initialisation. Contient une ébauche du Cas d'Affaires. | Chef de Projet (validé par Exécutif) |
-| DIP (PID) | Bible du projet. Contient le Cas d'Affaires détaillé, le Plan de Projet, les Approches (Stratégies). | Chef de Projet |
-| Cas d'Affaires | Justification financière et stratégique (Viable, Souhaitable, Réalisable). | Exécutif |
-| Lot de Travaux (Work Package) | Instructions données par le CP au Chef d'équipe. Contient les exigences qualité. | Chef de Projet |
-| Rapport de Synthèse (Highlight) | Rapport régulier (ex: hebdo) du CP vers le Comité de Pilotage. | Chef de Projet |
-| Rapport de Contrôle (Checkpoint) | Rapport régulier de l'équipe vers le CP. | Chef d'Équipe |
-| Rapport d'Exception | Alerte envoyée quand une tolérance est/sera dépassée. | Chef de Projet |
-| Registres | Risques, Incidences, Qualité (vivants tout au long du projet). | Chef de Projet / Support |
+| Produit                               | Description                                                         | Responsable principal                |
+| ------------------------------------- | ------------------------------------------------------------------- | ------------------------------------ |
+| Mandat de projet                      | Déclencheur du projet (vient de l’extérieur).                      | Direction / Client                   |
+| Exposé du projet (Project Brief)      | Base pour démarrer l’initialisation. Contient une ébauche du Cas d’Affaires. | Chef de Projet (validé par Exécutif) |
+| DIP (PID)                             | “Bible” du projet. Cas d’Affaires détaillé, Plan de Projet, Approches (Stratégies). | Chef de Projet                       |
+| Cas d’Affaires                        | Justification financière et stratégique (Viable, Souhaitable, Réalisable). | Exécutif                             |
+| Lot de Travaux (Work Package)        | Instructions du CP au Chef d’Équipe, avec exigences qualité.       | Chef de Projet                       |
+| Rapport de Synthèse (Highlight Report) | Rapport régulier du CP vers le Comité de Pilotage.                 | Chef de Projet                       |
+| Rapport de Contrôle (Checkpoint Report) | Rapport régulier de l’équipe vers le CP.                          | Chef d’Équipe                        |
+| Rapport d’Exception                   | Alerte si une tolérance est ou sera dépassée.                      | Chef de Projet                       |
+| Registres                             | Risques, Incidences, Qualité, Produits, Leçons…                    | Chef de Projet / Support             |
 
----
+⸻
 
-## 7. ⚠️ Pièges et Astuces pour l'Examen
+## 8. ⚠️ Pièges & Astuces pour l’Examen
 
-- Ne  pas confondre :
-  - **Assurance Projet** (Vérifie) et **Support Projet** (Assiste/Admin).
-  - **Cas d'Affaires** (Justification) et **Plan de Projet** (Calendrier/Coûts/Livrables).
-  - **Produit Spécialiste** (Livrable final, ex: le camion) et **Produit de Management** (Document de gestion, ex: le plan).
-  - **Exposé du projet** (avant initialisation) et **DIP** (après initialisation).
+### Ne pas confondre
 
-- **Qui décide ?**
-  - Si ça touche les **objectifs du projet** : Comité de Pilotage.
-  - Si ça touche les **objectifs de la séquence** (dans les tolérances) : Chef de Projet.
-  - Si ça touche les **détails techniques** d'un lot de travaux (dans les tolérances) : Chef d'Équipe.
-  - Si ça dépasse les **tolérances du projet** : Direction de l'entreprise / Programme.
+- Assurance Projet (vérifie) vs Support Projet (assiste/admin).
+- Cas d’Affaires (justification) vs Plan de Projet (calendrier, coûts, livrables).
+- Produit Spécialiste (livrable métier, ex : camion) vs Produit de Management (document de gestion, ex : plan).
+- Exposé du Projet (avant initialisation) vs DIP (après initialisation, base de référence).
 
-- **Vocabulaire :**
-  - "Imputable" (Accountable) = Celui qui rend des comptes (souvent 1 seule personne, ex: Exécutif).
-  - "Responsable" (Responsible) = Celui qui fait le travail.
+### Qui décide quoi ?
 
-- **Chronologie :**
-  On ne commence **jamais** le travail technique (Processus *Gérer la livraison*) sans l'autorisation d'un lot de travaux par le CP (Processus *Contrôler une séquence*).
+- Objectifs du projet → Comité de Pilotage.
+- Objectifs d’une séquence (dans les tolérances) → Chef de Projet.
+- Détails techniques d’un lot de travaux (dans les tolérances) → Chef d’Équipe.
+- Dépassement des tolérances du projet → Direction / Programme.
+
+### Vocabulaire à maîtriser
+
+- Imputable (Accountable) : rend des comptes, une seule personne (souvent l’Exécutif).
+- Responsable (Responsible) : fait le travail.
+
+### Chronologie clé
+
+- On ne commence jamais le travail technique (Gérer la livraison des produits) sans autorisation d’un lot de travaux dans Contrôler une séquence.
+- Les séquences ne se chevauchent pas, mais des lots de travaux peuvent se chevaucher au sein d’une séquence.
