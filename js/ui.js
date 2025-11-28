@@ -25,7 +25,11 @@ async function loadFlashcards(url) {
         if (!res.ok) throw new Error();
         currentFlashcards = await res.json();
         cardIndex = 0;
-        document.getElementById('interactive-modal').style.display = 'flex';
+        const modal = document.getElementById('interactive-modal');
+        modal.style.display = 'flex';
+        // Force reflow
+        void modal.offsetWidth;
+        modal.classList.add('active');
         renderFC();
     } catch (e) { alert("Could not load Flashcards. Ensure 'filename_flashcard.json' exists."); }
 }
@@ -70,11 +74,21 @@ async function loadQuiz(url) {
                 </div>
                 <button class="qz-next-btn" onclick="closeModal()">Next Question <i class="fas fa-arrow-right"></i></button>
             </div>`;
-        document.getElementById('interactive-modal').style.display = 'flex';
+        const modal = document.getElementById('interactive-modal');
+        modal.style.display = 'flex';
+        // Force reflow
+        void modal.offsetWidth;
+        modal.classList.add('active');
         document.getElementById('modal-content-area').innerHTML = html;
     } catch (e) { alert("Could not load Quiz. Ensure 'filename_quizz.json' exists."); }
 }
-function closeModal() { document.getElementById('interactive-modal').style.display = 'none'; }
+function closeModal() {
+    const modal = document.getElementById('interactive-modal');
+    modal.classList.remove('active');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+}
 
 // --- ARTICLE READER WITH DETECTION ---
 async function openArticle(article) {
@@ -116,7 +130,7 @@ async function openArticle(article) {
                         <button class="tool-btn" onclick="share('email')"><i class="fas fa-envelope"></i> Email</button>
                         <button class="tool-btn" onclick="share('sms')"><i class="fas fa-comment-dots"></i> SMS</button>
                         <button class="tool-btn" onclick="navigator.clipboard.writeText('${shareUrl}');alert('Link copied!')"><i class="fas fa-link"></i> Copy</button>
-                        <button class="tool-btn" style="margin-left:auto" onclick="navigateTo('blog')">✕ Close</button>
+                        <button class="tool-btn" onclick="navigateTo('blog')">✕ Close</button>
                     </div>`;
     let interactiveHtml = '';
     if (fUrl || qUrl) {

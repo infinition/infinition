@@ -30,6 +30,7 @@ body {
     color: var(--text-color);
     font-family: var(--code-font);
     line-height: 1.6;
+    /* espacement entre les lignes */
     overflow-x: hidden;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -62,6 +63,8 @@ body {
     align-items: center;
 }
 
+
+
 .nav-btn {
     background: #2c2c2e;
     border: none;
@@ -72,8 +75,19 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    left: 10px;
+    right: 10px;
+    bottom: 20px;
+    background: #222;
+    border-radius: 20px;
+    z-index: 1;
+    opacity: 0.6;
+    transform: scale(0.95);
+}
+
+.modal-content {
+    width: -webkit-fill-available;
+    height: auto;
 }
 
 /* --- FLASHCARDS UI --- */
@@ -265,6 +279,19 @@ body {
     margin-top: auto;
 }
 
+.article-toolbar {
+    display: flex;
+    justify-content: center;
+    /* centre horizontalement */
+    align-items: center;
+    /* aligne verticalement */
+    gap: 8px;
+    /* espace entre les boutons */
+    margin: 12px 0;
+    flex-wrap: wrap;
+    /* (optionnel) permet le retour à la ligne si trop petit */
+}
+
 .fc-action-btn {
     width: 70px;
     height: 70px;
@@ -302,6 +329,7 @@ body {
     flex-direction: column;
     font-family: var(--ui-font);
 }
+
 
 .qz-top-bar {
     display: flex;
@@ -548,7 +576,7 @@ body {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.2rem;
     position: relative;
 }
 
@@ -2490,6 +2518,201 @@ body.audio-playing .audio-toggle-btn {
     margin-top: 1em;
     margin-bottom: 0.5em;
     font-family: var(--code-font);
+    margin-bottom: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.tree-children {
+    display: none;
+    padding-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tree-children.open {
+    display: block;
+}
+
+.article-body {
+    margin-top: 1rem;
+    font-family: sans-serif;
+    line-height: 1.8;
+    color: #ccc;
+    max-width: 800px;
+}
+
+.article-body h1 {
+    color: var(--neon-purple);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid rgba(189, 0, 255, 0.3);
+    padding-bottom: 0.5rem;
+    font-family: var(--cyber-font);
+    font-size: 2rem;
+}
+
+.article-body h2 {
+    color: var(--neon-blue);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid rgba(19, 175, 240, 0.3);
+    padding-bottom: 0.5rem;
+    font-family: var(--cyber-font);
+    font-size: 1.5rem;
+}
+
+.article-body h3 {
+    color: var(--neon-orange);
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-family: var(--code-font);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.article-body h4 {
+    color: var(--neon-green);
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-family: var(--code-font);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.article-body p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.article-body ul,
+.article-body ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.article-body li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.article-body ul li::marker {
+    color: var(--neon-blue);
+}
+
+.article-body ol li::marker {
+    color: var(--neon-orange);
+    font-family: var(--code-font);
+    font-weight: bold;
+}
+
+.article-body strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+.article-body em {
+    color: var(--neon-blue);
+    font-style: italic;
+}
+
+.article-body code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--code-font);
+    color: var(--neon-orange);
+    font-size: 0.9em;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+}
+
+.article-body pre {
+    background: #000;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid #333;
+    margin-bottom: 1.5rem;
+}
+
+.article-body pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    border: none;
+}
+
+.article-body blockquote {
+    border-left: 3px solid var(--neon-orange);
+    padding-left: 1rem;
+    color: #999;
+    font-style: italic;
+}
+
+/* --- PORTAL TITLE & GLITCH --- */
+.portal-title {
+    font-family: var(--cyber-font);
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+    position: relative;
+    line-height: 1;
+}
+
+/* HOVER PADLOCK EFFECT */
+.portal-title:hover::after {
+    content: '\f023';
+    /* FontAwesome Lock Icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.5rem;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    color: var(--neon-red);
+    animation: fadeIn 0.3s ease;
+}
+
+/* GLITCH ANIMATION CLASS */
+.glitch-active {
+    animation: glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: var(--neon-red);
+}
+
+.glitch-active::before,
+.glitch-active::after {
+    content: "INFINITION";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+}
+
+.glitch-active::before {
+    left: 2px;
+    text-shadow: -1px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch-active::after {
+    left: -2px;
+    text-shadow: -1px 0 #00fff9;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 2s infinite linear alternate-reverse;
+}
+
+.article-body h5 {
+    color: var(--neon-blue);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-family: var(--code-font);
     font-size: 1rem;
     font-weight: bold;
     text-decoration: underline;
@@ -2502,4 +2725,16 @@ body.audio-playing .audio-toggle-btn {
     font-family: var(--code-font);
     font-size: 0.9rem;
     font-style: italic;
+}
+
+/* --- MODAL ACTIVE STATE FIX --- */
+.modal-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
 }
