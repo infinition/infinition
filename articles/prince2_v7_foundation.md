@@ -1,4 +1,5 @@
 # Dossier de Révision PRINCE2® 7 Foundation
+![image](https://github.com/user-attachments/assets/73ad78c8-c80e-41a4-a965-13baea889c68)
 
 ## 0. Examen PRINCE2® 7 Foundation
 
