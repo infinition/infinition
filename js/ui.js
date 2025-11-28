@@ -312,6 +312,28 @@ function share(platform) {
     if (platform === 'twitter') window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`);
     if (platform === 'sms') window.open(`sms:?body=${text}${url}`);
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.kb-sidebar');
+    const backdrop = document.querySelector('.kb-backdrop');
+    const toggleBtn = document.querySelector('.kb-toggle-btn');
+
+    if (!sidebar || !backdrop || !toggleBtn) return;
+
+    // OUVRIR / FERMER via le bouton
+    toggleBtn.addEventListener('click', () => {
+        const isOpen = sidebar.classList.toggle('open');
+        toggleBtn.classList.toggle('open', isOpen);
+        backdrop.classList.toggle('active', isOpen);
+    });
+
+    // FERMER en cliquant sur le backdrop
+    backdrop.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        toggleBtn.classList.remove('open');
+        backdrop.classList.remove('active');
+    });
+});
+
 
 function revealMusic() {
     playDecipherSound();
@@ -381,13 +403,7 @@ function toggleKBSort() {
         renderKBTree(mergedData);
     }
 }
-function toggleKBMobile() {
-    const sidebar = document.querySelector('.kb-sidebar');
-    const btn = document.querySelector('.kb-toggle-btn');
 
-    const isOpen = sidebar.classList.toggle('open');
-    btn.classList.toggle('open', isOpen);
-}
 
 function renderKBTree(data) {
     const parent = document.getElementById('kb-tree');

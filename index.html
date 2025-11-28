@@ -289,29 +289,45 @@
     <!-- SECTION KB -->
     <section id="kb-view" class="view-section" style="padding-top: var(--sysbar-height); padding-bottom: 0;">
         <div class="kb-container">
+
+            <!-- Bouton mobile -->
             <div class="kb-toggle-btn" onclick="toggleKBMobile()">
                 <i class="fas fa-angle-right"></i>
             </div>
 
+            <!-- Sidebar -->
             <div class="kb-sidebar">
                 <div style="display:flex; gap:5px; margin-bottom:1rem;">
                     <input type="text" id="kb-search" class="kb-search-box" placeholder="Search (Content)..."
                         autocomplete="off" style="margin-bottom:0; flex:1;">
+
                     <button class="nav-btn" onclick="toggleKBSort()" title="Sort by Date/Name"
-                        style="width:35px; height:38px; border-radius:4px; background:rgba(255,255,255,0.05); border:1px solid #333;"><i
-                            id="kb-sort-icon" class="fas fa-calendar"></i></button>
+                        style="width:35px; height:38px; border-radius:4px; background:rgba(255,255,255,0.05); border:1px solid #333;">
+                        <i id="kb-sort-icon" class="fas fa-calendar"></i>
+                    </button>
                 </div>
-                <div id="kb-tree">
-                    <div style="text-align:center; padding:1rem; color:#666;">Loading Tree...</div>
+
+                <div class="inner">
+                    <div id="kb-tree">
+                        <div style="text-align:center; padding:1rem; color:#666;">Loading Tree...</div>
+                    </div>
                 </div>
             </div>
+
+            <!-- BACKDROP (correct emplacement) -->
+            <div class="kb-backdrop" onclick="closeKBMobile()"></div>
+
+            <!-- Contenu principal -->
             <div class="kb-main" id="kb-content-area">
-                <h1 style="font-family: var(--cyber-font); padding: 10px; color: var(--neon-purple);">Welcome to the KB
+                <h1 style="font-family: var(--cyber-font); padding: 10px; color: var(--neon-purple);">
+                    Welcome to the KB
                 </h1>
                 <p style="padding: 10px;">Select a node on the left to access documentation.</p>
             </div>
+
         </div>
     </section>
+
 
     <!-- SECTION MUSIC -->
     <section id="music-view" class="view-section">
