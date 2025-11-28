@@ -372,6 +372,13 @@ function toggleKBSort() {
         renderKBTree(mergedData);
     }
 }
+function toggleKBMobile() {
+    const sidebar = document.querySelector('.kb-sidebar');
+    const btn = document.querySelector('.kb-toggle-btn');
+
+    const isOpen = sidebar.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+}
 
 function renderKBTree(data) {
     const parent = document.getElementById('kb-tree');

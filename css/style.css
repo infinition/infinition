@@ -2106,6 +2106,7 @@ body.audio-playing .audio-toggle-btn {
     .music-trigger {
         bottom: 20px;
         right: 20px;
+
         width: 40px;
         height: 40px;
     }
@@ -2114,6 +2115,7 @@ body.audio-playing .audio-toggle-btn {
     .music-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
+
         margin-top: 2rem;
     }
 
@@ -2778,4 +2780,56 @@ body.audio-playing .audio-toggle-btn {
 .modal-overlay.active {
     opacity: 1;
     pointer-events: auto;
+}
+
+/* --- Mobile KB Sidebar Slide --- */
+@media (max-width: 768px) {
+
+    /* Flèche flottante */
+    .kb-toggle-btn {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background: #0a0f13;
+        border: 1px solid #333;
+        color: var(--neon-blue);
+        padding: 10px 14px;
+        border-radius: 0 8px 8px 0;
+        z-index: 4000;
+        cursor: pointer;
+        font-size: 1.4rem;
+        transition: all 0.3s ease;
+    }
+
+    .kb-toggle-btn.open i {
+        transform: rotate(180deg);
+    }
+
+    /* Sidebar cachée par défaut */
+    .kb-sidebar {
+        position: fixed;
+        top: 60px;
+        /* sous la sys-bar */
+        left: -80%;
+        width: 80%;
+        height: calc(100vh - 60px);
+        background: #090d10;
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+        z-index: 3500;
+        padding: 15px;
+        overflow-y: auto;
+        transition: left 0.35s ease;
+    }
+
+    /* Sidebar ouverte */
+    .kb-sidebar.open {
+        left: 0;
+    }
+
+    /* Empêche le KB content de bouger */
+    .kb-main {
+        position: relative;
+        z-index: 1;
+    }
 }
