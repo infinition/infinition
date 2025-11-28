@@ -312,6 +312,63 @@ function share(platform) {
     if (platform === 'twitter') window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`);
     if (platform === 'sms') window.open(`sms:?body=${text}${url}`);
 }
+// document.addEventListener('DOMContentLoaded', () => {
+//     const sidebar  = document.querySelector('.kb-sidebar');
+//     const backdrop = document.querySelector('.kb-backdrop');
+//     const toggleBtn = document.querySelector('.kb-toggle-btn');
+
+//     if (!sidebar || !backdrop || !toggleBtn) return;
+
+//     // OUVRIR / FERMER via le bouton
+//     toggleBtn.addEventListener('click', () => {
+//         const isOpen = sidebar.classList.toggle('open');
+//         toggleBtn.classList.toggle('open', isOpen);
+//         backdrop.classList.toggle('active', isOpen);
+//     });
+
+//     // FERMER en cliquant sur le backdrop
+//     backdrop.addEventListener('click', () => {
+//         sidebar.classList.remove('open');
+//         toggleBtn.classList.remove('open');
+//         backdrop.classList.remove('active');
+//     });
+// });
+// --- MOBILE KB SIDEBAR : OPEN/CLOSE HELPERS ---
+function openKBMobile() {
+    const sidebar = document.querySelector('.kb-sidebar');
+    const backdrop = document.querySelector('.kb-backdrop');
+    const btn = document.querySelector('.kb-toggle-btn');
+    if (!sidebar || !backdrop || !btn) return;
+
+    sidebar.classList.add('open');
+    btn.classList.add('open');
+    backdrop.classList.add('active');
+    backdrop.style.opacity = '0.6';
+}
+
+function closeKBMobile() {
+    const sidebar = document.querySelector('.kb-sidebar');
+    const backdrop = document.querySelector('.kb-backdrop');
+    const btn = document.querySelector('.kb-toggle-btn');
+    if (!sidebar || !backdrop || !btn) return;
+
+    sidebar.classList.remove('open');
+    btn.classList.remove('open');
+    backdrop.classList.remove('active');
+    backdrop.style.opacity = '0';
+    sidebar.style.transform = ''; // reset si un drag a mis un transform inline
+}
+
+function toggleKBMobile() {
+    const sidebar = document.querySelector('.kb-sidebar');
+    if (!sidebar) return;
+    if (sidebar.classList.contains('open')) {
+        closeKBMobile();
+    } else {
+        openKBMobile();
+    }
+}
+// --- MOBILE KB SIDEBAR : LISTENERS & SWIPE ---
 document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('.kb-sidebar');
     const backdrop = document.querySelector('.kb-backdrop');
@@ -319,19 +376,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!sidebar || !backdrop || !toggleBtn) return;
 
-    // OUVRIR / FERMER via le bouton
-    toggleBtn.addEventListener('click', () => {
-        const isOpen = sidebar.classList.toggle('open');
-        toggleBtn.classList.toggle('open', isOpen);
-        backdrop.classList.toggle('active', isOpen);
+    // Bouton : ouvre / ferme (mobile only)
+    toggleBtn.addEventListener('click', (e) => {
+        if (window.innerWidth > 768) return;
+        e.stopPropagation();
+        toggleKBMobile();
     });
 
-    // FERMER en cliquant sur le backdrop
+    // Backdrop : ferme
     backdrop.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        toggleBtn.classList.remove('open');
-        backdrop.classList.remove('active');
+        if (window.innerWidth > 768) return;
+        closeKBMobile();
     });
+
+    // --- SWIPE POUR FERMER (pousser vers la gauche) ---
+    let isDragging = false;
+    let startX = 0;
+    let lastTranslateX = 0;
+
+    sidebar.addEventListener('touchstart', (e) => {
+        if (window.innerWidth > 768) return;
+        if (!sidebar.classList.contains('open')) return;
+        if (e.touches.length !== 1) return;
+
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        lastTranslateX = 0;
+
+        sidebar.classList.add('dragging');
+        sidebar.style.transition = 'none';
+        backdrop.style.transition = 'none';
+    }, { passive: true });
+
+    sidebar.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+
+        const currentX = e.touches[0].clientX;
+        let deltaX = currentX - startX;     // vers la gauche => négatif
+        if (deltaX > 0) deltaX = 0;         // on bloque le swipe vers la droite
+
+        const width = sidebar.offsetWidth;
+        const clamped = Math.max(deltaX, -width); // entre 0 et -width
+        lastTranslateX = clamped;
+
+        const ratio = Math.min(Math.abs(clamped) / width, 1); // 0 -> ouvert, 1 -> fermé
+        const progress = 1 - ratio;                            // 1 ouvert, 0 fermé
+        const tilt = -8 * (1 - progress);                      // petit tilt quand ça se ferme
+
+        // Position + tilt dynamique
+        sidebar.style.transform = `translate3d(${clamped}px, 0, 0) rotateY(${tilt}deg)`;
+
+        // Backdrop qui s'éclaircit en fonction du drag
+        backdrop.style.opacity = String(0.6 * progress);
+    }, { passive: true });
+
+    const endDrag = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        sidebar.classList.remove('dragging');
+
+        const width = sidebar.offsetWidth;
+        const shouldClose = Math.abs(lastTranslateX) > width * 0.3; // seuil 30%
+
+        // On rend les transitions à nouveau actives
+        sidebar.style.transition = '';
+        backdrop.style.transition = '';
+
+        if (shouldClose) {
+            // Animation de fermeture "ease-out"
+            sidebar.style.transition = 'transform 0.25s ease-out';
+            backdrop.style.transition = 'opacity 0.25s ease-out';
+            sidebar.style.transform = 'translate3d(-100%, 0, 0) rotateY(-10deg)';
+            backdrop.style.opacity = '0';
+
+            setTimeout(() => {
+                closeKBMobile();
+                sidebar.style.transition = '';
+            }, 260);
+        } else {
+            // Revenir à l'état ouvert
+            sidebar.style.transform = '';   // on laisse le CSS .open reprendre la main
+            backdrop.style.opacity = '0.6';
+        }
+    };
+
+    sidebar.addEventListener('touchend', endDrag);
+    sidebar.addEventListener('touchcancel', endDrag);
 });
 
 

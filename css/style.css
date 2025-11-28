@@ -2656,3 +2656,96 @@ body.audio-playing .audio-toggle-btn {
         z-index: 1;
     }
 }
+
+
+
+
+
+/* --- MOBILE KB SIDEBAR : ADVANCED UX OVERRIDES --- */
+@media (max-width: 768px) {
+
+    body {
+        overscroll-behavior-y: none;
+        /* évite que le body scroll derrière */
+    }
+
+    .kb-container {
+        flex-direction: column;
+    }
+
+    .kb-sidebar {
+        position: fixed;
+        top: var(--sysbar-height);
+        bottom: 0;
+        left: 0;
+        width: 80%;
+        max-width: 360px;
+        background: #090d10;
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+        z-index: 4000;
+        padding: 1rem;
+        overflow: hidden;
+
+        /* slide + tilt 3D */
+        transform: translate3d(-100%, 0, 0) rotateY(12deg);
+        transform-origin: left center;
+        transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .kb-sidebar.open {
+        transform: translate3d(0, 0, 0) rotateY(0deg);
+    }
+
+    .kb-sidebar.dragging {
+        transition: none;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+    }
+
+    .kb-sidebar .inner {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        /* inertie iOS */
+        overscroll-behavior: contain;
+        /* ne propage pas le scroll au body */
+    }
+
+    .kb-backdrop {
+        position: fixed;
+        top: var(--sysbar-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--sysbar-height));
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease-out;
+        z-index: 3500;
+    }
+
+    .kb-backdrop.active {
+        opacity: 0.6;
+        /* valeur “pleinement ouvert”, ajustée par le swipe en JS */
+        pointer-events: auto;
+    }
+
+    .kb-toggle-btn {
+        display: block;
+        position: fixed;
+        top: calc(var(--sysbar-height) + 10px);
+        left: 0;
+        background: #0a0f13;
+        border: 1px solid #333;
+        color: var(--neon-blue);
+        padding: 10px 14px;
+        border-radius: 0 8px 8px 0;
+        z-index: 4001;
+        cursor: pointer;
+        font-size: 1.4rem;
+        transition: transform 0.25s ease;
+    }
+
+    .kb-toggle-btn.open i {
+        transform: rotate(180deg);
+    }
+}
