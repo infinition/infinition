@@ -2183,7 +2183,7 @@ body.audio-playing .audio-toggle-btn {
 .article-body {
     margin-top: 1rem;
     font-family: sans-serif;
-    line-height: 1.8;
+    line-height: 1.1;
     color: #ccc;
     max-width: 100%;
     padding: 10px;
@@ -2590,26 +2590,9 @@ body.audio-playing .audio-toggle-btn {
 /* MOBILE (max 768px) — VERSION 100% OPÉRATIONNELLE */
 @media (max-width: 768px) {
 
-    /* Bouton d'ouverture */
-    .kb-toggle-btn {
-        display: block;
-        position: fixed;
-        top: calc(var(--sysbar-height) + 10px);
-        left: 0;
-        background: #0a0f13;
-        border: 1px solid #333;
-        color: var(--neon-blue);
-        padding: 10px 14px;
-        border-radius: 0 8px 8px 0;
-        z-index: 4001;
-        cursor: pointer;
-        font-size: 1.4rem;
-        transition: all 0.3s ease;
-    }
 
-    .kb-toggle-btn.open i {
-        transform: rotate(180deg);
-    }
+
+
 
     /* SIDEBAR MOBILE SLIDE LEFT */
     .kb-sidebar {
@@ -2732,10 +2715,8 @@ body.audio-playing .audio-toggle-btn {
     .kb-toggle-btn {
         display: block;
         position: fixed;
-        top: calc(var(--sysbar-height) + 10px);
+        bottom: 10px;
         left: 0;
-        background: #0a0f13;
-        border: 1px solid #333;
         color: var(--neon-blue);
         padding: 10px 14px;
         border-radius: 0 8px 8px 0;
