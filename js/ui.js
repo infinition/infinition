@@ -19,12 +19,23 @@ function unlockData() {
 }
 
 // --- INTERACTIVE MODULES ---
+// --- INTERACTIVE MODULES ---
+let currentScore = 0;
+let sessionType = ''; // 'flashcard' or 'quiz'
+let currentUrl = '';
+let quizIndex = 0;
+let currentQuizData = [];
+
 async function loadFlashcards(url) {
     try {
         const res = await fetch(url);
         if (!res.ok) throw new Error();
         currentFlashcards = await res.json();
         cardIndex = 0;
+        currentScore = 0;
+        sessionType = 'flashcard';
+        currentUrl = url;
+
         const modal = document.getElementById('interactive-modal');
         modal.style.display = 'flex';
         // Force reflow
@@ -37,6 +48,9 @@ async function loadFlashcards(url) {
 function renderFC() {
     const card = currentFlashcards[cardIndex];
     const progress = ((cardIndex) / currentFlashcards.length) * 100;
+    const prevScore = localStorage.getItem('score_' + currentUrl);
+    const prevText = prevScore ? `Previous: ${prevScore}` : 'First Try';
+
     const html = `
         <div class="fc-container">
             <div class="fc-top-info">
@@ -44,7 +58,8 @@ function renderFC() {
                     <div>Card ${cardIndex + 1}</div>
                     <div class="fc-counter-badge">${cardIndex + 1}/${currentFlashcards.length}</div>
                 </div>
-                <div onclick="closeModal()" style="cursor:pointer; padding:5px; font-size:1.2rem;">✕</div>
+                <div style="font-size:0.8rem; color:#888;">${prevText}</div>
+                <div onclick="finishSession()" style="cursor:pointer; padding:5px; font-size:1.2rem;">✕</div>
             </div>
             <div class="fc-progress-bg"><div class="fc-progress-fill" style="width:${progress}%"></div></div>
             <div class="fc-status"><i class="fas fa-check-circle"></i> Learning Mode</div>
@@ -55,39 +70,122 @@ function renderFC() {
                     <div class="fc-face fc-back"><div class="fc-text" style="color:var(--neon-green)">${card.answer}</div></div>
                 </div>
             </div>
-            <div class="fc-controls"><button class="fc-action-btn fc-btn-no" onclick="nextFC()"><i class="fas fa-times"></i></button><button class="fc-action-btn fc-btn-yes" onclick="nextFC()"><i class="fas fa-check"></i></button></div>
+            <div class="fc-controls">
+                <button class="fc-action-btn fc-btn-no" onclick="nextFC(false)"><i class="fas fa-times"></i></button>
+                <button class="fc-action-btn fc-btn-yes" onclick="nextFC(true)"><i class="fas fa-check"></i></button>
+            </div>
         </div>`;
     document.getElementById('modal-content-area').innerHTML = html;
 }
-function nextFC() {
-    if (cardIndex < currentFlashcards.length - 1) { cardIndex++; renderFC(); }
-    else { document.getElementById('modal-content-area').innerHTML = `<div style="text-align:center;color:white;padding:50px;"><h2>Complete!</h2><button class="action-btn btn-flash" style="margin:20px auto;" onclick="closeModal()">Close</button></div>`; }
+
+function nextFC(isCorrect) {
+    if (isCorrect) currentScore++;
+
+    if (cardIndex < currentFlashcards.length - 1) {
+        cardIndex++;
+        renderFC();
+    } else {
+        finishSession();
+    }
 }
 
 async function loadQuiz(url) {
     try {
         const res = await fetch(url);
         if (!res.ok) throw new Error();
-        const data = await res.json();
-        const q = data[0]; // Demo first question
-        const html = `
-            <div class="qz-container">
-                <div class="qz-top-bar"><span>Quiz Mode</span><div style="cursor:pointer;" onclick="closeModal()">✕</div></div>
-                <div class="qz-progress-bg"><div class="qz-progress-fill" style="width:10%"></div></div>
-                <div class="qz-question-box"><div class="qz-label"><i class="fas fa-question"></i> Question 1</div><div class="qz-text">${q.question}</div></div>
-                <div class="qz-options">
-                    ${q.options.map((opt, i) => `<div class="qz-option" onclick="this.classList.add(${opt.correct} ? 'correct' : 'wrong')"><div class="qz-letter">${String.fromCharCode(65 + i)}</div><div>${opt.text}</div></div>`).join('')}
-                </div>
-                <button class="qz-next-btn" onclick="closeModal()">Next Question <i class="fas fa-arrow-right"></i></button>
-            </div>`;
+        currentQuizData = await res.json();
+        quizIndex = 0;
+        currentScore = 0;
+        sessionType = 'quiz';
+        currentUrl = url;
+
         const modal = document.getElementById('interactive-modal');
         modal.style.display = 'flex';
         // Force reflow
         void modal.offsetWidth;
         modal.classList.add('active');
-        document.getElementById('modal-content-area').innerHTML = html;
+        renderQuiz();
     } catch (e) { alert("Could not load Quiz. Ensure 'filename_quizz.json' exists."); }
 }
+
+function renderQuiz() {
+    const q = currentQuizData[quizIndex];
+    const progress = ((quizIndex) / currentQuizData.length) * 100;
+    const prevScore = localStorage.getItem('score_' + currentUrl);
+    const prevText = prevScore ? `Previous: ${prevScore}` : 'First Try';
+
+    const html = `
+        <div class="qz-container">
+            <div class="qz-top-bar">
+                <span>Quiz Mode</span>
+                <div style="font-size:0.8rem; color:#888;">${prevText}</div>
+                <div style="cursor:pointer;" onclick="finishSession()">✕</div>
+            </div>
+            <div class="qz-progress-bg"><div class="qz-progress-fill" style="width:${progress}%"></div></div>
+            <div class="qz-question-box"><div class="qz-label"><i class="fas fa-question"></i> Question ${quizIndex + 1}</div><div class="qz-text">${q.question}</div></div>
+            <div class="qz-options">
+                ${q.options.map((opt, i) => `
+                    <div class="qz-option" onclick="submitQuizAnswer(this, ${opt.correct})">
+                        <div class="qz-letter">${String.fromCharCode(65 + i)}</div>
+                        <div>${opt.text}</div>
+                    </div>`).join('')}
+            </div>
+        </div>`;
+    document.getElementById('modal-content-area').innerHTML = html;
+}
+
+function submitQuizAnswer(el, isCorrect) {
+    // Prevent multiple clicks
+    if (el.parentElement.classList.contains('answered')) return;
+    el.parentElement.classList.add('answered');
+
+    if (isCorrect) {
+        el.classList.add('correct');
+        currentScore++;
+    } else {
+        el.classList.add('wrong');
+    }
+
+    setTimeout(() => {
+        if (quizIndex < currentQuizData.length - 1) {
+            quizIndex++;
+            renderQuiz();
+        } else {
+            finishSession();
+        }
+    }, 1000);
+}
+
+function finishSession() {
+    const total = sessionType === 'flashcard' ? currentFlashcards.length : currentQuizData.length;
+    // Avoid division by zero if empty
+    if (total === 0) { closeModal(); return; }
+
+    const scoreStr = `${currentScore}/${total}`;
+    const prevScoreStr = localStorage.getItem('score_' + currentUrl);
+
+    // Save new score
+    localStorage.setItem('score_' + currentUrl, scoreStr);
+
+    let comparisonMsg = "Well done!";
+    if (prevScoreStr) {
+        const prevScoreVal = parseInt(prevScoreStr.split('/')[0]);
+        if (currentScore > prevScoreVal) comparisonMsg = "Better than last time! 🚀";
+        else if (currentScore < prevScoreVal) comparisonMsg = "Keep practicing! 💪";
+        else comparisonMsg = "Consistent performance! 👍";
+    }
+
+    const html = `
+        <div style="text-align:center; color:white; padding:40px; font-family:var(--ui-font);">
+            <h2 style="font-family:var(--cyber-font); margin-bottom:20px; color:var(--neon-blue);">Session Complete</h2>
+            <div style="font-size:3rem; font-weight:bold; margin-bottom:10px;">${scoreStr}</div>
+            <div style="color:#aaa; margin-bottom:30px;">${comparisonMsg}</div>
+            <button class="action-btn btn-flash" style="margin:0 auto; padding:10px 30px; font-size:1.2rem;" onclick="closeModal()">Exit</button>
+        </div>`;
+
+    document.getElementById('modal-content-area').innerHTML = html;
+}
+
 function closeModal() {
     const modal = document.getElementById('interactive-modal');
     modal.classList.remove('active');
