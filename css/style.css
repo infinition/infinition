@@ -15,6 +15,8 @@
     --bg-dark: #060606;
     --core-size: 120px;
     --ring-size: 340px;
+    --sysbar-height: 40px;
+
     /* App Colors */
     --quiz-gradient: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
 }
@@ -83,6 +85,11 @@ body {
     z-index: 1;
     opacity: 0.6;
     transform: scale(0.95);
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .modal-content {
@@ -500,7 +507,7 @@ body {
 .view-section {
     display: none;
     min-height: 100vh;
-    padding-top: 60px;
+    padding-top: var(--sysbar-height);
     animation: fadeIn 0.5s ease;
 }
 
@@ -2381,13 +2388,6 @@ body.audio-playing .audio-toggle-btn {
     display: block;
 }
 
-.article-body {
-    margin-top: 1rem;
-    font-family: sans-serif;
-    line-height: 1.8;
-    color: #ccc;
-    max-width: 800px;
-}
 
 .article-body h1 {
     color: var(--neon-purple);
@@ -2576,13 +2576,7 @@ body.audio-playing .audio-toggle-btn {
     display: block;
 }
 
-.article-body {
-    margin-top: 1rem;
-    font-family: sans-serif;
-    line-height: 1.8;
-    color: #ccc;
-    max-width: 800px;
-}
+
 
 .article-body h1 {
     color: var(--neon-purple);
@@ -2788,7 +2782,7 @@ body.audio-playing .audio-toggle-btn {
     /* Flèche flottante */
     .kb-toggle-btn {
         position: fixed;
-        top: 50%;
+        top: 97%;
         left: 0;
         transform: translateY(-50%);
         background: #0a0f13;
@@ -2809,16 +2803,17 @@ body.audio-playing .audio-toggle-btn {
     /* Sidebar cachée par défaut */
     .kb-sidebar {
         position: fixed;
-        top: 60px;
-        /* sous la sys-bar */
+        top: 31px;
         left: -80%;
+        display: flow;
         width: 80%;
-        height: calc(100vh - 60px);
+        /* height: 100vh; */
         background: #090d10;
         border-right: 1px solid rgba(255, 255, 255, 0.15);
         z-index: 3500;
-        padding: 15px;
+        /* padding: 15px; */
         overflow-y: auto;
+        bottom: 0px;
         transition: left 0.35s ease;
     }
 
