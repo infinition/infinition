@@ -1,4 +1,6 @@
 # Le Principe d’Incertitude en Physique Quantique : Une Réévaluation
+![image](https://github.com/user-attachments/assets/2df71100-45d4-4ed7-9726-81612947affa)
+
 
 ## Overview
 Le principe d’incertitude en mécanique quantique est souvent mal interprété. Les clichés de chambres à bulles, par exemple, donnent l’impression que les particules quantiques possèdent des trajectoires bien définies, comme de petits corpuscules. Or, la physique quantique décrit ces particules comme des entités ondulatoires délocalisées. Werner Heisenberg a compris dès 1927 que les traces visibles dans les chambres à bulles n’étaient pas les particules elles-mêmes mais des bulles bien plus grandes, rendant compatible l’apparence d'une trajectoire avec une description ondulatoire.  
