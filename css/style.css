@@ -790,17 +790,6 @@ h2.port-h2 {
     font-family: var(--code-font);
     color: #fff;
     display: flex;
-    align-items: center;
-}
-
-.card h3 i,
-.project-card h3 i {
-    margin-right: 10px;
-}
-
-.card ul {
-    list-style: none;
-    padding: 0;
 }
 
 .card li {
@@ -2729,4 +2718,45 @@ body.audio-playing .audio-toggle-btn {
     .kb-toggle-btn.open i {
         transform: rotate(180deg);
     }
+}
+
+/* --- AUDIO PLAYER REVEAL --- */
+.btn-reveal-player {
+    background: transparent;
+    border: 1px solid var(--neon-red);
+    color: var(--neon-red);
+    padding: 10px 20px;
+    font-family: var(--code-font);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.btn-reveal-player:hover {
+    background: var(--neon-red);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-red);
+}
+
+.audio-player {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Stylish bounce/ease */
+    transform: translateY(-20px) scale(0.95);
+    margin-bottom: 0;
+}
+
+.audio-player.active {
+    max-height: 500px;
+    /* Adjust as needed to fit the iframe */
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    margin-bottom: 2rem;
 }

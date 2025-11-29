@@ -472,6 +472,19 @@ function revealMusic() {
     fetchMusicData();
 }
 
+function togglePlayer() {
+    const player = document.querySelector('.audio-player');
+    const btn = document.querySelector('.btn-reveal-player');
+
+    if (player.classList.contains('active')) {
+        player.classList.remove('active');
+        btn.innerHTML = '<i class="fas fa-play-circle"></i> LAUNCH PLAYER';
+    } else {
+        player.classList.add('active');
+        btn.innerHTML = '<i class="fas fa-times-circle"></i> CLOSE PLAYER';
+    }
+}
+
 function renderArticles(items) {
     const container = document.getElementById('article-list-container');
     container.innerHTML = '';

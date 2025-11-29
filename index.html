@@ -352,12 +352,20 @@
             </div>
 
             <div id="music-content">
-                <div class="music-frame-container">
-                    <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0"
-                        height="450"
-                        style="width:100%;max-width:660px;overflow:hidden;background:transparent;border-radius:10px;"
-                        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                        src="https://embed.music.apple.com/fr/playlist/fab/pl.u-6mo44JmF4kgllW?theme=dark"></iframe>
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <button class="btn-reveal-player" onclick="togglePlayer()">
+                        <i class="fas fa-play-circle"></i> LAUNCH PLAYER
+                    </button>
+                </div>
+
+                <div class="audio-player audio-player--playlists">
+                    <div class="music-frame-container">
+                        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0"
+                            height="450"
+                            style="width:100%;max-width:660px;overflow:hidden;background:transparent;border-radius:10px;"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                            src="https://embed.music.apple.com/fr/playlist/fab/pl.u-6mo44JmF4kgllW?theme=dark"></iframe>
+                    </div>
                 </div>
                 <h3
                     style="text-align:center; color:#fff; margin-top: 3rem; border-bottom:1px dashed #333; padding-bottom:10px;">
