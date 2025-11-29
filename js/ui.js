@@ -262,7 +262,7 @@ async function openArticle(article) {
     document.getElementById('article-view').innerHTML = `
         <div class="article-content">
             ${shareHtml}
-            <div style="margin-bottom:2rem;"><span style="color:var(--neon-orange);font-family:var(--code-font);font-size:0.8rem;">DIR: /${article.file}</span><h1 style="font-family:var(--cyber-font);font-size:2rem;margin-top:0.5rem;">${article.title}</h1><div style="display:flex;align-items:center;gap:10px;margin-top:10px;opacity:0.6;font-size:0.8rem;"><i class="fas fa-calendar"></i> ${article.date}<span>// FABIEN POLLY</span></div></div>
+            <div style="margin-bottom:2rem;"><span style="color:var(--neon-orange);font-family:var(--code-font);font-size:0.8rem;white-space:normal;overflow-wrap:break-word;word-wrap:break-word;">DIR: /${article.file}</span><h1 style="font-family:var(--cyber-font);font-size:2rem;margin-top:0.5rem;">${article.title}</h1><div style="display:flex;align-items:center;gap:10px;margin-top:10px;opacity:0.6;font-size:0.8rem;"><i class="fas fa-calendar"></i> ${article.date}<span>// FABIEN POLLY</span></div></div>
             ${interactiveHtml}
             ${article.image ? `<img src="${article.image}" style="max-width:100%;border:1px solid #333;margin-bottom:2rem;">` : ''}
             <div class="article-body">${marked.parse(cleanContent)}</div>
