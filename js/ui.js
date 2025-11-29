@@ -26,11 +26,20 @@ let currentUrl = '';
 let quizIndex = 0;
 let currentQuizData = [];
 
+// Helper for randomization
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 async function loadFlashcards(url) {
     try {
         const res = await fetch(url);
         if (!res.ok) throw new Error();
-        currentFlashcards = await res.json();
+        currentFlashcards = shuffleArray(await res.json());
         cardIndex = 0;
         currentScore = 0;
         sessionType = 'flashcard';
@@ -93,7 +102,7 @@ async function loadQuiz(url) {
     try {
         const res = await fetch(url);
         if (!res.ok) throw new Error();
-        currentQuizData = await res.json();
+        currentQuizData = shuffleArray(await res.json());
         quizIndex = 0;
         currentScore = 0;
         sessionType = 'quiz';
@@ -157,8 +166,14 @@ function submitQuizAnswer(el, isCorrect) {
 }
 
 function finishSession() {
-    const total = sessionType === 'flashcard' ? currentFlashcards.length : currentQuizData.length;
-    // Avoid division by zero if empty
+    // Calculate total based on current progress (if quit early) or total length (if finished)
+    // If we are here, we either clicked X (quit) or finished the last item.
+    // If we finished, cardIndex/quizIndex is at the last item index.
+    // So total answered/seen is index + 1.
+    const currentIndex = sessionType === 'flashcard' ? cardIndex : quizIndex;
+    const total = currentIndex + 1;
+
+    // Avoid division by zero if empty (should not happen usually)
     if (total === 0) { closeModal(); return; }
 
     const scoreStr = `${currentScore}/${total}`;
