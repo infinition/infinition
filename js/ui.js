@@ -313,7 +313,8 @@ async function openKBArticle(article) {
     container.innerHTML = `
         <div class="article-content" style="max-width: 100%; padding: 10px;">
             ${shareHtml}
-            <div style="margin-bottom:2rem;"><span style="color:var(--neon-purple);font-family:var(--code-font);font-size:0.8rem;">KB NODE: /${article.file}</span><h1 style="font-family:var(--cyber-font);font-size:2rem;margin-top:0.5rem;">${article.title}</h1></div>
+            <div style="margin-bottom:2rem;"><span style="color:var(--neon-purple);font-family:var(--code-font);font-size:0.8rem;white-space:normal;overflow-wrap:break-word;word-wrap:break-word;
+">KB NODE: /${article.file}</span><h1 style="font-family:var(--cyber-font);font-size:2rem;margin-top:0.5rem;">${article.title}</h1></div>
             ${interactiveHtml}
             ${article.image ? `<img src="${article.image}" style="max-width:100%;border:1px solid #333;margin-bottom:2rem;">` : ''}
             <div class="article-body">${marked.parse(cleanContent)}</div>
