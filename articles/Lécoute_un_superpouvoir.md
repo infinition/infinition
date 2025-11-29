@@ -1,4 +1,5 @@
-## L’écoute – un superpouvoir
+# L’écoute, un superpouvoir
+![image](https://github.com/user-attachments/assets/604b8723-1791-4ec4-abc5-36dcc3eba362)
 
 À l’école, on nous a tous appris les bases de la lecture et de l’écriture. En revanche, il est très rare de voir un élève entrer dans un cours intitulé « Écoute ». Dans quelle formation avez-vous appris à écouter pour **comprendre** ?
 

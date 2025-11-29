@@ -1,0 +1,73 @@
+Quiz créé par Noota - https://www.noota.app
+
+1. Quel est le concept central en électronique que le texte cherche à expliquer et qui est souvent mal compris ?
+    A. Le courant alternatif
+    B. La résistance électrique
+    C. Le 0 V, aussi appelé la masse
+    D. La tension continue
+
+2. Quelle analogie est utilisée pour expliquer le rôle du 0 V comme référence commune ?
+    A. Le sommet d'une montagne
+    B. Le niveau de la mer
+    C. Le centre d'un cercle
+    D. Le point de départ d'une course
+
+3. Combien de fonctions différentes sont attribuées à la masse (0 V) dans le circuit, et quelles sont-elles ?
+    A. Deux fonctions : la sécurité et la référence des signaux.
+    B. Quatre fonctions : la mise à la terre, la masse des signaux, la masse châssis et la protection contre les surtensions.
+    C. Trois fonctions : la mise à la terre, la masse des signaux et la masse châssis.
+    D. Une seule fonction : la référence de tension.
+
+4. Quelle est la mission principale de la 'mise à la terre' ?
+    A. Assurer la communication entre les composants.
+    B. Protéger les circuits des interférences extérieures.
+    C. La sécurité des utilisateurs.
+    D. Stabiliser les tensions dans le circuit.
+
+5. Quel rôle est attribué à la 'masse des signaux' ?
+    A. Le bouclier contre les interférences.
+    B. Le protecteur des utilisateurs.
+    C. Le chef d'orchestre du circuit, permettant aux composants de mesurer correctement leur tension.
+    D. Le point de connexion physique à la terre.
+
+6. Quelle est la fonction de la 'masse châssis' ?
+    A. Assurer la sécurité électrique en cas de défaut.
+    B. Servir de référence pour les mesures de tension internes.
+    C. Protéger les circuits des interférences externes et empêcher le bruit interne de s'échapper.
+    D. Définir le point de départ du courant dans le circuit.
+
+7. Comment est représentée la 'mise à la terre' par son symbole ?
+    A. Un petit triangle.
+    B. Un symbole qui ressemble à un râteau.
+    C. Une barre qui s'affine.
+    D. Un cercle avec une croix.
+
+8. Dans la majorité des circuits fonctionnant sur pile ou batterie, comment est choisi le 0 V ?
+    A. La borne positive est arbitrairement choisie comme 0 V.
+    B. Le point central du circuit est toujours le 0 V.
+    C. La borne négative est arbitrairement choisie comme 0 V.
+    D. Le point de plus faible tension est automatiquement le 0 V.
+
+9. Quelle idée reçue courante sur la masse est démentie à la fin du texte ?
+    A. La masse est un point de haute tension.
+    B. La masse est un cul-de-sac où le courant s'arrête et disparaît.
+    C. La masse n'a qu'une seule fonction.
+    D. La masse est toujours connectée physiquement à la terre.
+
+10. Pourquoi est-il crucial de comprendre que la tension est toujours une différence de potentiel entre deux points ?
+    A. Pour pouvoir utiliser des voltmètres numériques.
+    B. Parce que cela permet de simplifier les schémas électroniques.
+    C. Sans cette compréhension, les mesures de tension n'auraient aucun sens et la conception de circuits serait impossible.
+    D. Pour distinguer les tensions positives des tensions négatives.
+
+Corrigé :
+1. C
+2. B
+3. C
+4. C
+5. C
+6. C
+7. C
+8. C
+9. B
+10. C

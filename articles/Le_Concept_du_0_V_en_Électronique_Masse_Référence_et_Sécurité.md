@@ -1,4 +1,5 @@
 # Le Concept du 0 V en Électronique : Masse, Référence et Sécurité
+![image](https://github.com/user-attachments/assets/220e7036-5bb7-4ca6-bafc-d96ec9972c00)
 
 ## Overview
 Le concept du 0 V, souvent appelé « masse », est fondamental en électronique et pourtant fréquemment mal compris. Il ne s’agit pas d’un zéro absolu, mais d’un point de référence commun, comparable au niveau de la mer. Toutes les tensions positives ou négatives y sont rapportées.  

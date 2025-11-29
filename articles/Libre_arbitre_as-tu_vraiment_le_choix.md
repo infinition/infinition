@@ -1,5 +1,5 @@
 
-## Libre arbitre – as-tu vraiment le choix ?
+# Libre arbitre, as-tu vraiment le choix ?
 <img width="725" height="460" alt="Gemini_Generated_Image_euzg8eeuzg8eeuzg" src="https://github.com/user-attachments/assets/5723b683-dc7d-4dfb-b302-c2e1f4bb400d" />
 
 Soit le libre arbitre existe potentiellement, soit il n’existe pas. Soit il existe une situation dans laquelle tu peux choisir librement, soit il n’en existe aucune.
