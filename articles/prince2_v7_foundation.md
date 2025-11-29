@@ -197,7 +197,7 @@ Ils doivent tous être appliqués pour qu’un projet soit PRINCE2.
 
 ⸻
 
-## 4. Les Personnes (People) – Nouveauté v7
+## 4. Les Personnes (People) - Nouveauté v7
 
 ### Définition de Partie Prenante
 
@@ -419,17 +419,17 @@ Ensemble d’activités structurées transformant des intrants en extrants pour 
 
 ### Vue globale
 
-1. Élaborer le projet (Pré-projet) – vérifier que le projet vaut la peine.
-2. Diriger le projet – pilotage global par le Comité.
-3. Initialiser le projet – mettre en place des bases solides (DIP).
-4. Contrôler une séquence – gestion quotidienne par le CP.
-5. Gérer la livraison des produits – travail des équipes.
-6. Gérer une limite de séquence – bilan de séquence, plan suivant.
-7. Clore le projet – clôture ordonnée, transfert & leçons.
+1. Élaborer le projet (Pré-projet) - vérifier que le projet vaut la peine.
+2. Diriger le projet - pilotage global par le Comité.
+3. Initialiser le projet - mettre en place des bases solides (DIP).
+4. Contrôler une séquence - gestion quotidienne par le CP.
+5. Gérer la livraison des produits - travail des équipes.
+6. Gérer une limite de séquence - bilan de séquence, plan suivant.
+7. Clore le projet - clôture ordonnée, transfert & leçons.
 
 ⸻
 
-### 1. Élaborer le projet (Starting Up – SU)
+### 1. Élaborer le projet (Starting Up - SU)
 
 - Quand ? Pré-projet.
 - Qui ? Exécutif + Chef de Projet.
@@ -450,7 +450,7 @@ Ensemble d’activités structurées transformant des intrants en extrants pour 
 
 ⸻
 
-### 2. Diriger le projet (Directing – DP)
+### 2. Diriger le projet (Directing - DP)
 
 - Quand ? Du début à la fin (au-dessus des séquences).
 - Qui ? Comité de Pilotage uniquement.
@@ -466,7 +466,7 @@ Ensemble d’activités structurées transformant des intrants en extrants pour 
 
 ⸻
 
-### 3. Initialiser le projet (Initiating – IP)
+### 3. Initialiser le projet (Initiating - IP)
 
 - Quand ? Séquence 1 (initialisation).
 - Qui ? Chef de Projet.
@@ -485,7 +485,7 @@ Ensemble d’activités structurées transformant des intrants en extrants pour 
 
 ⸻
 
-### 4. Contrôler une séquence (Controlling a Stage – CS)
+### 4. Contrôler une séquence (Controlling a Stage - CS)
 
 - Quand ? Pendant chaque séquence de livraison.
 - Qui ? Chef de Projet.
@@ -500,7 +500,7 @@ Ensemble d’activités structurées transformant des intrants en extrants pour 
 
 ⸻
 
-### 5. Gérer la livraison des produits (Managing Product Delivery – MP)
+### 5. Gérer la livraison des produits (Managing Product Delivery - MP)
 
 - Quand ? Pendant l’exécution technique.
 - Qui ? Chef(s) d’Équipe.
@@ -516,7 +516,7 @@ Ensemble d’activités structurées transformant des intrants en extrants pour 
 
 ⸻
 
-### 6. Gérer une limite de séquence (Managing a Stage Boundary – SB)
+### 6. Gérer une limite de séquence (Managing a Stage Boundary - SB)
 
 - Quand ? À la fin d’une séquence ou en cas d’Exception.
 - Qui ? Chef de Projet.
@@ -530,7 +530,7 @@ Ensemble d’activités structurées transformant des intrants en extrants pour 
 
 ⸻
 
-### 7. Clore le projet (Closing a Project – CP)
+### 7. Clore le projet (Closing a Project - CP)
 
 - Quand ? Fin de projet ou clôture anticipée.
 - Qui ? Chef de Projet.
@@ -589,7 +589,7 @@ Ensemble d’activités structurées transformant des intrants en extrants pour 
 - On ne commence jamais le travail technique (Gérer la livraison des produits) sans autorisation d’un lot de travaux dans Contrôler une séquence.
 - Les séquences ne se chevauchent pas, mais des lots de travaux peuvent se chevaucher au sein d’une séquence.
 
-# PRINCE2® 7 – Révision Express (Q/R Essentielles)
+# PRINCE2® 7 - Révision Express (Q/R Essentielles)
 
 ## 1. Généralités & Contexte
 
@@ -651,7 +651,7 @@ R : Leadership : orienté humain, vision, motivation. Management : orienté tâc
 
 ---
 
-## 4. Pratiques (Thèmes) – Vue d’ensemble
+## 4. Pratiques (Thèmes) - Vue d’ensemble
 
 **Q17. Quelles sont les 7 pratiques PRINCE2 7 ?**  
 R : Organisation, Cas d’Affaire, Qualité, Plans, Risques, Progression, Incidences.
