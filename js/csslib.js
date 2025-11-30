@@ -57,7 +57,7 @@ async function initCSSLib() {
 
     try {
         // Try fetching local JSON first
-        const res = await fetch('csslib/csslib.json');
+        const res = await fetch('data/csslib.json');
         if (res.ok) {
             library = await res.json();
         } else {

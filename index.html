@@ -30,7 +30,8 @@
 
     <!-- Ton CSS externe conservé -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="csslib/style.css">
+    <link rel="stylesheet" href="css/csslib.css">
+    <link rel="stylesheet" href="css/terminal.css">
 
 
 </head>
@@ -41,6 +42,23 @@
 </audio>
 
 <body>
+
+    <!-- Terminal Dropdown -->
+    <div id="terminal-dropdown">
+        <div class="term-header">
+            <div class="term-title">
+                <i class="fas fa-terminal"></i> TERM_V1.0
+            </div>
+            <button class="term-close-btn" onclick="terminal.toggle()">×</button>
+        </div>
+        <div class="term-body">
+            <div id="term-output" class="term-output"></div>
+            <div class="term-input-area">
+                <span class="term-prompt">visitor@infinition:~$</span>
+                <input type="text" id="term-input" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+    </div>
 
     <div id="interactive-modal" class="modal-overlay">
         <div class="modal-content" id="modal-content-area"></div>
@@ -124,6 +142,8 @@
                         class="fas fa-palette"></i></div>
                 <div class="music-trigger" onclick="navigateTo('music')" title="Audio Frequency"><i
                         class="fas fa-music"></i></div>
+                <div class="music-trigger" onclick="terminal.toggle()" title="Terminal Access"><i
+                        class="fas fa-terminal"></i></div>
             </div>
         </div>
     </section>
@@ -484,7 +504,8 @@
     <script src="js/ui.js"></script>
     <script src="js/main.js"></script>
     <script src="js/portal.js"></script>
-    <script src="csslib/app.js"></script>
+    <script src="js/csslib.js"></script>
+    <script src="js/terminal.js"></script>
     <script>
 
         fetch("https://api.ipify.org?format=json")

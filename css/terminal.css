@@ -1,0 +1,139 @@
+/* Terminal specific styles */
+#terminal-dropdown {
+    position: fixed;
+    top: -100%;
+    /* Hidden by default */
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    /* Takes up half the screen */
+    background-color: rgba(10, 10, 12, 0.95);
+    border-bottom: 2px solid var(--neon-green);
+    z-index: 9999;
+    transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    font-family: 'JetBrains Mono', monospace;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+#terminal-dropdown.active {
+    top: var(--sysbar-height, 40px);
+}
+
+.term-header {
+    background: rgba(0, 255, 71, 0.1);
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 255, 71, 0.3);
+    color: var(--neon-green);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.term-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.term-close-btn {
+    background: none;
+    border: none;
+    color: var(--neon-green);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+
+.term-close-btn:hover {
+    color: #fff;
+}
+
+.term-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    color: #ccc;
+    font-size: 0.9rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--neon-green) #111;
+}
+
+.term-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.term-body::-webkit-scrollbar-track {
+    background: #111;
+}
+
+.term-body::-webkit-scrollbar-thumb {
+    background: var(--neon-green);
+    border-radius: 4px;
+}
+
+.term-output {
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    line-height: 1.4;
+}
+
+.term-line {
+    margin-bottom: 4px;
+}
+
+.term-success {
+    color: var(--neon-green);
+}
+
+.term-error {
+    color: var(--neon-red);
+}
+
+.term-info {
+    color: var(--neon-blue);
+}
+
+.term-warn {
+    color: var(--neon-orange);
+}
+
+.term-purple {
+    color: var(--neon-purple);
+}
+
+.term-input-area {
+    display: flex;
+    align-items: center;
+}
+
+.term-prompt {
+    color: var(--neon-green);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+#term-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    flex: 1;
+    outline: none;
+    caret-color: var(--neon-green);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #terminal-dropdown {
+        height: 60vh;
+    }
+}

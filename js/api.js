@@ -67,7 +67,32 @@ async function fetchLocalDataLogs() {
         const title = (t.match(/^# (.*)/m) || [])[1] || f.name.replace('.md', '');
         let date = await fetchCommitDate(f.path);
         if (!date) date = (t.match(/(?:\*\*|__)?Date(?:\*\*|__)?:\s*(.*)/i) || [])[1]?.trim() || 'Unknown';
-        return { id: f.sha, type: 'article', file: f.path, title: title, date: date, icon: f.path.startsWith('kb') ? 'fas fa-book-medical' : 'fas fa-file-alt', image: null, content: t, download_url: f.download_url };
+
+        // Extract first image
+        const imgMatch = t.match(/!\[.*?\]\((.*?)\)|<img.*?src=["'](.*?)["']/);
+        let image = null;
+        if (imgMatch) {
+            image = imgMatch[1] || imgMatch[2];
+            // Handle relative paths if necessary (though usually they are absolute or relative to repo root)
+            // For now assuming they work or are handled by the renderer, but for a raw URL we might need to fix it.
+            // If it starts with ./, remove it. If it doesn't start with http, prepend raw github url.
+            if (image && !image.startsWith('http')) {
+                // Construct raw URL: https://raw.githubusercontent.com/infinition/infinition/main/ + path relative to root
+                // But f.path is the file path. The image path is relative to the file or root?
+                // Usually in this repo structure, images are likely relative.
+                // Let's try to just return the raw string first, or maybe use the existing logic in utils.js if available.
+                // Actually, let's look at how renderArticles handles it.
+                // renderArticles uses: thumb = `<img src="${item.image}" ...>`
+                // If it's a relative path like "assets/img.png", it needs the base URL.
+                // The base URL for raw content is `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/`
+                // Let's prepend that if needed.
+                if (image.startsWith('./')) image = image.substring(2);
+                if (!image.startsWith('/')) image = '/' + image; // Ensure leading slash
+                image = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main${image}`;
+            }
+        }
+
+        return { id: f.sha, type: 'article', file: f.path, title: title, date: date, icon: f.path.startsWith('kb') ? 'fas fa-book-medical' : 'fas fa-file-alt', image: image, content: t, download_url: f.download_url };
     }));
 }
 

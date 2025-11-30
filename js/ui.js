@@ -264,7 +264,7 @@ async function openArticle(article) {
             ${shareHtml}
             <div style="margin-bottom:2rem;"><span style="color:var(--neon-orange);font-family:var(--code-font);font-size:0.8rem;white-space:normal;overflow-wrap:break-word;word-wrap:break-word;">DIR: /${article.file}</span><h1 style="font-family:var(--cyber-font);font-size:2rem;margin-top:0.5rem;">${article.title}</h1><div style="display:flex;align-items:center;gap:10px;margin-top:10px;opacity:0.6;font-size:0.8rem;"><i class="fas fa-calendar"></i> ${article.date}<span>// FABIEN POLLY</span></div></div>
             ${interactiveHtml}
-            ${article.image ? `<img src="${article.image}" style="max-width:100%;border:1px solid #333;margin-bottom:2rem;">` : ''}
+
             <div class="article-body">${marked.parse(cleanContent)}</div>
             <div style="text-align:center;margin-top:3rem;">
                 <button class="btn-link" onclick="navigateTo('blog')">BACK TO LOGS</button>
@@ -316,7 +316,7 @@ async function openKBArticle(article) {
             <div style="margin-bottom:2rem;"><span style="color:var(--neon-purple);font-family:var(--code-font);font-size:0.8rem;white-space:normal;overflow-wrap:break-word;word-wrap:break-word;
 ">KB NODE: /${article.file}</span><h1 style="font-family:var(--cyber-font);font-size:2rem;margin-top:0.5rem;">${article.title}</h1></div>
             ${interactiveHtml}
-            ${article.image ? `<img src="${article.image}" style="max-width:100%;border:1px solid #333;margin-bottom:2rem;">` : ''}
+
             <div class="article-body">${marked.parse(cleanContent)}</div>
         </div>`;
 }
@@ -639,7 +639,16 @@ function renderKBTree(data) {
                 // User asked for "discrete arrow". Let's add a small icon.
                 const sortIcon = kbSortMode === 'date' ? '<i class="fas fa-clock" style="font-size:0.6rem; opacity:0.5; margin-left:5px;"></i>' : '';
 
-                itemDiv.innerHTML = `<i class="${file.icon}"></i> ${file.title} ${sortIcon}`;
+                // Flex layout for alignment
+                itemDiv.style.display = 'flex';
+                itemDiv.style.alignItems = 'center';
+
+                let mediaHtml = `<i class="${file.icon}" style="margin-right:8px; width:40px; text-align:center;"></i>`;
+                if (file.image) {
+                    mediaHtml = `<img src="${file.image}" style="width:40px; height:40px; object-fit:cover; margin-right:8px; border-radius:2px; flex-shrink:0;">`;
+                }
+
+                itemDiv.innerHTML = `${mediaHtml}<span>${file.title}</span> ${sortIcon}`;
                 itemDiv.onclick = () => openKBArticle(file);
                 container.appendChild(itemDiv);
             });
