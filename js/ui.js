@@ -211,6 +211,7 @@ function closeModal() {
 
 // --- ARTICLE READER WITH DETECTION ---
 async function openArticle(article) {
+    window.lastBlogScroll = window.scrollY;
     const reader = document.getElementById('article-reader');
     document.getElementById('blog-view').style.display = 'none';
     document.getElementById('kb-view').style.display = 'none';
@@ -249,15 +250,13 @@ async function openArticle(article) {
                         <button class="tool-btn" onclick="share('email')"><i class="fas fa-envelope"></i> Email</button>
                         <button class="tool-btn" onclick="share('sms')"><i class="fas fa-comment-dots"></i> SMS</button>
                         <button class="tool-btn" onclick="navigator.clipboard.writeText('${shareUrl}');alert('Link copied!')"><i class="fas fa-link"></i> Copy</button>
-                        <button class="tool-btn" onclick="navigateTo('blog')">✕ Close</button>
+                        <button class="tool-btn" onclick="returnToBlog()">✕ Close</button>
                     </div>`;
-    let interactiveHtml = '';
-    if (fUrl || qUrl) {
-        interactiveHtml = `<div style="display:flex; gap:15px; margin-bottom:30px;">`;
-        if (fUrl) interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('${fUrl}')"><i class="fas fa-layer-group"></i> Flashcards</button>`;
-        if (qUrl) interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('${qUrl}')"><i class="fas fa-graduation-cap"></i> Quiz</button>`;
-        interactiveHtml += `</div>`;
-    }
+    let interactiveHtml = `<div style="display:flex; gap:15px; margin-bottom:30px; flex-wrap:wrap;">`;
+    if (fUrl) interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('${fUrl}')"><i class="fas fa-layer-group"></i> Flashcards</button>`;
+    if (qUrl) interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('${qUrl}')"><i class="fas fa-graduation-cap"></i> Quiz</button>`;
+    interactiveHtml += `<button class="action-btn" onclick="openInKB('${article.file}')" style="border: 1px solid var(--neon-purple); color:var(--neon-purple); background:transparent;"><i class="fas fa-database"></i> SEE IN KB</button>`;
+    interactiveHtml += `</div>`;
 
     document.getElementById('article-view').innerHTML = `
         <div class="article-content">
@@ -267,11 +266,17 @@ async function openArticle(article) {
 
             <div class="article-body">${marked.parse(cleanContent)}</div>
             <div style="text-align:center;margin-top:3rem;">
-                <button class="btn-link" onclick="navigateTo('blog')">BACK TO LOGS</button>
-                <button class="btn-link" onclick="openInKB('${article.file}')" style="margin-left:10px; border-color:var(--neon-purple); color:var(--neon-purple);">SEE IN KB</button>
+                <button class="btn-link" onclick="returnToBlog()">BACK TO LOGS</button>
             </div>
         </div>`;
     window.scrollTo(0, 0);
+}
+
+function returnToBlog() {
+    navigateTo('blog', true);
+    if (window.lastBlogScroll) {
+        setTimeout(() => window.scrollTo(0, window.lastBlogScroll), 50);
+    }
 }
 
 async function openKBArticle(article) {

@@ -2180,6 +2180,8 @@ body.audio-playing .audio-toggle-btn {
 
 .article-body img {
     max-width: 100%;
+    max-height: 500px;
+    width: auto;
     height: auto;
     display: block;
     margin: 1rem auto;

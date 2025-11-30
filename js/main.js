@@ -19,7 +19,7 @@ function findAndOpenArticle(filename) {
     if (found) openArticle(found);
 }
 
-function navigateTo(viewId) {
+function navigateTo(viewId, keepScroll = false) {
     document.querySelectorAll('.view-section').forEach(el => { el.style.display = 'none'; el.classList.remove('active'); });
     if (viewId === 'portal') { document.getElementById('portal-view').style.display = 'flex'; document.querySelector('.back-btn').style.display = 'none'; }
     else {
@@ -37,7 +37,7 @@ function navigateTo(viewId) {
     if (viewId === 'kb') initKB();
     if (viewId === 'csslib') initCSSLib();
     // Removed direct music fetch, now handled by reveal button
-    window.scrollTo(0, 0);
+    if (!keepScroll) window.scrollTo(0, 0);
 }
 
 async function runScanSimulation(forceRefresh = false) {
