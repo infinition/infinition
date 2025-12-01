@@ -69,7 +69,13 @@ async function runScanSimulation(forceRefresh = false) {
         const arts = await fetchArtStation();
 
         mergedData = [...local, ...repos, ...arts];
-        mergedData.sort((a, b) => new Date(b.date) - new Date(a.date));
+        mergedData.sort((a, b) => {
+            const da = new Date(a.date);
+            const db = new Date(b.date);
+            const ta = isNaN(da.getTime()) ? 0 : da.getTime();
+            const tb = isNaN(db.getTime()) ? 0 : db.getTime();
+            return tb - ta;
+        });
 
         renderArticles(mergedData);
         out.innerHTML = `> READY. INDEXED: ${mergedData.length}.<br>> SEARCH INPUT ACTIVE: <input type="text" id="console-search" class="console-input" placeholder="_" autocomplete="off">`;

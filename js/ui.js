@@ -631,7 +631,13 @@ function renderKBTree(data) {
         if (node._files) {
             // SORTING LOGIC
             node._files.sort((a, b) => {
-                if (kbSortMode === 'date') return new Date(b.date) - new Date(a.date);
+                if (kbSortMode === 'date') {
+                    const da = new Date(a.date);
+                    const db = new Date(b.date);
+                    const ta = isNaN(da.getTime()) ? 0 : da.getTime();
+                    const tb = isNaN(db.getTime()) ? 0 : db.getTime();
+                    return tb - ta;
+                }
                 return a.title.localeCompare(b.title);
             });
 

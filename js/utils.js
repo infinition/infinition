@@ -39,7 +39,7 @@ function playDecipherSound() {
 // --- FETCH UTILS ---
 async function fetchCommitDate(path) {
     try {
-        const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/commits?path=${path}&page=1&per_page=1`);
+        const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/commits?path=${encodeURIComponent(path)}&page=1&per_page=1`);
         if (!r.ok) return null;
         const d = await r.json();
         if (d.length > 0) return new Date(d[0].commit.committer.date).toISOString().split('T')[0];
