@@ -11,6 +11,7 @@ function handleHashChange() {
     else if (hash === '#kb') navigateTo('kb');
     else if (hash === '#music') navigateTo('music');
     else if (hash === '#csslib') navigateTo('csslib');
+    else if (hash === '#acid-pages') navigateTo('acid-pages');
     else navigateTo('portal');
 }
 
@@ -36,6 +37,7 @@ function navigateTo(viewId, keepScroll = false) {
     if (viewId === 'blog') runScanSimulation();
     if (viewId === 'kb') initKB();
     if (viewId === 'csslib') initCSSLib();
+    if (viewId === 'acid-pages') initAcidPages();
     // Removed direct music fetch, now handled by reveal button
     if (!keepScroll) window.scrollTo(0, 0);
 }

@@ -1,0 +1,244 @@
+/* --- ACID PAGES THEME --- */
+#acid-pages-view {
+    font-family: 'Rajdhani', sans-serif;
+    color: #e4e4e7; /* zinc-200 */
+    -webkit-font-smoothing: antialiased;
+    padding-top: var(--sysbar-height);
+    min-height: 100vh;
+}
+
+#acid-pages-view .tech-bg {
+    background-image: linear-gradient(rgba(39, 39, 42, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(39, 39, 42, 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-attachment: fixed;
+}
+
+#acid-pages-view .glass-panel {
+    background: rgba(24, 24, 27, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(63, 63, 70, 0.5);
+}
+
+#acid-pages-view .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#acid-pages-view .card-hover:hover {
+    border-color: #84cc16; /* lime-500 */
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px -10px rgba(132, 204, 22, 0.15);
+}
+
+#acid-pages-view .card-hover:hover .card-title {
+    color: #a3e635; /* lime-400 */
+}
+
+#acid-pages-view .card-hover:hover .progress-line {
+    transform: scaleX(1);
+}
+
+/* Custom Scrollbar for this view */
+#acid-pages-view ::-webkit-scrollbar {
+    width: 6px;
+}
+
+#acid-pages-view ::-webkit-scrollbar-track {
+    background: #18181b;
+}
+
+#acid-pages-view ::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 3px;
+}
+
+#acid-pages-view ::-webkit-scrollbar-thumb:hover {
+    background: #84cc16;
+}
+
+/* Loader */
+#acid-pages-view .loader {
+    border: 3px solid #27272a;
+    border-top: 3px solid #84cc16;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#acid-pages-view .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Layout Utils */
+#acid-pages-view .max-w-6xl { max-width: 72rem; }
+#acid-pages-view .mx-auto { margin-left: auto; margin-right: auto; }
+#acid-pages-view .p-4 { padding: 1rem; }
+#acid-pages-view .md\:p-8 { padding: 2rem; }
+#acid-pages-view .mb-12 { margin-bottom: 3rem; }
+#acid-pages-view .text-center { text-align: center; }
+#acid-pages-view .pt-8 { padding-top: 2rem; }
+#acid-pages-view .inline-flex { display: inline-flex; }
+#acid-pages-view .items-center { align-items: center; }
+#acid-pages-view .justify-center { justify-content: center; }
+#acid-pages-view .gap-3 { gap: 0.75rem; }
+#acid-pages-view .mb-4 { margin-bottom: 1rem; }
+#acid-pages-view .rounded-full { border-radius: 9999px; }
+#acid-pages-view .border { border-width: 1px; }
+#acid-pages-view .border-lime-900\/30 { border-color: rgba(63, 98, 18, 0.3); }
+#acid-pages-view .shadow-\[0_0_30px_rgba\(132\,204\,22\,0\.1\)\] { box-shadow: 0 0 30px rgba(132, 204, 22, 0.1); }
+#acid-pages-view .w-8 { width: 2rem; }
+#acid-pages-view .h-8 { height: 2rem; }
+#acid-pages-view .text-lime-500 { color: #84cc16; }
+#acid-pages-view .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+#acid-pages-view .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+#acid-pages-view .font-bold { font-weight: 700; }
+#acid-pages-view .tracking-widest { letter-spacing: 0.1em; }
+#acid-pages-view .text-white { color: #fff; }
+#acid-pages-view .text-zinc-500 { color: #71717a; }
+#acid-pages-view .tracking-wider { letter-spacing: 0.05em; }
+#acid-pages-view .uppercase { text-transform: uppercase; }
+#acid-pages-view .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+#acid-pages-view .font-semibold { font-weight: 600; }
+#acid-pages-view .max-w-xl { max-width: 36rem; }
+#acid-pages-view .mb-16 { margin-bottom: 4rem; }
+#acid-pages-view .relative { position: relative; }
+#acid-pages-view .z-10 { z-index: 10; }
+#acid-pages-view .group:hover .group-hover\:opacity-60 { opacity: 0.6; }
+#acid-pages-view .transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+#acid-pages-view .duration-500 { transition-duration: 500ms; }
+#acid-pages-view .absolute { position: absolute; }
+#acid-pages-view .-inset-0\.5 { top: -0.125rem; right: -0.125rem; bottom: -0.125rem; left: -0.125rem; }
+#acid-pages-view .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+#acid-pages-view .from-lime-600 { --tw-gradient-from: #65a30d; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+#acid-pages-view .to-emerald-600 { --tw-gradient-to: #059669; }
+#acid-pages-view .rounded-lg { border-radius: 0.5rem; }
+#acid-pages-view .blur { filter: blur(8px); }
+#acid-pages-view .opacity-20 { opacity: 0.2; }
+#acid-pages-view .flex { display: flex; }
+#acid-pages-view .p-1 { padding: 0.25rem; }
+#acid-pages-view .pl-4 { padding-left: 1rem; }
+#acid-pages-view .pr-3 { padding-right: 0.75rem; }
+#acid-pages-view .w-5 { width: 1.25rem; }
+#acid-pages-view .h-5 { height: 1.25rem; }
+#acid-pages-view .w-full { width: 100%; }
+#acid-pages-view .bg-transparent { background-color: transparent; }
+#acid-pages-view .border-none { border-style: none; }
+#acid-pages-view .outline-none { outline: 2px solid transparent; outline-offset: 2px; }
+#acid-pages-view .placeholder-zinc-600::placeholder { color: #52525b; }
+#acid-pages-view .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+#acid-pages-view .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+#acid-pages-view .bg-lime-600 { background-color: #65a30d; }
+#acid-pages-view .hover\:bg-lime-500:hover { background-color: #84cc16; }
+#acid-pages-view .text-black { color: #000; }
+#acid-pages-view .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+#acid-pages-view .py-2\.5 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+#acid-pages-view .rounded { border-radius: 0.25rem; }
+#acid-pages-view .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+#acid-pages-view .shadow-\[0_0_15px_rgba\(132\,204\,22\,0\.3\)\] { box-shadow: 0 0 15px rgba(132, 204, 22, 0.3); }
+#acid-pages-view .hover\:shadow-\[0_0_20px_rgba\(132\,204\,22\,0\.5\)\]:hover { box-shadow: 0 0 20px rgba(132, 204, 22, 0.5); }
+#acid-pages-view .gap-2 { gap: 0.5rem; }
+#acid-pages-view .w-4 { width: 1rem; }
+#acid-pages-view .h-4 { height: 1rem; }
+#acid-pages-view .hidden { display: none; }
+#acid-pages-view .max-w-md { max-width: 28rem; }
+#acid-pages-view .mb-8 { margin-bottom: 2rem; }
+#acid-pages-view .p-6 { padding: 1.5rem; }
+#acid-pages-view .border-red-900\/50 { border-color: rgba(127, 29, 29, 0.5); }
+#acid-pages-view .rounded-xl { border-radius: 0.75rem; }
+#acid-pages-view .flex-col { flex-direction: column; }
+#acid-pages-view .text-red-400 { color: #f87171; }
+#acid-pages-view .w-10 { width: 2.5rem; }
+#acid-pages-view .h-10 { height: 2.5rem; }
+#acid-pages-view .mb-3 { margin-bottom: 0.75rem; }
+#acid-pages-view .text-red-500 { color: #ef4444; }
+#acid-pages-view .mb-6 { margin-bottom: 1.5rem; }
+#acid-pages-view .justify-between { justify-content: space-between; }
+#acid-pages-view .items-end { align-items: flex-end; }
+#acid-pages-view .border-b { border-bottom-width: 1px; }
+#acid-pages-view .border-zinc-800 { border-color: #27272a; }
+#acid-pages-view .pb-2 { padding-bottom: 0.5rem; }
+#acid-pages-view .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+#acid-pages-view .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+#acid-pages-view .text-zinc-400 { color: #a1a1aa; }
+#acid-pages-view .text-lime-400 { color: #a3e635; }
+#acid-pages-view .text-xs { font-size: 0.75rem; line-height: 1rem; }
+#acid-pages-view .bg-zinc-900 { background-color: #18181b; }
+#acid-pages-view .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+#acid-pages-view .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+#acid-pages-view .grid { display: grid; }
+#acid-pages-view .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+#acid-pages-view .md\:grid-cols-2 { @media (min-width: 768px) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+#acid-pages-view .lg\:grid-cols-3 { @media (min-width: 1024px) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+#acid-pages-view .gap-6 { gap: 1.5rem; }
+#acid-pages-view .pb-20 { padding-bottom: 5rem; }
+#acid-pages-view .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+#acid-pages-view .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+#acid-pages-view .tracking-\[0\.2em\] { letter-spacing: 0.2em; }
+#acid-pages-view .border-dashed { border-style: dashed; }
+#acid-pages-view .rounded-2xl { border-radius: 1rem; }
+#acid-pages-view .bg-zinc-900\/30 { background-color: rgba(24, 24, 27, 0.3); }
+#acid-pages-view .w-16 { width: 4rem; }
+#acid-pages-view .h-16 { height: 4rem; }
+#acid-pages-view .text-zinc-700 { color: #3f3f46; }
+#acid-pages-view .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+#acid-pages-view .mt-2 { margin-top: 0.5rem; }
+#acid-pages-view .text-zinc-600 { color: #52525b; }
+
+/* Grid responsiveness workaround since we can't use @media inside selectors easily without nesting support or separate blocks */
+@media (min-width: 768px) {
+    #acid-pages-view .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #acid-pages-view .md\:p-8 { padding: 2rem; }
+    #acid-pages-view .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+}
+@media (min-width: 1024px) {
+    #acid-pages-view .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Card internal styles */
+#acid-pages-view .h-1 { height: 0.25rem; }
+#acid-pages-view .to-emerald-500 { --tw-gradient-to: #10b981; }
+#acid-pages-view .transform { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); }
+#acid-pages-view .scale-x-0 { --tw-scale-x: 0; transform: scaleX(0); }
+#acid-pages-view .duration-300 { transition-duration: 300ms; }
+#acid-pages-view .origin-left { transform-origin: left; }
+#acid-pages-view .flex-grow { flex-grow: 1; }
+#acid-pages-view .bg-zinc-800\/80 { background-color: rgba(39, 39, 42, 0.8); }
+#acid-pages-view .p-2 { padding: 0.5rem; }
+#acid-pages-view .border-zinc-700 { border-color: #3f3f46; }
+#acid-pages-view .text-\[10px\] { font-size: 10px; }
+#acid-pages-view .bg-zinc-900\/50 { background-color: rgba(24, 24, 27, 0.5); }
+#acid-pages-view .mb-2 { margin-bottom: 0.5rem; }
+#acid-pages-view .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#acid-pages-view .line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+#acid-pages-view .leading-relaxed { line-height: 1.625; }
+#acid-pages-view .font-medium { font-weight: 500; }
+#acid-pages-view .italic { font-style: italic; }
+#acid-pages-view .opacity-50 { opacity: 0.5; }
+#acid-pages-view .pt-4 { padding-top: 1rem; }
+#acid-pages-view .border-t { border-top-width: 1px; }
+#acid-pages-view .border-zinc-800\/50 { border-color: rgba(39, 39, 42, 0.5); }
+#acid-pages-view .w-1\.5 { width: 0.375rem; }
+#acid-pages-view .h-1\.5 { height: 0.375rem; }
+#acid-pages-view .bg-emerald-500 { background-color: #10b981; }
+#acid-pages-view .mt-auto { margin-top: auto; }
+#acid-pages-view .bg-lime-700\/20 { background-color: rgba(77, 124, 15, 0.2); }
+#acid-pages-view .hover\:bg-lime-600:hover { background-color: #65a30d; }
+#acid-pages-view .hover\:text-black:hover { color: #000; }
+#acid-pages-view .border-lime-600\/50 { border-color: rgba(101, 163, 13, 0.5); }
+#acid-pages-view .hover\:border-lime-500:hover { border-color: #84cc16; }
+#acid-pages-view .bg-zinc-800 { background-color: #27272a; }
+#acid-pages-view .hover\:bg-zinc-700:hover { background-color: #3f3f46; }
+#acid-pages-view .hover\:text-white:hover { color: #fff; }
+#acid-pages-view .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }

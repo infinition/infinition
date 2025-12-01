@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/csslib.css">
     <link rel="stylesheet" href="css/terminal.css">
+    <link rel="stylesheet" href="css/acid_pages.css">
 
 
 </head>
@@ -145,6 +146,8 @@
                         class="fas fa-music"></i></div>
                 <div class="music-trigger" onclick="terminal.toggle()" title="Terminal Access"><i
                         class="fas fa-terminal"></i></div>
+                <div class="music-trigger" onclick="navigateTo('acid-pages')" title="Acid Pages"><i
+                        class="fas fa-globe"></i></div>
             </div>
         </div>
     </section>
@@ -498,6 +501,87 @@
         <div id="csslib-toast">Notification</div>
     </section>
 
+    <section id="acid-pages-view" class="view-section">
+        <div class="max-w-6xl mx-auto p-4 md:p-8">
+
+            <!-- Header -->
+            <header class="mb-12 text-center pt-8">
+                <div
+                    class="inline-flex items-center justify-center gap-3 mb-4 p-4 glass-panel rounded-full border border-lime-900/30 shadow-[0_0_30px_rgba(132,204,22,0.1)]">
+                    <i data-lucide="globe" class="w-8 h-8 text-lime-500"></i>
+                    <h1 class="text-3xl md:text-4xl font-bold tracking-widest text-white">
+                        ACID <span class="text-lime-500">//</span> PAGES
+                    </h1>
+                </div>
+                <p class="text-zinc-500 tracking-wider uppercase text-sm font-semibold">
+                    Scan Github Profiles for Deployed Sites
+                </p>
+            </header>
+
+            <!-- Search Bar -->
+            <div class="max-w-xl mx-auto mb-16 relative z-10">
+                <form id="acid-search-form" class="relative group">
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-lime-600 to-emerald-600 rounded-lg blur opacity-20 group-hover:opacity-60 transition duration-500">
+                    </div>
+
+                    <div class="relative flex items-center glass-panel rounded-lg p-1">
+                        <div class="pl-4 pr-3 text-zinc-500">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </div>
+                        <input type="text" id="acid-search-input" value="infinition" placeholder="GITHUB USERNAME..."
+                            class="w-full bg-transparent border-none outline-none text-white placeholder-zinc-600 font-mono py-3"
+                            autocomplete="off" />
+                        <button type="submit" id="acid-search-btn"
+                            class="bg-lime-600 hover:bg-lime-500 text-black px-6 py-2.5 rounded font-bold transition-all shadow-[0_0_15px_rgba(132,204,22,0.3)] hover:shadow-[0_0_20px_rgba(132,204,22,0.5)] flex items-center gap-2">
+                            <i id="acid-btn-icon" data-lucide="search" class="w-4 h-4"></i>
+                            <span>SCAN</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Error Container -->
+            <div id="acid-error-container"
+                class="hidden max-w-md mx-auto mb-8 p-6 glass-panel border-red-900/50 rounded-xl flex flex-col items-center text-center text-red-400 animate-fade-in">
+                <i data-lucide="alert-circle" class="w-10 h-10 mb-3 text-red-500"></i>
+                <p id="acid-error-message" class="font-mono text-sm uppercase tracking-wide">Error message here</p>
+            </div>
+
+            <!-- Stats -->
+            <div id="acid-stats-container"
+                class="hidden mb-6 flex justify-between items-end border-b border-zinc-800 pb-2 px-2 animate-fade-in">
+                <h2 class="text-xl font-bold text-zinc-400">
+                    TARGET: <span id="acid-target-user" class="text-lime-400">@USERNAME</span>
+                </h2>
+                <span class="text-xs font-mono text-zinc-500 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded">
+                    <span id="acid-repo-count" class="text-white font-bold">0</span> SITES DETECTED
+                </span>
+            </div>
+
+            <!-- Content Grid -->
+            <div id="acid-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
+                <!-- Cards will be injected here -->
+            </div>
+
+            <!-- Loading State -->
+            <div id="acid-loader" class="hidden py-20 flex flex-col items-center justify-center">
+                <div class="loader mb-6"></div>
+                <p class="text-lime-500 font-mono text-sm animate-pulse tracking-[0.2em]">ACCESSING MAINFRAME...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div id="acid-empty-state"
+                class="hidden py-20 text-center border border-dashed border-zinc-800 rounded-2xl bg-zinc-900/30">
+                <i data-lucide="ghost" class="w-16 h-16 text-zinc-700 mx-auto mb-4"></i>
+                <p class="text-zinc-500 text-lg uppercase font-bold">No Pages Detected</p>
+                <p class="text-zinc-600 text-xs font-mono mt-2">Target has no public repositories with Pages enabled.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- SCRIPTS EXTERNES CONSERVÉS -->
     <script src="js/config.js"></script>
     <script src="js/utils.js"></script>
@@ -507,6 +591,9 @@
     <script src="js/portal.js"></script>
     <script src="js/csslib.js"></script>
     <script src="js/terminal.js"></script>
+    <script src="js/acid_pages.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
 
         fetch("https://api.ipify.org?format=json")
