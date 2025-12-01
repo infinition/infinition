@@ -540,7 +540,7 @@ function renderArticles(items) {
             ${thumb}
             <div class="article-info">
                 <div class="article-header"><i class="${item.icon} file-icon" style="color:${color}"></i> <span class="article-title">${item.title}</span></div>
-                <span class="article-date">${item.date}</span>
+                <span class="article-date">${item.date.split('T')[0]}</span>
                 <div class="article-desc">${item.content.substring(0, 100)}...</div>
             </div>
         `;

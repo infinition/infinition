@@ -104,7 +104,7 @@ async function fetchGitHubRepos() {
         return Promise.all(d.map(async r => {
             let img = await fetchReadmeImage(r.owner.login, r.name, r.default_branch);
             if (!img) img = r.owner.avatar_url;
-            return { id: r.id, type: 'repo', title: r.name, date: r.created_at.split('T')[0], icon: 'fab fa-github', image: img, content: r.description || "", url: r.html_url };
+            return { id: r.id, type: 'repo', title: r.name, date: r.created_at, icon: 'fab fa-github', image: img, content: r.description || "", url: r.html_url };
         }));
     } catch (e) { return []; }
 }
@@ -115,7 +115,7 @@ async function fetchArtStation() {
         const r = await fetch(url);
         if (!r.ok) return [];
         const d = await r.json();
-        return d.data.map(i => ({ id: `art-${i.id}`, type: 'artwork', file: `art_${i.hash_id}.png`, title: i.title, date: i.published_at.split('T')[0], icon: 'fab fa-artstation', image: i.cover.micro_square_image_url, content: 'ArtStation', url: i.permalink }));
+        return d.data.map(i => ({ id: `art-${i.id}`, type: 'artwork', file: `art_${i.hash_id}.png`, title: i.title, date: i.published_at, icon: 'fab fa-artstation', image: i.cover.micro_square_image_url, content: 'ArtStation', url: i.permalink }));
     } catch (e) { return []; }
 }
 

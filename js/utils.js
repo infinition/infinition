@@ -42,7 +42,7 @@ async function fetchCommitDate(path) {
         const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/commits?path=${encodeURIComponent(path)}&page=1&per_page=1`);
         if (!r.ok) return null;
         const d = await r.json();
-        if (d.length > 0) return new Date(d[0].commit.committer.date).toISOString().split('T')[0];
+        if (d.length > 0) return new Date(d[0].commit.committer.date).toISOString();
     } catch (e) { }
     return null;
 }
