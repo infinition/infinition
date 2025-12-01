@@ -28,6 +28,7 @@ Par ailleurs, la masse n’est pas une destination où le courant « s’arrête
 Le terme « masse » regroupe trois fonctions qui se ressemblent mais n’ont pas du tout la même mission.
 
 ### 1. La Mise à la Terre — *Le Protecteur*
+
 - **Mission :** la sécurité électrique.  
 - **Connexion :** reliée physiquement à la terre via la troisième broche des prises.  
 - **Fonctionnement :** en cas de défaut (fil dénudé touchant un châssis métallique), le courant dangereux prend un chemin direct vers la terre. Le disjoncteur saute, évitant le passage du courant dans un corps humain.  
