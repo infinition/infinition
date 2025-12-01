@@ -30,7 +30,11 @@ function navigateTo(viewId, keepScroll = false) {
     }
 
     // UPDATE URL HISTORY for better navigation
-    if (viewId !== 'portal' && window.location.hash !== '#' + viewId && !window.location.hash.startsWith('#article:')) {
+    // UPDATE URL HISTORY for better navigation
+    if (viewId === 'portal') {
+        // Remove hash when going back to root
+        history.pushState(null, null, window.location.pathname);
+    } else if (window.location.hash !== '#' + viewId && !window.location.hash.startsWith('#article:')) {
         history.pushState(null, null, '#' + viewId);
     }
 

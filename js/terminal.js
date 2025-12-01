@@ -33,6 +33,8 @@ const terminal = {
                 terminal.print("  css         - Navigate to CSS Library");
                 terminal.print("  log         - Navigate to Data Logs");
                 terminal.print("  root        - Navigate to Root/Portal");
+                terminal.print("  acidpages   - Navigate to Acid Pages");
+                terminal.print("  scan [user] - Scan GitHub Pages for user");
                 terminal.print("  cd [dir]    - Change directory (nav simulation)");
                 terminal.print("  ls / ll     - List directories");
                 terminal.print("  pwd         - Print working directory");
@@ -140,6 +142,35 @@ const terminal = {
                 }, 500);
             }
         },
+        acidpages: {
+            desc: "Go to Acid Pages",
+            action: () => {
+                terminal.print("Accessing Acid Pages Mainframe...", "term-warn");
+                setTimeout(() => {
+                    navigateTo('acid-pages');
+                    terminal.toggle();
+                }, 500);
+            }
+        },
+        scan: {
+            desc: "Scan GitHub Pages",
+            action: (args) => {
+                const user = args[0] || "infinition";
+                terminal.print(`Initiating scan protocol for target: ${user}...`, "term-warn");
+                navigateTo('acid-pages');
+                terminal.toggle();
+
+                // Wait for view to load then trigger scan
+                setTimeout(() => {
+                    const input = document.getElementById('acid-search-input');
+                    const btn = document.getElementById('acid-search-btn');
+                    if (input && btn) {
+                        input.value = user;
+                        btn.click();
+                    }
+                }, 800);
+            }
+        },
         cd: {
             desc: "Change directory",
             action: (args) => {
@@ -173,6 +204,8 @@ const terminal = {
                     terminal.commands.kb.action();
                 } else if (target === "portfolio" || target === "profile" || target === "profil") {
                     terminal.commands.portfolio.action();
+                } else if (target === "acidpages" || target === "acid") {
+                    terminal.commands.acidpages.action();
                 } else {
                     terminal.print(`cd: ${target}: No such directory`, "term-error");
                 }
@@ -219,11 +252,13 @@ const terminal = {
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 csslib", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 logs", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 kb", "term-info");
+                    terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 kb", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 portfolio", "term-info");
+                    terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 acidpages", "term-info");
                     terminal.print("drwx------  2 root    root    4096 Nov 30 00:00 secrets", "term-info");
                     terminal.print("-rw-r--r--  1 visitor visitor 1024 Nov 30 00:00 README.md", "term-info");
                 } else {
-                    terminal.print("music  csslib  logs  kb  portfolio  secrets  README.md", "term-info");
+                    terminal.print("music  csslib  logs  kb  portfolio  acidpages  secrets  README.md", "term-info");
                 }
             }
         },
