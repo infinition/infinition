@@ -19,7 +19,7 @@
   
 ![GitHub Profile](https://img.shields.io/badge/Username-infinition-blue?style=for-the-badge&logo=github)
 [![Reddit](https://img.shields.io/badge/Reddit-Bjorn__CyberViking-orange?style=for-the-badge&logo=reddit)](https://www.reddit.com/r/Bjorn_CyberViking)
-[![Discord](https://img.shields.io/discord/1259976765829414972?label=Discord&logo=discord&style=for-the-badge&color=7289DA)](https://discord.com/invite/B3ZH9taVfT)
+
 <p align="center">
   <strong style="color:black">Join the Discord</strong>
   <br /><br />
