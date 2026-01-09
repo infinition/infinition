@@ -6,17 +6,7 @@
 
 
 La plupart des personnes sont tellement focalisées sur le fait d’**être comprises** qu’elles en oublient d’**essayer de comprendre**. C’est comme lorsque nous nous présentons à de nouvelles personnes : nous sommes souvent tellement concentrés sur le fait de dire notre propre prénom que nous n’écoutons pas vraiment celui de l’autre. Un peu plus tard, nous demandons : « C’était quoi déjà ton prénom ? » — si nous osons le faire.
-```quizz
-[
-  {
-    "question": "Test Question",
-    "options": [
-      { "text": "Option A", "correct": true },
-      { "text": "Option B", "correct": false }
-    ]
-  }
-]
-```
+
 
 ```flashcard
 [
@@ -64,7 +54,7 @@ Votre superpouvoir d’écoute dépend de votre capacité à être **pleinement 
 
 Ne faites pas plusieurs choses à la fois quand vous écoutez. Videz votre esprit et captez vraiment ce que l’autre est en train de dire. Et n’interrompez pas.
 
-C’est déjà problématique d’interrompre une person lorsqu’elle parle. Mais c’est encore pire de l’interrompre lorsqu’elle **réfléchit**. Il est plus difficile de reprendre un processus de réflexion que de répéter quelque chose qui a déjà été dit — ou partiellement dit.
+C’est déjà problématique d’interrompre une personne lorsqu’elle parle. Mais c’est encore pire de l’interrompre lorsqu’elle **réfléchit**. Il est plus difficile de reprendre un processus de réflexion que de répéter quelque chose qui a déjà été dit — ou partiellement dit.
 
 Soyez curieux et intéressé. Être **intéressé** est l’opposé d’être **intéressant**.  
 - Quand vous êtes intéressé, vous **donnez** de l’attention.  
@@ -144,3 +134,4 @@ Discutez avec l’autre personne de ce que vous avez entendu, mais avec **vos pr
 En combinant ces trois points — refléter les émotions, poser de bonnes questions, reformuler — et en étant **100 % mentalement présent**, vous pouvez vraiment écouter et en venir à **comprendre profondément** les autres.
 
 Entraînez votre superpouvoir d’écoute chaque jour.
+
