@@ -64,7 +64,7 @@ Votre superpouvoir d’écoute dépend de votre capacité à être **pleinement 
 
 Ne faites pas plusieurs choses à la fois quand vous écoutez. Videz votre esprit et captez vraiment ce que l’autre est en train de dire. Et n’interrompez pas.
 
-C’est déjà problématique d’interrompre une person lorsqu’elle parle. Mais c’est encore pire de l’interrompre lorsqu’elle **réfléchit**. Il est plus difficile de reprendre un processus de réflexion que de répéter quelque chose qui a déjà été dit — ou partiellement dit.
+C’est déjà problématique d’interrompre une personne lorsqu’elle parle. Mais c’est encore pire de l’interrompre lorsqu’elle **réfléchit**. Il est plus difficile de reprendre un processus de réflexion que de répéter quelque chose qui a déjà été dit — ou partiellement dit.
 
 Soyez curieux et intéressé. Être **intéressé** est l’opposé d’être **intéressant**.  
 - Quand vous êtes intéressé, vous **donnez** de l’attention.  

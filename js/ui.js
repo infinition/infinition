@@ -35,10 +35,15 @@ function shuffleArray(array) {
     return array;
 }
 
+window.kbInteractiveData = {};
+
 async function loadFlashcards(source, identifier = null) {
     try {
         let data;
-        if (typeof source === 'string') {
+        if (source === 'inline' && identifier && window.kbInteractiveData[identifier]) {
+            data = window.kbInteractiveData[identifier].flashcards;
+            currentUrl = identifier;
+        } else if (typeof source === 'string') {
             const res = await fetch(source);
             if (!res.ok) throw new Error();
             data = await res.json();
@@ -109,7 +114,10 @@ function nextFC(isCorrect) {
 async function loadQuiz(source, identifier = null) {
     try {
         let data;
-        if (typeof source === 'string') {
+        if (source === 'inline' && identifier && window.kbInteractiveData[identifier]) {
+            data = window.kbInteractiveData[identifier].quiz;
+            currentUrl = identifier;
+        } else if (typeof source === 'string') {
             const res = await fetch(source);
             if (!res.ok) throw new Error();
             data = await res.json();
@@ -232,7 +240,7 @@ function closeModal() {
 
 // --- EXTRACTION HELPERS ---
 function extractInteractiveData(content, type) {
-    const regex = new RegExp('```' + type + '\\n([\\s\\S]*?)\\n```', 'g');
+    const regex = new RegExp('```' + type + '\\s*[\\r\\n]+([\\s\\S]*?)[\\r\\n]+\\s*```', 'g');
     let matches;
     let results = [];
     while ((matches = regex.exec(content)) !== null) {
@@ -254,8 +262,12 @@ function extractInteractiveData(content, type) {
 
 function removeInteractiveBlocks(content) {
     return content
-        .replace(/```flashcard\n[\s\S]*?\n```/g, '')
-        .replace(/```quizz\n[\s\S]*?\n```/g, '');
+        .replace(/```flashcard\s*[\r\n]+[\s\S]*?[\r\n]+\s*```/g, '')
+        .replace(/```quizz\s*[\r\n]+[\s\S]*?[\r\n]+\s*```/g, '');
+}
+
+function safeJsonForHtml(data) {
+    return encodeURIComponent(JSON.stringify(data));
 }
 
 // --- ARTICLE READER WITH DETECTION ---
@@ -309,16 +321,18 @@ async function openArticle(article) {
 
     let interactiveHtml = `<div style="display:flex; gap:15px; margin-bottom:30px; flex-wrap:wrap;">`;
 
+    const safeFile = article.file.replace(/'/g, "\\'");
+
     // Flashcards button
     if (inlineFlashcards) {
-        interactiveHtml += `<button class="action-btn btn-flash" onclick='loadFlashcards(${JSON.stringify(inlineFlashcards)}, "${article.file}")'><i class="fas fa-layer-group"></i> Flashcards (Inline)</button>`;
+        interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('inline', '${safeFile}')"><i class="fas fa-layer-group"></i> Flashcards (Inline)</button>`;
     } else if (fUrl) {
         interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('${fUrl}')"><i class="fas fa-layer-group"></i> Flashcards</button>`;
     }
 
     // Quiz button
     if (inlineQuiz) {
-        interactiveHtml += `<button class="action-btn btn-quiz" onclick='loadQuiz(${JSON.stringify(inlineQuiz)}, "${article.file}")'><i class="fas fa-graduation-cap"></i> Quiz (Inline)</button>`;
+        interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('inline', '${safeFile}')"><i class="fas fa-graduation-cap"></i> Quiz (Inline)</button>`;
     } else if (qUrl) {
         interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('${qUrl}')"><i class="fas fa-graduation-cap"></i> Quiz</button>`;
     }
@@ -354,6 +368,11 @@ async function openKBArticle(article) {
     const inlineFlashcards = extractInteractiveData(article.content, 'flashcard');
     const inlineQuiz = extractInteractiveData(article.content, 'quizz');
 
+    window.kbInteractiveData[article.file] = {
+        flashcards: inlineFlashcards,
+        quiz: inlineQuiz
+    };
+
     const cleanContent = removeInteractiveBlocks(article.content).replace(/^# .*/m, '');
 
     // Interactive modules detection
@@ -374,14 +393,16 @@ async function openKBArticle(article) {
     if (fUrl || qUrl || inlineFlashcards || inlineQuiz) {
         interactiveHtml = `<div style="display:flex; gap:15px; margin-bottom:30px; flex-wrap:wrap;">`;
 
+        const safeFile = article.file.replace(/'/g, "\\'");
+
         if (inlineFlashcards) {
-            interactiveHtml += `<button class="action-btn btn-flash" onclick='loadFlashcards(${JSON.stringify(inlineFlashcards)}, "${article.file}")'><i class="fas fa-layer-group"></i> Flashcards (Inline)</button>`;
+            interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('inline', '${safeFile}')"><i class="fas fa-layer-group"></i> Flashcards (Inline)</button>`;
         } else if (fUrl) {
             interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('${fUrl}')"><i class="fas fa-layer-group"></i> Flashcards</button>`;
         }
 
         if (inlineQuiz) {
-            interactiveHtml += `<button class="action-btn btn-quiz" onclick='loadQuiz(${JSON.stringify(inlineQuiz)}, "${article.file}")'><i class="fas fa-graduation-cap"></i> Quiz (Inline)</button>`;
+            interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('inline', '${safeFile}')"><i class="fas fa-graduation-cap"></i> Quiz (Inline)</button>`;
         } else if (qUrl) {
             interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('${qUrl}')"><i class="fas fa-graduation-cap"></i> Quiz</button>`;
         }
