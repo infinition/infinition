@@ -35,15 +35,23 @@ function shuffleArray(array) {
     return array;
 }
 
-async function loadFlashcards(url) {
+async function loadFlashcards(source, identifier = null) {
     try {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error();
-        currentFlashcards = shuffleArray(await res.json());
+        let data;
+        if (typeof source === 'string') {
+            const res = await fetch(source);
+            if (!res.ok) throw new Error();
+            data = await res.json();
+            currentUrl = source;
+        } else {
+            data = source;
+            currentUrl = identifier || 'inline_flashcards';
+        }
+
+        currentFlashcards = shuffleArray(data);
         cardIndex = 0;
         currentScore = 0;
         sessionType = 'flashcard';
-        currentUrl = url;
 
         const modal = document.getElementById('interactive-modal');
         modal.style.display = 'flex';
@@ -51,7 +59,7 @@ async function loadFlashcards(url) {
         void modal.offsetWidth;
         modal.classList.add('active');
         renderFC();
-    } catch (e) { alert("Could not load Flashcards. Ensure 'filename_flashcard.json' exists."); }
+    } catch (e) { alert("Could not load Flashcards."); }
 }
 
 function renderFC() {
@@ -98,15 +106,28 @@ function nextFC(isCorrect) {
     }
 }
 
-async function loadQuiz(url) {
+async function loadQuiz(source, identifier = null) {
     try {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error();
-        currentQuizData = shuffleArray(await res.json());
+        let data;
+        if (typeof source === 'string') {
+            const res = await fetch(source);
+            if (!res.ok) throw new Error();
+            data = await res.json();
+            currentUrl = source;
+        } else {
+            data = source;
+            currentUrl = identifier || 'inline_quiz';
+        }
+
+        // Handle object format with "items"
+        if (data && !Array.isArray(data) && data.items) {
+            data = data.items;
+        }
+
+        currentQuizData = shuffleArray(data);
         quizIndex = 0;
         currentScore = 0;
         sessionType = 'quiz';
-        currentUrl = url;
 
         const modal = document.getElementById('interactive-modal');
         modal.style.display = 'flex';
@@ -114,7 +135,7 @@ async function loadQuiz(url) {
         void modal.offsetWidth;
         modal.classList.add('active');
         renderQuiz();
-    } catch (e) { alert("Could not load Quiz. Ensure 'filename_quizz.json' exists."); }
+    } catch (e) { alert("Could not load Quiz."); }
 }
 
 function renderQuiz() {
@@ -209,6 +230,34 @@ function closeModal() {
     }, 300);
 }
 
+// --- EXTRACTION HELPERS ---
+function extractInteractiveData(content, type) {
+    const regex = new RegExp('```' + type + '\\n([\\s\\S]*?)\\n```', 'g');
+    let matches;
+    let results = [];
+    while ((matches = regex.exec(content)) !== null) {
+        try {
+            const data = JSON.parse(matches[1]);
+            if (Array.isArray(data)) {
+                results = results.concat(data);
+            } else if (data.items && Array.isArray(data.items)) {
+                results = results.concat(data.items);
+            } else if (typeof data === 'object') {
+                results.push(data);
+            }
+        } catch (e) {
+            console.error(`Error parsing inline ${type}:`, e);
+        }
+    }
+    return results.length > 0 ? results : null;
+}
+
+function removeInteractiveBlocks(content) {
+    return content
+        .replace(/```flashcard\n[\s\S]*?\n```/g, '')
+        .replace(/```quizz\n[\s\S]*?\n```/g, '');
+}
+
 // --- ARTICLE READER WITH DETECTION ---
 async function openArticle(article) {
     window.lastBlogScroll = window.scrollY;
@@ -219,7 +268,12 @@ async function openArticle(article) {
 
     const shortName = article.file.split('/').pop();
     window.history.pushState(null, null, `#article:${shortName}`);
-    const cleanContent = article.content.replace(/^# .*/m, '');
+
+    // Inline detection
+    const inlineFlashcards = extractInteractiveData(article.content, 'flashcard');
+    const inlineQuiz = extractInteractiveData(article.content, 'quizz');
+
+    const cleanContent = removeInteractiveBlocks(article.content).replace(/^# .*/m, '');
 
     // Auto-detect: Determine URL based on download_url (for Github API) or local path
     let flashUrl, quizUrl;
@@ -252,9 +306,23 @@ async function openArticle(article) {
                         <button class="tool-btn" onclick="navigator.clipboard.writeText('${shareUrl}');alert('Link copied!')"><i class="fas fa-link"></i> Copy</button>
                         <button class="tool-btn" onclick="returnToBlog()">✕ Close</button>
                     </div>`;
+
     let interactiveHtml = `<div style="display:flex; gap:15px; margin-bottom:30px; flex-wrap:wrap;">`;
-    if (fUrl) interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('${fUrl}')"><i class="fas fa-layer-group"></i> Flashcards</button>`;
-    if (qUrl) interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('${qUrl}')"><i class="fas fa-graduation-cap"></i> Quiz</button>`;
+
+    // Flashcards button
+    if (inlineFlashcards) {
+        interactiveHtml += `<button class="action-btn btn-flash" onclick='loadFlashcards(${JSON.stringify(inlineFlashcards)}, "${article.file}")'><i class="fas fa-layer-group"></i> Flashcards (Inline)</button>`;
+    } else if (fUrl) {
+        interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('${fUrl}')"><i class="fas fa-layer-group"></i> Flashcards</button>`;
+    }
+
+    // Quiz button
+    if (inlineQuiz) {
+        interactiveHtml += `<button class="action-btn btn-quiz" onclick='loadQuiz(${JSON.stringify(inlineQuiz)}, "${article.file}")'><i class="fas fa-graduation-cap"></i> Quiz (Inline)</button>`;
+    } else if (qUrl) {
+        interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('${qUrl}')"><i class="fas fa-graduation-cap"></i> Quiz</button>`;
+    }
+
     interactiveHtml += `<button class="action-btn" onclick="openInKB('${article.file}')" style="border: 1px solid var(--neon-purple); color:var(--neon-purple); background:transparent;"><i class="fas fa-database"></i> SEE IN KB</button>`;
     interactiveHtml += `</div>`;
 
@@ -281,7 +349,12 @@ function returnToBlog() {
 
 async function openKBArticle(article) {
     const container = document.getElementById('kb-content-area');
-    const cleanContent = article.content.replace(/^# .*/m, '');
+
+    // Inline detection
+    const inlineFlashcards = extractInteractiveData(article.content, 'flashcard');
+    const inlineQuiz = extractInteractiveData(article.content, 'quizz');
+
+    const cleanContent = removeInteractiveBlocks(article.content).replace(/^# .*/m, '');
 
     // Interactive modules detection
     let flashUrl, quizUrl;
@@ -298,10 +371,21 @@ async function openKBArticle(article) {
     const [fUrl, qUrl] = await Promise.all([check(flashUrl), check(quizUrl)]);
 
     let interactiveHtml = '';
-    if (fUrl || qUrl) {
-        interactiveHtml = `<div style="display:flex; gap:15px; margin-bottom:30px;">`;
-        if (fUrl) interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('${fUrl}')"><i class="fas fa-layer-group"></i> Flashcards</button>`;
-        if (qUrl) interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('${qUrl}')"><i class="fas fa-graduation-cap"></i> Quiz</button>`;
+    if (fUrl || qUrl || inlineFlashcards || inlineQuiz) {
+        interactiveHtml = `<div style="display:flex; gap:15px; margin-bottom:30px; flex-wrap:wrap;">`;
+
+        if (inlineFlashcards) {
+            interactiveHtml += `<button class="action-btn btn-flash" onclick='loadFlashcards(${JSON.stringify(inlineFlashcards)}, "${article.file}")'><i class="fas fa-layer-group"></i> Flashcards (Inline)</button>`;
+        } else if (fUrl) {
+            interactiveHtml += `<button class="action-btn btn-flash" onclick="loadFlashcards('${fUrl}')"><i class="fas fa-layer-group"></i> Flashcards</button>`;
+        }
+
+        if (inlineQuiz) {
+            interactiveHtml += `<button class="action-btn btn-quiz" onclick='loadQuiz(${JSON.stringify(inlineQuiz)}, "${article.file}")'><i class="fas fa-graduation-cap"></i> Quiz (Inline)</button>`;
+        } else if (qUrl) {
+            interactiveHtml += `<button class="action-btn btn-quiz" onclick="loadQuiz('${qUrl}')"><i class="fas fa-graduation-cap"></i> Quiz</button>`;
+        }
+
         interactiveHtml += `</div>`;
     }
 
