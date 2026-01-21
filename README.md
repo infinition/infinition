@@ -23,7 +23,7 @@
 <p align="center">
   <strong style="color:black">Join the Discord</strong>
   <br /><br />
-  <a href="https://discord.gg/https://discord.gg/B3ZH9taVfT" target="_blank" title="Join our community!">
+  <a href="https://discord.gg/B3ZH9taVfT" target="_blank" title="Join our community!">
     <img src="https://dcbadge.limes.pink/api/server/https://discord.gg/B3ZH9taVfT" />
   </a>
 </p>
@@ -33,6 +33,45 @@
 <div align="center">
 <a href="https://www.buymeacoffee.com/infinition" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 </div>
+
+<br />
+
+<div align="center">
+
+### 🌐 Live Deployments
+
+<table>
+  <tr>
+    <td align="center"><a href="https://infinition.github.io/infinition/"><code>infinition</code></a></td>
+    <td align="center"><a href="https://infinition.github.io/Bjorn/"><code>Bjorn</code></a></td>
+    <td align="center"><a href="https://infinition.github.io/bjorn_dungeon/"><code>bjorn_dungeon</code></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://infinition.github.io/SYNAPTIK/"><code>SYNAPTIK</code></a></td>
+    <td align="center"><a href="https://infinition.github.io/AcidPages/"><code>AcidPages</code></a></td>
+    <td align="center"><a href="https://infinition.github.io/DataBrain/"><code>DataBrain</code></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://infinition.github.io/cyberchef/"><code>cyberchef</code></a></td>
+    <td align="center"><a href="https://infinition.github.io/AcidOS/"><code>AcidOS</code></a></td>
+    <td align="center"><a href="https://infinition.github.io/deep-math-academy/"><code>deep-math-academy</code></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://infinition.github.io/ScrabbleArt/"><code>ScrabbleArt</code></a></td>
+    <td align="center"><a href="https://infinition.github.io/Acid2Vect/"><code>Acid2Vect</code></a></td>
+    <td align="center"><a href="https://infinition.github.io/AcidVect3D/"><code>AcidVect3D</code></a></td>
+  </tr>
+   <tr>
+    <td align="center"><a href="https://infinition.github.io/Q-LAB-2D/"><code>Q-LAB-2D</code></a></td>
+    <td align="center"><a href="https://infinition.github.io/flappy-ufo-ql/"><code>flappy-ufo-ql</code></a></td>
+    <td align="center">✨</td>
+  </tr>
+</table>
+
+</div>
+
+<br />
+
 <div align="center">
   
 <picture>
@@ -55,12 +94,14 @@
   
 ### 🛠️ 
 
+![Rust](https://img.shields.io/badge/-Rust-0D1117?style=flat-square&logo=rust&logoColor=white)
+![C++](https://img.shields.io/badge/-C++-0D1117?style=flat-square&logo=c%2B%2B&logoColor=white)
+![C](https://img.shields.io/badge/-C-0D1117?style=flat-square&logo=c&logoColor=white)
+![Java](https://img.shields.io/badge/-Java-0D1117?style=flat-square&logo=openjdk&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-0D1117?style=flat-square&logo=javascript)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-0D1117?style=flat-square&logo=typescript)
 ![React](https://img.shields.io/badge/-React-0D1117?style=flat-square&logo=react)
-![Node.js](https://img.shields.io/badge/-Node.js-0D1117?style=flat-square&logo=node.js)
 ![Python](https://img.shields.io/badge/-Python-0D1117?style=flat-square&logo=python)
-![C++](https://img.shields.io/badge/-C++-0D1117?style=flat-square&logo=c%2B%2B)
 
 </div>
 
