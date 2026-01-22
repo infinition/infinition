@@ -5,8 +5,13 @@ import math
 # --- Configuration ---
 USERNAME = "infinition"
 README_PATH = "README.md"
+# Marqueurs pour savoir où injecter le tableau dans le README
 START_MARKER = ""
 END_MARKER = ""
+
+# URLs des icônes
+ICON_WEB = "https://img.icons8.com/ios-filled/50/4a90e2/internet.png"
+ICON_GIT = "https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
 
 def get_repos():
     """Récupère les repos de l'utilisateur via l'API GitHub."""
@@ -35,11 +40,11 @@ def get_repos():
     return repos
 
 def filter_and_sort_repos(repos):
-    """Filtre pour garder uniquement les pages et trie selon tes préférences."""
+    """Filtre et trie : Favoris en premier, le reste par ordre alphabétique."""
     # Garder uniquement ceux avec GitHub Pages activé
     pages_repos = [r for r in repos if r.get("has_pages")]
 
-    # Définir l'ordre de priorité exact demandé
+    # Définir l'ordre de priorité exact
     priority = ["infinition", "Bjorn"]
     
     top_repos = []
@@ -51,20 +56,23 @@ def filter_and_sort_repos(repos):
         else:
             other_repos.append(repo)
 
-    # Trier les prioritaires : Infinition d'abord, Bjorn ensuite
-    top_repos.sort(key=lambda x: priority.index(x["name"]) if x["name"] in priority else 999)
+    # 1. Trier les prioritaires selon l'ordre de la liste 'priority'
+    top_repos.sort(key=lambda x: priority.index(x["name"]))
     
-    # Trier les autres par date de mise à jour (plus récent en premier)
-    other_repos.sort(key=lambda x: x["updated_at"], reverse=True)
+    # 2. Trier les autres par ordre ALPHABÉTIQUE (insensible à la casse)
+    other_repos.sort(key=lambda x: x["name"].lower())
 
     return top_repos + other_repos
 
 def generate_html_table(repos):
-    """Génère le tableau HTML."""
+    """Génère le tableau HTML avec le style spécifique (Icons Left/Right, Center Text)."""
     if not repos:
         return "No deployments found."
 
-    html = "<table>\n"
+    html = '<div align="center">\n\n'
+    html += '### 🌐 Live Deployments\n\n'
+    html += '<table width="100%">\n'
+    
     cols = 3
     rows = math.ceil(len(repos) / cols)
 
@@ -74,17 +82,34 @@ def generate_html_table(repos):
             idx = r * cols + c
             if idx < len(repos):
                 repo = repos[idx]
-                # L'URL du site
+                
+                # Définition de l'URL du site
                 if repo["name"].lower() == f"{USERNAME}.github.io".lower():
                     site_url = f"https://{USERNAME}.github.io/"
                 else:
                     site_url = f"https://{USERNAME}.github.io/{repo['name']}/"
                 
-                html += f'    <td align="center"><a href="{site_url}"><code>{repo["name"]}</code></a></td>\n'
+                repo_url = repo["html_url"]
+                name = repo["name"]
+
+                # Construction de la cellule
+                html += '    <td width="33%">\n'
+                html += f'      <a href="{site_url}">\n'
+                html += f'        <img align="left" src="{ICON_WEB}" width="17" alt="Web"/>\n'
+                html += '      </a>\n'
+                html += f'      <a href="{repo_url}">\n'
+                html += f'        <img align="right" src="{ICON_GIT}" width="19" alt="Git"/>\n'
+                html += '      </a>\n'
+                html += f'      <center><code>{name}</code></center>\n'
+                html += '    </td>\n'
             else:
-                html += '    <td align="center">✨</td>\n' # Cellule vide de remplissage
+                # Cellule vide avec l'étoile
+                html += '    <td align="center">✨</td>\n'
+        
         html += "  </tr>\n"
-    html += "</table>"
+    
+    html += "</table>\n\n"
+    html += "</div>"
     return html
 
 def update_readme():
@@ -105,11 +130,7 @@ def update_readme():
         print("Erreur: README.md introuvable à la racine !")
         return
 
-    # Vérification stricte que les marqueurs ne sont pas vides
-    if not START_MARKER or not END_MARKER:
-        print("Erreur critique: Les marqueurs sont vides dans le script.")
-        return
-
+    # Vérification des marqueurs
     if START_MARKER in content and END_MARKER in content:
         print("Marqueurs trouvés, mise à jour en cours...")
         pre = content.split(START_MARKER)[0]
@@ -122,7 +143,7 @@ def update_readme():
         print("✅ README mis à jour avec succès.")
     else:
         print("⚠️ Marqueurs introuvables dans le README.")
-        print(f"Assurez-vous que '{START_MARKER}' et '{END_MARKER}' sont bien dans votre README.md")
+        print(f"Veuillez ajouter {START_MARKER} et {END_MARKER} autour de votre tableau dans README.md")
 
 if __name__ == "__main__":
     update_readme()
