@@ -1,7 +1,7 @@
 import requests
 import os
 import math
-import re  # Important pour la détection sans marqueurs
+import re  # Important pour la détection sans marqueurs #test
 
 # --- Configuration ---
 USERNAME = "infinition"
