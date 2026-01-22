@@ -86,7 +86,7 @@ if __name__ == "__main__":
     try:
         data = fetch_data()
         svg = generate_svg(data)
-        with open("cyber_activity.svg", "w") as f:
+        with open(".github/workflows/cyber_activity.svg", "w") as f:
             f.write(svg)
         print("Graphique Cyber généré avec succès.")
     except Exception as e:

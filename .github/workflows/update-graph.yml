@@ -24,12 +24,12 @@ jobs:
       - name: Run script
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python generate_cyber_graph.py
+        run: python .github/workflows/scripts/generate_cyber_graph.py
 
       - name: Commit and push if changed
         run: |
           git config --global user.name 'CyberBot'
           git config --global user.email 'bot@infinition.com'
-          git add cyber_activity.svg
+          git add .github/workflows/cyber_activity.svg
           git commit -m "Update cyber activity graph" || exit 0
           git push
