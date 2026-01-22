@@ -70,9 +70,8 @@
       <center><code>Acid2Vect</code></center>
     </td>
   </tr>
-
   <tr>
-    <td>
+    <td width="33%">
       <a href="https://infinition.github.io/AcidOS/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -81,7 +80,7 @@
       </a>
       <center><code>AcidOS</code></center>
     </td>
-    <td>
+    <td width="33%">
       <a href="https://infinition.github.io/AcidPages/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -90,7 +89,7 @@
       </a>
       <center><code>AcidPages</code></center>
     </td>
-    <td>
+    <td width="33%">
       <a href="https://infinition.github.io/AcidVect3D/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -100,9 +99,17 @@
       <center><code>AcidVect3D</code></center>
     </td>
   </tr>
-
   <tr>
-    <td>
+    <td width="33%">
+      <a href="https://infinition.github.io/AcidWiki/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/AcidWiki">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>AcidWiki</code></center>
+    </td>
+    <td width="33%">
       <a href="https://infinition.github.io/bjorn_dungeon/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -111,7 +118,7 @@
       </a>
       <center><code>bjorn_dungeon</code></center>
     </td>
-    <td>
+    <td width="33%">
       <a href="https://infinition.github.io/cyberchef/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -120,7 +127,9 @@
       </a>
       <center><code>cyberchef</code></center>
     </td>
-    <td>
+  </tr>
+  <tr>
+    <td width="33%">
       <a href="https://infinition.github.io/DataBrain/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -129,10 +138,7 @@
       </a>
       <center><code>DataBrain</code></center>
     </td>
-  </tr>
-
-  <tr>
-    <td>
+    <td width="33%">
       <a href="https://infinition.github.io/deep-math-academy/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -141,7 +147,7 @@
       </a>
       <center><code>deep-math-academy</code></center>
     </td>
-    <td>
+    <td width="33%">
       <a href="https://infinition.github.io/flappy-ufo-ql/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -150,7 +156,9 @@
       </a>
       <center><code>flappy-ufo-ql</code></center>
     </td>
-    <td>
+  </tr>
+  <tr>
+    <td width="33%">
       <a href="https://infinition.github.io/Q-LAB-2D/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -159,10 +167,7 @@
       </a>
       <center><code>Q-LAB-2D</code></center>
     </td>
-  </tr>
-
-  <tr>
-    <td>
+    <td width="33%">
       <a href="https://infinition.github.io/ScrabbleArt/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -171,7 +176,7 @@
       </a>
       <center><code>ScrabbleArt</code></center>
     </td>
-    <td>
+    <td width="33%">
       <a href="https://infinition.github.io/SYNAPTIK/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -180,7 +185,6 @@
       </a>
       <center><code>SYNAPTIK</code></center>
     </td>
-    <td align="center">✨</td>
   </tr>
 </table>
 
