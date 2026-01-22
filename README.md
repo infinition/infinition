@@ -266,25 +266,19 @@
       <center><code>obsidian-flash-quizz</code></center>
     </td>
     <td width="33%">
-      <a href="https://github.com/infinition/obsidian-kanban-block">
-        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
-      </a>
-      <center><code>obsidian-kanban-block</code></center>
-    </td>
-    <td width="33%">
       <a href="https://github.com/infinition/obsidian-linkflow">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>obsidian-linkflow</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/obsidian-magiclink">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>obsidian-magiclink</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/obsidian-obsidget">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
@@ -297,14 +291,14 @@
       </a>
       <center><code>P4wnP1-Infinition-Payloads</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/PyDep">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>PyDep</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/PyTreefy">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
@@ -317,20 +311,21 @@
       </a>
       <center><code>QRobot</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/Win10_LockPicker-by-Infinition">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>Win10_LockPicker-by-Infinition</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/Zombieland">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>Zombieland</code></center>
     </td>
+    <td align="center">✨</td>
     <td align="center">✨</td>
   </tr>
 </table>
