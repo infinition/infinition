@@ -107,18 +107,37 @@ def generate_html_table(repos):
     return html
 
 def generate_repo_list(repos):
-    """Génère une liste Markdown des dépôts."""
+    """Génère un tableau HTML pour les autres dépôts."""
     if not repos:
         return "No other repositories found."
     
-    lines = []
-    for repo in repos:
-        name = repo["name"]
-        url = repo["html_url"]
-        desc = repo["description"] or "No description"
-        lines.append(f"- [**{name}**]({url}) - {desc}")
+    html = '<table width="100%">\n'
     
-    return "\n".join(lines)
+    cols = 3
+    rows = math.ceil(len(repos) / cols)
+
+    for r in range(rows):
+        html += "  <tr>\n"
+        for c in range(cols):
+            idx = r * cols + c
+            if idx < len(repos):
+                repo = repos[idx]
+                repo_url = repo["html_url"]
+                name = repo["name"]
+
+                html += '    <td width="33%">\n'
+                html += f'      <a href="{repo_url}">\n'
+                html += f'        <img align="left" src="{ICON_GIT}" width="19" alt="Git"/>\n'
+                html += '      </a>\n'
+                html += f'      <center><code>{name}</code></center>\n'
+                html += '    </td>\n'
+            else:
+                html += '    <td align="center">✨</td>\n'
+        
+        html += "  </tr>\n"
+    
+    html += "</table>"
+    return html
 
 def update_readme():
     """Lit le README, injecte le nouveau tableau et la liste via REGEX."""

@@ -197,26 +197,143 @@
 ### 📂 Other Repositories
 
 <!-- REPO_LIST_START -->
-- [**AcidBjorn**](https://github.com/infinition/AcidBjorn) - **Acid Bjorn** is a VS Code extension designed for bi-directional synchronization between your local workspace and a remote project (specifically tailored for Bjorn Cyberviking projects). It allows for seamless development on your local machine while keeping a remote Raspberry Pi or server in sync.
-- [**AcidLog**](https://github.com/infinition/AcidLog) - AcidLog is a real-time security monitoring and visualization tool designed for cybersecurity professionals. It provides an intuitive interface for tracking, analyzing, and responding to security events in real-time.
-- [**AcidLuna**](https://github.com/infinition/AcidLuna) - AcidLuna is a Windows-based project built with Rust. It leverages the `windows` crate to interact with Win32 APIs for keyboard, mouse, and window management. Created to solve the lack of drag and drop support and right click support using LunaDisplay from iPad to windows.
-- [**AcidSnip**](https://github.com/infinition/AcidSnip) - AcidSnip is a powerful extension for VS Code/Antigravity designed to boost your productivity. It allows you to store, organize, and execute your recurring terminal commands through a modern, customizable, and highly interactive interface.
-- [**bjorn-detector**](https://github.com/infinition/bjorn-detector) - Bjorn Detector: One-Click SSH Access to Your Device in a radar style
-- [**Bjorn-Manager**](https://github.com/infinition/Bjorn-Manager) - Bjorn Manager is a minimal UI that finds Bjorn devices (LAN/USB), autofills IPs, connects over SSH, runs the Bjorn installer, restarts the service, and shows basic status/logs. No terminal gymnastic just click and go.
-- [**Catrina**](https://github.com/infinition/Catrina) - Catrina is a Windows desktop app to record, edit, and play keyboard/mouse sequences and to run a simple gaming “hold-to-remap” mode. It is built with PyQt6 and uses low-level Windows input APIs. The app focuses on being practical: fast to create macros, clear to read, and predictable when executed.
-- [**EPD-Emulator**](https://github.com/infinition/EPD-Emulator) - EPD Emulator for simulating EPD (E-Paper Display) screens, useful for development and testing purposes. It supports both Tkinter and Flask for display rendering, and it can emulate color as well as monochrome displays.
-- [**Excel-Sheet-PasswordCracker**](https://github.com/infinition/Excel-Sheet-PasswordCracker) - Password Cracking Script for Excel protected password sheets.
-- [**obsidian-flash-quizz**](https://github.com/infinition/obsidian-flash-quizz) - Flash&Quizz s a powerful and aesthetic Obsidian plugin that transforms your JSON data into interactive learning tools. Whether you're using inline JSON or external files, you can study with beautiful 3D Flashcards or test your knowledge with automated Quizzes.
-- [**obsidian-kanban-block**](https://github.com/infinition/obsidian-kanban-block) - Obsidian plugin that renders todo checkboxes as an interactive kanban board
-- [**obsidian-linkflow**](https://github.com/infinition/obsidian-linkflow) - LinkFlow a visual, all-in-one link manager for Obsidian. Drop URLs into a single inbox note and LinkFlow turns them into a searchable gallery of cards with automatic metadata scraping (title, description, preview image, favicon), read/unread + archive statuses, and advanced filtering/sorting. Built for a fast Obsidian Web Clipper workflow: clipped
-- [**obsidian-magiclink**](https://github.com/infinition/obsidian-magiclink) - MagicLink is a powerful hover-first navigation plugin for Obsidian. It automatically detects words and multi-word phrases in your notes that match note names, headings, tags, or property values, and displays an interactive popup with quick navigation and link insertion options.  ✨ Features 🔍 Smart Detection
-- [**obsidian-obsidget**](https://github.com/infinition/obsidian-obsidget) - Obsidian plugin to create, manage, and reuse interactive widgets using HTML, CSS, and JavaScript.
-- [**P4wnP1-Infinition-Payloads**](https://github.com/infinition/P4wnP1-Infinition-Payloads) - Compilation of HID Scripts and Payloads for P4wnP1 
-- [**PyDep**](https://github.com/infinition/PyDep) - PyDep is a Python script designed to analyze and visualize the dependencies within a Python project. It recursively scans the specified directory for Python files, extracts import statements and file interactions (CSV and JSON), and generates an interactive dependency graph using NetworkX and Plotly.
-- [**PyTreefy**](https://github.com/infinition/PyTreefy) - PyTreefy is a Python script designed to explore a specified directory, generate a visual representation of its directory tree, and collect all Python scripts (*.py) present in that directory. The collected scripts are then combined with the directory tree structure and written to an output file.
-- [**QRobot**](https://github.com/infinition/QRobot) - QRobot is a Q-learning simulation application where an agent learns to navigate a grid, reach goals, and avoid obstacles. The application includes an optional API to visualize data in real-time.
-- [**Win10_LockPicker-by-Infinition**](https://github.com/infinition/Win10_LockPicker-by-Infinition) - Automated USB Password Cracker  adapted for PwnP1 (French)
-- [**Zombieland**](https://github.com/infinition/Zombieland) -  Zombieland is a  command and control (C2) server designed to manage and communicate multiple client machines (referred to as "zombies"). Encrypted communication with clients, allowing for the execution of various commands,  and persistence on Zombies. Communication between the server and Zombie is secured using symmetric encryption with  Fernet.
+<table width="100%">
+  <tr>
+    <td width="33%">
+      <a href="https://github.com/infinition/AcidBjorn">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>AcidBjorn</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/AcidLog">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>AcidLog</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/AcidLuna">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>AcidLuna</code></center>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%">
+      <a href="https://github.com/infinition/AcidSnip">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>AcidSnip</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/bjorn-detector">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>bjorn-detector</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/Bjorn-Manager">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>Bjorn-Manager</code></center>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%">
+      <a href="https://github.com/infinition/Catrina">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>Catrina</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/EPD-Emulator">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>EPD-Emulator</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/Excel-Sheet-PasswordCracker">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>Excel-Sheet-PasswordCracker</code></center>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%">
+      <a href="https://github.com/infinition/obsidian-flash-quizz">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>obsidian-flash-quizz</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/obsidian-kanban-block">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>obsidian-kanban-block</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/obsidian-linkflow">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>obsidian-linkflow</code></center>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%">
+      <a href="https://github.com/infinition/obsidian-magiclink">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>obsidian-magiclink</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/obsidian-obsidget">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>obsidian-obsidget</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/P4wnP1-Infinition-Payloads">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>P4wnP1-Infinition-Payloads</code></center>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%">
+      <a href="https://github.com/infinition/PyDep">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>PyDep</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/PyTreefy">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>PyTreefy</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/QRobot">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>QRobot</code></center>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%">
+      <a href="https://github.com/infinition/Win10_LockPicker-by-Infinition">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>Win10_LockPicker-by-Infinition</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/Zombieland">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>Zombieland</code></center>
+    </td>
+    <td align="center">✨</td>
+  </tr>
+</table>
 <!-- REPO_LIST_END -->
 
 </div>
