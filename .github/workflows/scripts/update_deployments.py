@@ -1,7 +1,7 @@
 import requests
 import os
 import math
-import re
+import re  # Important pour la détection sans marqueurs
 
 # --- Configuration ---
 USERNAME = "infinition"
@@ -75,6 +75,7 @@ def generate_html_table(repos):
             if idx < len(repos):
                 repo = repos[idx]
                 
+                # URL du site
                 if repo["name"].lower() == f"{USERNAME}.github.io".lower():
                     site_url = f"https://{USERNAME}.github.io/"
                 else:
@@ -119,12 +120,14 @@ def update_readme():
         print("Erreur: README.md introuvable à la racine !")
         return
 
-    # REGEX pour trouver le bloc existant et le remplacer
-    # Cherche <div align="center"> suivi de "### 🌐 Live Deployments" jusqu'à la fermeture du </div>
+    # --- PARTIE CRITIQUE : REGEX ---
+    # Cherche le bloc existant qui commence par le titre et finit par la fermeture du div
+    # Cette regex est flexible sur les sauts de ligne (\s*\n*)
     pattern = r'(<div align="center">\s*\n*\s*### 🌐 Live Deployments[\s\S]*?</table>\s*\n*\s*</div>)'
     
     if re.search(pattern, content):
         print("Bloc Live Deployments trouvé, mise à jour en cours...")
+        # Remplace le bloc trouvé par le nouveau tableau généré
         new_content = re.sub(pattern, new_html_block, content, count=1)
         
         with open(README_PATH, "w", encoding="utf-8") as f:
@@ -132,7 +135,7 @@ def update_readme():
         print("✅ README mis à jour avec succès.")
     else:
         print("⚠️ Impossible de trouver le bloc '### 🌐 Live Deployments' dans le README.")
-        print("Assurez-vous que le titre '### 🌐 Live Deployments' existe déjà.")
+        print("Assurez-vous que le titre '### 🌐 Live Deployments' existe déjà dans une div align center.")
 
 if __name__ == "__main__":
     update_readme()
