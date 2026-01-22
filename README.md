@@ -40,30 +40,146 @@
 
 ### 🌐 Live Deployments
 
-<table>
+<table width="100%">
   <tr>
-    <td align="center"><a href="https://infinition.github.io/infinition/"><code>infinition</code></a></td>
-    <td align="center"><a href="https://infinition.github.io/Bjorn/"><code>Bjorn</code></a></td>
-    <td align="center"><a href="https://infinition.github.io/bjorn_dungeon/"><code>bjorn_dungeon</code></a></td>
+    <td width="33%">
+      <a href="https://infinition.github.io/infinition/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/infinition">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>infinition</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://infinition.github.io/Bjorn/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/Bjorn">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>Bjorn</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://infinition.github.io/Acid2Vect/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/Acid2Vect">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>Acid2Vect</code></center>
+    </td>
   </tr>
+
   <tr>
-    <td align="center"><a href="https://infinition.github.io/SYNAPTIK/"><code>SYNAPTIK</code></a></td>
-    <td align="center"><a href="https://infinition.github.io/AcidPages/"><code>AcidPages</code></a></td>
-    <td align="center"><a href="https://infinition.github.io/DataBrain/"><code>DataBrain</code></a></td>
+    <td>
+      <a href="https://infinition.github.io/AcidOS/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/AcidOS">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>AcidOS</code></center>
+    </td>
+    <td>
+      <a href="https://infinition.github.io/AcidPages/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/AcidPages">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>AcidPages</code></center>
+    </td>
+    <td>
+      <a href="https://infinition.github.io/AcidVect3D/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/AcidVect3D">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>AcidVect3D</code></center>
+    </td>
   </tr>
+
   <tr>
-    <td align="center"><a href="https://infinition.github.io/cyberchef/"><code>cyberchef</code></a></td>
-    <td align="center"><a href="https://infinition.github.io/AcidOS/"><code>AcidOS</code></a></td>
-    <td align="center"><a href="https://infinition.github.io/deep-math-academy/"><code>deep-math-academy</code></a></td>
+    <td>
+      <a href="https://infinition.github.io/bjorn_dungeon/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/bjorn_dungeon">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>bjorn_dungeon</code></center>
+    </td>
+    <td>
+      <a href="https://infinition.github.io/cyberchef/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/cyberchef">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>cyberchef</code></center>
+    </td>
+    <td>
+      <a href="https://infinition.github.io/DataBrain/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/DataBrain">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>DataBrain</code></center>
+    </td>
   </tr>
+
   <tr>
-    <td align="center"><a href="https://infinition.github.io/ScrabbleArt/"><code>ScrabbleArt</code></a></td>
-    <td align="center"><a href="https://infinition.github.io/Acid2Vect/"><code>Acid2Vect</code></a></td>
-    <td align="center"><a href="https://infinition.github.io/AcidVect3D/"><code>AcidVect3D</code></a></td>
+    <td>
+      <a href="https://infinition.github.io/deep-math-academy/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/deep-math-academy">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>deep-math-academy</code></center>
+    </td>
+    <td>
+      <a href="https://infinition.github.io/flappy-ufo-ql/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/flappy-ufo-ql">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>flappy-ufo-ql</code></center>
+    </td>
+    <td>
+      <a href="https://infinition.github.io/Q-LAB-2D/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/Q-LAB-2D">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>Q-LAB-2D</code></center>
+    </td>
   </tr>
-   <tr>
-    <td align="center"><a href="https://infinition.github.io/Q-LAB-2D/"><code>Q-LAB-2D</code></a></td>
-    <td align="center"><a href="https://infinition.github.io/flappy-ufo-ql/"><code>flappy-ufo-ql</code></a></td>
+
+  <tr>
+    <td>
+      <a href="https://infinition.github.io/ScrabbleArt/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/ScrabbleArt">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>ScrabbleArt</code></center>
+    </td>
+    <td>
+      <a href="https://infinition.github.io/SYNAPTIK/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/SYNAPTIK">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>SYNAPTIK</code></center>
+    </td>
     <td align="center">✨</td>
   </tr>
 </table>
