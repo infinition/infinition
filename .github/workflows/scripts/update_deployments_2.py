@@ -38,9 +38,12 @@ def get_repos():
     return repos
 
 def filter_and_sort_repos(repos):
-    """Filtre et trie : Favoris en premier, le reste par ordre alphabétique."""
-    pages_repos = [r for r in repos if r.get("has_pages")]
-    other_repos = [r for r in repos if not r.get("has_pages") and r["name"] != USERNAME]
+    """Filtre et trie : Favoris en premier, le reste par ordre alphabétique. Exclut les forks."""
+    # Filtrer les forks dès le début
+    own_repos = [r for r in repos if not r.get("fork")]
+    
+    pages_repos = [r for r in own_repos if r.get("has_pages")]
+    other_repos = [r for r in own_repos if not r.get("has_pages") and r["name"] != USERNAME]
     
     priority = ["infinition", "Bjorn"]
     
