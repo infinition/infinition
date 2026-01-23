@@ -1,4 +1,8 @@
 /* --- GLOBAL CONFIG --- */
+html {
+    overflow-y: scroll;
+}
+
 :root {
     --bg-color: #060606;
     --card-bg: #0d1216;
@@ -34,11 +38,6 @@ body {
     line-height: 1.6;
     /* espacement entre les lignes */
     overflow-x: hidden;
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        linear-gradient(0deg, rgba(255, 107, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 107, 0, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
 }
 
 /* --- MODALS & OVERLAY --- */
@@ -475,34 +474,7 @@ body {
 }
 
 /* --- SYSTEM BAR --- */
-.sys-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 10px 20px 10px 10px;
-    background: rgb(9 13 16);
-    border-bottom: 1px solid rgb(14 88 119);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-    backdrop-filter: blur(5px);
-    z-index: 100;
-    /* valeur finale consolidée */
-}
 
-.sys-status {
-    color: var(--neon-green);
-}
-
-.back-btn {
-    display: none;
-    cursor: pointer;
-    color: var(--neon-orange);
-    font-weight: bold;
-    text-transform: uppercase;
-}
 
 .view-section {
     display: none;
@@ -633,7 +605,6 @@ h1.port-h1 {
     line-height: 1.3;
     margin-bottom: 0.5rem;
     color: var(--text-color);
-    text-shadow: 2px 2px 0 var(--neon-orange), -2px -2px 0 var(--neon-blue);
 }
 
 
@@ -678,6 +649,7 @@ h2.port-h2 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     padding: 17px 35px;
     background: transparent;
     border: 1px solid var(--text-color);
@@ -756,7 +728,9 @@ h2.port-h2 {
     font-size: 1rem;
     color: var(--neon-blue);
     margin-bottom: 0.2rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .summary {
@@ -784,79 +758,51 @@ h2.port-h2 {
 }
 
 .card h3,
-.project-card h3 {
+.project-card h3,
+.skill-card h3 {
     font-size: 1rem;
     margin-bottom: 1rem;
     font-family: var(--code-font);
     color: #fff;
     display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.card li {
+.card h3 i,
+.project-card h3 i,
+.skill-card h3 i {
+    width: 20px;
+    text-align: center;
+}
+
+.skill-card li,
+.project-card p {
     font-size: 0.9rem;
     color: #aaa;
     margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.skill-card li {
     border-left: 2px solid transparent;
     padding-left: 10px;
 }
 
+.project-tag {
+    font-family: var(--code-font);
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
 .card:hover,
-.project-card:hover {
+.project-card:hover,
+.skill-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.project-card {
-    border: none;
-    background: #0d1216;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-    padding: 2px;
-    border-radius: 8px;
-}
-
-.project-content {
-    background: var(--card-bg);
-    height: 100%;
-    padding: 1.5rem;
-    border-radius: 6px;
-    position: relative;
-    z-index: 2;
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(transparent, var(--neon-blue), transparent 30%);
-    animation: rotate 4s linear infinite;
-    z-index: 1;
-}
-
-@keyframes rotate {
-    100% {
-        transform: rotate(1turn);
-    }
-}
-
-.project-card.border-orange::before {
-    background: conic-gradient(transparent, var(--neon-orange), transparent 30%);
-}
-
-.project-card.border-green::before {
-    background: conic-gradient(transparent, var(--neon-green), transparent 30%);
-}
-
-.project-card.border-purple::before {
-    background: conic-gradient(transparent, var(--neon-purple), transparent 30%);
-}
-
-.project-card.border-blue::before {
-    background: conic-gradient(transparent, var(--neon-blue), transparent 30%);
 }
 
 .border-purple {
@@ -1369,6 +1315,28 @@ h2.port-h2 {
     box-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
 }
 
+/* --- THEME TOGGLE BTN --- */
+.theme-toggle-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #aaa;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--neon-blue);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(19, 175, 240, 0.5);
+}
+
 /* Quand la musique joue, on affiche le bouton */
 body.audio-playing .audio-toggle-btn {
     display: inline-flex;
@@ -1378,7 +1346,7 @@ body.audio-playing .audio-toggle-btn {
 /* version fusionnée / finale */
 #portal-view {
     height: 100vh;
-    background-color: #06060626;
+
     perspective: 1000px;
     overflow: hidden;
     position: relative;
@@ -1482,6 +1450,7 @@ body.audio-playing .audio-toggle-btn {
 
     pointer-events: none;
     z-index: -1;
+    display: none;
 }
 
 
@@ -1493,7 +1462,7 @@ body.audio-playing .audio-toggle-btn {
     transform: translate(-50%, -50%);
     width: var(--ring-size);
     height: var(--ring-size);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
@@ -1712,6 +1681,37 @@ body.audio-playing .audio-toggle-btn {
     text-shadow: 0 0 5px var(--neon-blue);
 }
 
+/* --- PORTAL LOCK ICON --- */
+.portal-lock-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 2.5rem;
+    color: var(--neon-red);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.portal-lock-icon i {
+    animation: fadeIn 0.3s ease;
+}
+
+.portal-lock-icon:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px var(--neon-red);
+}
+
+/* Hide padlock when data is unlocked */
+.portal-lock-icon.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
 /* --- BADGES "DATA STREAM" --- */
 #secret-data {
     /* 1. Layout (On garde votre structure) */
@@ -1792,8 +1792,6 @@ body.audio-playing .audio-toggle-btn {
 }
 
 .portal-btn {
-    background: rgba(10, 15, 20, 0.7);
-    border: 1px solid rgba(0, 243, 255, 0.3);
     color: var(--neon-blue);
     padding: 15px 25px;
     min-width: 140px;
@@ -1807,12 +1805,8 @@ body.audio-playing .audio-toggle-btn {
     font-family: 'Share Tech Mono', monospace;
     position: relative;
     backdrop-filter: blur(4px);
-    clip-path: polygon(15px 0,
-            100% 0,
-            100% calc(100% - 15px),
-            calc(100% - 15px) 100%,
-            0 100%,
-            0 15px);
+    background: rgba(10, 15, 20, 0.7);
+    border: 1px solid rgba(0, 243, 255, 0.3);
 }
 
 .portal-btn span {
@@ -2311,18 +2305,7 @@ body.audio-playing .audio-toggle-btn {
 }
 
 /* HOVER PADLOCK EFFECT */
-.portal-title:hover::after {
-    content: '\f023';
-    /* FontAwesome Lock Icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    font-size: 1.5rem;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    color: var(--neon-red);
-    animation: fadeIn 0.3s ease;
-}
+
 
 /* GLITCH ANIMATION CLASS */
 .glitch-active {
@@ -2498,18 +2481,7 @@ body.audio-playing .audio-toggle-btn {
 }
 
 /* HOVER PADLOCK EFFECT */
-.portal-title:hover::after {
-    content: '\f023';
-    /* FontAwesome Lock Icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    font-size: 1.5rem;
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    color: var(--neon-red);
-    animation: fadeIn 0.3s ease;
-}
+
 
 /* GLITCH ANIMATION CLASS */
 .glitch-active {

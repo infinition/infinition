@@ -1,0 +1,193 @@
+/* --- DARK THEME STYLES --- */
+/* A cleaner, more minimal dark theme alternative to the cyber infinition theme */
+
+/* --- THEME OVERRIDES --- */
+body.theme-dark {
+    background-color: #0a0a0a;
+    background-image: none;
+}
+
+/* Remove animated grid background */
+.theme-dark .cyber-grid {
+    display: none;
+}
+
+/* Hide the reactor on dark theme */
+.theme-dark .reactor-container {
+    display: none;
+}
+
+/* Simpler cards without animated borders */
+.theme-dark .project-card,
+.theme-dark .skill-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #111;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Remove the rotating border effect */
+.theme-dark .project-card::before,
+.theme-dark .skill-card::before {
+    display: none;
+}
+
+/* Subtle top border colors */
+.theme-dark .project-card.border-orange,
+.theme-dark .skill-card.border-orange {
+    border-top: 2px solid var(--neon-orange);
+}
+
+.theme-dark .project-card.border-green,
+.theme-dark .skill-card.border-green {
+    border-top: 2px solid var(--neon-green);
+}
+
+.theme-dark .project-card.border-purple,
+.theme-dark .skill-card.border-purple {
+    border-top: 2px solid var(--neon-purple);
+}
+
+.theme-dark .project-card.border-red,
+.theme-dark .skill-card.border-red {
+    border-top: 2px solid var(--neon-red);
+}
+
+.theme-dark .project-card.border-blue,
+.theme-dark .skill-card.border-blue {
+    border-top: 2px solid var(--neon-blue);
+}
+
+/* Card content styling */
+.theme-dark .project-content,
+.theme-dark .skill-content {
+    background: transparent;
+    z-index: 2;
+    position: relative;
+    border-radius: 0;
+    padding: 1.5rem;
+}
+
+/* Simpler portal buttons */
+.theme-dark .portal-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    clip-path: none;
+    border-radius: 8px;
+}
+
+.theme-dark .portal-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+}
+
+.theme-dark .portal-btn::after {
+    display: none;
+}
+
+/* Simpler title without glitch effect */
+.theme-dark h1.port-h1 {
+    text-shadow: none;
+}
+
+.theme-dark .portal-title {
+    text-shadow: none;
+    color: #fff;
+}
+
+.theme-dark .portal-title:hover::after {
+    display: none;
+}
+
+/* Cleaner system bar */
+.theme-dark .sys-bar {
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Simpler badges */
+.theme-dark .cyber-badge {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark .cyber-badge:hover {
+    color: #fff;
+    text-shadow: none;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Simpler music trigger buttons */
+.theme-dark .music-trigger {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .music-trigger:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: none;
+}
+
+/* Article entries */
+.theme-dark .article-entry {
+    background: #111;
+    border-left-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-dark .article-entry:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: #fff;
+}
+
+/* Timeline styling */
+.theme-dark .timeline-item.research::before {
+    box-shadow: none;
+}
+
+.theme-dark .timeline-item.ciso::before {
+    box-shadow: none;
+}
+
+.theme-dark .timeline-item.navy::before {
+    box-shadow: none;
+}
+
+/* KB Sidebar */
+.theme-dark .kb-sidebar {
+    background: #0a0a0a;
+    border-right-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Muted glow effect */
+.theme-dark .glow-element::after {
+    background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.08), transparent);
+}
+
+/* Search modal */
+.theme-dark .search-container {
+    background: #0a0a0a;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .search-result-item:hover,
+.theme-dark .search-result-item.selected {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .search-result-item i {
+    color: #fff;
+}
+
+/* Sub-identity text */
+.theme-dark .sub-identity {
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: none;
+}
+
+/* Music cards without colored effects */
+.theme-dark .music-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+}

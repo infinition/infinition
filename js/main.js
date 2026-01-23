@@ -106,18 +106,17 @@ async function openInKB(filename) {
     }
 }
 
-document.getElementById('kb-search').addEventListener('input', (e) => {
-    const q = e.target.value.toLowerCase();
-    if (q.length > 0) {
-        const filtered = mergedData.filter(i =>
-            i.type === 'article' && (
-                i.title.toLowerCase().includes(q) ||
-                (i.content && i.content.toLowerCase().includes(q))
-            )
-        );
-        renderKBTree(filtered);
-    } else {
-        renderKBTree(mergedData);
+document.getElementById('kb-search').addEventListener('click', (e) => {
+    const modal = document.getElementById('search-modal');
+    const input = document.getElementById('global-search-input');
+    if (modal && input) {
+        modal.classList.add('active');
+        input.focus();
+        // If there's already text in the KB search, copy it to global search
+        if (e.target.value) {
+            input.value = e.target.value;
+            input.dispatchEvent(new Event('input'));
+        }
     }
 });
 

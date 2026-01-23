@@ -1,10 +1,14 @@
 function unlockData() {
     const el = document.getElementById('secret-data');
     const title = document.querySelector('.portal-title');
+    const lockIcon = document.getElementById('portal-lock-icon');
 
     if (!el.classList.contains('data-unlocked')) {
         playDecipherSound();
         title.classList.add('glitch-active');
+
+        // Hide padlock
+        if (lockIcon) lockIcon.classList.add('hidden');
 
         setTimeout(() => {
             el.classList.add('data-unlocked');
@@ -15,6 +19,8 @@ function unlockData() {
         }, 600);
     } else {
         el.classList.remove('data-unlocked');
+        // Show padlock again
+        if (lockIcon) lockIcon.classList.remove('hidden');
     }
 }
 
@@ -270,6 +276,48 @@ function safeJsonForHtml(data) {
     return encodeURIComponent(JSON.stringify(data));
 }
 
+// --- DYNAMIC META UPDATES ---
+function updateDynamicMeta(article) {
+    if (!article) return;
+
+    const title = `${article.title} | ${CONFIG.projectName}`;
+    const desc = article.content ? article.content.substring(0, 160).replace(/[#*`]/g, '') : CONFIG.description;
+    const url = window.location.href;
+    const image = article.image || CONFIG.seo.ogImage;
+
+    // Update DOM
+    document.title = title;
+    const ogTitle = document.getElementById('og-title'); if (ogTitle) ogTitle.content = title;
+    const ogDesc = document.getElementById('og-description'); if (ogDesc) ogDesc.content = desc;
+    const ogUrl = document.getElementById('og-url'); if (ogUrl) ogUrl.content = url;
+    const ogImage = document.getElementById('og-image'); if (ogImage) ogImage.content = image;
+
+    const twTitle = document.getElementById('twitter-title'); if (twTitle) twTitle.content = title;
+    const twDesc = document.getElementById('twitter-description'); if (twDesc) twDesc.content = desc;
+    const twUrl = document.getElementById('twitter-url'); if (twUrl) twUrl.content = url;
+    const twImage = document.getElementById('twitter-image'); if (twImage) twImage.content = image;
+}
+
+// --- SKELETON SCREENS ---
+function renderSkeleton(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = `
+        <div class="article-content">
+            <div class="skeleton skeleton-title"></div>
+            <div style="display:flex; gap:10px; margin-bottom:2rem;">
+                <div class="skeleton" style="width:100px; height:1rem;"></div>
+                <div class="skeleton" style="width:80px; height:1rem;"></div>
+            </div>
+            <div class="skeleton skeleton-rect"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text" style="width:80%;"></div>
+        </div>
+    `;
+}
+
 // --- ARTICLE READER WITH DETECTION ---
 async function openArticle(article) {
     window.lastBlogScroll = window.scrollY;
@@ -277,6 +325,12 @@ async function openArticle(article) {
     document.getElementById('blog-view').style.display = 'none';
     document.getElementById('kb-view').style.display = 'none';
     reader.style.display = 'block';
+
+    // Show skeleton while loading (if content is not yet processed)
+    renderSkeleton('article-view');
+
+    // Update Meta Tags
+    updateDynamicMeta(article);
 
     const shortName = article.file.split('/').pop();
     window.history.pushState(null, null, `#article:${shortName}`);
@@ -773,3 +827,130 @@ function renderKBTree(data) {
 
     renderNode(tree, parent);
 }
+
+// --- GLOBAL SEARCH (Ctrl+K) ---
+let searchIndex = 0;
+let searchResults = [];
+
+function initGlobalSearch() {
+    const modal = document.getElementById('search-modal');
+    const input = document.getElementById('global-search-input');
+    const resultsContainer = document.getElementById('global-search-results');
+
+    window.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            modal.classList.add('active');
+            input.focus();
+        }
+        if (e.key === 'Escape') {
+            modal.classList.remove('active');
+        }
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+    });
+
+    input.addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase().trim();
+        if (q.length < 2) {
+            resultsContainer.innerHTML = '<div style="padding: 20px; text-align: center; color: #555;">Type at least 2 characters...</div>';
+            searchIndex = 0;
+            searchResults = [];
+            return;
+        }
+
+        searchResults = [];
+        mergedData.forEach(item => {
+            const titleMatch = item.title.toLowerCase().indexOf(q);
+            const contentMatch = item.content ? item.content.toLowerCase().indexOf(q) : -1;
+
+            if (titleMatch !== -1 || contentMatch !== -1) {
+                // Calculate score: title match is weighted higher
+                const score = (titleMatch !== -1 ? 100 : 0) + (contentMatch !== -1 ? 10 : 0);
+
+                // Extract snippet with highlighting
+                let snippet = "";
+                if (contentMatch !== -1 && item.content) {
+                    const start = Math.max(0, contentMatch - 40);
+                    const end = Math.min(item.content.length, contentMatch + 80);
+                    let rawSnippet = item.content.substring(start, end);
+
+                    // Sanitize and highlight
+                    const safeSnippet = rawSnippet.replace(/[<>]/g, ''); // Basic sanitization
+                    snippet = safeSnippet.replace(new RegExp(q, 'gi'), (m) => `<mark style="background: rgba(34, 197, 94, 0.3); color: var(--neon-green); border-radius: 2px; padding: 0 2px;">${m}</mark>`);
+
+                    if (start > 0) snippet = "..." + snippet;
+                    if (end < item.content.length) snippet = snippet + "...";
+                }
+
+                searchResults.push({ ...item, score, snippet });
+            }
+        });
+
+        searchResults.sort((a, b) => b.score - a.score);
+        searchResults = searchResults.slice(0, 10);
+
+        renderSearchResults();
+    });
+
+    input.addEventListener('keydown', (e) => {
+        const items = resultsContainer.querySelectorAll('.search-result-item');
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            searchIndex = (searchIndex + 1) % items.length;
+            updateSearchSelection();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            searchIndex = (searchIndex - 1 + items.length) % items.length;
+            updateSearchSelection();
+        } else if (e.key === 'Enter') {
+            const selected = items[searchIndex];
+            if (selected) selected.click();
+        }
+    });
+}
+
+function renderSearchResults() {
+    const resultsContainer = document.getElementById('global-search-results');
+    if (searchResults.length === 0) {
+        resultsContainer.innerHTML = '<div style="padding: 20px; text-align: center; color: #555;">No results found.</div>';
+        return;
+    }
+
+    resultsContainer.innerHTML = searchResults.map((item, index) => `
+        <div class="search-result-item ${index === 0 ? 'selected' : ''}" onclick="handleSearchResultClick(${index})">
+            <i class="${item.icon || 'fas fa-file-alt'}"></i>
+            <div class="search-result-info">
+                <div class="search-result-title">${item.title}</div>
+                <div class="search-result-path">${item.file || item.url || ''}</div>
+                ${item.snippet ? `<div class="search-result-snippet" style="font-size: 0.75rem; color: #888; margin-top: 4px; line-height: 1.4;">${item.snippet}</div>` : ''}
+            </div>
+        </div>
+    `).join('');
+    searchIndex = 0;
+}
+
+function updateSearchSelection() {
+    const items = document.querySelectorAll('.search-result-item');
+    items.forEach((item, index) => {
+        item.classList.toggle('selected', index === searchIndex);
+        if (index === searchIndex) item.scrollIntoView({ block: 'nearest' });
+    });
+}
+
+function handleSearchResultClick(index) {
+    const item = searchResults[index];
+    if (!item) return;
+
+    document.getElementById('search-modal').classList.remove('active');
+
+    if (item.type === 'repo' || item.type === 'artwork') {
+        window.open(item.url, '_blank');
+    } else if (item.type === 'article') {
+        openArticle(item);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initGlobalSearch);

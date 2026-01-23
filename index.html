@@ -4,19 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#060606">
+    <meta name="theme-color" id="meta-theme-color" content="#060606">
+    <!-- Security Headers -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- Content Security Policy - Adjusted for external CDNs and APIs -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://api.ipify.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://api.ipify.org https://raw.githubusercontent.com https://*.artstation.com; frame-src https://embed.music.apple.com;">
+
     <!-- Autoriser le mode "app" plein écran -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Style de la barre de statut (en haut) -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" id="meta-app-title" content="INFINITION">
 
-    <link rel="apple-touch-icon" href="img/icon-180.png">
-    <link rel="icon" type="image/png" href="img/icon-180.png">
+    <!-- PWA & Favicons -->
+    <link rel="manifest" id="link-manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" id="link-apple-icon" href="img/icon-180.png">
+    <link rel="icon" type="image/png" id="link-favicon" href="img/icon-180.png">
 
-
-    <meta name="description"
+    <!-- SEO & Social Sharing -->
+    <meta name="description" id="meta-description"
         content="Portal of Fabien Polly (Infinition) - AI Researcher, Quantum Expert, Hacker, 3D Artist & Skater">
-    <title>FABIEN POLLY | INFINITION</title>
+    <title id="page-title">FABIEN POLLY | INFINITION</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" id="og-url" content="https://infinition.github.io/">
+    <meta property="og:title" id="og-title" content="FABIEN POLLY | INFINITION">
+    <meta property="og:description" id="og-description"
+        content="Portal of Fabien Polly (Infinition) - AI Researcher, Quantum Expert, Hacker, 3D Artist & Skater">
+    <meta property="og:image" id="og-image" content="img/icon-180.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" id="twitter-card" content="summary_large_image">
+    <meta name="twitter:url" id="twitter-url" content="https://infinition.github.io/">
+    <meta name="twitter:title" id="twitter-title" content="FABIEN POLLY | INFINITION">
+    <meta name="twitter:description" id="twitter-description"
+        content="Portal of Fabien Polly (Infinition) - AI Researcher, Quantum Expert, Hacker, 3D Artist & Skater">
+    <meta name="twitter:image" id="twitter-image" content="img/icon-180.png">
 
     <!-- Polices existantes -->
     <link
@@ -31,10 +56,11 @@
 
     <!-- Ton CSS externe conservé -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes/infinition.css">
+    <link rel="stylesheet" href="css/themes/dark.css">
     <link rel="stylesheet" href="css/csslib.css">
-    <link rel="stylesheet" href="css/terminal.css">
-    <link rel="stylesheet" href="css/acid_pages.css">
 
+    <link rel="stylesheet" href="css/acid_pages.css">
 
 </head>
 
@@ -72,6 +98,9 @@
         <div class="back-btn" onclick="navigateTo('portal')"><i class="fas fa-arrow-left"></i> ROOT</div>
         <div class="sys-status">
             <i class="fas fa-circle" style="font-size: 8px;"></i> <span id="sys-msg">SYS STABLE</span>
+            <button id="theme-toggle" class="theme-toggle-btn" title="Switch Theme">
+                <i class="fas fa-moon"></i>
+            </button>
             <button id="audio-toggle" class="audio-toggle-btn" title="Audio Control">
                 <i class="fas fa-wave-square"></i>
             </button>
@@ -96,6 +125,11 @@
         <div class="top-section-ui">
             <h1 class="portal-title" title="Click to unlock data">INFINITION</h1>
             <p class="sub-identity">FABIEN POLLY</p>
+
+            <!-- Padlock indicator - disappears when data is unlocked -->
+            <div id="portal-lock-icon" class="portal-lock-icon" title="Click anywhere to unlock">
+                <i class="fas fa-lock"></i>
+            </div>
 
             <!-- BADGES TYPE "DATA STREAM" -->
             <div id="secret-data">
@@ -212,46 +246,55 @@
             </div>
             <h2 class="port-h2" style="margin-top: 3rem;"><i class="fas fa-microchip"></i> Stack & Expertise</h2>
             <div class="grid-container">
-                <div class="card skill-card border-purple">
-                    <h3 style="color:var(--neon-purple)"><i class="fas fa-atom"></i> Quantum & AI</h3>
-                    <ul>
-                        <li>Quantum Machine Learning</li>
-                        <li>AI Engineering & Data Science</li>
-                        <li>Post-Quantum Cryptography</li>
-                        <li>AI Orchestration (LLMs)</li>
-                    </ul>
+                <div class="skill-card border-purple">
+                    <div class="skill-content">
+                        <h3 style="color:var(--neon-purple)"><i class="fas fa-atom"></i> Quantum & AI</h3>
+                        <ul>
+                            <li>Quantum Machine Learning</li>
+                            <li>AI Engineering & Data Science</li>
+                            <li>Post-Quantum Cryptography</li>
+                            <li>AI Orchestration (LLMs)</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card skill-card border-green">
-                    <h3 style="color:var(--neon-green)"><i class="fas fa-robot"></i> Robotics & Eng.</h3>
-                    <ul>
-                        <li>VLA/VLM & Tiny Networks</li>
-                        <li>Embedded Systems Security</li>
-                        <li>Robotics Engineering</li>
-                        <li>Autonomous Systems</li>
-                    </ul>
+                <div class="skill-card border-green">
+                    <div class="skill-content">
+                        <h3 style="color:var(--neon-green)"><i class="fas fa-robot"></i> Robotics & Eng.</h3>
+                        <ul>
+                            <li>VLA/VLM & Tiny Networks</li>
+                            <li>Embedded Systems Security</li>
+                            <li>Robotics Engineering</li>
+                            <li>Autonomous Systems</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card skill-card border-orange">
-                    <h3 style="color:var(--neon-orange)"><i class="fas fa-shield-virus"></i> Cybersecurity</h3>
-                    <ul>
-                        <li>Offensive Security (Pentest)</li>
-                        <li>SCADA & Industrial Systems</li>
-                        <li>Governance (ISO 27001, LPM)</li>
-                        <li>Risk Management</li>
-                    </ul>
+                <div class="skill-card border-orange">
+                    <div class="skill-content">
+                        <h3 style="color:var(--neon-orange)"><i class="fas fa-shield-virus"></i> Cybersecurity</h3>
+                        <ul>
+                            <li>Offensive Security (Pentest)</li>
+                            <li>SCADA & Industrial Systems</li>
+                            <li>Governance (ISO 27001, LPM)</li>
+                            <li>Risk Management</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card skill-card border-red">
-                    <h3 style="color:var(--neon-red)"><i class="fas fa-bolt"></i> Art & Lifestyle</h3>
-                    <ul>
-                        <li><strong>3D Env Artist (Unreal/Blender)</strong></li>
-                        <li>2D Concept Art</li>
-                        <li>Aggressive Inline Skating</li>
-                        <li>Creative Technology</li>
-                    </ul>
+                <div class="skill-card border-red">
+                    <div class="skill-content">
+                        <h3 style="color:var(--neon-red)"><i class="fas fa-bolt"></i> Art & Lifestyle</h3>
+                        <ul>
+                            <li><strong>3D Env Artist (Unreal/Blender)</strong></li>
+                            <li>2D Concept Art</li>
+                            <li>Aggressive Inline Skating</li>
+                            <li>Creative Technology</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <h2 class="port-h2" style="margin-top: 5rem;"><i class="fas fa-project-diagram"></i> Featured Projects</h2>
             <div class="grid-container">
-                <div class="project-card border-orange">
+                <div class="project-card border-orange"
+                    onclick="window.open('https://github.com/infinition/Bjorn', '_blank')" style="cursor: pointer;">
                     <div class="project-content"><span class="project-tag" style="color:var(--neon-orange)">//
                             CYBERSECURITY TOOL</span>
                         <h3 style="color:var(--neon-orange)"><i class="fas fa-skull"></i> Bjorn</h3>
@@ -259,7 +302,8 @@
                             discovers vulnerabilities, and automates attacks.</p>
                     </div>
                 </div>
-                <div class="project-card border-green">
+                <div class="project-card border-green" onclick="window.open('https://github.com/infinition', '_blank')"
+                    style="cursor: pointer;">
                     <div class="project-content"><span class="project-tag" style="color:var(--neon-green)">// ROBOTICS
                             RESEARCH</span>
                         <h3 style="color:var(--neon-green)"><i class="fas fa-robot"></i> Recursive VLA</h3>
@@ -267,7 +311,8 @@
                             networks to bypass GPU dependency.</p>
                     </div>
                 </div>
-                <div class="project-card border-purple">
+                <div class="project-card border-purple" onclick="window.open('https://github.com/infinition', '_blank')"
+                    style="cursor: pointer;">
                     <div class="project-content"><span class="project-tag" style="color:var(--neon-purple)">//
                             ARTIFICIAL INTELLIGENCE</span>
                         <h3 style="color:var(--neon-purple)"><i class="fas fa-brain"></i> Paradigm</h3>
@@ -275,7 +320,8 @@
                             LLMs to solve reasoning tasks.</p>
                     </div>
                 </div>
-                <div class="project-card border-purple">
+                <div class="project-card border-purple" onclick="window.open('https://github.com/infinition', '_blank')"
+                    style="cursor: pointer;">
                     <div class="project-content"><span class="project-tag" style="color:var(--neon-purple)">// RESEARCH
                             PUBLICATION</span>
                         <h3 style="color:var(--neon-purple)"><i class="fas fa-book"></i> AI Consciousness</h3>
@@ -283,7 +329,8 @@
                             boundaries of AGI.</p>
                     </div>
                 </div>
-                <div class="project-card border-blue">
+                <div class="project-card border-blue"
+                    onclick="window.open('https://www.artstation.com/infinition', '_blank')" style="cursor: pointer;">
                     <div class="project-content"><span class="project-tag" style="color:var(--neon-blue)">// 3D
                             ENVIRONMENT ART</span>
                         <h3 style="color:var(--neon-blue)"><i class="fas fa-vr-cardboard"></i> Immersive Worlds</h3>
@@ -583,7 +630,26 @@
     </section>
 
     <!-- SCRIPTS EXTERNES CONSERVÉS -->
+    <div id="search-modal">
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="global-search-input" placeholder="Search logs, projects, knowledge..."
+                    autocomplete="off">
+            </div>
+            <div id="global-search-results" class="search-results">
+                <div style="padding: 20px; text-align: center; color: #555;">Type to start searching...</div>
+            </div>
+            <div class="search-footer">
+                <div><span class="search-kbd">↑↓</span> to navigate <span class="search-kbd">↵</span> to select</div>
+                <div><span class="search-kbd">ESC</span> to close</div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/config.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/portfolio.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/api.js"></script>
     <script src="js/ui.js"></script>
@@ -595,6 +661,98 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
+        // Glow Effect Logic
+        document.addEventListener('mousemove', (e) => {
+            const elements = document.querySelectorAll('.glow-element, .portal-btn, .project-card, .article-entry, .cyber-badge, .skill-card, .btn-link, .music-trigger, .nav-btn, .action-btn, .tree-item');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                el.style.setProperty('--x', `${x}px`);
+                el.style.setProperty('--y', `${y}px`);
+                if (!el.classList.contains('glow-element')) el.classList.add('glow-element');
+            });
+        });
+
+        // applyConfig implementation
+        function applyConfig() {
+            if (typeof CONFIG === 'undefined') return;
+
+            // Basic Meta
+            document.title = `${CONFIG.projectName} | ${CONFIG.projectSubtitle}`;
+            const pageTitle = document.getElementById('page-title');
+            if (pageTitle) pageTitle.textContent = `${CONFIG.projectName} | ${CONFIG.projectSubtitle}`;
+
+            const metaDesc = document.getElementById('meta-description');
+            if (metaDesc) metaDesc.content = CONFIG.description;
+
+            const metaTheme = document.getElementById('meta-theme-color');
+            if (metaTheme) metaTheme.content = CONFIG.themeColor;
+
+            const metaAppTitle = document.getElementById('meta-app-title');
+            if (metaAppTitle) metaAppTitle.content = CONFIG.projectName;
+
+            // PWA & Favicons
+            const linkManifest = document.getElementById('link-manifest');
+            if (linkManifest) linkManifest.href = CONFIG.manifestPath;
+
+            const linkApple = document.getElementById('link-apple-icon');
+            if (linkApple) linkApple.href = CONFIG.logoPath;
+
+            const linkFavicon = document.getElementById('link-favicon');
+            if (linkFavicon) linkFavicon.href = CONFIG.logoPath;
+
+            // Open Graph
+            const ogTitle = document.getElementById('og-title');
+            if (ogTitle) ogTitle.content = `${CONFIG.projectName} | ${CONFIG.projectSubtitle}`;
+
+            const ogDesc = document.getElementById('og-description');
+            if (ogDesc) ogDesc.content = CONFIG.description;
+
+            const ogImage = document.getElementById('og-image');
+            if (ogImage) ogImage.content = CONFIG.seo.ogImage;
+
+            const ogUrl = document.getElementById('og-url');
+            if (ogUrl) ogUrl.content = window.location.href;
+
+            // Twitter
+            const twTitle = document.getElementById('twitter-title');
+            if (twTitle) twTitle.content = `${CONFIG.projectName} | ${CONFIG.projectSubtitle}`;
+
+            const twDesc = document.getElementById('twitter-description');
+            if (twDesc) twDesc.content = CONFIG.description;
+
+            const twImage = document.getElementById('twitter-image');
+            if (twImage) twImage.content = CONFIG.seo.ogImage;
+
+            const twCard = document.getElementById('twitter-card');
+            if (twCard) twCard.content = CONFIG.seo.twitterCard;
+
+            const twUrl = document.getElementById('twitter-url');
+            if (twUrl) twUrl.content = window.location.href;
+
+            // UI Colors
+            document.documentElement.style.setProperty('--neon-green', CONFIG.accentColor);
+
+            // Portfolio & Portal Content
+            if (typeof initPortal === 'function') initPortal();
+            if (typeof initPortfolio === 'function') initPortfolio();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyConfig();
+
+            // PWA Service Worker Registration
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js').then(registration => {
+                        console.log('SW registered: ', registration);
+                    }).catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+                });
+            }
+        });
 
         fetch("https://api.ipify.org?format=json")
             .then(res => res.json())

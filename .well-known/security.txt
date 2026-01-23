@@ -1,0 +1,4 @@
+Contact: https://github.com/infinition/infinition/issues
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: en, fr
+Policy: https://github.com/infinition/infinition/blob/main/SECURITY.md

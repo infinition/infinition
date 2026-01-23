@@ -1,6 +1,11 @@
 let cymaticsStarted = false;
 
 function setRingActive(active) {
+    // If overload mode is disabled, skip all visual changes
+    if (typeof CONFIG !== 'undefined' && CONFIG.enableOverload === false) {
+        return;
+    }
+
     const reactor = document.getElementById('reactor');
     const sysMsg = document.getElementById('sys-msg');
     const sysStatus = document.querySelector('.sys-status');
@@ -54,6 +59,14 @@ function startCymatics() {
     if (cymaticsStarted) return;
     cymaticsStarted = true;
 
+    // Always activate the reactor visual effect (overload mode)
+    setRingActive(true);
+
+    // If music is disabled in config, skip audio playback
+    if (typeof CONFIG !== 'undefined' && CONFIG.enableMusic === false) {
+        return;
+    }
+
     const audio = document.getElementById("cymatics");
     const toggleBtn = document.getElementById("audio-toggle");
 
@@ -69,7 +82,6 @@ function startCymatics() {
             toggleBtn.style.display = "inline-flex";
             toggleBtn.innerHTML = '<i class="fas fa-wave-square"></i> MUTE';
         }
-        setRingActive(true); // Active l'animation du réacteur
     }).catch(err => {
         console.log("Autoplay bloqué : ", err);
     });
@@ -143,8 +155,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const audioToggleBtn = document.getElementById('audio-toggle');
     if (audioToggleBtn) {
-        audioToggleBtn.style.display = "none";
-        // Initial listener attachment
-        attachAudioListener();
+        // If music is disabled, hide the button completely and don't attach listeners
+        if (typeof CONFIG !== 'undefined' && CONFIG.enableMusic === false) {
+            audioToggleBtn.style.display = "none";
+            audioToggleBtn.remove(); // Remove from DOM entirely
+        } else {
+            audioToggleBtn.style.display = "none";
+            // Initial listener attachment
+            attachAudioListener();
+        }
+    }
+
+    // If overload mode is disabled, hide the SYS status indicator
+    if (typeof CONFIG !== 'undefined' && CONFIG.enableOverload === false) {
+        const sysMsg = document.getElementById('sys-msg');
+        const sysStatusIcon = document.querySelector('.sys-status > i');
+        if (sysMsg) sysMsg.style.display = 'none';
+        if (sysStatusIcon) sysStatusIcon.style.display = 'none';
     }
 });

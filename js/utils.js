@@ -1,5 +1,10 @@
 // --- SOUND UTILS ---
 function playDecipherSound() {
+    // Check if sound effects are disabled in config
+    if (typeof CONFIG !== 'undefined' && CONFIG.enableSoundFx === false) {
+        return;
+    }
+
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();

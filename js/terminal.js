@@ -42,7 +42,36 @@ const terminal = {
                 terminal.print("  ifconfig    - Show network info");
                 terminal.print("  agent       - Show User Agent");
                 terminal.print("  su          - Switch user");
+                terminal.print("  search      - Launch global search");
+                terminal.print("  find        - Alias for search");
                 terminal.print("  exit / :q   - Close terminal");
+            }
+        },
+        search: {
+            desc: "Launch global search",
+            action: (args) => {
+                const query = args.join(' ');
+                terminal.print(query ? `Searching for: ${query}...` : "Launching search protocol...", "term-warn");
+                setTimeout(() => {
+                    const modal = document.getElementById('search-modal');
+                    const input = document.getElementById('global-search-input');
+                    if (modal && input) {
+                        modal.classList.add('active');
+                        if (query) {
+                            input.value = query;
+                            // Trigger the input event to refresh results immediately
+                            input.dispatchEvent(new Event('input'));
+                        }
+                        input.focus();
+                    }
+                    terminal.toggle();
+                }, 500);
+            }
+        },
+        find: {
+            desc: "Alias for search",
+            action: (args) => {
+                terminal.commands.search.action(args);
             }
         },
         whoami: {
