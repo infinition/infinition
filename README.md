@@ -168,6 +168,15 @@
       <center><code>flappy-ufo-ql</code></center>
     </td>
     <td width="33%">
+      <a href="https://infinition.github.io/obsidian-obsidget/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/obsidian-obsidget">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>obsidian-obsidget</code></center>
+    </td>
+    <td width="33%">
       <a href="https://infinition.github.io/Q-LAB-2D/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -176,6 +185,8 @@
       </a>
       <center><code>Q-LAB-2D</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/ScrabbleArt/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -185,8 +196,6 @@
       </a>
       <center><code>ScrabbleArt</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/SYNAPTIK/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -196,7 +205,6 @@
       </a>
       <center><code>SYNAPTIK</code></center>
     </td>
-    <td align="center">✨</td>
     <td align="center">✨</td>
   </tr>
 </table>
@@ -285,19 +293,13 @@
       <center><code>obsidian-magiclink</code></center>
     </td>
     <td width="33%">
-      <a href="https://github.com/infinition/obsidian-obsidget">
-        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
-      </a>
-      <center><code>obsidian-obsidget</code></center>
-    </td>
-  </tr>
-  <tr>
-    <td width="33%">
       <a href="https://github.com/infinition/P4wnP1-Infinition-Payloads">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>P4wnP1-Infinition-Payloads</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/PyDep">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
@@ -310,14 +312,14 @@
       </a>
       <center><code>PyTreefy</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/QRobot">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>QRobot</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/Win10_LockPicker-by-Infinition">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
@@ -330,6 +332,7 @@
       </a>
       <center><code>Zombieland</code></center>
     </td>
+    <td align="center">✨</td>
   </tr>
 </table>
 <!-- REPO_LIST_END -->
