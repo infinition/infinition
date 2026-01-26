@@ -177,6 +177,17 @@
       <center><code>obsidian-obsidget</code></center>
     </td>
     <td width="33%">
+      <a href="https://infinition.github.io/obsidian-python-ds-studio/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/obsidian-python-ds-studio">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>obsidian-python-ds-studio</code></center>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%">
       <a href="https://infinition.github.io/Q-LAB-2D/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -185,8 +196,6 @@
       </a>
       <center><code>Q-LAB-2D</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/ScrabbleArt/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -205,7 +214,6 @@
       </a>
       <center><code>SYNAPTIK</code></center>
     </td>
-    <td align="center">✨</td>
   </tr>
 </table>
 
