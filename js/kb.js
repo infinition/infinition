@@ -11,10 +11,12 @@ const KB_STATE = {
     searchIndex: [],
     currentPath: null,
     expandedSections: new Set(),
+    expandedFolders: new Set(),
     allData: [],
     searchSelectedIndex: 0,
     hasHighlights: false,
-    tocHeadings: []
+    tocHeadings: [],
+    sortMode: 'name'
 };
 
 // === INITIALIZATION ===
@@ -91,14 +93,27 @@ function buildKBStructureFromData(data) {
         const cleanPath = item.file.startsWith('kb/') ? item.file.replace('kb/', '') : item.file.replace('articles/', '');
         const parts = cleanPath.split('/');
         let sectionName = 'General';
+        let folderParts = [];
 
-        if (parts.length > 1) {
+        if (item.file.startsWith('articles/')) {
+            sectionName = 'Articles';
+            folderParts = parts.slice(0, -1);
+        } else if (item.file.startsWith('kb/')) {
+            sectionName = 'KB';
+            folderParts = parts.slice(0, -1);
+        } else if (parts.length > 1) {
             sectionName = parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+            folderParts = parts.slice(1, -1);
         }
 
-        if (!sections[sectionName]) sections[sectionName] = [];
+        if (!sections[sectionName]) {
+            sections[sectionName] = {
+                name: sectionName,
+                tree: { folders: {}, pages: [] }
+            };
+        }
 
-        sections[sectionName].push({
+        addKBPageToTree(sections[sectionName].tree, folderParts, {
             name: item.title,
             path: item.file,
             downloadUrl: item.download_url,
@@ -106,7 +121,19 @@ function buildKBStructureFromData(data) {
         });
     }
 
-    return Object.entries(sections).map(([name, pages]) => ({ name, pages }));
+    return Object.values(sections);
+}
+
+function addKBPageToTree(tree, folderParts, page) {
+    if (!folderParts || folderParts.length === 0) {
+        tree.pages.push(page);
+        return;
+    }
+    const [head, ...rest] = folderParts;
+    if (!tree.folders[head]) {
+        tree.folders[head] = { folders: {}, pages: [] };
+    }
+    addKBPageToTree(tree.folders[head], rest, page);
 }
 
 function getKBSectionIdForPath(path) {
@@ -114,7 +141,11 @@ function getKBSectionIdForPath(path) {
     const parts = cleanPath.split('/').filter(Boolean);
     let sectionName = 'General';
 
-    if (parts.length > 1) {
+    if (path.startsWith('articles/')) {
+        sectionName = 'Articles';
+    } else if (path.startsWith('kb/')) {
+        sectionName = 'KB';
+    } else if (parts.length > 1) {
         sectionName = parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
     }
 
@@ -124,6 +155,27 @@ function getKBSectionIdForPath(path) {
 function setKBActiveSection(path) {
     const sectionId = getKBSectionIdForPath(path);
     KB_STATE.expandedSections = new Set([sectionId]);
+}
+
+function setKBActiveFolderPath(path) {
+    const sectionId = getKBSectionIdForPath(path);
+    const cleanPath = path.replace(/^kb\//, '').replace(/^articles\//, '');
+    const parts = cleanPath.split('/').filter(Boolean);
+    let folderParts = [];
+
+    if (path.startsWith('articles/') || path.startsWith('kb/')) {
+        folderParts = parts.slice(0, -1);
+    } else if (parts.length > 1) {
+        folderParts = parts.slice(1, -1);
+    }
+
+    const next = new Set();
+    let acc = [];
+    folderParts.forEach(seg => {
+        acc = [...acc, seg];
+        next.add(buildKBFolderId(sectionId, acc));
+    });
+    KB_STATE.expandedFolders = next;
 }
 
 function buildKBSearchIndex() {
@@ -169,7 +221,7 @@ function renderKBNavigationTree() {
                     <i class="fas fa-chevron-right section-arrow"></i>
                 </button>
                 <div id="kb-section-${sectionId}" class="kb-nav-list ${isExpanded ? 'expanded' : 'collapsed'}">
-                    ${renderKBPages(section.pages || [])}
+                    ${renderKBTree(section.tree, sectionId)}
                 </div>
             </div>
         `;
@@ -180,11 +232,13 @@ function renderKBNavigationTree() {
 }
 
 function renderKBPages(pages) {
+    const sorted = sortKBPages(pages);
+
     const escapeAttr = (s) => String(s).replace(/[&<>"']/g, (m) => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
     }[m]));
 
-    return pages.map(page => {
+    return sorted.map(page => {
         const isActive = KB_STATE.currentPath === page.path;
         return `
             <a class="kb-nav-link ${isActive ? 'active' : ''}" 
@@ -194,6 +248,98 @@ function renderKBPages(pages) {
             </a>
         `;
     }).join('');
+}
+
+function renderKBTree(tree, sectionId, parentFolders = []) {
+    let html = '';
+    const folderNames = Object.keys(tree.folders || {}).sort((a, b) => a.localeCompare(b));
+
+    folderNames.forEach(name => {
+        const folderPath = [...parentFolders, name];
+        const folderId = buildKBFolderId(sectionId, folderPath);
+        const isExpanded = KB_STATE.expandedFolders.has(folderId);
+
+        html += `
+            <div class="kb-nav-group">
+                <button class="kb-nav-btn kb-subfolder-header ${isExpanded ? 'open' : ''}"
+                        onclick="toggleKBSubfolder('${folderId}')">
+                    <span class="label">
+                        <i class="fas fa-folder${isExpanded ? '-open' : ''}"></i> ${name}
+                    </span>
+                    <i class="fas fa-chevron-right folder-arrow"></i>
+                </button>
+                <div id="${folderId}" class="kb-nav-list ${isExpanded ? 'expanded' : 'collapsed'}">
+                    ${renderKBTree(tree.folders[name], sectionId, folderPath)}
+                </div>
+            </div>
+        `;
+    });
+
+    html += renderKBPages(tree.pages || []);
+    return html;
+}
+
+function buildKBFolderId(sectionId, folderPath) {
+    const raw = `${sectionId}-${folderPath.join('/')}`;
+    return `kb-folder-${raw.toLowerCase().replace(/[^a-z0-9_-]+/g, '-')}`;
+}
+
+function toggleKBSubfolder(folderId) {
+    const list = document.getElementById(folderId);
+    const header = list?.previousElementSibling;
+    if (!list || !header) return;
+
+    const isExpanded = list.classList.contains('expanded');
+    list.classList.toggle('expanded', !isExpanded);
+    list.classList.toggle('collapsed', isExpanded);
+    header.classList.toggle('open', !isExpanded);
+
+    const icon = header.querySelector('.fa-folder, .fa-folder-open');
+    if (icon) {
+        icon.classList.toggle('fa-folder', isExpanded);
+        icon.classList.toggle('fa-folder-open', !isExpanded);
+    }
+
+    if (isExpanded) KB_STATE.expandedFolders.delete(folderId);
+    else KB_STATE.expandedFolders.add(folderId);
+}
+
+function sortKBPages(pages) {
+    const sorted = [...pages];
+    if (KB_STATE.sortMode === 'date') {
+        sorted.sort((a, b) => {
+            const da = new Date(a.date);
+            const db = new Date(b.date);
+            const ta = isNaN(da.getTime()) ? 0 : da.getTime();
+            const tb = isNaN(db.getTime()) ? 0 : db.getTime();
+            return tb - ta;
+        });
+    } else {
+        sorted.sort((a, b) => String(a.name).localeCompare(String(b.name)));
+    }
+    return sorted;
+}
+
+function getSortedFlatPages() {
+    return sortKBPages(KB_STATE.flatPages);
+}
+
+function getMenuOrderedPages() {
+    const ordered = [];
+    KB_STATE.structure.forEach(section => {
+        ordered.push(...flattenKBTree(section.tree));
+    });
+    return ordered;
+}
+
+function flattenKBTree(tree) {
+    const out = [];
+    const folderNames = Object.keys(tree.folders || {}).sort((a, b) => a.localeCompare(b));
+    folderNames.forEach(name => {
+        out.push(...flattenKBTree(tree.folders[name]));
+    });
+    out.push(...sortKBPages(tree.pages || []));
+    return out;
 }
 
 function attachKBNavLinkHandlers(container) {
@@ -264,6 +410,7 @@ async function loadKBContent(path) {
 
     KB_STATE.currentPath = path;
     setKBActiveSection(path);
+    setKBActiveFolderPath(path);
     renderKBNavigationTree();
 
     // Get content
@@ -661,15 +808,16 @@ function renderKBPagination() {
 
     if (!pagination || !prevCard || !nextCard) return;
 
-    const currentIndex = KB_STATE.flatPages.findIndex(p => p.path === KB_STATE.currentPath);
+    const pages = getMenuOrderedPages();
+    const currentIndex = pages.findIndex(p => p.path === KB_STATE.currentPath);
 
     if (currentIndex === -1) {
         pagination.style.display = 'none';
         return;
     }
 
-    const prevPage = KB_STATE.flatPages[currentIndex - 1];
-    const nextPage = KB_STATE.flatPages[currentIndex + 1];
+    const prevPage = pages[currentIndex - 1];
+    const nextPage = pages[currentIndex + 1];
 
     if (prevPage) {
         prevCard.style.display = 'block';
@@ -1084,6 +1232,7 @@ function setupKBMicroInteractions() {
 function setupKBEventListeners() {
     // Search trigger
     document.getElementById('kb-search-trigger')?.addEventListener('click', openKBSearch);
+    document.getElementById('kb-sort-toggle')?.addEventListener('click', toggleKBSortMode);
 
     // Search input
     const searchInput = document.getElementById('kb-search-input');
@@ -1132,16 +1281,18 @@ function setupKBEventListeners() {
 
 // === BREADCRUMB NAVIGATION ===
 function kbNavigatePrev() {
-    const currentIndex = KB_STATE.flatPages.findIndex(p => p.path === KB_STATE.currentPath);
+    const pages = getMenuOrderedPages();
+    const currentIndex = pages.findIndex(p => p.path === KB_STATE.currentPath);
     if (currentIndex > 0) {
-        loadKBContent(KB_STATE.flatPages[currentIndex - 1].path);
+        loadKBContent(pages[currentIndex - 1].path);
     }
 }
 
 function kbNavigateNext() {
-    const currentIndex = KB_STATE.flatPages.findIndex(p => p.path === KB_STATE.currentPath);
-    if (currentIndex >= 0 && currentIndex < KB_STATE.flatPages.length - 1) {
-        loadKBContent(KB_STATE.flatPages[currentIndex + 1].path);
+    const pages = getMenuOrderedPages();
+    const currentIndex = pages.findIndex(p => p.path === KB_STATE.currentPath);
+    if (currentIndex >= 0 && currentIndex < pages.length - 1) {
+        loadKBContent(pages[currentIndex + 1].path);
     }
 }
 
@@ -1237,6 +1388,19 @@ function updateKBBreadcrumbs(path) {
     updateKBBreadcrumbMetaVisibility(container);
 }
 
+function toggleKBSortMode() {
+    KB_STATE.sortMode = (KB_STATE.sortMode === 'name') ? 'date' : 'name';
+    const btn = document.getElementById('kb-sort-toggle');
+    if (btn) {
+        btn.title = KB_STATE.sortMode === 'name' ? 'Sort by name' : 'Sort by modified date';
+        btn.innerHTML = KB_STATE.sortMode === 'name'
+            ? '<i class="fas fa-sort-alpha-down"></i>'
+            : '<i class="fas fa-sort-amount-down-alt"></i>';
+    }
+    renderKBNavigationTree();
+    renderKBPagination();
+}
+
 function updateKBBreadcrumbMetaVisibility(container) {
     const readingTimeEls = document.querySelectorAll('[data-kb-reading-time]');
     const lastUpdatedEls = document.querySelectorAll('[data-kb-last-updated]');
@@ -1264,6 +1428,7 @@ window.loadKBContent = loadKBContent;
 window.loadKBDefault = loadKBDefault;
 window.loadKBChangelog = loadKBChangelog;
 window.toggleKBSection = toggleKBSection;
+window.toggleKBSubfolder = toggleKBSubfolder;
 window.scrollToKBHeading = scrollToKBHeading;
 window.scrollKBToTop = scrollKBToTop;
 window.openKBSearch = openKBSearch;
