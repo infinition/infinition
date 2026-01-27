@@ -672,6 +672,11 @@ function togglePlayer() {
 
 function renderArticles(items) {
     const container = document.getElementById('article-list-container');
+    if (container && !container.classList.contains('grid')) {
+        container.classList.add('grid');
+        const btn = document.querySelector('.blog-layout-toggle i');
+        if (btn) btn.className = 'fas fa-bars';
+    }
     container.innerHTML = '';
     items.forEach(item => {
         const div = document.createElement('div');
@@ -711,6 +716,18 @@ function renderArticles(items) {
         container.appendChild(div);
     });
 }
+
+function toggleArticleLayout() {
+    const container = document.getElementById('article-list-container');
+    if (!container) return;
+    container.classList.toggle('grid');
+    const btn = document.querySelector('.blog-layout-toggle i');
+    if (btn) {
+        btn.className = container.classList.contains('grid') ? 'fas fa-bars' : 'fas fa-th-large';
+    }
+}
+
+window.toggleArticleLayout = toggleArticleLayout;
 
 function filterArticles(query) {
     const q = query.toLowerCase();

@@ -111,11 +111,61 @@ async function fetchGitHubRepos() {
 
 async function fetchArtStation() {
     try {
-        const url = 'https://corsproxy.io/?url=' + encodeURIComponent('https://www.artstation.com/users/infinition/projects.json?page=1');
-        const r = await fetch(url);
-        if (!r.ok) return [];
-        const d = await r.json();
-        return d.data.map(i => ({ id: `art-${i.id}`, type: 'artwork', file: `art_${i.hash_id}.png`, title: i.title, date: i.published_at, icon: 'fab fa-artstation', image: i.cover.micro_square_image_url, content: 'ArtStation', url: i.permalink }));
+        const artUrl = CONFIG?.social?.artstation || 'https://www.artstation.com/infinition';
+        let username = 'infinition';
+        try {
+            const u = new URL(artUrl);
+            const parts = u.pathname.split('/').filter(Boolean);
+            if (parts[0] === 'users' && parts[1]) username = parts[1];
+            else if (parts[0]) username = parts[0];
+        } catch (_) { /* fallback */ }
+
+        const base = `https://www.artstation.com/users/${username}/projects.json?page=1`;
+        const urls = [
+            base,
+            `https://corsproxy.io/?url=${encodeURIComponent(base)}`,
+            `https://cors.isomorphic-git.org/${base}`
+        ];
+
+        let data = null;
+        for (const url of urls) {
+            const r = await fetch(url, { cache: 'no-store' });
+            if (!r.ok) continue;
+            const text = await r.text();
+            try {
+                data = JSON.parse(text);
+                break;
+            } catch {
+                const start = text.indexOf('{');
+                const end = text.lastIndexOf('}');
+                if (start !== -1 && end !== -1) {
+                    try {
+                        data = JSON.parse(text.slice(start, end + 1));
+                        break;
+                    } catch { /* ignore */ }
+                }
+            }
+        }
+
+        if (!data) return [];
+        const items = data.data || data.projects || [];
+        if (!Array.isArray(items)) return [];
+
+        return items.map(i => {
+            const cover = i.cover || {};
+            const image = cover.small_square_image_url || cover.micro_square_image_url || cover.small_image_url || cover.medium_image_url || cover.large_image_url || '';
+            return {
+                id: `art-${i.id}`,
+                type: 'artwork',
+                file: `art_${i.hash_id}.png`,
+                title: i.title,
+                date: i.published_at || i.created_at || '',
+                icon: 'fab fa-artstation',
+                image,
+                content: i.description || i.short_description || '',
+                url: i.permalink
+            };
+        });
     } catch (e) { return []; }
 }
 

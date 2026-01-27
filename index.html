@@ -376,10 +376,15 @@
             <div class="blog-header">
                 <h1 class="port-h1">DATA LOGS</h1>
                 <p>Personal Research Notes & Live Repositories</p>
-                <button class="action-btn" onclick="runScanSimulation(true)"
-                    style="margin: 10px auto; background: transparent; border: 1px solid #333; font-size: 0.8rem;">
-                    <i class="fas fa-sync-alt"></i> REFRESH DATA
-                </button>
+                <div class="blog-actions">
+                    <button class="action-btn" onclick="runScanSimulation(true)"
+                        style="background: transparent; border: 1px solid #333; font-size: 0.8rem;">
+                        <i class="fas fa-sync-alt"></i> REFRESH DATA
+                    </button>
+                    <button class="action-btn blog-layout-toggle" onclick="toggleArticleLayout()" title="Toggle layout">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                </div>
             </div>
             <div class="console-output" id="scan-output">> INITIALIZING...</div>
             <div class="article-list" id="article-list-container"></div>
