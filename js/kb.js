@@ -109,6 +109,23 @@ function buildKBStructureFromData(data) {
     return Object.entries(sections).map(([name, pages]) => ({ name, pages }));
 }
 
+function getKBSectionIdForPath(path) {
+    const cleanPath = path.replace(/^kb\//, '').replace(/^articles\//, '');
+    const parts = cleanPath.split('/').filter(Boolean);
+    let sectionName = 'General';
+
+    if (parts.length > 1) {
+        sectionName = parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+    }
+
+    return sectionName.replace(/\s+/g, '-').toLowerCase();
+}
+
+function setKBActiveSection(path) {
+    const sectionId = getKBSectionIdForPath(path);
+    KB_STATE.expandedSections = new Set([sectionId]);
+}
+
 function buildKBSearchIndex() {
     KB_STATE.searchIndex = KB_STATE.flatPages.map((page, index) => ({
         index,
@@ -159,19 +176,34 @@ function renderKBNavigationTree() {
     }
 
     container.innerHTML = html;
+    attachKBNavLinkHandlers(container);
 }
 
 function renderKBPages(pages) {
+    const escapeAttr = (s) => String(s).replace(/[&<>"']/g, (m) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+    }[m]));
+
     return pages.map(page => {
         const isActive = KB_STATE.currentPath === page.path;
         return `
             <a class="kb-nav-link ${isActive ? 'active' : ''}" 
-               onclick="loadKBContent('${page.path}')">
+               data-path="${escapeAttr(page.path)}">
                 <span class="dot"></span>
                 ${page.name}
             </a>
         `;
     }).join('');
+}
+
+function attachKBNavLinkHandlers(container) {
+    const links = container.querySelectorAll('.kb-nav-link');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            const path = link.dataset.path;
+            if (path) loadKBContent(path);
+        });
+    });
 }
 
 function toggleKBSection(sectionId) {
@@ -231,6 +263,8 @@ async function loadKBContent(path) {
     }
 
     KB_STATE.currentPath = path;
+    setKBActiveSection(path);
+    renderKBNavigationTree();
 
     // Get content
     let content = page.content;
@@ -377,20 +411,38 @@ function generateKBTableOfContents(container) {
     let html = '';
     let firstTitle = 'On This Page';
 
+    const getHeadingText = (heading) => {
+        let text = '';
+        heading.childNodes.forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE) {
+                text += node.textContent;
+            } else if (node.nodeType === Node.ELEMENT_NODE && !node.classList.contains('kb-anchor-link')) {
+                text += node.innerText || node.textContent || '';
+            }
+        });
+        return text.trim();
+    };
+
+    const indentClassFor = (tagName) => {
+        if (tagName === 'H2') return 'kb-toc-indent-h2';
+        if (tagName === 'H3') return 'kb-toc-indent-h3';
+        return '';
+    };
+
     headings.forEach((heading, index) => {
         const id = heading.id || `kb-heading-${index}`;
         heading.id = id;
 
         if (index === 0 && heading.tagName === 'H1') {
-            firstTitle = heading.textContent;
+            firstTitle = getHeadingText(heading) || firstTitle;
         }
 
-        const level = parseInt(heading.tagName[1]);
-        const indent = (level - 1) * 12;
+        const indentClass = indentClassFor(heading.tagName);
+        const headingText = getHeadingText(heading);
 
         html += `
-            <li class="toc-item" style="padding-left: ${indent}px;">
-                <a class="kb-toc-link" data-index="${index}" onclick="scrollToKBHeading('${id}')">${heading.textContent.replace('#', '')}</a>
+            <li class="toc-item">
+                <a class="kb-toc-link ${indentClass}" data-index="${index}" data-id="${id}" onclick="scrollToKBHeading('${id}')">${headingText}</a>
             </li>
         `;
     });
@@ -399,8 +451,7 @@ function generateKBTableOfContents(container) {
     if (mobileTocList) mobileTocList.innerHTML = html;
     if (tocTitle) tocTitle.textContent = firstTitle;
 
-    setupKBTOCObserver();
-    updateKBTOCPath(0);
+    setTimeout(updateKBTOCActiveState, 50);
 }
 
 function scrollToKBHeading(id) {
@@ -411,45 +462,79 @@ function scrollToKBHeading(id) {
     closeMobileKBToc();
 }
 
-function setupKBTOCObserver() {
-    const tocLinks = document.querySelectorAll('#kb-toc-list .kb-toc-link');
-    if (KB_STATE.tocHeadings.length === 0) return;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const index = KB_STATE.tocHeadings.indexOf(entry.target);
-                tocLinks.forEach((link, i) => {
-                    link.classList.toggle('active', i === index);
-                });
-                updateKBTOCPath(index);
-            }
-        });
-    }, { rootMargin: '-80px 0px -80% 0px' });
-
-    KB_STATE.tocHeadings.forEach(h => observer.observe(h));
-}
-
-function updateKBTOCPath(activeIndex) {
+function updateKBTOCActiveState() {
+    const scrollContainer = document.getElementById('kb-scroll-container');
+    const headings = Array.from(document.querySelectorAll('#kb-markdown-body h1, #kb-markdown-body h2, #kb-markdown-body h3'));
+    const tocLinks = Array.from(document.querySelectorAll('#kb-toc-list .kb-toc-link'));
     const path = document.getElementById('kb-toc-path');
-    const tocLinks = document.querySelectorAll('#kb-toc-list .kb-toc-link');
 
-    if (!path || tocLinks.length === 0) return;
+    if (!scrollContainer || !headings.length || !tocLinks.length || !path) return;
 
-    const firstLink = tocLinks[0];
-    const activeLink = tocLinks[activeIndex] || firstLink;
+    const containerRect = scrollContainer.getBoundingClientRect();
+    const buffer = 10;
 
-    if (!firstLink || !activeLink) return;
+    let activeHeadings = headings.filter(h => {
+        const rect = h.getBoundingClientRect();
+        const relativeTop = rect.top - containerRect.top;
+        const relativeBottom = rect.bottom - containerRect.top;
+        return (relativeTop < containerRect.height - buffer) && (relativeBottom > buffer);
+    });
 
-    const container = document.getElementById('kb-toc-list');
-    if (!container) return;
+    if (activeHeadings.length === 0) {
+        const scrollPos = scrollContainer.scrollTop;
+        for (let i = headings.length - 1; i >= 0; i--) {
+            if (headings[i].offsetTop <= scrollPos + 100) {
+                activeHeadings.push(headings[i]);
+                break;
+            }
+        }
+    }
+    if (activeHeadings.length === 0) activeHeadings.push(headings[0]);
 
-    const containerRect = container.getBoundingClientRect();
-    const startY = firstLink.getBoundingClientRect().top - containerRect.top + 8;
-    const endY = activeLink.getBoundingClientRect().top - containerRect.top + 8;
+    const activeIds = new Set(activeHeadings.map(h => h.id));
+    const activeLinks = [];
 
-    path.setAttribute('d', `M 8 ${startY} L 8 ${endY}`);
-    path.classList.add('active');
+    tocLinks.forEach(link => {
+        const id = link.dataset.id;
+        if (id && activeIds.has(id)) {
+            link.classList.add('active');
+            activeLinks.push(link);
+        } else {
+            link.classList.remove('active');
+        }
+    });
+
+    if (activeLinks.length > 0) {
+        let d = '';
+        let lastIndex = -2;
+
+        activeLinks.forEach(link => {
+            const id = link.dataset.id;
+            const heading = id ? document.getElementById(id) : null;
+            if (!heading) return;
+
+            const linkIndex = tocLinks.indexOf(link);
+
+            let x = -1;
+            if (heading.tagName === 'H2') x = 11;
+            else if (heading.tagName === 'H3') x = 23;
+
+            const yTop = link.offsetTop;
+            const yBottom = yTop + link.offsetHeight;
+
+            if (linkIndex !== lastIndex + 1) {
+                d += ` M ${x} ${yTop} L ${x} ${yBottom}`;
+            } else {
+                d += ` L ${x} ${yTop} L ${x} ${yBottom}`;
+            }
+            lastIndex = linkIndex;
+        });
+
+        path.setAttribute('d', d);
+        path.classList.add('active');
+    } else {
+        path.classList.remove('active');
+    }
 }
 
 // === UI UPDATES ===
@@ -549,7 +634,7 @@ function updateKBLastUpdated(path) {
 
 function updateKBNavHighlight(path) {
     document.querySelectorAll('#kb-nav-tree .kb-nav-link').forEach(link => {
-        const linkPath = link.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+        const linkPath = link.dataset.path;
         link.classList.toggle('active', linkPath === path);
     });
 }
@@ -1020,8 +1105,11 @@ function setupKBEventListeners() {
         closeMobileKBToc();
     });
 
-    // Scroll progress
-    document.getElementById('kb-scroll-container')?.addEventListener('scroll', updateKBScrollProgress);
+    // Scroll progress + TOC active state
+    document.getElementById('kb-scroll-container')?.addEventListener('scroll', () => {
+        updateKBScrollProgress();
+        updateKBTOCActiveState();
+    });
 
     // Scroll to top button
     document.getElementById('kb-scroll-top')?.addEventListener('click', scrollKBToTop);

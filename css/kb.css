@@ -873,6 +873,8 @@ mark.kb-search-match {
     text-decoration: none;
     display: block;
     padding: 0.25rem 0;
+    border-left: 2px solid transparent;
+    padding-left: 0.5rem;
     transition: all 0.2s;
     cursor: pointer;
 }
@@ -886,6 +888,14 @@ mark.kb-search-match {
 .kb-toc-sidebar .toc-link.active,
 .kb-toc-link.active {
     color: var(--kb-accent-green);
+}
+
+.kb-toc-indent-h2 {
+    margin-left: 12px;
+}
+
+.kb-toc-indent-h3 {
+    margin-left: 24px;
 }
 
 /* === PAGINATION === */
