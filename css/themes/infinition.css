@@ -610,4 +610,9 @@ body:not(.portal-mode) #sys-msg {
     #terminal-dropdown {
         height: 60vh;
     }
+
+    /* Prevent iOS zoom on focus */
+    #term-input {
+        font-size: 16px;
+    }
 }
