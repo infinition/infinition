@@ -605,7 +605,11 @@ function generateKBTableOfContents(container) {
 
 function scrollToKBHeading(id) {
     const element = document.getElementById(id);
-    if (element) {
+    const scroller = document.getElementById('kb-scroll-container');
+    if (element && scroller) {
+        const top = element.offsetTop - (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sysbar-height')) || 42) - 16;
+        scroller.scrollTo({ top, behavior: 'smooth' });
+    } else if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     closeMobileKBToc();
