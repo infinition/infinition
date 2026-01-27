@@ -38,6 +38,7 @@ function navigateTo(viewId, keepScroll = false) {
         document.querySelector('.back-btn').style.display = 'block';
     }
     document.body.classList.toggle('kb-mode', viewId === 'kb');
+    document.body.classList.toggle('portal-mode', viewId === 'portal');
 
     // UPDATE URL HISTORY for better navigation
     // UPDATE URL HISTORY for better navigation

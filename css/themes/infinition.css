@@ -460,6 +460,10 @@ body.theme-infinition {
     color: var(--neon-blue);
 }
 
+body:not(.portal-mode) #sys-msg {
+    display: none;
+}
+
 .back-btn {
     display: none;
     cursor: pointer;

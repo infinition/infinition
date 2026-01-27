@@ -7,12 +7,15 @@ function unlockData() {
         playDecipherSound();
         title.classList.add('glitch-active');
 
-        // Hide padlock
-        if (lockIcon) lockIcon.classList.add('hidden');
+        // Play unlock animation then hide
+        if (lockIcon) {
+            lockIcon.classList.add('unlocking');
+            setTimeout(() => lockIcon.classList.add('hidden'), 500);
+        }
 
         setTimeout(() => {
             el.classList.add('data-unlocked');
-        }, 300);
+        }, 520);
 
         setTimeout(() => {
             title.classList.remove('glitch-active');
@@ -20,7 +23,9 @@ function unlockData() {
     } else {
         el.classList.remove('data-unlocked');
         // Show padlock again
-        if (lockIcon) lockIcon.classList.remove('hidden');
+        if (lockIcon) {
+            lockIcon.classList.remove('hidden', 'unlocking');
+        }
     }
 }
 

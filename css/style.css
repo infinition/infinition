@@ -1077,15 +1077,7 @@ h2.port-h2 {
     }
 }
 
-/* HIDDEN DATA UNLOCK ANIMATION */
-/* on garde uniquement l'état .data-unlocked, la base est redéfinie plus bas */
-#secret-data.data-unlocked {
-    max-height: 27px;
-    opacity: 1;
-    transform: translateY(0);
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
+
 
 .badges-row {
     display: flex;
@@ -1277,14 +1269,21 @@ h2.port-h2 {
     box-shadow: 0 0 30px rgba(255, 0, 60, 0.6);
 }
 
-/* merged: base + extension */
+/* --- BOTTOM ICONS CONTAINER (FULL RESET) --- */
 .bottom-icons-container {
     display: flex;
-    gap: 25px;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 720px;
+    margin: 18px auto 0;
+    padding: 6px 12px;
+    gap: clamp(10px, 2.5vw, 24px);
+    min-height: 56px;
     position: relative;
-    top: 40px;
-    margin-top: 15px;
+    top: 0;
+    transform: translateZ(0);
 }
 
 /* --- AUDIO TOGGLE BTN --- */
@@ -1315,27 +1314,6 @@ h2.port-h2 {
     box-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
 }
 
-/* --- THEME TOGGLE BTN --- */
-.theme-toggle-btn {
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #aaa;
-    border-radius: 3px;
-    cursor: pointer;
-    padding: 4px 8px;
-    font-size: 0.7rem;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 5px;
-}
-
-.theme-toggle-btn:hover {
-    color: var(--neon-blue);
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 10px rgba(19, 175, 240, 0.5);
-}
 
 /* Quand la musique joue, on affiche le bouton */
 body.audio-playing .audio-toggle-btn {
@@ -1352,11 +1330,11 @@ body.audio-playing .audio-toggle-btn {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     /* dernier état */
     align-items: center;
     text-align: center;
-    padding: 8vh 0 10vh 0;
+    padding: 8vh 0 6vh 0;
 }
 
 /* État par défaut : spin léger, glow discret (version la plus récente) */
@@ -1457,7 +1435,7 @@ body.audio-playing .audio-toggle-btn {
 /* --- 2. STRUCTURE DU RÉACTEUR (CENTRE ABSOLU) --- */
 .reactor-container {
     position: absolute;
-    top: 50%;
+    top: 54%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: var(--ring-size);
@@ -1671,6 +1649,14 @@ body.audio-playing .audio-toggle-btn {
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.portal-bottom-group {
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 .sub-identity {
@@ -1682,15 +1668,30 @@ body.audio-playing .audio-toggle-btn {
 }
 
 /* --- PORTAL LOCK ICON --- */
+.lock-reveal-slot {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+}
+
 .portal-lock-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
     font-size: 2.5rem;
     color: var(--neon-red);
     transition: all 0.4s ease;
     cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .portal-lock-icon i {
@@ -1698,18 +1699,45 @@ body.audio-playing .audio-toggle-btn {
 }
 
 .portal-lock-icon:hover {
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
     text-shadow: 0 0 10px var(--neon-red);
+}
+
+/* Open/close icon swap */
+.portal-lock-icon .lock-open {
+    opacity: 0;
+    position: absolute;
+}
+
+.portal-lock-icon.unlocking .lock-closed {
+    opacity: 0;
+}
+
+.portal-lock-icon.unlocking .lock-open {
+    opacity: 1;
 }
 
 /* Hide padlock when data is unlocked */
 .portal-lock-icon.hidden {
-    opacity: 0;
-    transform: scale(0.8);
     pointer-events: none;
-    max-height: 0;
-    margin: 0;
-    overflow: hidden;
+    animation: lock-unlock 0.5s ease forwards;
+}
+
+@keyframes lock-unlock {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        visibility: visible;
+    }
+    60% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.95);
+        visibility: hidden;
+    }
 }
 
 /* --- BADGES "DATA STREAM" --- */
@@ -1719,39 +1747,24 @@ body.audio-playing .audio-toggle-btn {
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
-    position: relative;
-
-    /* 2. ÉTAT CACHÉ (C'est ce qui manquait) */
-    max-height: 0;
-    /* Hauteur nulle au départ */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    margin: 0;
     opacity: 0;
-    /* Invisible */
-    overflow: hidden;
-    /* Empêche le contenu de déborder */
-    transform: translateY(10px);
-    /* Légèrement décalé vers le bas */
-    margin-top: 0;
-    /* Pas de marge quand c'est fermé */
+    visibility: hidden;
     pointer-events: none;
-    /* Empêche de cliquer sur les liens invisibles */
-
-    /* 3. Animation fluide */
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.4s ease;
 }
 
 /* ÉTAT DÉVERROUILLÉ (Activé par JS via la classe .data-unlocked) */
 #secret-data.data-unlocked {
-    max-height: 200px;
-    /* Suffisamment grand pour afficher le contenu */
     opacity: 1;
-    /* Visible */
-    transform: translateY(0);
-    /* Revient à sa place */
-    margin-top: 15px;
-    /* Ajoute l'espace */
-    margin-bottom: 20px;
+    visibility: visible;
     pointer-events: auto;
-    /* Réactive les clics */
 }
 
 /* badges individuels */
@@ -1886,7 +1899,7 @@ body.audio-playing .audio-toggle-btn {
 
     /* On remonte un peu le centre sur mobile */
     .reactor-container {
-        top: 50%;
+        top: 55%;
     }
 
     .article-entry {
@@ -1903,21 +1916,6 @@ body.audio-playing .audio-toggle-btn {
         flex-direction: column;
     }
 
-
-    /* ÉTAT DÉVERROUILLÉ (Activé par JS via la classe .data-unlocked) */
-    #secret-data.data-unlocked {
-        max-height: 200px;
-        /* Suffisamment grand pour afficher le contenu */
-        opacity: 1;
-        /* Visible */
-        transform: translateY(0);
-        /* Revient à sa place */
-        margin-top: 15px;
-        /* Ajoute l'espace */
-        margin-bottom: 20px;
-        pointer-events: auto;
-        /* Réactive les clics */
-    }
 
     /* badges individuels */
     .cyber-badge {
@@ -2059,7 +2057,7 @@ body.audio-playing .audio-toggle-btn {
 
     /* On remonte un peu le centre sur mobile */
     .reactor-container {
-        top: 50%;
+        top: 55%;
     }
 
     .article-entry {
@@ -2072,6 +2070,16 @@ body.audio-playing .audio-toggle-btn {
         margin-bottom: 1rem;
     }
 
+    .bottom-icons-container {
+        max-width: 100%;
+        margin: 12px auto 0;
+        padding: 6px 10px;
+        gap: 10px;
+        min-height: 52px;
+        position: relative;
+        top: 0;
+    }
+
 
 
     .music-trigger {
@@ -2080,6 +2088,10 @@ body.audio-playing .audio-toggle-btn {
 
         width: 40px;
         height: 40px;
+    }
+
+    .music-trigger:hover {
+        transform: none;
     }
 
     /* Mobile Music Grid: 3 per row */

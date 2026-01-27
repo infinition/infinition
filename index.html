@@ -90,7 +90,7 @@
     <source src="audio/cymatics.mp3" type="audio/mpeg">
 </audio>
 
-<body>
+<body class="theme-infinition">
 
     <!-- Terminal Dropdown -->
     <div id="terminal-dropdown">
@@ -119,9 +119,6 @@
         <div class="back-btn" onclick="navigateTo('portal')"><i class="fas fa-arrow-left"></i> ROOT</div>
         <div class="sys-status">
             <i class="fas fa-circle" style="font-size: 8px;"></i> <span id="sys-msg">SYS STABLE</span>
-            <button id="theme-toggle" class="theme-toggle-btn" title="Switch Theme">
-                <i class="fas fa-moon"></i>
-            </button>
             <button id="audio-toggle" class="audio-toggle-btn" title="Audio Control">
                 <i class="fas fa-wave-square"></i>
             </button>
@@ -147,33 +144,36 @@
             <h1 class="portal-title" title="Click to unlock data">INFINITION</h1>
             <p class="sub-identity">FABIEN POLLY</p>
 
-            <!-- Padlock indicator - disappears when data is unlocked -->
-            <div id="portal-lock-icon" class="portal-lock-icon" title="Click anywhere to unlock">
-                <i class="fas fa-lock"></i>
-            </div>
+            <div class="lock-reveal-slot">
+                <!-- Padlock indicator - disappears when data is unlocked -->
+                <div id="portal-lock-icon" class="portal-lock-icon" title="Click anywhere to unlock">
+                    <i class="fas fa-lock lock-closed"></i>
+                    <i class="fas fa-unlock lock-open"></i>
+                </div>
 
-            <!-- BADGES TYPE "DATA STREAM" -->
-            <div id="secret-data">
-                <a href="https://www.linkedin.com/in/fabienpolly" target="_blank" class="cyber-badge">
-                    <i class="fab fa-linkedin"></i> linkedin_connect
-                </a>
-                <a href="https://github.com/infinition" target="_blank" class="cyber-badge">
-                    <i class="fab fa-github"></i> git_repo
-                </a>
-                <a href="https://github.com/infinition" target="_blank" class="cyber-badge">
-                    <i class="fas fa-star"></i> 5.6k_stars
-                </a>
-                <a href="https://www.reddit.com/r/Bjorn_CyberViking" target="_blank" class="cyber-badge">
-                    <i class="fab fa-reddit-alien"></i> r/bjorn
-                </a>
-                <a href="https://discord.com/invite/B3ZH9taVfT" target="_blank" class="cyber-badge">
-                    <i class="fab fa-discord"></i> discord_srv
-                </a>
+                <!-- BADGES TYPE "DATA STREAM" -->
+                <div id="secret-data">
+                    <a href="https://www.linkedin.com/in/fabienpolly" target="_blank" class="cyber-badge">
+                        <i class="fab fa-linkedin"></i> linkedin_connect
+                    </a>
+                    <a href="https://github.com/infinition" target="_blank" class="cyber-badge">
+                        <i class="fab fa-github"></i> git_repo
+                    </a>
+                    <a href="https://github.com/infinition" target="_blank" class="cyber-badge">
+                        <i class="fas fa-star"></i> 5.6k_stars
+                    </a>
+                    <a href="https://www.reddit.com/r/Bjorn_CyberViking" target="_blank" class="cyber-badge">
+                        <i class="fab fa-reddit-alien"></i> r/bjorn
+                    </a>
+                    <a href="https://discord.com/invite/B3ZH9taVfT" target="_blank" class="cyber-badge">
+                        <i class="fab fa-discord"></i> discord_srv
+                    </a>
+                </div>
             </div>
         </div>
 
         <!-- GROUPE DU BAS : MENU DE NAVIGATION -->
-        <div style="display:flex; flex-direction:column; align-items:center; width:100%;">
+        <div class="portal-bottom-group" style="display:flex; flex-direction:column; align-items:center; width:100%;">
             <div class="portal-menu">
                 <button class="portal-btn" onclick="navigateTo('portfolio')">
                     <i class="fas fa-user-astronaut"></i>
@@ -856,7 +856,6 @@
     </div>
 
     <script src="js/config.js"></script>
-    <script src="js/theme.js"></script>
     <script src="js/portfolio.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/api.js"></script>
@@ -872,7 +871,7 @@
     <script>
         // Glow Effect Logic
         document.addEventListener('mousemove', (e) => {
-            const elements = document.querySelectorAll('.glow-element, .portal-btn, .project-card, .article-entry, .cyber-badge, .skill-card, .btn-link, .music-trigger, .nav-btn, .action-btn, .tree-item');
+            const elements = document.querySelectorAll('.portal-btn');
             elements.forEach(el => {
                 const rect = el.getBoundingClientRect();
                 const x = e.clientX - rect.left;
