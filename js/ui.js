@@ -917,6 +917,21 @@ function initGlobalSearch() {
     });
 }
 
+function openGlobalSearch() {
+    const modal = document.getElementById('search-modal');
+    const input = document.getElementById('global-search-input');
+    if (!modal || !input) return;
+    modal.classList.add('active');
+    requestAnimationFrame(() => {
+        input.focus();
+        input.select();
+    });
+    setTimeout(() => {
+        input.focus();
+        input.select();
+    }, 50);
+}
+
 function renderSearchResults() {
     const resultsContainer = document.getElementById('global-search-results');
     if (searchResults.length === 0) {
@@ -957,5 +972,7 @@ function handleSearchResultClick(index) {
         openArticle(item);
     }
 }
+
+window.openGlobalSearch = openGlobalSearch;
 
 document.addEventListener('DOMContentLoaded', initGlobalSearch);

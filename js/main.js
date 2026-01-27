@@ -39,6 +39,7 @@ function navigateTo(viewId, keepScroll = false) {
     }
     document.body.classList.toggle('kb-mode', viewId === 'kb');
     document.body.classList.toggle('portal-mode', viewId === 'portal');
+    updateGlobalSearchIcon();
 
     // UPDATE URL HISTORY for better navigation
     // UPDATE URL HISTORY for better navigation
@@ -55,6 +56,18 @@ function navigateTo(viewId, keepScroll = false) {
     if (viewId === 'acid-pages') initAcidPages();
     // Removed direct music fetch, now handled by reveal button
     if (!keepScroll) window.scrollTo(0, 0);
+}
+
+function updateGlobalSearchIcon() {
+    const icon = document.getElementById('kb-search-icon');
+    if (!icon) return;
+    if (document.body.classList.contains('kb-mode')) {
+        icon.onclick = () => openKBSearch();
+        icon.title = 'KB Search';
+    } else {
+        icon.onclick = () => openGlobalSearch();
+        icon.title = 'Search';
+    }
 }
 
 async function runScanSimulation(forceRefresh = false) {

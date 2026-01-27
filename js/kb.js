@@ -879,10 +879,31 @@ function kbShowToast(message) {
 function openKBSearch() {
     const modal = document.getElementById('kb-search-modal');
     const input = document.getElementById('kb-search-input');
+    const kbView = document.getElementById('kb-view');
+
+    if (!kbView || !kbView.classList.contains('active')) {
+        if (typeof navigateTo === 'function') navigateTo('kb');
+        if (typeof initKB === 'function') initKB();
+        setTimeout(() => {
+            if (document.getElementById('kb-view')?.classList.contains('active')) {
+                openKBSearch();
+            }
+        }, 300);
+        return;
+    }
 
     if (modal) {
         modal.classList.add('active');
-        input?.focus();
+        if (input) {
+            requestAnimationFrame(() => {
+                input.focus();
+                input.select();
+            });
+            setTimeout(() => {
+                input.focus();
+                input.select();
+            }, 50);
+        }
         KB_STATE.searchSelectedIndex = 0;
     }
 }
@@ -921,6 +942,17 @@ function renderKBSearchResults(results, query = '') {
 
     if (!container) return;
 
+    const escapeHTML = (s) => String(s).replace(/[&<>"']/g, (m) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+    }[m]));
+
+    const highlight = (text) => {
+        if (!query) return escapeHTML(text);
+        const safeQuery = escapeHTML(query);
+        const re = new RegExp(`(${safeQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'ig');
+        return escapeHTML(text).replace(re, '<mark class="kb-search-match">$1</mark>');
+    };
+
     if (results.length === 0) {
         container.innerHTML = `
             <div style="text-align: center; padding: 2.5rem; color: #6b7280; font-size: 0.875rem;">
@@ -941,8 +973,8 @@ function renderKBSearchResults(results, query = '') {
                  onclick="kbSelectSearchResult(${result.index}, '${query}')">
                 <span class="dot" style="width: 6px; height: 6px; border-radius: 50%; background: var(--kb-accent-green); flex-shrink: 0;"></span>
                 <div style="min-width: 0;">
-                    <div style="font-weight: 600; color: var(--kb-text-heading); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${page.name}</div>
-                    <div style="font-size: 0.75rem; color: #6b7280; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${page.path}</div>
+                    <div style="font-weight: 600; color: var(--kb-text-heading); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${highlight(page.name || '')}</div>
+                    <div style="font-size: 0.75rem; color: #6b7280; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${highlight(page.path || '')}</div>
                 </div>
             </div>
         `;

@@ -458,7 +458,32 @@ body.theme-infinition {
 
 .sys-status {
     color: var(--neon-blue);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
+
+
+.kb-search-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #9ca3af;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.kb-search-icon:hover {
+    color: var(--neon-blue);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(19, 175, 240, 0.35);
+}
+
 
 body:not(.portal-mode) #sys-msg {
     display: none;
@@ -608,7 +633,7 @@ body:not(.portal-mode) #sys-msg {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     #terminal-dropdown {
-        height: 60vh;
+        height: 30vh;
     }
 
     /* Prevent iOS zoom on focus */

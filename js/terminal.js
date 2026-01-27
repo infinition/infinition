@@ -432,7 +432,10 @@ const terminal = {
         this.container.classList.toggle('active', this.isOpen);
 
         if (this.isOpen) {
-            setTimeout(() => this.input.focus(), 100);
+            setTimeout(() => {
+                this.input?.focus();
+                this.input?.select();
+            }, 50);
         }
     },
 
