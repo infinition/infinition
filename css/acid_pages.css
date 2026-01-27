@@ -15,7 +15,7 @@
 }
 
 #acid-pages-view .glass-panel {
-    background: rgba(24, 24, 27, 0.6);
+    background: rgb(9 13 16);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(63, 63, 70, 0.5);
 }
@@ -36,6 +36,97 @@
 
 #acid-pages-view .card-hover:hover .progress-line {
     transform: scaleX(1);
+}
+
+/* Card buttons polish */
+#acid-pages-view .acid-card-actions {
+    align-items: center;
+    width: 100%;
+}
+
+#acid-pages-view .acid-code-btn {
+    margin-left: auto;
+    font-size: 1.35rem;
+    color: #84cc16;
+    border: none;
+    background: transparent;
+    padding: 0;
+    height: 38px;
+    width: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#acid-pages-view .acid-code-btn:hover {
+    color: #b7f34c;
+}
+
+/* remove meta divider */
+#acid-pages-view .acid-card-meta {
+    border-top: none !important;
+    padding-top: 0;
+}
+
+#acid-pages-view .acid-code-btn i {
+    font-size: 1.35rem;
+}
+
+#acid-pages-view .acid-launch-btn,
+#acid-pages-view .acid-code-btn {
+    height: 38px;
+    line-height: 1;
+    border-radius: 10px;
+}
+
+#acid-pages-view .acid-code-btn {
+    min-width: 44px;
+}
+
+/* Language icon badge */
+#acid-pages-view .acid-lang-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: transparent;
+    color: #84cc16;
+}
+
+#acid-pages-view .acid-lang-icon svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+/* Icon badge (top-left of card) */
+#acid-pages-view .bg-zinc-800\/80 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+}
+
+/* Language pill */
+#acid-pages-view .text-\[10px\] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    line-height: 1;
+    padding: 0 10px;
+}
+
+/* Launch button */
+#acid-pages-view .acid-launch-btn {
+    height: 38px;
+    padding: 0 14px;
+    line-height: 1;
 }
 
 /* Custom Scrollbar for this view */
@@ -238,7 +329,6 @@
 #acid-pages-view .hover\:text-black:hover { color: #000; }
 #acid-pages-view .border-lime-600\/50 { border-color: rgba(101, 163, 13, 0.5); }
 #acid-pages-view .hover\:border-lime-500:hover { border-color: #84cc16; }
-#acid-pages-view .bg-zinc-800 { background-color: #27272a; }
 #acid-pages-view .hover\:bg-zinc-700:hover { background-color: #3f3f46; }
 #acid-pages-view .hover\:text-white:hover { color: #fff; }
 #acid-pages-view .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
