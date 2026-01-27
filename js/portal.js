@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 2. Check if the click is on an interactive element
         // We explicitly check for the audio toggle button ID as well to be safe
-        if (e.target.closest('button, a, input, textarea, select, .back-btn, .music-trigger, .portal-btn, #audio-toggle')) {
+        if (e.target.closest('button, a, input, textarea, select, .back-btn, .music-trigger, .portal-btn, #audio-toggle, .sys-bar')) {
             return;
         }
 

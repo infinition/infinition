@@ -391,16 +391,10 @@ const terminal = {
 
         this.updatePrompt();
 
-        // Top Bar Click Trigger (only if not on portal and not clicking buttons)
+        // Top Bar Click Trigger
         const sysBar = document.querySelector('.sys-bar');
         if (sysBar) {
             sysBar.addEventListener('click', (e) => {
-                // Check if we are on portal view (home)
-                const portalView = document.getElementById('portal-view');
-                if (portalView && portalView.style.display !== 'none' && portalView.classList.contains('active')) {
-                    return; // Do nothing on home page
-                }
-
                 // Check if clicked on interactive elements
                 if (e.target.closest('button') || e.target.closest('.back-btn') || e.target.closest('a')) {
                     return; // Do nothing if clicked on a button or link
