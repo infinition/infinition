@@ -782,6 +782,9 @@ mark.kb-search-match {
 }
 
 /* === TOC SIDEBAR === */
+.kb-mode .sys-bar {
+    border-bottom: none;
+}
 .kb-toc-sidebar {
     width: 16rem;
     flex-shrink: 0;

@@ -37,6 +37,7 @@ function navigateTo(viewId, keepScroll = false) {
         if (target) { target.style.display = 'block'; target.classList.add('active'); }
         document.querySelector('.back-btn').style.display = 'block';
     }
+    document.body.classList.toggle('kb-mode', viewId === 'kb');
 
     // UPDATE URL HISTORY for better navigation
     // UPDATE URL HISTORY for better navigation
