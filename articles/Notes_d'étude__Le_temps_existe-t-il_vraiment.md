@@ -1,4 +1,4 @@
-# Notes d’étude : *Le temps existe-t-il vraiment ?*
+# Notes d’étude : Le temps existe-t-il vraiment ?
 ![image](https://github.com/user-attachments/assets/8f6a2af3-03e0-47e2-9274-d3d02b0230d2)
 
 ## Idée principale
