@@ -456,6 +456,16 @@ body.theme-infinition {
     /* valeur finale consolidée */
 }
 
+.sys-id::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 14px;
+    margin: 0 12px;
+    background: rgba(255, 255, 255, 0.12);
+    vertical-align: middle;
+}
+
 .sys-status {
     color: var(--neon-blue);
 }

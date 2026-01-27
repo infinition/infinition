@@ -478,10 +478,6 @@
                                     </button>
 
                                     <!-- Meta Bar -->
-                                    <div class="kb-meta-bar">
-                                        <span id="kb-reading-time">~1 min read</span>
-                                        <span id="kb-last-updated" class="updated"></span>
-                                    </div>
                                 </div>
                             </div>
 
@@ -519,6 +515,10 @@
                         <!-- TOC Sidebar (Desktop) -->
                         <aside id="kb-toc-sidebar" class="kb-toc-sidebar">
                             <div class="sticky-wrapper">
+                                <div class="kb-meta-bar">
+                                    <span id="kb-reading-time" data-kb-reading-time>~1 min read</span>
+                                    <span id="kb-last-updated" class="updated" data-kb-last-updated></span>
+                                </div>
                                 <button class="toc-title" id="kb-toc-title" onclick="scrollKBToTop()">ON THIS
                                     PAGE</button>
                                 <div class="toc-list-container">
@@ -563,14 +563,20 @@
         <!-- Mobile TOC Sidebar -->
         <aside id="kb-mobile-toc" class="kb-wiki-sidebar">
             <div
-                style="padding: 1rem; border-bottom: 1px solid var(--kb-border-color); display: flex; justify-content: space-between; align-items: center;">
-                <span
-                    style="font-size: 0.625rem; font-weight: 700; color: var(--kb-accent-green); text-transform: uppercase; letter-spacing: 0.1em;">On
-                    This Page</span>
-                <button onclick="closeMobileKBToc()"
-                    style="background: transparent; border: none; color: #9ca3af; cursor: pointer;">
-                    <i class="fas fa-times"></i>
-                </button>
+                style="padding: 1rem; border-bottom: 1px solid var(--kb-border-color); display: flex; flex-direction: column; gap: 0.5rem;">
+                <div class="kb-meta-bar" style="margin: 0;">
+                    <span data-kb-reading-time>~1 min read</span>
+                    <span class="updated" data-kb-last-updated></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span id="kb-mobile-toc-title"
+                        style="font-size: 0.625rem; font-weight: 700; color: var(--kb-accent-green); text-transform: uppercase; letter-spacing: 0.1em;">On
+                        This Page</span>
+                    <button onclick="closeMobileKBToc()"
+                        style="background: transparent; border: none; color: #9ca3af; cursor: pointer;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
             </div>
             <div style="flex: 1; overflow-y: auto; padding: 1rem;">
                 <ul id="kb-mobile-toc-list" style="list-style: none; padding: 0; margin: 0;">

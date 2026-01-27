@@ -450,6 +450,8 @@ function generateKBTableOfContents(container) {
     if (tocList) tocList.innerHTML = html;
     if (mobileTocList) mobileTocList.innerHTML = html;
     if (tocTitle) tocTitle.textContent = firstTitle;
+    const mobileTocTitle = document.getElementById('kb-mobile-toc-title');
+    if (mobileTocTitle) mobileTocTitle.textContent = firstTitle;
 
     setTimeout(updateKBTOCActiveState, 50);
 }
@@ -608,28 +610,41 @@ window.addEventListener('resize', () => {
     }
 });
 
+window.addEventListener('resize', () => {
+    updateKBBreadcrumbMetaVisibility(document.getElementById('kb-breadcrumbs'));
+});
+
 function updateKBReadingTime(content) {
-    const el = document.getElementById('kb-reading-time');
-    if (!el) return;
+    const els = document.querySelectorAll('[data-kb-reading-time]');
+    if (!els.length) return;
 
     const words = content.split(/\s+/).length;
     const minutes = Math.ceil(words / 200);
-    el.textContent = `~${minutes} min read`;
+    els.forEach(el => {
+        el.textContent = `~${minutes} min read`;
+    });
+    updateKBBreadcrumbMetaVisibility(document.getElementById('kb-breadcrumbs'));
 }
 
 function updateKBLastUpdated(path) {
-    const el = document.getElementById('kb-last-updated');
-    if (!el) return;
+    const els = document.querySelectorAll('[data-kb-last-updated]');
+    if (!els.length) return;
 
     const page = KB_STATE.flatPages.find(p => p.path === path);
     if (page?.date && page.date !== 'Unknown') {
         const date = new Date(page.date);
         if (!isNaN(date.getTime())) {
-            el.textContent = `Updated ${date.toLocaleDateString()}`;
+            els.forEach(el => {
+                el.textContent = `Updated ${date.toLocaleDateString()}`;
+            });
+            updateKBBreadcrumbMetaVisibility(document.getElementById('kb-breadcrumbs'));
             return;
         }
     }
-    el.textContent = '';
+    els.forEach(el => {
+        el.textContent = '';
+    });
+    updateKBBreadcrumbMetaVisibility(document.getElementById('kb-breadcrumbs'));
 }
 
 function updateKBNavHighlight(path) {
@@ -1170,6 +1185,12 @@ function updateKBBreadcrumbs(path) {
         isLast: true
     });
 
+    const docTitle = page?.name || prettySeg(parts[parts.length - 1]);
+    const tocTitle = document.getElementById('kb-toc-title');
+    const mobileTocTitle = document.getElementById('kb-mobile-toc-title');
+    if (tocTitle) tocTitle.textContent = docTitle;
+    if (mobileTocTitle) mobileTocTitle.textContent = docTitle;
+
     const iconFor = (type) => {
         if (type === 'root') return `<i class="fas fa-house"></i>`;
         if (type === 'folder') return `<i class="fas fa-folder"></i>`;
@@ -1186,9 +1207,11 @@ function updateKBBreadcrumbs(path) {
         const onclick = (c.type === 'root') ? `onclick="loadKBDefault()"` : '';
         const title = `title="${text}"`;
 
+        const label = (c.type === 'root') ? '' : `<span class="label">${text}</span>`;
+
         return `<span class="${classes.join(' ')}" ${onclick} ${title}>
             ${iconFor(c.type)}
-            <span class="label">${text}</span>
+            ${label}
         </span>`;
     };
 
@@ -1210,6 +1233,27 @@ function updateKBBreadcrumbs(path) {
             container.innerHTML = `${rootItem}${separator}${ellipsis} ${currentItem}`;
         }
     }
+
+    updateKBBreadcrumbMetaVisibility(container);
+}
+
+function updateKBBreadcrumbMetaVisibility(container) {
+    const readingTimeEls = document.querySelectorAll('[data-kb-reading-time]');
+    const lastUpdatedEls = document.querySelectorAll('[data-kb-last-updated]');
+    if (!readingTimeEls.length && !lastUpdatedEls.length) return;
+
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) {
+        readingTimeEls.forEach(el => { el.style.display = ''; });
+        lastUpdatedEls.forEach(el => { el.style.display = ''; });
+        return;
+    }
+
+    const titleLabel = container.querySelector('.crumb-current .label');
+    const isTruncated = titleLabel && titleLabel.scrollWidth > titleLabel.clientWidth + 1;
+
+    readingTimeEls.forEach(el => { el.style.display = isTruncated ? 'none' : ''; });
+    lastUpdatedEls.forEach(el => { el.style.display = isTruncated ? 'none' : ''; });
 }
 
 
