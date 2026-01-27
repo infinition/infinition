@@ -2,8 +2,8 @@
 
 /* --- CSS VARIABLES (Theme Engine) --- */
 :root {
-    --kb-bg-body: #0B0C0E;
-    --kb-bg-sidebar: #111214;
+    /* --kb-bg-body: #0B0C0E; */
+    /* --kb-bg-sidebar: #111214; */
     --kb-border-color: #2A2E35;
     --kb-text-main: #A0AAB8;
     --kb-text-heading: #E2E8F0;
@@ -192,7 +192,7 @@ mark.kb-search-match {
 /* === SIDEBAR === */
 .kb-wiki-sidebar {
     width: 280px;
-    background-color: var(--kb-bg-sidebar);
+    background-color: transparent;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-right: 1px solid var(--kb-border-color);
@@ -371,7 +371,7 @@ mark.kb-search-match {
 .kb-nav-btn .arrow {
     width: 0.75rem;
     height: 0.75rem;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.2s;
 }
 
@@ -572,6 +572,7 @@ mark.kb-search-match {
     margin-bottom: 2rem;
     width: 100%;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 16px;
 }
 
 .kb-breadcrumb-container.is-sticky {
@@ -582,7 +583,7 @@ mark.kb-search-match {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: var(--kb-bg-sidebar);
+    background-color: #111214;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--kb-border-color);
@@ -596,7 +597,6 @@ mark.kb-search-match {
 }
 
 .kb-breadcrumb-container.stuck::before {
-    opacity: 1;
     transform: scale(1);
     inset: -0.6rem -1rem;
 }
@@ -609,6 +609,10 @@ mark.kb-search-match {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    width: 100%;
+    padding: 0.35rem 0.5rem;
+    background: rgb(9 13 16);
+    border-radius: 16px;
 }
 
 /* Breadcrumb Navigation Arrows */
@@ -983,12 +987,12 @@ mark.kb-search-match {
     position: absolute;
     bottom: 1.5rem;
     left: 50%;
-    transform: translateX(-50%) translateY(20px);
+    transform: translateX(-50%) translateY(80px);
     width: 50px;
     height: 50px;
     padding: 0;
     border-radius: 50%;
-    background: var(--kb-bg-sidebar);
+    background: #111214;
     border: 1px solid var(--kb-border-color);
     color: var(--kb-accent-green);
     cursor: pointer;
@@ -997,7 +1001,7 @@ mark.kb-search-match {
     align-items: center;
     justify-content: center;
     z-index: 30;
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
 }
 
@@ -1152,7 +1156,7 @@ mark.kb-search-match {
     left: 1.5rem;
     width: 50px;
     height: 50px;
-    background: var(--kb-bg-sidebar);
+    background: #111214;
     color: var(--kb-text-main);
     border: 1px solid var(--kb-border-color);
     border-radius: 50%;
@@ -1179,7 +1183,7 @@ mark.kb-search-match {
     right: 1.5rem;
     width: 50px;
     height: 50px;
-    background: var(--kb-bg-sidebar);
+    background: #111214;
     color: var(--kb-text-main);
     border: 1px solid var(--kb-border-color);
     border-radius: 50%;
@@ -1579,11 +1583,14 @@ mark.kb-search-match {
     color: var(--kb-accent-green);
     border-color: rgba(34, 197, 94, 0.25);
     background: rgba(34, 197, 94, 0.10);
-    width: 28px;
-    min-width: 28px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
     justify-content: center;
     gap: 0;
     padding: 0;
+    border-radius: 9999px;
 }
 
 #kb-breadcrumbs .crumb-root:hover {
@@ -1629,6 +1636,19 @@ mark.kb-search-match {
     color: var(--kb-accent-green);
     border-color: rgba(34, 197, 94, 0.25);
     background: rgba(34, 197, 94, 0.08);
+}
+
+.kb-breadcrumb-arrow:active {
+    opacity: 1;
+    color: var(--kb-accent-green);
+    border-color: rgba(34, 197, 94, 0.35);
+    background: rgba(34, 197, 94, 0.12);
+}
+
+.kb-breadcrumb-arrow:focus,
+.kb-breadcrumb-arrow:focus-visible {
+    outline: none;
+    box-shadow: none;
 }
 
 .kb-breadcrumb-arrow:disabled {

@@ -1096,18 +1096,20 @@ function updateKBScrollProgress() {
     const progressBar = document.getElementById('kb-progress-bar');
     const scrollTopBtn = document.getElementById('kb-scroll-top');
 
-    if (!scrollContainer || !progressBar) return;
+    if (!scrollContainer) return;
 
     const scrollTop = scrollContainer.scrollTop;
     const scrollHeight = scrollContainer.scrollHeight - scrollContainer.clientHeight;
     const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
 
-    progressBar.style.width = `${progress}%`;
+    if (progressBar) progressBar.style.width = `${progress}%`;
     scrollTopBtn?.classList.toggle('visible', scrollTop > 200);
 }
 
 function scrollKBToTop() {
-    document.getElementById('kb-scroll-container')?.scrollTo({ top: 0, behavior: 'smooth' });
+    const scroller = document.getElementById('kb-scroll-container');
+    scroller?.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(updateKBScrollProgress, 250);
 }
 
 // === SOCIAL BADGES ===
@@ -1403,6 +1405,7 @@ function toggleKBSortMode() {
     }
     renderKBNavigationTree();
     renderKBPagination();
+    updateKBScrollProgress();
 }
 
 function updateKBBreadcrumbMetaVisibility(container) {
