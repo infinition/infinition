@@ -61,6 +61,27 @@
     <link rel="stylesheet" href="css/csslib.css">
 
     <link rel="stylesheet" href="css/acid_pages.css">
+    <link rel="stylesheet" href="css/kb.css">
+
+    <!-- Tailwind CSS for AcidWiki components -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        hack: {
+                            green: '#22c55e',
+                            bg: '#0B0C0E',
+                            sidebar: '#111214',
+                            border: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
 </head>
 
@@ -366,46 +387,233 @@
         <div class="container" id="article-view"></div>
     </section>
 
-    <!-- SECTION KB -->
-    <section id="kb-view" class="view-section" style="padding-top: var(--sysbar-height); padding-bottom: 0;">
-        <div class="kb-container">
+    <!-- SECTION KB - AcidWiki Clone -->
+    <section id="kb-view" class="view-section"
+        style="padding-top: var(--sysbar-height); padding-bottom: 0; height: calc(100vh - var(--sysbar-height)); overflow: hidden;">
 
-            <!-- Bouton mobile -->
-            <div class="kb-toggle-btn">
-                <i class="fas fa-angle-right"></i>
-            </div>
+        <!-- Toast Container -->
+        <div id="kb-toast" class="kb-toast-container">
+            <i class="fas fa-check-circle"></i>
+            <span id="kb-toast-message"></span>
+        </div>
 
-            <!-- Sidebar -->
-            <div class="kb-sidebar">
-                <div style="display:flex; gap:5px; margin-bottom:1rem;">
-                    <input type="text" id="kb-search" class="kb-search-box" placeholder="Search (Content)..."
-                        autocomplete="off" style="margin-bottom:0; flex:1;">
 
-                    <button class="nav-btn" onclick="toggleKBSort()" title="Sort by Date/Name"
-                        style="width:35px; height:38px; border-radius:4px; background:rgba(255,255,255,0.05); border:1px solid #333;">
-                        <i id="kb-sort-icon" class="fas fa-calendar"></i>
+
+        <!-- Mobile Overlay -->
+        <div id="kb-overlay" class="kb-overlay"></div>
+
+        <!-- Main Container -->
+        <div class="kb-wiki-container">
+
+            <!-- SIDEBAR -->
+            <aside id="kb-sidebar" class="kb-wiki-sidebar">
+                <!-- Close Button (Mobile) -->
+                <button id="kb-close-sidebar" class="kb-close-sidebar" onclick="closeMobileKBSidebar()"
+                    style="display: none; position: absolute; top: 1rem; right: 1rem; background: transparent; border: none; color: #9ca3af; cursor: pointer; padding: 0.5rem;">
+                    <i class="fas fa-times" style="font-size: 1.25rem;"></i>
+                </button>
+
+                <!-- Sidebar Header -->
+                <div class="sidebar-header">
+                    <div class="logo-area" onclick="loadKBDefault()">
+                        <img src="img/icon-180.png" alt="Logo">
+                        <div>
+                            <h1>KNOWLEDGE BASE</h1>
+                        </div>
+                    </div>
+
+                    <!-- Search Trigger -->
+                    <button class="search-trigger" id="kb-search-trigger">
+                        <span>Search...</span>
+                        <kbd>Ctrl+K</kbd>
                     </button>
                 </div>
 
-                <div class="inner">
-                    <div id="kb-tree">
-                        <div style="text-align:center; padding:1rem; color:#666;">Loading Tree...</div>
+                <!-- Navigation Scroll Area -->
+                <div class="nav-scroll">
+
+                    <div id="kb-nav-tree">
+                        <!-- Navigation tree injected by JS -->
+                        <div class="kb-skeleton" style="height: 20px; width: 80%; margin-bottom: 8px;"></div>
+                        <div class="kb-skeleton" style="height: 20px; width: 60%; margin-bottom: 8px;"></div>
+                        <div class="kb-skeleton" style="height: 20px; width: 70%; margin-bottom: 8px;"></div>
                     </div>
                 </div>
-            </div>
 
-            <!-- BACKDROP (correct emplacement) -->
-            <div class="kb-backdrop"></div>
+                <!-- Footer -->
+                <div class="kb-sidebar-footer" id="kb-sidebar-footer">
+                    © 2025 infinition
+                </div>
+            </aside>
 
-            <!-- Contenu principal -->
-            <div class="kb-main" id="kb-content-area">
-                <h1 style="font-family: var(--cyber-font); padding: 10px; color: var(--neon-purple);">
-                    Welcome to the KB
-                </h1>
-                <p style="padding: 10px;">Select a node on the left to access documentation.</p>
+            <!-- MAIN CONTENT AREA -->
+            <div class="kb-wiki-main">
+                <!-- Reading Progress Bar -->
+                <div id="kb-progress-bar" class="kb-reading-progress"></div>
+
+                <!-- Scroll Container -->
+                <div id="kb-scroll-container" class="scroll-container">
+                    <div class="content-wrapper">
+
+                        <!-- Main Content -->
+                        <article class="main-content kb-content-transition-area">
+                            <!-- Sticky Breadcrumb Container -->
+                            <div id="kb-breadcrumb-container" class="kb-breadcrumb-container is-sticky">
+                                <div class="kb-breadcrumb-inner">
+                                    <!-- Prev Arrow -->
+                                    <button id="kb-breadcrumb-prev" class="kb-breadcrumb-arrow" title="Previous"
+                                        onclick="kbNavigatePrev()">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+
+                                    <!-- Breadcrumbs -->
+                                    <nav id="kb-breadcrumbs" class="kb-breadcrumbs">
+                                        <span class="current">Home</span>
+                                    </nav>
+
+                                    <!-- Next Arrow -->
+                                    <button id="kb-breadcrumb-next" class="kb-breadcrumb-arrow" title="Next"
+                                        onclick="kbNavigateNext()">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+
+                                    <!-- Meta Bar -->
+                                    <div class="kb-meta-bar">
+                                        <span id="kb-reading-time">~1 min read</span>
+                                        <span id="kb-last-updated" class="updated"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Markdown Content -->
+                            <div id="kb-markdown-body" class="kb-markdown-body">
+                                <h1>Welcome to the Knowledge Base</h1>
+                                <p>Select a document from the navigation panel to begin exploring.</p>
+                                <div style="margin-top: 2rem;">
+                                    <div class="kb-skeleton" style="height: 24px; width: 40%; margin-bottom: 16px;">
+                                    </div>
+                                    <div class="kb-skeleton" style="height: 16px; width: 100%; margin-bottom: 8px;">
+                                    </div>
+                                    <div class="kb-skeleton" style="height: 16px; width: 90%; margin-bottom: 8px;">
+                                    </div>
+                                    <div class="kb-skeleton" style="height: 16px; width: 95%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div id="kb-pagination" class="kb-pagination" style="display: none;">
+                                <div id="kb-prev-page" class="kb-pagination-card">
+                                    <div class="label">← Previous</div>
+                                    <div class="title">Page Title</div>
+                                </div>
+                                <div id="kb-next-page" class="kb-pagination-card" style="text-align: right;">
+                                    <div class="label">Next →</div>
+                                    <div class="title">Page Title</div>
+                                </div>
+                            </div>
+
+                            <!-- Spacer -->
+                            <div style="height: 5rem;"></div>
+                        </article>
+
+                        <!-- TOC Sidebar (Desktop) -->
+                        <aside id="kb-toc-sidebar" class="kb-toc-sidebar">
+                            <div class="sticky-wrapper">
+                                <button class="toc-title" id="kb-toc-title" onclick="scrollKBToTop()">ON THIS
+                                    PAGE</button>
+                                <div class="toc-list-container">
+                                    <svg id="kb-toc-svg" class="kb-toc-svg">
+                                        <path id="kb-toc-path" class="kb-toc-path" fill="none"
+                                            stroke="var(--kb-accent-green)" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    <ul id="kb-toc-list" class="toc-list">
+                                        <!-- TOC items injected by JS -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </aside>
+
+                    </div>
+                </div>
+
+                <!-- Clear Highlight Button -->
+                <button id="kb-clear-highlight" class="kb-clear-highlight-btn" title="Clear Search Highlights"
+                    onclick="kbClearHighlights()">
+                    <i class="fas fa-eraser"></i>
+                </button>
+
+                <!-- Scroll to Top Button -->
+                <button id="kb-scroll-top" class="kb-scroll-top-btn" title="Scroll to top">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
             </div>
 
         </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="kb-mobile-toggle" class="kb-mobile-toggle" title="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <button id="kb-mobile-toc-toggle" class="kb-mobile-toc-toggle" title="Table of Contents">
+            <i class="fas fa-list"></i>
+        </button>
+
+        <!-- Mobile TOC Sidebar -->
+        <aside id="kb-mobile-toc" class="kb-wiki-sidebar">
+            <div
+                style="padding: 1rem; border-bottom: 1px solid var(--kb-border-color); display: flex; justify-content: space-between; align-items: center;">
+                <span
+                    style="font-size: 0.625rem; font-weight: 700; color: var(--kb-accent-green); text-transform: uppercase; letter-spacing: 0.1em;">On
+                    This Page</span>
+                <button onclick="closeMobileKBToc()"
+                    style="background: transparent; border: none; color: #9ca3af; cursor: pointer;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div style="flex: 1; overflow-y: auto; padding: 1rem;">
+                <ul id="kb-mobile-toc-list" style="list-style: none; padding: 0; margin: 0;">
+                    <!-- Mobile TOC items injected by JS -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Search Modal -->
+        <div id="kb-search-modal" class="kb-search-modal" role="dialog" aria-modal="true" aria-label="Search"
+            onclick="closeKBSearch()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <!-- Search Header -->
+                <div class="modal-header">
+                    <i class="fas fa-search" style="color: var(--kb-accent-green);"></i>
+                    <input type="text" id="kb-search-input" placeholder="Search documentation..." autocomplete="off"
+                        spellcheck="false">
+                    <kbd>ESC</kbd>
+                </div>
+
+                <!-- Search Results -->
+                <div id="kb-search-results" class="modal-results">
+                    <div style="text-align: center; padding: 2.5rem; color: #6b7280; font-size: 0.875rem;">
+                        Type to start searching...
+                    </div>
+                </div>
+
+                <!-- Search Footer -->
+                <div class="modal-footer">
+                    <div class="keys">
+                        <span><i class="fas fa-arrows-alt-v"></i> Navigate</span>
+                        <span><i class="fas fa-level-down-alt fa-rotate-90"></i> Select</span>
+                    </div>
+                    <div id="kb-search-count" class="count"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox for Images -->
+        <div id="kb-lightbox" class="kb-lightbox" onclick="closeKBLightbox()">
+            <img id="kb-lightbox-img" src="" alt="Lightbox Image">
+        </div>
+
     </section>
 
 
@@ -658,6 +866,7 @@
     <script src="js/csslib.js"></script>
     <script src="js/terminal.js"></script>
     <script src="js/acid_pages.js"></script>
+    <script src="js/kb.js"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>

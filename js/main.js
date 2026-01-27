@@ -19,6 +19,15 @@ function findAndOpenArticle(filename) {
     const found = mergedData.find(a => a.file.includes(filename));
     if (found) openArticle(found);
 }
+function syncSysbarHeight() {
+    const sysbar = document.querySelector('.sys-bar');
+    const h = sysbar ? sysbar.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--sysbar-height', `${Math.round(h)}px`);
+}
+
+window.addEventListener('load', syncSysbarHeight);
+window.addEventListener('resize', syncSysbarHeight);
+
 
 function navigateTo(viewId, keepScroll = false) {
     document.querySelectorAll('.view-section').forEach(el => { el.style.display = 'none'; el.classList.remove('active'); });
