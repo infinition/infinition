@@ -6,11 +6,14 @@ on:
   workflow_dispatch: # Permet de lancer manuellement
 permissions:
   actions: write
+  
+  
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      workflows: write
     steps:
       - uses: actions/checkout@v3
 
