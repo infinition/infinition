@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      workflows: write
     steps:
       - uses: actions/checkout@v3
 
@@ -29,11 +28,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/workflows/scripts/generate_cyber_graph.py
-
       - name: Commit and push if changed
         run: |
           git config --global user.name 'CyberBot'
           git config --global user.email 'bot@infinition.com'
-          git add .github/workflows/cyber_activity.svg
+          git add assets/cyber_activity.svg
           git commit -m "Update cyber activity graph" || exit 0
           git push
