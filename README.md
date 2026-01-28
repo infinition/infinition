@@ -409,6 +409,6 @@
 </div>
 
 <div align="center">
-  <img src="./.github/workflows/cyber_activity.svg" width="100%" alt="Cyber Activity Graph">
+  <img src="assets/cyber_activity.svg" width="100%" alt="Cyber Activity Graph">
 </div>
 </div>
