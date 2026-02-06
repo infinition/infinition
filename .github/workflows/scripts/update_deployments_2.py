@@ -3,6 +3,7 @@ import os
 import math
 import re
 import sys
+import base64
 
 # --- Configuration ---
 USERNAME = "infinition"
@@ -13,6 +14,7 @@ ICON_WEB = "https://img.icons8.com/ios-filled/50/4a90e2/internet.png"
 ICON_GIT = "https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
 ICON_OBSIDIAN = "https://img.icons8.com/ios-filled/50/8250df/box.png"
 ICON_VSCODE = "https://img.icons8.com/ios-filled/50/0078d7/visual-studio-code-2019.png"
+ICON_DEFAULT = "https://img.icons8.com/ios-filled/50/888888/folder-invoices.png"
 
 def get_repos():
     print(f"--- Démarrage de la récupération des repos pour {USERNAME} ---")
@@ -53,6 +55,38 @@ def get_repos():
     print(f"--- Total: {len(repos)} dépôts récupérés ---")
     return repos
 
+def get_repo_icon(repo_name):
+    """Récupère la première image du README du repo"""
+    url = f"https://api.github.com/repos/{USERNAME}/{repo_name}/readme"
+    headers = {"Accept": "application/vnd.github.v3.raw"}
+    token = os.getenv("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = f"token {token}"
+    
+    try:
+        r = requests.get(url, headers=headers, timeout=10)
+        if r.status_code == 200:
+            readme_content = r.text
+            
+            # Chercher la première image markdown ou HTML
+            # Format markdown: ![alt](url)
+            md_match = re.search(r'!\[.*?\]\((https?://[^\)]+)\)', readme_content)
+            if md_match:
+                return md_match.group(1)
+            
+            # Format HTML: <img src="url"
+            html_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', readme_content)
+            if html_match:
+                img_url = html_match.group(1)
+                # Si c'est un chemin relatif, construire l'URL complète
+                if not img_url.startswith('http'):
+                    img_url = f"https://raw.githubusercontent.com/{USERNAME}/{repo_name}/main/{img_url}"
+                return img_url
+    except Exception as e:
+        print(f"   ⚠️ Impossible de récupérer l'icône pour {repo_name}: {e}")
+    
+    return ICON_DEFAULT
+
 def check_vscode_release(repo_name):
     """Vérifie si le repo contient VSCode dans son release.yml"""
     url = f"https://api.github.com/repos/{USERNAME}/{repo_name}/contents/.github/workflows/release.yml"
@@ -65,7 +99,6 @@ def check_vscode_release(repo_name):
         r = requests.get(url, headers=headers, timeout=10)
         if r.status_code == 200:
             data = r.json()
-            import base64
             content = base64.b64decode(data["content"]).decode("utf-8")
             return "vscode" in content.lower()
     except:
@@ -109,75 +142,68 @@ def make_table(repos, category="other"):
     if not repos:
         return ""
 
-    # Pour les extensions/plugins : une ligne par repo avec description
-    if category in ["vscode", "obsidian"]:
-        html = '<table width="100%">\n'
-        for repo in repos:
-            name = repo["name"]
-            repo_url = repo["html_url"]
-            description = repo.get("description", "")
-            
-            # Crop la description à 80 caractères
-            if description and len(description) > 80:
-                description = description[:77] + "..."
-            elif not description:
-                description = "<em>No description</em>"
-            
-            html += '  <tr>\n'
-            html += '    <td width="5%" align="center">\n'
-            
-            if category == "vscode":
-                html += f'      <a href="{repo_url}"><img src="{ICON_VSCODE}" width="24" alt="VSCode"/></a>\n'
-            else:  # obsidian
-                if repo.get("has_pages"):
-                    site_url = f"https://{USERNAME}.github.io/{name}/"
-                    html += f'      <a href="{site_url}"><img src="{ICON_WEB}" width="24" alt="Web"/></a>\n'
-                else:
-                    html += f'      <a href="{repo_url}"><img src="{ICON_OBSIDIAN}" width="24" alt="Obsidian"/></a>\n'
-            
-            html += '    </td>\n'
-            html += '    <td width="25%">\n'
-            html += f'      <strong><a href="{repo_url}">{name}</a></strong>\n'
-            html += '    </td>\n'
-            html += '    <td width="65%">\n'
-            html += f'      {description}\n'
-            html += '    </td>\n'
-            html += f'    <td width="5%" align="center">\n'
-            html += f'      <a href="{repo_url}"><img src="{ICON_GIT}" width="20" alt="Git"/></a>\n'
-            html += '    </td>\n'
-            html += '  </tr>\n'
-        html += '</table>'
-        return html
-    
-    # Pour les autres : grille 3 colonnes comme avant
+    # Format tableau ligne par ligne pour toutes les catégories
     html = '<table width="100%">\n'
-    cols = 3
-    rows = math.ceil(len(repos) / cols)
-
-    for r in range(rows):
-        html += "  <tr>\n"
-        for c in range(cols):
-            idx = r * cols + c
-            if idx < len(repos):
-                repo = repos[idx]
-                name = repo["name"]
-                repo_url = repo["html_url"]
-                
-                html += '    <td width="33%">\n'
-                
-                if category == "live":
-                    site_url = f"https://{USERNAME}.github.io/" if name == f"{USERNAME}.github.io" else f"https://{USERNAME}.github.io/{name}/"
-                    html += f'      <a href="{site_url}"><img align="left" src="{ICON_WEB}" width="17" alt="Web"/></a>\n'
-                    html += f'      <a href="{repo_url}"><img align="right" src="{ICON_GIT}" width="19" alt="Git"/></a>\n'
-                else:
-                    html += f'      <a href="{repo_url}"><img align="left" src="{ICON_GIT}" width="19" alt="Git"/></a>\n'
-
-                html += f'      <center><code>{name}</code></center>\n'
-                html += '    </td>\n'
+    
+    for repo in repos:
+        name = repo["name"]
+        repo_url = repo["html_url"]
+        description = repo.get("description", "")
+        
+        # Crop la description à 80 caractères
+        if description and len(description) > 80:
+            description = description[:77] + "..."
+        elif not description:
+            description = "<em>No description</em>"
+        
+        # Récupérer l'icône du repo
+        print(f"   🖼️ Récupération icône pour: {name}")
+        repo_icon = get_repo_icon(name)
+        
+        html += '  <tr>\n'
+        
+        # Colonne 1: Icône du repo
+        html += '    <td width="5%" align="center">\n'
+        html += f'      <img src="{repo_icon}" width="32" alt="{name} icon"/>\n'
+        html += '    </td>\n'
+        
+        # Colonne 2: Icône de catégorie
+        html += '    <td width="5%" align="center">\n'
+        
+        if category == "live":
+            site_url = f"https://{USERNAME}.github.io/" if name == f"{USERNAME}.github.io" else f"https://{USERNAME}.github.io/{name}/"
+            html += f'      <a href="{site_url}"><img src="{ICON_WEB}" width="24" alt="Web"/></a>\n'
+        elif category == "vscode":
+            html += f'      <a href="{repo_url}"><img src="{ICON_VSCODE}" width="24" alt="VSCode"/></a>\n'
+        elif category == "obsidian":
+            if repo.get("has_pages"):
+                site_url = f"https://{USERNAME}.github.io/{name}/"
+                html += f'      <a href="{site_url}"><img src="{ICON_WEB}" width="24" alt="Web"/></a>\n'
             else:
-                html += '    <td align="center">✨</td>\n'
-        html += "  </tr>\n"
-    html += "</table>"
+                html += f'      <a href="{repo_url}"><img src="{ICON_OBSIDIAN}" width="24" alt="Obsidian"/></a>\n'
+        else:
+            html += f'      <img src="{ICON_GIT}" width="24" alt="Git"/>\n'
+        
+        html += '    </td>\n'
+        
+        # Colonne 3: Nom du repo
+        html += '    <td width="25%">\n'
+        html += f'      <strong><a href="{repo_url}">{name}</a></strong>\n'
+        html += '    </td>\n'
+        
+        # Colonne 4: Description
+        html += '    <td width="60%">\n'
+        html += f'      {description}\n'
+        html += '    </td>\n'
+        
+        # Colonne 5: Lien GitHub
+        html += f'    <td width="5%" align="center">\n'
+        html += f'      <a href="{repo_url}"><img src="{ICON_GIT}" width="20" alt="Git"/></a>\n'
+        html += '    </td>\n'
+        
+        html += '  </tr>\n'
+    
+    html += '</table>'
     return html
 
 def update_readme():
