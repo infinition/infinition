@@ -1,4 +1,4 @@
-name: Profile & Site Archive Release
+name: Profile & Site Archive Releases
 
 on:
   push:
