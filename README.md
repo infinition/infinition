@@ -44,12 +44,15 @@
 <table width="100%">
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://readme-typing-svg.demolab.com?font=Cinzel&size=24&duration=4000&pause=1000&color=FF6B00&center=true&vCenter=true&width=435&lines=INFINITION" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="infinition icon"/>
+      <img src="https://readme-typing-svg.demolab.com?font=Cinzel&size=24&duration=4000&pause=1000&color=FF6B00&center=true&vCenter=true&width=435&lines=INFINITION" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="infinition icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/infinition/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/infinition/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/infinition">infinition</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -61,12 +64,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="Bjorn icon"/>
+      <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="Bjorn icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/Bjorn/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/Bjorn/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/Bjorn">Bjorn</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -78,12 +84,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/217a2ee7-0afd-4d90-973b-ca2b0bd169e4" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="Acid2Vect icon"/>
+      <img src="https://github.com/user-attachments/assets/217a2ee7-0afd-4d90-973b-ca2b0bd169e4" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="Acid2Vect icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/Acid2Vect/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/Acid2Vect/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/Acid2Vect">Acid2Vect</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -95,12 +104,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="AcidLog icon"/>
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="AcidLog icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/AcidLog/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/AcidLog/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/AcidLog">AcidLog</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -112,12 +124,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="AcidOS icon"/>
+      <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="AcidOS icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/AcidOS/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/AcidOS/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/AcidOS">AcidOS</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -129,12 +144,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/3a166cb1-e172-4c3d-ad6b-b4d6f7566e2f" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="AcidPages icon"/>
+      <img src="https://github.com/user-attachments/assets/3a166cb1-e172-4c3d-ad6b-b4d6f7566e2f" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="AcidPages icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/AcidPages/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/AcidPages/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/AcidPages">AcidPages</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -146,12 +164,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/43e4022a-ff29-4dfb-bdf9-370c06962c4b" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="AcidVect3D icon"/>
+      <img src="https://github.com/user-attachments/assets/43e4022a-ff29-4dfb-bdf9-370c06962c4b" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="AcidVect3D icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/AcidVect3D/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/AcidVect3D/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/AcidVect3D">AcidVect3D</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -163,12 +184,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/6851a18b-ec2b-4a10-8118-170b100cfdc7" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="AcidWiki icon"/>
+      <img src="https://github.com/user-attachments/assets/6851a18b-ec2b-4a10-8118-170b100cfdc7" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="AcidWiki icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/AcidWiki/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/AcidWiki/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/AcidWiki">AcidWiki</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -180,12 +204,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.icons8.com/ios-filled/50/888888/folder-invoices.png" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="bjorn_dungeon icon"/>
+      <img src="https://img.icons8.com/ios-filled/50/888888/folder-invoices.png" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="bjorn_dungeon icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/bjorn_dungeon/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/bjorn_dungeon/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/bjorn_dungeon">bjorn_dungeon</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -197,12 +224,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/d13abe21-856d-4a10-861b-09359b12c82b" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="cyberchef icon"/>
+      <img src="https://github.com/user-attachments/assets/d13abe21-856d-4a10-861b-09359b12c82b" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="cyberchef icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/cyberchef/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/cyberchef/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/cyberchef">cyberchef</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -214,12 +244,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/9316948a-9d15-4814-9455-3d2614f29210" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="DataBrain icon"/>
+      <img src="https://github.com/user-attachments/assets/9316948a-9d15-4814-9455-3d2614f29210" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="DataBrain icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/DataBrain/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/DataBrain/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/DataBrain">DataBrain</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -231,12 +264,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/b85d75bc-b470-41af-b4b0-8cfdff3ab797" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="deep-math-academy icon"/>
+      <img src="https://github.com/user-attachments/assets/b85d75bc-b470-41af-b4b0-8cfdff3ab797" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="deep-math-academy icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/deep-math-academy/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/deep-math-academy/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/deep-math-academy">deep-math-academy</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -248,12 +284,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/307b72e2-e8af-4e86-b618-25c633ffb514" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="flappy-ufo-ql icon"/>
+      <img src="https://github.com/user-attachments/assets/307b72e2-e8af-4e86-b618-25c633ffb514" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="flappy-ufo-ql icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/flappy-ufo-ql/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/flappy-ufo-ql/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/flappy-ufo-ql">flappy-ufo-ql</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -265,12 +304,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/bd147064-65eb-4074-8ecf-e7c61e693b91" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="Q-LAB-2D icon"/>
+      <img src="https://github.com/user-attachments/assets/bd147064-65eb-4074-8ecf-e7c61e693b91" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="Q-LAB-2D icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/Q-LAB-2D/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/Q-LAB-2D/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/Q-LAB-2D">Q-LAB-2D</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -282,12 +324,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/a89b4eb4-b730-4604-9265-3466884ab292" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="ScrabbleArt icon"/>
+      <img src="https://github.com/user-attachments/assets/a89b4eb4-b730-4604-9265-3466884ab292" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="ScrabbleArt icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/ScrabbleArt/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/ScrabbleArt/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/ScrabbleArt">ScrabbleArt</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -299,12 +344,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/d6086985-39ad-4cdf-8629-48a7e2598176" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="SYNAPTIK icon"/>
+      <img src="https://github.com/user-attachments/assets/d6086985-39ad-4cdf-8629-48a7e2598176" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="SYNAPTIK icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/SYNAPTIK/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/SYNAPTIK/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/SYNAPTIK">SYNAPTIK</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -328,12 +376,15 @@
 <table width="100%">
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.shields.io/visual-studio-marketplace/v/nephystos.acid-bjorn.svg" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="AcidBjorn icon"/>
+      <img src="https://img.shields.io/visual-studio-marketplace/v/nephystos.acid-bjorn.svg" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="AcidBjorn icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://github.com/infinition/AcidBjorn"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=infinition.AcidBjorn"><img src="https://img.icons8.com/ios-filled/50/0078d7/visual-studio-code-2019.png" width="28" alt="VSCode Marketplace"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/AcidBjorn/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/AcidBjorn">AcidBjorn</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -345,12 +396,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/0dd974e7-497a-4c73-9d53-50850a804116" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="AcidSnip icon"/>
+      <img src="https://github.com/user-attachments/assets/0dd974e7-497a-4c73-9d53-50850a804116" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="AcidSnip icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://github.com/infinition/AcidSnip"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=infinition.AcidSnip"><img src="https://img.icons8.com/ios-filled/50/0078d7/visual-studio-code-2019.png" width="28" alt="VSCode Marketplace"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/AcidSnip/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/AcidSnip">AcidSnip</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -374,12 +428,15 @@
 <table width="100%">
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://api.star-history.com/svg?repos=infinition/obsidian-flash-quizz&type=date&legend=top-left" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="obsidian-flash-quizz icon"/>
+      <img src="https://api.star-history.com/svg?repos=infinition/obsidian-flash-quizz&type=date&legend=top-left" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="obsidian-flash-quizz icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://infinition.github.io/obsidian-flash-quizz/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
+      <a href="https://obsidian.md/plugins?id=flash-quizz"><img src="https://img.icons8.com/ios-filled/50/8250df/box.png" width="28" alt="Obsidian Marketplace"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/obsidian-flash-quizz/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/obsidian-flash-quizz">obsidian-flash-quizz</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -391,12 +448,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://api.star-history.com/svg?repos=infinition/obsidian-linkflow&type=date&legend=top-left" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="obsidian-linkflow icon"/>
+      <img src="https://api.star-history.com/svg?repos=infinition/obsidian-linkflow&type=date&legend=top-left" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="obsidian-linkflow icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://infinition.github.io/obsidian-linkflow/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
+      <a href="https://obsidian.md/plugins?id=linkflow"><img src="https://img.icons8.com/ios-filled/50/8250df/box.png" width="28" alt="Obsidian Marketplace"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/obsidian-linkflow/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/obsidian-linkflow">obsidian-linkflow</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -408,12 +468,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/a90c6180-0e51-43e8-8622-b4879a6c44be" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="obsidian-lumina icon"/>
+      <img src="https://github.com/user-attachments/assets/a90c6180-0e51-43e8-8622-b4879a6c44be" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="obsidian-lumina icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://infinition.github.io/obsidian-lumina/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
+      <a href="https://obsidian.md/plugins?id=lumina"><img src="https://img.icons8.com/ios-filled/50/8250df/box.png" width="28" alt="Obsidian Marketplace"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/obsidian-lumina/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/obsidian-lumina">obsidian-lumina</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -425,12 +488,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.shields.io/badge/Obsidian-Plugin-purple" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="obsidian-magic-folders icon"/>
+      <img src="https://img.shields.io/badge/Obsidian-Plugin-purple" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="obsidian-magic-folders icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://infinition.github.io/obsidian-magic-folders/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
+      <a href="https://obsidian.md/plugins?id=magic-folders"><img src="https://img.icons8.com/ios-filled/50/8250df/box.png" width="28" alt="Obsidian Marketplace"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/obsidian-magic-folders/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/obsidian-magic-folders">obsidian-magic-folders</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -442,12 +508,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.shields.io/github/v/release/infinition/obsidian-magiclink?style=for-the-badge" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="obsidian-magiclink icon"/>
+      <img src="https://img.shields.io/github/v/release/infinition/obsidian-magiclink?style=for-the-badge" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="obsidian-magiclink icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://infinition.github.io/obsidian-magiclink/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
+      <a href="https://obsidian.md/plugins?id=magiclink"><img src="https://img.icons8.com/ios-filled/50/8250df/box.png" width="28" alt="Obsidian Marketplace"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/obsidian-magiclink/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/obsidian-magiclink">obsidian-magiclink</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -459,12 +528,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/12a49e1a-47d8-47a6-b40e-784c6d2e56e4" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="obsidian-nova icon"/>
+      <img src="https://github.com/user-attachments/assets/12a49e1a-47d8-47a6-b40e-784c6d2e56e4" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="obsidian-nova icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://infinition.github.io/obsidian-nova/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
+      <a href="https://obsidian.md/plugins?id=nova"><img src="https://img.icons8.com/ios-filled/50/8250df/box.png" width="28" alt="Obsidian Marketplace"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/obsidian-nova/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/obsidian-nova">obsidian-nova</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -476,12 +548,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/14d584c8-6932-4ac9-b00a-ba7251450bc5" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="obsidian-obsidget icon"/>
+      <img src="https://github.com/user-attachments/assets/14d584c8-6932-4ac9-b00a-ba7251450bc5" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="obsidian-obsidget icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://infinition.github.io/obsidian-obsidget/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
+      <a href="https://obsidian.md/plugins?id=obsidget"><img src="https://img.icons8.com/ios-filled/50/8250df/box.png" width="28" alt="Obsidian Marketplace"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/obsidian-obsidget/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/obsidian-obsidget">obsidian-obsidget</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -493,12 +568,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/45f788db-571e-4469-9c27-083fe317eb4b" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="obsidian-python-ds-studio icon"/>
+      <img src="https://github.com/user-attachments/assets/45f788db-571e-4469-9c27-083fe317eb4b" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="obsidian-python-ds-studio icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://infinition.github.io/obsidian-python-ds-studio/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Web"/></a>
+      <a href="https://obsidian.md/plugins?id=python-ds-studio"><img src="https://img.icons8.com/ios-filled/50/8250df/box.png" width="28" alt="Obsidian Marketplace"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      <a href="https://infinition.github.io/obsidian-python-ds-studio/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/obsidian-python-ds-studio">obsidian-python-ds-studio</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -522,12 +600,15 @@
 <table width="100%">
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/26994d6e-a938-48e9-9eaf-c5db98f7ee7d" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="AcidLuna icon"/>
+      <img src="https://github.com/user-attachments/assets/26994d6e-a938-48e9-9eaf-c5db98f7ee7d" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="AcidLuna icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/AcidLuna"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/AcidLuna">AcidLuna</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -539,12 +620,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="bjorn-detector icon"/>
+      <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="bjorn-detector icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/bjorn-detector"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/bjorn-detector">bjorn-detector</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -556,12 +640,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.shields.io/badge/Python-3776AB?logo=python\&logoColor=fff" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="Bjorn-Manager icon"/>
+      <img src="https://img.shields.io/badge/Python-3776AB?logo=python\&logoColor=fff" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="Bjorn-Manager icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/Bjorn-Manager"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/Bjorn-Manager">Bjorn-Manager</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -573,12 +660,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.shields.io/badge/Python-3776AB?logo=python\&logoColor=fff" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="Catrina icon"/>
+      <img src="https://img.shields.io/badge/Python-3776AB?logo=python\&logoColor=fff" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="Catrina icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/Catrina"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/Catrina">Catrina</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -590,12 +680,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/infinition/EPD-Emulator/assets/37984399/6006d07a-e760-46c8-9ded-731a590179f0" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="EPD-Emulator icon"/>
+      <img src="https://github.com/infinition/EPD-Emulator/assets/37984399/6006d07a-e760-46c8-9ded-731a590179f0" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="EPD-Emulator icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/EPD-Emulator"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/EPD-Emulator">EPD-Emulator</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -607,12 +700,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://user-images.githubusercontent.com/37984399/114324338-c1a96280-9b29-11eb-8f54-5355b7186c5d.png" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="Excel-Sheet-PasswordCracker icon"/>
+      <img src="https://user-images.githubusercontent.com/37984399/114324338-c1a96280-9b29-11eb-8f54-5355b7186c5d.png" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="Excel-Sheet-PasswordCracker icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/Excel-Sheet-PasswordCracker"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/Excel-Sheet-PasswordCracker">Excel-Sheet-PasswordCracker</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -624,12 +720,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.icons8.com/ios-filled/50/888888/folder-invoices.png" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="P4wnP1-Infinition-Payloads icon"/>
+      <img src="https://img.icons8.com/ios-filled/50/888888/folder-invoices.png" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="P4wnP1-Infinition-Payloads icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/P4wnP1-Infinition-Payloads"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/P4wnP1-Infinition-Payloads">P4wnP1-Infinition-Payloads</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -641,12 +740,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/infinition/PyDep/assets/37984399/0663c495-29c1-417b-92fe-175e79a0efe0" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="PyDep icon"/>
+      <img src="https://github.com/infinition/PyDep/assets/37984399/0663c495-29c1-417b-92fe-175e79a0efe0" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="PyDep icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/PyDep"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/PyDep">PyDep</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -658,12 +760,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/infinition/PyTreefy/assets/37984399/ecadbdee-8218-45e3-8f5e-88bb22a10126" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="PyTreefy icon"/>
+      <img src="https://github.com/infinition/PyTreefy/assets/37984399/ecadbdee-8218-45e3-8f5e-88bb22a10126" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="PyTreefy icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/PyTreefy"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/PyTreefy">PyTreefy</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -675,12 +780,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/d00301be-045d-4131-bbac-2fe1b4eee76b" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="QRobot icon"/>
+      <img src="https://github.com/user-attachments/assets/d00301be-045d-4131-bbac-2fe1b4eee76b" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="QRobot icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/QRobot"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/QRobot">QRobot</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -692,12 +800,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://img.icons8.com/ios-filled/50/888888/folder-invoices.png" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="Win10_LockPicker-by-Infinition icon"/>
+      <img src="https://img.icons8.com/ios-filled/50/888888/folder-invoices.png" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="Win10_LockPicker-by-Infinition icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/Win10_LockPicker-by-Infinition"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/Win10_LockPicker-by-Infinition">Win10_LockPicker-by-Infinition</a></strong>
     </td>
     <td style="padding: 2px;">
@@ -709,12 +820,15 @@
   </tr>
   <tr>
     <td width="8%" align="center" style="padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/a160cd87-1661-44f7-9e44-53f804c229d5" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="Zombieland icon"/>
+      <img src="https://github.com/user-attachments/assets/a160cd87-1661-44f7-9e44-53f804c229d5" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="Zombieland icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://github.com/infinition/Zombieland"><img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="28" alt="Git"/></a>
     </td>
-    <td width="20%" style="padding: 2px;">
+    <td width="5%" align="center" style="padding: 2px;">
+      &nbsp;
+    </td>
+    <td width="18%" style="padding: 2px;">
       <strong><a href="https://github.com/infinition/Zombieland">Zombieland</a></strong>
     </td>
     <td style="padding: 2px;">
