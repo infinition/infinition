@@ -4,10 +4,12 @@
 
 </div>
 
+
 <div align="center">
   
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=24&duration=4000&pause=1000&color=0aff47&center=true&vCenter=true&width=435&lines=Ethical+Hacker)](https://git.io/typing-svg)
 
+</div>
 </div>
 
 <div align="center">
@@ -30,9 +32,11 @@
   </a>
 </p>
 
+
 </div>
 
 <div align="center">
+
 
 <a href="https://www.buymeacoffee.com/infinition" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
@@ -49,6 +53,7 @@
 
 </div>
 
+---
 ---
 
 <div align="center">
@@ -105,6 +110,7 @@
 <div align="center">
   
 ## 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 ![Rust](https://img.shields.io/badge/-Rust-0D1117?style=flat-square&logo=rust&logoColor=white)
 ![C++](https://img.shields.io/badge/-C++-0D1117?style=flat-square&logo=c%2B%2B&logoColor=white)
@@ -121,6 +127,7 @@
 
 <div align="center">
   
+## 💬 Let's Connect!
 ## 💬 Let's Connect!
   
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/fabienpolly)
