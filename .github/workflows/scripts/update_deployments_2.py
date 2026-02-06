@@ -13,7 +13,7 @@ README_PATH = "README.md"
 ICON_WEB = "https://img.icons8.com/ios-filled/50/4a90e2/internet.png"
 ICON_GIT = "https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png"
 ICON_OBSIDIAN = "https://img.icons8.com/ios-filled/50/8250df/box.png"
-ICON_VSCODE = "https://img.icons8.com/ios-filled/50/0078d7/visual-studio-code-2019.png"
+ICON_VSCODE = "https://code.visualstudio.com/assets/branding/code-stable.png"
 ICON_DEFAULT = "https://img.icons8.com/ios-filled/50/888888/folder-invoices.png"
 
 def get_repos():
