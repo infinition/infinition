@@ -1,18 +1,16 @@
 <div align="center">
   
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=24&duration=4000&pause=1000&color=FF6B00&center=true&vCenter=true&width=435&lines=INFINITION)](https://git.io/typing-svg)
-
 </div>
+
 <div align="center">
   
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=24&duration=4000&pause=1000&color=0aff47&center=true&vCenter=true&width=435&lines=Ethical+Hacker)](https://git.io/typing-svg)
-
 
 <div align="center">
   
 [![GitHub stars](https://img.shields.io/github/stars/infinition?style=for-the-badge&color=orange)](https://github.com/infinition)
 [![GitHub followers](https://img.shields.io/github/followers/infinition?style=for-the-badge&color=orange)](https://github.com/infinition)
-
 </div>
  
 <div align="center">
@@ -27,9 +25,10 @@
     <img src="https://dcbadge.limes.pink/api/server/https://discord.gg/B3ZH9taVfT" />
   </a>
 </p>
-</div>
 
 </div>
+</div>
+
 <div align="center">
 <a href="https://www.buymeacoffee.com/infinition" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 </div>
@@ -39,25 +38,38 @@
 <div align="center">
 
 ### 🌐 Live Deployments
-
 </div>
-
 <br />
+
+<!-- AUTO_LIVE_START -->
+<!-- AUTO_LIVE_END -->
+
+<div align="center">
+
+### 🔵 VSCode Extensions
+</div>
+<br />
+
+<!-- AUTO_VSCODE_START -->
+<!-- AUTO_VSCODE_END -->
 
 <div align="center">
 
 ### 🟣 Obsidian Extensions
-
 </div>
-
 <br />
+
+<!-- AUTO_OBSIDIAN_START -->
+<!-- AUTO_OBSIDIAN_END -->
 
 <div align="center">
 
 ### 📂 Other Repositories
-
 </div>
+<br />
 
+<!-- AUTO_OTHER_START -->
+<!-- AUTO_OTHER_END -->
 
 <br />
 
@@ -75,14 +87,11 @@
   <img src="https://github-readme-stats.vercel.app/api?username=infinition&show_icons=true&hide=issues,prs,contribs" />
 </picture>
 
-
 </div>
-
 
 <div align="center">
   
 ### 🛠️ 
-
 ![Rust](https://img.shields.io/badge/-Rust-0D1117?style=flat-square&logo=rust&logoColor=white)
 ![C++](https://img.shields.io/badge/-C++-0D1117?style=flat-square&logo=c%2B%2B&logoColor=white)
 ![C](https://img.shields.io/badge/-C-0D1117?style=flat-square&logo=c&logoColor=white)
@@ -93,7 +102,6 @@
 ![Python](https://img.shields.io/badge/-Python-0D1117?style=flat-square&logo=python)
 
 </div>
-
 
 <div align="center">
   
@@ -106,4 +114,5 @@
 <div align="center">
   <img src="assets/cyber_activity.svg" width="100%" alt="Cyber Activity Graph">
 </div>
+
 </div>
