@@ -1,38 +1,52 @@
-name: Update Deployments List
+name: Update README Dashboard
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # Tous les jours à minuit
-  workflow_dispatch: # Permet de lancer manuellement depuis l'onglet Actions
   push:
-    branches:
-      - main
-      - master
+    branches: [ main, master ]
+  schedule:
+    # Tous les jours à 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  update-readme:
+  update-dashboard:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-          
+          python-version: '3.11'
+      
       - name: Install dependencies
-        run: pip install requests
-        
-      - name: Run update script
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+      
+      - name: Generate repo cards
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python .github/workflows/scripts/update_deployments_2.py
-
-        
+        run: |
+          python generate_cards.py
+      
+      - name: Generate cyber activity graph
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p assets
+          python generate_cyber_graph.py
+      
       - name: Commit and push if changed
         run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git diff --quiet || (git add README.md && git commit -m "🤖 Auto-update deployment list" && git push)
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🎨 Update dashboard [skip ci]" && git push)
