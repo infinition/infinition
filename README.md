@@ -188,6 +188,15 @@
   </tr>
   <tr>
     <td width="33%">
+      <a href="https://infinition.github.io/obsidian-magic-folders/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/obsidian-magic-folders">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>obsidian-magic-folders</code></center>
+    </td>
+    <td width="33%">
       <a href="https://infinition.github.io/obsidian-nova/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -205,6 +214,8 @@
       </a>
       <center><code>obsidian-obsidget</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-python-ds-studio/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -214,8 +225,6 @@
       </a>
       <center><code>obsidian-python-ds-studio</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/Q-LAB-2D/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -234,6 +243,8 @@
       </a>
       <center><code>ScrabbleArt</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/SYNAPTIK/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -243,6 +254,8 @@
       </a>
       <center><code>SYNAPTIK</code></center>
     </td>
+    <td align="center">✨</td>
+    <td align="center">✨</td>
   </tr>
 </table>
 
