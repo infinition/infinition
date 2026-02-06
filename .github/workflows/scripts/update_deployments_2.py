@@ -87,6 +87,24 @@ def get_repo_icon(repo_name):
     
     return ICON_DEFAULT
 
+def check_obsidian_marketplace(repo_name):
+    """Vérifie si le plugin existe sur le marketplace Obsidian"""
+    # Enlever le préfixe "obsidian-" du nom
+    plugin_name = repo_name.lower().replace("obsidian-", "")
+    
+    # L'URL du marketplace Obsidian
+    marketplace_url = f"https://obsidian.md/plugins?id={plugin_name}"
+    
+    try:
+        # Vérifier si la page existe
+        r = requests.head(marketplace_url, timeout=5, allow_redirects=True)
+        if r.status_code == 200:
+            return marketplace_url
+    except:
+        pass
+    
+    return None
+
 def check_vscode_release(repo_name):
     """Vérifie si le repo contient VSCode dans son release.yml"""
     url = f"https://api.github.com/repos/{USERNAME}/{repo_name}/contents/.github/workflows/release.yml"
@@ -160,9 +178,9 @@ def make_table(repos, category="other"):
         
         html += '  <tr>\n'
         
-        # Colonne 1: Icône du repo - hauteur exacte 65px, largeur auto pour garder le ratio
+        # Colonne 1: Icône du repo - remplit la cellule avec 2px de padding
         html += '    <td width="8%" align="center" style="padding: 2px;">\n'
-        html += f'      <img src="{repo_icon}" height="65" style="max-width: calc(100% - 4px); object-fit: contain;" alt="{name} icon"/>\n'
+        html += f'      <img src="{repo_icon}" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="{name} icon"/>\n'
         html += '    </td>\n'
         
         # Colonne 2: Icône de catégorie
@@ -172,12 +190,14 @@ def make_table(repos, category="other"):
             site_url = f"https://{USERNAME}.github.io/" if name == f"{USERNAME}.github.io" else f"https://{USERNAME}.github.io/{name}/"
             html += f'      <a href="{site_url}"><img src="{ICON_WEB}" width="28" alt="Web"/></a>\n'
         elif category == "vscode":
-            # Pour VSCode : icône GitHub, pas VSCode
-            html += f'      <a href="{repo_url}"><img src="{ICON_GIT}" width="28" alt="Git"/></a>\n'
+            # Pour VSCode : lien vers le marketplace VSCode
+            marketplace_url = f"https://marketplace.visualstudio.com/items?itemName={USERNAME}.{name}"
+            html += f'      <a href="{marketplace_url}"><img src="{ICON_VSCODE}" width="28" alt="VSCode Marketplace"/></a>\n'
         elif category == "obsidian":
-            if repo.get("has_pages"):
-                site_url = f"https://{USERNAME}.github.io/{name}/"
-                html += f'      <a href="{site_url}"><img src="{ICON_WEB}" width="28" alt="Web"/></a>\n'
+            # Pour Obsidian : vérifier si existe sur le marketplace
+            obsidian_marketplace = check_obsidian_marketplace(name)
+            if obsidian_marketplace:
+                html += f'      <a href="{obsidian_marketplace}"><img src="{ICON_OBSIDIAN}" width="28" alt="Obsidian Marketplace"/></a>\n'
             else:
                 html += f'      <a href="{repo_url}"><img src="{ICON_OBSIDIAN}" width="28" alt="Obsidian"/></a>\n'
         else:
@@ -185,17 +205,26 @@ def make_table(repos, category="other"):
         
         html += '    </td>\n'
         
-        # Colonne 3: Nom du repo
-        html += '    <td width="20%" style="padding: 2px;">\n'
+        # Colonne 3: URL du site web (si GitHub Pages activé)
+        html += '    <td width="5%" align="center" style="padding: 2px;">\n'
+        if repo.get("has_pages"):
+            site_url = f"https://{USERNAME}.github.io/" if name == f"{USERNAME}.github.io" else f"https://{USERNAME}.github.io/{name}/"
+            html += f'      <a href="{site_url}"><img src="{ICON_WEB}" width="28" alt="Website"/></a>\n'
+        else:
+            html += '      &nbsp;\n'  # Cellule vide si pas de GitHub Pages
+        html += '    </td>\n'
+        
+        # Colonne 4: Nom du repo
+        html += '    <td width="18%" style="padding: 2px;">\n'
         html += f'      <strong><a href="{repo_url}">{name}</a></strong>\n'
         html += '    </td>\n'
         
-        # Colonne 4: Description - prend tout l'espace disponible
+        # Colonne 5: Description - prend tout l'espace disponible
         html += '    <td style="padding: 2px;">\n'
         html += f'      {description}\n'
         html += '    </td>\n'
         
-        # Colonne 5: Lien GitHub
+        # Colonne 6: Lien GitHub
         html += f'    <td width="5%" align="center" style="padding: 2px;">\n'
         html += f'      <a href="{repo_url}"><img src="{ICON_GIT}" width="24" alt="Git"/></a>\n'
         html += '    </td>\n'
