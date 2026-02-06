@@ -379,7 +379,7 @@
       <img src="https://img.shields.io/visual-studio-marketplace/v/nephystos.acid-bjorn.svg" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="AcidBjorn icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://marketplace.visualstudio.com/items?itemName=infinition.AcidBjorn"><img src="https://img.icons8.com/ios-filled/50/0078d7/visual-studio-code-2019.png" width="28" alt="VSCode Marketplace"/></a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=infinition.AcidBjorn"><img src="https://code.visualstudio.com/assets/branding/code-stable.png" width="28" alt="VSCode Marketplace"/></a>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/AcidBjorn/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
@@ -399,7 +399,7 @@
       <img src="https://github.com/user-attachments/assets/0dd974e7-497a-4c73-9d53-50850a804116" style="width: calc(100% - 4px); height: auto; max-height: 80px; object-fit: contain;" alt="AcidSnip icon"/>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
-      <a href="https://marketplace.visualstudio.com/items?itemName=infinition.AcidSnip"><img src="https://img.icons8.com/ios-filled/50/0078d7/visual-studio-code-2019.png" width="28" alt="VSCode Marketplace"/></a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=infinition.AcidSnip"><img src="https://code.visualstudio.com/assets/branding/code-stable.png" width="28" alt="VSCode Marketplace"/></a>
     </td>
     <td width="5%" align="center" style="padding: 2px;">
       <a href="https://infinition.github.io/AcidSnip/"><img src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="28" alt="Website"/></a>
