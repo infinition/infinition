@@ -160,13 +160,13 @@ def make_table(repos, category="other"):
         
         html += '  <tr>\n'
         
-        # Colonne 1: Icône du repo - hauteur fixe, largeur auto pour garder le ratio
-        html += '    <td width="8%" align="center" style="padding: 8px;">\n'
-        html += f'      <img src="{repo_icon}" height="48" style="max-width: 100%; height: auto; object-fit: contain;" alt="{name} icon"/>\n'
+        # Colonne 1: Icône du repo - hauteur max 65px, largeur auto pour garder le ratio
+        html += '    <td width="8%" align="center" style="padding: 2px 2px;">\n'
+        html += f'      <img src="{repo_icon}" style="max-height: 65px; max-width: 100%; height: auto; object-fit: contain;" alt="{name} icon"/>\n'
         html += '    </td>\n'
         
         # Colonne 2: Icône de catégorie
-        html += '    <td width="5%" align="center">\n'
+        html += '    <td width="5%" align="center" style="padding: 2px 2px;">\n'
         
         if category == "live":
             site_url = f"https://{USERNAME}.github.io/" if name == f"{USERNAME}.github.io" else f"https://{USERNAME}.github.io/{name}/"
@@ -185,17 +185,17 @@ def make_table(repos, category="other"):
         html += '    </td>\n'
         
         # Colonne 3: Nom du repo
-        html += '    <td width="20%" style="padding: 8px;">\n'
+        html += '    <td width="20%" style="padding: 2px 2px;">\n'
         html += f'      <strong><a href="{repo_url}">{name}</a></strong>\n'
         html += '    </td>\n'
         
         # Colonne 4: Description - prend tout l'espace disponible
-        html += '    <td style="padding: 8px;">\n'
+        html += '    <td style="padding: 2px 2px;">\n'
         html += f'      {description}\n'
         html += '    </td>\n'
         
         # Colonne 5: Lien GitHub
-        html += f'    <td width="5%" align="center">\n'
+        html += f'    <td width="5%" align="center" style="padding: 2px 2px;">\n'
         html += f'      <a href="{repo_url}"><img src="{ICON_GIT}" width="24" alt="Git"/></a>\n'
         html += '    </td>\n'
         
