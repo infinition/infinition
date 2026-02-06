@@ -49,6 +49,14 @@
 <div align="center">
 
 <!-- AUTO_LIVE_START -->
+<a href="https://infinition.github.io/Acid2Vect/"><img src="cards/Acid2Vect.svg" alt="Acid2Vect" width="380"/></a> <a href="https://infinition.github.io/AcidLog/"><img src="cards/AcidLog.svg" alt="AcidLog" width="380"/></a>
+<a href="https://infinition.github.io/AcidOS/"><img src="cards/AcidOS.svg" alt="AcidOS" width="380"/></a> <a href="https://infinition.github.io/AcidPages/"><img src="cards/AcidPages.svg" alt="AcidPages" width="380"/></a>
+<a href="https://infinition.github.io/AcidVect3D/"><img src="cards/AcidVect3D.svg" alt="AcidVect3D" width="380"/></a> <a href="https://infinition.github.io/AcidWiki/"><img src="cards/AcidWiki.svg" alt="AcidWiki" width="380"/></a>
+<a href="https://infinition.github.io/Bjorn/"><img src="cards/Bjorn.svg" alt="Bjorn" width="380"/></a> <a href="https://infinition.github.io/bjorn_dungeon/"><img src="cards/bjorn_dungeon.svg" alt="bjorn_dungeon" width="380"/></a>
+<a href="https://infinition.github.io/cyberchef/"><img src="cards/cyberchef.svg" alt="cyberchef" width="380"/></a> <a href="https://infinition.github.io/DataBrain/"><img src="cards/DataBrain.svg" alt="DataBrain" width="380"/></a>
+<a href="https://infinition.github.io/deep-math-academy/"><img src="cards/deep-math-academy.svg" alt="deep-math-academy" width="380"/></a> <a href="https://infinition.github.io/flappy-ufo-ql/"><img src="cards/flappy-ufo-ql.svg" alt="flappy-ufo-ql" width="380"/></a>
+<a href="https://infinition.github.io/infinition/"><img src="cards/infinition.svg" alt="infinition" width="380"/></a> <a href="https://infinition.github.io/Q-LAB-2D/"><img src="cards/Q-LAB-2D.svg" alt="Q-LAB-2D" width="380"/></a>
+<a href="https://infinition.github.io/ScrabbleArt/"><img src="cards/ScrabbleArt.svg" alt="ScrabbleArt" width="380"/></a> <a href="https://infinition.github.io/SYNAPTIK/"><img src="cards/SYNAPTIK.svg" alt="SYNAPTIK" width="380"/></a>
 <!-- AUTO_LIVE_END -->
 
 </div>
@@ -64,6 +72,7 @@
 <div align="center">
 
 <!-- AUTO_VSCODE_START -->
+<a href="https://infinition.github.io/AcidBjorn/"><img src="cards/AcidBjorn.svg" alt="AcidBjorn" width="380"/></a> <a href="https://infinition.github.io/AcidSnip/"><img src="cards/AcidSnip.svg" alt="AcidSnip" width="380"/></a>
 <!-- AUTO_VSCODE_END -->
 
 </div>
@@ -79,6 +88,10 @@
 <div align="center">
 
 <!-- AUTO_OBSIDIAN_START -->
+<a href="https://infinition.github.io/obsidian-flash-quizz/"><img src="cards/obsidian-flash-quizz.svg" alt="obsidian-flash-quizz" width="380"/></a> <a href="https://infinition.github.io/obsidian-linkflow/"><img src="cards/obsidian-linkflow.svg" alt="obsidian-linkflow" width="380"/></a>
+<a href="https://infinition.github.io/obsidian-lumina/"><img src="cards/obsidian-lumina.svg" alt="obsidian-lumina" width="380"/></a> <a href="https://infinition.github.io/obsidian-magic-folders/"><img src="cards/obsidian-magic-folders.svg" alt="obsidian-magic-folders" width="380"/></a>
+<a href="https://infinition.github.io/obsidian-magiclink/"><img src="cards/obsidian-magiclink.svg" alt="obsidian-magiclink" width="380"/></a> <a href="https://infinition.github.io/obsidian-nova/"><img src="cards/obsidian-nova.svg" alt="obsidian-nova" width="380"/></a>
+<a href="https://infinition.github.io/obsidian-obsidget/"><img src="cards/obsidian-obsidget.svg" alt="obsidian-obsidget" width="380"/></a> <a href="https://infinition.github.io/obsidian-python-ds-studio/"><img src="cards/obsidian-python-ds-studio.svg" alt="obsidian-python-ds-studio" width="380"/></a>
 <!-- AUTO_OBSIDIAN_END -->
 
 </div>
@@ -94,6 +107,12 @@
 <div align="center">
 
 <!-- AUTO_OTHER_START -->
+<a href="https://github.com/infinition/AcidLuna"><img src="cards/AcidLuna.svg" alt="AcidLuna" width="380"/></a> <a href="https://github.com/infinition/bjorn-detector"><img src="cards/bjorn-detector.svg" alt="bjorn-detector" width="380"/></a>
+<a href="https://github.com/infinition/Bjorn-Manager"><img src="cards/Bjorn-Manager.svg" alt="Bjorn-Manager" width="380"/></a> <a href="https://github.com/infinition/Catrina"><img src="cards/Catrina.svg" alt="Catrina" width="380"/></a>
+<a href="https://github.com/infinition/EPD-Emulator"><img src="cards/EPD-Emulator.svg" alt="EPD-Emulator" width="380"/></a> <a href="https://github.com/infinition/Excel-Sheet-PasswordCracker"><img src="cards/Excel-Sheet-PasswordCracker.svg" alt="Excel-Sheet-PasswordCracker" width="380"/></a>
+<a href="https://github.com/infinition/P4wnP1-Infinition-Payloads"><img src="cards/P4wnP1-Infinition-Payloads.svg" alt="P4wnP1-Infinition-Payloads" width="380"/></a> <a href="https://github.com/infinition/PyDep"><img src="cards/PyDep.svg" alt="PyDep" width="380"/></a>
+<a href="https://github.com/infinition/PyTreefy"><img src="cards/PyTreefy.svg" alt="PyTreefy" width="380"/></a> <a href="https://github.com/infinition/QRobot"><img src="cards/QRobot.svg" alt="QRobot" width="380"/></a>
+<a href="https://github.com/infinition/Win10_LockPicker-by-Infinition"><img src="cards/Win10_LockPicker-by-Infinition.svg" alt="Win10_LockPicker-by-Infinition" width="380"/></a> <a href="https://github.com/infinition/Zombieland"><img src="cards/Zombieland.svg" alt="Zombieland" width="380"/></a>
 <!-- AUTO_OTHER_END -->
 
 </div>
