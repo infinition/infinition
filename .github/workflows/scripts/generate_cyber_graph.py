@@ -84,9 +84,6 @@ def generate_svg(data):
 
 if __name__ == "__main__":
     try:
-        # Créer le dossier assets s'il n'existe pas
-        os.makedirs("assets", exist_ok=True)
-        
         data = fetch_data()
         svg = generate_svg(data)
         with open("assets/cyber_activity.svg", "w") as f:

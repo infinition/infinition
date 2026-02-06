@@ -1,52 +1,38 @@
-name: Update README Dashboard
+name: Update Deployments List
 
 on:
-  push:
-    branches: [ main, master ]
   schedule:
-    # Tous les jours à 00:00 UTC
-    - cron: '0 0 * * *'
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    - cron: '0 0 * * *' # Tous les jours à minuit
+  workflow_dispatch: # Permet de lancer manuellement depuis l'onglet Actions
+  push:
+    branches:
+      - main
+      - master
 
 jobs:
-  update-dashboard:
+  update-readme:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
       
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
-      
+          python-version: '3.x'
+          
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests
-      
-      - name: Generate repo cards
+        run: pip install requests
+        
+      - name: Run update script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python generate_cards.py
-      
-      - name: Generate cyber activity graph
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          mkdir -p assets
-          python generate_cyber_graph.py
-      
+        run: python .github/workflows/scripts/update_deployments_2.py
+
+        
       - name: Commit and push if changed
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add -A
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🎨 Update dashboard [skip ci]" && git push)
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git diff --quiet || (git add README.md && git commit -m "🤖 Auto-update deployment list" && git push)
