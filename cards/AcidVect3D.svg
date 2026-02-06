@@ -1,0 +1,62 @@
+<svg width="380" height="180" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#161b22;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+        </linearGradient>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:rgba(88, 166, 255, 0.03);stop-opacity:1" />
+            <stop offset="70%" style="stop-color:transparent;stop-opacity:0" />
+        </radialGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="380" height="180" rx="10" fill="url(#bg-gradient)"/>
+    <rect width="380" height="180" rx="10" fill="url(#glow)"/>
+    
+    <!-- Border -->
+    <rect width="380" height="180" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+    <rect x="0" y="0" width="4" height="180" rx="10" fill="#4a90e2"/>
+    
+    <!-- Badge catégorie -->
+    <g transform="translate(270, 15)">
+        <rect width="95" height="24" rx="12" fill="rgba(74, 144, 226, 0.15)" stroke="rgba(74, 144, 226, 0.3)" stroke-width="1"/>
+        <g transform="translate(8, 5)" fill="#4a90e2">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg>
+        </g>
+        <text x="30" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#4a90e2" text-transform="uppercase">Live</text>
+    </g>
+    
+    <!-- Icône du repo -->
+    <image x="20" y="20" width="65" height="65" href="https://github.com/user-attachments/assets/43e4022a-ff29-4dfb-bdf9-370c06962c4b" preserveAspectRatio="xMidYMid meet"/>
+    <rect x="20" y="20" width="65" height="65" rx="10" fill="none" stroke="#30363d" stroke-width="2"/>
+    
+    <!-- Titre -->
+    <text x="95" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#e6edf3">AcidVect3D</text>
+    
+    <!-- Description -->
+    <foreignObject x="20" y="95" width="340" height="45">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: #8b949e; line-height: 1.5; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+            AcidVect3D is a 3D vector graphics editor that transform svg files into 3D models for 3D printing.
+        </div>
+    </foreignObject>
+    
+    <!-- Stats -->
+    <g transform="translate(20, 155)">
+        <!-- Stars -->
+        <g fill="#6e7681">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>
+        </g>
+        <text x="20" y="11" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6e7681">1</text>
+        
+        <!-- Forks -->
+        <g transform="translate(60, 0)" fill="#6e7681">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"></path></svg>
+        </g>
+        <text x="80" y="11" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6e7681">0</text>
+        
+        <!-- Language -->
+        <circle cx="125" cy="7" r="5" fill="#e34c26"/>
+        <text x="135" y="11" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6e7681">HTML</text>
+    </g>
+</svg>
