@@ -139,6 +139,15 @@
       <center><code>AcidWiki</code></center>
     </td>
     <td width="33%">
+      <a href="https://infinition.github.io/Bjorn-cortex/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/Bjorn-cortex">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>Bjorn-cortex</code></center>
+    </td>
+    <td width="33%">
       <a href="https://infinition.github.io/bjorn_dungeon/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -147,6 +156,8 @@
       </a>
       <center><code>bjorn_dungeon</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/cyberchef/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -156,8 +167,6 @@
       </a>
       <center><code>cyberchef</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/DataBrain/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -176,6 +185,8 @@
       </a>
       <center><code>deep-math-academy</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/flappy-ufo-ql/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -185,8 +196,6 @@
       </a>
       <center><code>flappy-ufo-ql</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-flash-quizz/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -205,6 +214,8 @@
       </a>
       <center><code>obsidian-linkflow</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-lumina/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -214,8 +225,6 @@
       </a>
       <center><code>obsidian-lumina</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-magic-folders/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -234,6 +243,8 @@
       </a>
       <center><code>obsidian-magiclink</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-nova/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -243,8 +254,6 @@
       </a>
       <center><code>obsidian-nova</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-obsidget/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -263,6 +272,8 @@
       </a>
       <center><code>obsidian-python-ds-studio</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-reveal/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -272,8 +283,6 @@
       </a>
       <center><code>obsidian-reveal</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/Q-LAB-2D/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -292,6 +301,8 @@
       </a>
       <center><code>ScrabbleArt</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/SYNAPTIK/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -301,6 +312,8 @@
       </a>
       <center><code>SYNAPTIK</code></center>
     </td>
+    <td align="center">✨</td>
+    <td align="center">✨</td>
   </tr>
 </table>
 
