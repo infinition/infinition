@@ -369,13 +369,19 @@
       <center><code>Excel-Sheet-PasswordCracker</code></center>
     </td>
     <td width="33%">
+      <a href="https://github.com/infinition/Nix">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>Nix</code></center>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%">
       <a href="https://github.com/infinition/P4wnP1-Infinition-Payloads">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>P4wnP1-Infinition-Payloads</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/PyDep">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
@@ -388,14 +394,14 @@
       </a>
       <center><code>PyTreefy</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/QRobot">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>QRobot</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/Win10_LockPicker-by-Infinition">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
@@ -408,7 +414,6 @@
       </a>
       <center><code>Zombieland</code></center>
     </td>
-    <td align="center">✨</td>
   </tr>
 </table>
 <!-- REPO_LIST_END -->
