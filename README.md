@@ -72,15 +72,6 @@
   </tr>
   <tr>
     <td width="33%">
-      <a href="https://infinition.github.io/AcidBjorn/">
-        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
-      </a>
-      <a href="https://github.com/infinition/AcidBjorn">
-        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
-      </a>
-      <center><code>AcidBjorn</code></center>
-    </td>
-    <td width="33%">
       <a href="https://infinition.github.io/AcidLog/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -98,8 +89,6 @@
       </a>
       <center><code>AcidOS</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/AcidPages/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -109,6 +98,8 @@
       </a>
       <center><code>AcidPages</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/AcidSnip/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -127,8 +118,6 @@
       </a>
       <center><code>AcidVect3D</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/AcidWiki/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -138,6 +127,8 @@
       </a>
       <center><code>AcidWiki</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/arxiv-studio/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -156,8 +147,26 @@
       </a>
       <center><code>BeamForge</code></center>
     </td>
+    <td width="33%">
+      <a href="https://infinition.github.io/bjorn-chaos-lab/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/bjorn-chaos-lab">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>bjorn-chaos-lab</code></center>
+    </td>
   </tr>
   <tr>
+    <td width="33%">
+      <a href="https://infinition.github.io/bjorn-code/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/bjorn-code">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>bjorn-code</code></center>
+    </td>
     <td width="33%">
       <a href="https://infinition.github.io/Bjorn-cortex/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -176,6 +185,8 @@
       </a>
       <center><code>Bjorn-Manager</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/bjorn_dungeon/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -185,8 +196,6 @@
       </a>
       <center><code>bjorn_dungeon</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/cyberchef/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -205,6 +214,8 @@
       </a>
       <center><code>DataBrain</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/deep-math-academy/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -214,8 +225,6 @@
       </a>
       <center><code>deep-math-academy</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/ERLM/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -234,6 +243,8 @@
       </a>
       <center><code>flappy-ufo-ql</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/FluidLM/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -243,8 +254,6 @@
       </a>
       <center><code>FluidLM</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/FluidVLA/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -263,6 +272,8 @@
       </a>
       <center><code>land-protocol</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/LaRuche/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -272,8 +283,6 @@
       </a>
       <center><code>LaRuche</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/LiquidBrain/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -292,6 +301,8 @@
       </a>
       <center><code>LSTN</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-flash-quizz/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -301,8 +312,6 @@
       </a>
       <center><code>obsidian-flash-quizz</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-linkflow/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -321,6 +330,8 @@
       </a>
       <center><code>obsidian-lumina</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-magic-folders/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -330,8 +341,6 @@
       </a>
       <center><code>obsidian-magic-folders</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-magiclink/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -350,6 +359,8 @@
       </a>
       <center><code>obsidian-nova</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-obsidget/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -359,8 +370,6 @@
       </a>
       <center><code>obsidian-obsidget</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-python-ds-studio/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -379,6 +388,8 @@
       </a>
       <center><code>obsidian-reveal</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/Q-LAB-2D/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -388,8 +399,6 @@
       </a>
       <center><code>Q-LAB-2D</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/ScrabbleArt/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -408,7 +417,6 @@
       </a>
       <center><code>SYNAPTIK</code></center>
     </td>
-    <td align="center">✨</td>
   </tr>
 </table>
 
