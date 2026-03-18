@@ -264,6 +264,17 @@
       <center><code>FluidVLA</code></center>
     </td>
     <td width="33%">
+      <a href="https://infinition.github.io/FluidWorld/">
+        <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
+      </a>
+      <a href="https://github.com/infinition/FluidWorld">
+        <img align="right" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>FluidWorld</code></center>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%">
       <a href="https://infinition.github.io/land-protocol/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
       </a>
@@ -272,8 +283,6 @@
       </a>
       <center><code>land-protocol</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/LaRuche/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -292,6 +301,8 @@
       </a>
       <center><code>LiquidBrain</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/LSTN/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -301,8 +312,6 @@
       </a>
       <center><code>LSTN</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-flash-quizz/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -321,6 +330,8 @@
       </a>
       <center><code>obsidian-linkflow</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-lumina/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -330,8 +341,6 @@
       </a>
       <center><code>obsidian-lumina</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-magic-folders/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -350,6 +359,8 @@
       </a>
       <center><code>obsidian-magiclink</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-nova/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -359,8 +370,6 @@
       </a>
       <center><code>obsidian-nova</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-obsidget/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -379,6 +388,8 @@
       </a>
       <center><code>obsidian-python-ds-studio</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/obsidian-reveal/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -388,8 +399,6 @@
       </a>
       <center><code>obsidian-reveal</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/Q-LAB-2D/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -408,6 +417,8 @@
       </a>
       <center><code>ScrabbleArt</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://infinition.github.io/SYNAPTIK/">
         <img align="left" src="https://img.icons8.com/ios-filled/50/4a90e2/internet.png" width="17" alt="Web"/>
@@ -417,6 +428,8 @@
       </a>
       <center><code>SYNAPTIK</code></center>
     </td>
+    <td align="center">✨</td>
+    <td align="center">✨</td>
   </tr>
 </table>
 
@@ -464,19 +477,13 @@
       <center><code>Excel-Sheet-PasswordCracker</code></center>
     </td>
     <td width="33%">
-      <a href="https://github.com/infinition/FluidWorld">
-        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
-      </a>
-      <center><code>FluidWorld</code></center>
-    </td>
-  </tr>
-  <tr>
-    <td width="33%">
       <a href="https://github.com/infinition/Nix">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>Nix</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/P4wnP1-Infinition-Payloads">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
@@ -489,14 +496,14 @@
       </a>
       <center><code>Paradigm</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/PyDep">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>PyDep</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/PyTreefy">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
@@ -509,20 +516,21 @@
       </a>
       <center><code>QRobot</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/Win10_LockPicker-by-Infinition">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>Win10_LockPicker-by-Infinition</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/Zombieland">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>Zombieland</code></center>
     </td>
+    <td align="center">✨</td>
     <td align="center">✨</td>
   </tr>
 </table>
