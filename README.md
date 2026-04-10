@@ -533,6 +533,12 @@
   </tr>
   <tr>
     <td width="33%">
+      <a href="https://github.com/infinition/waveshare-watch-rs">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>waveshare-watch-rs</code></center>
+    </td>
+    <td width="33%">
       <a href="https://github.com/infinition/Win10_LockPicker-by-Infinition">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
@@ -544,7 +550,6 @@
       </a>
       <center><code>Zombieland</code></center>
     </td>
-    <td align="center">✨</td>
   </tr>
 </table>
 <!-- REPO_LIST_END -->
