@@ -459,19 +459,25 @@
       <center><code>AcidLuna</code></center>
     </td>
     <td width="33%">
+      <a href="https://github.com/infinition/AcidMonitorr">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>AcidMonitorr</code></center>
+    </td>
+    <td width="33%">
       <a href="https://github.com/infinition/bjorn-detector">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>bjorn-detector</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/Catrina">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>Catrina</code></center>
     </td>
-  </tr>
-  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/EPD-Emulator">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
@@ -484,20 +490,28 @@
       </a>
       <center><code>Excel-Sheet-PasswordCracker</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/FluidPlanner">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>FluidPlanner</code></center>
     </td>
-  </tr>
-  <tr>
+    <td width="33%">
+      <a href="https://github.com/infinition/nexus-wsl2">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>nexus-wsl2</code></center>
+    </td>
     <td width="33%">
       <a href="https://github.com/infinition/Nix">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>Nix</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/P4wnP1-Infinition-Payloads">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
@@ -509,6 +523,12 @@
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>Paradigm</code></center>
+    </td>
+    <td width="33%">
+      <a href="https://github.com/infinition/POEasy">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>POEasy</code></center>
     </td>
   </tr>
   <tr>
@@ -533,6 +553,12 @@
   </tr>
   <tr>
     <td width="33%">
+      <a href="https://github.com/infinition/ScaleSwitch">
+        <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
+      </a>
+      <center><code>ScaleSwitch</code></center>
+    </td>
+    <td width="33%">
       <a href="https://github.com/infinition/waveshare-watch-rs">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
@@ -544,12 +570,16 @@
       </a>
       <center><code>Win10_LockPicker-by-Infinition</code></center>
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <a href="https://github.com/infinition/Zombieland">
         <img align="left" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" width="19" alt="Git"/>
       </a>
       <center><code>Zombieland</code></center>
     </td>
+    <td align="center">✨</td>
+    <td align="center">✨</td>
   </tr>
 </table>
 <!-- REPO_LIST_END -->
