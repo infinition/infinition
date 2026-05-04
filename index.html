@@ -10,7 +10,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <!-- Content Security Policy - Adjusted for external CDNs and APIs -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://api.ipify.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://api.ipify.org https://raw.githubusercontent.com https://*.artstation.com; frame-src https://embed.music.apple.com;">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://api.ipify.org https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://api.ipify.org https://raw.githubusercontent.com https://*.artstation.com; frame-src 'self' https://embed.music.apple.com;">
 
     <!-- Autoriser le mode "app" plein écran -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -66,16 +66,18 @@
     <!-- Tailwind CSS for AcidWiki components -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        hack: {
-                            green: '#22c55e',
-                            bg: '#0B0C0E',
-                            sidebar: '#111214',
-                            border: 'rgba(255, 255, 255, 0.1)'
+        if (typeof tailwind !== 'undefined') {
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            hack: {
+                                green: '#22c55e',
+                                bg: '#0B0C0E',
+                                sidebar: '#111214',
+                                border: 'rgba(255, 255, 255, 0.1)'
+                            }
                         }
                     }
                 }
@@ -764,6 +766,10 @@
         </div>
 
         <div id="csslib-toast">Notification</div>
+    </section>
+
+    <section id="hackers-view" class="view-section" style="padding-top: var(--sysbar-height); background: #000;">
+        <iframe id="hackers-iframe" src="" style="width: 100%; height: calc(100vh - var(--sysbar-height)); border: none;"></iframe>
     </section>
 
     <section id="acid-pages-view" class="view-section">

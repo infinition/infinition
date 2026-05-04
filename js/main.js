@@ -40,6 +40,12 @@ function navigateTo(viewId, keepScroll = false) {
     document.body.classList.toggle('kb-mode', viewId === 'kb');
     document.body.classList.toggle('portal-mode', viewId === 'portal');
     updateGlobalSearchIcon();
+    
+    // Stop hackers easter egg if navigating away
+    const hackersIframe = document.getElementById('hackers-iframe');
+    if (hackersIframe && viewId !== 'hackers') {
+        hackersIframe.src = '';
+    }
 
     // UPDATE URL HISTORY for better navigation
     // UPDATE URL HISTORY for better navigation
@@ -130,18 +136,20 @@ async function openInKB(filename) {
     }
 }
 
-document.getElementById('kb-search').addEventListener('click', (e) => {
-    const modal = document.getElementById('search-modal');
-    const input = document.getElementById('global-search-input');
-    if (modal && input) {
-        modal.classList.add('active');
-        input.focus();
-        // If there's already text in the KB search, copy it to global search
-        if (e.target.value) {
-            input.value = e.target.value;
-            input.dispatchEvent(new Event('input'));
+const kbSearch = document.getElementById('kb-search');
+if (kbSearch) {
+    kbSearch.addEventListener('click', (e) => {
+        const modal = document.getElementById('search-modal');
+        const input = document.getElementById('global-search-input');
+        if (modal && input) {
+            modal.classList.add('active');
+            input.focus();
+            if (e.target.value) {
+                input.value = e.target.value;
+                input.dispatchEvent(new Event('input'));
+            }
         }
-    }
-});
+    });
+}
 
 if (window.location.hash) handleHashChange(); else navigateTo('portal');

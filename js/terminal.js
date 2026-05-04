@@ -355,7 +355,7 @@ const terminal = {
                 // terminal.print("Password: "); // Handled by prompt update
                 terminal.waitingForPassword = true;
                 terminal.passwordCallback = (password) => {
-                    if (password === "admin" || password === "root" || password === "toor") {
+                    if (password === "admin" || password === "root" || password === "toor" || password === "god") {
                         terminal.user = "root";
                         terminal.print("Authentication successful.", "term-success");
                         terminal.print("You are now root.");
@@ -363,6 +363,39 @@ const terminal = {
                         terminal.print("su: Authentication failure", "term-error");
                     }
                 };
+            }
+        },
+        "hack-the-planet": {
+            desc: "???",
+            action: () => {
+                if (terminal.user !== "root") {
+                    terminal.print("Access denied. You need root privileges to hack the planet.", "term-error");
+                    return;
+                }
+                terminal.print("INITIATING GLOBAL OVERRIDE...", "term-warn");
+                terminal.print("PENETRATING GIBSON MAINFRAME...", "term-success");
+                
+                const iframe = document.getElementById('hackers-iframe');
+                if (iframe && (iframe.getAttribute('src') === "" || !iframe.src.includes('hackers'))) {
+                    iframe.src = 'hackers/index.html';
+                }
+
+                setTimeout(() => {
+                    navigateTo('hackers');
+                    terminal.toggle();
+                }, 1500);
+            }
+        },
+        gibson: {
+            desc: "???",
+            action: () => {
+                terminal.commands["hack-the-planet"].action();
+            }
+        },
+        god: {
+            desc: "???",
+            action: () => {
+                terminal.commands["hack-the-planet"].action();
             }
         }
     },
