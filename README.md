@@ -1,6 +1,6 @@
 <div align="center">
+<img width="974" height="632" alt="image" src="https://github.com/user-attachments/assets/6d9395fe-e312-4fae-8a36-5afdd29df7d9" />
 
-![0xid Header](./0xid.svg)
   
 </div>
 <div align="center">
