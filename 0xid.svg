@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" font-family="'Courier New', Courier, monospace">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%"  stop-color="#04140a"/>
+      <stop offset="70%" stop-color="#020a05"/>
+      <stop offset="100%" stop-color="#000300"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="72%">
+      <stop offset="52%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.9"/>
+    </radialGradient>
+    <filter id="glowSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.4"/>
+    </filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1.5" y="2.5" fill="#000000" fill-opacity="0.32"/>
+    </pattern>
+    <clipPath id="reveal">
+      <rect x="0" y="0" width="1000" height="0">
+        <animate attributeName="height"
+          values="0;86;132;162;192;222;252;274;304;334;364;394;424;454;476;506;536;566;596;618;648;678;708;738;760;792;820;848;876;904;1000"
+          keyTimes="0;.033;.067;.1;.133;.167;.2;.233;.267;.3;.333;.367;.4;.433;.467;.5;.533;.567;.6;.633;.667;.7;.733;.767;.8;.833;.867;.9;.933;.967;1"
+          dur="4.8s" begin="0.4s" calcMode="discrete" fill="freeze"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <!-- screen -->
+  <rect x="0" y="0" width="1000" height="1000" rx="20" fill="#000300"/>
+  <rect x="14" y="14" width="972" height="972" rx="14" fill="url(#bg)"/>
+
+  <!-- DUMP (typewriter reveal); per-line glow so it stays crisp at any DPI -->
+  <g clip-path="url(#reveal)" filter="url(#glow)" font-size="18" fill="#2bff5f" text-rendering="geometricPrecision">
+
+    <text x="56" y="74" font-size="25" font-weight="bold" fill="#ff2e88">[0x1F // INFINITION :: CLASSIFIED PROFILE DUMP]</text>
+
+    <text x="56" y="120" font-size="19" font-weight="bold" fill="#ff2e88">[IDENTITY_MATRIX]</text>
+    <text x="56" y="150"><tspan fill="#7dffa0">&gt;</tspan> ALIAS....: <tspan fill="#aaffc4">infinition</tspan></text>
+    <text x="56" y="180"><tspan fill="#7dffa0">&gt;</tspan> CLASS....: HACKER / ML RESEARCHER / BLADER / 3D ARTIST</text>
+    <text x="56" y="210"><tspan fill="#7dffa0">&gt;</tspan> ORIGIN...: CANNES :: FR // [GEO_REDACTED]</text>
+    <text x="56" y="240"><tspan fill="#7dffa0">&gt;</tspan> CREED....: securing the grid by day // building minds by night</text>
+
+    <line x1="56" y1="262" x2="944" y2="262" stroke="#1f9f48" stroke-width="1.5" stroke-dasharray="7 7"/>
+
+    <text x="56" y="292" font-size="19" font-weight="bold" fill="#ff2e88">[RESEARCH_VECTOR :: THE FLUID PROGRAM]</text>
+    <text x="56" y="322"><tspan fill="#7dffa0">&gt;</tspan> THESIS....: reaction-diffusion PDEs replace self-attention</text>
+    <text x="56" y="352"><tspan fill="#7dffa0">&gt;</tspan> COMPLEXITY: O(N) // ~70x less memory vs ViT</text>
+    <text x="56" y="382"><tspan fill="#7dffa0">&gt;</tspan> FLUIDWORLD: PDE world model // 2x recon // self-repair p&lt;1e-49 <tspan fill="#ff7ab8">[arXiv]</tspan></text>
+    <text x="56" y="412"><tspan fill="#7dffa0">&gt;</tspan> FLUIDVLA..: medical-3D @ 16K params // robot ctrl @ 244Hz</text>
+    <text x="56" y="442"><tspan fill="#7dffa0">&gt;</tspan> FLUIDLM...: attention-free LM // O(N) // pure-numpy inference</text>
+
+    <line x1="56" y1="464" x2="944" y2="464" stroke="#1f9f48" stroke-width="1.5" stroke-dasharray="7 7"/>
+
+    <text x="56" y="494" font-size="19" font-weight="bold" fill="#ff2e88">[QUANTUM_VECTOR :: POST-QUANTUM CRYPTO]</text>
+    <text x="56" y="524"><tspan fill="#7dffa0">&gt;</tspan> PQC.......: Kyber-1024 lattice KEM // NIST FIPS-203</text>
+    <text x="56" y="554"><tspan fill="#7dffa0">&gt;</tspan> ENTANGLE..: EPR-pair distributed systems // Oxford collab</text>
+    <text x="56" y="584"><tspan fill="#7dffa0">&gt;</tspan> THREAT....: harvest-now decrypt-later // Q-day modeling</text>
+
+    <line x1="56" y1="606" x2="944" y2="606" stroke="#1f9f48" stroke-width="1.5" stroke-dasharray="7 7"/>
+
+    <text x="56" y="636" font-size="19" font-weight="bold" fill="#ff2e88">[OFFENSIVE_TOOLING]</text>
+    <text x="56" y="666"><tspan fill="#7dffa0">&gt;</tspan> BJORN.....: autonomous pentest // rpi + e-paper HAT // <tspan fill="#aaffc4">6k+ &#9733;</tspan></text>
+    <text x="56" y="696"><tspan fill="#7dffa0">&gt;</tspan> WAVESHARE.: 100% rust no_std smartwatch fw // <tspan fill="#aaffc4">330 &#9733;</tspan></text>
+    <text x="56" y="726"><tspan fill="#7dffa0">&gt;</tspan> STACK.....: python // rust // c // pytorch // linux</text>
+
+    <line x1="56" y1="748" x2="944" y2="748" stroke="#1f9f48" stroke-width="1.5" stroke-dasharray="7 7"/>
+
+    <text x="56" y="780"><tspan fill="#3affff">[0xD0F12A]</tspan> &gt;&gt; decrypting infinition.dat (AES-256 // Kyber-1024)...</text>
+    <text x="56" y="808"><tspan fill="#3affff">[0xD0F12B]</tspan> &gt;&gt; identity matrix resolved. clearance: <tspan fill="#aaffc4">PUBLIC</tspan>.</text>
+    <text x="56" y="836"><tspan fill="#3affff">[0xD0F12C]</tspan> &gt;&gt; research vector active. transformers: <tspan fill="#ff7ab8">DEPRECATED</tspan>.</text>
+    <text x="56" y="864"><tspan fill="#3affff">[0xD0F12D]</tspan> &gt;&gt; post-quantum tunnel sealed. lattice: <tspan fill="#aaffc4">LOCKED</tspan>.</text>
+    <text x="56" y="892"><tspan fill="#3affff">[0xD0F12E]</tspan> &gt;&gt; 6k+ nodes online. swarm intelligence: <tspan fill="#aaffc4">ACTIVE</tspan>.</text>
+
+    <text x="56" y="930"><tspan fill="#ff2e88">root@infinition</tspan>:~#</text>
+  </g>
+
+  <!-- blinking cursor -->
+  <rect x="258" y="913" width="13" height="20" fill="#7dffa0" opacity="0">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1s" begin="5.3s" calcMode="discrete" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- overlays -->
+  <rect x="14" y="14" width="972" height="972" rx="14" fill="url(#scan)"/>
+  <rect x="14" y="14" width="972" height="972" rx="14" fill="#2bff5f" opacity="0.04">
+    <animate attributeName="opacity" values="0.025;0.055;0.025" dur="0.15s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="14" y="14" width="972" height="972" rx="14" fill="url(#vignette)"/>
+
+  <!-- neon green frame -->
+  <rect x="30" y="30" width="940" height="940" rx="12" fill="none" stroke="#2bff5f" stroke-width="6" opacity="0.5" filter="url(#glowSoft)"/>
+  <rect x="30" y="30" width="940" height="940" rx="12" fill="none" stroke="#5dff88" stroke-width="2.5"/>
+
+  <circle cx="500" cy="984" r="3" fill="#2bff5f"/>
+</svg>
