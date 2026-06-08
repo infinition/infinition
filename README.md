@@ -1,5 +1,6 @@
 <div align="center">
-<img width="974" height="632" alt="image" src="https://github.com/user-attachments/assets/6d9395fe-e312-4fae-8a36-5afdd29df7d9" />
+
+<a href="https://infinition.github.io/infinition/"><img src="0xid.svg" alt="infinition // classified profile dump" width="880"></a>
 
   
 </div>
