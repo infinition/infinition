@@ -870,10 +870,31 @@ window.addEventListener("touchmove", (e) => {
     inputState.prevMouse.y = t.clientY;
 }, { passive: false });
 
-// Keyboard
-const keyState = { w: false, a: false, s: false, d: false, q: false, e: false, ArrowUp: false, ArrowLeft: false, ArrowDown: false, ArrowRight: false, Shift: false, Space: false };
-window.addEventListener("keydown", (e) => { const k = e.key.toLowerCase(); if (keyState.hasOwnProperty(k) || k === " " || e.shiftKey) { keyState[k] = true; if (k === " ") keyState.Space = true; if (e.shiftKey) keyState.Shift = true; } });
-window.addEventListener("keyup", (e) => { const k = e.key.toLowerCase(); if (keyState.hasOwnProperty(k) || k === " " || !e.shiftKey) { keyState[k] = false; if (k === " ") keyState.Space = false; if (!e.shiftKey) keyState.Shift = false; } });
+// Keyboard.
+// Tracks the character each key produces (e.key, lowercased), so the layout
+// toggle can remap movement between QWERTY (WASD) and AZERTY (ZQSD) simply by
+// switching which characters the animation loop reads. Arrow keys are stored
+// lowercased too (arrowup, arrowleft, ...).
+const keyState = {};
+window.addEventListener("keydown", (e) => { keyState[e.key.toLowerCase()] = true; });
+window.addEventListener("keyup", (e) => { keyState[e.key.toLowerCase()] = false; });
+
+// Keyboard layout toggle (QWERTY / AZERTY), stuck to the music player HUD.
+const LAYOUT_KEYS = {
+    QWERTY: { forward: "w", back: "s", left: "a", right: "d", turnLeft: "q", turnRight: "e" },
+    AZERTY: { forward: "z", back: "s", left: "q", right: "d", turnLeft: "a", turnRight: "e" },
+};
+let keyboardLayout = "QWERTY";
+
+const btnLayout = document.getElementById('btn-layout');
+if (btnLayout) {
+    btnLayout.addEventListener('click', (e) => {
+        e.stopPropagation();
+        keyboardLayout = keyboardLayout === "QWERTY" ? "AZERTY" : "QWERTY";
+        btnLayout.innerText = keyboardLayout;
+        btnLayout.blur();
+    });
+}
 
 // Virtual joystick (mobile)
 const moveJoystick = { x: 0, y: 0, active: false };
@@ -1302,8 +1323,9 @@ function animate() {
     const rotSpeed = 1.0 * delta;
 
     let dYaw = 0;
-    if (keyState.q) dYaw += 1;
-    if (keyState.e) dYaw -= 1;
+    const keys = LAYOUT_KEYS[keyboardLayout];
+    if (keyState[keys.turnLeft]) dYaw += 1;
+    if (keyState[keys.turnRight]) dYaw -= 1;
     inputState.yaw += dYaw * rotSpeed;
     inputState.pitch = Math.max(-Math.PI / 2 + 0.1, Math.min(Math.PI / 2 - 0.1, inputState.pitch));
     camera.rotation.y = inputState.yaw;
@@ -1314,14 +1336,14 @@ function animate() {
     right.crossVectors(forward, camera.up).normalize();
 
     let dx = 0, dz = 0;
-    if (keyState.w || keyState.ArrowUp) dz += 1;
-    if (keyState.s || keyState.ArrowDown) dz -= 1;
-    if (keyState.a || keyState.ArrowLeft) dx -= 1;
-    if (keyState.d || keyState.ArrowRight) dx += 1;
+    if (keyState[keys.forward] || keyState.arrowup) dz += 1;
+    if (keyState[keys.back] || keyState.arrowdown) dz -= 1;
+    if (keyState[keys.left] || keyState.arrowleft) dx -= 1;
+    if (keyState[keys.right] || keyState.arrowright) dx += 1;
     if (moveJoystick.active) { dx += moveJoystick.x; dz -= moveJoystick.y; }
 
-    if (keyState.Space) camera.position.y += moveSpeed;
-    if (keyState.Shift) camera.position.y -= moveSpeed;
+    if (keyState[" "]) camera.position.y += moveSpeed;
+    if (keyState.shift) camera.position.y -= moveSpeed;
 
     if (Math.abs(dx) > 0.01 || Math.abs(dz) > 0.01) {
         const dir = new THREE.Vector3();
