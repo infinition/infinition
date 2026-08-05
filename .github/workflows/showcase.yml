@@ -1,0 +1,69 @@
+name: Build showcase data
+
+# Fab et Instagram sont inaccessibles a une requete serveur classique :
+# Fab renvoie 403 sur tout, jusqu'a son sitemap, et Instagram ne sert
+# qu'une coquille JavaScript. Ce job passe donc par un vrai navigateur.
+# Les vignettes Instagram sont signees et expirent en quelques jours,
+# elles sont recopiees dans img/instagram/ et servies par le site.
+
+on:
+  schedule:
+    - cron: '41 6 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/build-showcase.mjs'
+      - '.github/workflows/showcase.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: showcase-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Installer Playwright
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.49.1
+          npx playwright install --with-deps chromium
+
+      - name: Build data/showcase.json
+        run: node scripts/build-showcase.mjs --out data/showcase.json
+
+      - name: Verifier que le JSON est exploitable
+        run: |
+          node -e "
+            const d = require('./data/showcase.json');
+            const fab = (d.fab || []).length;
+            const ig = (d.instagram || []).length;
+            if (fab === 0 && ig === 0) {
+              throw new Error('showcase.json is empty, refusing to commit');
+            }
+            console.log(fab + ' fab listings, ' + ig + ' instagram posts');
+          "
+
+      - name: Commit si le contenu a change
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          # git diff ignore les fichiers non suivis, d'ou le passage par status.
+          if [ -z "$(git status --porcelain -- data/showcase.json img/instagram)" ]; then
+            echo 'no change'
+            exit 0
+          fi
+          git add data/showcase.json img/instagram
+          git commit -m 'chore(data): refresh showcase snapshot'
+          # Deux runs peuvent se suivre de pres, on se remet a jour avant de pousser.
+          git pull --rebase origin main
+          git push

@@ -46,7 +46,8 @@ async function initKB() {
             const local = await fetchLocalDataLogs();
             const repos = await fetchGitHubRepos();
             const arts = await fetchArtStation();
-            mergedData = [...local, ...repos, ...arts];
+            const showcase = await fetchShowcase();
+            mergedData = [...local, ...repos, ...arts, ...showcase];
             mergedData.sort((a, b) => {
                 const da = new Date(a.date);
                 const db = new Date(b.date);

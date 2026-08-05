@@ -212,6 +212,18 @@ async function fetchArtStation() {
     return fetchArtStationLive();
 }
 
+/* Objets 3D publies sur Fab et publications Instagram. Les deux sources
+   sont inaccessibles depuis un navigateur, Fab renvoie 403 a tout appel
+   serveur et Instagram ne sert qu'une coquille JavaScript, elles sont donc
+   resolues par le workflow. Voir scripts/build-showcase.mjs. */
+async function fetchShowcase() {
+    const snap = await fetchSnapshot('data/showcase.json');
+    if (!snap) return [];
+    const fab = Array.isArray(snap.fab) ? snap.fab : [];
+    const insta = Array.isArray(snap.instagram) ? snap.instagram : [];
+    return [...fab, ...insta];
+}
+
 /* ArtStation repond 403 et sans en tete CORS depuis un navigateur, ce chemin
    ne ramene donc plus rien. Le snapshot passe par le flux RSS cote runner. */
 async function fetchArtStationLive() {
@@ -283,7 +295,8 @@ async function initKB() {
         const local = await fetchLocalDataLogs();
         const repos = await fetchGitHubRepos();
         const arts = await fetchArtStation();
-        mergedData = [...local, ...repos, ...arts];
+        const showcase = await fetchShowcase();
+        mergedData = [...local, ...repos, ...arts, ...showcase];
         mergedData.sort((a, b) => {
             const da = new Date(a.date);
             const db = new Date(b.date);
