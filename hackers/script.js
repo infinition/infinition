@@ -896,6 +896,15 @@ if (btnLayout) {
     });
 }
 
+// Terminal state (CTF tower terminal: locate the garbage via memory address)
+let terminalState = 'idle';        // 'idle' | 'hintVisible' | 'active'
+let activeTower = null;            // tower mesh the terminal is anchored to
+let terminalSolved = false;        // persists once the address has been revealed
+let hintDismissedUntil = 0;        // cooldown to avoid hint flicker
+let terminalOutputLines = [];      // [{ text, className }]
+let nearestInteractableTower = null;
+const TERMINAL_PROXIMITY = 12;     // world units, roughly 3/4 of tower spacing
+
 // Virtual joystick (mobile)
 const moveJoystick = { x: 0, y: 0, active: false };
 function createStick(id, label) {
@@ -1270,6 +1279,241 @@ window.addEventListener("click", (event) => {
 
 
 /* =============================================================
+   13b. CTF TERMINAL (locate the garbage via memory address)
+   ============================================================= */
+
+let terminalFrameCounter = 0;
+
+// Project a world position to screen coordinates (for anchoring the terminal).
+function projectWorldToScreen(worldPos) {
+    const vector = worldPos.clone().project(camera);
+    return {
+        x: (vector.x * 0.5 + 0.5) * window.innerWidth,
+        y: (-vector.y * 0.5 + 0.5) * window.innerHeight,
+        visible: vector.z < 1
+    };
+}
+
+// Escape user-provided text before injecting it into the terminal DOM.
+function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+}
+
+// Find the nearest non-garbage tower within range and in the view cone.
+function checkTowerProximity() {
+    if (appState !== "RUNNING" || terminalState === "active") return;
+
+    const forward = new THREE.Vector3();
+    camera.getWorldDirection(forward);
+
+    let nearest = null;
+    let nearestDistSq = Infinity;
+    const maxDistSq = TERMINAL_PROXIMITY * TERMINAL_PROXIMITY;
+
+    for (let i = 0; i < pillarGroup.children.length; i++) {
+        const child = pillarGroup.children[i];
+        if (child.userData.isGarbage) continue;
+        const p = child.position;
+        const dx = p.x - camera.position.x;
+        const dy = p.y - camera.position.y;
+        const dz = p.z - camera.position.z;
+        const distSq = dx * dx + dy * dy + dz * dz;
+        if (distSq > maxDistSq || distSq >= nearestDistSq) continue;
+        const dist = Math.sqrt(distSq);
+        if (dist < 0.001) continue;
+        const dot = (forward.x * dx + forward.y * dy + forward.z * dz) / dist;
+        if (dot < 0.3) continue;
+        nearestDistSq = distSq;
+        nearest = child;
+    }
+
+    nearestInteractableTower = nearest;
+
+    const hint = document.getElementById("proximity-hint");
+    if (nearest && !terminalSolved && performance.now() > hintDismissedUntil) {
+        terminalState = "hintVisible";
+        updateProximityHint(nearest);
+    } else {
+        if (terminalState === "hintVisible") terminalState = "idle";
+        hint.classList.add("hidden");
+    }
+}
+
+// Position the floating hint above the given tower.
+function updateProximityHint(tower) {
+    const hint = document.getElementById("proximity-hint");
+    const anchorPos = new THREE.Vector3(
+        tower.position.x,
+        tower.position.y + boxHeight / 2 + 3,
+        tower.position.z
+    );
+    const screen = projectWorldToScreen(anchorPos);
+    if (screen.visible) {
+        hint.classList.remove("hidden");
+        hint.style.left = screen.x + "px";
+        hint.style.top = screen.y + "px";
+    } else {
+        hint.classList.add("hidden");
+    }
+}
+
+// Open the terminal anchored to the given tower.
+function openTerminal(tower) {
+    if (appState !== "RUNNING" || !tower) return;
+
+    terminalState = "active";
+    activeTower = tower;
+    document.getElementById("proximity-hint").classList.add("hidden");
+
+    const curRow = Math.round((tower.position.z - startZ) / spacing);
+    const curCol = Math.round((tower.position.x - startX) / spacing);
+
+    terminalOutputLines = [];
+    appendTerminalLine("ELLINGSON MINERAL CORPORATION", "bright");
+    appendTerminalLine("INTERNAL TERMINAL v2.08b", "dim");
+    appendTerminalLine("-".repeat(42), "dim");
+    appendTerminalLine("SECURE CONNECTION ESTABLISHED", "");
+    appendTerminalLine("ENCRYPTION: AES-256 | SESSION: " + Math.random().toString(16).substr(2, 8).toUpperCase(), "dim");
+    appendTerminalLine("-".repeat(42), "dim");
+    appendTerminalLine("NODE: ROW=" + curRow + " COL=" + curCol, "bright");
+    appendTerminalLine("-".repeat(42), "dim");
+    appendTerminalLine("", "");
+    appendTerminalLine("Type HELP for available commands.", "dim");
+    renderTerminalOutput();
+
+    const overlay = document.getElementById("terminal-overlay");
+    overlay.classList.remove("hidden");
+    overlay.classList.add("visible");
+
+    const input = document.getElementById("terminal-input");
+    input.value = "";
+    input.focus();
+}
+
+// Close the terminal and resume movement.
+function closeTerminal() {
+    terminalState = "idle";
+    activeTower = null;
+    keyState["enter"] = false; // avoid immediate re-open from the Enter that closed it
+    const overlay = document.getElementById("terminal-overlay");
+    overlay.classList.add("hidden");
+    overlay.classList.remove("visible");
+    document.getElementById("terminal-input").value = "";
+    hintDismissedUntil = performance.now() + 2000;
+}
+
+function appendTerminalLine(text, className) {
+    terminalOutputLines.push({ text: text, className: className || "" });
+}
+
+function renderTerminalOutput() {
+    const output = document.getElementById("terminal-output");
+    output.innerHTML = terminalOutputLines
+        .map((l) => `<div class="line ${l.className}">${escapeHtml(l.text)}</div>`)
+        .join("");
+    output.scrollTop = output.scrollHeight;
+}
+
+// Handle a typed command. Solving reveals a hex memory address for the garbage.
+function processTerminalCommand(input) {
+    const cmd = input.trim().toUpperCase();
+
+    appendTerminalLine("> " + input, "dim");
+
+    if (cmd === "") {
+        // empty line, just re-render the prompt
+    } else if (cmd === "HELP") {
+        appendTerminalLine("", "");
+        appendTerminalLine("AVAILABLE COMMANDS:", "bright");
+        appendTerminalLine("  ACCESS <file>  - Retrieve file index entry", "");
+        appendTerminalLine("  LOCATE <file>  - Find file grid coordinates", "");
+        appendTerminalLine("  HELP           - Display this message", "");
+        appendTerminalLine("  HINT           - Show a contextual clue", "");
+        appendTerminalLine("  CLEAR          - Clear terminal screen", "");
+        appendTerminalLine("  EXIT           - Close terminal session", "");
+        appendTerminalLine("", "");
+    } else if (cmd === "HINT") {
+        appendTerminalLine("", "");
+        appendTerminalLine("[ HINT ] The file is named after what it contains.", "dim");
+        appendTerminalLine("[ HINT ] Try ACCESS or LOCATE with the obvious name.", "dim");
+        appendTerminalLine("", "");
+    } else if (cmd === "CLEAR" || cmd === "CLS") {
+        terminalOutputLines = [];
+    } else if (cmd === "EXIT" || cmd === "QUIT" || cmd === "LOGOUT") {
+        appendTerminalLine("SESSION TERMINATED.", "dim");
+        renderTerminalOutput();
+        closeTerminal();
+        return;
+    } else if (cmd === "ACCESS GARBAGE" || cmd === "LOCATE GARBAGE" ||
+               cmd === "FIND GARBAGE" || cmd === "SCAN GARBAGE") {
+        const segHex = garbageR.toString(16).toUpperCase().padStart(2, "0");
+        const offHex = garbageC.toString(16).toUpperCase().padStart(2, "0");
+        appendTerminalLine("", "");
+        appendTerminalLine("ACCESSING GARBAGE FILE...", "dim");
+        appendTerminalLine("RETRIEVING INDEX ENTRY...", "dim");
+        appendTerminalLine("-".repeat(42), "dim");
+        appendTerminalLine("FILE: GARBAGE.DAT", "");
+        appendTerminalLine("STATUS: HIDDEN", "");
+        appendTerminalLine("SEG:0x" + segHex + "    OFF:0x" + offHex + "    LEN:0x1000", "success");
+        appendTerminalLine("-".repeat(42), "dim");
+        appendTerminalLine("TAG: $GCB  CHK: " + Math.random().toString(16).substr(2, 4).toUpperCase(), "dim");
+        appendTerminalLine("ACCESS RESTRICTED - MANUAL RETRIEVAL REQUIRED", "warn");
+        appendTerminalLine("-".repeat(42), "dim");
+        appendTerminalLine("", "");
+        appendTerminalLine("Type EXIT to close terminal.", "dim");
+        terminalSolved = true;
+    } else if (cmd.startsWith("ACCESS ") || cmd.startsWith("LOCATE ") || cmd.startsWith("FIND ")) {
+        const target = cmd.split(/\s+/).slice(1).join(" ");
+        appendTerminalLine("", "");
+        appendTerminalLine("ERROR: File \"" + target + "\" not found in index.", "warn");
+        appendTerminalLine("Try HINT for a clue, or HELP for commands.", "dim");
+        appendTerminalLine("", "");
+    } else {
+        appendTerminalLine("", "");
+        appendTerminalLine("UNRECOGNIZED: " + cmd, "warn");
+        appendTerminalLine("Type HELP for available commands.", "dim");
+        appendTerminalLine("", "");
+    }
+
+    renderTerminalOutput();
+}
+
+// Keep the terminal anchored to its tower each frame.
+function updateTerminalPosition() {
+    if (terminalState !== "active" || !activeTower) return;
+    const overlay = document.getElementById("terminal-overlay");
+    const anchorPos = new THREE.Vector3(
+        activeTower.position.x,
+        activeTower.position.y + boxHeight / 2 + 2.5,
+        activeTower.position.z
+    );
+    const screen = projectWorldToScreen(anchorPos);
+    if (screen.visible) {
+        overlay.style.left = screen.x + "px";
+        overlay.style.top = screen.y + "px";
+    } else {
+        closeTerminal();
+    }
+}
+
+// Terminal input: Enter submits, Escape closes.
+document.getElementById("terminal-input").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        const input = document.getElementById("terminal-input");
+        const value = input.value;
+        input.value = "";
+        processTerminalCommand(value);
+    } else if (e.key === "Escape") {
+        e.preventDefault();
+        closeTerminal();
+    }
+});
+
+
+/* =============================================================
    14. ANIMATION LOOP
    ============================================================= */
 
@@ -1317,52 +1561,80 @@ function animate() {
         return;
     }
 
-    // RUNNING: FPS controls
-    const baseSpeed = 40.0;
-    const moveSpeed = (camera.position.y < 20 ? baseSpeed * 0.5 : baseSpeed) * delta;
-    const rotSpeed = 1.0 * delta;
+    // RUNNING: FPS controls (frozen while the terminal is open)
+    terminalFrameCounter++;
 
-    let dYaw = 0;
-    const keys = LAYOUT_KEYS[keyboardLayout];
-    if (keyState[keys.turnLeft]) dYaw += 1;
-    if (keyState[keys.turnRight]) dYaw -= 1;
-    inputState.yaw += dYaw * rotSpeed;
-    inputState.pitch = Math.max(-Math.PI / 2 + 0.1, Math.min(Math.PI / 2 - 0.1, inputState.pitch));
-    camera.rotation.y = inputState.yaw;
-    camera.rotation.x = inputState.pitch;
+    // Terminal: proximity check (throttled) + keep it anchored to its tower
+    if (terminalState !== "active" && terminalFrameCounter % 6 === 0) {
+        checkTowerProximity();
+    }
+    updateTerminalPosition();
 
-    const forward = new THREE.Vector3(), right = new THREE.Vector3();
-    camera.getWorldDirection(forward).normalize();
-    right.crossVectors(forward, camera.up).normalize();
-
-    let dx = 0, dz = 0;
-    if (keyState[keys.forward] || keyState.arrowup) dz += 1;
-    if (keyState[keys.back] || keyState.arrowdown) dz -= 1;
-    if (keyState[keys.left] || keyState.arrowleft) dx -= 1;
-    if (keyState[keys.right] || keyState.arrowright) dx += 1;
-    if (moveJoystick.active) { dx += moveJoystick.x; dz -= moveJoystick.y; }
-
-    if (keyState[" "]) camera.position.y += moveSpeed;
-    if (keyState.shift) camera.position.y -= moveSpeed;
-
-    if (Math.abs(dx) > 0.01 || Math.abs(dz) > 0.01) {
-        const dir = new THREE.Vector3();
-        dir.addScaledVector(forward, dz).addScaledVector(right, dx).normalize();
-        camera.position.add(dir.multiplyScalar(moveSpeed));
+    // Enter: open the terminal when a tower is in range
+    if (keyState["enter"] && nearestInteractableTower && terminalState !== "active") {
+        openTerminal(nearestInteractableTower);
+        keyState["enter"] = false;
     }
 
-    // Collisions
-    if (camera.position.y < 0.2) camera.position.y = 0.2;
-    if (camera.position.y < boxHeight + 2) {
-        const gx = Math.round((camera.position.x - startX) / spacing);
-        const gz = Math.round((camera.position.z - startZ) / spacing);
-        if (gx >= 0 && gx < gridCols && gz >= 0 && gz < gridRows && !((gz === 3 || gz === 4) && (gx === 7 || gx === 8))) {
-            const bx = startX + gx * spacing, bz = startZ + gz * spacing;
-            const cdx = camera.position.x - bx, cdz = camera.position.z - bz;
-            const md = boxWidth / 2 + 1.5;
-            if (Math.abs(cdx) < md && Math.abs(cdz) < md) {
-                if (md - Math.abs(cdx) < md - Math.abs(cdz)) camera.position.x = bx + (Math.sign(cdx) || 1) * md;
-                else camera.position.z = bz + (Math.sign(cdz) || 1) * md;
+    // Escape: close the terminal or dismiss the hint
+    if (keyState["escape"]) {
+        if (terminalState === "active") {
+            closeTerminal();
+        } else if (terminalState === "hintVisible") {
+            terminalState = "idle";
+            document.getElementById("proximity-hint").classList.add("hidden");
+            hintDismissedUntil = performance.now() + 3000;
+        }
+        keyState["escape"] = false;
+    }
+
+    if (terminalState !== "active") {
+        const baseSpeed = 40.0;
+        const moveSpeed = (camera.position.y < 20 ? baseSpeed * 0.5 : baseSpeed) * delta;
+        const rotSpeed = 1.0 * delta;
+
+        let dYaw = 0;
+        const keys = LAYOUT_KEYS[keyboardLayout];
+        if (keyState[keys.turnLeft]) dYaw += 1;
+        if (keyState[keys.turnRight]) dYaw -= 1;
+        inputState.yaw += dYaw * rotSpeed;
+        inputState.pitch = Math.max(-Math.PI / 2 + 0.1, Math.min(Math.PI / 2 - 0.1, inputState.pitch));
+        camera.rotation.y = inputState.yaw;
+        camera.rotation.x = inputState.pitch;
+
+        const forward = new THREE.Vector3(), right = new THREE.Vector3();
+        camera.getWorldDirection(forward).normalize();
+        right.crossVectors(forward, camera.up).normalize();
+
+        let dx = 0, dz = 0;
+        if (keyState[keys.forward] || keyState.arrowup) dz += 1;
+        if (keyState[keys.back] || keyState.arrowdown) dz -= 1;
+        if (keyState[keys.left] || keyState.arrowleft) dx -= 1;
+        if (keyState[keys.right] || keyState.arrowright) dx += 1;
+        if (moveJoystick.active) { dx += moveJoystick.x; dz -= moveJoystick.y; }
+
+        if (keyState[" "]) camera.position.y += moveSpeed;
+        if (keyState.shift) camera.position.y -= moveSpeed;
+
+        if (Math.abs(dx) > 0.01 || Math.abs(dz) > 0.01) {
+            const dir = new THREE.Vector3();
+            dir.addScaledVector(forward, dz).addScaledVector(right, dx).normalize();
+            camera.position.add(dir.multiplyScalar(moveSpeed));
+        }
+
+        // Collisions
+        if (camera.position.y < 0.2) camera.position.y = 0.2;
+        if (camera.position.y < boxHeight + 2) {
+            const gx = Math.round((camera.position.x - startX) / spacing);
+            const gz = Math.round((camera.position.z - startZ) / spacing);
+            if (gx >= 0 && gx < gridCols && gz >= 0 && gz < gridRows && !((gz === 3 || gz === 4) && (gx === 7 || gx === 8))) {
+                const bx = startX + gx * spacing, bz = startZ + gz * spacing;
+                const cdx = camera.position.x - bx, cdz = camera.position.z - bz;
+                const md = boxWidth / 2 + 1.5;
+                if (Math.abs(cdx) < md && Math.abs(cdz) < md) {
+                    if (md - Math.abs(cdx) < md - Math.abs(cdz)) camera.position.x = bx + (Math.sign(cdx) || 1) * md;
+                    else camera.position.z = bz + (Math.sign(cdz) || 1) * md;
+                }
             }
         }
     }

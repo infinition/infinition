@@ -54,9 +54,6 @@
                 </p>
                 <button id="btn-sound-yes" class="cyber-btn">ENABLE SOUND</button>
                 <button id="btn-sound-no" class="cyber-btn">MUTE</button>
-                <p style="margin-top: 25px; font-size: 12px; opacity: 0.7; border-top: 1px dashed rgba(0,255,255,0.3); padding-top: 10px;">
-                    by <a href="https://github.com/infinition" target="_blank" style="color: #00ffff; text-decoration: none;">Infinition</a>
-                </p>
             </div>
         </div>
 
@@ -201,10 +198,23 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- AUTHOR FOOTER                                                -->
+    <!-- TERMINAL OVERLAY (CTF Tower Terminal)                        -->
     <!-- ============================================================ -->
-    <div id="author-footer">
-        <a href="https://github.com/infinition" target="_blank">By Infinition</a>
+    <div id="terminal-overlay" class="hidden">
+        <div id="terminal-screen">
+            <div id="terminal-output" aria-live="polite"></div>
+            <div id="terminal-input-line">
+                <span id="terminal-prompt">>_</span>
+                <input id="terminal-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- PROXIMITY HINT (floating label near tower)                   -->
+    <!-- ============================================================ -->
+    <div id="proximity-hint" class="hidden">
+        <span>[ ENTER ] ACCESS TERMINAL</span>
     </div>
 
     <!-- ============================================================ -->
