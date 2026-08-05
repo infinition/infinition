@@ -124,6 +124,26 @@ function decodeXml(s) {
         .trim();
 }
 
+/* Toutes les oeuvres n'ont pas les memes derives : les plus anciennes n'ont
+   aucune vignette carree et ArtStation repond 403 au lieu de 404. On essaie
+   donc du plus leger au plus lourd et on ne garde qu'une URL qui repond,
+   sinon la carte affichait un cadre noir. */
+const THUMB_SIZES = ['smaller_square', 'small_square', 'small', 'medium', 'large'];
+
+async function pickThumbnail(rawUrl) {
+    if (!rawUrl) return '';
+    if (!rawUrl.includes('/large/')) return rawUrl;
+
+    for (const size of THUMB_SIZES) {
+        const candidate = rawUrl.replace('/large/', `/${size}/`);
+        try {
+            const res = await fetch(candidate, { method: 'HEAD' });
+            if (res.ok) return candidate;
+        } catch { /* on tente la taille suivante */ }
+    }
+    return rawUrl;
+}
+
 /**
  * ArtStation renvoie 403 sur projects.json, autant depuis un serveur que
  * depuis un navigateur, et sans en tete CORS. Le flux RSS, lui, repond.
@@ -143,7 +163,7 @@ async function buildArtworks(previous) {
         const blocks = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(m => m[1]);
         if (blocks.length === 0) throw new Error('empty feed');
 
-        const items = blocks.map(block => {
+        const items = await Promise.all(blocks.map(async block => {
             const pick = tag => {
                 const m = block.match(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`));
                 return m ? decodeXml(m[1]) : '';
@@ -152,9 +172,6 @@ async function buildArtworks(previous) {
             const url = pick('link');
             const html = pick('content:encoded') || pick('description');
             const raw = (html.match(/<img[^>]+src=["']([^"']+)["']/i) || [])[1] || '';
-
-            /* La variante smaller_square pese 35 Ko au lieu de 220. */
-            const image = raw.replace('/large/', '/smaller_square/');
 
             /* Le premier paragraphe est la description, le reste est le pied
                de page automatique du flux. */
@@ -171,14 +188,16 @@ async function buildArtworks(previous) {
                 title: pick('title').replace(/\s+by\s+[^,]*$/i, '').trim(),
                 date: published ? new Date(published).toISOString() : '',
                 icon: 'fab fa-artstation',
-                image,
+                image: await pickThumbnail(raw),
                 content,
                 url
             };
-        }).filter(a => a.url && a.image);
+        }));
 
-        if (items.length === 0) throw new Error('no usable item in the feed');
-        return items;
+        const usable = items.filter(a => a.url && a.image);
+
+        if (usable.length === 0) throw new Error('no usable item in the feed');
+        return usable;
     } catch (err) {
         console.warn(`artstation failed (${err.message}), keeping the previous list`);
         return previous;
