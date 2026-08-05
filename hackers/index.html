@@ -44,18 +44,6 @@
             <div id="load-text">LOADING ASSETS...</div>
         </div>
 
-        <!-- Audio Configuration Screen -->
-        <div id="start-screen" style="display:none">
-            <div class="box-message">
-                <h2>AUDIO CONFIGURATION</h2>
-                <p style="margin-bottom:20px; font-size: 14px; opacity: 0.8">
-                    This movie has a kickass soundtrack that really enhances the vibe.
-                    I highly recommend enabling sound for the full experience, but the choice is yours.
-                </p>
-                <button id="btn-sound-yes" class="cyber-btn">ENABLE SOUND</button>
-                <button id="btn-sound-no" class="cyber-btn">MUTE</button>
-            </div>
-        </div>
 
         <!-- Instructions / Controls Screen -->
         <div id="instructions-screen" style="display:none">
@@ -93,10 +81,10 @@
                     <span style="font-size: 12px;">[QWERTY/AZERTY] BUTTON : Toggle Keyboard Layout</span>
                 </div>
                 <!-- Quote -->
-                <div style="margin-bottom: 20px; font-style: italic; color: #ff00ff; text-shadow: 0 0 5px #ff00ff; animation: blink 2s infinite;">
+                <div id="hackers-quote" style="margin-bottom: 20px; font-style: italic; color: #ff00ff; text-shadow: 0 0 5px #ff00ff; animation: blink 2s infinite;">
                     "They are trashing our rights! Trashing! Trashing!"
                 </div>
-                <button id="btn-enter" class="cyber-btn">ENTER MAINFRAME</button>
+                <button id="btn-enter" class="cyber-btn">CLOSE</button>
                 <button id="btn-menu-leaderboard" class="cyber-link" style="margin-top: 5px; width: 100%;">VIEW LEADERBOARD</button>
             </div>
         </div>
@@ -191,6 +179,26 @@
     <!-- MUSIC PLAYER (Local Audio - Top Center HUD)                  -->
     <!-- ============================================================ -->
     <div id="music-player-container">
+        <button id="btn-mute" class="player-btn mute-btn" title="Toggle Sound (Mute/Unmute)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+        </button>
+        <button id="btn-controls" class="player-btn controls-btn" title="Show Controls & Info">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                <line x1="6" y1="8" x2="6" y2="8"></line>
+                <line x1="10" y1="8" x2="10" y2="8"></line>
+                <line x1="14" y1="8" x2="14" y2="8"></line>
+                <line x1="18" y1="8" x2="18" y2="8"></line>
+                <line x1="6" y1="12" x2="6" y2="12"></line>
+                <line x1="10" y1="12" x2="10" y2="12"></line>
+                <line x1="14" y1="12" x2="14" y2="12"></line>
+                <line x1="18" y1="12" x2="18" y2="12"></line>
+                <line x1="7" y1="16" x2="17" y2="16"></line>
+            </svg>
+        </button>
         <button id="btn-prev" class="player-btn">&lt;</button>
         <div id="song-info">[ TAP TO INITIALIZE SYSTEM ]</div>
         <button id="btn-next" class="player-btn">&gt;</button>

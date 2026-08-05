@@ -739,6 +739,39 @@ function initMusicPlayer() {
     document.getElementById('btn-prev').addEventListener('click', prevTrack);
     document.getElementById('btn-next').addEventListener('click', nextTrack);
 
+    // --- Mute button handling ---
+    const btnMute = document.getElementById('btn-mute');
+    const SVG_SOUND_ON = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>`;
+    const SVG_SOUND_OFF = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`;
+
+    function updateMuteState() {
+        if (!btnMute) return;
+        if (audio.muted) {
+            btnMute.innerHTML = SVG_SOUND_OFF;
+            btnMute.title = "Unmute Audio";
+            btnMute.style.opacity = "0.5";
+            btnMute.style.borderColor = "rgba(255, 0, 0, 0.5)";
+            btnMute.style.color = "#ff4444";
+        } else {
+            btnMute.innerHTML = SVG_SOUND_ON;
+            btnMute.title = "Mute Audio";
+            btnMute.style.opacity = "0.8";
+            btnMute.style.borderColor = "rgba(0, 255, 255, 0.4)";
+            btnMute.style.color = "#00ffff";
+        }
+    }
+
+    function toggleMute(e) {
+        if (e) e.stopPropagation();
+        audio.muted = !audio.muted;
+        soundEnabled = !audio.muted;
+        updateMuteState();
+    }
+
+    if (btnMute) {
+        btnMute.addEventListener('click', toggleMute);
+    }
+
     // --- Return external control interface ---
     return {
         show: () => container.classList.add('visible'),
@@ -748,7 +781,9 @@ function initMusicPlayer() {
             audio.play().catch(() => {});
             updateSongDisplay(PLAYLIST[currentIndex].title);
         },
-        setVolume: (vol) => { audio.volume = vol / 100; }
+        setVolume: (vol) => { audio.volume = vol / 100; },
+        toggleMute: toggleMute,
+        updateMuteState: updateMuteState
     };
 }
 
@@ -1039,8 +1074,33 @@ window.addEventListener("resize", () => {
 
 
 /* =============================================================
-   12. APP STATE MACHINE
+   12. APP STATE MACHINE & QUOTES
    ============================================================= */
+
+const HACKERS_QUOTES = [
+    '"They are trashing our rights! Trashing! Trashing!"',
+    '"Hack the Planet!"',
+    '"Mess with the best, die like the rest."',
+    '"RISC architecture is gonna change everything."',
+    '"Remember, hacking is more than just a crime. It\'s a survival trait."',
+    '"Pool on the roof must have leaked."',
+    '"Zero Cool? Crash Override? What are you, superhero high schoolers?"',
+    '"It\'s in the place where I put that thing that time."',
+    '"Never send a monster to do the work of a man."',
+    '"We are Samurai... the Keyboard Cowboys."',
+    '"There is no green byte."',
+    '"Of course it has a 28.8 bps modem!"',
+    '"Universal Access, row 11."',
+    '"Type O negative. The blood of kings!"'
+];
+
+function updateHackersQuote() {
+    const quoteEl = document.getElementById("hackers-quote");
+    if (quoteEl) {
+        const rand = HACKERS_QUOTES[Math.floor(Math.random() * HACKERS_QUOTES.length)];
+        quoteEl.innerText = rand;
+    }
+}
 
 let appState = "LOADING";
 let musicControls = null;
@@ -1063,20 +1123,13 @@ const loadInterval = setInterval(() => {
     document.getElementById("load-text").innerText = "LOADING MODULES... " + loadPct + "%";
     if (loadPct >= 100) {
         setTimeout(() => {
-            appState = "MENU";
             document.getElementById("loading-screen").style.display = "none";
-            document.getElementById("start-screen").style.display = "block";
+            startGame();
         }, 500);
     }
 }, 100);
 
-let soundEnabled = false;
-
-function showInstructions(enableSound) {
-    soundEnabled = enableSound;
-    document.getElementById("start-screen").style.display = "none";
-    document.getElementById("instructions-screen").style.display = "block";
-}
+let soundEnabled = true;
 
 function startGame() {
     if (musicControls) {
@@ -1092,9 +1145,43 @@ function startGame() {
     camera.lookAt(targetStart);
 }
 
-document.getElementById("btn-sound-yes").addEventListener("click", () => showInstructions(true));
-document.getElementById("btn-sound-no").addEventListener("click", () => showInstructions(false));
-document.getElementById("btn-enter").addEventListener("click", startGame);
+function toggleControlsModal(e) {
+    if (e) e.stopPropagation();
+    const instructionsScreen = document.getElementById("instructions-screen");
+    if (!instructionsScreen || !uiOverlay) return;
+
+    const isVisible = instructionsScreen.style.display === "block" && !uiOverlay.classList.contains("hidden");
+
+    if (isVisible) {
+        closeControlsModal();
+    } else {
+        updateHackersQuote();
+        uiOverlay.style.display = "flex";
+        instructionsScreen.style.display = "block";
+        requestAnimationFrame(() => {
+            uiOverlay.classList.remove("hidden");
+        });
+    }
+}
+
+function closeControlsModal() {
+    const instructionsScreen = document.getElementById("instructions-screen");
+    if (!instructionsScreen || !uiOverlay) return;
+
+    uiOverlay.classList.add("hidden");
+    setTimeout(() => {
+        instructionsScreen.style.display = "none";
+        if (appState !== "MENU" && appState !== "LOADING") {
+            uiOverlay.style.display = "none";
+        }
+    }, 300);
+}
+
+const btnControls = document.getElementById("btn-controls");
+if (btnControls) {
+    btnControls.addEventListener("click", toggleControlsModal);
+}
+document.getElementById("btn-enter").addEventListener("click", closeControlsModal);
 
 
 /* =============================================================
@@ -1374,15 +1461,3 @@ animate();
 
 // --- Init Music Player ---
 musicControls = initMusicPlayer();
-const playerContainer = document.getElementById('music-player-container');
-if (playerContainer) {
-    playerContainer.addEventListener('click', () => {
-        if (!soundEnabled && musicControls) {
-            if (confirm("Enable Audio?")) {
-                soundEnabled = true;
-                musicControls.setVolume(50);
-                musicControls.play();
-            }
-        }
-    });
-}

@@ -349,21 +349,29 @@ canvas {
     transform: scale(1.2);
 }
 
-/* --- Keyboard Layout Toggle (stuck to the music player) --- */
+/* --- Mute Button, Controls Button & Keyboard Layout Toggle --- */
+.mute-btn,
+.controls-btn,
 .layout-toggle {
     font-size: 11px;
     letter-spacing: 1px;
     border: 1px solid rgba(0, 255, 255, 0.4);
     padding: 3px 8px;
     opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.player-btn.mute-btn:hover,
+.player-btn.controls-btn:hover,
 .player-btn.layout-toggle:hover {
     opacity: 1;
     background: rgba(0, 255, 255, 0.15);
     border-color: #00ffff;
     transform: none;
 }
+
 
 /* --- Song Info (Marquee Scroll) --- */
 #song-info {
