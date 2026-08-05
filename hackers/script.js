@@ -835,14 +835,14 @@ scene.add(pointLight);
 const inputState = { isDragging: false, prevMouse: { x: 0, y: 0 }, yaw: 0, pitch: 0 };
 
 renderer.domElement.addEventListener("mousedown", (e) => {
-    if (appState !== "RUNNING") return;
+    if (appState !== "RUNNING" || terminalState === "active") return;
     inputState.isDragging = true;
     inputState.prevMouse.x = e.clientX;
     inputState.prevMouse.y = e.clientY;
 });
 window.addEventListener("mouseup", () => { inputState.isDragging = false; });
 window.addEventListener("mousemove", (e) => {
-    if (appState !== "RUNNING" || !inputState.isDragging) return;
+    if (appState !== "RUNNING" || !inputState.isDragging || terminalState === "active") return;
     inputState.yaw -= (e.clientX - inputState.prevMouse.x) * 0.002;
     inputState.pitch -= (e.clientY - inputState.prevMouse.y) * 0.002;
     inputState.pitch = Math.max(-Math.PI / 2 + 0.1, Math.min(Math.PI / 2 - 0.1, inputState.pitch));
@@ -903,6 +903,11 @@ let terminalSolved = false;        // persists once the address has been reveale
 let hintDismissedUntil = 0;        // cooldown to avoid hint flicker
 let terminalOutputLines = [];      // [{ text, className }]
 let nearestInteractableTower = null;
+let terminalInputBuffer = "";      // text typed into the tower screen
+let terminalScreenMesh = null;     // 3D screen plane on the tower face
+let terminalCanvas = null;         // canvas texture backing the screen
+let terminalCtx = null;
+let terminalTexture = null;
 const TERMINAL_PROXIMITY = 12;     // world units, roughly 3/4 of tower spacing
 
 // Virtual joystick (mobile)
@@ -1294,11 +1299,68 @@ function projectWorldToScreen(worldPos) {
     };
 }
 
-// Escape user-provided text before injecting it into the terminal DOM.
-function escapeHtml(str) {
-    const div = document.createElement("div");
-    div.textContent = str;
-    return div.innerHTML;
+// Create the physical screen mesh glued to the tower face.
+function ensureTerminalScreen() {
+    if (terminalScreenMesh) return;
+
+    terminalCanvas = document.createElement("canvas");
+    terminalCanvas.width = 640;
+    terminalCanvas.height = 400;
+    terminalCtx = terminalCanvas.getContext("2d");
+
+    terminalTexture = new THREE.CanvasTexture(terminalCanvas);
+    const geometry = new THREE.PlaneGeometry(4.2, 2.625);
+    const material = new THREE.MeshBasicMaterial({
+        map: terminalTexture,
+        side: THREE.FrontSide,
+    });
+    terminalScreenMesh = new THREE.Mesh(geometry, material);
+    terminalScreenMesh.visible = false;
+    scene.add(terminalScreenMesh);
+}
+
+// Map a terminal line class to its phosphor color.
+function terminalLineColor(className) {
+    if (className === "dim") return "rgba(51,255,51,0.55)";
+    if (className === "bright") return "#66ff66";
+    if (className === "warn") return "#ff3333";
+    if (className === "success") return "#ff00ff";
+    return "#33ff33";
+}
+
+// Redraw the terminal content onto the screen canvas.
+function renderTerminalToCanvas() {
+    if (!terminalCtx || !terminalTexture) return;
+    const W = terminalCanvas.width, H = terminalCanvas.height;
+    const ctx = terminalCtx;
+    const pad = 16;
+    const fontSize = 15;
+    const lineHeight = 20;
+
+    ctx.fillStyle = "#0a0a0a";
+    ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = "#33ff33";
+    ctx.lineWidth = 3;
+    ctx.strokeRect(2, 2, W - 4, H - 4);
+
+    ctx.font = `bold ${fontSize}px "Courier New", monospace`;
+    ctx.textBaseline = "top";
+
+    const visibleLines = Math.floor((H - pad * 2) / lineHeight);
+    const outLines = terminalOutputLines.slice(-(visibleLines - 1));
+
+    let y = pad;
+    for (const l of outLines) {
+        ctx.fillStyle = terminalLineColor(l.className);
+        ctx.fillText(l.text, pad + 4, y);
+        y += lineHeight;
+    }
+
+    // Input line with a block cursor
+    ctx.fillStyle = "#33ff33";
+    ctx.fillText("> " + terminalInputBuffer + "█", pad + 4, y);
+
+    terminalTexture.needsUpdate = true;
 }
 
 // Find the nearest non-garbage tower within range and in the view cone.
@@ -1359,12 +1421,13 @@ function updateProximityHint(tower) {
     }
 }
 
-// Open the terminal anchored to the given tower.
+// Open the terminal on the given tower's face.
 function openTerminal(tower) {
     if (appState !== "RUNNING" || !tower) return;
 
     terminalState = "active";
     activeTower = tower;
+    terminalInputBuffer = "";
     document.getElementById("proximity-hint").classList.add("hidden");
 
     const curRow = Math.round((tower.position.z - startZ) / spacing);
@@ -1381,39 +1444,38 @@ function openTerminal(tower) {
     appendTerminalLine("-".repeat(42), "dim");
     appendTerminalLine("", "");
     appendTerminalLine("Type HELP for available commands.", "dim");
-    renderTerminalOutput();
 
-    const overlay = document.getElementById("terminal-overlay");
-    overlay.classList.remove("hidden");
-    overlay.classList.add("visible");
+    // Place the screen on the tower face nearest the player, then draw.
+    ensureTerminalScreen();
+    const dirX = camera.position.x - tower.position.x;
+    const dirZ = camera.position.z - tower.position.z;
+    const normal = new THREE.Vector3(0, 0, 0);
+    if (Math.abs(dirX) >= Math.abs(dirZ)) normal.x = Math.sign(dirX) || 1;
+    else normal.z = Math.sign(dirZ) || 1;
 
-    const input = document.getElementById("terminal-input");
-    input.value = "";
-    input.focus();
+    const offset = boxWidth / 2 + 0.15;
+    terminalScreenMesh.position.set(
+        tower.position.x + normal.x * offset,
+        tower.position.y,
+        tower.position.z + normal.z * offset
+    );
+    terminalScreenMesh.rotation.set(0, Math.atan2(normal.x, normal.z), 0);
+    terminalScreenMesh.visible = true;
+    renderTerminalToCanvas();
 }
 
 // Close the terminal and resume movement.
 function closeTerminal() {
     terminalState = "idle";
     activeTower = null;
+    terminalInputBuffer = "";
     keyState["enter"] = false; // avoid immediate re-open from the Enter that closed it
-    const overlay = document.getElementById("terminal-overlay");
-    overlay.classList.add("hidden");
-    overlay.classList.remove("visible");
-    document.getElementById("terminal-input").value = "";
+    if (terminalScreenMesh) terminalScreenMesh.visible = false;
     hintDismissedUntil = performance.now() + 2000;
 }
 
 function appendTerminalLine(text, className) {
     terminalOutputLines.push({ text: text, className: className || "" });
-}
-
-function renderTerminalOutput() {
-    const output = document.getElementById("terminal-output");
-    output.innerHTML = terminalOutputLines
-        .map((l) => `<div class="line ${l.className}">${escapeHtml(l.text)}</div>`)
-        .join("");
-    output.scrollTop = output.scrollHeight;
 }
 
 // Handle a typed command. Solving reveals a hex memory address for the garbage.
@@ -1429,6 +1491,7 @@ function processTerminalCommand(input) {
         appendTerminalLine("AVAILABLE COMMANDS:", "bright");
         appendTerminalLine("  ACCESS <file>  - Retrieve file index entry", "");
         appendTerminalLine("  LOCATE <file>  - Find file grid coordinates", "");
+        appendTerminalLine("  DECODE         - Convert resolved hex to decimal", "");
         appendTerminalLine("  HELP           - Display this message", "");
         appendTerminalLine("  HINT           - Show a contextual clue", "");
         appendTerminalLine("  CLEAR          - Clear terminal screen", "");
@@ -1443,7 +1506,7 @@ function processTerminalCommand(input) {
         terminalOutputLines = [];
     } else if (cmd === "EXIT" || cmd === "QUIT" || cmd === "LOGOUT") {
         appendTerminalLine("SESSION TERMINATED.", "dim");
-        renderTerminalOutput();
+        renderTerminalToCanvas();
         closeTerminal();
         return;
     } else if (cmd === "ACCESS GARBAGE" || cmd === "LOCATE GARBAGE" ||
@@ -1462,8 +1525,23 @@ function processTerminalCommand(input) {
         appendTerminalLine("ACCESS RESTRICTED - MANUAL RETRIEVAL REQUIRED", "warn");
         appendTerminalLine("-".repeat(42), "dim");
         appendTerminalLine("", "");
-        appendTerminalLine("Type EXIT to close terminal.", "dim");
+        appendTerminalLine("Type DECODE to convert to decimal, EXIT to close.", "dim");
         terminalSolved = true;
+    } else if (cmd === "DECODE" || cmd === "CONVERT") {
+        if (!terminalSolved) {
+            appendTerminalLine("", "");
+            appendTerminalLine("ERROR: No memory address resolved yet.", "warn");
+            appendTerminalLine("", "");
+        } else {
+            const segHex = garbageR.toString(16).toUpperCase().padStart(2, "0");
+            const offHex = garbageC.toString(16).toUpperCase().padStart(2, "0");
+            appendTerminalLine("", "");
+            appendTerminalLine("DECODING MEMORY ADDRESS...", "dim");
+            appendTerminalLine("SEG:0x" + segHex + " -> ROW " + garbageR, "success");
+            appendTerminalLine("OFF:0x" + offHex + " -> COL " + garbageC, "success");
+            appendTerminalLine("TARGET: ROW " + garbageR + ", COL " + garbageC, "bright");
+            appendTerminalLine("", "");
+        }
     } else if (cmd.startsWith("ACCESS ") || cmd.startsWith("LOCATE ") || cmd.startsWith("FIND ")) {
         const target = cmd.split(/\s+/).slice(1).join(" ");
         appendTerminalLine("", "");
@@ -1477,38 +1555,28 @@ function processTerminalCommand(input) {
         appendTerminalLine("", "");
     }
 
-    renderTerminalOutput();
+    renderTerminalToCanvas();
 }
 
-// Keep the terminal anchored to its tower each frame.
-function updateTerminalPosition() {
-    if (terminalState !== "active" || !activeTower) return;
-    const overlay = document.getElementById("terminal-overlay");
-    const anchorPos = new THREE.Vector3(
-        activeTower.position.x,
-        activeTower.position.y + boxHeight / 2 + 2.5,
-        activeTower.position.z
-    );
-    const screen = projectWorldToScreen(anchorPos);
-    if (screen.visible) {
-        overlay.style.left = screen.x + "px";
-        overlay.style.top = screen.y + "px";
-    } else {
-        closeTerminal();
-    }
-}
+// Terminal typing: keys go straight into the tower screen while active.
+window.addEventListener("keydown", (e) => {
+    if (terminalState !== "active") return;
 
-// Terminal input: Enter submits, Escape closes.
-document.getElementById("terminal-input").addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         e.preventDefault();
-        const input = document.getElementById("terminal-input");
-        const value = input.value;
-        input.value = "";
+        const value = terminalInputBuffer;
+        terminalInputBuffer = "";
         processTerminalCommand(value);
     } else if (e.key === "Escape") {
         e.preventDefault();
         closeTerminal();
+    } else if (e.key === "Backspace") {
+        e.preventDefault();
+        terminalInputBuffer = terminalInputBuffer.slice(0, -1);
+        renderTerminalToCanvas();
+    } else if (e.key.length === 1) {
+        terminalInputBuffer += e.key;
+        renderTerminalToCanvas();
     }
 });
 
@@ -1564,11 +1632,10 @@ function animate() {
     // RUNNING: FPS controls (frozen while the terminal is open)
     terminalFrameCounter++;
 
-    // Terminal: proximity check (throttled) + keep it anchored to its tower
+    // Terminal: proximity check (throttled)
     if (terminalState !== "active" && terminalFrameCounter % 6 === 0) {
         checkTowerProximity();
     }
-    updateTerminalPosition();
 
     // Enter: open the terminal when a tower is in range
     if (keyState["enter"] && nearestInteractableTower && terminalState !== "active") {
