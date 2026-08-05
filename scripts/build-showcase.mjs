@@ -43,6 +43,23 @@ const NAV_TIMEOUT = 45000;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+/* Fab et Instagram traitent differemment un navigateur de bureau et une IP
+   de datacenter. Quand ca coince, on veut voir la page reellement servie. */
+async function describePage(page, label) {
+    try {
+        const info = await page.evaluate(() => ({
+            url: location.href,
+            title: document.title,
+            text: (document.body ? document.body.innerText : '').replace(/\s+/g, ' ').slice(0, 300)
+        }));
+        console.warn(`  [${label}] url=${info.url}`);
+        console.warn(`  [${label}] title=${info.title}`);
+        console.warn(`  [${label}] body=${info.text}`);
+    } catch (err) {
+        console.warn(`  [${label}] could not describe the page: ${err.message}`);
+    }
+}
+
 async function loadPrevious(path) {
     try {
         return JSON.parse(await readFile(path, 'utf8'));
@@ -96,6 +113,7 @@ async function buildFab(context, previous) {
         });
     } catch (err) {
         console.warn(`fab failed (${err.message}), keeping the previous list`);
+        await describePage(page, 'fab');
         return previous;
     } finally {
         await page.close().catch(() => { });
@@ -219,6 +237,7 @@ async function buildInstagram(context, previous) {
         return results.sort((a, b) => new Date(b.date) - new Date(a.date));
     } catch (err) {
         console.warn(`instagram failed (${err.message}), keeping the previous list`);
+        await describePage(page, 'instagram');
         return previous;
     } finally {
         await page.close().catch(() => { });
