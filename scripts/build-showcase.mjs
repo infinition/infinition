@@ -270,7 +270,15 @@ async function main() {
     }
 
     if (fab.length === 0 && instagram.length === 0) {
-        throw new Error('both sources are empty, refusing to overwrite');
+        const hadSomething = (previous.fab || []).length || (previous.instagram || []).length;
+        if (hadSomething) {
+            /* Cas courant depuis une IP de datacenter : Cloudflare sert un
+               controle anti robot sur Fab et Instagram redirige vers sa page
+               de connexion. On ne touche a rien et on sort proprement. */
+            console.warn('les deux sources sont injoignables, le snapshot precedent est conserve');
+            return;
+        }
+        throw new Error('both sources are empty and there is nothing to keep');
     }
 
     const payload = {

@@ -6,14 +6,13 @@ name: Build showcase data
 # Les vignettes Instagram sont signees et expirent en quelques jours,
 # elles sont recopiees dans img/instagram/ et servies par le site.
 
+# Pas de cron : depuis une IP de runner GitHub, Fab sert un controle
+# anti robot Cloudflare et Instagram redirige vers sa page de connexion.
+# Ce job n'aboutit que sur un runner dont l'IP n'est pas un datacenter,
+# typiquement un self hosted runner a la maison. Depuis un poste normal,
+# lancer simplement : node scripts/build-showcase.mjs
 on:
-  schedule:
-    - cron: '41 6 * * *'
   workflow_dispatch:
-  push:
-    paths:
-      - 'scripts/build-showcase.mjs'
-      - '.github/workflows/showcase.yml'
 
 permissions:
   contents: write
