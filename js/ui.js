@@ -682,8 +682,7 @@ function renderArticles(items) {
         const div = document.createElement('div');
         div.className = 'article-entry';
         div.onclick = () => {
-            if (item.type === 'repo' || item.type === 'artwork'
-                || item.type === 'fab' || item.type === 'instagram') window.open(item.url, '_blank');
+            if (item.type === 'repo' || item.type === 'artwork') window.open(item.url, '_blank');
             else openArticle(item);
         };
 
@@ -696,7 +695,7 @@ function renderArticles(items) {
             if (imgMatch && imgMatch[1]) {
                 thumb = `<img src="${imgMatch[1]}" class="article-thumb">`;
             } else {
-                let fallbackIcon = item.icon || (item.type === 'repo' ? 'fab fa-github' : 'fas fa-file-lines');
+                let fallbackIcon = item.type === 'repo' ? 'fab fa-github' : 'fas fa-file-lines';
                 thumb = `<div class="article-thumb"><i class="${fallbackIcon} thumb-icon"></i></div>`;
             }
         } else {
@@ -704,13 +703,7 @@ function renderArticles(items) {
             thumb = `<div class="article-thumb"><i class="${fallbackIcon} thumb-icon"></i></div>`;
         }
 
-        const TYPE_COLORS = {
-            repo: 'var(--neon-orange)',
-            artwork: 'var(--neon-blue)',
-            fab: 'var(--neon-green)',
-            instagram: 'var(--neon-purple)'
-        };
-        let color = TYPE_COLORS[item.type] || '#555';
+        let color = item.type === 'repo' ? 'var(--neon-orange)' : (item.type === 'artwork' ? 'var(--neon-blue)' : '#555');
 
         div.innerHTML = `
             ${thumb}
