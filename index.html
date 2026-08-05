@@ -62,6 +62,7 @@
 
     <link rel="stylesheet" href="css/acid_pages.css">
     <link rel="stylesheet" href="css/kb.css">
+    <link rel="stylesheet" href="css/repos.css">
 
     <!-- Tailwind CSS for AcidWiki components -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -208,6 +209,8 @@
                         class="fas fa-terminal"></i></div>
                 <div class="music-trigger" onclick="navigateTo('acid-pages')" title="Acid Pages"><i
                         class="fas fa-globe"></i></div>
+                <div class="music-trigger" onclick="navigateTo('repos')" title="Repos Grid"><i
+                        class="fas fa-th"></i></div>
             </div>
         </div>
     </section>
@@ -853,6 +856,46 @@
         </div>
     </section>
 
+    <!-- SECTION REPOS -->
+    <section id="repos-view" class="view-section">
+        <div class="repos-wrap">
+            <div class="repos-head">
+                <div class="title-row">
+                    <h1>REPOS</h1>
+                    <div class="star-total" title="Total stars across all public repositories">
+                        <i class="fas fa-star"></i>
+                        <span id="repos-star-total">0</span>
+                        <small>stars</small>
+                    </div>
+                </div>
+                <p class="repos-sub" id="repos-sub">Public repositories // github.com/infinition</p>
+            </div>
+
+            <div class="repos-toolbar">
+                <div class="sort-group" id="repos-sort-group">
+                    <button class="sort-btn active" data-sort="stars"><i class="fas fa-star"></i> Stars <span
+                            class="dir">&#9660;</span></button>
+                    <button class="sort-btn" data-sort="name"><i class="fas fa-font"></i> Name <span
+                            class="dir">&#9650;</span></button>
+                    <button class="sort-btn" data-sort="date"><i class="fas fa-clock"></i> Date <span
+                            class="dir">&#9660;</span></button>
+                </div>
+                <div class="repo-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="repos-filter" placeholder="filter..." autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+
+            <div class="repos-grid" id="repos-grid"></div>
+
+            <div class="repos-status" id="repos-status">&gt; LOADING ...</div>
+        </div>
+    </section>
+
+    <!-- Card repo : popover au survol sur PC, feuille du bas sur mobile -->
+    <div class="card-backdrop" id="repos-card-backdrop"></div>
+    <div class="repo-card" id="repo-card" role="dialog" aria-label="Repository details"></div>
+
     <!-- SCRIPTS EXTERNES CONSERVÉS -->
     <div id="search-modal">
         <div class="search-container">
@@ -876,6 +919,8 @@
     <script src="js/utils.js"></script>
     <script src="js/api.js"></script>
     <script src="js/ui.js"></script>
+    <!-- charge avant main.js : navigateTo peut appeler initRepos des le chargement sur #repos -->
+    <script src="js/repos.js"></script>
     <script src="js/main.js"></script>
     <script src="js/portal.js"></script>
     <script src="js/csslib.js"></script>

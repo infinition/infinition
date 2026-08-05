@@ -1,0 +1,666 @@
+/* =========================================================
+   REPOS GRID
+   Grille des repos publics en icones facon springboard iOS.
+   Les donnees viennent de data/repos.json, genere une fois
+   par jour par .github/workflows/repos.yml.
+   ========================================================= */
+
+#repos-view .repos-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+}
+
+/* --- HEADER + COMPTEUR D'ETOILES --- */
+#repos-view .repos-head {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#repos-view .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 2.5vw, 22px);
+    flex-wrap: wrap;
+}
+
+#repos-view .repos-head h1 {
+    font-family: var(--cyber-font);
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    letter-spacing: 4px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 2px 2px 0 var(--neon-orange), -2px -2px 0 var(--neon-blue);
+}
+
+#repos-view .star-total {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: var(--code-font);
+    font-weight: 700;
+    font-size: clamp(.95rem, 2.4vw, 1.25rem);
+    color: var(--neon-orange);
+    background: rgba(255, 107, 0, .07);
+    border: 1px solid rgba(255, 107, 0, .45);
+    box-shadow: 0 0 22px rgba(255, 107, 0, .18), inset 0 0 18px rgba(255, 107, 0, .06);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+#repos-view .star-total i {
+    font-size: .9em;
+    filter: drop-shadow(0 0 6px rgba(255, 107, 0, .7));
+}
+
+#repos-view .star-total small {
+    font-size: .55em;
+    letter-spacing: 1.5px;
+    color: #6b7280;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+#repos-view .repos-sub {
+    font-family: var(--code-font);
+    font-size: .78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin: .9rem 0 0;
+}
+
+/* --- TOOLBAR DE TRI --- */
+#repos-view .repos-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 2.75rem;
+}
+
+#repos-view .sort-group {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 4px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .5);
+    border: 1px solid rgba(16, 122, 167, .6);
+}
+
+#repos-view .sort-btn {
+    font-family: var(--code-font);
+    font-size: .72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .55);
+    background: transparent;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+#repos-view .sort-btn:hover {
+    color: #fff;
+    background: rgba(19, 175, 240, .08);
+}
+
+#repos-view .sort-btn.active {
+    color: #000;
+    background: var(--neon-blue);
+    box-shadow: 0 0 14px rgba(19, 175, 240, .45);
+    font-weight: 700;
+}
+
+#repos-view .sort-btn .dir {
+    font-size: .6rem;
+    opacity: .8;
+}
+
+#repos-view .repo-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#repos-view .repo-search i {
+    position: absolute;
+    left: 12px;
+    color: #4b5563;
+    font-size: .8rem;
+}
+
+#repos-view .repo-search input {
+    background: rgba(0, 0, 0, .5);
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 10px;
+    color: #fff;
+    font-family: var(--code-font);
+    font-size: .78rem;
+    padding: 10px 14px 10px 32px;
+    width: 210px;
+    outline: none;
+    transition: all .25s;
+}
+
+#repos-view .repo-search input:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 12px rgba(19, 175, 240, .25);
+}
+
+/* --- GRILLE --- */
+#repos-view .repos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(124px, 1fr));
+    gap: 2.2rem 1rem;
+    justify-items: center;
+}
+
+#repos-view .repo-app {
+    width: 100%;
+    max-width: 132px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+    cursor: pointer;
+    animation: repo-app-in .4s ease both;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes repo-app-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#repos-view .badge-slot {
+    position: relative;
+}
+
+/* Icone iOS : squircle, copie floutee en fond, visuel entier au dessus.
+   Le contain plus la marge evitent tout rognage des bannieres de README. */
+.app-icon {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 23px;
+    overflow: hidden;
+    background: #0d1216;
+    border: 1px solid rgba(255, 255, 255, .12);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .65), inset 0 1px 0 rgba(255, 255, 255, .16);
+    transition: transform .3s cubic-bezier(.16, 1, .3, 1), box-shadow .3s, border-color .3s;
+}
+
+.app-icon .ic-bg {
+    position: absolute;
+    inset: -25%;
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    filter: blur(15px) saturate(1.35) brightness(.5);
+    transform: scale(1.05);
+}
+
+.app-icon .ic-fg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+    filter: grayscale(45%) contrast(1.04) drop-shadow(0 2px 5px rgba(0, 0, 0, .55));
+    transition: filter .3s, transform .5s;
+}
+
+.app-icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(160deg, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, .04) 38%, rgba(0, 0, 0, 0) 55%),
+        radial-gradient(120% 80% at 50% 120%, rgba(0, 0, 0, .4), transparent 60%);
+    pointer-events: none;
+}
+
+.app-icon.fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--cyber-font);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .92);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
+}
+
+#repos-view .repo-app:hover .app-icon,
+#repos-view .repo-app.is-active .app-icon {
+    transform: translateY(-6px) scale(1.06);
+    border-color: var(--neon-blue);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .7), 0 0 22px rgba(19, 175, 240, .35), inset 0 1px 0 rgba(255, 255, 255, .2);
+}
+
+#repos-view .repo-app:hover .ic-fg,
+#repos-view .repo-app.is-active .ic-fg {
+    filter: grayscale(0%) drop-shadow(0 2px 8px rgba(0, 0, 0, .6));
+    transform: scale(1.05);
+}
+
+#repos-view .repo-app:active .app-icon {
+    transform: scale(.95);
+}
+
+/* Badge etoiles facon pastille de notification */
+#repos-view .star-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 6px;
+    border-radius: 12px;
+    background: var(--neon-orange);
+    color: #000;
+    font-family: var(--code-font);
+    font-size: .66rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border: 2px solid var(--bg-color, #060606);
+    box-shadow: 0 0 12px rgba(255, 107, 0, .5);
+    z-index: 3;
+}
+
+/* Pastille verte : le repo a un site en ligne */
+#repos-view .site-dot {
+    position: absolute;
+    bottom: -5px;
+    left: -5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--bg-color, #060606);
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    font-size: .6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(10, 255, 71, .4);
+    z-index: 3;
+}
+
+#repos-view .app-label {
+    font-family: var(--code-font);
+    font-size: .72rem;
+    line-height: 1.25;
+    color: #d1d5db;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+#repos-view .app-meta {
+    font-family: var(--code-font);
+    font-size: .6rem;
+    color: #4b5563;
+    letter-spacing: .5px;
+}
+
+#repos-view .repo-app:hover .app-label,
+#repos-view .repo-app.is-active .app-label {
+    color: #fff;
+}
+
+#repos-view .repos-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #4b5563;
+    font-family: var(--code-font);
+    font-size: .8rem;
+    padding: 3rem 0;
+}
+
+#repos-view .repos-status {
+    font-family: var(--code-font);
+    font-size: .72rem;
+    color: #4b5563;
+    text-align: center;
+    margin-top: 2.5rem;
+    letter-spacing: 1px;
+}
+
+#repos-view .repos-status .ok {
+    color: var(--neon-green);
+}
+
+/* --- CARD : survol sur PC, feuille du bas sur mobile --- */
+.card-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .65);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s;
+    z-index: 500;
+}
+
+.card-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.repo-card {
+    position: fixed;
+    z-index: 600;
+    width: min(360px, calc(100vw - 24px));
+    background: rgba(10, 15, 20, .97);
+    border: 1px solid rgba(19, 175, 240, .55);
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .8), 0 0 30px rgba(19, 175, 240, .18);
+    backdrop-filter: blur(12px);
+    padding: 16px;
+    opacity: 0;
+    transform: translateY(8px) scale(.97);
+    pointer-events: none;
+    transition: opacity .18s ease, transform .18s cubic-bezier(.16, 1, .3, 1);
+}
+
+.repo-card.open {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+.repo-card .rc-top {
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+}
+
+.repo-card .card-icon {
+    position: relative;
+    width: 58px;
+    height: 58px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex: 0 0 58px;
+    background: #0d1216;
+    border: 1px solid rgba(255, 255, 255, .14);
+}
+
+.repo-card .card-icon .ic-bg {
+    position: absolute;
+    inset: -25%;
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    filter: blur(12px) saturate(1.3) brightness(.5);
+}
+
+.repo-card .card-icon .ic-fg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.repo-card .card-icon.fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--cyber-font);
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.repo-card .rc-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.repo-card .rc-title h3 {
+    margin: 0 0 4px;
+    font-family: var(--code-font);
+    font-size: .95rem;
+    color: #fff;
+    word-break: break-word;
+}
+
+.repo-card .rc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-family: var(--code-font);
+    font-size: .62rem;
+}
+
+.repo-card .rc-tag {
+    padding: 2px 7px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    color: #9ca3af;
+    background: rgba(255, 255, 255, .04);
+}
+
+.repo-card .rc-tag.lang {
+    color: var(--neon-blue);
+    border-color: rgba(19, 175, 240, .4);
+}
+
+.repo-card .rc-tag.archived {
+    color: var(--neon-red);
+    border-color: rgba(255, 0, 60, .4);
+}
+
+.repo-card .rc-tag.fork {
+    color: var(--neon-purple);
+    border-color: rgba(189, 0, 255, .4);
+}
+
+.repo-card .rc-desc {
+    margin: 13px 0 0;
+    font-size: .82rem;
+    line-height: 1.55;
+    color: #b8bfc7;
+}
+
+.repo-card .rc-desc.empty {
+    color: #4b5563;
+    font-style: italic;
+}
+
+.repo-card .rc-stats {
+    display: flex;
+    gap: 18px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    font-family: var(--code-font);
+    font-size: .7rem;
+    color: #9ca3af;
+}
+
+.repo-card .rc-stats span i {
+    margin-right: 5px;
+}
+
+.repo-card .rc-stats .st-star i {
+    color: var(--neon-orange);
+}
+
+.repo-card .rc-stats .st-fork i {
+    color: var(--neon-blue);
+}
+
+.repo-card .rc-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.repo-card .rc-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 12px;
+    border-radius: 9px;
+    font-family: var(--code-font);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .22s;
+    border: 1px solid rgba(255, 255, 255, .16);
+    background: rgba(255, 255, 255, .05);
+    color: #d1d5db;
+}
+
+.repo-card .rc-btn:hover {
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+    border-color: rgba(255, 255, 255, .3);
+}
+
+.repo-card .rc-btn.primary {
+    background: rgba(10, 255, 71, .1);
+    border-color: rgba(10, 255, 71, .45);
+    color: var(--neon-green);
+}
+
+.repo-card .rc-btn.primary:hover {
+    background: rgba(10, 255, 71, .18);
+    box-shadow: 0 0 16px rgba(10, 255, 71, .25);
+}
+
+.repo-card .rc-handle {
+    display: none;
+}
+
+/* Sans survol ou en petit ecran, la card devient une feuille du bas */
+@media (hover: none),
+(max-width: 768px) {
+    .repo-card {
+        left: 0 !important;
+        right: 0;
+        top: auto !important;
+        bottom: 0;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        border-bottom: none;
+        padding: 20px 18px calc(20px + env(safe-area-inset-bottom, 0px));
+        transform: translateY(100%);
+        transition: transform .3s cubic-bezier(.16, 1, .3, 1), opacity .2s;
+    }
+
+    .repo-card.open {
+        transform: translateY(0);
+    }
+
+    .repo-card .rc-handle {
+        display: block;
+        width: 42px;
+        height: 4px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, .25);
+        margin: -6px auto 16px;
+    }
+}
+
+body.repos-sheet-open {
+    overflow: hidden;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    #repos-view .repos-wrap {
+        padding: 1.5rem 1rem 4rem;
+    }
+
+    #repos-view .repos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+        gap: 1.6rem .6rem;
+    }
+
+    .app-icon {
+        width: 68px;
+        height: 68px;
+        border-radius: 17px;
+    }
+
+    .app-icon .ic-fg {
+        padding: 6px;
+    }
+
+    .app-icon.fallback {
+        font-size: 1.8rem;
+    }
+
+    #repos-view .app-label {
+        font-size: .62rem;
+    }
+
+    #repos-view .star-badge {
+        min-width: 20px;
+        height: 20px;
+        font-size: .58rem;
+    }
+
+    #repos-view .site-dot {
+        width: 18px;
+        height: 18px;
+        font-size: .5rem;
+    }
+
+    #repos-view .repo-search input {
+        width: 100%;
+    }
+
+    #repos-view .sort-btn {
+        padding: 8px 10px;
+        font-size: .65rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #repos-view .repo-app {
+        animation: none;
+    }
+
+    .app-icon,
+    .app-icon .ic-fg,
+    .repo-card {
+        transition: none;
+    }
+}

@@ -34,6 +34,7 @@ const terminal = {
                 terminal.print("  log         - Navigate to Data Logs");
                 terminal.print("  root        - Navigate to Root/Portal");
                 terminal.print("  acidpages   - Navigate to Acid Pages");
+                terminal.print("  repos [q]   - Navigate to Repos Grid, optional filter");
                 terminal.print("  scan [user] - Scan GitHub Pages for user");
                 terminal.print("  cd [dir]    - Change directory (nav simulation)");
                 terminal.print("  ls / ll     - List directories");
@@ -181,6 +182,29 @@ const terminal = {
                 }, 500);
             }
         },
+        repos: {
+            desc: "Go to Repos Grid",
+            action: (args) => {
+                const term = (args && args.length) ? args.join(' ') : '';
+                terminal.print(term
+                    ? `Mounting repository grid, filter: ${term}...`
+                    : "Mounting repository grid...", "term-warn");
+                setTimeout(() => {
+                    navigateTo('repos');
+                    terminal.toggle();
+                    if (term && typeof REPOS !== 'undefined') {
+                        // La grille se peuple en asynchrone, on applique le filtre apres.
+                        setTimeout(() => REPOS.focusFilter(term), 600);
+                    }
+                }, 500);
+            }
+        },
+        repo: {
+            desc: "Go to Repos Grid (Alias)",
+            action: (args) => {
+                terminal.commands.repos.action(args);
+            }
+        },
         scan: {
             desc: "Scan GitHub Pages",
             action: (args) => {
@@ -235,6 +259,8 @@ const terminal = {
                     terminal.commands.portfolio.action();
                 } else if (target === "acidpages" || target === "acid") {
                     terminal.commands.acidpages.action();
+                } else if (target === "repos" || target === "repo" || target === "git") {
+                    terminal.commands.repos.action([]);
                 } else {
                     terminal.print(`cd: ${target}: No such directory`, "term-error");
                 }
@@ -284,10 +310,11 @@ const terminal = {
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 kb", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 portfolio", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 acidpages", "term-info");
+                    terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 repos", "term-info");
                     terminal.print("drwx------  2 root    root    4096 Nov 30 00:00 secrets", "term-info");
                     terminal.print("-rw-r--r--  1 visitor visitor 1024 Nov 30 00:00 README.md", "term-info");
                 } else {
-                    terminal.print("music  csslib  logs  kb  portfolio  acidpages  secrets  README.md", "term-info");
+                    terminal.print("music  csslib  logs  kb  portfolio  acidpages  repos  secrets  README.md", "term-info");
                 }
             }
         },
