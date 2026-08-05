@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-05T12:53:31.484Z",
-  "count": 45,
+  "generated_at": "2026-08-05T12:56:57.739Z",
+  "count": 90,
   "listed": 112,
   "bands": [
     {
@@ -362,6 +362,366 @@
       "url": "https://music.apple.com/us/artist/fight-the-fade/467463249?uo=4",
       "genre": "Hard Rock",
       "checked_at": "2026-08-05T12:53:31.484Z"
+    },
+    {
+      "band": "Dropout Kings",
+      "artist": "Dal Av & Dropout Kings",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b4/e7/0e/b4e70e35-8e39-5058-1c56-54a343f39cbd/artwork.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/dal-av/1458690950?uo=4",
+      "genre": "Metal",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "PVRIS",
+      "artist": "PVRIS",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/cf/13/2d/cf132dcb-543f-abb2-163b-7daad78bd882/0851741006581.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/pvris/847482820?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "The Funeral Portrait",
+      "artist": "Melrose Avenue & The Funeral Portrait",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/f0/bf/92f0bf7a-2c63-03cf-fbbe-108a096153fe/3421.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/melrose-avenue/1622150840?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Oh The Larceny",
+      "artist": "Oh The Larceny",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/f6/ff/0f/f6ff0fbe-e313-1885-1ab9-221c87a60518/191515129192_Cover.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/oh-the-larceny/1198778778?uo=4",
+      "genre": "Alternative",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Kyo",
+      "artist": "Kyo",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/3a/c0/eb/3ac0eb93-42b5-71e5-a823-8d06d1d5fd0d/828765332927.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/kyo/15094974?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Judge & Jury",
+      "artist": "Caleb Hyles, Lacey Sturm & Judge & Jury",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2b/de/e2/2bdee250-33a9-c6df-2793-60f61ab26d12/197188456443_cover.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/caleb-hyles/859325132?uo=4",
+      "genre": "Hard Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "t.A.T.u.",
+      "artist": "t.A.T.u.",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/cb/7d/73/cb7d73a3-b77f-aec4-b1ee-dd759c35374c/06UMGIM34819.rgb.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/t-a-t-u/352317?uo=4",
+      "genre": "Pop",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "NF",
+      "artist": "NF",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ae/31/77/ae317733-57e3-cd62-6bfe-0b1223d7e401/25UM1IM68345.rgb.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/nf/898094630?uo=4",
+      "genre": "Hip-Hop/Rap",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "AWOLNATION",
+      "artist": "AWOLNATION",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5e/32/a1/5e32a119-bf03-32aa-956c-a15de4837a30/198391675171.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/awolnation/371362363?uo=4",
+      "genre": "Alternative",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Phix",
+      "artist": "Phix & Call Me Karizma",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/25/b6/79/25b67902-2701-414c-4bed-122102657acd/artwork.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/phix/454972524?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Ekoh",
+      "artist": "Phix & Ekoh",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/92/4e/c8/924ec8c4-4e98-2e65-491b-1e9512d882a0/artwork.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/phix/454972524?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Arankai",
+      "artist": "Arankai",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7c/47/f0/7c47f0cf-df1b-746c-da51-967ee8c7bb8d/3311.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/arankai/1602506871?uo=4",
+      "genre": "Alternative",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Future Royalty",
+      "artist": "Future Royalty",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d3/ef/04/d3ef04a2-6d68-0401-41d0-82d88db6f708/192641423369.png/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/future-royalty/1413399465?uo=4",
+      "genre": "Alternative",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "The Faim",
+      "artist": "The FAIM",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/60/b0/93/60b0934e-cd25-cbd8-61ee-a8b00caf44a1/4050538795493.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/the-faim/1339917553?uo=4",
+      "genre": "Alternative",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Matthieu Mendès",
+      "artist": "Matthieu Mendès",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/67/22/05/672205d0-ff7a-b2cc-dd33-9e36f4785025/825646372850.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/matthieu-mend%C3%A8s/49205914?uo=4",
+      "genre": "French Pop",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Omri",
+      "artist": "DYSTINCT",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/14/78/3b/14783ba9-6f9e-f50e-e2ac-c4e377d1f07d/196589414014.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/dystinct/1140248754?uo=4",
+      "genre": "Hip-Hop/Rap",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "The Fray",
+      "artist": "The Fray",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/1a/6c/0f/1a6c0f8b-0156-3428-93af-fae481fac7d9/dj.jmgcmbga.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/the-fray/31239777?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "The Phantoms",
+      "artist": "The Phantoms",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/ac/5c/d8/ac5cd8f5-92c9-0c08-73d3-b8b30d4df6fa/658489147923.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/the-phantoms/880271465?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Venjent",
+      "artist": "Venjent",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/da/36/8b/da368b5c-a995-21b5-b92e-56b2736687ee/11258.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/venjent/1475777423?uo=4",
+      "genre": "Electronic",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Witchz",
+      "artist": "Witchz",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/c6/1c/ee/c61cee32-35e1-be75-c74f-397504c70ab6/4651bc83-4aa3-49f6-b4e3-04d034060921.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/witchz/1492494904?uo=4",
+      "genre": "Pop",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "009 Sound System",
+      "artist": "009 Sound System",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music/e5/57/31/mzi.ewwiyvuw.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/009-sound-system/298352882?uo=4",
+      "genre": "Dance",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "A7S",
+      "artist": "ATB, Topic & A7S",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7c/b3/82/7cb38292-43fb-015c-de3a-0f294db8f4ee/20UMGIM80700.rgb.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/atb/4317519?uo=4",
+      "genre": "Dance",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "ATB",
+      "artist": "ATB",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/db/54/65/db546564-dad1-3a51-c658-951da6896be6/cover.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/atb/4317519?uo=4",
+      "genre": "Dance",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "AK",
+      "artist": "Drake",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/95/f5/87/95f587f7-21c3-d5f9-d81a-4350f9caa020/16UMGIM27643.rgb.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/drake/271256?uo=4",
+      "genre": "Hip-Hop/Rap",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Archers",
+      "artist": "Archers",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/77/88/16/77881699-2f5c-71af-0937-808bec521e1f/26CRGIM54365.rgb.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/archers/961643973?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Black Strobe",
+      "artist": "Black Strobe",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b4/91/82/b49182fb-3cbd-ee54-cbfe-ca9cfcb6c0a7/609008402269.png/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/black-strobe/56911384?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Blackway",
+      "artist": "Blackway",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/d1/bc/03/d1bc032e-a232-53f1-7f2c-51f73b4b217d/5056495419594_Cover.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/blackway/316105037?uo=4",
+      "genre": "Hip-Hop/Rap",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Breathe Carolina",
+      "artist": "Breathe Carolina",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b7/d2/7d/b7d27ddd-8225-7698-9eba-456b95262240/0856136002087.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/breathe-carolina/269267799?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Captain Qubz",
+      "artist": "Captain Qubz",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/0d/2c/9f/0d2c9f0d-ec17-3ef7-e69c-0b56c9c48acf/c4f17233-cc11-4ebd-8732-4eec52887a8c.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/captain-qubz/1542969724?uo=4",
+      "genre": "Hip-Hop",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Croixx",
+      "artist": "Croixx",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/36/3a/a2/363aa2eb-60a0-8820-783f-4e870d307181/artwork.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/croixx/1661386941?uo=4",
+      "genre": "Alternative",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Decyfer Down",
+      "artist": "Decyfer Down",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/03/5c/03/035c0355-39ce-0edd-f8e6-75f00522c386/884977109627.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/decyfer-down/151819244?uo=4",
+      "genre": "Christian",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Dynoro",
+      "artist": "Dynoro & Ina Wroldsen",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/bf/4d/bf/bf4dbf91-2940-1d1f-0c1e-30144bc08d11/886447589311.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/dynoro/670385270?uo=4",
+      "genre": "Dance",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "ENMY",
+      "artist": "ENMY",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/85/55/16/85551600-e618-8a3c-5f74-c6e057304c3e/732623000098.png/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/enmy/1455710833?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Eths",
+      "artist": "Eths",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music2/v4/bf/3a/2b/bf3a2b94-0417-1934-f750-1a5f4ef651ef/886443773325.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/eths/145738948?uo=4",
+      "genre": "Metal",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Extra Terra",
+      "artist": "Extra Terra",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/6a/9d/4b6a9d14-f88c-d319-bd02-1b924a735a3f/889326558262.png/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/extra-terra/868806083?uo=4",
+      "genre": "Dubstep",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Flight Risk",
+      "artist": "Flight Risk",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/25/b9/1d/25b91d32-0968-e456-4c25-571f42e472df/artwork.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/flight-risk/1471289316?uo=4",
+      "genre": "Alternative",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Goodjohn Productions",
+      "artist": "Goodjohn Productions",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9b/0a/73/9b0a7388-ccf0-9128-14cd-9bdd96dea43c/artwork.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/goodjohn-productions/1611987371?uo=4",
+      "genre": "Metal",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Gregor McMurray",
+      "artist": "Gregor McMurray",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bf/e4/49/bfe4494b-d710-8094-f558-7a0076d51b28/cover.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/gregor-mcmurray/1352599842?uo=4",
+      "genre": "Dance",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "HIGHSOCIETY",
+      "artist": "HIGH.SOCIETY",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/8f/13/3a/8f133ad6-eb35-6dbe-1890-4ada711e372b/artwork.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/high-society/1702287754?uo=4",
+      "genre": "Rock",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "HORSKH",
+      "artist": "HORSKH",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/ce/75/c1/ce75c1dd-7a6a-cd7b-9235-ef15383c58d8/cover.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/horskh/962644491?uo=4",
+      "genre": "Metal",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Hopsydian",
+      "artist": "Hopsydian",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ae/80/84/ae8084ae-ac84-bf25-53b5-fec84072afad/cover.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/hopsydian/1743814713?uo=4",
+      "genre": "Metal",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "ILLENIUM",
+      "artist": "ILLENIUM & Jon Bellion",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/5a/ed/7d/5aed7ddd-8208-8c82-b9c6-c3b47882e233/19UMGIM38001.rgb.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/illenium/645420096?uo=4",
+      "genre": "Dance",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "Jabberwocky",
+      "artist": "Erutan",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0e/dd/00/0edd00d1-4b4a-2867-40b7-468f7c3847f0/2174.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/erutan/594997016?uo=4",
+      "genre": "Singer/Songwriter",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "LIAMOO",
+      "artist": "LIAMOO",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e0/d0/36/e0d036da-e041-d3b2-9172-f112e23f5a4a/5054197964749.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/liamoo/1228375222?uo=4",
+      "genre": "Pop",
+      "checked_at": "2026-08-05T12:56:57.739Z"
+    },
+    {
+      "band": "LENNY",
+      "artist": "Lenny Pearce",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/db/6c/dd/db6cddb2-e87c-25e2-9e10-72543c8bba45/5063654767328_cover.jpg/600x600bb.jpg",
+      "url": "https://music.apple.com/us/artist/lenny-pearce/1519375022?uo=4",
+      "genre": "Children's Music",
+      "checked_at": "2026-08-05T12:56:57.739Z"
     }
   ]
 }
