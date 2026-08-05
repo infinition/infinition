@@ -842,7 +842,9 @@ function renderKBPagination() {
     pagination.style.display = (prevPage || nextPage) ? 'grid' : 'none';
 
     // Update breadcrumb arrows
-    updateKBBreadcrumbArrows();
+    // updateKBBreadcrumbArrows n'existe plus depuis le renommage, l'appel
+    // levait une ReferenceError qui coupait la fin du rendu de la page.
+    updateKBBreadcrumbMetaVisibility(document.getElementById('kb-breadcrumbs'));
 }
 
 function showKBError(message) {

@@ -10,6 +10,7 @@
 
 const REPOS = (() => {
     const DATA_URL = 'data/repos.json';
+    const SUMMARY_URL = 'data/repos-summary.json';
     const GH_USER = 'infinition';
 
     const state = {
@@ -49,24 +50,80 @@ const REPOS = (() => {
     }
 
     /* ---------- chargement ---------- */
+    /* Le snapshot n'est lu qu'une fois par session : la grille et le badge du
+       portail partagent la meme promesse. */
+    let payloadPromise = null;
+
+    function fetchPayload() {
+        if (payloadPromise) return payloadPromise;
+        payloadPromise = (async () => {
+            try {
+                const res = await fetch(DATA_URL, { cache: 'no-cache' });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && Array.isArray(data.repos) && data.repos.length) return data;
+                }
+            } catch (e) {
+                console.warn('repos.json unreachable, falling back to the API', e);
+            }
+            return fetchLive();
+        })();
+        return payloadPromise;
+    }
+
+    function totalStarsOf(data) {
+        if (!data) return null;
+        if (data.total_stars != null) return data.total_stars;
+        return (data.repos || []).filter(r => !r.missing).reduce((sum, r) => sum + (r.stars || 0), 0);
+    }
+
+    /* Badge du portail : le chiffre etait ecrit en dur, il suit maintenant le
+       snapshot. On lit le resume, quelques octets, pas tout le fichier. */
+    async function updateStarBadge() {
+        const el = document.getElementById('portal-stars-badge');
+        if (!el) return;
+
+        let total = null, count = null;
+        try {
+            const res = await fetch(SUMMARY_URL, { cache: 'no-cache' });
+            if (res.ok) {
+                const s = await res.json();
+                total = s.total_stars;
+                count = s.count;
+            }
+        } catch (e) { /* on tentera le snapshot complet */ }
+
+        if (total == null) {
+            const data = await fetchPayload();
+            total = totalStarsOf(data);
+            count = data && data.repos ? data.repos.filter(r => !r.missing).length : null;
+        }
+
+        /* Rien de fiable : on garde la valeur ecrite dans le HTML. */
+        if (!total || total <= 0) return;
+
+        /* applyConfig peut rejouer le rendu des badges apres nous, on met donc
+           aussi la config a jour pour que le chiffre survive. */
+        if (typeof CONFIG !== 'undefined' && CONFIG.social && CONFIG.social.stats) {
+            CONFIG.social.stats.githubStars = fmtStars(total);
+        }
+
+        el.textContent = fmtStars(total);
+        const badge = el.closest('.cyber-badge');
+        if (badge) {
+            badge.title = count
+                ? `${total.toLocaleString('en-US')} stars across ${count} public repositories`
+                : `${total.toLocaleString('en-US')} stars`;
+        }
+    }
+
     async function load() {
         if (state.loaded) { render(); return; }
         if (state.loading) return state.loading;
 
         state.loading = (async () => {
             renderSkeleton(18);
-            let data = null;
-
-            try {
-                const res = await fetch(DATA_URL, { cache: 'no-cache' });
-                if (res.ok) data = await res.json();
-            } catch (e) {
-                console.warn('repos.json unreachable, falling back to the API', e);
-            }
-
-            if (!data || !Array.isArray(data.repos) || data.repos.length === 0) {
-                data = await fetchLive();
-            }
+            const data = await fetchPayload();
 
             if (!data) {
                 grid.innerHTML = '';
@@ -79,11 +136,7 @@ const REPOS = (() => {
             state.repos = data.repos.filter(r => r && r.name && !r.missing);
             state.loaded = true;
 
-            const totalStars = data.total_stars != null
-                ? data.total_stars
-                : state.repos.reduce((sum, r) => sum + (r.stars || 0), 0);
-
-            animateCount(document.getElementById('repos-star-total'), totalStars);
+            animateCount(document.getElementById('repos-star-total'), totalStarsOf(data) || 0);
             const sub = document.getElementById('repos-sub');
             if (sub) sub.textContent = `${state.repos.length} public repositories // github.com/${GH_USER}`;
 
@@ -390,9 +443,14 @@ const REPOS = (() => {
         render();
     }
 
-    return { init, iconFailed, focusFilter, state };
+    return { init, iconFailed, focusFilter, updateStarBadge, state };
 })();
 
 function initRepos() {
     REPOS.init();
 }
+
+/* Le badge stars du portail se met a jour des le chargement, sans attendre
+   que le visiteur ouvre la grille. On passe par load et non DOMContentLoaded :
+   index.html rejoue applyConfig en fin de page et ecraserait la valeur. */
+window.addEventListener('load', () => REPOS.updateStarBadge());

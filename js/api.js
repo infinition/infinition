@@ -1,3 +1,30 @@
+/* =========================================================
+   SNAPSHOTS
+   Les listes ne sont plus resolues dans le navigateur : des
+   workflows ecrivent data/logs.json, data/repos.json et
+   data/bands.json. L'API GitHub anonyme plafonne a soixante
+   appels par heure et iTunes bride a une vingtaine par minute,
+   les pages tombaient donc en panne des qu'il y avait du monde.
+   Chaque lecteur ci dessous garde son chemin de secours en
+   direct, pour que le site marche meme sans snapshot.
+   ========================================================= */
+const snapshotCache = {};
+
+async function fetchSnapshot(url) {
+    if (snapshotCache[url] !== undefined) return snapshotCache[url];
+    snapshotCache[url] = (async () => {
+        try {
+            const r = await fetch(url, { cache: 'no-cache' });
+            if (!r.ok) return null;
+            return await r.json();
+        } catch (e) {
+            console.warn(`snapshot ${url} unreachable, falling back to live sources`, e);
+            return null;
+        }
+    })();
+    return snapshotCache[url];
+}
+
 async function fetchBandsList() {
     try {
         const r = await fetch(BANDS_FILE_URL);
@@ -7,8 +34,32 @@ async function fetchBandsList() {
     } catch (e) { return []; }
 }
 
+/* L'API iTunes renvoie l'en tete CORS qui va bien, elle est appelee en direct.
+   Le proxy d'avant n'etait plus joignable et la CSP le bloquait de toute facon. */
+async function fetchBandArtwork(band) {
+    const url = `https://itunes.apple.com/search?term=${encodeURIComponent(band)}&entity=album&limit=5`;
+    const res = await fetch(url, { cache: 'force-cache' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+
+    /* iTunes repond en text/javascript, res.json() refuserait de parser. */
+    const data = JSON.parse(await res.text());
+    if (!data.results || data.results.length === 0) return null;
+
+    const needle = band.toLowerCase();
+    const album = data.results.find(a => (a.artistName || '').toLowerCase().includes(needle)) || data.results[0];
+
+    return {
+        band,
+        image: album.artworkUrl100
+            ? album.artworkUrl100.replace('100x100bb', '600x600bb')
+            : 'assets/placeholder-artist.png',
+        url: album.artistViewUrl || album.collectionViewUrl || ''
+    };
+}
+
 async function fetchMusicData() {
     const container = document.getElementById('music-grid');
+    if (!container) return;
 
     // USE CACHE IF AVAILABLE
     if (cachedBandsHTML) {
@@ -16,49 +67,76 @@ async function fetchMusicData() {
         return;
     }
 
-    container.innerHTML = '';
-    const bands = await fetchBandsList();
+    container.innerHTML = '<div style="color:#666; text-align:center; width:100%;">Decrypting playlist...</div>';
 
-    if (bands.length === 0) {
-        container.innerHTML = '<div style="color:#888;">No bands found in bands/bands.md</div>';
+    /* Chemin normal : l'instantane du workflow, un seul fetch local. */
+    const snap = await fetchSnapshot('data/bands.json');
+    if (snap && Array.isArray(snap.bands) && snap.bands.length) {
+        renderMusicGrid(container, snap.bands.filter(b => b.image));
         return;
     }
 
-    for (const band of bands) {
-        try {
-            const searchUrl = `https://corsproxy.io/?url=` + encodeURIComponent(`https://itunes.apple.com/search?term=${band}&entity=album&limit=5`);
-            const res = await fetch(searchUrl);
-            const data = await res.json();
+    /* Secours : iTunes en direct. Partiel, l'API bride vite. */
+    const bands = await fetchBandsList();
 
-            if (data.results && data.results.length > 0) {
-                let bestMatch = data.results.find(album =>
-                    album.artistName.toLowerCase().includes(band.toLowerCase())
-                );
-                const album = bestMatch || data.results[0];
-                const image = album.artworkUrl100
-                    ? album.artworkUrl100.replace('100x100bb', '600x600bb')
-                    : 'assets/placeholder-artist.png';
-
-                const card = document.createElement('div');
-                card.className = 'music-card';
-                card.onclick = () => window.open(album.artistViewUrl || album.collectionViewUrl, '_blank');
-                card.innerHTML = `
-                    <img src="${image}" class="album-cover" alt="${band}">
-                    <div class="music-info">
-                        <span class="band-name">${band}</span>
-                    </div>`;
-
-                container.appendChild(card);
-            }
-        } catch (e) {
-            console.warn(`Could not fetch music for ${band}`, e);
-        }
+    if (bands.length === 0) {
+        container.innerHTML = '<div style="color:#888; text-align:center; width:100%;">No bands found in bands/bands.md</div>';
+        return;
     }
+
+    /* Plus de cent groupes : en sequentiel la grille mettait une eternite.
+       Six requetes en vol, l'ordre du fichier est conserve. */
+    const results = new Array(bands.length);
+    let cursor = 0;
+
+    await Promise.all(Array.from({ length: Math.min(6, bands.length) }, async () => {
+        while (cursor < bands.length) {
+            const i = cursor++;
+            try {
+                results[i] = await fetchBandArtwork(bands[i]);
+            } catch (e) {
+                console.warn(`Could not fetch music for ${bands[i]}`, e);
+                results[i] = null;
+            }
+        }
+    }));
+
+    const found = results.filter(Boolean);
+
+    if (found.length === 0) {
+        container.innerHTML = `
+            <div style="color:#888; text-align:center; width:100%; font-family:var(--code-font); font-size:0.8rem;">
+                AUDIO SUBSYSTEM UNREACHABLE<br>
+                <span style="color:#555;">iTunes lookup failed for all ${bands.length} entries.</span>
+            </div>`;
+        return;
+    }
+
+    renderMusicGrid(container, found);
+}
+
+function renderMusicGrid(container, items) {
+    container.innerHTML = items.map(item => `
+        <div class="music-card" onclick="window.open('${item.url}', '_blank', 'noopener')">
+            <img src="${item.image}" class="album-cover" alt="${item.band}" loading="lazy">
+            <div class="music-info">
+                <span class="band-name">${item.band}</span>
+            </div>
+        </div>`).join('');
+
     // SAVE TO CACHE
     cachedBandsHTML = container.innerHTML;
 }
 
 async function fetchLocalDataLogs() {
+    const snap = await fetchSnapshot('data/logs.json');
+    if (snap && Array.isArray(snap.articles) && snap.articles.length) return snap.articles;
+    return fetchLocalDataLogsLive();
+}
+
+/* Chemin de secours : un appel API par dossier, plus un par fichier pour la
+   date de commit. C'est exactement ce que le snapshot evite. */
+async function fetchLocalDataLogsLive() {
     const arts = await fetchAllMDRecursively(ARTICLES_PATH);
     const kbs = await fetchAllMDRecursively(KB_PATH);
     const all = [...arts, ...kbs];
@@ -97,6 +175,25 @@ async function fetchLocalDataLogs() {
 }
 
 async function fetchGitHubRepos() {
+    const snap = await fetchSnapshot('data/repos.json');
+    if (snap && Array.isArray(snap.repos) && snap.repos.length) {
+        return snap.repos
+            .filter(r => !r.missing)
+            .map(r => ({
+                id: r.id,
+                type: 'repo',
+                title: r.name,
+                date: r.created_at,
+                icon: 'fab fa-github',
+                image: r.image,
+                content: r.description || '',
+                url: r.url
+            }));
+    }
+    return fetchGitHubReposLive();
+}
+
+async function fetchGitHubReposLive() {
     try {
         const r = await fetch('https://api.github.com/users/infinition/repos?sort=created&direction=desc');
         if (!r.ok) return [];
@@ -110,6 +207,14 @@ async function fetchGitHubRepos() {
 }
 
 async function fetchArtStation() {
+    const snap = await fetchSnapshot('data/logs.json');
+    if (snap && Array.isArray(snap.artworks) && snap.artworks.length) return snap.artworks;
+    return fetchArtStationLive();
+}
+
+/* ArtStation repond 403 et sans en tete CORS depuis un navigateur, ce chemin
+   ne ramene donc plus rien. Le snapshot passe par le flux RSS cote runner. */
+async function fetchArtStationLive() {
     try {
         const artUrl = CONFIG?.social?.artstation || 'https://www.artstation.com/infinition';
         let username = 'infinition';

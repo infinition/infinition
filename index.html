@@ -10,7 +10,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <!-- Content Security Policy - Adjusted for external CDNs and APIs -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://api.ipify.org https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://api.ipify.org https://raw.githubusercontent.com https://*.artstation.com; frame-src 'self' https://embed.music.apple.com;">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://api.ipify.org https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://api.ipify.org https://raw.githubusercontent.com https://*.artstation.com https://itunes.apple.com; frame-src 'self' https://embed.music.apple.com;">
 
     <!-- Autoriser le mode "app" plein écran -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -166,7 +166,8 @@
                         <i class="fab fa-github"></i> git_repo
                     </a>
                     <a href="https://github.com/infinition" target="_blank" class="cyber-badge">
-                        <i class="fas fa-star"></i> 5.6k_stars
+                        <!-- valeur rafraichie depuis data/repos.json par js/repos.js -->
+                        <i class="fas fa-star"></i> <span id="portal-stars-badge">5.6k</span>_stars
                     </a>
                     <a href="https://www.reddit.com/r/Bjorn_CyberViking" target="_blank" class="cyber-badge">
                         <i class="fab fa-reddit-alien"></i> r/bjorn

@@ -1,0 +1,75 @@
+name: Build site data
+
+# Resout ici ce que le navigateur allait chercher a chaque visite :
+# la liste des repos, l'index des articles et de la KB, et ArtStation.
+# L'API GitHub anonyme plafonne a soixante appels par heure, les pages
+# tombaient donc en panne des qu'il y avait un peu de trafic.
+
+on:
+  schedule:
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'articles/**'
+      - 'kb/**'
+      - 'scripts/build-repos.mjs'
+      - 'scripts/build-logs.mjs'
+      - '.github/workflows/site-data.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # build-logs.mjs date les articles avec git log, il lui faut
+          # l'historique complet.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build data/repos.json
+        env:
+          # Le token du runner suffit et monte la limite API a 1000 par heure.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/build-repos.mjs --user infinition --out data/repos.json
+
+      - name: Build data/logs.json
+        run: node scripts/build-logs.mjs --out data/logs.json
+
+      - name: Verifier que les JSON sont exploitables
+        run: |
+          node -e "
+            const repos = require('./data/repos.json');
+            if (!Array.isArray(repos.repos) || repos.repos.length === 0) {
+              throw new Error('repos.json is empty, refusing to commit');
+            }
+            const logs = require('./data/logs.json');
+            if (!Array.isArray(logs.articles) || logs.articles.length === 0) {
+              throw new Error('logs.json has no article, refusing to commit');
+            }
+            console.log(repos.repos.length + ' repos, ' + repos.total_stars + ' stars, ' + repos.covers + ' covers');
+            console.log(logs.articles.length + ' articles, ' + logs.artworks.length + ' artworks');
+          "
+
+      - name: Commit si le contenu a change
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet -- data/repos.json data/repos-summary.json data/logs.json; then
+            echo 'no change'
+            exit 0
+          fi
+          git add data/repos.json data/repos-summary.json data/logs.json
+          git commit -m 'chore(data): refresh site snapshots'
+          git push

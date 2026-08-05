@@ -1,0 +1,58 @@
+name: Build bands data
+
+on:
+  schedule:
+    # Tous les jours 05:23 UTC. Chaque run resout au plus quarante cinq
+    # pochettes, donc la liste complete converge en quelques passages puis
+    # le job ne fait quasiment plus rien.
+    - cron: '23 5 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'bands/bands.md'
+      - 'scripts/build-bands.mjs'
+      - '.github/workflows/bands.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bands-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # L'API iTunes bride fort, le job prend son temps.
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build data/bands.json
+        run: node scripts/build-bands.mjs --in bands/bands.md --out data/bands.json
+
+      - name: Verifier que le JSON est exploitable
+        run: |
+          node -e "
+            const d = require('./data/bands.json');
+            if (!Array.isArray(d.bands) || d.bands.length === 0) {
+              throw new Error('bands.json is empty, refusing to commit');
+            }
+            console.log(d.bands.length + '/' + d.listed + ' bands resolved');
+          "
+
+      - name: Commit si le contenu a change
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet -- data/bands.json; then
+            echo 'no change'
+            exit 0
+          fi
+          git add data/bands.json
+          git commit -m 'chore(data): refresh bands snapshot'
+          git push

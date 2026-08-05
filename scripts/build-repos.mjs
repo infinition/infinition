@@ -257,7 +257,17 @@ async function main() {
     await mkdir(dirname(OUT), { recursive: true }).catch(() => { });
     await writeFile(OUT, JSON.stringify(payload, null, 2) + '\n', 'utf8');
 
-    console.log(`wrote ${OUT}`);
+    /* Resume minuscule, lu par le badge du portail : inutile d'y charger
+       tout le snapshot pour afficher un seul chiffre. */
+    const summaryPath = OUT.replace(/\.json$/, '-summary.json');
+    await writeFile(summaryPath, JSON.stringify({
+        generated_at: now,
+        count: payload.count,
+        total_stars: payload.total_stars,
+        total_forks: payload.total_forks
+    }) + '\n', 'utf8');
+
+    console.log(`wrote ${OUT} and ${summaryPath}`);
     console.log(`  repos: ${payload.count} | stars: ${payload.total_stars} | covers: ${payload.covers} | grace: ${kept} | dropped: ${dropped}`);
 }
 
