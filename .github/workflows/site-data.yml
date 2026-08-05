@@ -72,4 +72,6 @@ jobs:
           fi
           git add data/repos.json data/repos-summary.json data/logs.json
           git commit -m 'chore(data): refresh site snapshots'
+          # Deux runs peuvent se suivre de pres, on se remet a jour avant de pousser.
+          git pull --rebase origin main
           git push

@@ -55,4 +55,6 @@ jobs:
           fi
           git add data/bands.json
           git commit -m 'chore(data): refresh bands snapshot'
+          # Deux runs peuvent se suivre de pres, on se remet a jour avant de pousser.
+          git pull --rebase origin main
           git push
