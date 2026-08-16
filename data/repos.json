@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-16T04:48:24.938Z",
+  "generated_at": "2026-08-16T10:59:34.810Z",
   "user": "infinition",
   "count": 96,
-  "total_stars": 7190,
+  "total_stars": 7191,
   "total_forks": 450,
   "covers": 82,
   "repos": [
@@ -37,7 +37,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -71,7 +71,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -87,9 +87,12 @@
       "open_issues": 1,
       "language": "Python",
       "topics": [
+        "bjorn",
         "cybersecurity",
-        "offensive-security",
-        "python"
+        "gui-tool",
+        "mdns-discovery",
+        "network-scanner",
+        "offensive-security"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -102,7 +105,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -120,8 +123,10 @@
       "topics": [
         "bjorn",
         "cybersecurity",
-        "hacking",
-        "security-tools"
+        "device-management",
+        "flask",
+        "gui-manager",
+        "hacking"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -134,7 +139,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -168,7 +173,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -184,9 +189,12 @@
       "open_issues": 1,
       "language": "TypeScript",
       "topics": [
-        "obsidian",
-        "obsidian-plugin",
-        "widgets"
+        "custom-widgets",
+        "dashboard",
+        "frontend",
+        "html-widgets",
+        "interactive-notes",
+        "obsidian"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -199,7 +207,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -215,8 +223,12 @@
       "open_issues": 0,
       "language": "JavaScript",
       "topics": [
+        "badusb",
+        "duckyscript",
+        "hardware-hacking",
         "hid",
-        "p4wnp1"
+        "keystroke-injection",
+        "offensive-security"
       ],
       "license": null,
       "is_fork": false,
@@ -229,7 +241,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -244,7 +256,14 @@
       "watchers": 31,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "bjorn",
+        "e-ink",
+        "epaper",
+        "epd-display",
+        "hardware-simulation",
+        "python"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -256,7 +275,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -273,10 +292,11 @@
       "language": "JavaScript",
       "topics": [
         "gpu-acceleration",
-        "obsidian",
-        "obsidian-plugin",
-        "photo-gallery",
-        "video-player"
+        "image-viewer",
+        "indexeddb-cache",
+        "lightbox",
+        "media-gallery",
+        "obsidian"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -289,7 +309,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -305,11 +325,12 @@
       "open_issues": 0,
       "language": "Shell",
       "topics": [
+        "badusb",
+        "duckyscript",
         "educational-project",
-        "llmnr",
-        "nbt",
-        "p4wnp1",
-        "p4wnp1-aloa"
+        "hash-stealer",
+        "hid-payload",
+        "llmnr"
       ],
       "license": null,
       "is_fork": false,
@@ -322,7 +343,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -337,7 +358,14 @@
       "watchers": 10,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "3d-reconstruction",
+        "ai-3d",
+        "automation",
+        "batch-pipeline",
+        "glb-exporter",
+        "image-to-3d"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -349,7 +377,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -364,7 +392,14 @@
       "watchers": 8,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "ai-orchestration",
+        "autonomous-agents",
+        "bjorn",
+        "cybersecurity",
+        "decision-engine",
+        "offensive-security"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -376,7 +411,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -391,7 +426,14 @@
       "watchers": 8,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "continuous-time",
+        "deep-learning",
+        "efficient-nlp",
+        "fluid-mechanics",
+        "language-model",
+        "linear-complexity"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -403,7 +445,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -418,7 +460,14 @@
       "watchers": 8,
       "open_issues": 1,
       "language": "Jupyter Notebook",
-      "topics": [],
+      "topics": [
+        "continuous-dynamics",
+        "deep-learning",
+        "generative-model",
+        "machine-learning",
+        "non-transformer",
+        "physics-simulation"
+      ],
       "license": "NOASSERTION",
       "is_fork": false,
       "is_archived": false,
@@ -430,7 +479,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -446,11 +495,12 @@
       "open_issues": 0,
       "language": "JavaScript",
       "topics": [
+        "agent-memory",
         "artificial-intelligence",
-        "llm",
-        "local-first",
-        "mcp",
-        "memory"
+        "audited-memory",
+        "claude-code",
+        "cognitive-map",
+        "cursor-ai"
       ],
       "license": "Apache-2.0",
       "is_fork": false,
@@ -463,7 +513,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -478,7 +528,14 @@
       "watchers": 7,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "author-tools",
+        "desktop-app",
+        "distraction-free",
+        "local-first",
+        "markdown-editor",
+        "minimalist-editor"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -490,7 +547,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -505,7 +562,14 @@
       "watchers": 6,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "browser-os",
+        "canvas",
+        "frontend",
+        "javascript",
+        "operating-system-simulator",
+        "retro-os"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -517,7 +581,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -532,7 +596,14 @@
       "watchers": 6,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "bjorn",
+        "ctf-challenge",
+        "cybersecurity",
+        "educational-security",
+        "gamification",
+        "hacking-lab"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -544,7 +615,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -559,7 +630,14 @@
       "watchers": 6,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "bjorn",
+        "chaos-engineering",
+        "ctf",
+        "cybersecurity",
+        "docker-lab",
+        "offensive-security"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -571,7 +649,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -586,7 +664,14 @@
       "watchers": 6,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "ai-assistant",
+        "embeddings",
+        "knowledge-base",
+        "local-first",
+        "personal-ai",
+        "pkm"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -598,7 +683,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -613,7 +698,14 @@
       "watchers": 6,
       "open_issues": 0,
       "language": "VBA",
-      "topics": [],
+      "topics": [
+        "educational",
+        "excel",
+        "office-tools",
+        "openxml",
+        "password-cracker",
+        "python"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -625,7 +717,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -634,13 +726,20 @@
       "full_name": "infinition/bjorn-code",
       "url": "https://github.com/infinition/bjorn-code",
       "site": "https://infinition.github.io/AcidBjorn/",
-      "description": "Bjorn Code is a VS Code extension for bi-directional file synchronization between your local workspace and a remote host over SSH/SFTP. It is designed for seamless remote development workflows — edit locally, sync instantly to a Raspberry Pi or any Linux server.",
+      "description": "Bjorn Code is a VS Code extension for bi-directional file synchronization between your local workspace and a remote host over SSH/SFTP. It is designed for seamless remote development workflows - edit locally, sync instantly to a Raspberry Pi or any Linux server.",
       "stars": 5,
       "forks_count": 1,
       "watchers": 5,
       "open_issues": 0,
       "language": "TypeScript",
-      "topics": [],
+      "topics": [
+        "bi-directional-sync",
+        "bjorn",
+        "cybersecurity-tools",
+        "developer-tools",
+        "file-synchronization",
+        "raspberry-pi"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -652,7 +751,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -667,7 +766,14 @@
       "watchers": 5,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "active-recall",
+        "flashcards",
+        "learning-system",
+        "obsidian",
+        "obsidian-plugin",
+        "pkm"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -679,7 +785,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -694,7 +800,14 @@
       "watchers": 5,
       "open_issues": 0,
       "language": "TypeScript",
-      "topics": [],
+      "topics": [
+        "code-runner",
+        "data-science",
+        "data-visualization",
+        "jupyter-notebook",
+        "matplotlib",
+        "obsidian"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -706,7 +819,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -721,7 +834,14 @@
       "watchers": 5,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "ast-parser",
+        "cli-tool",
+        "code-analysis",
+        "dependency-analyzer",
+        "dependency-graph",
+        "developer-tools"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -733,7 +853,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -748,7 +868,14 @@
       "watchers": 5,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "ascii-tree",
+        "cli-utility",
+        "code-auditing",
+        "code-bundler",
+        "developer-tools",
+        "directory-tree"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -760,7 +887,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -775,7 +902,14 @@
       "watchers": 4,
       "open_issues": 0,
       "language": "TypeScript",
-      "topics": [],
+      "topics": [
+        "dashboard",
+        "desktop-environment",
+        "dock",
+        "obsidian",
+        "obsidian-plugin",
+        "pkm"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -787,7 +921,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -804,8 +938,11 @@
       "language": "HTML",
       "topics": [
         "ai",
+        "machine-learning",
+        "physics-simulation",
+        "python",
         "qlearning",
-        "reinforcement-learning"
+        "quantum-algorithms"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -818,7 +955,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -833,7 +970,14 @@
       "watchers": 3,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "developer-tools",
+        "github-api",
+        "github-pages",
+        "github-profiles",
+        "javascript",
+        "portfolio-builder"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -845,7 +989,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -860,7 +1004,14 @@
       "watchers": 3,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "developer-tools",
+        "documentation-generator",
+        "github-actions",
+        "github-pages",
+        "javascript",
+        "knowledge-base"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -872,7 +1023,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -887,7 +1038,14 @@
       "watchers": 3,
       "open_issues": 0,
       "language": null,
-      "topics": [],
+      "topics": [
+        "desktop-app",
+        "gaming-tools",
+        "input-remapping",
+        "keyboard-hook",
+        "macro-recorder",
+        "mouse-automation"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -899,7 +1057,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -914,7 +1072,14 @@
       "watchers": 3,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "culinary-blog",
+        "docker",
+        "express",
+        "markdown-rendering",
+        "nodejs",
+        "pwa"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -926,7 +1091,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -941,7 +1106,14 @@
       "watchers": 3,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "bookmark-manager",
+        "card-gallery",
+        "link-manager",
+        "metadata-scraper",
+        "obsidian",
+        "obsidian-plugin"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -953,7 +1125,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -968,7 +1140,14 @@
       "watchers": 3,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "autolinking",
+        "bidirectional-linking",
+        "hover-preview",
+        "knowledge-management",
+        "note-navigation",
+        "obsidian"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -980,7 +1159,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -995,7 +1174,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "canvas",
+        "client-side",
+        "graphic-design",
+        "image-processing",
+        "image-to-svg",
+        "potrace"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1007,7 +1193,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1024,7 +1210,11 @@
       "language": "TypeScript",
       "topics": [
         "antigravity",
-        "vscode-extension"
+        "clipboard-manager",
+        "code-editor",
+        "code-storage",
+        "developer-tools",
+        "javascript"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -1037,7 +1227,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1052,7 +1242,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "3d-visualization",
+        "calculus",
+        "differential-equations",
+        "educational-tool",
+        "interactive-math",
+        "mathematics"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1064,7 +1261,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1079,7 +1276,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "3d-modeling",
+        "architecture-tools",
+        "cad",
+        "glb-exporter",
+        "gltf",
+        "mesh-generation"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -1091,7 +1295,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1108,8 +1312,11 @@
       "language": "C",
       "topics": [
         "ai",
+        "ai-agent",
         "companion",
-        "mcp-server"
+        "desktop-pet",
+        "embedded-systems",
+        "esp32-s3"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -1122,7 +1329,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1137,7 +1344,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "autonomous-systems",
+        "continuous-dynamics",
+        "hierarchical-planning",
+        "machine-learning",
+        "motion-planning",
+        "non-transformer"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -1149,7 +1363,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1164,7 +1378,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "3d-vectors",
+        "arxiv-paper",
+        "clifford-algebra",
+        "deep-learning",
+        "equivariant-neural-networks",
+        "geometric-algebra"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1176,7 +1397,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1191,7 +1412,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "dashboard",
+        "docker",
+        "glassmorphism",
+        "homelab",
+        "real-time-metrics",
+        "self-hosted"
+      ],
       "license": "NOASSERTION",
       "is_fork": false,
       "is_archived": false,
@@ -1203,7 +1431,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1218,19 +1446,26 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "cybersecurity",
+        "developer",
+        "github-profile",
+        "hardware-hacking",
+        "open-source",
+        "portfolio"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
       "is_template": false,
       "default_branch": "main",
       "created_at": "2021-05-02T01:11:32Z",
-      "pushed_at": "2026-08-15T05:44:31Z",
+      "pushed_at": "2026-08-16T05:46:28Z",
       "image": "https://raw.githubusercontent.com/infinition/infinition/main/0xid.svg",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1245,7 +1480,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "ai-agents",
+        "decentralized-ai",
+        "edge-ai",
+        "iot-protocol",
+        "local-ai",
+        "local-first"
+      ],
       "license": "Apache-2.0",
       "is_fork": false,
       "is_archived": false,
@@ -1257,7 +1499,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1272,7 +1514,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "agentic-ai",
+        "autonomous-agents",
+        "llm-orchestration",
+        "local-ai",
+        "multi-agent",
+        "personal-ai"
+      ],
       "license": "NOASSERTION",
       "is_fork": false,
       "is_archived": false,
@@ -1284,7 +1533,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1299,7 +1548,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "computational-neuroscience",
+        "dynamical-systems",
+        "liquid-state-machine",
+        "machine-learning",
+        "neural-network",
+        "reservoir-computing"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -1311,7 +1567,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1326,7 +1582,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "liquid-neural-network",
+        "natural-language-processing",
+        "neuromorphic",
+        "rust",
+        "spiking-neural-network",
+        "synaptic-plasticity"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -1338,7 +1601,41 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
+      "missing": false
+    },
+    {
+      "id": 1335488861,
+      "name": "mantis",
+      "full_name": "infinition/mantis",
+      "url": "https://github.com/infinition/mantis",
+      "site": "https://infinition.github.io/mantis/",
+      "description": "Intelligent retopology in Rust: field-aligned quad remeshing, real-time polygroups, texture reprojection",
+      "stars": 2,
+      "forks_count": 0,
+      "watchers": 2,
+      "open_issues": 0,
+      "language": "Rust",
+      "topics": [
+        "3d",
+        "3d-graphics",
+        "desktop-app",
+        "geometry",
+        "gltf",
+        "mesh-processing"
+      ],
+      "license": "MIT",
+      "is_fork": false,
+      "is_archived": false,
+      "is_template": false,
+      "default_branch": "main",
+      "created_at": "2026-08-15T23:12:09Z",
+      "pushed_at": "2026-08-15T23:35:53Z",
+      "image": "https://raw.githubusercontent.com/infinition/mantis/main/docs/mantis.png",
+      "image_status": "readme",
+      "previous_name": null,
+      "first_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1353,7 +1650,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "cuda",
+        "gpu-pipeline",
+        "nvdec",
+        "nvenc",
+        "rust",
+        "tensorrt"
+      ],
       "license": "Apache-2.0",
       "is_fork": false,
       "is_archived": false,
@@ -1365,7 +1669,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1380,7 +1684,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "TypeScript",
-      "topics": [],
+      "topics": [
+        "ai-simulation",
+        "express-api",
+        "grid-world",
+        "machine-learning",
+        "python",
+        "q-learning"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1392,7 +1703,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1407,7 +1718,14 @@
       "watchers": 2,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "3d-visualizer",
+        "arduino",
+        "browser-based",
+        "gamepad-control",
+        "robotic-arm",
+        "robotics"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1419,7 +1737,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1434,7 +1752,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "hacker-tools",
+        "launcher",
+        "plugin-launcher",
+        "portable-app",
+        "retro-launcher",
+        "single-binary"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -1446,7 +1771,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1461,7 +1786,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "desktop-app",
+        "drag-and-drop",
+        "ipad-secondary-display",
+        "keyboard-hook",
+        "lunadisplay",
+        "mouse-emulation"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1473,7 +1805,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1488,7 +1820,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "desktop-app",
+        "docker-dashboard",
+        "homelab",
+        "jackett",
+        "media-monitor",
+        "media-server"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1500,7 +1839,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1515,7 +1854,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "automation",
+        "content-curation",
+        "homelab",
+        "knowledge-management",
+        "markdown-pipeline",
+        "pdf-summarizer"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1527,7 +1873,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1544,9 +1890,11 @@
       "language": "JavaScript",
       "topics": [
         "3d",
+        "3d-viewer",
         "albedo",
         "cgi",
-        "viewmodel"
+        "desktop-app",
+        "gltf-viewer"
       ],
       "license": null,
       "is_fork": false,
@@ -1559,7 +1907,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-07T05:49:39.709Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1593,7 +1941,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1608,7 +1956,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "3d-navigation",
+        "3dconnexion",
+        "6-dof",
+        "browser-extension",
+        "cad-navigation",
+        "chrome-extension"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -1620,7 +1975,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-09T05:17:08.789Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1636,12 +1991,12 @@
       "open_issues": 0,
       "language": "Rust",
       "topics": [
+        "desktop-utility",
+        "grid-overlay",
         "overlay",
         "productivity",
         "rust",
-        "snap",
-        "tray-icon",
-        "win32"
+        "snap"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -1654,7 +2009,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-16T04:48:24.938Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1669,7 +2024,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "calculus",
+        "data-science",
+        "deep-learning",
+        "french-education",
+        "linear-algebra",
+        "machine-learning-course"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1681,7 +2043,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1696,7 +2058,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "bulk-url-opener",
+        "chrome-extension",
+        "content-extractor",
+        "developer-tools",
+        "javascript",
+        "manifest-v3"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1708,7 +2077,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1723,7 +2092,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "backprop-free",
+        "bio-plausible",
+        "deep-learning",
+        "gradient-free",
+        "local-learning",
+        "machine-learning-research"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1735,7 +2111,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1750,7 +2126,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "contextual-rag",
+        "episodic-memory",
+        "hybrid-language-model",
+        "language-models",
+        "machine-learning",
+        "memory-augmented-nn"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -1762,7 +2145,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1777,7 +2160,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "build-cleaner",
+        "cargo-clean",
+        "desktop-app",
+        "developer-tools",
+        "disk-space-cleaner",
+        "gitignore-scanner"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1789,7 +2179,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1804,7 +2194,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "3d-mesh",
+        "3d-printing",
+        "bambu-studio",
+        "cli-tool",
+        "glb-repair",
+        "gltf"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1816,7 +2213,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-12T23:55:30.705Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1833,10 +2230,11 @@
       "language": "HTML",
       "topics": [
         "ai",
-        "flappy-bird",
-        "game",
-        "qlearning",
-        "reinforcement-learning"
+        "arcade-game",
+        "browser-game",
+        "canvas",
+        "educational-ai",
+        "flappy-bird"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -1849,7 +2247,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1864,7 +2262,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "continuous-control",
+        "deep-learning",
+        "embodied-ai",
+        "fluid-dynamics",
+        "machine-learning",
+        "non-transformer"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1876,7 +2281,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1891,7 +2296,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "archive-manager",
+        "backup-utility",
+        "cron-scheduler",
+        "data-protection",
+        "desktop-app",
+        "incremental-backup"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1903,7 +2315,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1918,7 +2330,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": null,
-      "topics": [],
+      "topics": [
+        "agent-framework",
+        "agentic-ai",
+        "ai-agent",
+        "autonomous-agent",
+        "conversational-ai",
+        "llm-assistant"
+      ],
       "license": "MIT",
       "is_fork": true,
       "is_archived": false,
@@ -1930,7 +2349,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1945,7 +2364,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "asymptotic-safety",
+        "discrete-spacetime",
+        "fixed-point",
+        "mathematical-physics",
+        "physics-research",
+        "quantum-gravity"
+      ],
       "license": "NOASSERTION",
       "is_fork": false,
       "is_archived": false,
@@ -1957,7 +2383,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1972,7 +2398,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "chrome-extension",
+        "computer-vision",
+        "deep-learning",
+        "optical-flow",
+        "phase-field-segmentation",
+        "pixel-tracking"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -1984,7 +2417,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -1999,7 +2432,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "docker-tui",
+        "keyboard-driven",
+        "linux-management",
+        "process-viewer",
+        "rust",
+        "sysadmin-tools"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -2011,7 +2451,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2027,12 +2467,12 @@
       "open_issues": 0,
       "language": "Rust",
       "topics": [
+        "app-launcher",
         "appbar",
         "desktop",
-        "rust",
-        "sidebar",
-        "webview2",
-        "widgets"
+        "desktop-customization",
+        "docked-sidebar",
+        "productivity"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -2045,7 +2485,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2060,7 +2500,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "bookmarks-manager",
+        "drag-and-drop",
+        "homelab-dashboard",
+        "ios-style",
+        "javascript",
+        "json-persistence"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -2072,7 +2519,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2087,7 +2534,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "ai-evaluation",
+        "benchmarking",
+        "developer-tools",
+        "lucida",
+        "python",
+        "qa-system"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -2099,41 +2553,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
-      "missing": false
-    },
-    {
-      "id": 1335488861,
-      "name": "mantis",
-      "full_name": "infinition/mantis",
-      "url": "https://github.com/infinition/mantis",
-      "site": "https://infinition.github.io/mantis/",
-      "description": "Intelligent retopology in Rust: field-aligned quad remeshing, real-time polygroups, texture reprojection",
-      "stars": 1,
-      "forks_count": 0,
-      "watchers": 1,
-      "open_issues": 0,
-      "language": "Rust",
-      "topics": [
-        "3d",
-        "3d-graphics",
-        "desktop-app",
-        "geometry",
-        "gltf",
-        "mesh-processing"
-      ],
-      "license": "MIT",
-      "is_fork": false,
-      "is_archived": false,
-      "is_template": false,
-      "default_branch": "main",
-      "created_at": "2026-08-15T23:12:09Z",
-      "pushed_at": "2026-08-15T23:35:53Z",
-      "image": "https://raw.githubusercontent.com/infinition/mantis/main/docs/mantis.png",
-      "image_status": "readme",
-      "previous_name": null,
-      "first_seen": "2026-08-16T04:48:24.938Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2149,8 +2569,12 @@
       "open_issues": 0,
       "language": "TypeScript",
       "topics": [
-        "llm",
-        "mcp-server"
+        "agentic-workflows",
+        "ai-assistants",
+        "claude-mcp",
+        "context-teleportation",
+        "inter-agent-communication",
+        "llm"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -2163,7 +2587,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2178,7 +2602,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "TypeScript",
-      "topics": [],
+      "topics": [
+        "browser-game",
+        "docker",
+        "game-server",
+        "labrute",
+        "lan-gaming",
+        "nodejs"
+      ],
       "license": "NOASSERTION",
       "is_fork": false,
       "is_archived": false,
@@ -2190,7 +2621,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2205,7 +2636,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Jupyter Notebook",
-      "topics": [],
+      "topics": [
+        "cross-domain",
+        "cybersecurity",
+        "knowledge-graph",
+        "machine-learning",
+        "neuroscience",
+        "physics-research"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -2217,7 +2655,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2232,7 +2670,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "JavaScript",
-      "topics": [],
+      "topics": [
+        "dashboard",
+        "desktop-utility",
+        "developer-tools",
+        "glassmorphism",
+        "linux-on-windows",
+        "rust"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -2244,7 +2689,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2260,8 +2705,12 @@
       "open_issues": 0,
       "language": "JavaScript",
       "topics": [
+        "dynamic-filtering",
+        "file-organization",
+        "knowledge-management",
         "obsidian",
-        "obsidian-plugin"
+        "obsidian-plugin",
+        "pkm"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -2274,7 +2723,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2289,7 +2738,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "config-editor",
+        "developer-tools",
+        "file-explorer",
+        "hidden-files",
+        "obsidian",
+        "obsidian-plugin"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -2301,7 +2757,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2316,7 +2772,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": null,
-      "topics": [],
+      "topics": [
+        "agentic-ai",
+        "artificial-intelligence",
+        "cognitive-architecture",
+        "context-protocol",
+        "developer-tools",
+        "infinition"
+      ],
       "license": null,
       "is_fork": false,
       "is_archived": false,
@@ -2328,7 +2791,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2344,12 +2807,12 @@
       "open_issues": 0,
       "language": "Python",
       "topics": [
+        "asset-pipeline",
         "blender",
         "blender-addon",
         "blender-exporter",
-        "blender3d",
-        "paralives",
-        "paralives-early-access"
+        "blender-modding",
+        "blender3d"
       ],
       "license": "GPL-3.0",
       "is_fork": false,
@@ -2362,7 +2825,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-12T05:44:54.828Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2378,11 +2841,12 @@
       "open_issues": 0,
       "language": "C#",
       "topics": [
+        "asset-reloader",
+        "bepinex-plugin",
         "game",
-        "paralives",
-        "paralives-early-access",
-        "paralives-game",
-        "paralives-mods"
+        "game-modding",
+        "hot-reloading",
+        "modding-tools"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -2395,7 +2859,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-12T23:55:30.705Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2414,9 +2878,9 @@
         "generative",
         "lowpoly",
         "procedural-audio",
-        "simulation",
-        "soundscape",
-        "threejs"
+        "procedural-generation",
+        "rendering-engine",
+        "sandbox-game"
       ],
       "license": null,
       "is_fork": false,
@@ -2429,7 +2893,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-12T23:55:30.705Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2447,10 +2911,10 @@
       "topics": [
         "android-icon",
         "app-icon",
+        "asset-packager",
         "canvas",
         "cropper",
-        "design-tools",
-        "icon-generator"
+        "design-tools"
       ],
       "license": "MIT",
       "is_fork": false,
@@ -2463,7 +2927,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-14T05:44:18.951Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2478,7 +2942,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "anti-detection",
+        "desktop-app",
+        "gaming-utility",
+        "input-automation",
+        "keystroke-simulator",
+        "macro-tool"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -2490,7 +2961,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2505,7 +2976,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "ai-context",
+        "ast-parser",
+        "cli-tool",
+        "code-intelligence",
+        "codebase-analyzer",
+        "developer-tools"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -2517,7 +2995,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2532,7 +3010,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "csharp",
+        "desktop-tool",
+        "display-manager",
+        "dpi-scaling",
+        "multi-monitor",
+        "per-monitor-dpi"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -2544,7 +3029,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2559,7 +3044,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "canvas",
+        "crossword-generator",
+        "educational-games",
+        "french-tool",
+        "puzzle-creator",
+        "scrabble-art"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -2571,7 +3063,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2586,7 +3078,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "HTML",
-      "topics": [],
+      "topics": [
+        "code-search",
+        "commit-search",
+        "desktop-app",
+        "developer-tools",
+        "git-history",
+        "git-search"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -2598,7 +3097,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2613,7 +3112,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "3d-modeling",
+        "3d-sculpting",
+        "brush-engine",
+        "creative-tools",
+        "digital-sculpting",
+        "dynamic-topology"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -2625,7 +3131,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-10T05:42:53.469Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2640,7 +3146,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "3d-modelling",
+        "game-modding",
+        "glb-exporter",
+        "gltf-converter",
+        "package-extractor",
+        "reverse-engineering"
+      ],
       "license": "NOASSERTION",
       "is_fork": false,
       "is_archived": false,
@@ -2652,7 +3165,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-12T23:55:30.705Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2667,7 +3180,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Rust",
-      "topics": [],
+      "topics": [
+        "activation-bloom-filters",
+        "deep-learning",
+        "io-uring",
+        "large-language-models",
+        "llm-inference",
+        "low-memory-inference"
+      ],
       "license": "NOASSERTION",
       "is_fork": false,
       "is_archived": false,
@@ -2679,7 +3199,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2694,7 +3214,14 @@
       "watchers": 1,
       "open_issues": 0,
       "language": "Python",
-      "topics": [],
+      "topics": [
+        "ai-security",
+        "arxiv-paper",
+        "deep-learning",
+        "fine-tuning-safety",
+        "large-language-models",
+        "lora-safety"
+      ],
       "license": "MIT",
       "is_fork": false,
       "is_archived": false,
@@ -2706,7 +3233,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     },
     {
@@ -2721,7 +3248,14 @@
       "watchers": 0,
       "open_issues": 0,
       "language": null,
-      "topics": [],
+      "topics": [
+        "cpp",
+        "cpu-inference",
+        "cuda",
+        "ggml",
+        "large-language-models",
+        "llm-inference"
+      ],
       "license": "MIT",
       "is_fork": true,
       "is_archived": false,
@@ -2733,7 +3267,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-16T04:48:24.938Z",
+      "last_seen": "2026-08-16T10:59:34.810Z",
       "missing": false
     }
   ]
