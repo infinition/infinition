@@ -41,7 +41,12 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        # npm ci installe exactement ce que dit le lockfile sans y toucher.
+        # npm install le reecrivait pour les binaires natifs de sharp
+        # (win32 en local, linux ici), ce qui laissait package-lock.json
+        # modifie et non commite, et faisait echouer le "git pull --rebase"
+        # plus bas ("You have unstaged changes").
+        run: npm ci
 
       - name: Build data/repos.json
         env:
@@ -82,6 +87,10 @@ jobs:
           fi
           git add data/repos.json data/repos-summary.json data/logs.json assets/repos-grid.svg
           git commit -m 'chore(data): refresh site snapshots'
+          # Un outil de build peut laisser trainer une modif hors de cette
+          # liste (ex: package-lock.json retouche par npm) ; on ne veut
+          # jamais la commiter, et elle ferait echouer le rebase ci-dessous.
+          git checkout -- .
           # Deux runs peuvent se suivre de pres, on se remet a jour avant de pousser.
           git pull --rebase origin main
           git push
