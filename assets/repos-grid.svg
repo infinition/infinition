@@ -1,16 +1,16 @@
-<svg viewBox="0 0 510 2596" width="510" height="2596" xmlns="http://www.w3.org/2000/svg" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+<svg viewBox="0 0 510 2824" width="510" height="2824" xmlns="http://www.w3.org/2000/svg" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
   <defs>
-    <clipPath id="clip0"><rect x="50" y="78" width="56" height="56" rx="14"/></clipPath><clipPath id="clip1"><rect x="168" y="78" width="56" height="56" rx="14"/></clipPath><clipPath id="clip2"><rect x="286" y="78" width="56" height="56" rx="14"/></clipPath><clipPath id="clip3"><rect x="404" y="78" width="56" height="56" rx="14"/></clipPath><clipPath id="clip4"><rect x="50" y="192" width="56" height="56" rx="14"/></clipPath><clipPath id="clip5"><rect x="168" y="192" width="56" height="56" rx="14"/></clipPath><clipPath id="clip6"><rect x="286" y="192" width="56" height="56" rx="14"/></clipPath><clipPath id="clip7"><rect x="404" y="192" width="56" height="56" rx="14"/></clipPath><clipPath id="clip8"><rect x="50" y="306" width="56" height="56" rx="14"/></clipPath><clipPath id="clip9"><rect x="168" y="306" width="56" height="56" rx="14"/></clipPath><clipPath id="clip10"><rect x="286" y="306" width="56" height="56" rx="14"/></clipPath><clipPath id="clip11"><rect x="404" y="306" width="56" height="56" rx="14"/></clipPath><clipPath id="clip12"><rect x="50" y="420" width="56" height="56" rx="14"/></clipPath><clipPath id="clip13"><rect x="168" y="420" width="56" height="56" rx="14"/></clipPath><clipPath id="clip14"><rect x="286" y="420" width="56" height="56" rx="14"/></clipPath><clipPath id="clip15"><rect x="404" y="420" width="56" height="56" rx="14"/></clipPath><clipPath id="clip16"><rect x="50" y="534" width="56" height="56" rx="14"/></clipPath><clipPath id="clip17"><rect x="168" y="534" width="56" height="56" rx="14"/></clipPath><clipPath id="clip18"><rect x="286" y="534" width="56" height="56" rx="14"/></clipPath><clipPath id="clip19"><rect x="404" y="534" width="56" height="56" rx="14"/></clipPath><clipPath id="clip20"><rect x="50" y="648" width="56" height="56" rx="14"/></clipPath><clipPath id="clip21"><rect x="168" y="648" width="56" height="56" rx="14"/></clipPath><clipPath id="clip22"><rect x="286" y="648" width="56" height="56" rx="14"/></clipPath><clipPath id="clip23"><rect x="404" y="648" width="56" height="56" rx="14"/></clipPath><clipPath id="clip24"><rect x="50" y="762" width="56" height="56" rx="14"/></clipPath><clipPath id="clip25"><rect x="168" y="762" width="56" height="56" rx="14"/></clipPath><clipPath id="clip26"><rect x="286" y="762" width="56" height="56" rx="14"/></clipPath><clipPath id="clip27"><rect x="404" y="762" width="56" height="56" rx="14"/></clipPath><clipPath id="clip28"><rect x="50" y="876" width="56" height="56" rx="14"/></clipPath><clipPath id="clip29"><rect x="168" y="876" width="56" height="56" rx="14"/></clipPath><clipPath id="clip30"><rect x="286" y="876" width="56" height="56" rx="14"/></clipPath><clipPath id="clip31"><rect x="404" y="876" width="56" height="56" rx="14"/></clipPath><clipPath id="clip32"><rect x="50" y="990" width="56" height="56" rx="14"/></clipPath><clipPath id="clip33"><rect x="168" y="990" width="56" height="56" rx="14"/></clipPath><clipPath id="clip34"><rect x="286" y="990" width="56" height="56" rx="14"/></clipPath><clipPath id="clip35"><rect x="404" y="990" width="56" height="56" rx="14"/></clipPath><clipPath id="clip36"><rect x="50" y="1104" width="56" height="56" rx="14"/></clipPath><clipPath id="clip37"><rect x="168" y="1104" width="56" height="56" rx="14"/></clipPath><clipPath id="clip38"><rect x="286" y="1104" width="56" height="56" rx="14"/></clipPath><clipPath id="clip39"><rect x="404" y="1104" width="56" height="56" rx="14"/></clipPath><clipPath id="clip40"><rect x="50" y="1218" width="56" height="56" rx="14"/></clipPath><clipPath id="clip41"><rect x="168" y="1218" width="56" height="56" rx="14"/></clipPath><clipPath id="clip42"><rect x="286" y="1218" width="56" height="56" rx="14"/></clipPath><clipPath id="clip43"><rect x="404" y="1218" width="56" height="56" rx="14"/></clipPath><clipPath id="clip44"><rect x="50" y="1332" width="56" height="56" rx="14"/></clipPath><clipPath id="clip45"><rect x="168" y="1332" width="56" height="56" rx="14"/></clipPath><clipPath id="clip46"><rect x="286" y="1332" width="56" height="56" rx="14"/></clipPath><clipPath id="clip47"><rect x="404" y="1332" width="56" height="56" rx="14"/></clipPath><clipPath id="clip48"><rect x="50" y="1446" width="56" height="56" rx="14"/></clipPath><clipPath id="clip49"><rect x="168" y="1446" width="56" height="56" rx="14"/></clipPath><clipPath id="clip50"><rect x="286" y="1446" width="56" height="56" rx="14"/></clipPath><clipPath id="clip51"><rect x="404" y="1446" width="56" height="56" rx="14"/></clipPath><clipPath id="clip52"><rect x="50" y="1560" width="56" height="56" rx="14"/></clipPath><clipPath id="clip53"><rect x="168" y="1560" width="56" height="56" rx="14"/></clipPath><clipPath id="clip54"><rect x="286" y="1560" width="56" height="56" rx="14"/></clipPath><clipPath id="clip55"><rect x="404" y="1560" width="56" height="56" rx="14"/></clipPath><clipPath id="clip56"><rect x="50" y="1674" width="56" height="56" rx="14"/></clipPath><clipPath id="clip57"><rect x="168" y="1674" width="56" height="56" rx="14"/></clipPath><clipPath id="clip58"><rect x="286" y="1674" width="56" height="56" rx="14"/></clipPath><clipPath id="clip59"><rect x="404" y="1674" width="56" height="56" rx="14"/></clipPath><clipPath id="clip60"><rect x="50" y="1788" width="56" height="56" rx="14"/></clipPath><clipPath id="clip61"><rect x="168" y="1788" width="56" height="56" rx="14"/></clipPath><clipPath id="clip62"><rect x="286" y="1788" width="56" height="56" rx="14"/></clipPath><clipPath id="clip63"><rect x="404" y="1788" width="56" height="56" rx="14"/></clipPath><clipPath id="clip64"><rect x="50" y="1902" width="56" height="56" rx="14"/></clipPath><clipPath id="clip65"><rect x="168" y="1902" width="56" height="56" rx="14"/></clipPath><clipPath id="clip66"><rect x="286" y="1902" width="56" height="56" rx="14"/></clipPath><clipPath id="clip67"><rect x="404" y="1902" width="56" height="56" rx="14"/></clipPath><clipPath id="clip68"><rect x="50" y="2016" width="56" height="56" rx="14"/></clipPath><clipPath id="clip69"><rect x="168" y="2016" width="56" height="56" rx="14"/></clipPath><clipPath id="clip70"><rect x="286" y="2016" width="56" height="56" rx="14"/></clipPath><clipPath id="clip71"><rect x="404" y="2016" width="56" height="56" rx="14"/></clipPath><clipPath id="clip72"><rect x="50" y="2130" width="56" height="56" rx="14"/></clipPath><clipPath id="clip73"><rect x="168" y="2130" width="56" height="56" rx="14"/></clipPath><clipPath id="clip74"><rect x="286" y="2130" width="56" height="56" rx="14"/></clipPath><clipPath id="clip75"><rect x="404" y="2130" width="56" height="56" rx="14"/></clipPath><clipPath id="clip76"><rect x="50" y="2244" width="56" height="56" rx="14"/></clipPath><clipPath id="clip77"><rect x="168" y="2244" width="56" height="56" rx="14"/></clipPath><clipPath id="clip78"><rect x="286" y="2244" width="56" height="56" rx="14"/></clipPath><clipPath id="clip79"><rect x="404" y="2244" width="56" height="56" rx="14"/></clipPath><clipPath id="clip80"><rect x="50" y="2358" width="56" height="56" rx="14"/></clipPath><clipPath id="clip81"><rect x="168" y="2358" width="56" height="56" rx="14"/></clipPath><clipPath id="clip82"><rect x="286" y="2358" width="56" height="56" rx="14"/></clipPath><clipPath id="clip83"><rect x="404" y="2358" width="56" height="56" rx="14"/></clipPath><clipPath id="clip84"><rect x="50" y="2472" width="56" height="56" rx="14"/></clipPath><clipPath id="clip85"><rect x="168" y="2472" width="56" height="56" rx="14"/></clipPath><clipPath id="clip86"><rect x="286" y="2472" width="56" height="56" rx="14"/></clipPath>
+    <clipPath id="clip0"><rect x="50" y="78" width="56" height="56" rx="14"/></clipPath><clipPath id="clip1"><rect x="168" y="78" width="56" height="56" rx="14"/></clipPath><clipPath id="clip2"><rect x="286" y="78" width="56" height="56" rx="14"/></clipPath><clipPath id="clip3"><rect x="404" y="78" width="56" height="56" rx="14"/></clipPath><clipPath id="clip4"><rect x="50" y="192" width="56" height="56" rx="14"/></clipPath><clipPath id="clip5"><rect x="168" y="192" width="56" height="56" rx="14"/></clipPath><clipPath id="clip6"><rect x="286" y="192" width="56" height="56" rx="14"/></clipPath><clipPath id="clip7"><rect x="404" y="192" width="56" height="56" rx="14"/></clipPath><clipPath id="clip8"><rect x="50" y="306" width="56" height="56" rx="14"/></clipPath><clipPath id="clip9"><rect x="168" y="306" width="56" height="56" rx="14"/></clipPath><clipPath id="clip10"><rect x="286" y="306" width="56" height="56" rx="14"/></clipPath><clipPath id="clip11"><rect x="404" y="306" width="56" height="56" rx="14"/></clipPath><clipPath id="clip12"><rect x="50" y="420" width="56" height="56" rx="14"/></clipPath><clipPath id="clip13"><rect x="168" y="420" width="56" height="56" rx="14"/></clipPath><clipPath id="clip14"><rect x="286" y="420" width="56" height="56" rx="14"/></clipPath><clipPath id="clip15"><rect x="404" y="420" width="56" height="56" rx="14"/></clipPath><clipPath id="clip16"><rect x="50" y="534" width="56" height="56" rx="14"/></clipPath><clipPath id="clip17"><rect x="168" y="534" width="56" height="56" rx="14"/></clipPath><clipPath id="clip18"><rect x="286" y="534" width="56" height="56" rx="14"/></clipPath><clipPath id="clip19"><rect x="404" y="534" width="56" height="56" rx="14"/></clipPath><clipPath id="clip20"><rect x="50" y="648" width="56" height="56" rx="14"/></clipPath><clipPath id="clip21"><rect x="168" y="648" width="56" height="56" rx="14"/></clipPath><clipPath id="clip22"><rect x="286" y="648" width="56" height="56" rx="14"/></clipPath><clipPath id="clip23"><rect x="404" y="648" width="56" height="56" rx="14"/></clipPath><clipPath id="clip24"><rect x="50" y="762" width="56" height="56" rx="14"/></clipPath><clipPath id="clip25"><rect x="168" y="762" width="56" height="56" rx="14"/></clipPath><clipPath id="clip26"><rect x="286" y="762" width="56" height="56" rx="14"/></clipPath><clipPath id="clip27"><rect x="404" y="762" width="56" height="56" rx="14"/></clipPath><clipPath id="clip28"><rect x="50" y="876" width="56" height="56" rx="14"/></clipPath><clipPath id="clip29"><rect x="168" y="876" width="56" height="56" rx="14"/></clipPath><clipPath id="clip30"><rect x="286" y="876" width="56" height="56" rx="14"/></clipPath><clipPath id="clip31"><rect x="404" y="876" width="56" height="56" rx="14"/></clipPath><clipPath id="clip32"><rect x="50" y="990" width="56" height="56" rx="14"/></clipPath><clipPath id="clip33"><rect x="168" y="990" width="56" height="56" rx="14"/></clipPath><clipPath id="clip34"><rect x="286" y="990" width="56" height="56" rx="14"/></clipPath><clipPath id="clip35"><rect x="404" y="990" width="56" height="56" rx="14"/></clipPath><clipPath id="clip36"><rect x="50" y="1104" width="56" height="56" rx="14"/></clipPath><clipPath id="clip37"><rect x="168" y="1104" width="56" height="56" rx="14"/></clipPath><clipPath id="clip38"><rect x="286" y="1104" width="56" height="56" rx="14"/></clipPath><clipPath id="clip39"><rect x="404" y="1104" width="56" height="56" rx="14"/></clipPath><clipPath id="clip40"><rect x="50" y="1218" width="56" height="56" rx="14"/></clipPath><clipPath id="clip41"><rect x="168" y="1218" width="56" height="56" rx="14"/></clipPath><clipPath id="clip42"><rect x="286" y="1218" width="56" height="56" rx="14"/></clipPath><clipPath id="clip43"><rect x="404" y="1218" width="56" height="56" rx="14"/></clipPath><clipPath id="clip44"><rect x="50" y="1332" width="56" height="56" rx="14"/></clipPath><clipPath id="clip45"><rect x="168" y="1332" width="56" height="56" rx="14"/></clipPath><clipPath id="clip46"><rect x="286" y="1332" width="56" height="56" rx="14"/></clipPath><clipPath id="clip47"><rect x="404" y="1332" width="56" height="56" rx="14"/></clipPath><clipPath id="clip48"><rect x="50" y="1446" width="56" height="56" rx="14"/></clipPath><clipPath id="clip49"><rect x="168" y="1446" width="56" height="56" rx="14"/></clipPath><clipPath id="clip50"><rect x="286" y="1446" width="56" height="56" rx="14"/></clipPath><clipPath id="clip51"><rect x="404" y="1446" width="56" height="56" rx="14"/></clipPath><clipPath id="clip52"><rect x="50" y="1560" width="56" height="56" rx="14"/></clipPath><clipPath id="clip53"><rect x="168" y="1560" width="56" height="56" rx="14"/></clipPath><clipPath id="clip54"><rect x="286" y="1560" width="56" height="56" rx="14"/></clipPath><clipPath id="clip55"><rect x="404" y="1560" width="56" height="56" rx="14"/></clipPath><clipPath id="clip56"><rect x="50" y="1674" width="56" height="56" rx="14"/></clipPath><clipPath id="clip57"><rect x="168" y="1674" width="56" height="56" rx="14"/></clipPath><clipPath id="clip58"><rect x="286" y="1674" width="56" height="56" rx="14"/></clipPath><clipPath id="clip59"><rect x="404" y="1674" width="56" height="56" rx="14"/></clipPath><clipPath id="clip60"><rect x="50" y="1788" width="56" height="56" rx="14"/></clipPath><clipPath id="clip61"><rect x="168" y="1788" width="56" height="56" rx="14"/></clipPath><clipPath id="clip62"><rect x="286" y="1788" width="56" height="56" rx="14"/></clipPath><clipPath id="clip63"><rect x="404" y="1788" width="56" height="56" rx="14"/></clipPath><clipPath id="clip64"><rect x="50" y="1902" width="56" height="56" rx="14"/></clipPath><clipPath id="clip65"><rect x="168" y="1902" width="56" height="56" rx="14"/></clipPath><clipPath id="clip66"><rect x="286" y="1902" width="56" height="56" rx="14"/></clipPath><clipPath id="clip67"><rect x="404" y="1902" width="56" height="56" rx="14"/></clipPath><clipPath id="clip68"><rect x="50" y="2016" width="56" height="56" rx="14"/></clipPath><clipPath id="clip69"><rect x="168" y="2016" width="56" height="56" rx="14"/></clipPath><clipPath id="clip70"><rect x="286" y="2016" width="56" height="56" rx="14"/></clipPath><clipPath id="clip71"><rect x="404" y="2016" width="56" height="56" rx="14"/></clipPath><clipPath id="clip72"><rect x="50" y="2130" width="56" height="56" rx="14"/></clipPath><clipPath id="clip73"><rect x="168" y="2130" width="56" height="56" rx="14"/></clipPath><clipPath id="clip74"><rect x="286" y="2130" width="56" height="56" rx="14"/></clipPath><clipPath id="clip75"><rect x="404" y="2130" width="56" height="56" rx="14"/></clipPath><clipPath id="clip76"><rect x="50" y="2244" width="56" height="56" rx="14"/></clipPath><clipPath id="clip77"><rect x="168" y="2244" width="56" height="56" rx="14"/></clipPath><clipPath id="clip78"><rect x="286" y="2244" width="56" height="56" rx="14"/></clipPath><clipPath id="clip79"><rect x="404" y="2244" width="56" height="56" rx="14"/></clipPath><clipPath id="clip80"><rect x="50" y="2358" width="56" height="56" rx="14"/></clipPath><clipPath id="clip81"><rect x="168" y="2358" width="56" height="56" rx="14"/></clipPath><clipPath id="clip82"><rect x="286" y="2358" width="56" height="56" rx="14"/></clipPath><clipPath id="clip83"><rect x="404" y="2358" width="56" height="56" rx="14"/></clipPath><clipPath id="clip84"><rect x="50" y="2472" width="56" height="56" rx="14"/></clipPath><clipPath id="clip85"><rect x="168" y="2472" width="56" height="56" rx="14"/></clipPath><clipPath id="clip86"><rect x="286" y="2472" width="56" height="56" rx="14"/></clipPath><clipPath id="clip87"><rect x="404" y="2472" width="56" height="56" rx="14"/></clipPath><clipPath id="clip88"><rect x="50" y="2586" width="56" height="56" rx="14"/></clipPath><clipPath id="clip89"><rect x="168" y="2586" width="56" height="56" rx="14"/></clipPath><clipPath id="clip90"><rect x="286" y="2586" width="56" height="56" rx="14"/></clipPath><clipPath id="clip91"><rect x="404" y="2586" width="56" height="56" rx="14"/></clipPath><clipPath id="clip92"><rect x="50" y="2700" width="56" height="56" rx="14"/></clipPath><clipPath id="clip93"><rect x="168" y="2700" width="56" height="56" rx="14"/></clipPath>
     <pattern id="gridlines" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M40 0H0V40" fill="none" stroke="rgba(255,107,0,0.035)" stroke-width="1"/>
     </pattern>
   </defs>
-  <rect x="0" y="0" width="510" height="2596" fill="#060606"/>
-  <rect x="0" y="0" width="510" height="2596" fill="url(#gridlines)"/>
+  <rect x="0" y="0" width="510" height="2824" fill="#060606"/>
+  <rect x="0" y="0" width="510" height="2824" fill="url(#gridlines)"/>
   <text x="24" y="38" font-size="24" font-weight="800" fill="#ffffff" letter-spacing="3">REPOS</text>
   <rect x="132" y="16" width="118" height="24" rx="12" fill="rgba(255,107,0,0.07)" stroke="#FF6B00" stroke-width="1"/>
   <text x="191" y="32" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FF6B00" font-family="'JetBrains Mono', Consolas, Menlo, monospace">★ 7.2k STARS</text>
-  <text x="24" y="60" font-size="11" fill="#6b7280" font-family="'JetBrains Mono', Consolas, Menlo, monospace" letter-spacing="1">87 PUBLIC REPOSITORIES // GITHUB.COM/INFINITION</text>
+  <text x="24" y="60" font-size="11" fill="#6b7280" font-family="'JetBrains Mono', Consolas, Menlo, monospace" letter-spacing="1">94 PUBLIC REPOSITORIES // GITHUB.COM/INFINITION</text>
   
   <g>
     <rect x="49" y="77" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
@@ -20,7 +20,7 @@
   </g>
   <g>
     <rect x="167" y="77" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/331e6778-bf67-4f5f-a753-b65d6e0f1d57" x="168" y="78" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip1)"/>
+    <image href="https://github.com/user-attachments/assets/d12c99ad-3500-4984-ae04-29006331345e" x="168" y="78" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip1)"/>
     <text x="196" y="152" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">waveshare-watc…</text>
     <text x="196" y="166" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
@@ -32,13 +32,13 @@
   </g>
   <g>
     <rect x="403" y="77" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/9cd52e7f-637d-45ad-94b8-07b1a93277a6" x="404" y="78" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip3)"/>
+    <image href="https://github.com/user-attachments/assets/4bac23ae-b82a-437b-9c8b-997df351228d" x="404" y="78" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip3)"/>
     <text x="432" y="152" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">Bjorn-Manager</text>
     <text x="432" y="166" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
   </g>
   <g>
     <rect x="49" y="191" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/a160cd87-1661-44f7-9e44-53f804c229d5" x="50" y="192" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip4)"/>
+    <image href="https://github.com/user-attachments/assets/3fd1bd4b-49ac-4b84-9fe1-988813167583" x="50" y="192" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip4)"/>
     <text x="78" y="266" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">Zombieland</text>
     <text x="78" y="280" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2024 // HTML</text>
   </g>
@@ -80,7 +80,7 @@
   </g>
   <g>
     <rect x="403" y="305" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/2d2ed3e7-e159-42a5-9e99-22074c10581b" x="404" y="306" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip11)"/>
+    <image href="https://github.com/user-attachments/assets/4a9e886c-25d4-4a5d-9463-7cf1104e1a4d" x="404" y="306" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip11)"/>
     <text x="432" y="380" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">Bjorn-cortex</text>
     <text x="432" y="394" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // HTML</text>
   </g>
@@ -104,43 +104,43 @@
   </g>
   <g>
     <rect x="403" y="419" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/5f0a1f68-9ced-419e-83d9-ee7f82527002" x="404" y="420" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip15)"/>
-    <text x="432" y="494" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidOS</text>
-    <text x="432" y="508" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // JavaScript</text>
+    <image href="https://github.com/user-attachments/assets/a0b602d1-b407-4ccd-86cc-63a2ad80a71c" x="404" y="420" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip15)"/>
+    <text x="432" y="494" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">scriptorium</text>
+    <text x="432" y="508" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
   </g>
   <g>
     <rect x="49" y="533" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/e358b3bc-953e-4bc8-9279-c656bcb4e590" x="50" y="534" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip16)"/>
-    <text x="78" y="608" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">bjorn_dungeon</text>
+    <image href="https://github.com/user-attachments/assets/5f0a1f68-9ced-419e-83d9-ee7f82527002" x="50" y="534" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip16)"/>
+    <text x="78" y="608" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidOS</text>
     <text x="78" y="622" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // JavaScript</text>
   </g>
   <g>
     <rect x="167" y="533" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/4c99074c-03f0-40af-b0e2-0ecfe0c87603" x="168" y="534" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip17)"/>
-    <text x="196" y="608" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">bjorn-chaos-lab</text>
-    <text x="196" y="622" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+    <image href="https://github.com/user-attachments/assets/e358b3bc-953e-4bc8-9279-c656bcb4e590" x="168" y="534" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip17)"/>
+    <text x="196" y="608" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">bjorn_dungeon</text>
+    <text x="196" y="622" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // JavaScript</text>
   </g>
   <g>
     <rect x="285" y="533" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/70f3e23e-2da7-4ec4-bfe2-965f1c95b5e5" x="286" y="534" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip18)"/>
-    <text x="314" y="608" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">DataBrain</text>
-    <text x="314" y="622" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // JavaScript</text>
+    <image href="https://github.com/user-attachments/assets/c1e1c27f-a1fe-4d95-bc9d-cf9d4439cbcd" x="286" y="534" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip18)"/>
+    <text x="314" y="608" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">bjorn-chaos-lab</text>
+    <text x="314" y="622" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="403" y="533" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/5b769fe4-90f4-482d-94f5-fb54900b840f" x="404" y="534" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip19)"/>
-    <text x="432" y="608" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">Excel-Sheet-Pa…</text>
-    <text x="432" y="622" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2021 // VBA</text>
+    <image href="https://github.com/user-attachments/assets/70f3e23e-2da7-4ec4-bfe2-965f1c95b5e5" x="404" y="534" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip19)"/>
+    <text x="432" y="608" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">DataBrain</text>
+    <text x="432" y="622" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // JavaScript</text>
   </g>
   <g>
     <rect x="49" y="647" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/a0b602d1-b407-4ccd-86cc-63a2ad80a71c" x="50" y="648" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip20)"/>
-    <text x="78" y="722" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">scriptorium</text>
-    <text x="78" y="736" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
+    <image href="https://github.com/user-attachments/assets/5b769fe4-90f4-482d-94f5-fb54900b840f" x="50" y="648" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip20)"/>
+    <text x="78" y="722" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">Excel-Sheet-Pa…</text>
+    <text x="78" y="736" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2021 // VBA</text>
   </g>
   <g>
     <rect x="167" y="647" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/b2e2e2ba-e4b3-4b3c-ba8a-a6b9f7566c88" x="168" y="648" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip21)"/>
+    <image href="https://github.com/user-attachments/assets/63251571-05e6-486a-bef4-68a8c796c28c" x="168" y="648" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip21)"/>
     <text x="196" y="722" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">bjorn-code</text>
     <text x="196" y="736" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // TypeScript</text>
   </g>
@@ -176,75 +176,73 @@
   </g>
   <g>
     <rect x="403" y="761" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/de433138-55f0-4a3b-9049-b58bedf3f8b1" x="404" y="762" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip27)"/>
+    <image href="https://github.com/user-attachments/assets/d6b05f9e-fe8f-46be-a95c-a1ef2a858606" x="404" y="762" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip27)"/>
     <text x="432" y="836" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">Q-LAB</text>
     <text x="432" y="850" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
   </g>
   <g>
     <rect x="49" y="875" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/0269320e-a420-49e6-a5ae-b9c04803258f" x="50" y="876" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip28)"/>
+    <image href="https://github.com/user-attachments/assets/229848e2-103d-4afa-a3e6-dc17b2def9e3" x="50" y="876" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip28)"/>
     <text x="78" y="950" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidPages</text>
     <text x="78" y="964" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
   </g>
   <g>
     <rect x="167" y="875" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/4b9aba15-5567-4726-a193-7b6fd138b459" x="168" y="876" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip29)"/>
+    <image href="https://github.com/user-attachments/assets/3328de0f-c452-4c2e-800d-9e549259613c" x="168" y="876" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip29)"/>
     <text x="196" y="950" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidWiki</text>
     <text x="196" y="964" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // HTML</text>
   </g>
   <g>
     <rect x="285" y="875" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/ae992331-b786-4af0-8009-fd7d9df9a6cb" x="286" y="876" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip30)"/>
+    <image href="https://github.com/user-attachments/assets/3e2e12f2-1cd5-4615-a24e-c75aa311ce33" x="286" y="876" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip30)"/>
     <text x="314" y="950" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">Catrina</text>
     <text x="314" y="964" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2024 // —</text>
   </g>
   <g>
     <rect x="403" y="875" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="404" y="876" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="432" y="912" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#0aff47">L</text>
+    <image href="https://github.com/user-attachments/assets/bb8cd0c6-4481-481b-bda1-0e19e9ec50a0" x="404" y="876" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip31)"/>
     <text x="432" y="950" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ladiosa</text>
     <text x="432" y="964" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
   </g>
   <g>
     <rect x="49" y="989" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/2c58fa68-1e51-4877-8e8a-f4ad3f63b259" x="50" y="990" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip32)"/>
+    <image href="https://github.com/user-attachments/assets/b56670ec-f6b7-40e9-85e6-39917bb5b87a" x="50" y="990" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip32)"/>
     <text x="78" y="1064" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">obsidian-linkf…</text>
     <text x="78" y="1078" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // HTML</text>
   </g>
   <g>
     <rect x="167" y="989" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/81baae38-093f-43ba-b71d-49dd25d18c95" x="168" y="990" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip33)"/>
+    <image href="https://github.com/user-attachments/assets/a6e9610c-7b92-4713-99f1-e2707f596ec8" x="168" y="990" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip33)"/>
     <text x="196" y="1064" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">obsidian-magic…</text>
     <text x="196" y="1078" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // HTML</text>
   </g>
   <g>
     <rect x="285" y="989" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/217a2ee7-0afd-4d90-973b-ca2b0bd169e4" x="286" y="990" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip34)"/>
+    <image href="https://github.com/user-attachments/assets/d0dcedae-0e04-4fc6-9c7a-570dfdefd578" x="286" y="990" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip34)"/>
     <text x="314" y="1064" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">Acid2Vect</text>
     <text x="314" y="1078" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
   </g>
   <g>
     <rect x="403" y="989" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/0dd974e7-497a-4c73-9d53-50850a804116" x="404" y="990" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip35)"/>
+    <image href="https://github.com/user-attachments/assets/4e56aeba-8263-47cc-b7d7-5731426546d4" x="404" y="990" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip35)"/>
     <text x="432" y="1064" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidSnip</text>
     <text x="432" y="1078" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // TypeScript</text>
   </g>
   <g>
     <rect x="49" y="1103" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/43e4022a-ff29-4dfb-bdf9-370c06962c4b" x="50" y="1104" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip36)"/>
+    <image href="https://github.com/user-attachments/assets/df0c23dc-9236-4d98-a9bd-92d60aec6aef" x="50" y="1104" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip36)"/>
     <text x="78" y="1178" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidVect3D</text>
     <text x="78" y="1192" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
   </g>
   <g>
     <rect x="167" y="1103" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="168" y="1104" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="196" y="1140" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#bd00ff">B</text>
+    <image href="https://github.com/user-attachments/assets/77d2a834-c905-48b3-9d1f-80f9cc8344b5" x="168" y="1104" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip37)"/>
     <text x="196" y="1178" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">BeamForge</text>
     <text x="196" y="1192" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="285" y="1103" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/b317ef5c-4ae5-453e-b2b0-2e5d3a6949b8" x="286" y="1104" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip38)"/>
+    <image href="https://github.com/user-attachments/assets/2099f8e0-9821-41c8-8abe-1eb0158a2b4c" x="286" y="1104" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip38)"/>
     <text x="314" y="1178" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">beee</text>
     <text x="314" y="1192" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // C</text>
   </g>
@@ -262,20 +260,19 @@
   </g>
   <g>
     <rect x="167" y="1217" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="168" y="1218" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="196" y="1254" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#FF6B00">H</text>
+    <image href="https://github.com/user-attachments/assets/13e53d40-b632-438f-af27-0bc4761ca4cc" x="168" y="1218" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip41)"/>
     <text x="196" y="1292" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">halo</text>
     <text x="196" y="1306" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="285" y="1217" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/infinition/main/0xid.svg" x="286" y="1218" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip42)"/>
+    <image href="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" x="286" y="1218" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip42)"/>
     <text x="314" y="1292" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">infinition</text>
     <text x="314" y="1306" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2021 // JavaScript</text>
   </g>
   <g>
     <rect x="403" y="1217" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/32aae849-064a-40eb-b83e-170713664034" x="404" y="1218" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip43)"/>
+    <image href="https://github.com/user-attachments/assets/71f78dca-441e-4f13-8093-02b2f32c657a" x="404" y="1218" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip43)"/>
     <text x="432" y="1292" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">land-protocol</text>
     <text x="432" y="1306" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
@@ -288,269 +285,309 @@
   </g>
   <g>
     <rect x="167" y="1331" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/db808f6c-47fa-4d5b-855c-468b3282cacf" x="168" y="1332" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip45)"/>
+    <image href="https://github.com/user-attachments/assets/f320a691-ff53-4434-8ec8-0ba4fee4dba7" x="168" y="1332" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip45)"/>
     <text x="196" y="1406" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">LiquidBrain</text>
     <text x="196" y="1420" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // HTML</text>
   </g>
   <g>
     <rect x="285" y="1331" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="286" y="1332" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="314" y="1368" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#0aff47">L</text>
+    <image href="https://github.com/user-attachments/assets/224178b8-ba46-4136-bbd6-596198f25ca4" x="286" y="1332" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip46)"/>
     <text x="314" y="1406" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">LSTN</text>
     <text x="314" y="1420" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="403" y="1331" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="404" y="1332" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="432" y="1368" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#ff003c">N</text>
-    <text x="432" y="1406" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">neo</text>
+    <image href="https://raw.githubusercontent.com/infinition/mantis/main/docs/mantis.png" x="404" y="1332" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip47)"/>
+    <text x="432" y="1406" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">mantis</text>
     <text x="432" y="1420" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="49" y="1445" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/d00301be-045d-4131-bbac-2fe1b4eee76b" x="50" y="1446" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip48)"/>
-    <text x="78" y="1520" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">QRobot</text>
-    <text x="78" y="1534" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2024 // TypeScript</text>
+    <image href="https://github.com/user-attachments/assets/1f14021d-aa2e-4460-93da-5a5b685252b8" x="50" y="1446" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip48)"/>
+    <text x="78" y="1520" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">neo</text>
+    <text x="78" y="1534" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="167" y="1445" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/951c116f-1685-4ffa-bf2d-dddf40c527fc" x="168" y="1446" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip49)"/>
-    <text x="196" y="1520" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">SYNAPTIK</text>
-    <text x="196" y="1534" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // JavaScript</text>
+    <image href="https://github.com/user-attachments/assets/1ebe2f7b-98dc-4909-aaf7-eb21c94a7f99" x="168" y="1446" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip49)"/>
+    <text x="196" y="1520" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">QRobot</text>
+    <text x="196" y="1534" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2024 // TypeScript</text>
   </g>
   <g>
     <rect x="285" y="1445" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/ffcf7d64-e040-4495-a1d1-a96cbaaeb148" x="286" y="1446" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip50)"/>
-    <text x="314" y="1520" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">0xid</text>
-    <text x="314" y="1534" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+    <image href="https://github.com/user-attachments/assets/cddc7a43-7f2f-412b-974c-898f38f9266b" x="286" y="1446" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip50)"/>
+    <text x="314" y="1520" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">SYNAPTIK</text>
+    <text x="314" y="1534" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // JavaScript</text>
   </g>
   <g>
     <rect x="403" y="1445" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/26994d6e-a938-48e9-9eaf-c5db98f7ee7d" x="404" y="1446" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip51)"/>
-    <text x="432" y="1520" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidLuna</text>
+    <image href="https://github.com/user-attachments/assets/ffcf7d64-e040-4495-a1d1-a96cbaaeb148" x="404" y="1446" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip51)"/>
+    <text x="432" y="1520" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">0xid</text>
     <text x="432" y="1534" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="49" y="1559" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/28ef22f6-0981-4047-aaf8-b56e571a83da" x="50" y="1560" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip52)"/>
-    <text x="78" y="1634" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidMonitorr</text>
-    <text x="78" y="1648" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
+    <image href="https://github.com/user-attachments/assets/26994d6e-a938-48e9-9eaf-c5db98f7ee7d" x="50" y="1560" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip52)"/>
+    <text x="78" y="1634" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidLuna</text>
+    <text x="78" y="1648" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="167" y="1559" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/30999b04-0ff8-445c-8495-3398e9a23741" x="168" y="1560" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip53)"/>
-    <text x="196" y="1634" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidPulse</text>
-    <text x="196" y="1648" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+    <image href="https://github.com/user-attachments/assets/28ef22f6-0981-4047-aaf8-b56e571a83da" x="168" y="1560" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip53)"/>
+    <text x="196" y="1634" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidMonitorr</text>
+    <text x="196" y="1648" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
   </g>
   <g>
     <rect x="285" y="1559" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/albedo/main/icon-src.png" x="286" y="1560" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip54)"/>
-    <text x="314" y="1634" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">albedo</text>
-    <text x="314" y="1648" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
+    <image href="https://github.com/user-attachments/assets/30999b04-0ff8-445c-8495-3398e9a23741" x="286" y="1560" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip54)"/>
+    <text x="314" y="1634" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">AcidPulse</text>
+    <text x="314" y="1648" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="403" y="1559" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="404" y="1560" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="432" y="1596" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#ff003c">A</text>
-    <text x="432" y="1634" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">antler</text>
-    <text x="432" y="1648" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+    <image href="https://raw.githubusercontent.com/infinition/albedo/main/icon-src.png" x="404" y="1560" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip55)"/>
+    <text x="432" y="1634" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">albedo</text>
+    <text x="432" y="1648" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
   </g>
   <g>
     <rect x="49" y="1673" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/chrome-spacemouse-controller/main/assets/icon.png" x="50" y="1674" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip56)"/>
-    <text x="78" y="1748" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">chrome-spacemo…</text>
-    <text x="78" y="1762" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
+    <rect x="50" y="1674" width="56" height="56" rx="14" fill="#0d1216"/>
+      <text x="78" y="1710" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#ff003c">A</text>
+    <text x="78" y="1748" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">antler</text>
+    <text x="78" y="1762" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="167" y="1673" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/b85d75bc-b470-41af-b4b0-8cfdff3ab797" x="168" y="1674" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip57)"/>
-    <text x="196" y="1748" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">deep-academy</text>
-    <text x="196" y="1762" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
+    <image href="https://raw.githubusercontent.com/infinition/chrome-spacemouse-controller/main/assets/icon.png" x="168" y="1674" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip57)"/>
+    <text x="196" y="1748" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">chrome-spacemo…</text>
+    <text x="196" y="1762" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
   </g>
   <g>
     <rect x="285" y="1673" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/dow/main/dow.png" x="286" y="1674" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip58)"/>
-    <text x="314" y="1748" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">dow</text>
-    <text x="314" y="1762" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
+    <image href="https://raw.githubusercontent.com/infinition/compono/main/res/icon.png" x="286" y="1674" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip58)"/>
+    <text x="314" y="1748" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">compono</text>
+    <text x="314" y="1762" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="403" y="1673" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/drift-contract/main/paper/figs/fig1_eps_transfer.png" x="404" y="1674" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip59)"/>
-    <text x="432" y="1748" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">drift-contract</text>
-    <text x="432" y="1762" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+    <image href="https://github.com/user-attachments/assets/b85d75bc-b470-41af-b4b0-8cfdff3ab797" x="404" y="1674" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip59)"/>
+    <text x="432" y="1748" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">deep-academy</text>
+    <text x="432" y="1762" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
   </g>
   <g>
     <rect x="49" y="1787" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="50" y="1788" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="78" y="1824" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#ff003c">E</text>
-    <text x="78" y="1862" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ERLM</text>
-    <text x="78" y="1876" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+    <image href="https://raw.githubusercontent.com/infinition/dow/main/dow.png" x="50" y="1788" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip60)"/>
+    <text x="78" y="1862" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">dow</text>
+    <text x="78" y="1876" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
   </g>
   <g>
     <rect x="167" y="1787" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/ferrite/main/assets/icon-180.png" x="168" y="1788" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip61)"/>
-    <text x="196" y="1862" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ferrite</text>
-    <text x="196" y="1876" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+    <image href="https://raw.githubusercontent.com/infinition/drift-contract/main/paper/figs/fig1_eps_transfer.png" x="168" y="1788" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip61)"/>
+    <text x="196" y="1862" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">drift-contract</text>
+    <text x="196" y="1876" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="285" y="1787" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/307b72e2-e8af-4e86-b618-25c633ffb514" x="286" y="1788" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip62)"/>
-    <text x="314" y="1862" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">flappy-ufo-ql</text>
-    <text x="314" y="1876" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
+    <rect x="286" y="1788" width="56" height="56" rx="14" fill="#0d1216"/>
+      <text x="314" y="1824" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#ff003c">E</text>
+    <text x="314" y="1862" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ERLM</text>
+    <text x="314" y="1876" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="403" y="1787" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/07bbde23-03c7-4a75-9d24-82f1d80318fd" x="404" y="1788" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip63)"/>
-    <text x="432" y="1862" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">FluidVLA</text>
-    <text x="432" y="1876" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+    <image href="https://raw.githubusercontent.com/infinition/ferrite/main/assets/icon-180.png" x="404" y="1788" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip63)"/>
+    <text x="432" y="1862" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ferrite</text>
+    <text x="432" y="1876" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="49" y="1901" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/haal/main/src-tauri/icons/icon.png" x="50" y="1902" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip64)"/>
-    <text x="78" y="1976" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">haal</text>
-    <text x="78" y="1990" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+    <image href="https://github.com/user-attachments/assets/ef7f0d2d-f3f8-4d2c-9f80-aae7382bd68b" x="50" y="1902" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip64)"/>
+    <text x="78" y="1976" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">fix-glb-bambus…</text>
+    <text x="78" y="1990" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="167" y="1901" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="168" y="1902" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="196" y="1938" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#FF6B00">I</text>
-    <text x="196" y="1976" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">it-from-fix</text>
-    <text x="196" y="1990" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+    <image href="https://github.com/user-attachments/assets/307b72e2-e8af-4e86-b618-25c633ffb514" x="168" y="1902" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip65)"/>
+    <text x="196" y="1976" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">flappy-ufo-ql</text>
+    <text x="196" y="1990" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
   </g>
   <g>
     <rect x="285" y="1901" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="286" y="1902" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="314" y="1938" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#FF6B00">K</text>
-    <text x="314" y="1976" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">kynos</text>
+    <image href="https://github.com/user-attachments/assets/07bbde23-03c7-4a75-9d24-82f1d80318fd" x="286" y="1902" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip66)"/>
+    <text x="314" y="1976" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">FluidVLA</text>
     <text x="314" y="1990" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="403" y="1901" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="404" y="1902" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="432" y="1938" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#bd00ff">L</text>
-    <text x="432" y="1976" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">lazyos</text>
+    <image href="https://raw.githubusercontent.com/infinition/haal/main/src-tauri/icons/icon.png" x="404" y="1902" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip67)"/>
+    <text x="432" y="1976" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">haal</text>
     <text x="432" y="1990" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="49" y="2015" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/fff826f2-f1ab-4190-aa13-34488e9ea58e" x="50" y="2016" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip68)"/>
-    <text x="78" y="2090" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ledge</text>
-    <text x="78" y="2104" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+    <rect x="50" y="2016" width="56" height="56" rx="14" fill="#0d1216"/>
+      <text x="78" y="2052" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#FF6B00">I</text>
+    <text x="78" y="2090" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">it-from-fix</text>
+    <text x="78" y="2104" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="167" y="2015" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/6fcf22c9-1cec-44ab-bba2-169d29c43d0c" x="168" y="2016" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip69)"/>
-    <text x="196" y="2090" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">limb</text>
-    <text x="196" y="2104" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
+    <rect x="168" y="2016" width="56" height="56" rx="14" fill="#0d1216"/>
+      <text x="196" y="2052" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#FF6B00">K</text>
+    <text x="196" y="2090" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">kynos</text>
+    <text x="196" y="2104" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="285" y="2015" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
     <rect x="286" y="2016" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="314" y="2052" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#f5c518">L</text>
-    <text x="314" y="2090" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">lucida-harness</text>
-    <text x="314" y="2104" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+      <text x="314" y="2052" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#bd00ff">L</text>
+    <text x="314" y="2090" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">lazyos</text>
+    <text x="314" y="2104" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="403" y="2015" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="404" y="2016" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="432" y="2052" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#13aff0">M</text>
-    <text x="432" y="2090" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">mcp-portal</text>
-    <text x="432" y="2104" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // TypeScript</text>
+    <image href="https://github.com/user-attachments/assets/fff826f2-f1ab-4190-aa13-34488e9ea58e" x="404" y="2016" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip71)"/>
+    <text x="432" y="2090" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ledge</text>
+    <text x="432" y="2104" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
   </g>
   <g>
     <rect x="49" y="2129" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/57440ad3-2328-42ea-a840-c24edcdee36f" x="50" y="2130" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip72)"/>
-    <text x="78" y="2204" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">MyBruteLocal</text>
-    <text x="78" y="2218" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // TypeScript</text>
+    <image href="https://github.com/user-attachments/assets/6fcf22c9-1cec-44ab-bba2-169d29c43d0c" x="50" y="2130" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip72)"/>
+    <text x="78" y="2204" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">limb</text>
+    <text x="78" y="2218" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
   </g>
   <g>
     <rect x="167" y="2129" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
     <rect x="168" y="2130" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="196" y="2166" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#FF6B00">N</text>
-    <text x="196" y="2204" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">nexearch</text>
-    <text x="196" y="2218" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Jupyter Notebook</text>
+      <text x="196" y="2166" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#f5c518">L</text>
+    <text x="196" y="2204" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">lucida-harness</text>
+    <text x="196" y="2218" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="285" y="2129" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/7c52d4df-1d7f-4447-bc7b-23a49d4dfd88" x="286" y="2130" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip74)"/>
-    <text x="314" y="2204" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">nexus-wsl2</text>
-    <text x="314" y="2218" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
+    <rect x="286" y="2130" width="56" height="56" rx="14" fill="#0d1216"/>
+      <text x="314" y="2166" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#13aff0">M</text>
+    <text x="314" y="2204" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">mcp-portal</text>
+    <text x="314" y="2218" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // TypeScript</text>
   </g>
   <g>
     <rect x="403" y="2129" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="404" y="2130" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="432" y="2166" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#0aff47">O</text>
-    <text x="432" y="2204" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">obsidian-magic…</text>
-    <text x="432" y="2218" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
+    <image href="https://github.com/user-attachments/assets/57440ad3-2328-42ea-a840-c24edcdee36f" x="404" y="2130" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip75)"/>
+    <text x="432" y="2204" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">MyBruteLocal</text>
+    <text x="432" y="2218" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // TypeScript</text>
   </g>
   <g>
     <rect x="49" y="2243" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
     <rect x="50" y="2244" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="78" y="2280" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#13aff0">O</text>
-    <text x="78" y="2318" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">obsidian-reveal</text>
-    <text x="78" y="2332" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // HTML</text>
+      <text x="78" y="2280" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#FF6B00">N</text>
+    <text x="78" y="2318" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">nexearch</text>
+    <text x="78" y="2332" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Jupyter Notebook</text>
   </g>
   <g>
     <rect x="167" y="2243" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="168" y="2244" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="196" y="2280" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#f5c518">P</text>
-    <text x="196" y="2318" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">Paradigm</text>
-    <text x="196" y="2332" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // —</text>
+    <image href="https://github.com/user-attachments/assets/7c52d4df-1d7f-4447-bc7b-23a49d4dfd88" x="168" y="2244" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip77)"/>
+    <text x="196" y="2318" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">nexus-wsl2</text>
+    <text x="196" y="2332" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
   </g>
   <g>
     <rect x="285" y="2243" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/paraforge/main/docs/paraforge.png" x="286" y="2244" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip78)"/>
-    <text x="314" y="2318" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">paraforge</text>
-    <text x="314" y="2332" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+    <rect x="286" y="2244" width="56" height="56" rx="14" fill="#0d1216"/>
+      <text x="314" y="2280" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#0aff47">O</text>
+    <text x="314" y="2318" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">obsidian-magic…</text>
+    <text x="314" y="2332" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
   </g>
   <g>
     <rect x="403" y="2243" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/bb82140e-68bc-4de6-8fa8-f6865d6c9090" x="404" y="2244" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip79)"/>
-    <text x="432" y="2318" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">POEasy</text>
-    <text x="432" y="2332" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+    <rect x="404" y="2244" width="56" height="56" rx="14" fill="#0d1216"/>
+      <text x="432" y="2280" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#13aff0">O</text>
+    <text x="432" y="2318" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">obsidian-reveal</text>
+    <text x="432" y="2332" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // HTML</text>
   </g>
   <g>
     <rect x="49" y="2357" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/07bb31fd-cb80-49c2-a8fe-690cd28c3e8e" x="50" y="2358" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip80)"/>
-    <text x="78" y="2432" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">prism</text>
-    <text x="78" y="2446" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+    <rect x="50" y="2358" width="56" height="56" rx="14" fill="#0d1216"/>
+      <text x="78" y="2394" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#f5c518">P</text>
+    <text x="78" y="2432" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">Paradigm</text>
+    <text x="78" y="2446" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // —</text>
   </g>
   <g>
     <rect x="167" y="2357" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="168" y="2358" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="196" y="2394" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#bd00ff">S</text>
-    <text x="196" y="2432" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ScaleSwitch</text>
+    <image href="https://raw.githubusercontent.com/infinition/paraforge/main/docs/paraforge.png" x="168" y="2358" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip81)"/>
+    <text x="196" y="2432" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">paraforge</text>
     <text x="196" y="2446" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="285" y="2357" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://github.com/user-attachments/assets/a89b4eb4-b730-4604-9265-3466884ab292" x="286" y="2358" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip82)"/>
-    <text x="314" y="2432" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ScrabbleArt</text>
-    <text x="314" y="2446" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
+    <image href="https://raw.githubusercontent.com/infinition/parareload/main/assets/icon.png" x="286" y="2358" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip82)"/>
+    <text x="314" y="2432" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">parareload</text>
+    <text x="314" y="2446" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // C#</text>
   </g>
   <g>
     <rect x="403" y="2357" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/scrute/main/icons/scrute-180.png" x="404" y="2358" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip83)"/>
-    <text x="432" y="2432" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">scrute</text>
-    <text x="432" y="2446" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // HTML</text>
+    <image href="https://raw.githubusercontent.com/infinition/petit-monde/main/icon.png" x="404" y="2358" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip83)"/>
+    <text x="432" y="2432" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">petit-monde</text>
+    <text x="432" y="2446" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
   </g>
   <g>
     <rect x="49" y="2471" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/sculpt-rs/main/assets/icon.png" x="50" y="2472" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip84)"/>
-    <text x="78" y="2546" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">sculpt-rs</text>
-    <text x="78" y="2560" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+    <image href="https://raw.githubusercontent.com/infinition/plancton/main/assets/icon.png" x="50" y="2472" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip84)"/>
+    <text x="78" y="2546" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">plancton</text>
+    <text x="78" y="2560" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // JavaScript</text>
   </g>
   <g>
     <rect x="167" y="2471" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <rect x="168" y="2472" width="56" height="56" rx="14" fill="#0d1216"/>
-      <text x="196" y="2508" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#bd00ff">V</text>
-    <text x="196" y="2546" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">vortex</text>
-    <text x="196" y="2560" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+    <image href="https://github.com/user-attachments/assets/bb82140e-68bc-4de6-8fa8-f6865d6c9090" x="168" y="2472" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip85)"/>
+    <text x="196" y="2546" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">POEasy</text>
+    <text x="196" y="2560" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
   <g>
     <rect x="285" y="2471" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <image href="https://raw.githubusercontent.com/infinition/z-manifold/main/paper/figures/fig3_poison.png" x="286" y="2472" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip86)"/>
-    <text x="314" y="2546" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">z-manifold</text>
-    <text x="314" y="2560" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+    <image href="https://github.com/user-attachments/assets/07bb31fd-cb80-49c2-a8fe-690cd28c3e8e" x="286" y="2472" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip86)"/>
+    <text x="314" y="2546" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">prism</text>
+    <text x="314" y="2560" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+  </g>
+  <g>
+    <rect x="403" y="2471" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <rect x="404" y="2472" width="56" height="56" rx="14" fill="#0d1216"/>
+      <text x="432" y="2508" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#bd00ff">S</text>
+    <text x="432" y="2546" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ScaleSwitch</text>
+    <text x="432" y="2560" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
+  </g>
+  <g>
+    <rect x="49" y="2585" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <image href="https://github.com/user-attachments/assets/a89b4eb4-b730-4604-9265-3466884ab292" x="50" y="2586" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip88)"/>
+    <text x="78" y="2660" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">ScrabbleArt</text>
+    <text x="78" y="2674" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2025 // HTML</text>
+  </g>
+  <g>
+    <rect x="167" y="2585" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <image href="https://raw.githubusercontent.com/infinition/scrute/main/icons/scrute-180.png" x="168" y="2586" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip89)"/>
+    <text x="196" y="2660" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">scrute</text>
+    <text x="196" y="2674" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // HTML</text>
+  </g>
+  <g>
+    <rect x="285" y="2585" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <image href="https://raw.githubusercontent.com/infinition/sculpt-rs/main/assets/icon.png" x="286" y="2586" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip90)"/>
+    <text x="314" y="2660" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">sculpt-rs</text>
+    <text x="314" y="2674" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+  </g>
+  <g>
+    <rect x="403" y="2585" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <image href="https://raw.githubusercontent.com/infinition/sims-package2glb/main/src-tauri/icons/128x128.png" x="404" y="2586" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip91)"/>
+    <text x="432" y="2660" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">sims-package2g…</text>
+    <text x="432" y="2674" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+  </g>
+  <g>
+    <rect x="49" y="2699" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <rect x="50" y="2700" width="56" height="56" rx="14" fill="#0d1216"/>
+      <text x="78" y="2736" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="700" fill="#bd00ff">V</text>
+    <text x="78" y="2774" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">vortex</text>
+    <text x="78" y="2788" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Rust</text>
+  </g>
+  <g>
+    <rect x="167" y="2699" width="58" height="58" rx="15" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <image href="https://raw.githubusercontent.com/infinition/z-manifold/main/paper/figures/fig3_poison.png" x="168" y="2700" width="56" height="56" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip93)"/>
+    <text x="196" y="2774" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#d1d5db">z-manifold</text>
+    <text x="196" y="2788" text-anchor="middle" font-family="'JetBrains Mono', Consolas, Menlo, monospace" font-size="9" fill="#4b5563">2026 // Python</text>
   </g>
 </svg>
