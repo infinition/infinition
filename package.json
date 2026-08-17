@@ -1,0 +1,8 @@
+{
+  "name": "infinition-site-scripts",
+  "private": true,
+  "description": "Build scripts for infinition.github.io, run in CI only (no browser bundle).",
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

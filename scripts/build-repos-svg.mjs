@@ -7,10 +7,19 @@
  * markdown link back to the interactive #repos page; this script only needs
  * to look like that page, not behave like it.
  *
+ * Same restriction has a second, sharper edge: a browser loads an SVG used as
+ * an <img> src in a locked-down "image" context that refuses to fetch any
+ * external resource referenced from inside it. An <image href="https://..."/>
+ * for an icon renders fine when you open the SVG file directly (full document
+ * context) and shows as a broken image everywhere the README actually uses
+ * it. Every icon is therefore downloaded once at build time and inlined as a
+ * base64 data URI, so the finished file has no external references left.
+ *
  * Usage: node scripts/build-repos-svg.mjs [--data data/repos.json] [--out assets/repos-grid.svg] [--limit 0]
  */
 
 import { readFile, writeFile } from 'node:fs/promises';
+import sharp from 'sharp';
 
 const args = process.argv.slice(2);
 const argOf = (flag, dflt) => {
@@ -57,9 +66,44 @@ const fmtStars = n => n >= 1000 ? (n / 1000).toFixed(1).replace('.0', '') + 'k' 
 
 const truncate = (s, max) => s.length > max ? s.slice(0, max - 1) + '…' : s;
 
+/* Source images are README banners and screenshots, not pre-made icons — one
+   was 2.6MB. Resizing every one down to icon size before embedding is what
+   keeps the SVG in the hundreds-of-KB range instead of double digits of MB
+   (94 repos x uncapped raw bytes was 13MB). Only a resize failure (a source
+   that isn't actually a decodable image, a dead link) falls back to the
+   initial-letter avatar. */
+const ICON_PX = 112; // 2x the 56px on-screen size, for retina
+const SAFETY_CAP_BYTES = 60 * 1024;
+
+async function fetchAsDataUri(url) {
+    const res = await fetch(url, { redirect: 'follow' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const raw = Buffer.from(await res.arrayBuffer());
+    const resized = await sharp(raw, { animated: false })
+        .resize(ICON_PX, ICON_PX, { fit: 'cover' })
+        .webp({ quality: 78 })
+        .toBuffer();
+    if (resized.byteLength > SAFETY_CAP_BYTES) throw new Error(`still too large after resize: ${resized.byteLength}B`);
+    return `data:image/webp;base64,${resized.toString('base64')}`;
+}
+
+/* Runs a handful of fetches at a time instead of 90-odd at once. */
+async function mapWithConcurrency(items, limit, fn) {
+    const out = new Array(items.length);
+    let next = 0;
+    async function worker() {
+        while (next < items.length) {
+            const i = next++;
+            out[i] = await fn(items[i], i);
+        }
+    }
+    await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+    return out;
+}
+
 /* Icons only, no bounding card — same springboard-icon layout as the live
    #repos grid, just without the hover/click states a static image can't do. */
-function buildSvg(repos, totalStars) {
+function buildSvg(repos, totalStars, dataUris) {
     const COLS = 4;
     const CELL_W = 108, CELL_H = 100, GAP_X = 10, GAP_Y = 14, PAD = 24;
     const HEADER_H = 78, ICON = 56;
@@ -85,9 +129,10 @@ function buildSvg(repos, totalStars) {
 
         defs += `<clipPath id="${clipId}"><rect x="${iconX}" y="${iconY}" width="${ICON}" height="${ICON}" rx="14"/></clipPath>`;
 
+        const dataUri = dataUris[i];
         let iconMarkup;
-        if (r.image) {
-            iconMarkup = `<image href="${esc(r.image)}" x="${iconX}" y="${iconY}" width="${ICON}" height="${ICON}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${clipId})"/>`;
+        if (dataUri) {
+            iconMarkup = `<image href="${dataUri}" x="${iconX}" y="${iconY}" width="${ICON}" height="${ICON}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${clipId})"/>`;
         } else {
             const initial = esc((r.name[0] || '?').toUpperCase());
             iconMarkup = `<rect x="${iconX}" y="${iconY}" width="${ICON}" height="${ICON}" rx="14" fill="${COLOR.card}"/>
@@ -127,9 +172,21 @@ async function main() {
         .sort((a, b) => b.stars - a.stars);
     if (LIMIT > 0) repos = repos.slice(0, LIMIT);
 
-    const svg = buildSvg(repos, raw.total_stars || 0);
+    let failed = 0;
+    const dataUris = await mapWithConcurrency(repos, 8, async (r) => {
+        if (!r.image) return null;
+        try {
+            return await fetchAsDataUri(r.image);
+        } catch (err) {
+            failed++;
+            console.warn(`  ${r.name}: falling back to initial (${err.message})`);
+            return null;
+        }
+    });
+
+    const svg = buildSvg(repos, raw.total_stars || 0, dataUris);
     await writeFile(OUT, svg);
-    console.log(`wrote ${OUT}: ${repos.length} repos`);
+    console.log(`wrote ${OUT}: ${repos.length} repos, ${failed} fell back to initials`);
 }
 
 main().catch(err => {
