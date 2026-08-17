@@ -89,8 +89,15 @@ jobs:
           git commit -m 'chore(data): refresh site snapshots'
           # Un outil de build peut laisser trainer une modif hors de cette
           # liste (ex: package-lock.json retouche par npm) ; on ne veut
-          # jamais la commiter, et elle ferait echouer le rebase ci-dessous.
+          # jamais la commiter, et elle ferait echouer le merge ci-dessous.
           git checkout -- .
-          # Deux runs peuvent se suivre de pres, on se remet a jour avant de pousser.
-          git pull --rebase origin main
+          # Ces fichiers sont entierement regeneres a chaque run, jamais
+          # edites a la main : deux runs rapproches produisent deux versions
+          # completes et independantes du meme snapshot, que git ne sait pas
+          # fusionner ligne a ligne (rebase plantait avec un vrai conflit de
+          # contenu). Le snapshot qu'on vient de construire est toujours le
+          # plus a jour, donc on le garde tel quel en cas de conflit ; tout
+          # changement upstream sur d'autres fichiers se fusionne normalement.
+          git fetch origin main
+          git merge -X ours --no-edit origin/main
           git push
