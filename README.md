@@ -1,12 +1,19 @@
 <div align="center">
+  <a href="https://github.com/infinition"><img src="https://img.shields.io/github/stars/infinition?style=for-the-badge&color=orange" alt="GitHub stars"></a>
+  <a href="https://www.reddit.com/r/Bjorn_CyberViking" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/reddit/subreddit-subscribers/Bjorn_CyberViking?style=for-the-badge&logo=reddit&label=Reddit&color=FF4500&labelColor=2A2E35&logoColor=white" alt="Reddit"></a>
+  <a href="https://discord.gg/B3ZH9taVfT" target="_blank"><img src="https://dcbadge.limes.pink/api/server/https://discord.gg/B3ZH9taVfT" alt="Discord"></a>
+  <a href="https://www.buymeacoffee.com/infinition" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 35px; vertical-align: middle;"></a>
+</div>
+
+<div align="center">
 
 <a href="https://infinition.github.io/infinition/"><img src="0xid.svg" alt="infinition // classified profile dump" width="880"></a>
 
   
 </div>
+
 <div align="center">
-  <a href="https://github.com/infinition"><img src="https://img.shields.io/github/stars/infinition?style=for-the-badge&color=orange" alt="GitHub stars"></a>
-  <a href="https://www.reddit.com/r/Bjorn_CyberViking" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/reddit/subreddit-subscribers/Bjorn_CyberViking?style=for-the-badge&logo=reddit&label=Reddit&color=FF4500&labelColor=2A2E35&logoColor=white" alt="Reddit"></a>
-  <a href="https://discord.gg/B3ZH9taVfT" target="_blank"><img src="https://dcbadge.limes.pink/api/server/https://discord.gg/B3ZH9taVfT" alt="Discord"></a>
-  <a href="https://www.buymeacoffee.com/infinition" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 35px; vertical-align: middle;"></a>
+  <a href="https://infinition.github.io/infinition/#repos"><img src="assets/repos-grid.svg" alt="infinition // all public repos, live and sorted by stars"></a>
+  <br>
+  <sub>updated daily &middot; click to browse them interactively</sub>
 </div>
