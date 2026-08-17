@@ -104,7 +104,7 @@ async function mapWithConcurrency(items, limit, fn) {
 /* Icons only, no bounding card — same springboard-icon layout as the live
    #repos grid, just without the hover/click states a static image can't do. */
 function buildSvg(repos, totalStars, dataUris) {
-    const COLS = 4;
+    const COLS = 8;
     const CELL_W = 108, CELL_H = 100, GAP_X = 10, GAP_Y = 14, PAD = 24;
     const HEADER_H = 78, ICON = 56;
 

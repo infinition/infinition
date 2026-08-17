@@ -6,13 +6,6 @@
 </div>
 
 <div align="center">
-
-<a href="https://infinition.github.io/infinition/"><img src="0xid.svg" alt="infinition // classified profile dump" width="880"></a>
-
-  
-</div>
-
-<div align="center">
   <a href="https://infinition.github.io/infinition/#repos"><img src="assets/repos-grid.svg" alt="infinition // all public repos, live and sorted by stars"></a>
   <br>
   <sub>updated daily &middot; click to browse them interactively</sub>
