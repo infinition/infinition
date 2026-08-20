@@ -124,10 +124,10 @@ const PORTFOLIO_DATA = {
         },
         {
             title: "LaRuche",
-            tag: "LOCAL AI SWARM",
+            tag: "SELF-HOSTED AI AGENT",
             icon: "fas fa-cubes",
             color: "green",
-            description: "Personal AI hive: a swarm of specialized agents in a single Rust binary. Fully local, tools and memory never leave the machine.",
+            description: "Agent node written in Rust: hardened ReAct engine, cognitive memory with git time travel, a supervisor reviewing the agent own work, and a mesh to federate several hives on a LAN.",
             url: "https://github.com/infinition/LaRuche"
         },
         {
