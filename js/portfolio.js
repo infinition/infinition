@@ -100,10 +100,8 @@ function initPortal() {
                 <i class="fab fa-linkedin"></i> linkedin
             </a>
             <a href="${CONFIG.social.github}" target="_blank" class="cyber-badge">
-                <i class="fab fa-github"></i> git_repo
-            </a>
-            <a href="${CONFIG.social.github}" target="_blank" class="cyber-badge">
-                <i class="fas fa-star"></i> <span id="portal-stars-badge">${CONFIG.social.stats.githubStars}</span>_stars
+                <i class="fab fa-github"></i> github_<span id="portal-stars-badge">${CONFIG.social.stats.githubStars}</span>
+                <i class="fas fa-star"></i>
             </a>
             <a href="${CONFIG.social.reddit}" target="_blank" class="cyber-badge">
                 <i class="fab fa-reddit-alien"></i> reddit_<span id="portal-reddit-badge">${CONFIG.social.stats.redditSub}</span>

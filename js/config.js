@@ -22,7 +22,7 @@ const CONFIG = {
         discord: "https://discord.com/invite/B3ZH9taVfT",
         artstation: "https://www.artstation.com/infinition",
         stats: {
-            githubStars: "5.6k",
+            githubStars: "7.2k",
             redditSub: "4.5k",
             discordMembers: "1.4k"
         }
