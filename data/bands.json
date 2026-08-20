@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T05:53:03.827Z",
+  "generated_at": "2026-08-20T05:48:35.975Z",
   "count": 112,
   "listed": 112,
   "bands": [
@@ -9,15 +9,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/53/a7/7f/53a77fab-c54c-a57b-8130-248fc12d0c80/093624948995.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/linkin-park/148662?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Bring Me The Horizon",
       "artist": "Bring Me The Horizon",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/84/1c/69/841c6944-21aa-8475-cf62-6abf22c92afb/196873287485.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/f6/cf/43/f6cf4309-16ea-6428-cbf6-c478342d1d8d/886448061694.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/bring-me-the-horizon/121043936?uo=4",
-      "genre": "Instrumental",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "genre": "Hard Rock",
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Fall Out Boy",
@@ -25,7 +25,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ea/ff/60/eaff603f-d108-2815-3dce-db39b990635f/06UMGIM11830.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/fall-out-boy/28673423?uo=4",
       "genre": "Alternative",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Papa Roach",
@@ -33,7 +33,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0e/e6/fe/0ee6fe07-1a13-bd2d-aa4b-81229b9990ca/5026854385068.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/papa-roach/3445763?uo=4",
       "genre": "Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Shinedown",
@@ -41,7 +41,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/9a/a7/fb/9aa7fb92-2fa3-dcac-3fa5-5841104821d9/mzi.vcbwmgud.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/shinedown/1883858?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Breaking Benjamin",
@@ -49,7 +49,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/13/0b/d5/130bd567-fd89-be19-08fc-761ecd71cf39/4099964262155.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/breaking-benjamin/3299379?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Three Days Grace",
@@ -57,15 +57,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/be/e2/38/bee2384c-1e96-4432-545b-537bd91a69a2/884977337617.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/three-days-grace/1973668?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Skillet",
       "artist": "Skillet",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3a/e3/a7/3ae3a7a7-81aa-f976-c3b4-2850f83f5193/075679951038.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ac/71/62/ac716251-7b45-c7eb-87ba-528d39594ad0/712132039970_cover.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/skillet/1750802?uo=4",
-      "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "genre": "Rock",
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Disturbed",
@@ -73,15 +73,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/4a/71/92/4a7192ec-cb5e-6dc4-919c-4fea69641e9c/093624924661.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/disturbed/156807?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Marilyn Manson",
       "artist": "Marilyn Manson",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b4/14/65/b4146525-527b-ec49-32c9-8e03ae8f1af8/cover.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/9b/ea/8b/9bea8b55-8e5e-d57a-d118-3c11029b47b5/cover.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/marilyn-manson/251375?uo=4",
       "genre": "Metal",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Nine Inch Nails",
@@ -89,15 +89,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f9/87/52/f9875213-5546-6e41-6bf8-e6585cca4122/26UMGIM14960.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/nine-inch-nails/107917?uo=4",
       "genre": "Electronic",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Bullet for My Valentine",
       "artist": "Bullet for My Valentine",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music5/v4/9d/9c/d0/9d9cd04c-32e4-1c6f-371e-a6cd590a6189/886445261615.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/2e/3e/c8/2e3ec810-5cc8-bafd-eb4d-349fc8b39f91/886445332100.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/bullet-for-my-valentine/50077521?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "A Day to Remember",
@@ -105,7 +105,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/47/69/49/4769492c-5864-60ac-1bc7-31b8eeee05b6/19CRGIM19264.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/a-day-to-remember/59925710?uo=4",
       "genre": "Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Falling in Reverse",
@@ -113,15 +113,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/d4/a6/33/d4a6335a-6f0d-b153-745d-cb388be12f0e/0045778753253.png/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/falling-in-reverse/439592053?uo=4",
       "genre": "Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Motionless In White",
-      "artist": "Motionless In White",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/f7/f9/89/f7f989d9-6395-e07c-acd1-d9d681788a28/075679803184.jpg/600x600bb.jpg",
+      "artist": "Motionless In White & Saxl Rose",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/7b/28/0d/7b280d57-6cc7-0675-04a5-3fa33613c039/075679696373.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/motionless-in-white/266666216?uo=4",
       "genre": "Metal",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Halestorm",
@@ -129,7 +129,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/16/79/f1/1679f199-d5ae-d4b4-66f5-7425f4bfa22a/mzi.qqkfxhab.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/halestorm/3969358?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Starset",
@@ -137,7 +137,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/8c/72/a4/8c72a460-49ec-7238-0caf-a68bda0fc846/00793018370868.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/starset/669248603?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "I Prevail",
@@ -145,7 +145,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5d/20/39/5d2039b4-0fc7-e810-3fef-2c16ef7ca941/075679645333.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/halestorm/3969358?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "We Came As Romans",
@@ -153,15 +153,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/84/c6/18/84c618ff-8e33-3723-af84-a1efdab4c385/886443327146.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/we-came-as-romans/314821088?uo=4",
       "genre": "Metal",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Architects",
       "artist": "Architects",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music22/v4/15/1c/ab/151cab99-dbc9-6354-898c-7b3f22447b68/mzm.jjzvuklj.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/4c/c5/9f/4cc59f7d-e39a-4f3a-0a83-770c8be6c42c/886443984912.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/architects/182821355?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Memphis May Fire",
@@ -169,7 +169,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/98/db/f9/98dbf9b9-e340-eaac-0eed-c08b6c6f7caa/4099964132786.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/memphis-may-fire/216327509?uo=4",
       "genre": "Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Of Mice & Men",
@@ -177,23 +177,23 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8e/c0/f4/8ec0f491-b571-14b8-0bfa-c42538734ef4/0854132001578.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/of-mice-men/127357180?uo=4",
       "genre": "Metal",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Escape the Fate",
       "artist": "Escape the Fate",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/71/b5/02/71b502be-ef3c-9693-4272-d09f5ae6370c/00602527533216.rgb.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/7d/fb/e1/7dfbe13d-da70-10dd-1a63-ff793957f24c/0045778680160.png/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/escape-the-fate/145719026?uo=4",
-      "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "genre": "Rock",
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Atreyu",
       "artist": "Atreyu",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/95/4f/4c/954f4cd6-c686-d629-91fc-2296cea9d6cb/00886443180710.rgb.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8c/d7/3b/8cd73bbe-3bb6-0ae6-ab55-48c035dabc02/00886443182820.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/atreyu/6095061?uo=4",
       "genre": "Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "In This Moment",
@@ -201,15 +201,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a5/fd/0a/a5fd0a54-7b7f-0398-ef98-20677c78d46a/810202538306.png/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/in-this-moment/204641943?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Hollywood Undead",
       "artist": "Hollywood Undead",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/fb/21/3b/fb213bd9-41cf-89cc-82d9-4dabb1369cd7/00602527713960.rgb.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/03/49/3a/03493ae6-11ad-792d-a868-ce7a50f6714c/4050538644005.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/hollywood-undead/285976572?uo=4",
-      "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "genre": "Rock",
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Garbage",
@@ -217,7 +217,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/60/ab/1e/60ab1ef7-2a86-65f5-4c63-39847b7edb11/00602547364920.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/garbage/109997?uo=4",
       "genre": "Alternative",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Flyleaf",
@@ -225,15 +225,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/8f/e4/92/8fe492bf-8899-93a0-8261-2cd16ca85f86/16UMGIM81029.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/flyleaf/27653104?uo=4",
       "genre": "Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "The Score",
       "artist": "The Score",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/6c/3d/cc/6c3dcc59-9198-d526-e832-4b3f938a4f57/192641943683_Cover.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ba/e7/75/bae7756a-2994-db86-eefd-1c243e0efd46/00602577449055.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/the-score/869130954?uo=4",
-      "genre": "Pop/Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "genre": "Alternative",
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Three Doors Down",
@@ -241,7 +241,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/0b/c1/03/0bc10342-a863-560f-15ef-0348f49d23e6/12UMGIM57106.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/3-doors-down/101604?uo=4",
       "genre": "Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Pop Evil",
@@ -249,7 +249,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/16/b6/7e/16b67e4e-9b1c-f868-2531-b0ce8e107034/pe_cover1_HIRES.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/pop-evil/441597923?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Crossfade",
@@ -257,31 +257,31 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/de/65/df/de65dfbc-04be-43d3-d774-cad244c9bbea/mzi.aiukqtpj.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/crossfade/5365062?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "From Ashes to New",
       "artist": "From Ashes to New",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d5/a8/7f/d5a87fe0-0e78-da63-ec15-4f961513a141/849320089704.png/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b4/ec/a6/b4eca6c3-c070-aef7-721f-1a5085ecb963/849320071105.png/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/from-ashes-to-new/688645097?uo=4",
-      "genre": "Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "genre": "Hard Rock",
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Dead By April",
       "artist": "Dead By April",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/95/4e/e6/954ee6b8-9a71-4e49-bbcc-2a730422979a/820233304696.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/eb/9e/b8/eb9eb837-44fa-87af-a44a-784a45dfe0c4/00602527808222.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/dead-by-april/307522520?uo=4",
-      "genre": "Metal",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "genre": "Rock",
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Our Last Night",
       "artist": "Our Last Night",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/db/d6/f1/dbd6f1e4-eab0-038c-5eb6-e1c9a6879634/artwork.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/41/0c/f7/410cf711-1c41-af94-1afb-aedd4669b886/artwork.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/our-last-night/274552725?uo=4",
       "genre": "Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Nothing More",
@@ -289,15 +289,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f7/64/f5/f764f598-e955-e7fc-d93a-54db8f89b5a0/0859715926606.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/decyfer-down/151819244?uo=4",
       "genre": "Classic Christian",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Nine Lashes",
       "artist": "Nine Lashes",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/ff/78/25/ff78257a-0aa1-419e-6246-8912b896a230/195497465903.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1a/75/84/1a75849e-27bf-18da-9304-837ee80ec66a/810539021717.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/nine-lashes/320831800?uo=4",
-      "genre": "Christian Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "genre": "CCM",
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "The White Stripes",
@@ -305,7 +305,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/07/25/09/0725098a-09f4-f240-e551-94384a590371/886448799009.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/the-white-stripes/2456318?uo=4",
       "genre": "Alternative",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Icon for Hire",
@@ -313,15 +313,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/2b/f3/cc/2bf3ccd9-4ad2-6fe6-8bde-5473ca9f89b0/05099995427454.rgb.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/icon-for-hire/443877750?uo=4",
       "genre": "Adult Alternative",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Fireflight",
       "artist": "Fireflight",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/85/c5/c2/85c5c265-395a-efcd-75ce-13b1235ed62f/083061036355.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c6/36/fc/c636fc09-cabb-1360-36d1-8d25407556f9/mzi.ohopkssm.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/fireflight/49618793?uo=4",
       "genre": "Christian",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Smash Into Pieces",
@@ -329,7 +329,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/6e/41/55/6e41550e-7e21-2d47-f949-6276f19bce63/199538575521.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/smash-into-pieces/319529992?uo=4",
       "genre": "Alternative",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Tetrarch",
@@ -337,7 +337,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/14/5f/c2/145fc2e7-951d-5376-33c2-ef34ab3106e2/840588140657.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/tetrarch/443431324?uo=4",
       "genre": "Metal",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Stitched Up Heart",
@@ -345,15 +345,15 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/be/a1/e6/bea1e678-e009-8fe8-dae1-8fe859507378/886445872170.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/stitched-up-heart/407718096?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Fame on Fire",
       "artist": "Fame on Fire",
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/84/87/9c/84879c0f-303c-1994-8e79-525b7dfa7b47/859719604197.jpg/600x600bb.jpg",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b8/3c/51/b83c5128-ad7e-eb07-95c9-959698c45e71/790692280667.jpg/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/fame-on-fire/932599553?uo=4",
       "genre": "Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Fight the Fade",
@@ -361,7 +361,7 @@
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b0/e2/1b/b0e21b9b-f550-3afc-7578-1b7031556b0e/732623001781.png/600x600bb.jpg",
       "url": "https://music.apple.com/us/artist/fight-the-fade/467463249?uo=4",
       "genre": "Hard Rock",
-      "checked_at": "2026-08-05T12:53:31.484Z"
+      "checked_at": "2026-08-20T05:48:35.975Z"
     },
     {
       "band": "Dropout Kings",
