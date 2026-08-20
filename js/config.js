@@ -23,7 +23,8 @@ const CONFIG = {
         artstation: "https://www.artstation.com/infinition",
         stats: {
             githubStars: "5.6k",
-            redditSub: "r/bjorn"
+            redditSub: "4.5k",
+            discordMembers: "1.4k"
         }
     },
     seo: {

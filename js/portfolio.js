@@ -97,7 +97,7 @@ function initPortal() {
     if (secretDataEl) {
         secretDataEl.innerHTML = `
             <a href="${CONFIG.social.linkedin}" target="_blank" class="cyber-badge">
-                <i class="fab fa-linkedin"></i> linkedin_connect
+                <i class="fab fa-linkedin"></i> linkedin
             </a>
             <a href="${CONFIG.social.github}" target="_blank" class="cyber-badge">
                 <i class="fab fa-github"></i> git_repo
@@ -106,10 +106,10 @@ function initPortal() {
                 <i class="fas fa-star"></i> <span id="portal-stars-badge">${CONFIG.social.stats.githubStars}</span>_stars
             </a>
             <a href="${CONFIG.social.reddit}" target="_blank" class="cyber-badge">
-                <i class="fab fa-reddit-alien"></i> ${CONFIG.social.stats.redditSub}
+                <i class="fab fa-reddit-alien"></i> reddit_<span id="portal-reddit-badge">${CONFIG.social.stats.redditSub}</span>
             </a>
             <a href="${CONFIG.social.discord}" target="_blank" class="cyber-badge">
-                <i class="fab fa-discord"></i> discord_srv
+                <i class="fab fa-discord"></i> discord_<span id="portal-discord-badge">${CONFIG.social.stats.discordMembers}</span>
             </a>
         `;
     }

@@ -16,6 +16,7 @@ on:
       - 'scripts/build-repos.mjs'
       - 'scripts/build-repos-svg.mjs'
       - 'scripts/build-logs.mjs'
+      - 'scripts/build-social.mjs'
       - '.github/workflows/site-data.yml'
 
 permissions:
@@ -57,6 +58,10 @@ jobs:
       - name: Build data/logs.json
         run: node scripts/build-logs.mjs --out data/logs.json
 
+      - name: Build data/social.json
+        # Abonnes Reddit et membres Discord des badges du portail.
+        run: node scripts/build-social.mjs --out data/social.json
+
       - name: Build assets/repos-grid.svg
         run: node scripts/build-repos-svg.mjs --data data/repos.json --out assets/repos-grid.svg
 
@@ -73,6 +78,11 @@ jobs:
             }
             console.log(repos.repos.length + ' repos, ' + repos.total_stars + ' stars, ' + repos.covers + ' covers');
             console.log(logs.articles.length + ' articles, ' + logs.artworks.length + ' artworks');
+            const social = require('./data/social.json');
+            if (!social.reddit || !social.discord) {
+              throw new Error('social.json is incomplete, refusing to commit');
+            }
+            console.log('reddit ' + social.reddit.label + ', discord ' + social.discord.label);
           "
 
       - name: Commit si le contenu a change
@@ -81,11 +91,11 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           # git diff ignore les fichiers non suivis, donc un tout premier
           # snapshot passait pour "aucun changement" et n'etait jamais commite.
-          if [ -z "$(git status --porcelain -- data/repos.json data/repos-summary.json data/logs.json assets/repos-grid.svg)" ]; then
+          if [ -z "$(git status --porcelain -- data/repos.json data/repos-summary.json data/logs.json data/social.json assets/repos-grid.svg)" ]; then
             echo 'no change'
             exit 0
           fi
-          git add data/repos.json data/repos-summary.json data/logs.json assets/repos-grid.svg
+          git add data/repos.json data/repos-summary.json data/logs.json data/social.json assets/repos-grid.svg
           git commit -m 'chore(data): refresh site snapshots'
           # Un outil de build peut laisser trainer une modif hors de cette
           # liste (ex: package-lock.json retouche par npm) ; on ne veut

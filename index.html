@@ -160,7 +160,7 @@
                 <!-- BADGES TYPE "DATA STREAM" -->
                 <div id="secret-data">
                     <a href="https://www.linkedin.com/in/fabienpolly" target="_blank" class="cyber-badge">
-                        <i class="fab fa-linkedin"></i> linkedin_connect
+                        <i class="fab fa-linkedin"></i> linkedin
                     </a>
                     <a href="https://github.com/infinition" target="_blank" class="cyber-badge">
                         <i class="fab fa-github"></i> git_repo
@@ -170,10 +170,12 @@
                         <i class="fas fa-star"></i> <span id="portal-stars-badge">5.6k</span>_stars
                     </a>
                     <a href="https://www.reddit.com/r/Bjorn_CyberViking" target="_blank" class="cyber-badge">
-                        <i class="fab fa-reddit-alien"></i> r/bjorn
+                        <!-- valeur rafraichie depuis data/social.json par js/social.js -->
+                        <i class="fab fa-reddit-alien"></i> reddit_<span id="portal-reddit-badge">4.5k</span>
                     </a>
                     <a href="https://discord.com/invite/B3ZH9taVfT" target="_blank" class="cyber-badge">
-                        <i class="fab fa-discord"></i> discord_srv
+                        <!-- idem, membres du serveur -->
+                        <i class="fab fa-discord"></i> discord_<span id="portal-discord-badge">1.4k</span>
                     </a>
                 </div>
             </div>
@@ -922,6 +924,7 @@
     <script src="js/ui.js"></script>
     <!-- charge avant main.js : navigateTo peut appeler initRepos des le chargement sur #repos -->
     <script src="js/repos.js"></script>
+    <script src="js/social.js"></script>
     <script src="js/main.js"></script>
     <script src="js/portal.js"></script>
     <script src="js/csslib.js"></script>
