@@ -48,67 +48,35 @@ const PORTFOLIO_DATA = {
             { text: "Creative Tech", color: "blue" },
             { text: "Skater", color: "red" }
         ],
-        bio: `My journey started as an <strong>Ethical Hacker</strong>, breaking systems to understand them... Eighteen years later I am on the other side of the table: former French Navy submariner (<em>Golden Ear</em>, acoustic analyst on nuclear attack submarines), then cybersecurity lead on submarine combat systems at <strong>Naval Group</strong>, then <strong>CISO</strong> for nuclear research, energy operators and health data. Today I keep my executive role as <strong>Cyber Director & CISO</strong> while pushing <strong>Quantum AI & Post-Quantum Security</strong> as an <strong>Independent Researcher</strong>, in collaboration with the University of Oxford.<br><em>"I protect nuclear secrets by day and build digital consciousness by night."</em>`,
+        bio: `My journey started as an <strong>Ethical Hacker</strong>, breaking systems to understand them... Eighteen years later I am on the other side of the table: former French Navy submariner (<em>Golden Ear</em>, acoustic analyst on nuclear attack submarines), then cybersecurity lead on submarine combat systems, then <strong>CISO</strong> for defense, nuclear research, national energy operators and health data. Today I keep my executive role as <strong>Cyber Director & CISO</strong> while pushing <strong>Quantum AI & Post-Quantum Security</strong> as an <strong>Independent Researcher</strong>, in collaboration with the University of Oxford.<br><em>"I protect nuclear secrets by day and build digital consciousness by night."</em>`,
         photo: "img/fpy.png"
     },
-    /* Postes regroupes par periode : le CV detaille mission par mission, le
-       portail ne garde que la ligne directrice. */
+    /* Le CV detaille mission par mission. Le portail ne garde que la ligne
+       directrice, sans nom d employeur. */
     career: [
         {
             title: "Independent Researcher",
-            company: "University of Oxford (collaboration)",
+            company: "Quantum AI & Post-Quantum Security",
             period: "2025 - Present",
             icon: "fas fa-atom",
-            summary: "Post-quantum cryptography and entanglement-inspired distributed systems. Four arXiv papers in 2026.",
+            summary: "Post-quantum cryptography and entanglement-inspired distributed systems, in collaboration with the University of Oxford. Four arXiv papers in 2026.",
             type: "research"
         },
         {
-            title: "Executive Cybersecurity Expert",
-            company: "Capgemini",
+            title: "Cyber Director & Executive Advisor",
+            company: "AI and cyber convergence",
             period: "2023 - Present",
             icon: "fas fa-network-wired",
-            summary: "Senior advisory on AI and cyber convergence, strategic support to executive leadership.",
+            summary: "Senior cybersecurity advisory and strategic support to executive leadership.",
             type: "ciso"
         },
         {
-            title: "CISO / ISSO, Critical Infrastructure",
-            company: "CEA, ENEDIS / RTE, national programs",
-            period: "2022 - 2023",
-            icon: "fas fa-radiation",
-            summary: "Nuclear research sites and energy network operators: security accreditations, EBIOS RM, defense-law and ISO compliance, SOC and SIEM coordination.",
-            type: "ciso"
-        },
-        {
-            title: "Chief Information Security Officer",
-            company: "PRO BTP Groupe",
-            period: "2019 - 2022",
-            icon: "fas fa-hospital",
-            summary: "Governance for health data hosting (HDS certification), ISO compliance and secure development lifecycle.",
-            type: "ciso"
-        },
-        {
-            title: "Cybersecurity Lead & Architect",
-            company: "Naval Group, Thales Alenia Space, Sogeti ESEC",
-            period: "2017 - 2019",
-            icon: "fas fa-ship",
-            summary: "Submarine combat systems, aerospace cyber architecture and defense-law audits for critical operators. Defense clearance.",
-            type: "navy"
-        },
-        {
-            title: "Chief Information Security Officer",
-            company: "SQUAD",
-            period: "2015 - 2017",
+            title: "CISO / RSSI",
+            company: "Defense, nuclear, energy, health",
+            period: "2015 - 2023",
             icon: "fas fa-shield-alt",
-            summary: "In-house CISO from the company creation: infrastructure built from zero, ISMS and ISO 27001 certification achieved.",
+            summary: "Security leadership for classified and critical environments: submarine combat systems, nuclear research sites, national energy operators, health data. Accreditations, EBIOS RM risk analysis, ISO 27001, SOC and SIEM, crisis management. Defense clearance.",
             type: "ciso"
-        },
-        {
-            title: "IT & Security Management",
-            company: "Siemens, CMA CGM",
-            period: "2012 - 2015",
-            icon: "fas fa-server",
-            summary: "Global IT operations for the UK and Africa, then network, VOIP and embedded security on 24/7 port logistics infrastructure.",
-            type: "tech"
         },
         {
             title: "Navy Submariner (\"Golden Ear\")",
@@ -130,19 +98,13 @@ const PORTFOLIO_DATA = {
             category: "Cybersecurity",
             icon: "fas fa-shield-virus",
             color: "orange",
-            items: ["CISO / ISSO, classified environments", "EBIOS RM & Security Accreditation", "Governance (ISO 27001, LPM, NIS2)", "SOC / SIEM & Incident Response", "Offensive Security (Pentest, Red Team)"]
+            items: ["CISO / RSSI, classified environments", "EBIOS RM & Security Accreditation", "Governance (ISO 27001, LPM, NIS2)", "SOC / SIEM & Incident Response", "Offensive Security (Pentest, Red Team)"]
         },
         {
             category: "Robotics & Eng.",
             icon: "fas fa-robot",
             color: "green",
             items: ["VLA/VLM & Tiny Networks", "Embedded & IoT Security", "Acoustic & Signal Processing", "Python, Rust, C"]
-        },
-        {
-            category: "Credentials",
-            icon: "fas fa-graduation-cap",
-            color: "blue",
-            items: ["M2 Cybersecurity, M2 Data Science / AI", "ISO 27001 Lead Implementer", "CEH, AWS Cloud Practitioner", "Eligible for Defense clearance", "FR native, EN C1, ES B2"]
         },
         {
             category: "Art & Lifestyle",
@@ -161,6 +123,14 @@ const PORTFOLIO_DATA = {
             url: "https://github.com/infinition/Bjorn"
         },
         {
+            title: "LaRuche",
+            tag: "LOCAL AI SWARM",
+            icon: "fas fa-cubes",
+            color: "green",
+            description: "Personal AI hive: a swarm of specialized agents in a single Rust binary. Fully local, tools and memory never leave the machine.",
+            url: "https://github.com/infinition/LaRuche"
+        },
+        {
             title: "FluidWorld",
             tag: "WORLD MODELS",
             icon: "fas fa-water",
@@ -172,7 +142,7 @@ const PORTFOLIO_DATA = {
             title: "Recursive VLA",
             tag: "ROBOTICS RESEARCH",
             icon: "fas fa-robot",
-            color: "green",
+            color: "blue",
             description: "Vision-Language-Action models for robotics built on tiny recursive networks, sized to run without a GPU farm.",
             url: "https://github.com/infinition"
         },

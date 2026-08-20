@@ -717,11 +717,6 @@ h2.port-h2 {
     box-shadow: 0 0 10px var(--neon-blue);
 }
 
-.timeline-item.tech::before {
-    border-color: var(--neon-green);
-    box-shadow: 0 0 10px var(--neon-green);
-}
-
 /* Periode du poste, discrete sous l employeur. */
 .timeline-item .period {
     display: block;
