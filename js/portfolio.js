@@ -1,3 +1,45 @@
+/* Rendu de la vue PROFILE a partir de PORTFOLIO_DATA. Le HTML statique de
+   index.html est genere depuis ces memes gabarits, il sert de repli quand le
+   JS ne tourne pas et pour l indexation. */
+const PORTFOLIO_TPL = {
+    timelineItem: item => `
+            <div class="timeline-item ${item.type}">
+                <div class="role-title">${item.title}</div>
+                <span class="company"><i class="${item.icon}"></i> ${item.company}</span>
+                ${item.period ? `<span class="period">${item.period}</span>` : ''}
+                <div class="summary">${item.summary}</div>
+            </div>`,
+
+    skillCard: skill => `
+            <div class="skill-card border-${skill.color}">
+                <div class="skill-content">
+                    <h3 style="color:var(--neon-${skill.color})"><i class="${skill.icon}"></i> ${skill.category}</h3>
+                    <ul>
+                        ${skill.items.map(item => `<li>${item}</li>`).join('\n                        ')}
+                    </ul>
+                </div>
+            </div>`,
+
+    projectCard: project => `
+            <div class="project-card border-${project.color}" onclick="window.open('${project.url}', '_blank')" style="cursor: pointer;">
+                <div class="project-content">
+                    <span class="project-tag" style="color:var(--neon-${project.color})">// ${project.tag}</span>
+                    <h3 style="color:var(--neon-${project.color})"><i class="${project.icon}"></i> ${project.title}</h3>
+                    <p>${project.description}</p>
+                </div>
+            </div>`,
+
+    publicationCard: pub => `
+            <div class="project-card paper-card border-${pub.color}" onclick="window.open('${pub.url}', '_blank')" style="cursor: pointer;">
+                <div class="project-content">
+                    <span class="project-tag" style="color:var(--neon-${pub.color})">// ${pub.ref}</span>
+                    <h3 style="color:var(--neon-${pub.color})"><i class="fas fa-file-alt"></i> ${pub.title}</h3>
+                    <p>${pub.summary}</p>
+                    <span class="paper-meta">${pub.meta}</span>
+                </div>
+            </div>`
+};
+
 function initPortfolio() {
     const data = PORTFOLIO_DATA;
     if (!data) return;
@@ -35,44 +77,19 @@ function initPortfolio() {
 
     // --- CAREER JOURNEY ---
     const timeline = document.querySelector('.timeline');
-    if (timeline) {
-        timeline.innerHTML = data.career.map(item => `
-            <div class="timeline-item ${item.type}">
-                <div class="role-title">${item.title}</div>
-                <span class="company"><i class="${item.icon}"></i> ${item.company}</span>
-                <div class="summary">${item.summary}</div>
-            </div>
-        `).join('');
-    }
+    if (timeline) timeline.innerHTML = data.career.map(PORTFOLIO_TPL.timelineItem).join('');
 
     // --- SKILLS ---
-    const skillsGrid = document.querySelector('.grid-container');
-    if (skillsGrid) {
-        skillsGrid.innerHTML = data.skills.map(skill => `
-            <div class="skill-card border-${skill.color}">
-                <div class="skill-content">
-                    <h3 style="color:var(--neon-${skill.color})"><i class="${skill.icon}"></i> ${skill.category}</h3>
-                    <ul>
-                        ${skill.items.map(item => `<li>${item}</li>`).join('')}
-                    </ul>
-                </div>
-            </div>
-        `).join('');
-    }
+    const skillsGrid = document.getElementById('portfolio-skills');
+    if (skillsGrid) skillsGrid.innerHTML = data.skills.map(PORTFOLIO_TPL.skillCard).join('');
 
     // --- PROJECTS ---
-    const projectsGrid = document.querySelectorAll('.grid-container')[1];
-    if (projectsGrid) {
-        projectsGrid.innerHTML = data.projects.map(project => `
-            <div class="project-card border-${project.color}" onclick="window.open('${project.url}', '_blank')" style="cursor: pointer;">
-                <div class="project-content">
-                    <span class="project-tag" style="color:var(--neon-${project.color})">// ${project.tag}</span>
-                    <h3 style="color:var(--neon-${project.color})"><i class="${project.icon}"></i> ${project.title}</h3>
-                    <p>${project.description}</p>
-                </div>
-            </div>
-        `).join('');
-    }
+    const projectsGrid = document.getElementById('portfolio-projects');
+    if (projectsGrid) projectsGrid.innerHTML = data.projects.map(PORTFOLIO_TPL.projectCard).join('');
+
+    // --- PUBLICATIONS ---
+    const papersGrid = document.getElementById('portfolio-papers');
+    if (papersGrid) papersGrid.innerHTML = (data.publications || []).map(PORTFOLIO_TPL.publicationCard).join('');
 
     // --- FOOTER ---
     const footerEl = document.querySelector('div[style*="border-top: 1px solid rgba(255,255,255,0.1)"]');

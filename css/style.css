@@ -717,6 +717,21 @@ h2.port-h2 {
     box-shadow: 0 0 10px var(--neon-blue);
 }
 
+.timeline-item.tech::before {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+/* Periode du poste, discrete sous l employeur. */
+.timeline-item .period {
+    display: block;
+    font-family: var(--code-font);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    color: #777;
+    margin-top: 0.2rem;
+}
+
 .role-title {
     font-size: 1.3rem;
     font-weight: 700;
@@ -787,6 +802,31 @@ h2.port-h2 {
 .skill-card li {
     border-left: 2px solid transparent;
     padding-left: 10px;
+}
+
+/* Les titres de publication sont longs : colonnes plus larges que la grille
+   projets, et minmax borne a 100% pour ne pas deborder sur mobile. */
+#portfolio-papers {
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+}
+
+.paper-card h3 {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    align-items: flex-start;
+}
+
+.paper-card h3 i {
+    margin-top: 0.15rem;
+}
+
+.paper-meta {
+    display: block;
+    margin-top: 0.9rem;
+    font-family: var(--code-font);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: #777;
 }
 
 .project-tag {
