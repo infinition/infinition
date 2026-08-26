@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T22:18:33.525Z",
+  "generated_at": "2026-08-26T23:48:56.566Z",
   "user": "infinition",
   "count": 100,
   "total_stars": 7224,
@@ -37,7 +37,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -66,12 +66,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-04-09T19:48:40Z",
-      "pushed_at": "2026-08-12T22:48:19Z",
-      "image": "https://github.com/user-attachments/assets/d12c99ad-3500-4984-ae04-29006331345e",
+      "pushed_at": "2026-08-26T23:31:28Z",
+      "image": "https://raw.githubusercontent.com/infinition/waveshare-watch-rs/main/.github/waveshare-watch-rs.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -100,12 +100,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2024-11-12T17:38:35Z",
-      "pushed_at": "2026-07-20T16:24:56Z",
-      "image": "https://github.com/user-attachments/assets/182f82f0-5c3a-48a9-a75e-37b9cfa2263a",
+      "pushed_at": "2026-08-26T23:31:02Z",
+      "image": "https://raw.githubusercontent.com/infinition/bjorn-detector/main/.github/bjorn-detector.gif",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -134,12 +134,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-09-10T21:51:46Z",
-      "pushed_at": "2026-08-12T22:47:50Z",
-      "image": "https://github.com/user-attachments/assets/4bac23ae-b82a-437b-9c8b-997df351228d",
+      "pushed_at": "2026-08-26T23:30:22Z",
+      "image": "https://raw.githubusercontent.com/infinition/Bjorn-Manager/main/.github/Bjorn-Manager.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -147,7 +147,7 @@
       "name": "Zombieland",
       "full_name": "infinition/Zombieland",
       "url": "https://github.com/infinition/Zombieland",
-      "site": null,
+      "site": "https://infinition.github.io/Zombieland/",
       "description": "Zombieland is a  command and control (C2) server designed to manage and communicate multiple client machines (referred to as \"zombies\"). Encrypted communication with clients, allowing for the execution of various commands,  and persistence on Zombies. Communication between the server and Zombie is secured using symmetric encryption with  Fernet.",
       "stars": 42,
       "forks_count": 4,
@@ -168,12 +168,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2024-06-11T09:10:15Z",
-      "pushed_at": "2026-08-12T22:50:22Z",
-      "image": "https://github.com/user-attachments/assets/3fd1bd4b-49ac-4b84-9fe1-988813167583",
+      "pushed_at": "2026-08-26T23:30:54Z",
+      "image": "https://raw.githubusercontent.com/infinition/Zombieland/main/.github/Zombieland.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -202,12 +202,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-01-14T16:30:19Z",
-      "pushed_at": "2026-08-11T14:06:52Z",
-      "image": "https://github.com/user-attachments/assets/d48889f4-9e99-4379-8b1b-82b8dad6cd0e",
+      "pushed_at": "2026-08-26T23:31:21Z",
+      "image": "https://raw.githubusercontent.com/infinition/obsidian-obsidget/main/.github/obsidian-obsidget.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -215,7 +215,7 @@
       "name": "P4wnP1-Infinition-Payloads",
       "full_name": "infinition/P4wnP1-Infinition-Payloads",
       "url": "https://github.com/infinition/P4wnP1-Infinition-Payloads",
-      "site": null,
+      "site": "https://infinition.github.io/P4wnP1-Infinition-Payloads/",
       "description": "Compilation of HID Scripts and Payloads for P4wnP1",
       "stars": 33,
       "forks_count": 4,
@@ -236,12 +236,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2021-04-11T21:48:26Z",
-      "pushed_at": "2026-08-11T14:08:40Z",
-      "image": "https://github.com/user-attachments/assets/675b04c9-dcfe-48f0-be8a-fc2b827bb1e1",
+      "pushed_at": "2026-08-26T23:30:38Z",
+      "image": "https://raw.githubusercontent.com/infinition/P4wnP1-Infinition-Payloads/main/.github/P4wnP1-Infinition-Payloads.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -249,7 +249,7 @@
       "name": "EPD-Emulator",
       "full_name": "infinition/EPD-Emulator",
       "url": "https://github.com/infinition/EPD-Emulator",
-      "site": null,
+      "site": "https://infinition.github.io/EPD-Emulator/",
       "description": "EPD Emulator for simulating EPD (E-Paper Display) screens, useful for development and testing purposes. It supports both Tkinter and Flask for display rendering, and it can emulate color as well as monochrome displays.",
       "stars": 31,
       "forks_count": 5,
@@ -270,12 +270,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2024-06-04T16:53:35Z",
-      "pushed_at": "2026-08-11T14:10:08Z",
-      "image": "https://github.com/user-attachments/assets/db43515f-72bc-4441-b814-c723415b3737",
+      "pushed_at": "2026-08-26T23:30:26Z",
+      "image": "https://raw.githubusercontent.com/infinition/EPD-Emulator/main/.github/EPD-Emulator.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -304,12 +304,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-02-02T16:13:29Z",
-      "pushed_at": "2026-06-02T10:01:00Z",
-      "image": "https://github.com/user-attachments/assets/4ebde614-0166-4ca5-868e-60eb9a13ff95",
+      "pushed_at": "2026-08-26T23:31:21Z",
+      "image": "https://raw.githubusercontent.com/infinition/obsidian-lumina/main/.github/obsidian-lumina.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -338,12 +338,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2021-04-16T16:40:33Z",
-      "pushed_at": "2026-08-11T14:11:22Z",
-      "image": "https://github.com/user-attachments/assets/30a4f7a2-6743-47e5-aacc-b8d65b6663b0",
+      "pushed_at": "2026-08-26T23:30:54Z",
+      "image": "https://raw.githubusercontent.com/infinition/Win10_LockPicker-by-Infinition/main/.github/Win10_LockPicker-by-Infinition.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -372,12 +372,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-06-01T16:07:03Z",
-      "pushed_at": "2026-08-11T14:12:44Z",
-      "image": "https://github.com/user-attachments/assets/62c37ef5-bf43-49c0-8dea-637a990b9ab9",
+      "pushed_at": "2026-08-26T23:30:38Z",
+      "image": "https://raw.githubusercontent.com/infinition/Pixal3D-pipeline/main/.github/Pixal3D-pipeline.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -406,12 +406,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-02-12T21:29:23Z",
-      "pushed_at": "2026-08-26T17:12:52Z",
-      "image": "https://github.com/user-attachments/assets/4a9e886c-25d4-4a5d-9463-7cf1104e1a4d",
+      "pushed_at": "2026-08-26T23:30:22Z",
+      "image": "https://raw.githubusercontent.com/infinition/Bjorn-cortex/main/.github/Bjorn-cortex.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -440,12 +440,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-02-26T11:43:36Z",
-      "pushed_at": "2026-08-11T14:14:11Z",
-      "image": "https://github.com/user-attachments/assets/60b4f991-7913-4400-9425-402f9e7b8119",
+      "pushed_at": "2026-08-26T23:30:27Z",
+      "image": "https://raw.githubusercontent.com/infinition/FluidLM/main/.github/FluidLM.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -474,12 +474,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-03-11T12:26:13Z",
-      "pushed_at": "2026-08-11T14:15:37Z",
-      "image": "https://github.com/user-attachments/assets/eb26fb12-531b-4960-81e8-3db9f83118ba",
+      "pushed_at": "2026-08-26T23:30:38Z",
+      "image": "https://raw.githubusercontent.com/infinition/FluidWorld/main/.github/FluidWorld.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -508,12 +508,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-04-30T21:55:33Z",
-      "pushed_at": "2026-06-02T10:03:09Z",
-      "image": "https://github.com/user-attachments/assets/4727027a-4712-4781-a51b-fd784f5fece1",
+      "pushed_at": "2026-08-26T23:31:28Z",
+      "image": "https://raw.githubusercontent.com/infinition/paradigm-memory/main/.github/paradigm-memory.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -542,12 +542,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-12-01T12:56:39Z",
-      "pushed_at": "2026-08-11T14:20:23Z",
-      "image": "https://github.com/user-attachments/assets/5f0a1f68-9ced-419e-83d9-ee7f82527002",
+      "pushed_at": "2026-08-26T23:30:12Z",
+      "image": "https://raw.githubusercontent.com/infinition/AcidOS/main/.github/AcidOS.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -556,7 +556,7 @@
       "full_name": "infinition/bjorn_dungeon",
       "url": "https://github.com/infinition/bjorn_dungeon",
       "site": "https://infinition.github.io/bjorn_dungeon/",
-      "description": "",
+      "description": "Browser-based first-person dungeon crawler with procedurally generated floors, biomes, bosses and rarity-based loot across 14 equipment slots. Keyboard, touch and gamepad support.",
       "stars": 6,
       "forks_count": 1,
       "watchers": 6,
@@ -576,12 +576,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-12-14T23:37:00Z",
-      "pushed_at": "2026-08-11T14:21:37Z",
-      "image": "https://github.com/user-attachments/assets/e358b3bc-953e-4bc8-9279-c656bcb4e590",
+      "pushed_at": "2026-08-26T23:31:08Z",
+      "image": "https://raw.githubusercontent.com/infinition/bjorn_dungeon/main/.github/bjorn_dungeon.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -610,12 +610,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-03-16T22:00:47Z",
-      "pushed_at": "2026-08-26T17:10:47Z",
-      "image": "https://github.com/user-attachments/assets/c1e1c27f-a1fe-4d95-bc9d-cf9d4439cbcd",
+      "pushed_at": "2026-08-26T23:30:55Z",
+      "image": "https://raw.githubusercontent.com/infinition/bjorn-chaos-lab/main/.github/bjorn-chaos-lab.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -644,12 +644,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-12-02T21:40:33Z",
-      "pushed_at": "2026-08-11T14:28:17Z",
-      "image": "https://github.com/user-attachments/assets/70f3e23e-2da7-4ec4-bfe2-965f1c95b5e5",
+      "pushed_at": "2026-08-26T23:30:23Z",
+      "image": "https://raw.githubusercontent.com/infinition/DataBrain/main/.github/DataBrain.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -657,7 +657,7 @@
       "name": "Excel-Sheet-PasswordCracker",
       "full_name": "infinition/Excel-Sheet-PasswordCracker",
       "url": "https://github.com/infinition/Excel-Sheet-PasswordCracker",
-      "site": null,
+      "site": "https://infinition.github.io/Excel-Sheet-PasswordCracker/",
       "description": "Password Cracking Script for Excel protected password sheets.",
       "stars": 6,
       "forks_count": 2,
@@ -678,12 +678,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2021-04-11T22:52:55Z",
-      "pushed_at": "2026-08-11T14:28:30Z",
-      "image": "https://github.com/user-attachments/assets/5b769fe4-90f4-482d-94f5-fb54900b840f",
+      "pushed_at": "2026-08-26T23:30:27Z",
+      "image": "https://raw.githubusercontent.com/infinition/Excel-Sheet-PasswordCracker/main/.github/Excel-Sheet-PasswordCracker.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -712,12 +712,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-06-01T15:14:59Z",
-      "pushed_at": "2026-08-04T16:54:53Z",
-      "image": "https://github.com/user-attachments/assets/a0b602d1-b407-4ccd-86cc-63a2ad80a71c",
+      "pushed_at": "2026-08-26T23:31:28Z",
+      "image": "https://raw.githubusercontent.com/infinition/scriptorium/main/.github/scriptorium.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -725,7 +725,7 @@
       "name": "bjorn-code",
       "full_name": "infinition/bjorn-code",
       "url": "https://github.com/infinition/bjorn-code",
-      "site": "https://infinition.github.io/AcidBjorn/",
+      "site": "https://infinition.github.io/bjorn-code/",
       "description": "Bjorn Code is a VS Code extension for bi-directional file synchronization between your local workspace and a remote host over SSH/SFTP. It is designed for seamless remote development workflows - edit locally, sync instantly to a Raspberry Pi or any Linux server.",
       "stars": 5,
       "forks_count": 1,
@@ -746,12 +746,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-01-19T22:52:56Z",
-      "pushed_at": "2026-08-12T23:13:51Z",
-      "image": "https://github.com/user-attachments/assets/63251571-05e6-486a-bef4-68a8c796c28c",
+      "pushed_at": "2026-08-26T23:31:00Z",
+      "image": "https://raw.githubusercontent.com/infinition/bjorn-code/main/.github/bjorn-code.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -780,12 +780,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-12-23T16:38:32Z",
-      "pushed_at": "2026-08-11T14:27:44Z",
-      "image": "https://github.com/user-attachments/assets/d765ee28-44d5-4d78-bac5-09eadcae26ba",
+      "pushed_at": "2026-08-26T23:31:14Z",
+      "image": "https://raw.githubusercontent.com/infinition/obsidian-flash-quizz/main/.github/obsidian-flash-quizz.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -814,12 +814,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-01-25T14:33:24Z",
-      "pushed_at": "2026-08-11T14:27:57Z",
-      "image": "https://github.com/user-attachments/assets/4ee73eec-13a3-492b-86dc-6a4bbd805013",
+      "pushed_at": "2026-08-26T23:31:28Z",
+      "image": "https://raw.githubusercontent.com/infinition/obsidian-python-ds-studio/main/.github/obsidian-python-ds-studio.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -827,7 +827,7 @@
       "name": "PyDep",
       "full_name": "infinition/PyDep",
       "url": "https://github.com/infinition/PyDep",
-      "site": null,
+      "site": "https://infinition.github.io/PyDep/",
       "description": "PyDep is a Python script designed to analyze and visualize the dependencies within a Python project. It recursively scans the specified directory for Python files, extracts import statements and file interactions (CSV and JSON), and generates an interactive dependency graph using NetworkX and Plotly.",
       "stars": 5,
       "forks_count": 0,
@@ -848,12 +848,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2024-06-11T08:43:18Z",
-      "pushed_at": "2026-08-11T14:30:45Z",
-      "image": "https://github.com/user-attachments/assets/71970370-f91b-49b6-92c3-2dd5753a04f9",
+      "pushed_at": "2026-08-26T23:30:39Z",
+      "image": "https://raw.githubusercontent.com/infinition/PyDep/main/.github/PyDep.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -861,7 +861,7 @@
       "name": "PyTreefy",
       "full_name": "infinition/PyTreefy",
       "url": "https://github.com/infinition/PyTreefy",
-      "site": null,
+      "site": "https://infinition.github.io/PyTreefy/",
       "description": "PyTreefy is a Python script designed to explore a specified directory, generate a visual representation of its directory tree, and collect all Python scripts (*.py) present in that directory. The collected scripts are then combined with the directory tree structure and written to an output file.",
       "stars": 5,
       "forks_count": 0,
@@ -882,12 +882,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2024-06-11T08:39:50Z",
-      "pushed_at": "2026-08-11T14:31:02Z",
-      "image": "https://github.com/user-attachments/assets/aa56a2e9-018f-48e8-9108-de7e656c3cf8",
+      "pushed_at": "2026-08-26T23:30:46Z",
+      "image": "https://raw.githubusercontent.com/infinition/PyTreefy/main/.github/PyTreefy.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -916,12 +916,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-01-28T09:15:26Z",
-      "pushed_at": "2026-08-11T14:32:15Z",
-      "image": "https://github.com/user-attachments/assets/a4c34928-779a-4e81-ba9d-7f80006224eb",
+      "pushed_at": "2026-08-26T23:31:21Z",
+      "image": "https://raw.githubusercontent.com/infinition/obsidian-nova/main/.github/obsidian-nova.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -950,12 +950,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-11-25T14:18:14Z",
-      "pushed_at": "2026-08-12T23:14:16Z",
-      "image": "https://github.com/user-attachments/assets/d6b05f9e-fe8f-46be-a95c-a1ef2a858606",
+      "pushed_at": "2026-08-26T23:30:46Z",
+      "image": "https://raw.githubusercontent.com/infinition/Q-LAB/main/.github/Q-LAB.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -984,12 +984,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-12-01T16:37:07Z",
-      "pushed_at": "2026-08-12T23:16:52Z",
-      "image": "https://github.com/user-attachments/assets/d0dcedae-0e04-4fc6-9c7a-570dfdefd578",
+      "pushed_at": "2026-08-26T23:30:06Z",
+      "image": "https://raw.githubusercontent.com/infinition/Acid2Vect/main/.github/Acid2Vect.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1018,12 +1018,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-12-01T17:40:07Z",
-      "pushed_at": "2026-08-12T23:14:39Z",
-      "image": "https://github.com/user-attachments/assets/229848e2-103d-4afa-a3e6-dc17b2def9e3",
+      "pushed_at": "2026-08-26T23:30:12Z",
+      "image": "https://raw.githubusercontent.com/infinition/AcidPages/main/.github/AcidPages.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1052,12 +1052,12 @@
       "is_template": true,
       "default_branch": "main",
       "created_at": "2026-01-22T08:49:38Z",
-      "pushed_at": "2026-08-25T00:15:47Z",
-      "image": "https://github.com/user-attachments/assets/3328de0f-c452-4c2e-800d-9e549259613c",
+      "pushed_at": "2026-08-26T23:30:18Z",
+      "image": "https://raw.githubusercontent.com/infinition/AcidWiki/main/.github/AcidWiki.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1086,12 +1086,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2024-10-28T22:16:08Z",
-      "pushed_at": "2026-08-12T23:15:23Z",
-      "image": "https://github.com/user-attachments/assets/3e2e12f2-1cd5-4615-a24e-c75aa311ce33",
+      "pushed_at": "2026-08-26T23:30:22Z",
+      "image": "https://raw.githubusercontent.com/infinition/Catrina/main/.github/Catrina.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1120,12 +1120,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-12-14T02:00:24Z",
-      "pushed_at": "2026-08-13T00:11:04Z",
-      "image": "https://github.com/user-attachments/assets/bb8cd0c6-4481-481b-bda1-0e19e9ec50a0",
+      "pushed_at": "2026-08-26T23:31:08Z",
+      "image": "https://raw.githubusercontent.com/infinition/ladiosa/main/.github/ladiosa.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1154,12 +1154,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-03-03T20:35:44Z",
-      "pushed_at": "2026-08-12T23:39:52Z",
-      "image": "https://github.com/user-attachments/assets/f320a691-ff53-4434-8ec8-0ba4fee4dba7",
+      "pushed_at": "2026-08-26T23:30:32Z",
+      "image": "https://raw.githubusercontent.com/infinition/LiquidBrain/main/.github/LiquidBrain.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1188,12 +1188,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-01-16T15:51:35Z",
-      "pushed_at": "2026-08-12T23:15:49Z",
-      "image": "https://github.com/user-attachments/assets/b56670ec-f6b7-40e9-85e6-39917bb5b87a",
+      "pushed_at": "2026-08-26T23:31:14Z",
+      "image": "https://raw.githubusercontent.com/infinition/obsidian-linkflow/main/.github/obsidian-linkflow.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1222,12 +1222,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-01-18T20:45:44Z",
-      "pushed_at": "2026-08-12T23:16:08Z",
-      "image": "https://github.com/user-attachments/assets/a6e9610c-7b92-4713-99f1-e2707f596ec8",
+      "pushed_at": "2026-08-26T23:31:21Z",
+      "image": "https://raw.githubusercontent.com/infinition/obsidian-magiclink/main/.github/obsidian-magiclink.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1261,7 +1261,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1290,12 +1290,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-01-19T20:24:50Z",
-      "pushed_at": "2026-08-12T23:17:20Z",
-      "image": "https://github.com/user-attachments/assets/4e56aeba-8263-47cc-b7d7-5731426546d4",
+      "pushed_at": "2026-08-26T23:30:12Z",
+      "image": "https://raw.githubusercontent.com/infinition/AcidSnip/main/.github/AcidSnip.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1324,12 +1324,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-12-01T16:51:07Z",
-      "pushed_at": "2026-08-12T23:17:49Z",
-      "image": "https://github.com/user-attachments/assets/df0c23dc-9236-4d98-a9bd-92d60aec6aef",
+      "pushed_at": "2026-08-26T23:30:17Z",
+      "image": "https://raw.githubusercontent.com/infinition/AcidVect3D/main/.github/AcidVect3D.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1358,12 +1358,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-03-05T00:26:06Z",
-      "pushed_at": "2026-08-12T23:38:08Z",
-      "image": "https://github.com/user-attachments/assets/77d2a834-c905-48b3-9d1f-80f9cc8344b5",
+      "pushed_at": "2026-08-26T23:30:18Z",
+      "image": "https://raw.githubusercontent.com/infinition/BeamForge/main/.github/BeamForge.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1392,12 +1392,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-06-17T14:07:16Z",
-      "pushed_at": "2026-08-13T00:12:45Z",
-      "image": "https://github.com/user-attachments/assets/2099f8e0-9821-41c8-8abe-1eb0158a2b4c",
+      "pushed_at": "2026-08-26T23:30:55Z",
+      "image": "https://raw.githubusercontent.com/infinition/beee/main/.github/beee.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1431,7 +1431,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-09T05:17:08.789Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1439,7 +1439,7 @@
       "name": "FluidPlanner",
       "full_name": "infinition/FluidPlanner",
       "url": "https://github.com/infinition/FluidPlanner",
-      "site": null,
+      "site": "https://infinition.github.io/FluidPlanner/",
       "description": "Hierarchical planning via multi-scale reaction-diffusion PDEs.",
       "stars": 2,
       "forks_count": 0,
@@ -1460,12 +1460,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-03-19T14:31:20Z",
-      "pushed_at": "2026-08-11T14:18:24Z",
-      "image": "https://github.com/user-attachments/assets/9ed825c5-882f-4a4f-8ff5-692d3dfb59fb",
+      "pushed_at": "2026-08-26T23:30:28Z",
+      "image": "https://raw.githubusercontent.com/infinition/FluidPlanner/main/.github/FluidPlanner.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1473,7 +1473,7 @@
       "name": "ga-vs-scalarization",
       "full_name": "infinition/ga-vs-scalarization",
       "url": "https://github.com/infinition/ga-vs-scalarization",
-      "site": null,
+      "site": "https://infinition.github.io/ga-vs-scalarization/",
       "description": "This project measures whether Cl(3,0) geometric algebra layers bring anything beyond exact SO(3) equivariance on small synthetic 3D vector tasks.",
       "stars": 2,
       "forks_count": 0,
@@ -1494,12 +1494,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-07-06T14:04:27Z",
-      "pushed_at": "2026-08-26T22:17:33Z",
+      "pushed_at": "2026-08-26T22:35:36Z",
       "image": "https://raw.githubusercontent.com/infinition/ga-vs-scalarization/main/.github/ga-vs-scalarization.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1507,8 +1507,8 @@
       "name": "halo",
       "full_name": "infinition/halo",
       "url": "https://github.com/infinition/halo",
-      "site": null,
-      "description": "",
+      "site": "https://infinition.github.io/halo/",
+      "description": "An NVMe to host memory layer streamer for running LLMs larger than available VRAM. A focused C library, driven from Rust.",
       "stars": 2,
       "forks_count": 0,
       "watchers": 2,
@@ -1528,12 +1528,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-05-04T21:34:21Z",
-      "pushed_at": "2026-08-12T23:39:19Z",
-      "image": "https://github.com/user-attachments/assets/13e53d40-b632-438f-af27-0bc4761ca4cc",
+      "pushed_at": "2026-08-26T23:31:07Z",
+      "image": "https://raw.githubusercontent.com/infinition/halo/main/.github/halo.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1562,12 +1562,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2021-05-02T01:11:32Z",
-      "pushed_at": "2026-08-26T22:18:24Z",
+      "pushed_at": "2026-08-26T23:48:51Z",
       "image": "https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1596,12 +1596,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-03-04T09:18:58Z",
-      "pushed_at": "2026-08-12T23:46:01Z",
-      "image": "https://github.com/user-attachments/assets/71f78dca-441e-4f13-8093-02b2f32c657a",
+      "pushed_at": "2026-08-26T23:31:08Z",
+      "image": "https://raw.githubusercontent.com/infinition/land-protocol/main/.github/land-protocol.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1630,12 +1630,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-03-05T00:22:48Z",
-      "pushed_at": "2026-08-12T23:40:45Z",
-      "image": "https://github.com/user-attachments/assets/224178b8-ba46-4136-bbd6-596198f25ca4",
+      "pushed_at": "2026-08-26T23:30:32Z",
+      "image": "https://raw.githubusercontent.com/infinition/LSTN/main/.github/LSTN.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1664,12 +1664,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-08-15T23:12:09Z",
-      "pushed_at": "2026-08-16T12:06:35Z",
+      "pushed_at": "2026-08-26T23:32:27Z",
       "image": "https://raw.githubusercontent.com/infinition/mantis/main/docs/mantis.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-16T04:48:24.938Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1698,12 +1698,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-04-22T18:43:12Z",
-      "pushed_at": "2026-08-12T23:40:24Z",
-      "image": "https://github.com/user-attachments/assets/1f14021d-aa2e-4460-93da-5a5b685252b8",
+      "pushed_at": "2026-08-26T23:31:15Z",
+      "image": "https://raw.githubusercontent.com/infinition/neo/main/.github/neo.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1737,7 +1737,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-12T05:44:54.828Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1745,7 +1745,7 @@
       "name": "QRobot",
       "full_name": "infinition/QRobot",
       "url": "https://github.com/infinition/QRobot",
-      "site": null,
+      "site": "https://infinition.github.io/QRobot/",
       "description": "QRobot is a Q-learning simulation application where an agent learns to navigate a grid, reach goals, and avoid obstacles. The application includes an optional API to visualize data in real-time.",
       "stars": 2,
       "forks_count": 0,
@@ -1766,12 +1766,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2024-10-26T16:31:08Z",
-      "pushed_at": "2026-08-12T23:41:03Z",
-      "image": "https://github.com/user-attachments/assets/1ebe2f7b-98dc-4909-aaf7-eb21c94a7f99",
+      "pushed_at": "2026-08-26T23:30:46Z",
+      "image": "https://raw.githubusercontent.com/infinition/QRobot/main/.github/QRobot.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1800,12 +1800,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-12-05T22:37:13Z",
-      "pushed_at": "2026-08-12T23:41:20Z",
-      "image": "https://github.com/user-attachments/assets/cddc7a43-7f2f-412b-974c-898f38f9266b",
+      "pushed_at": "2026-08-26T23:30:48Z",
+      "image": "https://raw.githubusercontent.com/infinition/SYNAPTIK/main/.github/SYNAPTIK.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1834,12 +1834,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-05-05T15:34:30Z",
-      "pushed_at": "2026-07-29T22:54:59Z",
-      "image": "https://github.com/user-attachments/assets/ffcf7d64-e040-4495-a1d1-a96cbaaeb148",
+      "pushed_at": "2026-08-26T23:30:06Z",
+      "image": "https://raw.githubusercontent.com/infinition/0xid/main/.github/0xid.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1868,12 +1868,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-01-19T21:56:35Z",
-      "pushed_at": "2026-06-01T20:08:09Z",
-      "image": "https://github.com/user-attachments/assets/26994d6e-a938-48e9-9eaf-c5db98f7ee7d",
+      "pushed_at": "2026-08-26T23:30:06Z",
+      "image": "https://raw.githubusercontent.com/infinition/AcidLuna/main/.github/AcidLuna.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1902,12 +1902,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-04-10T23:32:49Z",
-      "pushed_at": "2026-06-02T09:49:55Z",
-      "image": "https://github.com/user-attachments/assets/28ef22f6-0981-4047-aaf8-b56e571a83da",
+      "pushed_at": "2026-08-26T23:30:14Z",
+      "image": "https://raw.githubusercontent.com/infinition/AcidMonitorr/main/.github/AcidMonitorr.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1941,7 +1941,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-07T05:49:39.709Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -1949,7 +1949,7 @@
       "name": "antler",
       "full_name": "infinition/antler",
       "url": "https://github.com/infinition/antler",
-      "site": null,
+      "site": "https://infinition.github.io/antler/",
       "description": "Exact-diagonalization study of digital Abelian logical phase control in a number-conserving correlated-hopping SSH ladder.",
       "stars": 1,
       "forks_count": 0,
@@ -1970,12 +1970,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-07-18T13:13:00Z",
-      "pushed_at": "2026-08-26T22:16:42Z",
+      "pushed_at": "2026-08-26T22:37:38Z",
       "image": "https://raw.githubusercontent.com/infinition/antler/main/.github/antler.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2009,7 +2009,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-26T22:18:33.525Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2043,7 +2043,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-16T04:48:24.938Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2077,7 +2077,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-24T23:27:52.997Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2111,7 +2111,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2145,7 +2145,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2153,7 +2153,7 @@
       "name": "drift-contract",
       "full_name": "infinition/drift-contract",
       "url": "https://github.com/infinition/drift-contract",
-      "site": null,
+      "site": "https://infinition.github.io/drift-contract/",
       "description": "Drift-Bounded Spectral Updates for Deep Local Learning",
       "stars": 1,
       "forks_count": 0,
@@ -2174,12 +2174,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-07-06T14:32:47Z",
-      "pushed_at": "2026-08-26T22:16:46Z",
+      "pushed_at": "2026-08-26T22:35:26Z",
       "image": "https://raw.githubusercontent.com/infinition/drift-contract/main/.github/drift-contract.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2213,7 +2213,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2242,12 +2242,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-07-27T19:30:36Z",
-      "pushed_at": "2026-08-09T20:02:11Z",
+      "pushed_at": "2026-08-26T23:32:27Z",
       "image": "https://raw.githubusercontent.com/infinition/ferrite/main/assets/icon-180.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2255,7 +2255,7 @@
       "name": "fix-glb-bambustudio",
       "full_name": "infinition/fix-glb-bambustudio",
       "url": "https://github.com/infinition/fix-glb-bambustudio",
-      "site": null,
+      "site": "https://infinition.github.io/fix-glb-bambustudio/",
       "description": "Fix GLB for Bambu Studio is a lightweight tool for Windows that repairs 3D .glb files (from AI generators like Tripo3D, Meshy, Luma, CSM, or gltfpack) to make them directly readable and printable in Bambu Studio, Orca Slicer, and PrusaSlicer.",
       "stars": 1,
       "forks_count": 0,
@@ -2276,12 +2276,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-08-12T21:53:01Z",
-      "pushed_at": "2026-08-12T21:57:00Z",
-      "image": "https://github.com/user-attachments/assets/ef7f0d2d-f3f8-4d2c-9f80-aae7382bd68b",
+      "pushed_at": "2026-08-26T23:31:01Z",
+      "image": "https://raw.githubusercontent.com/infinition/fix-glb-bambustudio/main/.github/fix-glb-bambustudio.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-12T23:55:30.705Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2310,12 +2310,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2025-11-25T18:02:03Z",
-      "pushed_at": "2026-06-02T09:55:20Z",
-      "image": "https://github.com/user-attachments/assets/307b72e2-e8af-4e86-b618-25c633ffb514",
+      "pushed_at": "2026-08-26T22:48:41Z",
+      "image": "https://raw.githubusercontent.com/infinition/flappy-ufo-ql/main/.github/flappy-ufo-ql.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2344,12 +2344,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-03-03T20:50:26Z",
-      "pushed_at": "2026-08-11T14:18:54Z",
-      "image": "https://github.com/user-attachments/assets/07bbde23-03c7-4a75-9d24-82f1d80318fd",
+      "pushed_at": "2026-08-26T23:30:31Z",
+      "image": "https://raw.githubusercontent.com/infinition/FluidVLA/main/.github/FluidVLA.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2378,12 +2378,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-07-25T22:01:27Z",
-      "pushed_at": "2026-08-09T19:54:21Z",
+      "pushed_at": "2026-08-26T23:32:27Z",
       "image": "https://raw.githubusercontent.com/infinition/haal/main/src-tauri/icons/icon.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2417,7 +2417,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2425,7 +2425,7 @@
       "name": "it-from-fix",
       "full_name": "infinition/it-from-fix",
       "url": "https://github.com/infinition/it-from-fix",
-      "site": null,
+      "site": "https://infinition.github.io/it-from-fix/",
       "description": "This repository contains a speculative research note in theoretical physics, the toy models built to probe it, and, importantly, the experiments that failed. Nothing here claims to be a theory of quantum gravity. What you will find is a research process, documented honestly enough that someone else can pick it up, including its dead ends.",
       "stars": 1,
       "forks_count": 0,
@@ -2446,12 +2446,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-07-08T16:51:48Z",
-      "pushed_at": "2026-08-26T22:16:44Z",
+      "pushed_at": "2026-08-26T22:35:50Z",
       "image": "https://raw.githubusercontent.com/infinition/it-from-fix/main/.github/it-from-fix.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2459,8 +2459,8 @@
       "name": "kynos",
       "full_name": "infinition/kynos",
       "url": "https://github.com/infinition/kynos",
-      "site": null,
-      "description": "",
+      "site": "https://infinition.github.io/kynos/",
+      "description": "Research project on video understanding, pairing a browser extension that captures frames with a Python vision pipeline for segmentation, optical flow and pixel tracking.",
       "stars": 1,
       "forks_count": 0,
       "watchers": 1,
@@ -2480,12 +2480,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-05-04T21:35:28Z",
-      "pushed_at": "2026-08-26T22:16:59Z",
+      "pushed_at": "2026-08-26T22:35:53Z",
       "image": "https://raw.githubusercontent.com/infinition/kynos/main/.github/kynos.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2519,7 +2519,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2527,8 +2527,8 @@
       "name": "lazyos",
       "full_name": "infinition/lazyos",
       "url": "https://github.com/infinition/lazyos",
-      "site": null,
-      "description": "",
+      "site": "https://infinition.github.io/lazyos/",
+      "description": "A keyboard-driven TUI cockpit for managing a Linux system: aliases, services, crons, processes, GPU, packages, Docker, SSH, disk, network and logs. One binary, zero runtime dependencies.",
       "stars": 1,
       "forks_count": 0,
       "watchers": 1,
@@ -2548,12 +2548,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-06-01T20:42:51Z",
-      "pushed_at": "2026-08-26T22:16:55Z",
+      "pushed_at": "2026-08-26T22:35:52Z",
       "image": "https://raw.githubusercontent.com/infinition/lazyos/main/.github/lazyos.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2582,12 +2582,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-08-05T11:32:22Z",
-      "pushed_at": "2026-08-05T11:41:23Z",
-      "image": "https://github.com/user-attachments/assets/fff826f2-f1ab-4190-aa13-34488e9ea58e",
+      "pushed_at": "2026-08-26T23:31:14Z",
+      "image": "https://raw.githubusercontent.com/infinition/ledge/main/.github/ledge.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2595,7 +2595,7 @@
       "name": "limb",
       "full_name": "infinition/limb",
       "url": "https://github.com/infinition/limb",
-      "site": null,
+      "site": "https://infinition.github.io/limb/",
       "description": "A self-hosted iOS springboard-style dashboard for your home services. Organize apps, bookmarks and widgets on a paginated grid with drag-and-drop, search and full JSON persistence.",
       "stars": 1,
       "forks_count": 0,
@@ -2616,12 +2616,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-04-15T23:52:50Z",
-      "pushed_at": "2026-08-26T22:17:07Z",
+      "pushed_at": "2026-08-26T22:35:50Z",
       "image": "https://raw.githubusercontent.com/infinition/limb/main/.github/limb.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2629,7 +2629,7 @@
       "name": "lucida-harness",
       "full_name": "infinition/lucida-harness",
       "url": "https://github.com/infinition/lucida-harness",
-      "site": null,
+      "site": "https://infinition.github.io/lucida-harness/",
       "description": "Lucida Harness is a lightweight test harness and local Web UI for evaluating background removal models and alpha matting algorithms.",
       "stars": 1,
       "forks_count": 0,
@@ -2650,12 +2650,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-08-04T22:51:18Z",
-      "pushed_at": "2026-08-26T22:16:40Z",
+      "pushed_at": "2026-08-26T22:35:25Z",
       "image": "https://raw.githubusercontent.com/infinition/lucida-harness/main/.github/lucida-harness.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2689,7 +2689,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2697,7 +2697,7 @@
       "name": "MyBruteLocal",
       "full_name": "infinition/MyBruteLocal",
       "url": "https://github.com/infinition/MyBruteLocal",
-      "site": null,
+      "site": "https://infinition.github.io/MyBruteLocal/",
       "description": "A self-hosted fork of LaBrute designed to run entirely on your own machine or LAN. No cloud dependency, no account on an external server. Drop the .bat, click play.",
       "stars": 1,
       "forks_count": 0,
@@ -2718,12 +2718,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-06-01T20:19:07Z",
-      "pushed_at": "2026-08-26T22:16:57Z",
+      "pushed_at": "2026-08-26T22:35:31Z",
       "image": "https://raw.githubusercontent.com/infinition/MyBruteLocal/main/.github/MyBruteLocal.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2757,7 +2757,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2791,7 +2791,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2825,7 +2825,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2859,7 +2859,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2893,7 +2893,7 @@
       "image_status": "none",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2922,12 +2922,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-08-24T14:12:27Z",
-      "pushed_at": "2026-08-24T16:03:56Z",
+      "pushed_at": "2026-08-26T23:32:27Z",
       "image": "https://raw.githubusercontent.com/infinition/paralod/main/assets/paralod.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-24T23:27:52.997Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2956,12 +2956,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-08-12T11:15:58Z",
-      "pushed_at": "2026-08-26T17:10:01Z",
+      "pushed_at": "2026-08-26T23:32:27Z",
       "image": "https://raw.githubusercontent.com/infinition/parareload/main/assets/icon.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-12T23:55:30.705Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -2995,7 +2995,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-12T23:55:30.705Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3029,7 +3029,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-14T05:44:18.951Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3037,7 +3037,7 @@
       "name": "POEasy",
       "full_name": "infinition/POEasy",
       "url": "https://github.com/infinition/POEasy",
-      "site": null,
+      "site": "https://infinition.github.io/POEasy/",
       "description": "A lightweight Windows macro tool that maps a single keypress (or key combination) to a sequence of keystrokes fired with configurable random delays between each one.",
       "stars": 1,
       "forks_count": 0,
@@ -3058,12 +3058,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-04-10T19:58:50Z",
-      "pushed_at": "2026-08-26T22:17:14Z",
+      "pushed_at": "2026-08-26T22:35:42Z",
       "image": "https://raw.githubusercontent.com/infinition/POEasy/main/.github/POEasy.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3097,7 +3097,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3131,7 +3131,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3165,7 +3165,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3194,12 +3194,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-07-27T19:30:52Z",
-      "pushed_at": "2026-08-09T19:43:30Z",
+      "pushed_at": "2026-08-26T23:32:27Z",
       "image": "https://raw.githubusercontent.com/infinition/scrute/main/icons/scrute-180.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3233,7 +3233,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-10T05:42:53.469Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3262,12 +3262,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-08-12T15:53:45Z",
-      "pushed_at": "2026-08-12T19:19:52Z",
+      "pushed_at": "2026-08-26T23:32:27Z",
       "image": "https://raw.githubusercontent.com/infinition/sims-package2glb/main/src-tauri/icons/128x128.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-12T23:55:30.705Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3301,7 +3301,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-24T23:27:52.997Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3335,7 +3335,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3343,7 +3343,7 @@
       "name": "z-manifold",
       "full_name": "infinition/z-manifold",
       "url": "https://github.com/infinition/z-manifold",
-      "site": null,
+      "site": "https://infinition.github.io/z-manifold/",
       "description": "Constrained adaptation of language models on a manifold of valid adapters, studied as a safety mechanism: poisoning resistance, out-of-distribution detection, and few-shot regularization, by construction rather than by heuristics.",
       "stars": 1,
       "forks_count": 0,
@@ -3364,12 +3364,12 @@
       "is_template": false,
       "default_branch": "main",
       "created_at": "2026-07-06T13:30:22Z",
-      "pushed_at": "2026-08-26T22:16:49Z",
+      "pushed_at": "2026-08-26T22:35:55Z",
       "image": "https://raw.githubusercontent.com/infinition/z-manifold/main/.github/z-manifold.png",
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     },
     {
@@ -3403,7 +3403,7 @@
       "image_status": "readme",
       "previous_name": null,
       "first_seen": "2026-08-05T12:13:48.673Z",
-      "last_seen": "2026-08-26T22:18:33.525Z",
+      "last_seen": "2026-08-26T23:48:56.566Z",
       "missing": false
     }
   ]
