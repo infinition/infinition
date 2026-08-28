@@ -382,8 +382,8 @@ const REPOS = (() => {
         card.addEventListener('mouseenter', () => clearTimeout(leaveTimer));
         card.addEventListener('mouseleave', () => { if (canHover()) leaveTimer = setTimeout(closeCard, 180); });
 
-        /* Un clic ou un tap sur une icone n'ouvre jamais GitHub : il ouvre la card.
-           La navigation passe uniquement par les boutons Code et Live site. */
+        /* Sur PC (avec survol disponible) : un clic gauche ouvre directement le depot GitHub.
+           Sur mobile (tactile sans survol) : le premier tap ouvre la card de previsualisation. */
         grid.addEventListener('click', e => {
             const app = e.target.closest('.repo-app');
             if (!app || !app.dataset.id) return;
@@ -391,8 +391,16 @@ const REPOS = (() => {
             if (!repo) return;
             clearTimeout(hoverTimer);
             clearTimeout(leaveTimer);
-            if (String(openId) === app.dataset.id && !canHover()) closeCard();
-            else openCard(repo, app);
+
+            if (canHover()) {
+                if (repo.url) {
+                    closeCard();
+                    window.open(repo.url, '_blank', 'noopener,noreferrer');
+                }
+            } else {
+                if (String(openId) === app.dataset.id) closeCard();
+                else openCard(repo, app);
+            }
         });
 
         backdrop.addEventListener('click', closeCard);
