@@ -78,6 +78,16 @@ const ARTSTATION = (() => {
             const key = el.dataset.metric;
             el.hidden = !(Number(totals[key]) > 0);
         });
+
+        /* Le lien vers le profil reste toujours la, seul son compteur
+           disparait quand la source ne le porte pas. */
+        const followers = Number(totals.followers) > 0;
+        const followersCount = document.getElementById('art-count-followers');
+        if (followersCount) followersCount.hidden = !followers;
+        const followersLabel = document.getElementById('art-followers-label');
+        if (followersLabel) {
+            followersLabel.textContent = followers ? 'followers on artstation' : 'view on artstation';
+        }
     }
 
     function cardHtml(art, index) {
