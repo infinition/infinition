@@ -12,7 +12,6 @@ const CONFIG = {
     themeColor: "#060606",
     accentColor: "#22c55e",
     manifestPath: "manifest.webmanifest",
-    enableMusic: true, // Set to false to disable ambient music and hide mute/unmute button
     enableSoundFx: true, // Set to false to disable sound effects
     enableOverload: true, // Set to false to disable reactor overload mode and hide SYS STABLE/OVERLOAD status
     social: {

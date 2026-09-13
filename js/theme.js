@@ -22,10 +22,11 @@ function setTheme(themeName) {
     document.body.classList.add(`theme-${themeName}`);
     localStorage.setItem('site-theme', themeName);
 
-    // Update reactor state if needed
+    // Changer de theme reecrit les couleurs du reacteur, on lui rend donc
+    // l'etat qu'il avait avant la bascule.
     if (typeof setRingActive === 'function') {
-        const isAudioPlaying = !document.getElementById('cymatics')?.paused;
-        setRingActive(isAudioPlaying);
+        const reactor = document.getElementById('reactor');
+        setRingActive(Boolean(reactor && reactor.classList.contains('active-mode')));
     }
 }
 

@@ -1368,40 +1368,6 @@ h2.port-h2 {
     transform: translateZ(0);
 }
 
-/* --- AUDIO TOGGLE BTN --- */
-.audio-toggle-btn {
-    margin-left: 10px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 4px 8px;
-    font-size: 0.7rem;
-    font-family: var(--code-font);
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #aaa;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.audio-toggle-btn i {
-    font-size: 0.7rem;
-    margin-right: 4px;
-}
-
-.audio-toggle-btn:hover {
-    color: var(--neon-red);
-    border-color: var(--neon-red);
-    box-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
-}
-
-
-/* Quand la musique joue, on affiche le bouton */
-body.audio-playing .audio-toggle-btn {
-    display: inline-flex;
-}
-
 /* --- PORTAL HOME (LAYOUT) --- */
 /* version fusionnée / finale */
 #portal-view {

@@ -1,4 +1,4 @@
-let cymaticsStarted = false;
+let reactorWoken = false;
 
 function setRingActive(active) {
     // If overload mode is disabled, skip all visual changes
@@ -29,72 +29,21 @@ function setRingActive(active) {
     }
 }
 
-function attachAudioListener() {
-    const audioToggleBtn = document.getElementById('audio-toggle');
-    if (audioToggleBtn) {
-        // Clone to remove old listeners and ensure clean state
-        const newBtn = audioToggleBtn.cloneNode(true);
-        audioToggleBtn.parentNode.replaceChild(newBtn, audioToggleBtn);
-
-        newBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Stop propagation so body click doesn't trigger
-            const audio = document.getElementById("cymatics");
-            if (!audio) return;
-
-            if (audio.paused) {
-                audio.play().then(() => {
-                    newBtn.innerHTML = '<i class="fas fa-wave-square"></i> MUTE';
-                    setRingActive(true);
-                });
-            } else {
-                audio.pause();
-                newBtn.innerHTML = '<i class="fas fa-play"></i> PLAY';
-                setRingActive(false);
-            }
-        });
-    }
-}
-
-function startCymatics() {
-    if (cymaticsStarted) return;
-    cymaticsStarted = true;
-
-    // Always activate the reactor visual effect (overload mode)
+/* Premier clic sur le portail : le reacteur passe en surchauffe. */
+function wakeReactor() {
+    if (reactorWoken) return;
+    reactorWoken = true;
     setRingActive(true);
-
-    // If music is disabled in config, skip audio playback
-    if (typeof CONFIG !== 'undefined' && CONFIG.enableMusic === false) {
-        return;
-    }
-
-    const audio = document.getElementById("cymatics");
-    const toggleBtn = document.getElementById("audio-toggle");
-
-    if (!audio) {
-        console.error("Audio #cymatics introuvable");
-        return;
-    }
-
-    audio.volume = 0.65;
-
-    audio.play().then(() => {
-        if (toggleBtn) {
-            toggleBtn.style.display = "inline-flex";
-            toggleBtn.innerHTML = '<i class="fas fa-wave-square"></i> MUTE';
-        }
-    }).catch(err => {
-        console.log("Autoplay bloqué : ", err);
-    });
 }
 
 function togglePortalState(e) {
     // Note: We don't stop propagation here because this is called BY the body listener
 
-    // 1. Ensure Audio/System is started
-    if (!cymaticsStarted) {
-        startCymatics();
-        // startCymatics sets ring active.
-        // We want to ensure data is ALSO revealed for the full "ON" experience.
+    // 1. Premier clic : on allume le reacteur
+    if (!reactorWoken) {
+        wakeReactor();
+        // wakeReactor met l'anneau en surchauffe, on revele aussi les donnees
+        // pour que le portail soit entierement "ON".
         const secretData = document.getElementById('secret-data');
         if (secretData && !secretData.classList.contains('data-unlocked')) {
             if (typeof unlockData === 'function') unlockData();
@@ -144,27 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isActive) return;
 
         // 2. Check if the click is on an interactive element
-        // We explicitly check for the audio toggle button ID as well to be safe
-        if (e.target.closest('button, a, input, textarea, select, .back-btn, .music-trigger, .portal-btn, #audio-toggle, .sys-bar')) {
+        if (e.target.closest('button, a, input, textarea, select, .back-btn, .music-trigger, .portal-btn, .sys-bar')) {
             return;
         }
 
         // 3. Trigger the Toggle
         togglePortalState(e);
     });
-
-    const audioToggleBtn = document.getElementById('audio-toggle');
-    if (audioToggleBtn) {
-        // If music is disabled, hide the button completely and don't attach listeners
-        if (typeof CONFIG !== 'undefined' && CONFIG.enableMusic === false) {
-            audioToggleBtn.style.display = "none";
-            audioToggleBtn.remove(); // Remove from DOM entirely
-        } else {
-            audioToggleBtn.style.display = "none";
-            // Initial listener attachment
-            attachAudioListener();
-        }
-    }
 
     // If overload mode is disabled, hide the SYS status indicator
     if (typeof CONFIG !== 'undefined' && CONFIG.enableOverload === false) {
