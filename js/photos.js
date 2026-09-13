@@ -233,6 +233,94 @@ const PHOTOS = (() => {
 
     /* --- VISIONNEUSE --- */
 
+    /* --- ANIMATIONS ---
+       A l'ouverture la photo nait de la vignette cliquee et grandit jusqu'a
+       sa place : un fondu ne dirait pas d'ou elle vient, ce mouvement si.
+       A la fermeture elle y retourne. Au changement, elle sort du cote vers
+       lequel on va et la suivante entre par l'autre bord.
+
+       Le calcul fait coincider le contenu peint et non la boite : object-fit
+       "contain" laisse des bandes, et caler la boite ferait partir la photo
+       d'a cote de la vignette. */
+
+    const ANIM = { duration: 500, easing: 'cubic-bezier(.22, .61, .36, 1)' };
+
+    const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let stepping = false;
+    let closing = false;
+
+    function paintedRect(img) {
+        const box = img.getBoundingClientRect();
+        const nw = img.naturalWidth || box.width;
+        const nh = img.naturalHeight || box.height;
+        if (!nw || !nh || !box.width) return null;
+
+        const fit = Math.min(box.width / nw, box.height / nh);
+        return {
+            width: nw * fit,
+            height: nh * fit,
+            cx: box.left + box.width / 2,
+            cy: box.top + box.height / 2
+        };
+    }
+
+    /* Transformation qui superpose la photo a la vignette d'origine. */
+    function flipFrom(img, from) {
+        const to = paintedRect(img);
+        if (!from || !to || !to.width || !from.width) return null;
+
+        const dx = from.left + from.width / 2 - to.cx;
+        const dy = from.top + from.height / 2 - to.cy;
+        return `translate(${dx}px, ${dy}px) scale(${from.width / to.width})`;
+    }
+
+    /* La vignette d'ou la photo est partie, si elle est encore affichee : au
+       retour d'un filtre ou d'un lien profond elle peut avoir disparu. */
+    function originRect() {
+        if (!state.current) return null;
+        const shot = document.querySelector(`#photo-grid .shot[data-id="${CSS.escape(state.current.id)}"]`);
+        if (!shot) return null;
+
+        const box = shot.getBoundingClientRect();
+        return box.width && box.bottom > 0 && box.top < window.innerHeight ? box : null;
+    }
+
+    function whenReady(img, run) {
+        if (img.complete && img.naturalWidth) {
+            run();
+            return;
+        }
+
+        let done = false;
+        const once = () => {
+            if (done) return;
+            done = true;
+            run();
+        };
+
+        img.addEventListener('load', once, { once: true });
+        /* Une image en echec n'emet pas "load". Sans ce filet, l'animation de
+           changement resterait bloquee et la visionneuse figee. */
+        img.addEventListener('error', once, { once: true });
+        setTimeout(once, 1200);
+    }
+
+    function animateOpen(from) {
+        const img = document.getElementById('pv-image');
+        const viewer = document.getElementById('photo-viewer');
+        if (!img || !viewer || reduceMotion()) return;
+
+        whenReady(img, () => {
+            const start = flipFrom(img, from);
+            img.animate([
+                { transform: start || 'scale(.88)', opacity: start ? 1 : 0 },
+                { transform: 'none', opacity: 1 }
+            ], ANIM);
+            viewer.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 280, easing: 'ease-out' });
+        });
+    }
+
     /* --- ZOOM A LA MOLETTE ---
        L'image porte une transformation "translate puis scale", d'origine
        centree. Un point de l'image sous le curseur doit y rester pendant le
@@ -324,11 +412,13 @@ const PHOTOS = (() => {
     }
 
 
-    function open(id) {
+    function open(id, from = null, silent = false) {
         const photo = state.photos.find(p => p.id === id);
         const viewer = document.getElementById('photo-viewer');
         if (!photo || !viewer) return;
 
+        const wasOpen = viewer.classList.contains('open') && !closing;
+        closing = false;
         state.current = photo;
 
         const title = document.getElementById('pv-title');
@@ -355,6 +445,8 @@ const PHOTOS = (() => {
         const close = document.getElementById('pv-close');
         if (close) close.focus();
 
+        if (!silent && !wasOpen) animateOpen(from);
+
         if (window.location.hash !== `#photo:${photo.id}`) {
             history.pushState(null, null, `#photo:${photo.id}`);
         }
@@ -379,26 +471,76 @@ const PHOTOS = (() => {
         }
     }
 
-    function step(delta) {
+    async function step(delta) {
         const list = state.visible.length ? state.visible : state.photos;
-        if (!state.current || list.length < 2) return;
+        if (stepping || !state.current || list.length < 2) return;
 
         const index = list.findIndex(p => p.id === state.current.id);
         if (index < 0) return;
 
-        open(list[(index + delta + list.length) % list.length].id);
+        const next = list[(index + delta + list.length) % list.length];
+        const img = document.getElementById('pv-image');
+
+        if (!img || reduceMotion()) {
+            open(next.id, null, true);
+            return;
+        }
+
+        /* Aller vers la suivante pousse l'image vers la gauche, la nouvelle
+           arrive de la droite : le mouvement suit la direction du geste. */
+        const way = delta > 0 ? -1 : 1;
+        stepping = true;
+
+        try {
+            await img.animate([
+                { transform: img.style.transform || 'none', opacity: 1 },
+                { transform: `translateX(${way * 16}%) scale(.94)`, opacity: 0 }
+            ], { duration: 210, easing: 'cubic-bezier(.4, 0, 1, 1)' }).finished;
+
+            open(next.id, null, true);
+
+            await new Promise(resolve => whenReady(img, resolve));
+
+            await img.animate([
+                { transform: `translateX(${-way * 16}%) scale(.94)`, opacity: 0 },
+                { transform: 'none', opacity: 1 }
+            ], { duration: 290, easing: ANIM.easing }).finished;
+        } finally {
+            stepping = false;
+        }
     }
 
     function close() {
         const viewer = document.getElementById('photo-viewer');
-        if (!viewer) return;
-        viewer.classList.remove('open');
-        document.body.classList.remove('photo-open');
+        if (!viewer || !viewer.classList.contains('open') || closing) return;
 
         const img = document.getElementById('pv-image');
-        if (img) img.removeAttribute('src');
-        resetZoom();
-        state.current = null;
+        const back = originRect();
+
+        const finish = () => {
+            closing = false;
+            viewer.classList.remove('open');
+            document.body.classList.remove('photo-open');
+            if (img) img.removeAttribute('src');
+            resetZoom();
+            state.current = null;
+        };
+
+        if (!img || !img.getAttribute('src') || reduceMotion()) {
+            finish();
+        } else {
+            closing = true;
+            /* La photo repart vers sa vignette. Sans vignette a l'ecran, elle
+               se retire simplement sur place. */
+            const end = flipFrom(img, back);
+            img.animate([
+                { transform: img.style.transform || 'none', opacity: 1 },
+                { transform: end || 'scale(.9)', opacity: end ? 1 : 0 }
+            ], ANIM);
+            viewer.animate([{ opacity: 1 }, { opacity: 0 }],
+                { duration: ANIM.duration, easing: 'ease-in', fill: 'forwards' })
+                .onfinish = finish;
+        }
 
         if (window.location.hash.startsWith('#photo:')) {
             history.pushState(null, null, '#photos');
@@ -444,7 +586,7 @@ const PHOTOS = (() => {
         if (grid) {
             grid.addEventListener('click', e => {
                 const shot = e.target.closest('.shot');
-                if (shot) open(shot.dataset.id);
+                if (shot) open(shot.dataset.id, shot.getBoundingClientRect());
             });
         }
 

@@ -384,16 +384,31 @@ body.photo-open {
     overflow: hidden;
 }
 
+/* La barre passe par dessus l'image au lieu de lui prendre une rangee.
+   Sur un ecran large l'apercu est borne par sa hauteur : les soixante-dix
+   pixels de la barre coutaient une centaine de pixels de largeur a l'image.
+   C'est aussi ce que font les visionneuses du systeme. */
 .photo-viewer .pv-bar {
-    flex: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
     display: flex;
     align-items: center;
     gap: .8rem;
-    padding: .7rem clamp(.7rem, 2vw, 1.2rem);
+    padding: .7rem clamp(.7rem, 2vw, 1.2rem) 2.2rem;
     padding-left: max(.7rem, env(safe-area-inset-left));
     padding-right: max(.7rem, env(safe-area-inset-right));
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
-    background: rgba(10, 12, 15, .9);
+    background: linear-gradient(180deg, rgba(3, 4, 6, .92), rgba(3, 4, 6, .55) 55%, transparent);
+    /* Le degrade couvre le haut de l'image : il ne doit intercepter ni la
+       molette ni le deplacement, seuls ses boutons restent cliquables. */
+    pointer-events: none;
+}
+
+.photo-viewer .pv-close,
+.photo-viewer .pv-tag {
+    pointer-events: auto;
 }
 
 .photo-viewer .pv-close {
@@ -468,14 +483,17 @@ body.photo-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    /* Aucune marge : l'apercu prend toute la place disponible. */
+    padding: 0;
 }
 
 .photo-viewer .pv-stage img {
-    max-width: 100%;
-    max-height: 100%;
+    /* La plupart des sources font 600 px de large. Sans agrandissement elles
+       flotteraient au centre d un ecran noir : on remplit la scene, le rapport
+       etant preserve par object-fit. */
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    border-radius: 6px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, .7);
     /* Le zoom a la molette ecrit ici. Origine centree : c est ce que suppose
        le calcul qui garde le point vise sous le curseur. */
