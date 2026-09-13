@@ -202,15 +202,59 @@ try {
     }
 }
 
-if (!result && prev && Array.isArray(prev.artworks) && prev.artworks.length > 0) {
+const previousArtworks = (prev && Array.isArray(prev.artworks)) ? prev.artworks : [];
+
+if (!result && previousArtworks.length > 0) {
     console.warn('  aucune source disponible, le snapshot precedent est conserve');
-    result = { profile: prev.profile, artworks: prev.artworks, source: prev.source || 'cache' };
+    result = { profile: prev.profile, artworks: previousArtworks, source: prev.source || 'cache' };
 }
 
 if (!result) {
     console.error('Aucune creation ArtStation recuperee, rien n est ecrit.');
     process.exit(1);
 }
+
+/**
+ * Fusion avec le snapshot precedent.
+ *
+ * Cloudflare refuse les adresses des runners GitHub : en pratique le
+ * collecteur ne passe que depuis un poste, et l integration continue tourne
+ * au flux RSS. Or le RSS ne porte ni like, ni vue, ni image secondaire, et il
+ * est tronque aux dernieres publications. Le laisser remplacer un snapshot
+ * collecte par l API revenait a effacer tous les compteurs a chaque passage
+ * quotidien, et a perdre les creations sorties du flux.
+ *
+ * Regle : l API fait autorite et remplace tout. Le RSS, lui, n ajoute que ce
+ * qu il apporte vraiment, les creations encore inconnues. Tout ce qui est
+ * deja connu garde ce que la derniere collecte complete avait ramene.
+ */
+function mergeWithPrevious(fresh, source) {
+    if (source === 'api' || previousArtworks.length === 0) return fresh;
+
+    const known = new Map(previousArtworks.map(a => [a.id, a]));
+    let added = 0;
+
+    for (const art of fresh) {
+        if (known.has(art.id)) continue;
+        known.set(art.id, art);
+        added += 1;
+    }
+
+    console.log(`rss: ${added} nouvelle(s) creation(s), `
+        + `${previousArtworks.length} conservee(s) du snapshot precedent`);
+
+    return [...known.values()];
+}
+
+const merged = mergeWithPrevious(result.artworks, result.source);
+
+/* Une galerie servie par le RSS mais adossee a une collecte complete n est
+   pas dans le meme etat qu une galerie qui n a jamais vu l API : le champ le
+   dit, la page sait alors que les compteurs sont ceux de la derniere
+   collecte et non ceux du jour. */
+const source = (result.source === 'rss' && previousArtworks.length > 0)
+    ? 'rss+cache'
+    : result.source;
 
 /* Le flux RSS ne porte pas le profil. Plutot que d afficher des compteurs a
    zero, on garde ceux du dernier passage reussi du collecteur. */
@@ -228,13 +272,13 @@ const profile = result.profile || (prev && prev.profile) || {
     software: []
 };
 
-const artworks = result.artworks
+const artworks = merged
     .slice()
     .sort((a, b) => new Date(b.published_at || 0) - new Date(a.published_at || 0));
 
 const out = {
     generated_at: new Date().toISOString(),
-    source: result.source,
+    source,
     username: USER,
     profile,
     totals: {

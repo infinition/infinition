@@ -80,10 +80,17 @@ jobs:
         run: pip install --disable-pip-version-check curl_cffi
 
       - name: Collecter l'instantane ArtStation
-        # Cloudflare peut refuser une adresse de runner. L'echec n'arrete pas
-        # le workflow, build-artstation.mjs bascule alors sur le flux RSS.
-        continue-on-error: true
-        run: python scripts/collect-artstation.py infinition --out .artstation-raw.json
+        # En pratique Cloudflare refuse les adresses des runners GitHub, meme
+        # avec l'empreinte TLS de Chrome : ce pas echoue presque toujours ici
+        # et c'est attendu. build-artstation.mjs bascule alors sur le flux RSS,
+        # qui n'ajoute que les creations encore inconnues sans jamais ecraser
+        # ce que la derniere collecte complete avait ramene.
+        # Pour rafraichir les compteurs, lancer "npm run artstation" en local.
+        # Le repli sur echo evite une annotation rouge quotidienne sur un run
+        # par ailleurs vert.
+        run: >
+          python scripts/collect-artstation.py infinition --out .artstation-raw.json
+          || echo 'collecteur bloque par Cloudflare, le flux RSS prend le relais'
 
       - name: Build data/artstation.json
         run: node scripts/build-artstation.mjs --user infinition --raw .artstation-raw.json --out data/artstation.json

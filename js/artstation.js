@@ -92,6 +92,9 @@ const ARTSTATION = (() => {
 
     function cardHtml(art, index) {
         const shots = (art.images || []).length;
+        /* Une creation arrivee par le flux RSS n a pas encore de compteur.
+           Afficher zero like et zero vue serait faux, on ne montre rien. */
+        const counted = (art.likes_count || 0) + (art.views_count || 0) > 0;
         return `
             <button class="art-card" data-id="${esc(art.id)}"
                     style="animation-delay: ${Math.min(index * 30, 400)}ms"
@@ -103,10 +106,11 @@ const ARTSTATION = (() => {
                 ${shots > 1 ? `<span class="art-shots"><i class="fas fa-layer-group"></i>${shots}</span>` : ''}
                 <span class="art-veil">
                     <span class="art-title">${esc(art.title)}</span>
+                    ${counted ? `
                     <span class="art-metrics">
                         <span><i class="fas fa-heart"></i>${fmtCount(art.likes_count)}</span>
                         <span><i class="fas fa-eye"></i>${fmtCount(art.views_count)}</span>
-                    </span>
+                    </span>` : ''}
                 </span>
             </button>`;
     }
@@ -121,12 +125,6 @@ const ARTSTATION = (() => {
         if (status && state.meta) {
             const stamp = formatDate(state.meta.generated_at);
             status.innerHTML = `&gt; GALLERY SYNCED <span class="ok">${esc(stamp)}</span> // SOURCE ArtStation`;
-        }
-
-        /* Les compteurs de likes et de vues ne tiennent pas dans la carte
-           quand la source est le flux RSS, ils valent tous zero. */
-        if (state.meta && state.meta.source === 'rss') {
-            grid.querySelectorAll('.art-metrics').forEach(el => { el.style.display = 'none'; });
         }
     }
 

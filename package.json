@@ -1,8 +1,12 @@
 {
   "name": "infinition-site-scripts",
   "private": true,
-  "description": "Build scripts for infinition.github.io, run in CI only (no browser bundle).",
+  "description": "Build scripts for infinition.github.io, run in CI. L'enrichissement ArtStation se lance en local, Cloudflare refusant les runners.",
   "dependencies": {
     "sharp": "^0.33.5"
+  },
+  "scripts": {
+    "papers": "node scripts/build-papers.mjs --out data/papers.json",
+    "artstation": "python scripts/collect-artstation.py infinition --out .artstation-raw.json && node scripts/build-artstation.mjs --user infinition --raw .artstation-raw.json --out data/artstation.json"
   }
 }

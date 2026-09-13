@@ -12,6 +12,11 @@ La sortie est un instantane brut consomme ensuite par build-artstation.mjs.
 Le script ne remplace jamais un instantane existant par une version vide :
 en cas d echec il sort en code 1 et le build Node bascule sur le flux RSS.
 
+Cloudflare refuse en pratique les adresses des runners GitHub, meme avec
+l empreinte TLS de Chrome. Ce collecteur est donc fait pour tourner depuis un
+poste : "npm run artstation" rafraichit les compteurs, l integration continue
+se contentant d ajouter les nouvelles creations vues dans le flux RSS.
+
 Usage: python scripts/collect-artstation.py infinition --out .artstation-raw.json
 """
 
