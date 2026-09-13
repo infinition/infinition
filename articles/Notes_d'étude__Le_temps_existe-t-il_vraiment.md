@@ -358,7 +358,7 @@ La conférence explore l’existence et la nature du temps à travers le langage
                 "correct": false
             },
             {
-                "text": "Parce que pour dire qu'une chose n'existe pas, il faut savoir ce qu'elle est — ce qui reste impossible pour le temps.",
+                "text": "Parce que pour dire qu'une chose n'existe pas, il faut savoir ce qu'elle est, ce qui reste impossible pour le temps.",
                 "correct": true
             },
             {

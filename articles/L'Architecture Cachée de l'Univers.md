@@ -10,7 +10,7 @@
 
 ### 1.1. Le Contexte Historique et le Problème de la Rotation Galactique
 
-Depuis les années 1930, un paradoxe hante l'astrophysique : la vitesse de rotation des galaxies est excessive par rapport à la masse de la matière visible qu'elles contiennent. Pour expliquer cette cohésion — qui agit comme un "échafaudage invisible" empêchant la dislocation des galaxies — les physiciens ont postulé l'existence de la matière noire, estimée à **85 % de la masse de l'univers**. Pendant près d'un siècle, cette substance est restée indétectable directement.
+Depuis les années 1930, un paradoxe hante l'astrophysique : la vitesse de rotation des galaxies est excessive par rapport à la masse de la matière visible qu'elles contiennent. Pour expliquer cette cohésion, qui agit comme un "échafaudage invisible" empêchant la dislocation des galaxies, les physiciens ont postulé l'existence de la matière noire, estimée à **85 % de la masse de l'univers**. Pendant près d'un siècle, cette substance est restée indétectable directement.
 
 ### 1.2. La Découverte de Tomonori Totani (29 Novembre 2025)
 

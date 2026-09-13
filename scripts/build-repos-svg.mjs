@@ -44,7 +44,7 @@ const COLOR = {
     sub: '#6b7280'
 };
 /* Double-quoted family names would break XML attribute quoting (font-family="...")
-   once this is parsed strictly, e.g. by GitHub's own SVG renderer — single quotes only. */
+   once this is parsed strictly, e.g. by GitHub's own SVG renderer : single quotes only. */
 const FONT_UI = "Inter, 'Segoe UI', system-ui, sans-serif";
 const FONT_CODE = "'JetBrains Mono', Consolas, Menlo, monospace";
 
@@ -66,7 +66,7 @@ const fmtStars = n => n >= 1000 ? (n / 1000).toFixed(1).replace('.0', '') + 'k' 
 
 const truncate = (s, max) => s.length > max ? s.slice(0, max - 1) + '…' : s;
 
-/* Source images are README banners and screenshots, not pre-made icons — one
+/* Source images are README banners and screenshots, not pre-made icons, one
    was 2.6MB. Resizing every one down to icon size before embedding is what
    keeps the SVG in the hundreds-of-KB range instead of double digits of MB
    (94 repos x uncapped raw bytes was 13MB). Only a resize failure (a source
@@ -101,7 +101,7 @@ async function mapWithConcurrency(items, limit, fn) {
     return out;
 }
 
-/* Icons only, no bounding card — same springboard-icon layout as the live
+/* Icons only, no bounding card, same springboard-icon layout as the live
    #repos grid, just without the hover/click states a static image can't do. */
 function buildSvg(repos, totalStars, dataUris) {
     const COLS = 8;
@@ -125,7 +125,7 @@ function buildSvg(repos, totalStars, dataUris) {
         const iconY = y;
         const clipId = `clip${i}`;
         const year = r.created_at ? new Date(r.created_at).getFullYear() : '';
-        const lang = r.language || '—';
+        const lang = r.language || 'n/a';
 
         defs += `<clipPath id="${clipId}"><rect x="${iconX}" y="${iconY}" width="${ICON}" height="${ICON}" rx="14"/></clipPath>`;
 

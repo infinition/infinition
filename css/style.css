@@ -2648,7 +2648,7 @@ body.audio-playing .audio-toggle-btn {
     display: none;
 }
 
-/* MOBILE (max 768px) — VERSION 100% OPÉRATIONNELLE */
+/* MOBILE (max 768px) : VERSION 100% OPÉRATIONNELLE */
 @media (max-width: 768px) {
 
 

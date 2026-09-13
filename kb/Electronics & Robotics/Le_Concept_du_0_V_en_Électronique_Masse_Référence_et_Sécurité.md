@@ -5,7 +5,7 @@
 Le concept du 0 V, souvent appelé « masse », est fondamental en électronique et pourtant fréquemment mal compris. Il ne s’agit pas d’un zéro absolu, mais d’un point de référence commun, comparable au niveau de la mer. Toutes les tensions positives ou négatives y sont rapportées.  
 
 Ce point de référence est indispensable : sans lui, une tension n’a pas de sens et les composants ne peuvent pas communiquer efficacement.  
-Le 0 V occupe en réalité trois rôles distincts — sécurité, référence fonctionnelle et blindage — chacun associé à un symbole et à une fonction précise :  
+Le 0 V occupe en réalité trois rôles distincts (sécurité, référence fonctionnelle et blindage), chacun associé à un symbole et à une fonction précise :  
 - **La mise à la terre** protège contre les chocs électriques.  
 - **La masse des signaux** sert de référence interne.  
 - **La masse châssis** agit comme un bouclier électromagnétique.  
@@ -27,20 +27,20 @@ Par ailleurs, la masse n’est pas une destination où le courant « s’arrête
 
 Le terme « masse » regroupe trois fonctions qui se ressemblent mais n’ont pas du tout la même mission.
 
-### 1. La Mise à la Terre — *Le Protecteur*
+### 1. La Mise à la Terre : *Le Protecteur*
 
 - **Mission :** la sécurité électrique.  
 - **Connexion :** reliée physiquement à la terre via la troisième broche des prises.  
 - **Fonctionnement :** en cas de défaut (fil dénudé touchant un châssis métallique), le courant dangereux prend un chemin direct vers la terre. Le disjoncteur saute, évitant le passage du courant dans un corps humain.  
 - **Symbole :** plusieurs barres horizontales décroissantes.
 
-### 2. La Masse des Signaux — *Le Chef d’Orchestre*
+### 2. La Masse des Signaux : *Le Chef d’Orchestre*
 - **Mission :** servir de référence fonctionnelle interne.  
 - **Analogie :** c’est le « niveau de la mer » à l’intérieur du circuit.  
 - **Fonctionnement :** permet à tous les composants de parler le même langage électrique. Sans cette référence commune, les tensions ne peuvent pas être interprétées correctement.  
 - **Symbole :** un triangle pointant vers le bas.
 
-### 3. La Masse Châssis — *Le Gardien*
+### 3. La Masse Châssis : *Le Gardien*
 - **Mission :** blindage et protection contre les interférences électromagnétiques.  
 - **Connexion :** reliée au boîtier métallique de l’appareil.  
 - **Protection interne :** empêche les perturbations extérieures (ex. Wi-Fi) d’affecter les circuits internes.  
