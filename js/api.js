@@ -206,7 +206,26 @@ async function fetchGitHubReposLive() {
     } catch (e) { return []; }
 }
 
+/* Le flux RSS ne rapporte qu'une image interne du projet, la galerie affiche
+   sa couverture : la meme oeuvre sortait donc avec deux visuels selon la vue.
+   Les journaux lisent maintenant le meme instantane que la galerie, le flux
+   ne reste qu'un secours. */
 async function fetchArtStation() {
+    const gallery = await fetchSnapshot('data/artstation.json');
+    if (gallery && Array.isArray(gallery.artworks) && gallery.artworks.length) {
+        return gallery.artworks.map(a => ({
+            id: `art-${a.id}`,
+            type: 'artwork',
+            file: `art_${a.hash_id || a.id}.png`,
+            title: a.title,
+            date: a.published_at || '',
+            icon: 'fab fa-artstation',
+            image: a.cover_url || a.image_url || a.thumb_url || '',
+            content: a.description || '',
+            url: a.url
+        }));
+    }
+
     const snap = await fetchSnapshot('data/logs.json');
     if (snap && Array.isArray(snap.artworks) && snap.artworks.length) return snap.artworks;
     return fetchArtStationLive();

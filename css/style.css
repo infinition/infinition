@@ -938,24 +938,40 @@ h2.port-h2 {
     border-color: rgba(255, 107, 0, 0.4);
 }
 
+/* La vignette borne la place, elle n'impose plus de forme. Les icones de
+   depot sont des PNG deja detoures et les couvertures de publication sont des
+   pages en portrait : un cadre carre rognait les deux. Seule la vignette de
+   repli, qui ne porte qu'une icone de police, garde son cadre. */
 .article-thumb {
     width: 100px;
     height: 100px;
-    object-fit: cover;
     margin-right: 10px;
-    border: 1px solid #333;
     opacity: 0.7;
-    transition: all 0.3s;
+    transition: opacity 0.3s, border-color 0.3s, box-shadow 0.3s;
+    flex-shrink: 0;
+}
+
+img.article-thumb {
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+    object-position: center;
+}
+
+div.article-thumb {
+    border: 1px solid #333;
     border-radius: 4px;
     background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
 }
 
 .article-entry:hover .article-thumb {
     opacity: 1;
+}
+
+.article-entry:hover div.article-thumb {
     border-color: var(--neon-orange);
     box-shadow: 0 0 10px rgba(255, 107, 0, 0.2);
 }
@@ -1019,6 +1035,13 @@ h2.port-h2 {
     width: 100%;
     height: 140px;
     margin: 0 0 0.75rem 0;
+}
+
+.article-list.grid img.article-thumb {
+    max-width: 100%;
+}
+
+.article-list.grid div.article-thumb {
     border-radius: 8px;
 }
 
@@ -1960,6 +1983,10 @@ h2.port-h2 {
         margin-bottom: 1rem;
     }
 
+    img.article-thumb {
+        max-width: 100%;
+    }
+
     #global-search-input {
         font-size: 16px;
     }
@@ -2120,6 +2147,10 @@ h2.port-h2 {
         width: 100%;
         height: 150px;
         margin-bottom: 1rem;
+    }
+
+    img.article-thumb {
+        max-width: 100%;
     }
 
     .bottom-icons-container {
