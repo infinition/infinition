@@ -549,6 +549,11 @@ body.photo-open {
     align-items: center;
     gap: .8rem;
     padding: .7rem clamp(.7rem, 2vw, 1.2rem) 2.2rem;
+    /* Un element absolu se cale sur la boite de rembourrage de son parent :
+       le padding-top de securite de la visionneuse ne le repousse pas, il
+       doit porter le sien. Sans cela la croix de fermeture se retrouve sous
+       l encoche et devient inatteignable. */
+    padding-top: calc(.7rem + env(safe-area-inset-top));
     padding-left: max(.7rem, env(safe-area-inset-left));
     padding-right: max(.7rem, env(safe-area-inset-right));
     background: linear-gradient(180deg, rgba(3, 4, 6, .92), rgba(3, 4, 6, .55) 55%, transparent);
@@ -763,7 +768,10 @@ body.photo-open {
         max-height: 70vh;
         border-radius: 18px 18px 0 0;
         border-bottom: none;
-        padding: 8px 10px calc(14px + env(safe-area-inset-bottom));
+        /* Collee aux quatre bords : en paysage, l encoche laterale mangerait
+           le bord des options sans ces retraits. */
+        padding: 8px max(10px, env(safe-area-inset-right))
+            calc(14px + env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
         animation: albumUp .22s cubic-bezier(.22, .61, .36, 1) both;
     }
 

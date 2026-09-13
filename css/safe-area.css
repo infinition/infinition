@@ -108,6 +108,20 @@ body {
     }
 }
 
+/* --- TERMINAL ---
+   Il occupe toute la largeur et vient se coller aux bords. En paysage sur un
+   appareil a encoche, sa croix de fermeture et sa ligne de saisie passent
+   dessous. Le fond garde toute la largeur, seuls les contenus reculent. */
+#terminal-dropdown .term-header {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+}
+
+#terminal-dropdown .term-body {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+}
+
 /* --- FEUILLE DU BAS DES REPOS ---
    Le retrait du bas y etait deja, il manquait les cotes : la
    feuille va d un bord a l autre et passait sous l encoche en
