@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T16:50:37.930Z",
+  "generated_at": "2026-09-13T16:58:14.088Z",
   "author": "Fabien Polly",
   "author_search": "https://arxiv.org/search/?searchtype=author&query=Polly%2C%20Fabien",
   "count": 6,
@@ -56,7 +56,7 @@
     },
     {
       "id": "2607.06634",
-      "version": "",
+      "version": "v1",
       "title": "When Do Geometric Algebra Layers Beat Scalarization? A Controlled Study on SO(3)-Equivariant Vector Laws",
       "authors": [
         "Fabien Polly"
@@ -66,19 +66,19 @@
         "cs.LG"
       ],
       "primary_category": "cs.LG",
-      "published": "2026-07-07T00:00:00.000Z",
-      "updated": "2026-07-07T00:00:00.000Z",
+      "published": "2026-07-07T13:55:45Z",
+      "updated": "2026-07-07T13:55:45Z",
       "abs_url": "https://arxiv.org/abs/2607.06634",
       "pdf_url": "https://arxiv.org/pdf/2607.06634",
-      "comment": "10 pages, 2 figures, 4 tables. Code and data: this https URL",
+      "comment": "10 pages, 2 figures, 4 tables. Code and data: https://github.com/infinition/ga-vs-scalarization",
       "doi": "",
       "journal_ref": "",
       "status": "published",
-      "cover": "assets/papers/2607.06634.webp"
+      "cover": "assets/papers/2607.06634v1.webp"
     },
     {
       "id": "2607.05300",
-      "version": "",
+      "version": "v1",
       "title": "Learning Only What Valid Adapters Can Express: Subspace-Constrained Adaptation Against Fine-Tuning Poisoning",
       "authors": [
         "Fabien Polly"
@@ -89,15 +89,15 @@
         "cs.CR"
       ],
       "primary_category": "cs.LG",
-      "published": "2026-07-06T00:00:00.000Z",
-      "updated": "2026-07-06T00:00:00.000Z",
+      "published": "2026-07-06T16:43:04Z",
+      "updated": "2026-07-06T16:43:04Z",
       "abs_url": "https://arxiv.org/abs/2607.05300",
       "pdf_url": "https://arxiv.org/pdf/2607.05300",
-      "comment": "10 pages, 7 figures, 2 tables. Code and data: this https URL",
+      "comment": "10 pages, 7 figures, 2 tables. Code and data: https://github.com/infinition/z-manifold",
       "doi": "",
       "journal_ref": "",
       "status": "published",
-      "cover": "assets/papers/2607.05300.webp"
+      "cover": "assets/papers/2607.05300v1.webp"
     },
     {
       "version": "",
@@ -125,7 +125,7 @@
     },
     {
       "id": "2603.21315",
-      "version": "",
+      "version": "v1",
       "title": "FluidWorld: Reaction-Diffusion Dynamics as a Predictive Substrate for World Models",
       "authors": [
         "Fabien Polly"
@@ -135,15 +135,15 @@
         "cs.LG"
       ],
       "primary_category": "cs.LG",
-      "published": "2026-03-22T00:00:00.000Z",
-      "updated": "2026-03-22T00:00:00.000Z",
+      "published": "2026-03-22T16:49:43Z",
+      "updated": "2026-03-22T16:49:43Z",
       "abs_url": "https://arxiv.org/abs/2603.21315",
       "pdf_url": "https://arxiv.org/pdf/2603.21315",
-      "comment": "18 pages, 16 figures, 4 tables. Code available at this https URL",
+      "comment": "18 pages, 16 figures, 4 tables. Code available at https://github.com/infinition/FluidWorld/",
       "doi": "",
       "journal_ref": "",
       "status": "published",
-      "cover": "assets/papers/2603.21315.webp"
+      "cover": "assets/papers/2603.21315v1.webp"
     }
   ]
 }
