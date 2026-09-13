@@ -456,13 +456,22 @@ body.theme-infinition {
     /* valeur finale consolidée */
 }
 
-/* En surchauffe, le message de la barre devient cliquable. Rien ne l'annonce
-   au dela du curseur : c'est un easter egg, pas un bouton. */
-#sys-msg.is-hot {
+/* L'indicateur est cliquable, c'est un easter egg. Rien ne l'annonce au dela
+   du curseur, mais sa zone de clic doit couvrir toute la hauteur de la barre :
+   viser une ligne de texte de vingt pixels rate une fois sur deux. */
+.sys-status {
     cursor: pointer;
 }
 
-#sys-msg.is-hot:hover {
+.sys-status > button {
+    cursor: pointer;
+}
+
+#sys-msg {
+    padding: 6px 2px;
+}
+
+#sys-msg:hover {
     text-shadow: 0 0 12px currentColor;
 }
 

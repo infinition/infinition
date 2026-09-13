@@ -1,15 +1,19 @@
 let reactorWoken = false;
 
 function setRingActive(active) {
-    /* Easter egg : la barre systeme n'ouvre le Gibson que lorsqu'elle affiche
-       la surchauffe. En etat stable, le clic garde son comportement d'origine,
-       qui est d'ouvrir le terminal. */
-    const sysMsgEl = document.getElementById('sys-msg');
-    if (sysMsgEl) {
-        sysMsgEl.addEventListener('click', (e) => {
-            const reactor = document.getElementById('reactor');
-            if (!reactor || !reactor.classList.contains('active-mode')) return;
-            // Sans ca, le clic remonte a la barre et ouvre le terminal.
+    /* Easter egg : l'indicateur de la barre systeme ouvre le Gibson, quel que
+       soit son etat.
+
+       L'ecouteur est pose sur le conteneur et non sur le texte : celui-ci ne
+       fait qu'une vingtaine de pixels de haut dans une barre qui en fait
+       trente, et viser la ligne de glyphes au pixel pres ratait une fois sur
+       deux. Le clic tombait alors sur la barre, qui ouvre le terminal. */
+    const sysStatusEl = document.querySelector('.sys-status');
+    if (sysStatusEl) {
+        sysStatusEl.addEventListener('click', (e) => {
+            // La loupe de recherche vit dans le meme conteneur.
+            if (e.target.closest('button, a')) return;
+            // Sans ca, le clic remonte a la barre et deroule le terminal.
             e.stopPropagation();
             openGibson();
         });
@@ -132,15 +136,19 @@ document.addEventListener('DOMContentLoaded', () => {
         togglePortalState(e);
     });
 
-    /* Easter egg : la barre systeme n'ouvre le Gibson que lorsqu'elle affiche
-       la surchauffe. En etat stable, le clic garde son comportement d'origine,
-       qui est d'ouvrir le terminal. */
-    const sysMsgEl = document.getElementById('sys-msg');
-    if (sysMsgEl) {
-        sysMsgEl.addEventListener('click', (e) => {
-            const reactor = document.getElementById('reactor');
-            if (!reactor || !reactor.classList.contains('active-mode')) return;
-            // Sans ca, le clic remonte a la barre et ouvre le terminal.
+    /* Easter egg : l'indicateur de la barre systeme ouvre le Gibson, quel que
+       soit son etat.
+
+       L'ecouteur est pose sur le conteneur et non sur le texte : celui-ci ne
+       fait qu'une vingtaine de pixels de haut dans une barre qui en fait
+       trente, et viser la ligne de glyphes au pixel pres ratait une fois sur
+       deux. Le clic tombait alors sur la barre, qui ouvre le terminal. */
+    const sysStatusEl = document.querySelector('.sys-status');
+    if (sysStatusEl) {
+        sysStatusEl.addEventListener('click', (e) => {
+            // La loupe de recherche vit dans le meme conteneur.
+            if (e.target.closest('button, a')) return;
+            // Sans ca, le clic remonte a la barre et deroule le terminal.
             e.stopPropagation();
             openGibson();
         });
