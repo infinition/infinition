@@ -17,6 +17,9 @@ on:
       - 'scripts/build-repos-svg.mjs'
       - 'scripts/build-logs.mjs'
       - 'scripts/build-social.mjs'
+      - 'scripts/build-papers.mjs'
+      - 'scripts/build-artstation.mjs'
+      - 'scripts/collect-artstation.py'
       - '.github/workflows/site-data.yml'
 
 permissions:
@@ -62,6 +65,29 @@ jobs:
         # Abonnes Reddit et membres Discord des badges du portail.
         run: node scripts/build-social.mjs --out data/social.json
 
+      - name: Build data/papers.json
+        # Publications arXiv de la bibliotheque. Le script tient tout seul le
+        # 429 d'arXiv et conserve le snapshot precedent en cas d'echec.
+        run: node scripts/build-papers.mjs --out data/papers.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install curl_cffi
+        # ArtStation est derriere Cloudflare : seul un client qui rejoue
+        # l'empreinte TLS de Chrome obtient autre chose qu'un 403.
+        run: pip install --disable-pip-version-check curl_cffi
+
+      - name: Collecter l'instantane ArtStation
+        # Cloudflare peut refuser une adresse de runner. L'echec n'arrete pas
+        # le workflow, build-artstation.mjs bascule alors sur le flux RSS.
+        continue-on-error: true
+        run: python scripts/collect-artstation.py infinition --out .artstation-raw.json
+
+      - name: Build data/artstation.json
+        run: node scripts/build-artstation.mjs --user infinition --raw .artstation-raw.json --out data/artstation.json
+
       - name: Build assets/repos-grid.svg
         run: node scripts/build-repos-svg.mjs --data data/repos.json --out assets/repos-grid.svg
 
@@ -83,6 +109,16 @@ jobs:
               throw new Error('social.json is incomplete, refusing to commit');
             }
             console.log('reddit ' + social.reddit.label + ', discord ' + social.discord.label);
+            const papers = require('./data/papers.json');
+            if (!Array.isArray(papers.papers) || papers.papers.length === 0) {
+              throw new Error('papers.json is empty, refusing to commit');
+            }
+            console.log(papers.papers.length + ' papers');
+            const art = require('./data/artstation.json');
+            if (!Array.isArray(art.artworks) || art.artworks.length === 0) {
+              throw new Error('artstation.json is empty, refusing to commit');
+            }
+            console.log(art.artworks.length + ' artworks from ' + art.source);
           "
 
       - name: Commit si le contenu a change
@@ -91,11 +127,11 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           # git diff ignore les fichiers non suivis, donc un tout premier
           # snapshot passait pour "aucun changement" et n'etait jamais commite.
-          if [ -z "$(git status --porcelain -- data/repos.json data/repos-summary.json data/logs.json data/social.json assets/repos-grid.svg)" ]; then
+          if [ -z "$(git status --porcelain -- data/repos.json data/repos-summary.json data/logs.json data/social.json data/papers.json data/artstation.json assets/repos-grid.svg)" ]; then
             echo 'no change'
             exit 0
           fi
-          git add data/repos.json data/repos-summary.json data/logs.json data/social.json assets/repos-grid.svg
+          git add data/repos.json data/repos-summary.json data/logs.json data/social.json data/papers.json data/artstation.json assets/repos-grid.svg
           git commit -m 'chore(data): refresh site snapshots'
           # Un outil de build peut laisser trainer une modif hors de cette
           # liste (ex: package-lock.json retouche par npm) ; on ne veut

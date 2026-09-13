@@ -6,13 +6,20 @@ function handleHashChange() {
         const articleFile = hash.replace('#article:', '');
         if (mergedData.length === 0) { navigateTo('blog'); setTimeout(() => findAndOpenArticle(articleFile), 1500); }
         else { findAndOpenArticle(articleFile); }
-    } else if (hash === '#portfolio') navigateTo('portfolio');
+    }
+    /* #paper:ID et #art:ID ouvrent directement la liseuse ou la visionneuse,
+       y compris a froid : les deux modules chargent leur JSON avant d ouvrir. */
+    else if (hash.startsWith('#paper:')) { navigateTo('papers', true); PAPERS.openFromHash(hash.slice(7)); }
+    else if (hash.startsWith('#art:')) { navigateTo('art', true); ARTSTATION.openFromHash(hash.slice(5)); }
+    else if (hash === '#portfolio') navigateTo('portfolio');
     else if (hash === '#blog') navigateTo('blog');
     else if (hash === '#kb') navigateTo('kb');
     else if (hash === '#music') navigateTo('music');
     else if (hash === '#csslib') navigateTo('csslib');
     else if (hash === '#acid-pages') navigateTo('acid-pages');
     else if (hash === '#repos') navigateTo('repos');
+    else if (hash === '#papers') navigateTo('papers');
+    else if (hash === '#art') navigateTo('art');
     else navigateTo('portal');
 }
 
@@ -62,6 +69,13 @@ function navigateTo(viewId, keepScroll = false) {
     if (viewId === 'csslib') initCSSLib();
     if (viewId === 'acid-pages') initAcidPages();
     if (viewId === 'repos') initRepos();
+    if (viewId === 'papers') initPapers();
+    if (viewId === 'art') initArtStation();
+
+    /* Le retour arriere du navigateur repasse de #paper:ID a #papers sans
+       passer par le bouton de fermeture, on referme donc ici. */
+    if (viewId !== 'papers' || !window.location.hash.startsWith('#paper:')) PAPERS.close();
+    if (viewId !== 'art' || !window.location.hash.startsWith('#art:')) ARTSTATION.close();
     // Removed direct music fetch, now handled by reveal button
     if (!keepScroll) window.scrollTo(0, 0);
 }

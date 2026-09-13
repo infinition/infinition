@@ -10,7 +10,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <!-- Content Security Policy - Adjusted for external CDNs and APIs -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://api.ipify.org https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://api.ipify.org https://raw.githubusercontent.com https://*.artstation.com https://itunes.apple.com; frame-src 'self' https://embed.music.apple.com;">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com https://api.ipify.org https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://api.ipify.org https://raw.githubusercontent.com https://*.artstation.com https://itunes.apple.com; frame-src 'self' https://embed.music.apple.com https://arxiv.org;">
 
     <!-- Autoriser le mode "app" plein écran -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="css/acid_pages.css">
     <link rel="stylesheet" href="css/kb.css">
     <link rel="stylesheet" href="css/repos.css">
+    <link rel="stylesheet" href="css/papers.css">
+    <link rel="stylesheet" href="css/artstation.css">
 
     <!-- Tailwind CSS for AcidWiki components -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -208,8 +210,10 @@
                         class="fas fa-music"></i></div>
                 <div class="music-trigger" onclick="terminal.toggle()" title="Terminal Access"><i
                         class="fas fa-terminal"></i></div>
-                <div class="music-trigger" onclick="navigateTo('acid-pages')" title="Acid Pages"><i
-                        class="fas fa-globe"></i></div>
+                <div class="music-trigger" onclick="navigateTo('papers')" title="Papers Library"><i
+                        class="fas fa-book"></i></div>
+                <div class="music-trigger" onclick="navigateTo('art')" title="ArtStation Gallery"><i
+                        class="fab fa-artstation"></i></div>
                 <div class="music-trigger" onclick="navigateTo('repos')" title="Repos Grid"><i
                         class="fas fa-th"></i></div>
             </div>
@@ -359,7 +363,12 @@
                 </div>
             </div>
             </div>
-            <h2 class="port-h2" style="margin-top: 5rem;"><i class="fas fa-file-alt"></i> Papers</h2>
+            <h2 class="port-h2" style="margin-top: 5rem;"><i class="fas fa-file-alt"></i> Papers
+                <a href="#papers" onclick="navigateTo('papers'); return false;"
+                    style="font-family: var(--code-font); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--neon-purple); text-decoration: none; margin-left: 1rem; vertical-align: middle;">
+                    <i class="fas fa-book"></i> Open the library
+                </a>
+            </h2>
             <div class="grid-container" id="portfolio-papers">
             <div class="project-card paper-card border-orange" onclick="window.open('https://arxiv.org/abs/2607.05300', '_blank')" style="cursor: pointer;">
                 <div class="project-content">
@@ -882,6 +891,140 @@
         </div>
     </section>
 
+    <!-- SECTION PAPERS - BIBLIOTHEQUE arXiv -->
+    <section id="papers-view" class="view-section">
+        <div class="papers-wrap">
+            <div class="papers-head">
+                <div class="title-row">
+                    <h1>LIBRARY</h1>
+                    <div class="papers-total" title="Publications indexed on arXiv">
+                        <i class="fas fa-book-open"></i>
+                        <span id="papers-count">0</span>
+                        <small>papers</small>
+                    </div>
+                </div>
+                <p class="papers-sub">arXiv preprints // Fabien Polly</p>
+            </div>
+
+            <div class="papers-toolbar">
+                <div class="sort-group" id="papers-sort-group">
+                    <button class="sort-btn active" data-sort="date"><i class="fas fa-clock"></i> Date</button>
+                    <button class="sort-btn" data-sort="title"><i class="fas fa-font"></i> Title</button>
+                </div>
+                <div class="paper-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="papers-filter" placeholder="filter..." autocomplete="off"
+                        spellcheck="false">
+                </div>
+            </div>
+
+            <div class="shelf" id="papers-shelf"></div>
+
+            <div class="papers-status" id="papers-status">&gt; LOADING ARCHIVE ...</div>
+        </div>
+    </section>
+
+    <!-- Liseuse : resume typographie ou PDF arXiv embarque -->
+    <div class="paper-reader" id="paper-reader" role="dialog" aria-modal="true" aria-label="Paper reader">
+        <div class="pr-bar">
+            <button class="pr-close" id="pr-close" title="Close" aria-label="Close reader">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="pr-heading">
+                <h2 id="pr-title"></h2>
+                <span class="pr-ref" id="pr-ref"></span>
+            </div>
+            <div class="pr-modes" id="pr-modes">
+                <button class="pr-mode" data-mode="read">Abstract</button>
+                <button class="pr-mode" data-mode="pdf">PDF</button>
+            </div>
+            <div class="pr-actions">
+                <a class="pr-action" id="pr-abs-link" href="#" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> arXiv
+                </a>
+                <a class="pr-action" id="pr-pdf-link" href="#" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-pdf"></i> PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="pr-body">
+            <div class="pr-pane pr-read active" data-mode="read">
+                <article class="pr-page" id="pr-page"></article>
+            </div>
+            <div class="pr-pane pr-pdf" data-mode="pdf" id="pr-pdf">
+                <iframe id="pr-frame" src="" title="Paper PDF"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION ART - GALERIE ARTSTATION -->
+    <section id="art-view" class="view-section">
+        <div class="art-wrap">
+            <div class="art-head">
+                <img class="art-avatar" id="art-avatar" src="img/icon-180.png" alt="ArtStation avatar">
+                <div class="art-identity">
+                    <h1 id="art-name">GALLERY</h1>
+                    <p class="art-headline" id="art-headline"></p>
+                    <p class="art-location" id="art-location"></p>
+                </div>
+            </div>
+
+            <div class="art-stats">
+                <span class="art-stat" data-metric="artworks">
+                    <b id="art-count-works">0</b><span>works</span>
+                </span>
+                <span class="art-stat" data-metric="likes">
+                    <b id="art-count-likes">0</b><span>likes</span>
+                </span>
+                <span class="art-stat" data-metric="views">
+                    <b id="art-count-views">0</b><span>views</span>
+                </span>
+                <a class="art-stat is-link" id="art-profile-link" href="https://www.artstation.com/infinition"
+                    target="_blank" rel="noopener noreferrer">
+                    <b id="art-count-followers">0</b><span>followers on artstation</span>
+                </a>
+            </div>
+
+            <div class="art-grid" id="art-grid"></div>
+
+            <div class="art-status" id="art-status">&gt; LOADING GALLERY ...</div>
+        </div>
+    </section>
+
+    <!-- Visionneuse : image pleine page, description et outils -->
+    <div class="art-viewer" id="art-viewer" role="dialog" aria-modal="true" aria-label="Artwork viewer">
+        <div class="av-bar">
+            <button class="av-close" id="av-close" title="Close" aria-label="Close viewer">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="av-heading">
+                <h2 id="av-title"></h2>
+                <span id="av-meta"></span>
+            </div>
+            <a class="av-link" id="av-link" href="#" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-artstation"></i> <span>ArtStation</span>
+            </a>
+        </div>
+
+        <div class="av-body">
+            <div class="av-stage" id="av-stage">
+                <button class="av-nav av-prev" id="av-prev" title="Previous" aria-label="Previous image" hidden>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <img id="av-image" src="" alt="">
+                <button class="av-nav av-next" id="av-next" title="Next" aria-label="Next image" hidden>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <span class="av-counter" id="av-counter" hidden></span>
+            </div>
+            <div class="av-info">
+                <p class="av-desc" id="av-desc"></p>
+                <div class="av-chips" id="av-chips"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- SECTION REPOS -->
     <section id="repos-view" class="view-section">
         <div class="repos-wrap">
@@ -945,8 +1088,11 @@
     <script src="js/utils.js"></script>
     <script src="js/api.js"></script>
     <script src="js/ui.js"></script>
-    <!-- charge avant main.js : navigateTo peut appeler initRepos des le chargement sur #repos -->
+    <!-- charges avant main.js : navigateTo peut appeler leur init des le
+         chargement quand l'URL porte deja #repos, #papers ou #art -->
     <script src="js/repos.js"></script>
+    <script src="js/papers.js"></script>
+    <script src="js/artstation.js"></script>
     <script src="js/social.js"></script>
     <script src="js/main.js"></script>
     <script src="js/portal.js"></script>

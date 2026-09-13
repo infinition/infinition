@@ -41,3 +41,7 @@ build/
 
 # Project specific
 
+
+# Instantane brut ArtStation, intermediaire du workflow site-data.
+# Seul data/artstation.json est versionne.
+.artstation-raw.json

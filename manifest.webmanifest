@@ -39,6 +39,26 @@
                     "sizes": "192x192"
                 }
             ]
+        },
+        {
+            "name": "Library",
+            "url": "/#papers",
+            "icons": [
+                {
+                    "src": "img/icon-180.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "Gallery",
+            "url": "/#art",
+            "icons": [
+                {
+                    "src": "img/icon-180.png",
+                    "sizes": "192x192"
+                }
+            ]
         }
     ]
 }

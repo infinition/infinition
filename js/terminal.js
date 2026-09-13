@@ -33,7 +33,8 @@ const terminal = {
                 terminal.print("  css         - Navigate to CSS Library");
                 terminal.print("  log         - Navigate to Data Logs");
                 terminal.print("  root        - Navigate to Root/Portal");
-                terminal.print("  acidpages   - Navigate to Acid Pages");
+                terminal.print("  papers [q]  - Navigate to the arXiv Library, optional filter");
+                terminal.print("  art         - Navigate to the ArtStation Gallery");
                 terminal.print("  repos [q]   - Navigate to Repos Grid, optional filter");
                 terminal.print("  scan [user] - Scan GitHub Pages for user");
                 terminal.print("  cd [dir]    - Change directory (nav simulation)");
@@ -172,6 +173,8 @@ const terminal = {
                 }, 500);
             }
         },
+        /* Le raccourci du portail a laisse la place a la bibliotheque, la
+           commande reste pour que les liens #acid-pages continuent d ouvrir. */
         acidpages: {
             desc: "Go to Acid Pages",
             action: () => {
@@ -180,6 +183,63 @@ const terminal = {
                     navigateTo('acid-pages');
                     terminal.toggle();
                 }, 500);
+            }
+        },
+        papers: {
+            desc: "Go to the arXiv Library",
+            action: (args) => {
+                const term = (args && args.length) ? args.join(' ') : '';
+                terminal.print(term
+                    ? `Opening the archive, filter: ${term}...`
+                    : "Opening the arXiv archive...", "term-warn");
+                setTimeout(() => {
+                    navigateTo('papers');
+                    terminal.toggle();
+                    if (term && typeof PAPERS !== 'undefined') {
+                        // Le rayonnage se peuple en asynchrone, filtre applique apres.
+                        setTimeout(() => PAPERS.focusFilter(term), 600);
+                    }
+                }, 500);
+            }
+        },
+        paper: {
+            desc: "Go to the arXiv Library (Alias)",
+            action: (args) => {
+                terminal.commands.papers.action(args);
+            }
+        },
+        arxiv: {
+            desc: "Go to the arXiv Library (Alias)",
+            action: (args) => {
+                terminal.commands.papers.action(args);
+            }
+        },
+        library: {
+            desc: "Go to the arXiv Library (Alias)",
+            action: (args) => {
+                terminal.commands.papers.action(args);
+            }
+        },
+        art: {
+            desc: "Go to the ArtStation Gallery",
+            action: () => {
+                terminal.print("Opening the ArtStation gallery...", "term-warn");
+                setTimeout(() => {
+                    navigateTo('art');
+                    terminal.toggle();
+                }, 500);
+            }
+        },
+        artstation: {
+            desc: "Go to the ArtStation Gallery (Alias)",
+            action: () => {
+                terminal.commands.art.action();
+            }
+        },
+        gallery: {
+            desc: "Go to the ArtStation Gallery (Alias)",
+            action: () => {
+                terminal.commands.art.action();
             }
         },
         repos: {
@@ -259,6 +319,10 @@ const terminal = {
                     terminal.commands.portfolio.action();
                 } else if (target === "acidpages" || target === "acid") {
                     terminal.commands.acidpages.action();
+                } else if (target === "papers" || target === "paper" || target === "arxiv" || target === "library") {
+                    terminal.commands.papers.action([]);
+                } else if (target === "art" || target === "artstation" || target === "gallery") {
+                    terminal.commands.art.action();
                 } else if (target === "repos" || target === "repo" || target === "git") {
                     terminal.commands.repos.action([]);
                 } else {
@@ -307,14 +371,14 @@ const terminal = {
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 csslib", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 logs", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 kb", "term-info");
-                    terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 kb", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 portfolio", "term-info");
-                    terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 acidpages", "term-info");
+                    terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 papers", "term-info");
+                    terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 art", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 repos", "term-info");
                     terminal.print("drwx------  2 root    root    4096 Nov 30 00:00 secrets", "term-info");
                     terminal.print("-rw-r--r--  1 visitor visitor 1024 Nov 30 00:00 README.md", "term-info");
                 } else {
-                    terminal.print("music  csslib  logs  kb  portfolio  acidpages  repos  secrets  README.md", "term-info");
+                    terminal.print("music  csslib  logs  kb  portfolio  papers  art  repos  secrets  README.md", "term-info");
                 }
             }
         },
