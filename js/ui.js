@@ -683,6 +683,13 @@ function renderArticles(items) {
         div.className = 'article-entry';
         div.onclick = () => {
             if (item.type === 'repo' || item.type === 'artwork') window.open(item.url, '_blank');
+            /* Un papier ou un essai a sa liseuse, qui sait afficher un PDF et
+               rendre du markdown. Le lecteur d'articles ne saurait ni l'un ni
+               l'autre. */
+            else if (item.type === 'paper' || item.type === 'essay') {
+                navigateTo('papers', true);
+                PAPERS.openFromHash(item.workId);
+            }
             else openArticle(item);
         };
 
@@ -703,7 +710,13 @@ function renderArticles(items) {
             thumb = `<div class="article-thumb"><i class="${fallbackIcon} thumb-icon"></i></div>`;
         }
 
-        let color = item.type === 'repo' ? 'var(--neon-orange)' : (item.type === 'artwork' ? 'var(--neon-blue)' : '#555');
+        const COLORS = {
+            repo: 'var(--neon-orange)',
+            artwork: 'var(--neon-blue)',
+            paper: 'var(--neon-purple)',
+            essay: 'var(--neon-green)'
+        };
+        let color = COLORS[item.type] || '#555';
 
         div.innerHTML = `
             ${thumb}

@@ -477,6 +477,26 @@ body.photo-open {
     object-fit: contain;
     border-radius: 6px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, .7);
+    /* Le zoom a la molette ecrit ici. Origine centree : c est ce que suppose
+       le calcul qui garde le point vise sous le curseur. */
+    transform-origin: center center;
+    will-change: transform;
+    touch-action: none;
+}
+
+.photo-viewer .pv-stage img.zoomed {
+    cursor: grab;
+    border-radius: 0;
+}
+
+.photo-viewer .pv-stage img.zoomed:active {
+    cursor: grabbing;
+}
+
+/* Zoomee, l image deborde la scene : on ne veut pas qu elle passe par dessus
+   la barre ni les fleches. */
+.photo-viewer .pv-stage {
+    overflow: hidden;
 }
 
 .photo-viewer .pv-nav {

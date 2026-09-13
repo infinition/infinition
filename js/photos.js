@@ -25,8 +25,15 @@ const PHOTOS = (() => {
         current: null,
         visible: [],
         tagsOpen: false,
-        tagQuery: ''
+        tagQuery: '',
+        zoom: 1,
+        pan: { x: 0, y: 0 },
+        drag: null
     };
+
+    const ZOOM_MIN = 1;
+    const ZOOM_MAX = 8;
+    const ZOOM_STEP = 1.18;
 
     /* Au dela de douze tags la barre pousse les photos sous la ligne de
        flottaison. On n'en montre alors que les plus fournis, le reste se
@@ -226,6 +233,97 @@ const PHOTOS = (() => {
 
     /* --- VISIONNEUSE --- */
 
+    /* --- ZOOM A LA MOLETTE ---
+       L'image porte une transformation "translate puis scale", d'origine
+       centree. Un point de l'image sous le curseur doit y rester pendant le
+       zoom, sinon on perd ce qu'on visait des le premier cran.
+
+       Le centre visuel ne bouge pas quand on met a l'echelle autour de lui :
+       la position ecran du centre vaut donc toujours centre de mise en page
+       plus translation. En notant d l'ecart entre le curseur et ce centre,
+       garder le point fixe revient a corriger la translation de d fois
+       (1 moins le rapport des echelles). Deux lignes, sans mesurer la mise en
+       page ni toucher a l'origine de la transformation. */
+
+    function applyZoom() {
+        const img = document.getElementById('pv-image');
+        if (!img) return;
+
+        img.style.transform =
+            `translate(${state.pan.x}px, ${state.pan.y}px) scale(${state.zoom})`;
+        img.classList.toggle('zoomed', state.zoom > 1);
+    }
+
+    function resetZoom() {
+        state.zoom = 1;
+        state.pan = { x: 0, y: 0 };
+        state.drag = null;
+        applyZoom();
+    }
+
+    function zoomAt(clientX, clientY, factor) {
+        const img = document.getElementById('pv-image');
+        if (!img) return;
+
+        const next = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, state.zoom * factor));
+        if (next === state.zoom) return;
+
+        if (next === ZOOM_MIN) {
+            resetZoom();
+            return;
+        }
+
+        const box = img.getBoundingClientRect();
+        const dx = clientX - (box.left + box.width / 2);
+        const dy = clientY - (box.top + box.height / 2);
+        const ratio = 1 - next / state.zoom;
+
+        state.pan.x += dx * ratio;
+        state.pan.y += dy * ratio;
+        state.zoom = next;
+        applyZoom();
+    }
+
+    function bindZoom() {
+        const stage = document.getElementById('pv-stage');
+        const img = document.getElementById('pv-image');
+        if (!stage || !img) return;
+
+        /* Non passif : sans preventDefault la page defile sous la
+           visionneuse pendant qu'on zoome. */
+        stage.addEventListener('wheel', e => {
+            e.preventDefault();
+            zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? ZOOM_STEP : 1 / ZOOM_STEP);
+        }, { passive: false });
+
+        /* Double clic : aller et retour, plus rapide que de remonter cran
+           par cran a la molette. */
+        stage.addEventListener('dblclick', e => {
+            if (state.zoom > 1) resetZoom();
+            else zoomAt(e.clientX, e.clientY, 2.5);
+        });
+
+        img.addEventListener('pointerdown', e => {
+            if (state.zoom <= 1) return;
+            state.drag = { x: e.clientX, y: e.clientY };
+            img.setPointerCapture(e.pointerId);
+            e.preventDefault();
+        });
+
+        img.addEventListener('pointermove', e => {
+            if (!state.drag) return;
+            state.pan.x += e.clientX - state.drag.x;
+            state.pan.y += e.clientY - state.drag.y;
+            state.drag = { x: e.clientX, y: e.clientY };
+            applyZoom();
+        });
+
+        const endDrag = () => { state.drag = null; };
+        img.addEventListener('pointerup', endDrag);
+        img.addEventListener('pointercancel', endDrag);
+    }
+
+
     function open(id) {
         const photo = state.photos.find(p => p.id === id);
         const viewer = document.getElementById('photo-viewer');
@@ -249,6 +347,7 @@ const PHOTOS = (() => {
             img.alt = photo.title;
         }
 
+        resetZoom();
         updateCounter();
 
         viewer.classList.add('open');
@@ -298,6 +397,7 @@ const PHOTOS = (() => {
 
         const img = document.getElementById('pv-image');
         if (img) img.removeAttribute('src');
+        resetZoom();
         state.current = null;
 
         if (window.location.hash.startsWith('#photo:')) {
@@ -414,6 +514,8 @@ const PHOTOS = (() => {
             else if (e.key === 'ArrowRight') step(1);
         });
 
+        bindZoom();
+
         const stage = document.getElementById('pv-stage');
         if (stage) {
             let startX = null;
@@ -423,7 +525,9 @@ const PHOTOS = (() => {
             stage.addEventListener('touchend', e => {
                 if (startX === null) return;
                 const dx = e.changedTouches[0].clientX - startX;
-                if (Math.abs(dx) > 55) step(dx < 0 ? 1 : -1);
+                /* Zoome, le doigt deplace l'image : changer de photo au meme
+                   geste rendrait le deplacement impossible. */
+                if (state.zoom === 1 && Math.abs(dx) > 55) step(dx < 0 ? 1 : -1);
                 startX = null;
             }, { passive: true });
         }

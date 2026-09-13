@@ -128,8 +128,9 @@ async function runScanSimulation(forceRefresh = false) {
         out.innerHTML += '<br>> FETCHING EXTERNAL...';
         const repos = await fetchGitHubRepos();
         const arts = await fetchArtStation();
+        const pubs = await fetchPublications();
 
-        mergedData = [...local, ...repos, ...arts];
+        mergedData = [...local, ...repos, ...arts, ...pubs];
         mergedData.sort((a, b) => {
             const da = new Date(a.date);
             const db = new Date(b.date);

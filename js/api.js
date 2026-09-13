@@ -274,6 +274,52 @@ async function fetchArtStationLive() {
     } catch (e) { return []; }
 }
 
+/* Les publications et les textes de la bibliotheque rejoignent le flux des
+   DATA LOGS. Ils ont leur propre vue, mais le flux est cense montrer tout ce
+   qui parait, sans quoi un papier publie hier reste invisible ici.
+   Les photos, elles, n'y entrent pas : trente vignettes noieraient le reste. */
+async function fetchPublications() {
+    const [papers, library] = await Promise.all([
+        fetchSnapshot('data/papers.json'),
+        fetchSnapshot('data/library.json')
+    ]);
+
+    const items = [];
+
+    for (const paper of (papers && papers.papers) || []) {
+        items.push({
+            id: `paper-${paper.id}`,
+            workId: paper.id,
+            type: 'paper',
+            file: `paper_${paper.id}.pdf`,
+            title: paper.title,
+            date: paper.published || '',
+            icon: 'fas fa-book-open',
+            /* La couverture est la premiere page du PDF, deja rendue. */
+            image: paper.cover || null,
+            content: paper.abstract || ''
+        });
+    }
+
+    for (const shelf of (library && library.shelves) || []) {
+        for (const entry of shelf.entries || []) {
+            items.push({
+                id: `text-${entry.id}`,
+                workId: entry.id,
+                type: 'essay',
+                file: entry.path,
+                title: entry.title,
+                date: entry.date || '',
+                icon: 'fas fa-feather-pointed',
+                image: null,
+                content: entry.summary || ''
+            });
+        }
+    }
+
+    return items;
+}
+
 async function initKB() {
     const parent = document.getElementById('kb-tree');
 
@@ -283,7 +329,8 @@ async function initKB() {
         const local = await fetchLocalDataLogs();
         const repos = await fetchGitHubRepos();
         const arts = await fetchArtStation();
-        mergedData = [...local, ...repos, ...arts];
+        const pubs = await fetchPublications();
+        mergedData = [...local, ...repos, ...arts, ...pubs];
         mergedData.sort((a, b) => {
             const da = new Date(a.date);
             const db = new Date(b.date);
