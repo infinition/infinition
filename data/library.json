@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T16:16:55.929Z",
+  "generated_at": "2026-09-13T16:21:18.802Z",
   "total": 1,
   "shelves": [
     {
@@ -13,8 +13,8 @@
           "shelf": "essays",
           "title": "Plusieurs piliers, pas un puits",
           "subtitle": "La dispersion comme redondance",
-          "summary": "La société étiquette le touche-à-tout comme un dilettante. En environnement instable, c'est l'hyperspécialiste qui devient fragile : ses piliers multiples sont une redondance, au sens où la biologie l'entend.",
-          "date": "2026-07-24",
+          "summary": "On étiquette le touche-à-tout comme un dilettante. Quand le terrain bouge, c'est pourtant le spécialiste qui casse en premier. Ses piliers multiples sont une redondance, au sens où la biologie l'entend.",
+          "date": "2026-09-13",
           "lang": "fr",
           "tags": [
             "cognition",
@@ -22,8 +22,8 @@
             "apprentissage"
           ],
           "path": "library/essays/plusieurs-piliers-pas-un-puits.md",
-          "words": 1438,
-          "reading_minutes": 7
+          "words": 1350,
+          "reading_minutes": 6
         }
       ]
     }

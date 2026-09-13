@@ -1,28 +1,28 @@
 ---
 title: Plusieurs piliers, pas un puits
 subtitle: La dispersion comme redondance
-date: 2026-07-24
+date: 2026-09-13
 lang: fr
 status: published
 tags: [cognition, carrière, apprentissage]
 summary: >
-  La société étiquette le touche-à-tout comme un dilettante. En environnement
-  instable, c'est l'hyperspécialiste qui devient fragile : ses piliers
-  multiples sont une redondance, au sens où la biologie l'entend.
+  On étiquette le touche-à-tout comme un dilettante. Quand le terrain bouge,
+  c'est pourtant le spécialiste qui casse en premier. Ses piliers multiples
+  sont une redondance, au sens où la biologie l'entend.
 ---
- Peu de sentiments sont aussi corrosifs que la dissonance cognitive née d'un "cimetière" de projets **inachevés**. Cette guitare qui prend la poussière, ce site web à moitié codé, ces composants électroniques en vrac ou ces peintures délaissées ne sont pas seulement des objets ; ils sont les marqueurs d'une honte sourde. La société vous a étiqueté comme dilettante, suggérant que votre incapacité à "choisir une voie" est une preuve de faiblesse ou un manque de persévérance.
+ Il y a une honte particulière à regarder ses projets **inachevés**. Cette guitare qui prend la poussière, ce site web à moitié codé, ces composants électroniques en vrac, ces peintures délaissées. Ce ne sont pas que des objets qui traînent. On vous a dit que ne pas savoir choisir une voie était une faiblesse, et vous avez fini par le croire.
 
 > *Cent onglets ouverts en permanence. Un article sur la physique quantique des trous noirs, un tuto de soudure CMS, un thread sur les exposants de Lyapunov, la documentation de Blender pour le baking de normal maps, un paper d'arXiv, le stream d'une compétition de roller agressif. Les RH appellent ça un profil atypique. C'est leur façon polie de dire qu'ils ne savent pas où me ranger.*
 
 Renversons la lecture. Ce chaos n'est pas un défaut de fabrication, c'est le symptôme d'un système qui s'adapte. Ce que vous prenez pour de l'éparpillement est la construction, largement inconsciente, d'une architecture rare. Elle est faite pour une époque où la spécialisation étroite devient un passif.
 
-## La vérité cachée derrière le "Touche-à-tout"
+## Ce qu'on ne cite jamais du touche-à-tout
 
-L'un des plus grands préjudices portés aux profils polyvalents provient d'une maxime populaire systématiquement tronquée. On utilise souvent la première partie de la phrase pour encourager la conformité au modèle du spécialiste. Or la version longue qui circule aujourd'hui dit l'inverse :
+On vous a sûrement déjà sorti la maxime. Toujours sa première moitié, jamais la suite. La version longue qui circule aujourd'hui dit pourtant l'inverse :
 
 "A jack of all trades is a master of none, but often times better than a master of one." (Un touche-à-tout n'est maître de rien, mais il est souvent bien meilleur qu'un maître en une seule discipline.)
 
-Cette rallonge est une addition moderne, souvent prêtée à tort à Shakespeare, et non la version d'origine. Ce qu'elle pointe reste juste. Elle suggère que la capacité à naviguer entre plusieurs domaines n'est pas une dispersion de talent, mais une supériorité stratégique. Le "maître en une seule chose" est une construction du siècle dernier qui ne répond plus aux exigences de notre époque.
+Cette rallonge est récente, et on la prête à Shakespeare qui n'y est pour rien. Elle vise juste quand même : passer d'un domaine à l'autre n'est pas du talent gaspillé. Le maître d'une seule chose est une figure du siècle dernier.
 
 ## Un puits ne se déplace pas
 
@@ -40,38 +40,44 @@ Prenez un développeur qui a été apiculteur. Sur un CV, les deux lignes n'ont 
 
 > *C'est ce que les recruteurs ne comprennent pas devant mon CV. Cybersécurité et recherche en IA dans deux colonnes différentes, comme si c'était deux métiers. C'est le même métier. C'est la compréhension des systèmes. La seule variable, c'est le système.*
 
-## De la forme en T à la forme en M : La Maîtrise Séquentielle
+## Un pilier à la fois
 
-Le modèle standard de la polyvalence est souvent le profil "en T" (une culture générale large surmontant une seule spécialisation). Cependant, le futur appartient à l'esprit "en M". Cette architecture se compose de plusieurs piliers de profondeur, reliés entre eux par un pont de curiosité.
+La polyvalence a son modèle officiel, le profil en T : une culture large posée sur une seule spécialité. Il lui manque un étage. Ce qui tient vraiment, c'est le M. Plusieurs piliers qui descendent pour de bon, et de la curiosité qui circule entre eux.
 
-Le piège qui mène au burn-out est de vouloir construire tous ces piliers simultanément. Se mettre au calcul quantique, monter un bras robotisé et apprendre à faire tenir un décor entier dans le budget mémoire d'un moteur de jeu, le même mois, est une recette pour l'effondrement. La clé réside dans la maîtrise séquentielle :
+Le piège qui mène au burn-out est de vouloir construire tous ces piliers simultanément. Se mettre au calcul quantique, monter un bras robotisé et apprendre à faire tenir un décor entier dans le budget mémoire d'un moteur de jeu, le même mois, vous casse en trois mois. Un pilier à la fois :
 
-* Considérez votre vie comme une succession de "saisons".
+* Une vie se découpe en saisons, pas en projets menés de front.
 
-* On peut consacrer une décennie à un pilier nourricier, tout en laissant les autres piliers se construire en arrière-plan.
+* Une décennie peut aller au pilier qui nourrit pendant que les autres poussent doucement derrière.
 
-La mécanique se voit sur une vie entière, et elle demande un arbitrage qui n'a rien de confortable. Un pilier nourricier assumé comme tel, qui paie et qu'on arrête de mépriser pour ça. Certains le contiennent : ils refusent les responsabilités qui absorberaient tout et gardent leurs journées. D'autres prennent le poste exigeant, direction, sécurité, encadrement, et déplacent le reste dans les marges, les soirées, les nuits. Les deux tiennent. La seconde se paie en sommeil, et mieux vaut le savoir en s'y engageant que le découvrir trois ans plus tard. Et il y a les cas où le pilier nourricier n'est pas choisi du tout. Où on prend le salaire parce qu'il faut sortir une famille du besoin, et où le métier qu'on aimait devient celui qu'on exerce à minuit. Ça tient aussi. Ça coûte simplement plus cher, et personne ne devrait prétendre le contraire. Dans tous les cas la question n'est pas de préserver du temps mais de l'énergie, assez pour qu'un deuxième pilier monte encore une fois que le premier a pris sa part. Derrière, la physique quantique et l'art d'environnement 3D montent chacun à leur saison, sans se disputer la place. Ils ne se rejoignent que plus tard, quand ils sont assez hauts pour porter quelque chose ensemble.
+La mécanique se voit sur une vie entière, et elle demande un arbitrage qui n'a rien de confortable. Un pilier nourricier assumé comme tel, qui paie et qu'on arrête de mépriser pour ça. Certains le contiennent : ils refusent les responsabilités qui absorberaient tout et gardent leurs journées. D'autres prennent le poste exigeant, direction, sécurité, encadrement, et déplacent le reste dans les marges, les soirées, les nuits. Les deux tiennent. La seconde se paie en sommeil, et mieux vaut le savoir en s'y engageant que le découvrir trois ans plus tard.
+
+Et il y a les cas où le pilier nourricier n'est pas choisi du tout. Où on prend le salaire parce qu'il faut sortir une famille du besoin, et où le métier qu'on aimait devient celui qu'on exerce à minuit. Ça tient aussi. Ça coûte simplement plus cher, et personne ne devrait prétendre le contraire. Dans tous les cas la question n'est pas de préserver du temps mais de l'énergie, assez pour qu'un deuxième pilier monte encore une fois que le premier a pris sa part. Derrière, la physique quantique et l'art d'environnement 3D montent chacun à leur saison, sans se disputer la place. Ils ne se rejoignent que plus tard, quand ils sont assez hauts pour porter quelque chose ensemble.
 
 Et il y a les piliers qui ne rapporteront jamais rien. Le roller agressif en skatepark n'a d'utilité économique pour personne. Il apprend pourtant ce qu'aucun écran n'apprend : lire une ligne avant de s'y engager, partir sur un trick qu'on peut rater, et se relever après la chute sans en faire une affaire. Le sol est un meilleur professeur que n'importe quel manager. Cette forme-là se retrouve partout ailleurs, dans une décision technique comme dans un papier qu'on publie sans savoir s'il tiendra. Un pilier qui ne paie pas porte quand même.
 
-## La Redondance : Votre filet de sécurité biologique
+## La redondance
 
-En biologie évolutive, la redondance est la clé de la résilience. Les éléphants, par exemple, développent rarement des cancers car ils possèdent une redondance génétique massive : plusieurs copies des gènes protecteurs. Si l'une échoue, une autre prend le relais.
+Les éléphants développent rarement des cancers. Ils portent une vingtaine de copies du gène qui déclenche la mort des cellules abîmées, là où nous en avons une seule. Quand une copie lâche, une autre fait le travail.
 
 Le même raisonnement existe en cybersécurité, sous un autre nom. On appelle SPOF, point de défaillance unique, tout élément dont la panne suffit à faire tomber l'ensemble. On passe des carrières à en éliminer dans les architectures. Un spécialiste est un SPOF qui s'ignore.
 
-Vos intérêts variés constituent votre propre redondance stratégique. Dans un marché du travail incertain, le "dabbling" (le fait de s'essayer à tout) est une police d'assurance.
+Vos intérêts dispersés sont vos copies de secours. Sur un marché qui ne promet rien à personne, s'essayer à tout revient à cotiser.
 
-* Le spécialiste en logiciel est terrifié par l'IA.
+* Le spécialiste du logiciel regarde l'IA arriver et serre les dents.
 
 * Le profil en M, qui sait coder mais sait aussi réparer un moteur, lire un schéma électronique, tirer un câblage électrique, manier l'ingénierie sociale, enseigner la physique ou l'IA et tenir un jardin, est biologiquement incassable.
 
-Chaque compétence "inutile" est une copie de sauvegarde de votre survie économique.
+Chaque compétence inutile est une copie de sauvegarde.
 
-## Conclusion : Le pont entre les mondes
+## Le pont
 
-Il est temps de cesser de s'excuser pour vos passions éphémères. Ces projets ne sont pas des échecs ; ce sont des semestres validés dans l'université de vous-même. Chaque intérêt que vous avez exploré, même brièvement, a ajouté une strate à votre capacité de synthèse.
+Arrêtez de vous excuser pour ce que vous n'avez pas fini. Aucun de ces projets n'est perdu. Chacun a laissé une forme quelque part, et c'est avec ces formes que vous reconnaîtrez la suivante.
 
-Vous n'avez jamais été destiné à n'être qu'une seule chose. Vous êtes l'architecte d'une structure complexe, capable de bâtir des ponts entre des mondes que les autres ne peuvent même pas voir.
+Vous n'avez jamais eu à n'être qu'une seule chose. Vous construisez des ponts entre des endroits que personne autour de vous ne voit comme reliés.
 
-Quelle compétence que vous pensiez "perdue" ou quel intérêt jugé "chaotique" êtes-vous en train de transformer, aujourd'hui, en un nouveau pilier de votre architecture en M ? 
+Reste une question, et elle ne se pose qu'à vous. Laquelle de vos compétences abandonnées est en train de devenir un pilier, en ce moment, sans que vous l'ayez décidé ?
+
+---
+
+Fabien POLLY 
