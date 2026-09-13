@@ -102,10 +102,6 @@ body {
     left: calc(1.5rem + env(safe-area-inset-left));
 }
 
-#csslib-toast {
-    bottom: calc(30px + env(safe-area-inset-bottom));
-}
-
 @media (max-width: 768px) {
     .kb-toggle-btn {
         bottom: calc(10px + env(safe-area-inset-bottom));

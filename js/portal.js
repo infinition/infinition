@@ -1,6 +1,20 @@
 let reactorWoken = false;
 
 function setRingActive(active) {
+    /* Easter egg : la barre systeme n'ouvre le Gibson que lorsqu'elle affiche
+       la surchauffe. En etat stable, le clic garde son comportement d'origine,
+       qui est d'ouvrir le terminal. */
+    const sysMsgEl = document.getElementById('sys-msg');
+    if (sysMsgEl) {
+        sysMsgEl.addEventListener('click', (e) => {
+            const reactor = document.getElementById('reactor');
+            if (!reactor || !reactor.classList.contains('active-mode')) return;
+            // Sans ca, le clic remonte a la barre et ouvre le terminal.
+            e.stopPropagation();
+            openGibson();
+        });
+    }
+
     // If overload mode is disabled, skip all visual changes
     if (typeof CONFIG !== 'undefined' && CONFIG.enableOverload === false) {
         return;
@@ -14,19 +28,36 @@ function setRingActive(active) {
 
     if (active) {
         reactor.classList.add('active-mode'); // Overclock Mode (Red)
-        if (sysMsg) sysMsg.innerText = "SYS OVERLOAD";
+        if (sysMsg) {
+            sysMsg.innerText = "SYS OVERLOAD";
+            sysMsg.classList.add('is-hot');
+        }
         if (sysStatus) {
             sysStatus.style.color = 'var(--neon-red)';
             sysStatus.style.textShadow = '0 0 10px var(--neon-red)';
         }
     } else {
         reactor.classList.remove('active-mode'); // Stable Mode (Blue)
-        if (sysMsg) sysMsg.innerText = "SYS STABLE";
+        if (sysMsg) {
+            sysMsg.innerText = "SYS STABLE";
+            sysMsg.classList.remove('is-hot');
+        }
         if (sysStatus) {
             sysStatus.style.color = 'var(--neon-blue)';
             sysStatus.style.textShadow = '0 0 10px var(--neon-blue)';
         }
     }
+}
+
+/* Le Gibson, deja atteignable par la commande "hack-the-planet" du terminal.
+   Le chargement de l'iframe est differe jusqu'ici : la page des hackers n'a
+   aucune raison de tourner tant que personne ne l'a demandee. */
+function openGibson() {
+    const iframe = document.getElementById('hackers-iframe');
+    if (iframe && !String(iframe.getAttribute('src') || '').includes('hackers')) {
+        iframe.src = 'hackers/index.html';
+    }
+    if (typeof navigateTo === 'function') navigateTo('hackers');
 }
 
 /* Premier clic sur le portail : le reacteur passe en surchauffe. */
@@ -100,6 +131,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. Trigger the Toggle
         togglePortalState(e);
     });
+
+    /* Easter egg : la barre systeme n'ouvre le Gibson que lorsqu'elle affiche
+       la surchauffe. En etat stable, le clic garde son comportement d'origine,
+       qui est d'ouvrir le terminal. */
+    const sysMsgEl = document.getElementById('sys-msg');
+    if (sysMsgEl) {
+        sysMsgEl.addEventListener('click', (e) => {
+            const reactor = document.getElementById('reactor');
+            if (!reactor || !reactor.classList.contains('active-mode')) return;
+            // Sans ca, le clic remonte a la barre et ouvre le terminal.
+            e.stopPropagation();
+            openGibson();
+        });
+    }
 
     // If overload mode is disabled, hide the SYS status indicator
     if (typeof CONFIG !== 'undefined' && CONFIG.enableOverload === false) {

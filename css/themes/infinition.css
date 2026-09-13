@@ -456,6 +456,16 @@ body.theme-infinition {
     /* valeur finale consolidée */
 }
 
+/* En surchauffe, le message de la barre devient cliquable. Rien ne l'annonce
+   au dela du curseur : c'est un easter egg, pas un bouton. */
+#sys-msg.is-hot {
+    cursor: pointer;
+}
+
+#sys-msg.is-hot:hover {
+    text-shadow: 0 0 12px currentColor;
+}
+
 .sys-status {
     color: var(--neon-blue);
     display: flex;

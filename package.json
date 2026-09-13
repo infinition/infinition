@@ -8,6 +8,7 @@
   "scripts": {
     "papers": "node scripts/build-papers.mjs --out data/papers.json && python scripts/build-paper-assets.py",
     "library": "node scripts/build-library.mjs --dir library --out data/library.json",
-    "artstation": "python scripts/collect-artstation.py infinition --out .artstation-raw.json && node scripts/build-artstation.mjs --user infinition --raw .artstation-raw.json --out data/artstation.json"
+    "artstation": "python scripts/collect-artstation.py infinition --out .artstation-raw.json && node scripts/build-artstation.mjs --user infinition --raw .artstation-raw.json --out data/artstation.json",
+    "photos": "node scripts/build-photos.mjs --dir photos --out data/photos.json --assets assets/photos"
   }
 }

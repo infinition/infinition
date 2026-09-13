@@ -30,7 +30,7 @@ const terminal = {
                 terminal.print("  music       - Navigate to Audio Frequency");
                 terminal.print("  kb          - Navigate to Knowledge Base");
                 terminal.print("  portfolio   - Navigate to Profile/Portfolio");
-                terminal.print("  css         - Navigate to CSS Library");
+                terminal.print("  photos [tag]- Navigate to the Photo Gallery, optional tag");
                 terminal.print("  log         - Navigate to Data Logs");
                 terminal.print("  root        - Navigate to Root/Portal");
                 terminal.print("  papers [q]  - Navigate to the Library, optional filter");
@@ -143,14 +143,33 @@ const terminal = {
                 }, 500);
             }
         },
-        css: {
-            desc: "Go to CSS Lib",
-            action: () => {
-                terminal.print("Navigating to CSS Library...", "term-warn");
+        photos: {
+            desc: "Go to the Photo Gallery",
+            action: (args) => {
+                const tag = (args && args.length) ? args.join(' ') : '';
+                terminal.print(tag
+                    ? `Opening the gallery, tag: ${tag}...`
+                    : "Opening the photo gallery...", "term-warn");
                 setTimeout(() => {
-                    navigateTo('csslib');
+                    navigateTo('photos');
                     terminal.toggle();
+                    if (tag && typeof PHOTOS !== 'undefined') {
+                        // La grille se peuple en asynchrone, filtre applique apres.
+                        setTimeout(() => PHOTOS.focusTag(tag), 600);
+                    }
                 }, 500);
+            }
+        },
+        photo: {
+            desc: "Go to the Photo Gallery (Alias)",
+            action: (args) => {
+                terminal.commands.photos.action(args);
+            }
+        },
+        pics: {
+            desc: "Go to the Photo Gallery (Alias)",
+            action: (args) => {
+                terminal.commands.photos.action(args);
             }
         },
         log: {
@@ -309,8 +328,8 @@ const terminal = {
                     terminal.currentPath = "/home/visitor/secrets";
                 } else if (target === "music" || target === "audio") {
                     terminal.commands.music.action();
-                } else if (target === "css" || target === "csslib") {
-                    terminal.commands.css.action();
+                } else if (target === "photos" || target === "photo" || target === "pics") {
+                    terminal.commands.photos.action([]);
                 } else if (target === "log" || target === "logs" || target === "blog") {
                     terminal.commands.log.action();
                 } else if (target === "kb") {
@@ -368,7 +387,7 @@ const terminal = {
 
                 if (isLong) {
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 music", "term-info");
-                    terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 csslib", "term-info");
+                    terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 photos", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 logs", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 kb", "term-info");
                     terminal.print("drwxr-xr-x  2 visitor visitor 4096 Nov 30 00:00 portfolio", "term-info");
@@ -378,7 +397,7 @@ const terminal = {
                     terminal.print("drwx------  2 root    root    4096 Nov 30 00:00 secrets", "term-info");
                     terminal.print("-rw-r--r--  1 visitor visitor 1024 Nov 30 00:00 README.md", "term-info");
                 } else {
-                    terminal.print("music  csslib  logs  kb  portfolio  papers  art  repos  secrets  README.md", "term-info");
+                    terminal.print("music  photos  logs  kb  portfolio  papers  art  repos  secrets  README.md", "term-info");
                 }
             }
         },

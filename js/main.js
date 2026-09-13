@@ -13,11 +13,12 @@ function handleHashChange() {
     else if (hash.startsWith('#paper:')) { navigateTo('papers', true); PAPERS.openFromHash(hash.slice(7)); }
     else if (hash.startsWith('#read:')) { navigateTo('papers', true); PAPERS.openFromHash(hash.slice(6)); }
     else if (hash.startsWith('#art:')) { navigateTo('art', true); ARTSTATION.openFromHash(hash.slice(5)); }
+    else if (hash.startsWith('#photo:')) { navigateTo('photos', true); PHOTOS.openFromHash(hash.slice(7)); }
     else if (hash === '#portfolio') navigateTo('portfolio');
     else if (hash === '#blog') navigateTo('blog');
     else if (hash === '#kb') navigateTo('kb');
     else if (hash === '#music') navigateTo('music');
-    else if (hash === '#csslib') navigateTo('csslib');
+    else if (hash === '#photos') navigateTo('photos');
     else if (hash === '#acid-pages') navigateTo('acid-pages');
     else if (hash === '#repos') navigateTo('repos');
     else if (hash === '#papers') navigateTo('papers');
@@ -73,7 +74,7 @@ function navigateTo(viewId, keepScroll = false) {
 
     if (viewId === 'blog') runScanSimulation();
     if (viewId === 'kb') initKB();
-    if (viewId === 'csslib') initCSSLib();
+    if (viewId === 'photos') initPhotos();
     if (viewId === 'acid-pages') initAcidPages();
     if (viewId === 'repos') initRepos();
     if (viewId === 'papers') initPapers();
@@ -83,6 +84,7 @@ function navigateTo(viewId, keepScroll = false) {
        passer par le bouton de fermeture, on referme donc ici. */
     if (viewId !== 'papers' || !/^#(paper|read):/.test(window.location.hash)) PAPERS.close();
     if (viewId !== 'art' || !window.location.hash.startsWith('#art:')) ARTSTATION.close();
+    if (viewId !== 'photos' || !window.location.hash.startsWith('#photo:')) PHOTOS.close();
     // Removed direct music fetch, now handled by reveal button
     if (!keepScroll) window.scrollTo(0, 0);
 }

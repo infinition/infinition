@@ -18,8 +18,10 @@ on:
       - 'scripts/build-logs.mjs'
       - 'scripts/build-social.mjs'
       - 'library/**'
+      - 'photos/**'
       - 'scripts/build-papers.mjs'
       - 'scripts/build-library.mjs'
+      - 'scripts/build-photos.mjs'
       - 'scripts/build-paper-assets.py'
       - 'scripts/build-artstation.mjs'
       - 'scripts/collect-artstation.py'
@@ -77,6 +79,12 @@ jobs:
       - name: Build data/library.json
         # Les rayons de textes markdown du dossier library/.
         run: node scripts/build-library.mjs --dir library --out data/library.json
+
+      - name: Build data/photos.json
+        # Vignettes et versions web des photos de photos/. Les originaux ne
+        # sont jamais servis au visiteur, et une derivee deja calculee n'est
+        # pas refaite : seul un fichier ajoute ou modifie est reencode.
+        run: node scripts/build-photos.mjs --dir photos --out data/photos.json --assets assets/photos
 
       - uses: actions/setup-python@v5
         with:
@@ -136,6 +144,8 @@ jobs:
             }
             console.log(papers.papers.length + ' papers, '
               + papers.papers.filter(p => p.cover).length + ' covers');
+            const photos = require('./data/photos.json');
+            console.log(photos.count + ' photos, ' + photos.tags.length + ' tags');
             const library = require('./data/library.json');
             console.log((library.shelves || [])
               .map(s => s.label + ': ' + s.count).join(', ') || 'library empty');
@@ -152,11 +162,11 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           # git diff ignore les fichiers non suivis, donc un tout premier
           # snapshot passait pour "aucun changement" et n'etait jamais commite.
-          if [ -z "$(git status --porcelain -- data/repos.json data/repos-summary.json data/logs.json data/social.json data/papers.json data/library.json data/artstation.json assets/repos-grid.svg assets/papers)" ]; then
+          if [ -z "$(git status --porcelain -- data/repos.json data/repos-summary.json data/logs.json data/social.json data/papers.json data/library.json data/photos.json data/artstation.json assets/repos-grid.svg assets/papers assets/photos)" ]; then
             echo 'no change'
             exit 0
           fi
-          git add data/repos.json data/repos-summary.json data/logs.json data/social.json data/papers.json data/library.json data/artstation.json assets/repos-grid.svg assets/papers
+          git add data/repos.json data/repos-summary.json data/logs.json data/social.json data/papers.json data/library.json data/photos.json data/artstation.json assets/repos-grid.svg assets/papers assets/photos
           git commit -m 'chore(data): refresh site snapshots'
           # Un outil de build peut laisser trainer une modif hors de cette
           # liste (ex: package-lock.json retouche par npm) ; on ne veut

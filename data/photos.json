@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-09-13T16:42:34.539Z",
+  "count": 2,
+  "tags": [
+    {
+      "name": "storm",
+      "count": 2
+    }
+  ],
+  "photos": [
+    {
+      "id": "thunder1",
+      "slug": "thunder1",
+      "file": "thunder1.storm.jpg",
+      "title": "Thunder1",
+      "tags": [
+        "storm"
+      ],
+      "thumb": "assets/photos/thunder1-thumb.webp",
+      "full": "assets/photos/thunder1.webp",
+      "width": 2385,
+      "height": 1824,
+      "ratio": 1.3076,
+      "stamp": "150945:1789317648829"
+    },
+    {
+      "id": "thunder2",
+      "slug": "thunder2",
+      "file": "thunder2.storm.jpg",
+      "title": "Thunder2",
+      "tags": [
+        "storm"
+      ],
+      "thumb": "assets/photos/thunder2-thumb.webp",
+      "full": "assets/photos/thunder2.webp",
+      "width": 1440,
+      "height": 1074,
+      "ratio": 1.3408,
+      "stamp": "45757:1789317648830"
+    }
+  ]
+}

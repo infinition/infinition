@@ -1,0 +1,567 @@
+/* =========================================================
+   PHOTOS
+   Galerie personnelle. Les donnees viennent de
+   data/photos.json, genere par scripts/build-photos.mjs a
+   partir du dossier photos/. Les tags sont lus dans le nom
+   des fichiers.
+   ========================================================= */
+
+/* display: flex sur un element masque par l attribut hidden gagne contre la
+   feuille du navigateur. On tranche une fois pour toute la vue. */
+#photos-view [hidden],
+.photo-viewer [hidden] {
+    display: none !important;
+}
+
+#photos-view .photos-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+}
+
+/* --- HEADER --- */
+#photos-view .photos-head {
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+#photos-view .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 2.5vw, 22px);
+    flex-wrap: wrap;
+}
+
+#photos-view .photos-head h1 {
+    font-family: var(--cyber-font);
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    letter-spacing: 4px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 2px 2px 0 var(--neon-green), -2px -2px 0 var(--neon-blue);
+}
+
+#photos-view .photos-total {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: var(--code-font);
+    font-weight: 700;
+    font-size: clamp(.95rem, 2.4vw, 1.25rem);
+    color: var(--neon-green);
+    background: rgba(10, 255, 71, .07);
+    border: 1px solid rgba(10, 255, 71, .45);
+    box-shadow: 0 0 22px rgba(10, 255, 71, .16), inset 0 0 18px rgba(10, 255, 71, .05);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+#photos-view .photos-total i {
+    font-size: .9em;
+    filter: drop-shadow(0 0 6px rgba(10, 255, 71, .7));
+}
+
+#photos-view .photos-total small {
+    font-size: .55em;
+    letter-spacing: 2px;
+    opacity: .75;
+    text-transform: uppercase;
+}
+
+#photos-view .photos-sub {
+    margin-top: .9rem;
+    font-family: var(--code-font);
+    font-size: .8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: .55;
+}
+
+/* --- BARRE D OUTILS : TAGS ET MODE D AFFICHAGE --- */
+#photos-view .photos-toolbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.6rem;
+}
+
+#photos-view .tag-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 1 320px;
+}
+
+#photos-view .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* N'apparait qu'au dela d'une vingtaine de tags, quand parcourir la liste a
+   l'oeil devient plus long que taper trois lettres. */
+#photos-view .tag-search {
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 999px;
+    color: #e6e6e6;
+    font-family: var(--code-font);
+    font-size: .7rem;
+    padding: 8px 14px;
+    width: min(220px, 100%);
+    outline: none;
+    transition: border-color .18s ease;
+}
+
+#photos-view .tag-search:focus {
+    border-color: rgba(10, 255, 71, .5);
+}
+
+#photos-view .tag {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(255, 255, 255, .1);
+    color: #8b949e;
+    font-family: var(--code-font);
+    font-size: .7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 13px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+
+#photos-view .tag:hover {
+    color: #e6e6e6;
+    border-color: rgba(255, 255, 255, .24);
+}
+
+#photos-view .tag.active {
+    color: var(--neon-green);
+    border-color: rgba(10, 255, 71, .5);
+    background: rgba(10, 255, 71, .08);
+}
+
+/* Un tag qui ne coexiste avec aucune selection en cours ne menerait qu'a une
+   grille vide : il reste lisible mais devient inerte. */
+#photos-view .tag.is-dead {
+    opacity: .32;
+    cursor: default;
+    pointer-events: none;
+}
+
+#photos-view .tag-more {
+    color: #e6e6e6;
+    border-style: dashed;
+}
+
+#photos-view .tag-clear {
+    color: var(--neon-red);
+    border-color: rgba(255, 0, 60, .4);
+}
+
+#photos-view .tag-clear:hover {
+    background: rgba(255, 0, 60, .08);
+    color: var(--neon-red);
+}
+
+#photos-view .tag-count {
+    font-size: .85em;
+    opacity: .55;
+}
+
+/* Le selecteur de mode, deux boutons collés facon segment. */
+#photos-view .mode-group {
+    flex: none;
+    display: flex;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+#photos-view .mode-btn {
+    background: none;
+    border: none;
+    color: #8b949e;
+    font-family: var(--code-font);
+    font-size: .65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 13px;
+    border-radius: 7px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: background .18s ease, color .18s ease;
+}
+
+#photos-view .mode-btn.active {
+    background: rgba(10, 255, 71, .14);
+    color: #fff;
+}
+
+/* --- GRILLE SERREE, FACON PELLICULE --- */
+#photos-view .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+    gap: 3px;
+}
+
+#photos-view .photo-grid .shot {
+    aspect-ratio: 1 / 1;
+}
+
+/* --- MODE PROPORTIONS REELLES, EN COLONNES --- */
+/* Chaque photo garde son rapport. Les colonnes CSS gardent l ordre de
+   lecture de haut en bas, ce qui suffit pour une galerie et evite le calcul
+   de positions qu'impose une vraie mosaique. */
+#photos-view .photo-columns {
+    column-count: 4;
+    column-gap: 14px;
+}
+
+#photos-view .photo-columns .shot {
+    width: 100%;
+    margin: 0 0 14px;
+    border-radius: 10px;
+    /* Une case de colonne coupee entre deux colonnes casserait la photo. */
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
+#photos-view .photo-columns .shot img {
+    border-radius: 10px;
+}
+
+/* --- LA CASE --- */
+#photos-view .shot {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: #0a0e12;
+    overflow: hidden;
+    cursor: pointer;
+    animation: shotIn .4s ease both;
+}
+
+@keyframes shotIn {
+    from {
+        opacity: 0;
+        transform: scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#photos-view .shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity .4s ease, transform .45s cubic-bezier(.22, .61, .36, 1);
+}
+
+#photos-view .shot img.ready {
+    opacity: 1;
+}
+
+#photos-view .shot:hover img {
+    transform: scale(1.06);
+}
+
+#photos-view .shot:focus-visible {
+    outline: 2px solid var(--neon-green);
+    outline-offset: 2px;
+}
+
+/* Le voile n apparait qu au survol : en grille serree le sujet doit rester
+   lisible, et au doigt le titre est de toute facon dans la visionneuse. */
+#photos-view .shot-veil {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 1.8rem .7rem .6rem;
+    background: linear-gradient(180deg, transparent, rgba(3, 5, 7, .85));
+    font-family: var(--code-font);
+    font-size: .68rem;
+    color: #fff;
+    text-align: left;
+    opacity: 0;
+    transition: opacity .25s ease;
+    pointer-events: none;
+}
+
+#photos-view .shot:hover .shot-veil,
+#photos-view .shot:focus-visible .shot-veil {
+    opacity: 1;
+}
+
+#photos-view .photos-status {
+    text-align: center;
+    font-family: var(--code-font);
+    font-size: .78rem;
+    letter-spacing: 1px;
+    color: #6e7681;
+    padding: 2.5rem 0 0;
+}
+
+#photos-view .photos-status .ok {
+    color: var(--neon-green);
+}
+
+#photos-view .photos-empty {
+    text-align: center;
+    padding: 4rem 1rem;
+    border: 1px dashed rgba(255, 255, 255, .12);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .015);
+}
+
+#photos-view .photos-empty i {
+    font-size: 2.4rem;
+    color: #2f3742;
+    margin-bottom: 1rem;
+}
+
+#photos-view .photos-empty p {
+    font-family: var(--code-font);
+    font-size: .8rem;
+    line-height: 1.9;
+    color: #6e7681;
+}
+
+#photos-view .photos-empty code {
+    color: var(--neon-green);
+    background: rgba(10, 255, 71, .07);
+    border: 1px solid rgba(10, 255, 71, .2);
+    border-radius: 5px;
+    padding: 2px 7px;
+}
+
+/* =========================================================
+   VISIONNEUSE
+   ========================================================= */
+
+.photo-viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 4000;
+    display: none;
+    flex-direction: column;
+    background: rgba(3, 4, 6, .98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    overscroll-behavior: contain;
+}
+
+.photo-viewer.open {
+    display: flex;
+    animation: readerIn .22s ease both;
+}
+
+body.photo-open {
+    overflow: hidden;
+}
+
+.photo-viewer .pv-bar {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: .7rem clamp(.7rem, 2vw, 1.2rem);
+    padding-left: max(.7rem, env(safe-area-inset-left));
+    padding-right: max(.7rem, env(safe-area-inset-right));
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    background: rgba(10, 12, 15, .9);
+}
+
+.photo-viewer .pv-close {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .04);
+    color: #e6e6e6;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background .18s ease, color .18s ease;
+}
+
+.photo-viewer .pv-close:hover {
+    background: rgba(255, 0, 60, .12);
+    color: var(--neon-red);
+}
+
+.photo-viewer .pv-heading {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.photo-viewer .pv-heading h2 {
+    font-family: var(--cyber-font);
+    font-size: clamp(.85rem, 2.2vw, 1.1rem);
+    color: #fff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.photo-viewer .pv-tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 3px;
+    flex-wrap: wrap;
+}
+
+.photo-viewer .pv-tag {
+    font-family: var(--code-font);
+    font-size: .58rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--neon-green);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.photo-viewer .pv-tag:hover {
+    text-decoration: underline;
+}
+
+.photo-viewer .pv-counter {
+    flex: none;
+    font-family: var(--code-font);
+    font-size: .65rem;
+    letter-spacing: 2px;
+    color: #8b949e;
+    white-space: nowrap;
+}
+
+.photo-viewer .pv-stage {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.photo-viewer .pv-stage img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .7);
+}
+
+.photo-viewer .pv-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(10, 12, 15, .75);
+    color: #e6e6e6;
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: background .18s ease, border-color .18s ease;
+}
+
+.photo-viewer .pv-nav:hover {
+    background: rgba(10, 255, 71, .16);
+    border-color: var(--neon-green);
+}
+
+.photo-viewer .pv-prev {
+    left: max(10px, env(safe-area-inset-left));
+}
+
+.photo-viewer .pv-next {
+    right: max(10px, env(safe-area-inset-right));
+}
+
+/* --- MOBILE --- */
+@media (max-width: 900px) {
+    #photos-view .photo-columns {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    #photos-view .photos-wrap {
+        padding: 1.5rem .5rem 4rem;
+    }
+
+    #photos-view .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+        gap: 2px;
+    }
+
+    #photos-view .photo-columns {
+        column-count: 2;
+        column-gap: 8px;
+    }
+
+    #photos-view .photo-columns .shot {
+        margin-bottom: 8px;
+    }
+
+    #photos-view .photos-toolbar {
+        padding: 0 .5rem;
+    }
+
+    #photos-view .tag {
+        font-size: .64rem;
+        padding: 7px 11px;
+    }
+
+    /* Le survol n existe pas au doigt, le voile ne servirait a rien. */
+    #photos-view .shot-veil {
+        display: none;
+    }
+
+    .photo-viewer .pv-counter {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #photos-view .shot,
+    .photo-viewer.open {
+        animation: none;
+    }
+
+    #photos-view .shot img {
+        transition: none;
+    }
+}
