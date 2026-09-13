@@ -1,0 +1,960 @@
+{
+  "generated_at": "2026-09-13T12:37:28.988Z",
+  "source": "api",
+  "username": "infinition",
+  "profile": {
+    "id": 59210,
+    "username": "infinition",
+    "full_name": "Fabien Polly",
+    "headline": "3D & 2D Environment Artist",
+    "location": "Cannes, France",
+    "avatar_url": "https://cdna.artstation.com/p/users/avatars/000/059/210/large/fa69d8897109476979d4bf68b2fa7f23.jpg?1787648202",
+    "profile_url": "https://www.artstation.com/infinition",
+    "followers_count": 385,
+    "following_count": 3086,
+    "projects_count": 20,
+    "liked_projects_count": 2161,
+    "pro_member": false,
+    "skills": [
+      "Handpainting",
+      "PBR Texturing",
+      "Texturing",
+      "Digital Sculpting",
+      "Compositing",
+      "Lighting",
+      "3D Animation",
+      "3D Scanning",
+      "Painting",
+      "Photography",
+      "Concept Design",
+      "3D Modeling",
+      "Concept Art",
+      "Digital Painting",
+      "Game Design"
+    ],
+    "software": [
+      {
+        "name": "3DCoat",
+        "icon": "https://cdnb.artstation.com/p/softwares/icons/000/000/059/default/3DCoat.png?1626969893"
+      },
+      {
+        "name": "Photoshop",
+        "icon": "https://cdna.artstation.com/p/softwares/icons/000/000/032/default/Photoshop.png?1608144074"
+      },
+      {
+        "name": "SketchUp",
+        "icon": "https://cdnb.artstation.com/p/softwares/icons/000/000/037/default/sketchup.png?1424819106"
+      },
+      {
+        "name": "Nuke",
+        "icon": "https://cdnb.artstation.com/p/softwares/icons/000/000/029/default/Nuke.png?1424684350"
+      },
+      {
+        "name": "Substance 3D Designer",
+        "icon": "https://cdna.artstation.com/p/softwares/icons/000/000/042/default/ds_appicon_noshadow_512.png?1627397498"
+      },
+      {
+        "name": "Substance 3D Painter",
+        "icon": "https://cdnb.artstation.com/p/softwares/icons/000/000/041/default/pt_appicon_noshadow_512.png?1627397594"
+      },
+      {
+        "name": "Substance 3D Sampler",
+        "icon": "https://cdna.artstation.com/p/softwares/icons/000/054/818/default/sa_appicon_noshadow_512.png?1627397412"
+      },
+      {
+        "name": "Marmoset Toolbag",
+        "icon": "https://cdnb.artstation.com/p/softwares/icons/000/000/043/default/toolbag_512.png?1459433117"
+      },
+      {
+        "name": "Maya",
+        "icon": "https://cdna.artstation.com/p/softwares/icons/000/000/024/default/maya.png?1504879343"
+      },
+      {
+        "name": "Blender",
+        "icon": "https://cdna.artstation.com/p/softwares/icons/000/000/008/default/blender_icon_1024x1024.png?1570478232"
+      },
+      {
+        "name": "Unreal Engine",
+        "icon": "https://cdna.artstation.com/p/softwares/icons/000/000/044/default/UE-Icon-2023-White.png?1742929206"
+      },
+      {
+        "name": "ZBrush",
+        "icon": "https://cdna.artstation.com/p/softwares/icons/000/000/046/default/zBrush3.png?1505488078"
+      },
+      {
+        "name": "Procreate",
+        "icon": "https://cdnb.artstation.com/p/softwares/icons/000/000/183/default/Icon.png?1487948438"
+      },
+      {
+        "name": "Affinity Photo",
+        "icon": "https://cdna.artstation.com/p/softwares/icons/000/001/026/default/affinity-photo_2x-120920160853.png?1483880007"
+      }
+    ]
+  },
+  "totals": {
+    "artworks": 20,
+    "likes": 359,
+    "views": 6364,
+    "followers": 385
+  },
+  "artworks": [
+    {
+      "id": "V8yZ6N",
+      "hash_id": "V8yZ6N",
+      "title": "Chained Beast",
+      "description": "Wanted to push horror and pure threat as far as possible with this werewolf design. Focus was on raw aggression, heavy anatomical tension, and a suffocating dungeon atmosphere. Sculpted in Nomad Sculpt and ZBrush, then assembled, lit, and rendered inside Blender using custom nodes for viewport compositing and lighting, then Affinity for details.",
+      "published_at": "2026-08-25T10:29:45.019Z",
+      "url": "https://www.artstation.com/artwork/V8yZ6N",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/covers/images/101/895/299/20260825185100/smaller_square/fabien-polly-fabien-polly-fabien-polly-asset.jpg?1787701869",
+      "cover_url": "https://cdnb.artstation.com/p/assets/covers/images/101/895/299/medium/fabien-polly-fabien-polly-fabien-polly-asset.jpg?1787701869",
+      "image_url": "https://cdnb.artstation.com/p/assets/covers/images/101/895/299/large/fabien-polly-fabien-polly-fabien-polly-asset.jpg?1787701869",
+      "width": 1024,
+      "height": 1028,
+      "likes_count": 4,
+      "views_count": 27,
+      "tags": [
+        "creepy",
+        "creaturedesign",
+        "werewolf",
+        "characterart",
+        "Blender3D",
+        "Diorama",
+        "darkfantasy",
+        "halloween",
+        "Monster",
+        "Horror",
+        "dungeon",
+        "noai"
+      ],
+      "software": [
+        "ZBrush",
+        "Nomad Sculpt",
+        "Blender",
+        "Affinity Photo"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/covers/images/101/895/299/large/fabien-polly-fabien-polly-fabien-polly-asset.jpg?1787701869",
+          "width": 1024,
+          "height": 1028
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/101/874/026/large/fabien-polly-werewolf-infinition.jpg?1787653714",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/101/873/864/large/fabien-polly-werewpmf-compositing.jpg?1787651783",
+          "width": 2559,
+          "height": 1392
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/101/874/431/large/fabien-polly-albedo-werewolf.jpg?1787653244",
+          "width": 1450,
+          "height": 1069
+        }
+      ]
+    },
+    {
+      "id": "q0QB2L",
+      "hash_id": "q0QB2L",
+      "title": "Jaguar Priestess - Awakening",
+      "description": "Personal project exploring a mix of Mesoamerican aesthetic and fantasy mood.  I wanted to build a complete assets & scene with character and environment interacting, then played with two completely different moods (night and daylight).  Done with Nomad, ZBrush, & Blender,  Scroll down for the daylight lighting variant, the compositing node tree and the viewport clay render.  Hope you like it!",
+      "published_at": "2026-08-22T19:29:49.254Z",
+      "url": "https://www.artstation.com/artwork/q0QB2L",
+      "thumb_url": "https://cdna.artstation.com/p/assets/images/images/101/806/890/20260822143151/smaller_square/fabien-polly-asset.jpg?1787427111",
+      "cover_url": "https://cdna.artstation.com/p/assets/images/images/101/806/890/medium/fabien-polly-asset.jpg?1787427111",
+      "image_url": "https://cdna.artstation.com/p/assets/images/images/101/806/890/large/fabien-polly-asset.jpg?1787427111",
+      "width": 2547,
+      "height": 1427,
+      "likes_count": 4,
+      "views_count": 35,
+      "tags": [
+        "Maya",
+        "sculpting",
+        "blender",
+        "aztec",
+        "concept art",
+        "jungle",
+        "Ancient Civilisation",
+        "noai"
+      ],
+      "software": [
+        "Blender",
+        "Nomad Sculpt",
+        "ZBrush"
+      ],
+      "images": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/101/806/890/large/fabien-polly-asset.jpg?1787427111",
+          "width": 2547,
+          "height": 1427
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/101/807/017/large/fabien-polly-asset.jpg?1787426657",
+          "width": 2528,
+          "height": 1424
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/101/806/894/large/fabien-polly-asset.jpg?1787426257",
+          "width": 1426,
+          "height": 1042
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/101/806/896/large/fabien-polly-asset.jpg?1787426261",
+          "width": 1413,
+          "height": 1027
+        }
+      ]
+    },
+    {
+      "id": "GeJodd",
+      "hash_id": "GeJodd",
+      "title": "Exoplanet",
+      "description": "Playing with Eevee in blender node to create a procedural planet generator",
+      "published_at": "2023-09-01T22:10:22.236Z",
+      "url": "https://www.artstation.com/artwork/GeJodd",
+      "thumb_url": "https://cdna.artstation.com/p/assets/images/images/066/730/090/smaller_square/fabien-polly-planet-2k.jpg?1693605899",
+      "cover_url": "https://cdna.artstation.com/p/assets/images/images/066/730/090/medium/fabien-polly-planet-2k.jpg?1693605899",
+      "image_url": "https://cdna.artstation.com/p/assets/images/images/066/730/090/large/fabien-polly-planet-2k.jpg?1693605899",
+      "width": 2535,
+      "height": 1426,
+      "likes_count": 21,
+      "views_count": 253,
+      "tags": [
+        "exoplanet",
+        "NoAI",
+        "eevee",
+        "space",
+        "galactic",
+        "stars",
+        "galaxy",
+        "scifi"
+      ],
+      "software": [
+        "Blender"
+      ],
+      "images": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/066/730/090/large/fabien-polly-planet-2k.jpg?1693605899",
+          "width": 2535,
+          "height": 1426
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/066/730/193/large/fabien-polly-capture-d-ecran-2023-09-02-000959.jpg?1693606209",
+          "width": 1920,
+          "height": 1058
+        }
+      ]
+    },
+    {
+      "id": "qQl4Py",
+      "hash_id": "qQl4Py",
+      "title": "Dragon's lair",
+      "description": "Dragon epic scene with blender and affinity photo",
+      "published_at": "2022-08-25T17:08:23.285Z",
+      "url": "https://www.artstation.com/artwork/qQl4Py",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/423/20260825185949/smaller_square/fabien-polly-knight-dragon.jpg?1787702389",
+      "cover_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/423/medium/fabien-polly-knight-dragon.jpg?1787702389",
+      "image_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/423/large/fabien-polly-knight-dragon.jpg?1787702389",
+      "width": 2752,
+      "height": 1564,
+      "likes_count": 11,
+      "views_count": 179,
+      "tags": [
+        "visual development",
+        "Fantasy",
+        "Illustration",
+        "Dragon",
+        "Blender",
+        "temple",
+        "concept Art",
+        "Knight",
+        "Ancient",
+        "digital 2D",
+        "digital 3D",
+        "Environmental Concept Art &amp; Design"
+      ],
+      "software": [
+        "Blender",
+        "Affinity Photo"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/101/895/423/large/fabien-polly-knight-dragon.jpg?1787702389",
+          "width": 2752,
+          "height": 1564
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/053/115/587/large/fabien-polly-2.jpg?1661447043",
+          "width": 2166,
+          "height": 1208
+        }
+      ]
+    },
+    {
+      "id": "b5Vr5G",
+      "hash_id": "b5Vr5G",
+      "title": "Abstract death",
+      "description": "Abstract death concept art quickly made with cycles",
+      "published_at": "2022-01-29T00:23:19.899Z",
+      "url": "https://www.artstation.com/artwork/b5Vr5G",
+      "thumb_url": "https://cdna.artstation.com/p/assets/images/images/101/895/948/20260825192956/smaller_square/fabien-polly-ab.jpg?1787704196",
+      "cover_url": "https://cdna.artstation.com/p/assets/images/images/101/895/948/medium/fabien-polly-ab.jpg?1787704196",
+      "image_url": "https://cdna.artstation.com/p/assets/images/images/101/895/948/large/fabien-polly-ab.jpg?1787704196",
+      "width": 2608,
+      "height": 1632,
+      "likes_count": 14,
+      "views_count": 84,
+      "tags": [
+        "conceptart",
+        "blender",
+        "eevee",
+        "cycles",
+        "fantasy",
+        "death",
+        "skull"
+      ],
+      "software": [
+        "Blender"
+      ],
+      "images": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/101/895/948/large/fabien-polly-ab.jpg?1787704196",
+          "width": 2608,
+          "height": 1632
+        }
+      ]
+    },
+    {
+      "id": "LeZw0K",
+      "hash_id": "LeZw0K",
+      "title": "Thunder god's death",
+      "description": "Blender Norse mythology concept art \"Thunder god's death\"",
+      "published_at": "2022-01-23T09:17:59.147Z",
+      "url": "https://www.artstation.com/artwork/LeZw0K",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/images/images/045/514/647/20220122212850/smaller_square/fabien-polly-viking-final.jpg?1642908530",
+      "cover_url": "https://cdnb.artstation.com/p/assets/images/images/045/514/647/medium/fabien-polly-viking-final.jpg?1642908530",
+      "image_url": "https://cdnb.artstation.com/p/assets/images/images/045/514/647/large/fabien-polly-viking-final.jpg?1642908530",
+      "width": 2560,
+      "height": 1440,
+      "likes_count": 18,
+      "views_count": 191,
+      "tags": [
+        "mythology",
+        "viking",
+        "thor",
+        "conceptart",
+        "blender",
+        "eevee",
+        "mjolnir",
+        "death",
+        "nordic"
+      ],
+      "software": [
+        "Blender",
+        "Affinity Photo"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/045/514/647/large/fabien-polly-viking-final.jpg?1642908530",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/045/525/926/large/fabien-polly-viking-final-cycles.jpg?1642947321",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/045/522/695/original/fabien-polly-viking-final-compressed10.gif?1642939922",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/045/514/644/large/fabien-polly-viking-eevee-blender1.jpg?1642908496",
+          "width": 2560,
+          "height": 1352
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/045/514/646/large/fabien-polly-viking-eevee-blender2.jpg?1642908502",
+          "width": 1920,
+          "height": 1055
+        }
+      ]
+    },
+    {
+      "id": "G81RG1",
+      "hash_id": "G81RG1",
+      "title": "Strange encounter",
+      "description": "Quick Concept art made with blender eevee render and affinity photo",
+      "published_at": "2022-01-15T01:56:04.499Z",
+      "url": "https://www.artstation.com/artwork/G81RG1",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/687/20260825191554/smaller_square/fabien-polly-aaor.jpg?1787703354",
+      "cover_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/687/medium/fabien-polly-aaor.jpg?1787703354",
+      "image_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/687/large/fabien-polly-aaor.jpg?1787703354",
+      "width": 2594,
+      "height": 1632,
+      "likes_count": 21,
+      "views_count": 141,
+      "tags": [
+        "SCifi",
+        "creature",
+        "blender",
+        "eevee",
+        "realtime",
+        "alien"
+      ],
+      "software": [
+        "Blender",
+        "Affinity Photo"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/101/895/687/large/fabien-polly-aaor.jpg?1787703354",
+          "width": 2594,
+          "height": 1632
+        }
+      ]
+    },
+    {
+      "id": "YewWlb",
+      "hash_id": "YewWlb",
+      "title": "Underwater dream",
+      "description": "Underwater dream concept art with blender and affinity",
+      "published_at": "2021-09-08T13:25:13.392Z",
+      "url": "https://www.artstation.com/artwork/YewWlb",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/images/images/041/223/685/smaller_square/fabien-polly-woman-of-the-sea2.jpg?1631107502",
+      "cover_url": "https://cdnb.artstation.com/p/assets/images/images/041/223/685/medium/fabien-polly-woman-of-the-sea2.jpg?1631107502",
+      "image_url": "https://cdnb.artstation.com/p/assets/images/images/041/223/685/large/fabien-polly-woman-of-the-sea2.jpg?1631107502",
+      "width": 2132,
+      "height": 1320,
+      "likes_count": 33,
+      "views_count": 556,
+      "tags": [
+        "Digital 2D",
+        "Concept Art",
+        "Illustration",
+        "Visual Development",
+        "fantasy",
+        "mermaid",
+        "sea",
+        "atlantide",
+        "woman",
+        "underwater"
+      ],
+      "software": [
+        "Affinity Photo",
+        "Blender"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/041/223/685/large/fabien-polly-woman-of-the-sea2.jpg?1631107502",
+          "width": 2132,
+          "height": 1320
+        }
+      ]
+    },
+    {
+      "id": "3dymeJ",
+      "hash_id": "3dymeJ",
+      "title": "Woman Vampire concept art",
+      "description": "Thirsty woman Vampire concept art made with Blender / Zbrush and Affinity Photo for hair and tatoos etc",
+      "published_at": "2021-09-04T01:57:28.820Z",
+      "url": "https://www.artstation.com/artwork/3dymeJ",
+      "thumb_url": "https://cdna.artstation.com/p/assets/images/images/101/894/808/20260825182018/smaller_square/fabien-polly-gemini-generated-image-fc64srfc64srfc64-2.jpg?1787700019",
+      "cover_url": "https://cdna.artstation.com/p/assets/images/images/101/894/808/medium/fabien-polly-gemini-generated-image-fc64srfc64srfc64-2.jpg?1787700019",
+      "image_url": "https://cdna.artstation.com/p/assets/images/images/101/894/808/large/fabien-polly-gemini-generated-image-fc64srfc64srfc64-2.jpg?1787700019",
+      "width": 2528,
+      "height": 1684,
+      "likes_count": 6,
+      "views_count": 58,
+      "tags": [
+        "Digital 2D",
+        "Digital 3D",
+        "Concept Art",
+        "Illustration",
+        "Visual Development",
+        "fantasy",
+        "blender",
+        "character modeling",
+        "zbrush",
+        "vampire",
+        "blood",
+        "bat"
+      ],
+      "software": [
+        "Blender",
+        "ZBrush",
+        "Affinity Photo"
+      ],
+      "images": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/101/894/808/large/fabien-polly-gemini-generated-image-fc64srfc64srfc64-2.jpg?1787700019",
+          "width": 2528,
+          "height": 1684
+        }
+      ]
+    },
+    {
+      "id": "bK9J9m",
+      "hash_id": "bK9J9m",
+      "title": "Ancient Lost Pyramid in Jungle",
+      "description": "Concept of an Ancient lost pyramid in the jungle made with blender and affinity photo",
+      "published_at": "2021-09-03T12:48:48.345Z",
+      "url": "https://www.artstation.com/artwork/bK9J9m",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/images/images/041/072/115/smaller_square/fabien-polly-pyramid-jungle-final3.jpg?1630672991",
+      "cover_url": "https://cdnb.artstation.com/p/assets/images/images/041/072/115/medium/fabien-polly-pyramid-jungle-final3.jpg?1630672991",
+      "image_url": "https://cdnb.artstation.com/p/assets/images/images/041/072/115/large/fabien-polly-pyramid-jungle-final3.jpg?1630672991",
+      "width": 4500,
+      "height": 2768,
+      "likes_count": 38,
+      "views_count": 1356,
+      "tags": [
+        "Digital 2D",
+        "Digital 3D",
+        "Concept Art",
+        "Illustration",
+        "Visual Development",
+        "fantasy",
+        "Environmental Concept Art &amp; Design",
+        "pyramid",
+        "jungle",
+        "civilisation",
+        "ancient",
+        "mayan"
+      ],
+      "software": [
+        "Blender",
+        "Affinity Photo"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/041/072/115/large/fabien-polly-pyramid-jungle-final3.jpg?1630672991",
+          "width": 4500,
+          "height": 2768
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/041/079/199/large/fabien-polly-fabien-polly-wip.jpg?1630686835",
+          "width": 2545,
+          "height": 1361
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/041/072/119/large/fabien-polly-sketchfab-screenshot.jpg?1630673004",
+          "width": 2535,
+          "height": 1349
+        }
+      ]
+    },
+    {
+      "id": "rAqAKL",
+      "hash_id": "rAqAKL",
+      "title": "Hostile encounter",
+      "description": "Hostile encounter made with Zbrush & Blender with realtime Eevee render.",
+      "published_at": "2021-09-01T09:55:14.113Z",
+      "url": "https://www.artstation.com/artwork/rAqAKL",
+      "thumb_url": "https://cdna.artstation.com/p/assets/images/images/041/003/376/20210901045448/smaller_square/fabien-polly-encounter.jpg?1630490089",
+      "cover_url": "https://cdna.artstation.com/p/assets/images/images/041/003/376/medium/fabien-polly-encounter.jpg?1630490089",
+      "image_url": "https://cdna.artstation.com/p/assets/images/images/041/003/376/large/fabien-polly-encounter.jpg?1630490089",
+      "width": 5100,
+      "height": 2880,
+      "likes_count": 18,
+      "views_count": 208,
+      "tags": [
+        "Digital 2D",
+        "Digital 3D",
+        "Concept Art",
+        "Illustration",
+        "Visual Development",
+        "fantasy",
+        "ancient civilisation",
+        "robot",
+        "scifi",
+        "realtime",
+        "eevee",
+        "Environmental Concept Art &amp; Design"
+      ],
+      "software": [
+        "ZBrush",
+        "Blender",
+        "Affinity Photo"
+      ],
+      "images": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/041/003/376/large/fabien-polly-encounter.jpg?1630490089",
+          "width": 5100,
+          "height": 2880
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/041/012/630/large/fabien-polly-blender-2.jpg?1630509816",
+          "width": 2123,
+          "height": 1365
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/041/003/605/large/fabien-polly-final-encounter-blender.jpg?1630490541",
+          "width": 2560,
+          "height": 1401
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/041/012/993/large/fabien-polly-robot-png.jpg?1630510474",
+          "width": 1219,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "lxmQNa",
+      "hash_id": "lxmQNa",
+      "title": "Life on the Nile in Egypt",
+      "description": "Concept art of the life on the Nile in Egypt",
+      "published_at": "2021-07-22T10:02:33.110Z",
+      "url": "https://www.artstation.com/artwork/lxmQNa",
+      "thumb_url": "https://cdna.artstation.com/p/assets/images/images/101/894/424/20260825175849/smaller_square/fabien-polly-egypt.jpg?1787698730",
+      "cover_url": "https://cdna.artstation.com/p/assets/images/images/101/894/424/medium/fabien-polly-egypt.jpg?1787698730",
+      "image_url": "https://cdna.artstation.com/p/assets/images/images/101/894/424/large/fabien-polly-egypt.jpg?1787698730",
+      "width": 1595,
+      "height": 986,
+      "likes_count": 38,
+      "views_count": 577,
+      "tags": [
+        "Digital 2D",
+        "Digital 3D",
+        "Concept Art",
+        "Environmental Concept Art &amp; Design",
+        "Illustration",
+        "Visual Development",
+        "Procreate",
+        "tropical",
+        "palmtree",
+        "egypt",
+        "pyramid",
+        "nile"
+      ],
+      "software": [
+        "Blender",
+        "Procreate"
+      ],
+      "images": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/101/894/424/large/fabien-polly-egypt.jpg?1787698730",
+          "width": 1595,
+          "height": 986
+        }
+      ]
+    },
+    {
+      "id": "6830eO",
+      "hash_id": "6830eO",
+      "title": "Atlantean Woman",
+      "description": "Atlantean Woman concept art",
+      "published_at": "2021-07-22T10:02:07.964Z",
+      "url": "https://www.artstation.com/artwork/6830eO",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/575/smaller_square/fabien-polly-atlante.jpg?1787702947",
+      "cover_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/575/medium/fabien-polly-atlante.jpg?1787702947",
+      "image_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/575/large/fabien-polly-atlante.jpg?1787702947",
+      "width": 2365,
+      "height": 1689,
+      "likes_count": 15,
+      "views_count": 271,
+      "tags": [
+        "Digital 2D",
+        "Digital 3D",
+        "Concept Art",
+        "Environmental Concept Art &amp; Design",
+        "Illustration",
+        "Visual Development",
+        "antlante",
+        "atlantean",
+        "mermaid",
+        "sea",
+        "cave",
+        "fantasy"
+      ],
+      "software": [],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/101/895/575/large/fabien-polly-atlante.jpg?1787702947",
+          "width": 2365,
+          "height": 1689
+        }
+      ]
+    },
+    {
+      "id": "L3YvQw",
+      "hash_id": "L3YvQw",
+      "title": "Tropical Dawn",
+      "description": "Tropical Dawn",
+      "published_at": "2021-07-20T08:55:22.588Z",
+      "url": "https://www.artstation.com/artwork/L3YvQw",
+      "thumb_url": "https://cdna.artstation.com/p/assets/images/images/101/895/824/20260825192316/smaller_square/fabien-polly-tropic.jpg?1787703796",
+      "cover_url": "https://cdna.artstation.com/p/assets/images/images/101/895/824/medium/fabien-polly-tropic.jpg?1787703796",
+      "image_url": "https://cdna.artstation.com/p/assets/images/images/101/895/824/large/fabien-polly-tropic.jpg?1787703796",
+      "width": 2750,
+      "height": 1536,
+      "likes_count": 12,
+      "views_count": 121,
+      "tags": [
+        "Digital 2D",
+        "Digital 3D",
+        "Concept Art",
+        "Environmental Concept Art &amp; Design",
+        "Illustration",
+        "Visual Development",
+        "forest",
+        "dawn",
+        "ue5",
+        "ue4",
+        "Procreate",
+        "tropical"
+      ],
+      "software": [
+        "Unreal Engine",
+        "Blender",
+        "Substance 3D Painter"
+      ],
+      "images": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/101/895/824/large/fabien-polly-tropic.jpg?1787703796",
+          "width": 2750,
+          "height": 1536
+        }
+      ]
+    },
+    {
+      "id": "oADPq4",
+      "hash_id": "oADPq4",
+      "title": "Fantasy Forest Dawn",
+      "description": "Fantasy Forest Dawn",
+      "published_at": "2021-07-20T08:09:07.237Z",
+      "url": "https://www.artstation.com/artwork/oADPq4",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/881/20260825192703/smaller_square/fabien-polly-mush.jpg?1787704023",
+      "cover_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/881/medium/fabien-polly-mush.jpg?1787704023",
+      "image_url": "https://cdnb.artstation.com/p/assets/images/images/101/895/881/large/fabien-polly-mush.jpg?1787704023",
+      "width": 2474,
+      "height": 1696,
+      "likes_count": 11,
+      "views_count": 133,
+      "tags": [
+        "Digital 2D",
+        "Digital 3D",
+        "Concept Art",
+        "Environmental Concept Art &amp; Design",
+        "Illustration",
+        "Visual Development",
+        "fantasy",
+        "forest",
+        "mushroom",
+        "dawn",
+        "ue5",
+        "ue4"
+      ],
+      "software": [
+        "Unreal Engine",
+        "Procreate",
+        "Blender",
+        "Substance 3D Painter"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/101/895/881/large/fabien-polly-mush.jpg?1787704023",
+          "width": 2474,
+          "height": 1696
+        }
+      ]
+    },
+    {
+      "id": "nQA559",
+      "hash_id": "nQA559",
+      "title": "Fantasy cup",
+      "description": "Fantasy cup 3D model.\r\n\r\nBased on the Elizabeth Bashinska illustration !\r\nhttps://www.artstation.com/artwork/BmBzgD?commentId=3526432\r\n\r\nThanks Elizabeth",
+      "published_at": "2020-04-29T13:40:51.054Z",
+      "url": "https://www.artstation.com/artwork/nQA559",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/covers/images/066/732/527/smaller_square/fabien-polly-fabien-polly-fabien-polly-fantasy-cup-net.jpg?1693615224",
+      "cover_url": "https://cdnb.artstation.com/p/assets/covers/images/066/732/527/medium/fabien-polly-fabien-polly-fabien-polly-fantasy-cup-net.jpg?1693615224",
+      "image_url": "https://cdnb.artstation.com/p/assets/images/images/026/202/937/large/fabien-polly-fantasy-cup-net.jpg?1588167348",
+      "width": 2560,
+      "height": 1440,
+      "likes_count": 45,
+      "views_count": 1118,
+      "tags": [
+        "Fantasy",
+        "cup",
+        "graal",
+        "medieval",
+        "snake",
+        "magic"
+      ],
+      "software": [
+        "Blender",
+        "Substance 3D Painter",
+        "Marmoset Toolbag"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/026/202/937/large/fabien-polly-fantasy-cup-net.jpg?1588167348",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/covers/images/066/732/527/large/fabien-polly-fabien-polly-fabien-polly-fantasy-cup-net.jpg?1693615224",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "4bDdmn",
+      "hash_id": "4bDdmn",
+      "title": "Stylized Low Poly Pyramid",
+      "description": "This is a low poly pyramid made for a personnal game project.  Available on Sketchfab.",
+      "published_at": "2020-04-25T22:40:42.943Z",
+      "url": "https://www.artstation.com/artwork/4bDdmn",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/covers/images/066/732/675/smaller_square/fabien-polly-fabien-polly-fabien-polly-skaetchfab-screenshot-edit-1.jpg?1693615777",
+      "cover_url": "https://cdnb.artstation.com/p/assets/covers/images/066/732/675/medium/fabien-polly-fabien-polly-fabien-polly-skaetchfab-screenshot-edit-1.jpg?1693615777",
+      "image_url": "https://cdnb.artstation.com/p/assets/images/images/026/109/315/large/fabien-polly-sketchfab-screenshot-edit.jpg?1587911688",
+      "width": 3540,
+      "height": 2696,
+      "likes_count": 18,
+      "views_count": 600,
+      "tags": [
+        "Lowpoly",
+        "stylized",
+        "Desert",
+        "Temple",
+        "Asset",
+        "ancient",
+        "pyramid",
+        "Game Art",
+        "Environment"
+      ],
+      "software": [
+        "Blender",
+        "Substance 3D Painter",
+        "ZBrush"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/026/109/315/large/fabien-polly-sketchfab-screenshot-edit.jpg?1587911688",
+          "width": 3540,
+          "height": 2696
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/covers/images/066/732/675/large/fabien-polly-fabien-polly-fabien-polly-skaetchfab-screenshot-edit-1.jpg?1693615777",
+          "width": 2544,
+          "height": 2050
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/026/109/466/large/fabien-polly-pyramide-26-rendered.jpg?1587911523",
+          "width": 1794,
+          "height": 1440
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/026/109/469/large/fabien-polly-pyramide-26-renderedg.jpg?1587911526",
+          "width": 1784,
+          "height": 1424
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/026/093/585/large/fabien-polly-pyramid-rendered-blender.jpg?1587852313",
+          "width": 1608,
+          "height": 1092
+        }
+      ]
+    },
+    {
+      "id": "xzvPXX",
+      "hash_id": "xzvPXX",
+      "title": "Dark Rock",
+      "description": "",
+      "published_at": "2019-04-23T19:09:37.651Z",
+      "url": "https://www.artstation.com/artwork/xzvPXX",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/images/images/017/452/471/smaller_square/fabien-polly-screenshot004.jpg?1556046554",
+      "cover_url": "https://cdnb.artstation.com/p/assets/images/images/017/452/471/medium/fabien-polly-screenshot004.jpg?1556046554",
+      "image_url": "https://cdnb.artstation.com/p/assets/images/images/017/452/471/large/fabien-polly-screenshot004.jpg?1556046554",
+      "width": 1920,
+      "height": 1080,
+      "likes_count": 12,
+      "views_count": 109,
+      "tags": [
+        "3d",
+        "texturing",
+        "Substance"
+      ],
+      "software": [
+        "Substance 3D Sampler"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/017/452/471/large/fabien-polly-screenshot004.jpg?1556046554",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "gJVWmL",
+      "hash_id": "gJVWmL",
+      "title": "Rock Grey",
+      "description": "",
+      "published_at": "2019-04-23T19:08:58.166Z",
+      "url": "https://www.artstation.com/artwork/gJVWmL",
+      "thumb_url": "https://cdna.artstation.com/p/assets/covers/images/066/732/544/smaller_square/fabien-polly-fabien-polly-fabien-polly-screenshot003-1.jpg?1693615308",
+      "cover_url": "https://cdna.artstation.com/p/assets/covers/images/066/732/544/medium/fabien-polly-fabien-polly-fabien-polly-screenshot003-1.jpg?1693615308",
+      "image_url": "https://cdna.artstation.com/p/assets/images/images/017/452/448/large/fabien-polly-screenshot003.jpg?1556046505",
+      "width": 1920,
+      "height": 1080,
+      "likes_count": 16,
+      "views_count": 137,
+      "tags": [
+        "3d",
+        "texturing",
+        "Substance"
+      ],
+      "software": [
+        "Substance 3D Sampler"
+      ],
+      "images": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/017/452/448/large/fabien-polly-screenshot003.jpg?1556046505",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/covers/images/066/732/544/large/fabien-polly-fabien-polly-fabien-polly-screenshot003-1.jpg?1693615308",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    {
+      "id": "ZEGe1",
+      "hash_id": "ZEGe1",
+      "title": "Skyrim Universe Concept Art",
+      "description": "Skyrim Universe Concept Art with matte painting on my hiking photo",
+      "published_at": "2017-08-18T15:09:33.109Z",
+      "url": "https://www.artstation.com/artwork/ZEGe1",
+      "thumb_url": "https://cdnb.artstation.com/p/assets/covers/images/101/895/283/20260825184954/smaller_square/fabien-polly-fabien-polly-skyrim-matepating.jpg?1787701799",
+      "cover_url": "https://cdnb.artstation.com/p/assets/covers/images/101/895/283/medium/fabien-polly-fabien-polly-skyrim-matepating.jpg?1787701799",
+      "image_url": "https://cdnb.artstation.com/p/assets/covers/images/101/895/283/large/fabien-polly-fabien-polly-skyrim-matepating.jpg?1787701799",
+      "width": 2826,
+      "height": 1504,
+      "likes_count": 4,
+      "views_count": 210,
+      "tags": [],
+      "software": [
+        "Photoshop"
+      ],
+      "images": [
+        {
+          "url": "https://cdnb.artstation.com/p/assets/covers/images/101/895/283/large/fabien-polly-fabien-polly-skyrim-matepating.jpg?1787701799",
+          "width": 2826,
+          "height": 1504
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/101/895/258/large/fabien-polly-skyrim-matepating.jpg?1787701643",
+          "width": 2826,
+          "height": 1504
+        }
+      ]
+    }
+  ]
+}

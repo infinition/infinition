@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-09-13T12:35:52.665Z",
+  "author": "Fabien Polly",
+  "author_search": "https://arxiv.org/search/?searchtype=author&query=Polly%2C%20Fabien",
+  "count": 4,
+  "papers": [
+    {
+      "id": "2607.06634",
+      "version": "",
+      "title": "When Do Geometric Algebra Layers Beat Scalarization? A Controlled Study on SO(3)-Equivariant Vector Laws",
+      "authors": [
+        "Fabien Polly"
+      ],
+      "abstract": "Compact networks built from Clifford algebra Cl(3,0) primitives are exactly SO(3)-equivariant and learn synthetic 3D vector laws from few samples. We ask whether the geometric algebra structure itself contributes anything beyond exact equivariance. We compare against a minimal scalarization baseline: invariant dot products fed to a small MLP that outputs coefficients on the equivariant basis {v_i, v_i x v_j}, which is also exactly equivariant. On single-stage laws (rotation by axis-angle, cross product, central force), scalarization matches or beats the Cl(3,0) network at a fraction of the training cost, so the geometric algebra adds nothing there. On compositional targets whose computation graph nests group operations (apply R2 R1 to a point; map a local force through an orientation, then take a torque), the Cl(3,0) network beats scalarization by an order of magnitude in the low-data regime, reaching with 100 samples what the baseline needs 3000 for, and the gap survives strengthening the baseline with the triple-product invariant and 17x more parameters, external Vector Neurons and e3nn baselines, and a multiplicative coefficient network. Ablations show the required network depth tracks the rotation chain length, and scalarization falls below the constant predictor on chains of four rotations. The advantage is not composition per se: on a rotation-free nested cross product, which flattens into polynomial invariant coefficients, scalarization wins by 24x. No tested model, equivariant or not, extrapolates invariant magnitudes: on radius and separation shifts every model is worse than a constant predictor once errors are normalized. We conclude that geometric algebra layers are not a general shortcut for low-data 3D learning, but become useful precisely when the target composes group elements in depth.",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "published": "2026-07-07T00:00:00.000Z",
+      "updated": "2026-07-07T00:00:00.000Z",
+      "abs_url": "https://arxiv.org/abs/2607.06634",
+      "pdf_url": "https://arxiv.org/pdf/2607.06634",
+      "comment": "10 pages, 2 figures, 4 tables. Code and data: this https URL",
+      "doi": "",
+      "journal_ref": "",
+      "status": "published"
+    },
+    {
+      "id": "2607.05300",
+      "version": "",
+      "title": "Learning Only What Valid Adapters Can Express: Subspace-Constrained Adaptation Against Fine-Tuning Poisoning",
+      "authors": [
+        "Fabien Polly"
+      ],
+      "abstract": "Parameter-efficient fine-tuning still leaves a broad space of behavior-changing updates reachable, so a poisoned objective can be represented and optimized. We study an alternative: adaptation constrained to the subspace estimated from a trusted pool of existing task adapters. On flan-t5-large with 196 public LoRA adapters, we show that (1) the functionally relevant content of an adapter lies in a low-dimensional shared subspace, 30 to 38 percent of its weight norm being redundant under the evaluated task distributions; (2) gradient adaptation restricted to 128 coordinates on this subspace matches full LoRA fine-tuning on clean classification data, while under targeted label inversion LoRA collapses to 3-26 percent exact match and the constrained learner keeps 62-96 percent on the tasks the pool covers; (3) the constrained learner cannot fit corrupted data, its adaptation loss separating clean from garbage by two orders of magnitude (120x), an out-of-distribution signal without an extra detector; and (4) against an adaptive backdoor attacker who optimizes within the subspace, the attack is blocked (8 percent success versus 100 for LoRA) on the task where its target behavior is unlike anything in the pool, and only partially blocked (85 percent) when the target coincides with a common pool behavior. On these two tasks the outcome is consistent with how close the target is to the pool's directions, which suggests but does not establish a pool-relative boundary. The mechanism trades peak plasticity for these properties: on tasks the pool covers poorly, unconstrained fine-tuning wins, and the protection assumes the pool itself is trusted. Code and data are public.",
+      "categories": [
+        "cs.LG",
+        "cs.CR"
+      ],
+      "primary_category": "cs.LG",
+      "published": "2026-07-06T00:00:00.000Z",
+      "updated": "2026-07-06T00:00:00.000Z",
+      "abs_url": "https://arxiv.org/abs/2607.05300",
+      "pdf_url": "https://arxiv.org/pdf/2607.05300",
+      "comment": "10 pages, 7 figures, 2 tables. Code and data: this https URL",
+      "doi": "",
+      "journal_ref": "",
+      "status": "published"
+    },
+    {
+      "id": "drift-bounded-spectral-updates",
+      "version": "",
+      "title": "Drift-Bounded Spectral Updates for Deep Local Learning",
+      "authors": [
+        "Fabien Polly"
+      ],
+      "abstract": "Local learning with a bounded per-layer change budget. Applications: edge devices and controlled autonomous retraining.",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "published": "2026-07-01T00:00:00.000Z",
+      "updated": "2026-07-01T00:00:00.000Z",
+      "abs_url": "https://arxiv.org/search/?searchtype=author&query=Polly%2C%20Fabien",
+      "pdf_url": "",
+      "comment": "",
+      "doi": "",
+      "journal_ref": "",
+      "status": "pending"
+    },
+    {
+      "id": "2603.21315",
+      "version": "",
+      "title": "FluidWorld: Reaction-Diffusion Dynamics as a Predictive Substrate for World Models",
+      "authors": [
+        "Fabien Polly"
+      ],
+      "abstract": "World models learn to predict future states of an environment, enabling planning and mental simulation. Current approaches default to Transformer-based predictors operating in learned latent spaces. This comes at a cost: O(N^2) computation and no explicit spatial inductive bias. This paper asks a foundational question: is self-attention necessary for predictive world modeling, or can alternative computational substrates achieve comparable or superior results? I introduce FluidWorld, a proof-of-concept world model whose predictive dynamics are governed by partial differential equations (PDEs) of reaction-diffusion type. Instead of using a separate neural network predictor, the PDE integration itself produces the future state prediction. In a strictly parameter-matched three-way ablation on unconditional UCF-101 video prediction (64x64, ~800K parameters, identical encoder, decoder, losses, and data), FluidWorld is compared against both a Transformer baseline (self-attention) and a ConvLSTM baseline (convolutional recurrence). While all three models converge to comparable single-step prediction loss, FluidWorld achieves 2x lower reconstruction error, produces representations with 10-15% higher spatial structure preservation and 18-25% more effective dimensionality, and critically maintains coherent multi-step rollouts where both baselines degrade rapidly. All experiments were conducted on a single consumer-grade PC (Intel Core i5, NVIDIA RTX 4070 Ti), without any large-scale compute. These results establish that PDE-based dynamics, which natively provide O(N) spatial complexity, adaptive computation, and global spatial coherence through diffusion, are a viable and parameter-efficient alternative to both attention and convolutional recurrence for world modeling.",
+      "categories": [
+        "cs.LG"
+      ],
+      "primary_category": "cs.LG",
+      "published": "2026-03-22T00:00:00.000Z",
+      "updated": "2026-03-22T00:00:00.000Z",
+      "abs_url": "https://arxiv.org/abs/2603.21315",
+      "pdf_url": "https://arxiv.org/pdf/2603.21315",
+      "comment": "18 pages, 16 figures, 4 tables. Code available at this https URL",
+      "doi": "",
+      "journal_ref": "",
+      "status": "published"
+    }
+  ]
+}
