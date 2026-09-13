@@ -12,7 +12,7 @@ summary: >
 ---
  Peu de sentiments sont aussi corrosifs que la dissonance cognitive née d'un "cimetière" de projets **inachevés**. Cette guitare qui prend la poussière, ce site web à moitié codé, ces composants électroniques en vrac ou ces peintures délaissées ne sont pas seulement des objets ; ils sont les marqueurs d'une honte sourde. La société vous a étiqueté comme dilettante, suggérant que votre incapacité à "choisir une voie" est une preuve de faiblesse ou un manque de persévérance.
 
-> *Cent onglets ouverts en permanence. Un article sur la physique quantique des trous noirs, un tuto de soudure CMS, un thread sur les exposants de Lyapunov, la documentation de Blender pour le baking de normal maps, un paper d'arXiv, le stream d'une course de rollers à Barcelone. Les RH appellent ça un profil atypique. C'est leur façon polie de dire qu'ils ne savent pas où me ranger.*
+> *Cent onglets ouverts en permanence. Un article sur la physique quantique des trous noirs, un tuto de soudure CMS, un thread sur les exposants de Lyapunov, la documentation de Blender pour le baking de normal maps, un paper d'arXiv, le stream d'une compétition de roller agressif. Les RH appellent ça un profil atypique. C'est leur façon polie de dire qu'ils ne savent pas où me ranger.*
 
 Renversons la lecture. Ce chaos n'est pas un défaut de fabrication, c'est le symptôme d'un système qui s'adapte. Ce que vous prenez pour de l'éparpillement est la construction, largement inconsciente, d'une architecture rare. Elle est faite pour une époque où la spécialisation étroite devient un passif.
 
@@ -28,9 +28,9 @@ Cette rallonge est une addition moderne, souvent prêtée à tort à Shakespeare
 
 Le modèle du siècle dernier tenait dans une image : creuser un seul trou, et le creuser à un kilomètre. Un puits profond est une fortune, tant que la nappe reste dessous. Les métiers bougeaient lentement. Les règles d'un secteur tenaient une carrière entière. Répéter le même geste jusqu'à le rendre infaillible suffisait à gagner.
 
-Le terrain a bougé. Les règles d'un domaine se réécrivent plus vite qu'on ne met une expertise à niveau, et un secteur entier peut devenir accessoire en quelques années. Le puits, lui, ne se déplace pas. C'est toute la fragilité du spécialiste : sa profondeur est immobilisée là où il l'a creusée. Vos dérives, passer du câblage électrique au yoga puis à la production musicale, ressemblent à de l'indiscipline. Ce sont des sondages. Vous cherchez où le sol porte encore.
+Le terrain a bougé. Les règles d'un domaine se réécrivent plus vite qu'on ne met une expertise à niveau, et un secteur entier peut devenir accessoire en quelques années. Le puits, lui, ne se déplace pas. C'est toute la fragilité du spécialiste : sa profondeur est immobilisée là où il l'a creusée. Vos dérives, passer du câblage électrique au tai chi puis à la production musicale, ressemblent à de l'indiscipline. Ce sont des sondages. Vous cherchez où le sol porte encore.
 
-> *Sous-marinier, oreille d'or : le spécialiste qui écoute la mer et distingue le bruit d'un sous-marin ennemi de celui de l'océan. Des années pour apprendre à entendre ça. Et une question au retour à la vie civile : qui veut d'un expert en signatures acoustiques sous-marines chez Carrefour ?*
+> *Les phreaks savaient une chose que presque personne ne savait : un sifflet en plastique soufflant à 2600 Hz prenait le contrôle des commutateurs téléphoniques d'AT&T. Des années à cartographier un réseau pour en arriver là, et une maîtrise bien réelle. Les commutateurs sont passés au numérique. Du jour au lendemain, ce savoir ne valait plus rien.*
 
 ## La même forme, ailleurs
 
@@ -44,7 +44,7 @@ Prenez un développeur qui a été apiculteur. Sur un CV, les deux lignes n'ont 
 
 Le modèle standard de la polyvalence est souvent le profil "en T" (une culture générale large surmontant une seule spécialisation). Cependant, le futur appartient à l'esprit "en M". Cette architecture se compose de plusieurs piliers de profondeur, reliés entre eux par un pont de curiosité.
 
-Le piège qui mène au burn-out est de vouloir construire tous ces piliers simultanément. Se mettre au calcul quantique, monter un bras robotisé et apprendre l'éclairage 3D le même mois est une recette pour l'effondrement. La clé réside dans la maîtrise séquentielle :
+Le piège qui mène au burn-out est de vouloir construire tous ces piliers simultanément. Se mettre au calcul quantique, monter un bras robotisé et apprendre à faire tenir un décor entier dans le budget mémoire d'un moteur de jeu, le même mois, est une recette pour l'effondrement. La clé réside dans la maîtrise séquentielle :
 
 * Considérez votre vie comme une succession de "saisons".
 
