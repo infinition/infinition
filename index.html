@@ -10,6 +10,26 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
     <meta name="theme-color" id="meta-theme-color" content="#060606">
+
+    <!-- Le portail porte la classe "active" dans le HTML, il est donc peint
+         des le premier rendu, bien avant que main.js ne lise le hash. Sur un
+         lien profond ("#read:...", "#repos") on voyait donc l'accueil clignoter
+         le temps du chargement des scripts. Ces quelques lignes le masquent
+         avant la premiere peinture ; main.js retire l'attribut des qu'il prend
+         la main sur la navigation. -->
+    <script>
+        (function () {
+            var h = location.hash;
+            if (h && h !== '#' && h !== '#portal') {
+                document.documentElement.setAttribute('data-deep-link', '');
+            }
+        })();
+    </script>
+    <style>
+        html[data-deep-link] #portal-view {
+            display: none;
+        }
+    </style>
     <!-- Security Headers -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referrer" content="strict-origin-when-cross-origin">

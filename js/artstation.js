@@ -315,10 +315,45 @@ const ARTSTATION = (() => {
         await load();
     }
 
+    /* Sur un lien profond la visionneuse s ouvre immediatement, vide, le temps
+       que l index arrive : sans ca la grille s affiche puis disparait dessous,
+       ce qui donne l impression d un detour par une page non demandee. */
+    function openPlaceholder() {
+        const viewer = document.getElementById('art-viewer');
+        if (!viewer || viewer.classList.contains('open')) return;
+
+        const put = (id, value) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = value;
+        };
+        put('av-title', '');
+        put('av-meta', '');
+
+        const img = document.getElementById('av-image');
+        if (img) img.removeAttribute('src');
+        const desc = document.getElementById('av-desc');
+        if (desc) desc.hidden = true;
+        const chips = document.getElementById('av-chips');
+        if (chips) chips.innerHTML = '';
+
+        ['av-prev', 'av-next', 'av-counter'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.hidden = true;
+        });
+
+        viewer.classList.add('open');
+        document.body.classList.add('viewer-open');
+    }
+
     /* Appele par le routeur quand l URL porte #art:ID, y compris a froid. */
     async function openFromHash(id) {
+        openPlaceholder();
         await init();
-        open(id);
+
+        /* Un identifiant qui ne correspond a rien : on referme sur la galerie
+           plutot que sur un cadre vide. */
+        if (state.artworks.some(a => a.id === id)) open(id);
+        else close();
     }
 
     return { init, open, openFromHash, close };

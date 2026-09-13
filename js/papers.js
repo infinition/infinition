@@ -519,11 +519,49 @@ const PAPERS = (() => {
         render();
     }
 
+    /* Sur un lien profond la liseuse s'ouvre immediatement, vide, le temps que
+       l'index arrive. Sans ca le visiteur voyait le rayonnage s'afficher puis
+       disparaitre sous la liseuse, ce qui donne l'impression d'un detour par
+       une page qu'il n'a pas demandee. */
+    function openPlaceholder() {
+        const reader = document.getElementById('paper-reader');
+        if (!reader || reader.classList.contains('open')) return;
+
+        const put = (id, value) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = value;
+        };
+        put('pr-title', '');
+        put('pr-ref', '');
+
+        ['pr-modes', 'pr-abs-link', 'pr-pdf-link'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.hidden = true;
+        });
+
+        const page = document.getElementById('pr-page');
+        if (page) page.innerHTML = '<p class="pr-loading">Loading...</p>';
+
+        document.querySelectorAll('.paper-reader .pr-pane').forEach(pane => {
+            pane.classList.toggle('active', pane.dataset.mode === 'read');
+        });
+
+        reader.classList.add('open');
+        document.body.classList.add('reader-open');
+    }
+
     /* Appele par le routeur sur #paper:ID et #read:shelf/slug, y compris a
        froid : l'index est charge avant l'ouverture. */
     async function openFromHash(id) {
-        await init();
-        open(id);
+        openPlaceholder();
+        bindOnce();
+        await load();
+        render();
+
+        /* Un identifiant qui ne correspond a rien, lien perime ou faute de
+           frappe : on referme sur le rayonnage plutot que sur un cadre vide. */
+        if (state.works.has(id)) open(id);
+        else close();
     }
 
     function focusFilter(term) {

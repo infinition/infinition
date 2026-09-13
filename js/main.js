@@ -40,6 +40,11 @@ window.addEventListener('resize', syncSysbarHeight);
 
 
 function navigateTo(viewId, keepScroll = false) {
+    /* L'attribut pose dans le <head> masquait le portail avant la premiere
+       peinture. A partir d'ici c'est ce routeur qui decide ce qui s'affiche,
+       et sa regle CSS gagnerait contre nos styles en ligne. */
+    document.documentElement.removeAttribute('data-deep-link');
+
     document.querySelectorAll('.view-section').forEach(el => { el.style.display = 'none'; el.classList.remove('active'); });
     if (viewId === 'portal') { document.getElementById('portal-view').style.display = 'flex'; document.querySelector('.back-btn').style.display = 'none'; }
     else {
