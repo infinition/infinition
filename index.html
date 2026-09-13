@@ -747,6 +747,20 @@
             </div>
 
             <div class="photos-toolbar">
+                <div class="album-picker" id="photo-albums" hidden>
+                    <button class="album-trigger" id="album-trigger" type="button"
+                        aria-haspopup="listbox" aria-expanded="false">
+                        <i class="fas fa-images"></i>
+                        <span class="album-current" id="album-current">All photos</span>
+                        <i class="fas fa-chevron-down album-caret"></i>
+                    </button>
+                    <button class="album-clear" id="album-clear" type="button" title="Show all photos"
+                        aria-label="Show all photos" hidden><i class="fas fa-times"></i></button>
+                    <div class="album-sheet" id="album-sheet" role="listbox" hidden>
+                        <div class="album-sheet-head">Albums</div>
+                        <div class="album-list" id="album-list"></div>
+                    </div>
+                </div>
                 <div class="tag-bar" id="photo-tags">
                     <input type="text" id="photo-tag-search" class="tag-search" placeholder="filter tags..."
                         autocomplete="off" spellcheck="false" hidden>

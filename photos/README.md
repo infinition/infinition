@@ -3,6 +3,30 @@
 Les originaux de la galerie du site (`#photos`). Déposez vos images ici, il
 n'y a rien d'autre à faire.
 
+## Les sous-dossiers sont des albums
+
+Une photo posée à la racine n'appartient à aucun album. Un sous-dossier en
+crée un, et la profondeur n'est pas limitée.
+
+```
+photos/
+  golden-hour.sunset.sea.jpg        aucun album
+  storms/
+    lightning-strike.storm.jpg      album Storms
+  voyages/
+    lagoon-jetty.travel.sea.jpg     album Voyages
+    mexique/
+      jaguar.wildlife.jpg           album Voyages / Mexique
+```
+
+Choisir un album parent montre aussi ce que contiennent ses sous-dossiers :
+Voyages affiche le Mexique. Le menu n'apparaît que s'il existe au moins un
+sous-dossier, et la galerie montre tout par défaut.
+
+Deux albums peuvent contenir un fichier du même nom, l'identifiant portant
+l'album. Renommer ou déplacer une photo régénère ses dérivées et efface les
+anciennes.
+
 ## Le nom du fichier porte les tags
 
 Le premier segment est le titre, le dernier est l'extension, tout ce qu'il y a

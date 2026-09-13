@@ -2,8 +2,12 @@
 /**
  * Build data/photos.json et les derivees de assets/photos, pour la vue PHOTOS.
  *
- * Le dossier photos/ ne contient que les originaux, deposes tels quels. Tout
- * le reste se deduit du nom du fichier :
+ * Le dossier photos/ ne contient que les originaux, deposes tels quels. Un
+ * sous dossier devient un album, et sa profondeur n'est pas limitee :
+ * photos/voyages/mexique/ donne l'album "Voyages / Mexique". Une photo posee
+ * a la racine n'appartient a aucun album.
+ *
+ * Le reste se deduit du nom du fichier :
  *
  *     lune.astronomy.png          titre "Lune",        tag astronomy
  *     pont-de-nuit.urbex.nuit.jpg titre "Pont de nuit", tags urbex et nuit
@@ -28,7 +32,7 @@
  */
 
 import { readFile, writeFile, mkdir, readdir, unlink } from 'node:fs/promises';
-import { dirname, join, extname, basename } from 'node:path';
+import { dirname, join, extname, basename, posix } from 'node:path';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 
@@ -85,13 +89,27 @@ async function readPrevious() {
     }
 }
 
-async function listSources() {
+/* Parcours recursif : chaque entree porte son chemin relatif a photos/, d'ou
+   se deduisent l'album et l'identifiant. */
+async function listSources(sub = '') {
+    let entries;
     try {
-        const files = await readdir(DIR);
-        return files.filter(f => SOURCES.has(extname(f).toLowerCase())).sort();
+        entries = await readdir(join(DIR, sub), { withFileTypes: true });
     } catch {
-        return null;
+        return sub ? [] : null;
     }
+
+    const files = [];
+    for (const entry of entries.sort((a, b) => a.name.localeCompare(b.name))) {
+        const rel = sub ? posix.join(sub, entry.name) : entry.name;
+
+        if (entry.isDirectory()) {
+            files.push(...await listSources(rel));
+        } else if (SOURCES.has(extname(entry.name).toLowerCase())) {
+            files.push(rel);
+        }
+    }
+    return files;
 }
 
 const prev = await readPrevious();
@@ -113,12 +131,20 @@ let failed = 0;
 
 for (const file of files) {
     const source = join(DIR, file);
-    const { slug, title, tags } = parseName(file);
+    const dir = posix.dirname(file);
+    const album = dir === '.' ? '' : dir.split('/').map(normalizeTag).join('/');
+    const { slug, title, tags } = parseName(posix.basename(file));
 
-    const thumb = `${ASSETS}/${slug}-thumb.webp`;
-    const full = `${ASSETS}/${slug}.webp`;
-    expected.add(`${slug}-thumb.webp`);
-    expected.add(`${slug}.webp`);
+    /* L'identifiant porte l'album : deux albums peuvent contenir une photo du
+       meme nom sans que l'une efface les derivees de l'autre. Une photo de la
+       racine garde son nom seul, l'existant n'est donc pas renomme. */
+    const id = album ? `${album}/${slug}` : slug;
+    const stem = id.replace(/\//g, '__');
+
+    const thumb = `${ASSETS}/${stem}-thumb.webp`;
+    const full = `${ASSETS}/${stem}.webp`;
+    expected.add(`${stem}-thumb.webp`);
+    expected.add(`${stem}.webp`);
 
     let stamp;
     try {
@@ -134,7 +160,7 @@ for (const file of files) {
     /* Le fichier n'a pas bouge et ses derivees existent deja : on reprend
        l'entree telle quelle plutot que de reencoder pour rien. */
     if (!FORCE && old && old.stamp === stamp && old.width) {
-        photos.push({ ...old, title, tags, slug });
+        photos.push({ ...old, id, slug, album, title, tags, thumb, full });
         kept += 1;
         continue;
     }
@@ -162,8 +188,9 @@ for (const file of files) {
         const height = turned ? meta.width : meta.height;
 
         photos.push({
-            id: slug,
+            id,
             slug,
+            album,
             file,
             title,
             tags,
@@ -175,7 +202,8 @@ for (const file of files) {
             stamp
         });
         built += 1;
-        console.log(`${file}: ${width}x${height}, tags [${tags.join(', ') || 'aucun'}]`);
+        console.log(`${file}: ${width}x${height}, album [${album || 'racine'}], `
+            + `tags [${tags.join(', ') || 'aucun'}]`);
     } catch (e) {
         console.warn(`  ${file}: conversion impossible (${e.message})`);
         failed += 1;
@@ -210,9 +238,32 @@ const tags = [...counts.entries()]
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
+/* Un album par sous dossier rencontre, compte a l'appui : la page n'a pas a
+   parcourir la collection pour dresser la liste du menu.
+
+   Un dossier parent compte aussi ce que contiennent ses sous dossiers :
+   choisir "Voyages" doit montrer le Mexique qui est dedans, sinon la
+   hierarchie serait un classement sans effet. */
+const albumIds = new Set();
+for (const photo of photos) {
+    const parts = photo.album ? photo.album.split('/') : [];
+    for (let i = 1; i <= parts.length; i++) albumIds.add(parts.slice(0, i).join('/'));
+}
+
+const inAlbum = (photo, id) => photo.album === id || photo.album.startsWith(`${id}/`);
+
+const albums = [...albumIds]
+    .map(id => ({
+        id,
+        label: id.split('/').map(titleize).join(' / '),
+        count: photos.filter(p => inAlbum(p, id)).length
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label));
+
 const out = {
     generated_at: new Date().toISOString(),
     count: photos.length,
+    albums,
     tags,
     photos
 };
@@ -222,4 +273,7 @@ await writeFile(OUT, `${JSON.stringify(out, null, 2)}\n`, 'utf8');
 
 console.log(`${photos.length} photo(s), ${built} encodee(s), ${kept} conservee(s), `
     + `${removed} derivee(s) obsolete(s) effacee(s), ${failed} en echec`);
+console.log(albums.length
+    ? `albums: ${albums.map(a => `${a.label} (${a.count})`).join(', ')}`
+    : 'aucun album');
 console.log(tags.length ? `tags: ${tags.map(t => `${t.name} (${t.count})`).join(', ')}` : 'aucun tag');

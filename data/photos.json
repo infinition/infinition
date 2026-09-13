@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-09-13T16:58:14.238Z",
+  "generated_at": "2026-09-13T17:18:05.443Z",
   "count": 30,
+  "albums": [
+    {
+      "id": "nature",
+      "label": "Nature",
+      "count": 3
+    },
+    {
+      "id": "storms",
+      "label": "Storms",
+      "count": 4
+    },
+    {
+      "id": "voyages",
+      "label": "Voyages",
+      "count": 3
+    },
+    {
+      "id": "voyages/mexique",
+      "label": "Voyages / Mexique",
+      "count": 2
+    }
+  ],
   "tags": [
     {
       "name": "sea",
@@ -94,7 +116,8 @@
       "width": 600,
       "height": 355,
       "ratio": 1.6901,
-      "stamp": "0229ed3f8bf0155e"
+      "stamp": "0229ed3f8bf0155e",
+      "album": ""
     },
     {
       "id": "bat-in-flight",
@@ -109,7 +132,8 @@
       "width": 600,
       "height": 476,
       "ratio": 1.2605,
-      "stamp": "0ada1b076fa499eb"
+      "stamp": "0ada1b076fa499eb",
+      "album": ""
     },
     {
       "id": "bay-at-dusk",
@@ -126,7 +150,8 @@
       "width": 2600,
       "height": 1536,
       "ratio": 1.6927,
-      "stamp": "2a9f97d5de523167"
+      "stamp": "2a9f97d5de523167",
+      "album": ""
     },
     {
       "id": "beach-sunset",
@@ -142,7 +167,8 @@
       "width": 600,
       "height": 404,
       "ratio": 1.4851,
-      "stamp": "cb193b0f450dbf02"
+      "stamp": "cb193b0f450dbf02",
+      "album": ""
     },
     {
       "id": "black-cat",
@@ -157,23 +183,8 @@
       "width": 600,
       "height": 402,
       "ratio": 1.4925,
-      "stamp": "edc924d445702223"
-    },
-    {
-      "id": "black-wolf",
-      "slug": "black-wolf",
-      "file": "black-wolf.wildlife.forest.jpg",
-      "title": "Black wolf",
-      "tags": [
-        "wildlife",
-        "forest"
-      ],
-      "thumb": "assets/photos/black-wolf-thumb.webp",
-      "full": "assets/photos/black-wolf.webp",
-      "width": 600,
-      "height": 438,
-      "ratio": 1.3699,
-      "stamp": "80a45dba601d8092"
+      "stamp": "edc924d445702223",
+      "album": ""
     },
     {
       "id": "cactus-garden",
@@ -189,23 +200,8 @@
       "width": 600,
       "height": 450,
       "ratio": 1.3333,
-      "stamp": "1790d614b59e25e6"
-    },
-    {
-      "id": "chichen-itza",
-      "slug": "chichen-itza",
-      "file": "chichen-itza.travel.architecture.jpg",
-      "title": "Chichen itza",
-      "tags": [
-        "travel",
-        "architecture"
-      ],
-      "thumb": "assets/photos/chichen-itza-thumb.webp",
-      "full": "assets/photos/chichen-itza.webp",
-      "width": 600,
-      "height": 450,
-      "ratio": 1.3333,
-      "stamp": "dda5aae61c6929c0"
+      "stamp": "1790d614b59e25e6",
+      "album": ""
     },
     {
       "id": "coastal-trail",
@@ -221,7 +217,8 @@
       "width": 600,
       "height": 363,
       "ratio": 1.6529,
-      "stamp": "45a4f64b280e4bf2"
+      "stamp": "45a4f64b280e4bf2",
+      "album": ""
     },
     {
       "id": "crescent-moon",
@@ -236,7 +233,8 @@
       "width": 600,
       "height": 450,
       "ratio": 1.3333,
-      "stamp": "0ef3da4093408389"
+      "stamp": "0ef3da4093408389",
+      "album": ""
     },
     {
       "id": "dog-facing-the-sea",
@@ -252,7 +250,8 @@
       "width": 600,
       "height": 400,
       "ratio": 1.5,
-      "stamp": "f156ba78d8027e46"
+      "stamp": "f156ba78d8027e46",
+      "album": ""
     },
     {
       "id": "dragonfly-in-flight",
@@ -267,7 +266,8 @@
       "width": 600,
       "height": 413,
       "ratio": 1.4528,
-      "stamp": "7d2729dc40925764"
+      "stamp": "7d2729dc40925764",
+      "album": ""
     },
     {
       "id": "dragonfly-on-a-stem",
@@ -282,23 +282,8 @@
       "width": 600,
       "height": 428,
       "ratio": 1.4019,
-      "stamp": "2c292735fc4569c5"
-    },
-    {
-      "id": "fortress-under-the-storm",
-      "slug": "fortress-under-the-storm",
-      "file": "fortress-under-the-storm.storm.architecture.jpg",
-      "title": "Fortress under the storm",
-      "tags": [
-        "storm",
-        "architecture"
-      ],
-      "thumb": "assets/photos/fortress-under-the-storm-thumb.webp",
-      "full": "assets/photos/fortress-under-the-storm.webp",
-      "width": 600,
-      "height": 400,
-      "ratio": 1.5,
-      "stamp": "402b5a4943b0081c"
+      "stamp": "2c292735fc4569c5",
+      "album": ""
     },
     {
       "id": "golden-hour",
@@ -314,22 +299,8 @@
       "width": 600,
       "height": 450,
       "ratio": 1.3333,
-      "stamp": "906d56a67524b0c4"
-    },
-    {
-      "id": "jaguar",
-      "slug": "jaguar",
-      "file": "jaguar.wildlife.jpg",
-      "title": "Jaguar",
-      "tags": [
-        "wildlife"
-      ],
-      "thumb": "assets/photos/jaguar-thumb.webp",
-      "full": "assets/photos/jaguar.webp",
-      "width": 1900,
-      "height": 1473,
-      "ratio": 1.2899,
-      "stamp": "d880ae29114e0ad3"
+      "stamp": "906d56a67524b0c4",
+      "album": ""
     },
     {
       "id": "kitten-on-the-path",
@@ -344,72 +315,8 @@
       "width": 600,
       "height": 450,
       "ratio": 1.3333,
-      "stamp": "0583c7fa2a88e3a9"
-    },
-    {
-      "id": "lagoon-jetty",
-      "slug": "lagoon-jetty",
-      "file": "lagoon-jetty.travel.sea.jpg",
-      "title": "Lagoon jetty",
-      "tags": [
-        "travel",
-        "sea"
-      ],
-      "thumb": "assets/photos/lagoon-jetty-thumb.webp",
-      "full": "assets/photos/lagoon-jetty.webp",
-      "width": 600,
-      "height": 827,
-      "ratio": 0.7255,
-      "stamp": "ffa9143175dffa3b"
-    },
-    {
-      "id": "lightning-over-the-bay",
-      "slug": "lightning-over-the-bay",
-      "file": "lightning-over-the-bay.storm.sea.night.jpg",
-      "title": "Lightning over the bay",
-      "tags": [
-        "storm",
-        "sea",
-        "night"
-      ],
-      "thumb": "assets/photos/lightning-over-the-bay-thumb.webp",
-      "full": "assets/photos/lightning-over-the-bay.webp",
-      "width": 1900,
-      "height": 1425,
-      "ratio": 1.3333,
-      "stamp": "9ac3c6a8d4cc8cc5"
-    },
-    {
-      "id": "lightning-strike",
-      "slug": "lightning-strike",
-      "file": "lightning-strike.storm.night.jpg",
-      "title": "Lightning strike",
-      "tags": [
-        "storm",
-        "night"
-      ],
-      "thumb": "assets/photos/lightning-strike-thumb.webp",
-      "full": "assets/photos/lightning-strike.webp",
-      "width": 1440,
-      "height": 1074,
-      "ratio": 1.3408,
-      "stamp": "5254c0da86a76cb0"
-    },
-    {
-      "id": "lynx-in-the-thicket",
-      "slug": "lynx-in-the-thicket",
-      "file": "lynx-in-the-thicket.wildlife.forest.jpg",
-      "title": "Lynx in the thicket",
-      "tags": [
-        "wildlife",
-        "forest"
-      ],
-      "thumb": "assets/photos/lynx-in-the-thicket-thumb.webp",
-      "full": "assets/photos/lynx-in-the-thicket.webp",
-      "width": 600,
-      "height": 400,
-      "ratio": 1.5,
-      "stamp": "574c59d3a1e09bd3"
+      "stamp": "0583c7fa2a88e3a9",
+      "album": ""
     },
     {
       "id": "mirror-sunset",
@@ -424,7 +331,8 @@
       "width": 705,
       "height": 300,
       "ratio": 2.35,
-      "stamp": "0b90cf6112619588"
+      "stamp": "0b90cf6112619588",
+      "album": ""
     },
     {
       "id": "mountain-lake",
@@ -440,7 +348,59 @@
       "width": 852,
       "height": 300,
       "ratio": 2.84,
-      "stamp": "f19f1a6ed4dc53f8"
+      "stamp": "f19f1a6ed4dc53f8",
+      "album": ""
+    },
+    {
+      "id": "nature/black-wolf",
+      "slug": "black-wolf",
+      "album": "nature",
+      "file": "nature/black-wolf.wildlife.forest.jpg",
+      "title": "Black wolf",
+      "tags": [
+        "wildlife",
+        "forest"
+      ],
+      "thumb": "assets/photos/nature__black-wolf-thumb.webp",
+      "full": "assets/photos/nature__black-wolf.webp",
+      "width": 600,
+      "height": 438,
+      "ratio": 1.3699,
+      "stamp": "80a45dba601d8092"
+    },
+    {
+      "id": "nature/lynx-in-the-thicket",
+      "slug": "lynx-in-the-thicket",
+      "album": "nature",
+      "file": "nature/lynx-in-the-thicket.wildlife.forest.jpg",
+      "title": "Lynx in the thicket",
+      "tags": [
+        "wildlife",
+        "forest"
+      ],
+      "thumb": "assets/photos/nature__lynx-in-the-thicket-thumb.webp",
+      "full": "assets/photos/nature__lynx-in-the-thicket.webp",
+      "width": 600,
+      "height": 400,
+      "ratio": 1.5,
+      "stamp": "574c59d3a1e09bd3"
+    },
+    {
+      "id": "nature/sea-turtle",
+      "slug": "sea-turtle",
+      "album": "nature",
+      "file": "nature/sea-turtle.wildlife.underwater.jpg",
+      "title": "Sea turtle",
+      "tags": [
+        "wildlife",
+        "underwater"
+      ],
+      "thumb": "assets/photos/nature__sea-turtle-thumb.webp",
+      "full": "assets/photos/nature__sea-turtle.webp",
+      "width": 1900,
+      "height": 1425,
+      "ratio": 1.3333,
+      "stamp": "4c9d96bcc214e129"
     },
     {
       "id": "pink-sky-over-the-bay",
@@ -457,7 +417,8 @@
       "width": 600,
       "height": 462,
       "ratio": 1.2987,
-      "stamp": "c9f37462bcbdf49a"
+      "stamp": "c9f37462bcbdf49a",
+      "album": ""
     },
     {
       "id": "red-dragonfly",
@@ -472,7 +433,8 @@
       "width": 1900,
       "height": 1327,
       "ratio": 1.4318,
-      "stamp": "527a545a9629d88a"
+      "stamp": "527a545a9629d88a",
+      "album": ""
     },
     {
       "id": "red-sun",
@@ -488,39 +450,127 @@
       "width": 600,
       "height": 450,
       "ratio": 1.3333,
-      "stamp": "33fb76fb1a411c0e"
+      "stamp": "33fb76fb1a411c0e",
+      "album": ""
     },
     {
-      "id": "sea-turtle",
-      "slug": "sea-turtle",
-      "file": "sea-turtle.wildlife.underwater.jpg",
-      "title": "Sea turtle",
+      "id": "storms/fortress-under-the-storm",
+      "slug": "fortress-under-the-storm",
+      "album": "storms",
+      "file": "storms/fortress-under-the-storm.storm.architecture.jpg",
+      "title": "Fortress under the storm",
       "tags": [
-        "wildlife",
-        "underwater"
+        "storm",
+        "architecture"
       ],
-      "thumb": "assets/photos/sea-turtle-thumb.webp",
-      "full": "assets/photos/sea-turtle.webp",
+      "thumb": "assets/photos/storms__fortress-under-the-storm-thumb.webp",
+      "full": "assets/photos/storms__fortress-under-the-storm.webp",
+      "width": 600,
+      "height": 400,
+      "ratio": 1.5,
+      "stamp": "402b5a4943b0081c"
+    },
+    {
+      "id": "storms/lightning-over-the-bay",
+      "slug": "lightning-over-the-bay",
+      "album": "storms",
+      "file": "storms/lightning-over-the-bay.storm.sea.night.jpg",
+      "title": "Lightning over the bay",
+      "tags": [
+        "storm",
+        "sea",
+        "night"
+      ],
+      "thumb": "assets/photos/storms__lightning-over-the-bay-thumb.webp",
+      "full": "assets/photos/storms__lightning-over-the-bay.webp",
       "width": 1900,
       "height": 1425,
       "ratio": 1.3333,
-      "stamp": "4c9d96bcc214e129"
+      "stamp": "9ac3c6a8d4cc8cc5"
     },
     {
-      "id": "stormy-night",
+      "id": "storms/lightning-strike",
+      "slug": "lightning-strike",
+      "album": "storms",
+      "file": "storms/lightning-strike.storm.night.jpg",
+      "title": "Lightning strike",
+      "tags": [
+        "storm",
+        "night"
+      ],
+      "thumb": "assets/photos/storms__lightning-strike-thumb.webp",
+      "full": "assets/photos/storms__lightning-strike.webp",
+      "width": 1440,
+      "height": 1074,
+      "ratio": 1.3408,
+      "stamp": "5254c0da86a76cb0"
+    },
+    {
+      "id": "storms/stormy-night",
       "slug": "stormy-night",
-      "file": "stormy-night.storm.night.jpg",
+      "album": "storms",
+      "file": "storms/stormy-night.storm.night.jpg",
       "title": "Stormy night",
       "tags": [
         "storm",
         "night"
       ],
-      "thumb": "assets/photos/stormy-night-thumb.webp",
-      "full": "assets/photos/stormy-night.webp",
+      "thumb": "assets/photos/storms__stormy-night-thumb.webp",
+      "full": "assets/photos/storms__stormy-night.webp",
       "width": 2385,
       "height": 1824,
       "ratio": 1.3076,
       "stamp": "480cb9cb0fe20746"
+    },
+    {
+      "id": "voyages/lagoon-jetty",
+      "slug": "lagoon-jetty",
+      "album": "voyages",
+      "file": "voyages/lagoon-jetty.travel.sea.jpg",
+      "title": "Lagoon jetty",
+      "tags": [
+        "travel",
+        "sea"
+      ],
+      "thumb": "assets/photos/voyages__lagoon-jetty-thumb.webp",
+      "full": "assets/photos/voyages__lagoon-jetty.webp",
+      "width": 600,
+      "height": 827,
+      "ratio": 0.7255,
+      "stamp": "ffa9143175dffa3b"
+    },
+    {
+      "id": "voyages/mexique/chichen-itza",
+      "slug": "chichen-itza",
+      "album": "voyages/mexique",
+      "file": "voyages/mexique/chichen-itza.travel.architecture.jpg",
+      "title": "Chichen itza",
+      "tags": [
+        "travel",
+        "architecture"
+      ],
+      "thumb": "assets/photos/voyages__mexique__chichen-itza-thumb.webp",
+      "full": "assets/photos/voyages__mexique__chichen-itza.webp",
+      "width": 600,
+      "height": 450,
+      "ratio": 1.3333,
+      "stamp": "dda5aae61c6929c0"
+    },
+    {
+      "id": "voyages/mexique/jaguar",
+      "slug": "jaguar",
+      "album": "voyages/mexique",
+      "file": "voyages/mexique/jaguar.wildlife.jpg",
+      "title": "Jaguar",
+      "tags": [
+        "wildlife"
+      ],
+      "thumb": "assets/photos/voyages__mexique__jaguar-thumb.webp",
+      "full": "assets/photos/voyages__mexique__jaguar.webp",
+      "width": 1900,
+      "height": 1473,
+      "ratio": 1.2899,
+      "stamp": "d880ae29114e0ad3"
     },
     {
       "id": "waxing-moon",
@@ -535,7 +585,8 @@
       "width": 1900,
       "height": 1425,
       "ratio": 1.3333,
-      "stamp": "a32d433b5af0f3f7"
+      "stamp": "a32d433b5af0f3f7",
+      "album": ""
     },
     {
       "id": "yoga-at-sunset",
@@ -551,7 +602,8 @@
       "width": 600,
       "height": 402,
       "ratio": 1.4925,
-      "stamp": "6355358f72b02297"
+      "stamp": "6355358f72b02297",
+      "album": ""
     }
   ]
 }

@@ -92,6 +92,157 @@
     margin-bottom: 1.6rem;
 }
 
+/* --- MENU DES ALBUMS ---
+   Sur grand ecran, un panneau ancre sous le bouton. Sous 768 px il devient
+   une feuille du bas : viser une liste flottante au pouce est penible, et le
+   bas de l'ecran est la zone la plus facile a atteindre. */
+#photos-view .album-picker {
+    position: relative;
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#photos-view .album-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .04);
+    color: #c9d1d9;
+    font-family: var(--code-font);
+    font-size: .7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color .18s ease, color .18s ease, background .18s ease;
+}
+
+#photos-view .album-trigger:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, .26);
+}
+
+#photos-view .album-picker.is-filtered .album-trigger {
+    color: var(--neon-green);
+    border-color: rgba(10, 255, 71, .5);
+    background: rgba(10, 255, 71, .08);
+}
+
+#photos-view .album-caret {
+    font-size: .6em;
+    opacity: .6;
+    transition: transform .2s ease;
+}
+
+#photos-view .album-picker.open .album-caret {
+    transform: rotate(180deg);
+}
+
+/* Sortir d'un album sans rouvrir le menu. */
+#photos-view .album-clear {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 0, 60, .35);
+    background: rgba(255, 0, 60, .07);
+    color: var(--neon-red);
+    font-size: .7rem;
+    cursor: pointer;
+    transition: background .18s ease, border-color .18s ease;
+}
+
+#photos-view .album-clear:hover {
+    background: rgba(255, 0, 60, .16);
+    border-color: var(--neon-red);
+}
+
+#photos-view .album-sheet {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 60;
+    min-width: 250px;
+    max-height: 60vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 6px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(10, 12, 15, .97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, .7);
+    animation: albumIn .16s ease both;
+}
+
+@keyframes albumIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#photos-view .album-sheet-head {
+    display: none;
+}
+
+#photos-view .album-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    color: #c9d1d9;
+    font-family: var(--code-font);
+    font-size: .74rem;
+    text-align: left;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+}
+
+#photos-view .album-option:hover,
+#photos-view .album-option:focus-visible {
+    background: rgba(255, 255, 255, .06);
+    color: #fff;
+    outline: none;
+}
+
+#photos-view .album-option.active {
+    color: var(--neon-green);
+    background: rgba(10, 255, 71, .08);
+}
+
+#photos-view .album-option i {
+    width: 14px;
+    font-size: .8em;
+    opacity: .7;
+}
+
+#photos-view .album-name {
+    flex: 1 1 auto;
+}
+
+#photos-view .album-count {
+    flex: none;
+    font-size: .85em;
+    opacity: .5;
+}
+
 #photos-view .tag-bar {
     display: flex;
     flex-direction: column;
@@ -589,6 +740,60 @@ body.photo-open {
     #photos-view .photos-toolbar {
         padding: 0 .5rem;
     }
+
+    /* La liste flottante devient une feuille du bas : plus facile a viser au
+       pouce, et elle ne deborde pas d'un ecran etroit. */
+    #photos-view .album-picker {
+        width: 100%;
+    }
+
+    #photos-view .album-trigger {
+        flex: 1 1 auto;
+        justify-content: center;
+    }
+
+    #photos-view .album-sheet {
+        position: fixed;
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3500;
+        min-width: 0;
+        max-height: 70vh;
+        border-radius: 18px 18px 0 0;
+        border-bottom: none;
+        padding: 8px 10px calc(14px + env(safe-area-inset-bottom));
+        animation: albumUp .22s cubic-bezier(.22, .61, .36, 1) both;
+    }
+
+    @keyframes albumUp {
+        from {
+            transform: translateY(100%);
+        }
+
+        to {
+            transform: none;
+        }
+    }
+
+    #photos-view .album-sheet-head {
+        display: block;
+        padding: 10px 12px 12px;
+        font-family: var(--code-font);
+        font-size: .64rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #6e7681;
+        border-bottom: 1px solid rgba(255, 255, 255, .07);
+        margin-bottom: 6px;
+    }
+
+    #photos-view .album-option {
+        padding: 14px 12px;
+        font-size: .8rem;
+    }
+
 
     #photos-view .tag {
         font-size: .64rem;

@@ -26,6 +26,9 @@ const PHOTOS = (() => {
         visible: [],
         tagsOpen: false,
         tagQuery: '',
+        albums: [],
+        album: '',
+        albumOpen: false,
         zoom: 1,
         pan: { x: 0, y: 0 },
         drag: null
@@ -109,9 +112,12 @@ const PHOTOS = (() => {
 
         const counts = facetCounts();
         const query = state.tagQuery.trim().toLowerCase();
-        const matching = query
-            ? state.tags.filter(t => t.name.includes(query))
+        /* Dans un album, un tag que porte aucune de ses photos n'a pas a etre
+           propose : la barre ne montre que ce qui existe ici. */
+        const present = state.album
+            ? state.tags.filter(t => counts.get(t.name) > 0 || state.active.has(t.name))
             : state.tags;
+        const matching = query ? present.filter(t => t.name.includes(query)) : present;
 
         /* Les tags actifs restent visibles meme repliee, sinon on ne pourrait
            plus retirer un filtre qu'on vient de poser. */
@@ -159,12 +165,21 @@ const PHOTOS = (() => {
             </button>`;
     }
 
+    /* Un album contient aussi ses sous albums : choisir "Voyages" montre le
+       Mexique qui est dedans, sinon la hierarchie serait un classement sans
+       effet. */
+    const inAlbum = photo => !state.album
+        || photo.album === state.album
+        || String(photo.album || '').startsWith(state.album + '/');
+
     function visiblePhotos() {
-        if (state.active.size === 0) return state.photos;
-        /* Plusieurs tags actifs : une photo doit les porter tous, sinon le
-           filtre elargirait au lieu de reduire, ce qui n'est pas ce qu'on
-           attend en cliquant un deuxieme tag. */
-        return state.photos.filter(p => [...state.active].every(t => p.tags.includes(t)));
+        return state.photos.filter(p => {
+            if (!inAlbum(p)) return false;
+            /* Plusieurs tags actifs : une photo doit les porter tous, sinon le
+               filtre elargirait au lieu de reduire, ce qui n'est pas ce qu'on
+               attend en cliquant un deuxieme tag. */
+            return [...state.active].every(t => p.tags.includes(t));
+        });
     }
 
     function render() {
@@ -172,6 +187,7 @@ const PHOTOS = (() => {
         if (!grid) return;
 
         state.visible = visiblePhotos();
+        renderAlbums();
         renderTags();
 
         document.querySelectorAll('#photos-view .mode-btn').forEach(btn => {
@@ -200,7 +216,11 @@ const PHOTOS = (() => {
         }
 
         const total = document.getElementById('photos-count');
-        if (total) total.textContent = state.active.size ? state.visible.length : state.photos.length;
+        if (total) {
+            total.textContent = (state.active.size || state.album)
+                ? state.visible.length
+                : state.photos.length;
+        }
 
         const status = document.getElementById('photos-status');
         if (status && state.meta) {
@@ -229,6 +249,125 @@ const PHOTOS = (() => {
         const tag = String(name || '').trim().toLowerCase();
         state.active = new Set(state.tags.some(t => t.name === tag) ? [tag] : []);
         render();
+    }
+
+    /* --- MENU DES ALBUMS ---
+       Un menu maison plutot qu'un select natif : il affiche les comptes,
+       marque le choix courant et devient une feuille du bas sur mobile. En
+       echange, le clavier et le clic exterieur sont a traiter a la main.
+
+       Sortir d'un album doit rester immediat : une croix sur le bouton y
+       suffit, sans rouvrir le menu, et "All photos" reste en tete de liste. */
+
+    function albumLabel(id) {
+        const found = state.albums.find(a => a.id === id);
+        return found ? found.label : 'All photos';
+    }
+
+    function renderAlbums() {
+        const picker = document.getElementById('photo-albums');
+        const list = document.getElementById('album-list');
+        const current = document.getElementById('album-current');
+        const clear = document.getElementById('album-clear');
+        if (!picker || !list) return;
+
+        /* Sans sous dossier il n'y a rien a choisir, le menu disparait. */
+        picker.hidden = state.albums.length === 0;
+        if (picker.hidden) return;
+
+        const option = (id, label, count) => {
+            const on = state.album === id;
+            return '<button class="album-option' + (on ? ' active' : '') + '" role="option"' +
+                ' aria-selected="' + on + '" data-album="' + esc(id) + '">' +
+                '<i class="fas fa-' + (on ? 'check' : 'folder') + '"></i>' +
+                '<span class="album-name">' + esc(label) + '</span>' +
+                '<span class="album-count">' + count + '</span></button>';
+        };
+
+        list.innerHTML = [
+            option('', 'All photos', state.photos.length),
+            ...state.albums.map(a => option(a.id, a.label, a.count))
+        ].join('');
+
+        if (current) current.textContent = albumLabel(state.album);
+        if (clear) clear.hidden = !state.album;
+        picker.classList.toggle('is-filtered', Boolean(state.album));
+    }
+
+    function toggleAlbums(open) {
+        const sheet = document.getElementById('album-sheet');
+        const trigger = document.getElementById('album-trigger');
+        const picker = document.getElementById('photo-albums');
+        if (!sheet || !trigger || !picker) return;
+
+        state.albumOpen = open === undefined ? !state.albumOpen : open;
+        sheet.hidden = !state.albumOpen;
+        picker.classList.toggle('open', state.albumOpen);
+        trigger.setAttribute('aria-expanded', String(state.albumOpen));
+
+        if (state.albumOpen) {
+            const active = sheet.querySelector('.album-option.active')
+                || sheet.querySelector('.album-option');
+            if (active) active.focus();
+        }
+    }
+
+    function setAlbum(id) {
+        state.album = id;
+        /* Les tags du nouvel album n'ont rien a voir avec ceux du precedent :
+           garder la selection ne montrerait le plus souvent aucune photo. */
+        state.active.clear();
+        state.tagQuery = '';
+        state.tagsOpen = false;
+        toggleAlbums(false);
+        render();
+    }
+
+    function bindAlbums() {
+        const picker = document.getElementById('photo-albums');
+        const trigger = document.getElementById('album-trigger');
+        const list = document.getElementById('album-list');
+        const clear = document.getElementById('album-clear');
+        if (!picker || !trigger || !list) return;
+
+        trigger.addEventListener('click', () => toggleAlbums());
+
+        if (clear) {
+            clear.addEventListener('click', e => {
+                /* Sans cela le clic ouvrirait le menu qu'on cherche a eviter. */
+                e.stopPropagation();
+                setAlbum('');
+            });
+        }
+
+        list.addEventListener('click', e => {
+            const option = e.target.closest('.album-option');
+            if (option) setAlbum(option.dataset.album);
+        });
+
+        document.addEventListener('click', e => {
+            if (state.albumOpen && !e.target.closest('#photo-albums')) toggleAlbums(false);
+        });
+
+        picker.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && state.albumOpen) {
+                toggleAlbums(false);
+                trigger.focus();
+                return;
+            }
+            if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+
+            e.preventDefault();
+            if (!state.albumOpen) {
+                toggleAlbums(true);
+                return;
+            }
+
+            const options = [...list.querySelectorAll('.album-option')];
+            const at = options.indexOf(document.activeElement);
+            const to = e.key === 'ArrowDown' ? at + 1 : at - 1;
+            (options[(to + options.length) % options.length] || options[0]).focus();
+        });
     }
 
     /* --- VISIONNEUSE --- */
@@ -723,6 +862,7 @@ const PHOTOS = (() => {
 
             state.photos = Array.isArray(data.photos) ? data.photos : [];
             state.tags = Array.isArray(data.tags) ? data.tags : [];
+            state.albums = Array.isArray(data.albums) ? data.albums : [];
             state.meta = data;
             state.loaded = true;
         } catch (e) {
@@ -814,6 +954,7 @@ const PHOTOS = (() => {
         });
 
         bindStage();
+        bindAlbums();
 
     }
 
