@@ -22,7 +22,7 @@
     "shortcuts": [
         {
             "name": "Logs",
-            "url": "/#blog",
+            "url": "./#blog",
             "icons": [
                 {
                     "src": "img/icon-180.png",
@@ -32,7 +32,7 @@
         },
         {
             "name": "Knowledge",
-            "url": "/#kb",
+            "url": "./#kb",
             "icons": [
                 {
                     "src": "img/icon-180.png",
@@ -42,7 +42,7 @@
         },
         {
             "name": "Library",
-            "url": "/#papers",
+            "url": "./#papers",
             "icons": [
                 {
                     "src": "img/icon-180.png",
@@ -52,7 +52,7 @@
         },
         {
             "name": "Gallery",
-            "url": "/#art",
+            "url": "./#art",
             "icons": [
                 {
                     "src": "img/icon-180.png",
