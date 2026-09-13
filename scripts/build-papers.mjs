@@ -48,28 +48,64 @@ const SEARCH_URL = `https://arxiv.org/search/?searchtype=author&query=${encodeUR
    l API ils ne sont pas refetches. */
 const SEED_IDS = ['2607.05300', '2607.06634', '2603.21315'];
 
-/* Preprints qui n ont pas encore d identifiant arXiv public. Ils apparaissent
-   dans la bibliotheque sans PDF, avec un bandeau "preprint". A vider quand
-   l identifiant arrive, la decouverte automatique prend alors le relais. */
+/* Preprints qui n ont pas encore d identifiant arXiv public.
+ *
+ * pdf_source designe le PDF chez son auteur. Il est recopie sous
+ * assets/papers pour etre servi par le site : GitHub sert les PDF bruts en
+ * application/octet-stream avec X-Frame-Options deny, donc ni affichables
+ * dans la liseuse ni rendus par le navigateur.
+ *
+ * Le titre et le resume sont laissés vides : build-paper-assets.py les lit
+ * dans le PDF lui meme, pour que la page ne raconte jamais autre chose que
+ * le document. A vider quand l identifiant arXiv arrive, la decouverte
+ * automatique prend alors le relais.
+ */
+const preprint = fields => ({
+    version: '',
+    authors: [AUTHOR],
+    abstract: '',
+    comment: '',
+    doi: '',
+    journal_ref: '',
+    pdf_url: '',
+    status: 'pending',
+    ...fields,
+    updated: fields.updated || fields.published
+});
+
 const UNPUBLISHED = [
-    {
+    preprint({
         id: 'drift-bounded-spectral-updates',
-        version: '',
         title: 'Drift-Bounded Spectral Updates for Deep Local Learning',
-        authors: [AUTHOR],
-        abstract: 'Local learning with a bounded per-layer change budget. Applications: edge devices and controlled autonomous retraining.',
         categories: ['cs.LG'],
         primary_category: 'cs.LG',
         published: '2026-07-01T00:00:00.000Z',
-        updated: '2026-07-01T00:00:00.000Z',
-        abs_url: SEARCH_URL,
-        pdf_url: '',
-        comment: '',
-        doi: '',
-        journal_ref: '',
-        status: 'pending'
-    }
+        abs_url: 'https://github.com/infinition/drift-contract',
+        pdf_source: 'https://raw.githubusercontent.com/infinition/drift-contract/main/paper/paper.pdf'
+    }),
+    preprint({
+        id: 'digital-abelian-logical-phase-control',
+        title: 'Digital Abelian Logical Phase Control in a Correlated-Hopping Ladder',
+        categories: ['quant-ph', 'cond-mat.str-el'],
+        primary_category: 'quant-ph',
+        published: '2026-07-20T00:00:00.000Z',
+        abs_url: 'https://github.com/infinition/antler',
+        pdf_source: 'https://raw.githubusercontent.com/infinition/antler/main/paper/Digital_Abelian_Logical_Phase_Control_in_a_Correlated_Hopping_Ladder__2_.pdf'
+    }),
+    preprint({
+        id: 'it-from-fix',
+        title: 'It from Fix: The Kernel Principle',
+        categories: ['gr-qc', 'hep-th'],
+        primary_category: 'gr-qc',
+        published: '2026-07-15T00:00:00.000Z',
+        comment: 'Working note v0.3.0, with toy models, controls and negative results.',
+        abs_url: 'https://github.com/infinition/it-from-fix',
+        pdf_source: 'https://raw.githubusercontent.com/infinition/it-from-fix/main/paper/v0.3.0/main.pdf'
+    })
 ];
+
+/* Ou sont deposes les PDF recopies et les couvertures. */
+const ASSET_DIR = argOf('--assets', 'assets/papers');
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -320,8 +356,73 @@ for (const p of (prev && prev.papers) || []) {
     if (p.status !== 'pending' && !found.has(p.id)) found.set(p.id, p);
 }
 
+/* Recopie le PDF d un preprint sous assets/papers pour que le site le serve
+   lui meme. Un echec n est pas fatal : si la copie precedente est encore la,
+   elle fait l affaire. */
+async function localisePdf(paper) {
+    if (!paper.pdf_source) return paper;
+
+    const name = `${paper.id}.pdf`;
+    const target = `${ASSET_DIR}/${name}`;
+
+    try {
+        const res = await fetch(paper.pdf_source, { headers: { 'User-Agent': UA } });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const bytes = Buffer.from(await res.arrayBuffer());
+        if (bytes.length < 1024) throw new Error('fichier trop court pour un PDF');
+
+        await mkdir(ASSET_DIR, { recursive: true });
+        await writeFile(target, bytes);
+        console.log(`${name}: ${Math.round(bytes.length / 1024)} ko`);
+        paper.pdf_url = target;
+    } catch (e) {
+        console.warn(`  ${name}: copie impossible (${e.message})`);
+        try {
+            await readFile(target);
+            paper.pdf_url = target;
+            console.log(`  ${name}: copie precedente conservee`);
+        } catch {
+            paper.pdf_url = '';
+        }
+    }
+    return paper;
+}
+
+/* Les couvertures, et pour un preprint son titre et son resume, sont
+   produits par build-paper-assets.py qui tourne apres ce script. On les
+   reprend du snapshot precedent pour qu ils ne disparaissent pas le jour ou
+   ce second passage echoue. */
+function carryOver(paper, fields) {
+    const old = ((prev && prev.papers) || []).find(p => p.id === paper.id);
+    if (!old) return paper;
+
+    for (const field of fields) {
+        if (!paper[field] && old[field]) paper[field] = old[field];
+    }
+    return paper;
+}
+
+/* Le resume d un preprint n est repris que s il a bien ete lu dans le PDF.
+   Sans ce garde-fou, un texte de depart ecrit a la main dans UNPUBLISHED
+   ressusciterait a chaque passage et empecherait sa propre relecture. */
+function carryOverPreprint(paper) {
+    const old = ((prev && prev.papers) || []).find(p => p.id === paper.id);
+    const fields = ['title', 'cover'];
+
+    if (old && old.abstract_source === 'pdf') {
+        fields.push('abstract');
+        paper.abstract_source = 'pdf';
+    }
+    return carryOver(paper, fields);
+}
+
+const unpublished = await Promise.all(
+    UNPUBLISHED.map(p => localisePdf(carryOverPreprint({ ...p })))
+);
+
 const papers = [...found.values()]
-    .concat(UNPUBLISHED)
+    .map(p => carryOver(p, ['cover']))
+    .concat(unpublished)
     .sort((a, b) => new Date(b.published || 0) - new Date(a.published || 0));
 
 const published = papers.filter(p => p.status === 'published');

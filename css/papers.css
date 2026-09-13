@@ -158,16 +158,55 @@
 }
 
 /* --- RAYONNAGE --- */
+#papers-view .shelf-block {
+    margin-bottom: 3.5rem;
+}
+
+#papers-view .shelf-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 1.8rem;
+    font-family: var(--code-font);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8b949e;
+}
+
+/* Le filet part du titre et traverse la largeur : il tient lieu de
+   separation entre deux rayons sans ajouter de bloc. */
+#papers-view .shelf-title::after {
+    content: '';
+    flex: 1 1 auto;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, .16), transparent);
+}
+
+#papers-view .shelf-count {
+    flex: none;
+    order: 1;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: .62rem;
+    letter-spacing: 1px;
+    color: #6e7681;
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+
 #papers-view .shelf {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    gap: 3.2rem 2rem;
+    gap: 3rem 2rem;
+    align-items: start;
     perspective: 1400px;
 }
 
 #papers-view .book {
     --accent: var(--neon-purple);
-    --accent-soft: rgba(189, 0, 255, .3);
+    --accent-rgb: 189, 0, 255;
+    --accent-soft: rgba(var(--accent-rgb), .3);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -209,7 +248,9 @@
 #papers-view .book-3d {
     position: relative;
     width: 100%;
-    aspect-ratio: 2 / 3;
+    /* Une page lettre fait 0.773 de rapport, une A4 0.707 : 3/4 tient entre
+       les deux, et les couvertures sont rendues a ce format exact. */
+    aspect-ratio: 3 / 4;
     transform-style: preserve-3d;
     transform: rotateY(-11deg) translateZ(0);
     transition: transform .4s cubic-bezier(.22, .61, .36, 1), filter .4s ease;
@@ -290,35 +331,81 @@
     pointer-events: none;
 }
 
-#papers-view .book-cat {
-    align-self: flex-start;
+/* Sur une couverture composee la pastille est dans le flux, sur une page
+   scannee elle se pose par dessus, en haut a gauche. */
+#papers-view .book-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 2;
     font-family: var(--code-font);
-    font-size: .56rem;
+    font-size: .54rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     padding: 3px 7px;
     border-radius: 999px;
     color: var(--accent);
     border: 1px solid var(--accent-soft);
-    background: rgba(255, 255, 255, .03);
+    background: rgba(6, 8, 11, .82);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     white-space: nowrap;
 }
 
-#papers-view .book-title {
+/* --- COUVERTURE SCANNEE : LA PREMIERE PAGE DU PDF --- */
+#papers-view .book-page {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* La page est blanche et crue sur un fond noir : on la pose derriere un
+   voile tres leger teinte par l accent, pour qu'elle appartienne a la
+   planche plutot que d'y etre collee. */
+#papers-view .book.has-page .book-cover {
+    padding: 0;
+    background: #fff;
+}
+
+#papers-view .book.has-page .book-cover::before {
+    background:
+        linear-gradient(180deg, rgba(var(--accent-rgb), .1) 0%, transparent 35%),
+        linear-gradient(0deg, rgba(4, 6, 9, .28) 0%, transparent 30%);
+    mix-blend-mode: multiply;
+    z-index: 1;
+}
+
+#papers-view .book.has-page .book-cover::after {
+    z-index: 1;
+}
+
+/* --- COUVERTURE COMPOSEE : LES TEXTES, ET LES PDF ILLISIBLES --- */
+#papers-view .book-type {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1.7rem;
+}
+
+#papers-view .book-type-title {
     font-family: var(--cyber-font);
     font-size: .84rem;
     line-height: 1.35;
     letter-spacing: .4px;
     color: #f2f2f2;
-    margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 6;
-    line-clamp: 6;
+    -webkit-line-clamp: 7;
+    line-clamp: 7;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-#papers-view .book-foot {
+#papers-view .book-type-foot {
     margin-top: auto;
     display: flex;
     flex-direction: column;
@@ -327,25 +414,42 @@
     font-size: .56rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-}
-
-#papers-view .book-author {
     color: rgba(255, 255, 255, .72);
 }
 
-#papers-view .book-ref {
+#papers-view .book-type-ref {
     color: var(--accent);
     opacity: .85;
 }
 
-/* Preprint sans identifiant public : couverture neutre, pas de PDF. */
-#papers-view .book.is-pending .book-cover {
-    filter: saturate(.35);
+/* --- FICHE SOUS LE LIVRE --- */
+#papers-view .book-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    margin-top: .8rem;
+    text-align: left;
 }
 
-#papers-view .book-meta {
-    margin-top: .75rem;
-    width: 100%;
+#papers-view .book-name {
+    font-family: var(--code-font);
+    font-size: .74rem;
+    line-height: 1.4;
+    color: #d7dde3;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color .2s ease;
+}
+
+#papers-view .book:hover .book-name {
+    color: #fff;
+}
+
+#papers-view .book-sub {
     display: flex;
     justify-content: space-between;
     gap: 8px;
@@ -354,10 +458,6 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #6e7681;
-}
-
-#papers-view .book:hover .book-meta {
-    color: #9aa4ae;
 }
 
 #papers-view .papers-empty,
@@ -567,6 +667,53 @@ body.reader-open {
     margin: 0 0 1rem;
 }
 
+.paper-reader .pr-subtitle {
+    font-family: var(--ui-font);
+    font-size: clamp(.95rem, 2.6vw, 1.15rem);
+    line-height: 1.45;
+    color: #9aa4ae;
+    margin: -.4rem 0 1rem;
+}
+
+/* Un essai se lit entierement dans la liseuse. Le rendu du markdown est
+   celui de la base de connaissances, dont la classe n'est pas liee a sa
+   vue : titres, listes, citations et code y sont deja traites. */
+.paper-reader .pr-body {
+    margin-bottom: 2rem;
+}
+
+.paper-reader .pr-body > :first-child {
+    margin-top: 0;
+}
+
+/* La base de connaissances est de la documentation, elle se lit en mono.
+   Un essai est de la prose suivie : sur plusieurs milliers de mots la
+   chasse fixe fatigue, on repasse a la police de lecture. Le code, lui,
+   garde la sienne. */
+.paper-reader .pr-body p,
+.paper-reader .pr-body li,
+.paper-reader .pr-body blockquote,
+.paper-reader .pr-body td,
+.paper-reader .pr-body th {
+    font-family: var(--ui-font);
+    font-size: clamp(.95rem, 2.4vw, 1.06rem);
+    line-height: 1.85;
+}
+
+.paper-reader .pr-body h2,
+.paper-reader .pr-body h3 {
+    font-family: var(--cyber-font);
+    letter-spacing: .5px;
+}
+
+.paper-reader .pr-loading {
+    font-family: var(--code-font);
+    font-size: .75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6e7681;
+}
+
 .paper-reader .pr-authors {
     font-family: var(--code-font);
     font-size: .8rem;
@@ -699,14 +846,30 @@ body.reader-open {
         transform: rotateY(-7deg);
     }
 
-    #papers-view .book-title {
+    #papers-view .book-type-title {
         font-size: .72rem;
-        -webkit-line-clamp: 5;
-        line-clamp: 5;
+        -webkit-line-clamp: 6;
+        line-clamp: 6;
     }
 
     #papers-view .book-cover {
         padding: .8rem .7rem .75rem;
+    }
+
+    #papers-view .book.has-page .book-cover {
+        padding: 0;
+    }
+
+    #papers-view .book-name {
+        font-size: .68rem;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    #papers-view .shelf-title {
+        font-size: .65rem;
+        letter-spacing: 3px;
+        margin-bottom: 1.3rem;
     }
 
     #papers-view .paper-search {

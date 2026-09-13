@@ -7,9 +7,11 @@ function handleHashChange() {
         if (mergedData.length === 0) { navigateTo('blog'); setTimeout(() => findAndOpenArticle(articleFile), 1500); }
         else { findAndOpenArticle(articleFile); }
     }
-    /* #paper:ID et #art:ID ouvrent directement la liseuse ou la visionneuse,
-       y compris a froid : les deux modules chargent leur JSON avant d ouvrir. */
+    /* #paper:ID, #read:rayon/texte et #art:ID ouvrent directement la liseuse
+       ou la visionneuse, y compris a froid : les deux modules chargent leur
+       index avant d ouvrir. */
     else if (hash.startsWith('#paper:')) { navigateTo('papers', true); PAPERS.openFromHash(hash.slice(7)); }
+    else if (hash.startsWith('#read:')) { navigateTo('papers', true); PAPERS.openFromHash(hash.slice(6)); }
     else if (hash.startsWith('#art:')) { navigateTo('art', true); ARTSTATION.openFromHash(hash.slice(5)); }
     else if (hash === '#portfolio') navigateTo('portfolio');
     else if (hash === '#blog') navigateTo('blog');
@@ -74,7 +76,7 @@ function navigateTo(viewId, keepScroll = false) {
 
     /* Le retour arriere du navigateur repasse de #paper:ID a #papers sans
        passer par le bouton de fermeture, on referme donc ici. */
-    if (viewId !== 'papers' || !window.location.hash.startsWith('#paper:')) PAPERS.close();
+    if (viewId !== 'papers' || !/^#(paper|read):/.test(window.location.hash)) PAPERS.close();
     if (viewId !== 'art' || !window.location.hash.startsWith('#art:')) ARTSTATION.close();
     // Removed direct music fetch, now handled by reveal button
     if (!keepScroll) window.scrollTo(0, 0);

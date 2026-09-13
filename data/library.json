@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-09-13T15:25:32.427Z",
+  "total": 1,
+  "shelves": [
+    {
+      "id": "essays",
+      "label": "Essays",
+      "accent": "green",
+      "count": 1,
+      "entries": [
+        {
+          "id": "essays/chaos-d-interets",
+          "shelf": "essays",
+          "title": "Pourquoi votre chaos d'intérêts est en réalité votre plus grand atout",
+          "subtitle": "Bienvenue dans l'ère de l'esprit en M",
+          "summary": "La société étiquette le touche-à-tout comme un dilettante. En environnement instable, c'est l'hyperspécialiste qui devient fragile : ses piliers multiples sont une redondance, au sens où la biologie l'entend.",
+          "date": "2026-07-24",
+          "lang": "fr",
+          "tags": [
+            "cognition",
+            "carrière",
+            "apprentissage"
+          ],
+          "path": "library/essays/chaos-d-interets.md",
+          "words": 959,
+          "reading_minutes": 4
+        }
+      ]
+    }
+  ]
+}

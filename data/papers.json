@@ -1,12 +1,62 @@
 {
-  "generated_at": "2026-09-13T13:33:02.469Z",
+  "generated_at": "2026-09-13T15:20:20.116Z",
   "author": "Fabien Polly",
   "author_search": "https://arxiv.org/search/?searchtype=author&query=Polly%2C%20Fabien",
-  "count": 4,
+  "count": 6,
   "papers": [
     {
+      "version": "",
+      "authors": [
+        "Fabien Polly"
+      ],
+      "abstract": "We report an exact-diagonalization study of a digital logical phase primitive in a number￾conserving correlated-hopping ladder. The model is a hard-core two-leg Su-Schrieffer-Heeger ladder with a fixed rung-major Jordan-Wigner string convention. A sequential exchange protocol is read out interferometrically in a dressed two-state logical frame, using matched exchange and round-trip controls at opposite statistical angles. We reconstruct the complete logical matrix, including its singular values, leakage and off-diagonal mixing. At L = 14 and N = 2, all fine-step data at D = 4, 6, 8, 10, 12 and ∆t = 0.125 follow ∆ϕ/θ = −1 + 0.66493D−2.28624 with R2 = 0.999983. The retained points have worst-case leakage below 5 × 10−5 and σmin > 0.999975. Registered digital path deformations give logical unitary changes below 5.41 × 10−5 at the tested operating point. Repeated cycles remain near the same logical Z axis through n = 8. The current gate family commutes. This work establishes an Abelian digital phase primitive for the specified Hamiltonian; it does not demonstrate non-Abelian braiding, universality, fault tolerance or a physical anyon platform.",
+      "comment": "",
+      "doi": "",
+      "journal_ref": "",
+      "pdf_url": "assets/papers/digital-abelian-logical-phase-control.pdf",
+      "status": "pending",
+      "id": "digital-abelian-logical-phase-control",
+      "title": "Digital Abelian Logical Phase Control in a Correlated-Hopping Ladder",
+      "categories": [
+        "quant-ph",
+        "cond-mat.str-el"
+      ],
+      "primary_category": "quant-ph",
+      "published": "2026-07-20T00:00:00.000Z",
+      "abs_url": "https://github.com/infinition/antler",
+      "pdf_source": "https://raw.githubusercontent.com/infinition/antler/main/paper/Digital_Abelian_Logical_Phase_Control_in_a_Correlated_Hopping_Ladder__2_.pdf",
+      "updated": "2026-07-20T00:00:00.000Z",
+      "cover": "assets/papers/digital-abelian-logical-phase-control.webp",
+      "abstract_source": "pdf"
+    },
+    {
+      "version": "",
+      "authors": [
+        "Fabien Polly"
+      ],
+      "abstract": "Three familiar statements share one algebraic form. The Wheeler-DeWitt constraint Hˆ |Ψ⟩ = 0 says the quantum state of the universe is stationary in time. The fixed-point condition β(g∗) = 0 of asymptotic safety says fundamental couplings are stationary in scale. Conservation of a structural kernel under an update map, AdU (K) = K, says structure is stationary under discrete evolution. I propose to read these as instances of a single selection principle: the physically realized objects are elements of ker(G) for the relevant flow generator G, and observed dynamics is relational flow around them. This note states the principle, is explicit about what it does and does not predict, and reports the computational program built around it. That program includes reproductions of published asymptotic-safety results, a family of stationary spectral toy models in which chirality produces complex projected scaling exponents, and a series of controlled attempts to make gravitational attraction emerge from persistence and information exchange in relational graphs. The attempts failed under fair controls, and I report the failures with the same care as the constructions that worked. The note ends with the criteria a future positive result would have to meet.",
+      "comment": "Working note v0.3.0, with toy models, controls and negative results.",
+      "doi": "",
+      "journal_ref": "",
+      "pdf_url": "assets/papers/it-from-fix.pdf",
+      "status": "pending",
+      "id": "it-from-fix",
+      "title": "It from Fix: The Kernel Principle",
+      "categories": [
+        "gr-qc",
+        "hep-th"
+      ],
+      "primary_category": "gr-qc",
+      "published": "2026-07-15T00:00:00.000Z",
+      "abs_url": "https://github.com/infinition/it-from-fix",
+      "pdf_source": "https://raw.githubusercontent.com/infinition/it-from-fix/main/paper/v0.3.0/main.pdf",
+      "updated": "2026-07-15T00:00:00.000Z",
+      "cover": "assets/papers/it-from-fix.webp",
+      "abstract_source": "pdf"
+    },
+    {
       "id": "2607.06634",
-      "version": "v1",
+      "version": "",
       "title": "When Do Geometric Algebra Layers Beat Scalarization? A Controlled Study on SO(3)-Equivariant Vector Laws",
       "authors": [
         "Fabien Polly"
@@ -16,18 +66,19 @@
         "cs.LG"
       ],
       "primary_category": "cs.LG",
-      "published": "2026-07-07T13:55:45Z",
-      "updated": "2026-07-07T13:55:45Z",
+      "published": "2026-07-07T00:00:00.000Z",
+      "updated": "2026-07-07T00:00:00.000Z",
       "abs_url": "https://arxiv.org/abs/2607.06634",
       "pdf_url": "https://arxiv.org/pdf/2607.06634",
-      "comment": "10 pages, 2 figures, 4 tables. Code and data: https://github.com/infinition/ga-vs-scalarization",
+      "comment": "10 pages, 2 figures, 4 tables. Code and data: this https URL",
       "doi": "",
       "journal_ref": "",
-      "status": "published"
+      "status": "published",
+      "cover": "assets/papers/2607.06634.webp"
     },
     {
       "id": "2607.05300",
-      "version": "v1",
+      "version": "",
       "title": "Learning Only What Valid Adapters Can Express: Subspace-Constrained Adaptation Against Fine-Tuning Poisoning",
       "authors": [
         "Fabien Polly"
@@ -38,39 +89,43 @@
         "cs.CR"
       ],
       "primary_category": "cs.LG",
-      "published": "2026-07-06T16:43:04Z",
-      "updated": "2026-07-06T16:43:04Z",
+      "published": "2026-07-06T00:00:00.000Z",
+      "updated": "2026-07-06T00:00:00.000Z",
       "abs_url": "https://arxiv.org/abs/2607.05300",
       "pdf_url": "https://arxiv.org/pdf/2607.05300",
-      "comment": "10 pages, 7 figures, 2 tables. Code and data: https://github.com/infinition/z-manifold",
+      "comment": "10 pages, 7 figures, 2 tables. Code and data: this https URL",
       "doi": "",
       "journal_ref": "",
-      "status": "published"
+      "status": "published",
+      "cover": "assets/papers/2607.05300.webp"
     },
     {
-      "id": "drift-bounded-spectral-updates",
       "version": "",
-      "title": "Drift-Bounded Spectral Updates for Deep Local Learning",
       "authors": [
         "Fabien Polly"
       ],
-      "abstract": "Local learning with a bounded per-layer change budget. Applications: edge devices and controlled autonomous retraining.",
+      "abstract": "Local learning trains each layer with its own auxiliary loss and no global backward pass, which makes layer updates structurally parallel. Two problems have kept it marginal: accuracy degrades as depth grows, and hyperparameters are fragile. We apply Muon-style spectral update geometry (momentum orthogonalization with spectral step scaling) to per-layer local updates, an intersection not previously studied. On CIFAR-10 MLP benchmarks with local linear heads, a single step-size setting is the best value in our tested grids from width 128 to 2048 and from depth 12 to 48, while local Adam requires re-tuning along both axes and still collapses at depth 48 (31.3 percent re-tuned per depth, 19 percent with its depth-12 setting transferred, vs 42.7 percent for the spectral update at its unchanged setting). At five seeds and width 512 the spectral update leads local Adam by a clear margin (48.9 ± 0.5 vs 46.6 ± 0.3). Prospectively specified controls attribute the transfer and most of the depth robustness to the spectral geometry itself rather than to any step-size rule on top of it. We additionally formulate the step size as a drift contract, lr = ϵ/RMS(input), which bounds each layer’s weight-induced pre-activation change per step, conditioned on its current input. The contract yields a small gain over the best fixed learning rate where that baseline is measured, makes the step size interpretable, and provides a per-layer, input-conditioned drift bound that standard optimizers do not offer. We report one negative result: with RMSNorm and weight decay in the trunk, the stability benefit of spectral updates accrues to global rather than local training, so the local advantage concentrates precisely where normalization is absent.",
+      "comment": "",
+      "doi": "",
+      "journal_ref": "",
+      "pdf_url": "assets/papers/drift-bounded-spectral-updates.pdf",
+      "status": "pending",
+      "id": "drift-bounded-spectral-updates",
+      "title": "Drift-Bounded Spectral Updates for Deep Local Learning",
       "categories": [
         "cs.LG"
       ],
       "primary_category": "cs.LG",
       "published": "2026-07-01T00:00:00.000Z",
+      "abs_url": "https://github.com/infinition/drift-contract",
+      "pdf_source": "https://raw.githubusercontent.com/infinition/drift-contract/main/paper/paper.pdf",
       "updated": "2026-07-01T00:00:00.000Z",
-      "abs_url": "https://arxiv.org/search/?searchtype=author&query=Polly%2C%20Fabien",
-      "pdf_url": "",
-      "comment": "",
-      "doi": "",
-      "journal_ref": "",
-      "status": "pending"
+      "abstract_source": "pdf",
+      "cover": "assets/papers/drift-bounded-spectral-updates.webp"
     },
     {
       "id": "2603.21315",
-      "version": "v1",
+      "version": "",
       "title": "FluidWorld: Reaction-Diffusion Dynamics as a Predictive Substrate for World Models",
       "authors": [
         "Fabien Polly"
@@ -80,14 +135,15 @@
         "cs.LG"
       ],
       "primary_category": "cs.LG",
-      "published": "2026-03-22T16:49:43Z",
-      "updated": "2026-03-22T16:49:43Z",
+      "published": "2026-03-22T00:00:00.000Z",
+      "updated": "2026-03-22T00:00:00.000Z",
       "abs_url": "https://arxiv.org/abs/2603.21315",
       "pdf_url": "https://arxiv.org/pdf/2603.21315",
-      "comment": "18 pages, 16 figures, 4 tables. Code available at https://github.com/infinition/FluidWorld/",
+      "comment": "18 pages, 16 figures, 4 tables. Code available at this https URL",
       "doi": "",
       "journal_ref": "",
-      "status": "published"
+      "status": "published",
+      "cover": "assets/papers/2603.21315.webp"
     }
   ]
 }

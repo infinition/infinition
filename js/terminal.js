@@ -33,7 +33,7 @@ const terminal = {
                 terminal.print("  css         - Navigate to CSS Library");
                 terminal.print("  log         - Navigate to Data Logs");
                 terminal.print("  root        - Navigate to Root/Portal");
-                terminal.print("  papers [q]  - Navigate to the arXiv Library, optional filter");
+                terminal.print("  papers [q]  - Navigate to the Library, optional filter");
                 terminal.print("  art         - Navigate to the ArtStation Gallery");
                 terminal.print("  repos [q]   - Navigate to Repos Grid, optional filter");
                 terminal.print("  scan [user] - Scan GitHub Pages for user");
@@ -186,12 +186,12 @@ const terminal = {
             }
         },
         papers: {
-            desc: "Go to the arXiv Library",
+            desc: "Go to the Library",
             action: (args) => {
                 const term = (args && args.length) ? args.join(' ') : '';
                 terminal.print(term
                     ? `Opening the archive, filter: ${term}...`
-                    : "Opening the arXiv archive...", "term-warn");
+                    : "Opening the library...", "term-warn");
                 setTimeout(() => {
                     navigateTo('papers');
                     terminal.toggle();
@@ -203,19 +203,19 @@ const terminal = {
             }
         },
         paper: {
-            desc: "Go to the arXiv Library (Alias)",
+            desc: "Go to the Library (Alias)",
             action: (args) => {
                 terminal.commands.papers.action(args);
             }
         },
         arxiv: {
-            desc: "Go to the arXiv Library (Alias)",
+            desc: "Go to the Library (Alias)",
             action: (args) => {
                 terminal.commands.papers.action(args);
             }
         },
         library: {
-            desc: "Go to the arXiv Library (Alias)",
+            desc: "Go to the Library (Alias)",
             action: (args) => {
                 terminal.commands.papers.action(args);
             }
