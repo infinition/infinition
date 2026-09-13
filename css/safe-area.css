@@ -1,0 +1,125 @@
+/* =========================================================
+   ZONES SURES (ENCOCHE, BARRE D ACCUEIL, COINS ARRONDIS)
+
+   index.html declare viewport-fit=cover : la page remplit tout
+   l ecran au lieu d etre rabotee par le navigateur, ce qui
+   supprime les bandes noires en paysage sur iPhone. En echange,
+   c est a la page de tenir les elements hors de l encoche et de
+   la barre d accueil, avec env(safe-area-inset-*).
+
+   Tout est regroupe ici, charge en dernier, pour qu un seul
+   fichier reponde a la question "que se passe-t-il sur un ecran
+   a encoche". Sur un ecran sans encoche les env() valent 0 et
+   pas un pixel ne bouge.
+
+   Les vues PAPERS et ART portent deja leurs propres retraits,
+   elles n apparaissent donc pas ici.
+   ========================================================= */
+
+/* --- CONTENU EN FLUX ---
+   En paysage les retraits lateraux valent une quarantaine de
+   pixels. Le decalage se fait une fois sur le body plutot que
+   vue par vue. Les elements en position fixe ne sont pas
+   concernes par cette marge, ils se decalent eux memes plus bas. */
+body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+/* --- BARRE SYSTEME ---
+   Sa hauteur est mesuree par syncSysbarHeight() et exposee dans
+   --sysbar-height. En lui donnant le retrait du haut, tout ce qui
+   se cale dessous suit sans autre retouche : le terminal, les
+   colonnes de la KB, la barre de progression de lecture. */
+.sys-bar {
+    padding-top: calc(10px + env(safe-area-inset-top));
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+}
+
+/* --- PORTAIL ---
+   Sa hauteur vaut 100vh, qui couvre maintenant l ecran entier.
+   Sans ces retraits la rangee d icones du bas passe sous la
+   barre d accueil et le titre sous l encoche. */
+#portal-view {
+    padding-top: calc(8vh + env(safe-area-inset-top));
+    padding-bottom: calc(6vh + env(safe-area-inset-bottom));
+}
+
+/* --- SUPERPOSITIONS PLEIN ECRAN ---
+   Elles sont en position fixe et couvrent donc tout l ecran,
+   encoche comprise. */
+.modal-overlay {
+    padding-top: max(20px, calc(10px + env(safe-area-inset-top)));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+}
+
+#search-modal {
+    padding-top: calc(10vh + env(safe-area-inset-top));
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+.kb-search-modal {
+    padding-top: calc(10vh + env(safe-area-inset-top));
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+.kb-lightbox {
+    padding:
+        env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* --- BOUTONS ET BULLES FLOTTANTS ---
+   Tout ce qui s accroche au bas de l ecran doit monter au dessus
+   de la barre d accueil, sinon le doigt tombe sur le geste
+   systeme au lieu du bouton. */
+.kb-mobile-toggle {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
+    left: calc(1.5rem + env(safe-area-inset-left));
+}
+
+.kb-mobile-toc-toggle {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
+    right: calc(1.5rem + env(safe-area-inset-right));
+}
+
+.kb-toast-container {
+    bottom: calc(2rem + env(safe-area-inset-bottom));
+}
+
+.kb-scroll-top-btn {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
+}
+
+.kb-clear-highlight-btn {
+    bottom: calc(6rem + env(safe-area-inset-bottom));
+    left: calc(1.5rem + env(safe-area-inset-left));
+}
+
+#csslib-toast {
+    bottom: calc(30px + env(safe-area-inset-bottom));
+}
+
+@media (max-width: 768px) {
+    .kb-toggle-btn {
+        bottom: calc(10px + env(safe-area-inset-bottom));
+    }
+}
+
+/* --- FEUILLE DU BAS DES REPOS ---
+   Le retrait du bas y etait deja, il manquait les cotes : la
+   feuille va d un bord a l autre et passait sous l encoche en
+   paysage. */
+@media (hover: none),
+(max-width: 768px) {
+    .repo-card {
+        padding-left: max(18px, env(safe-area-inset-left));
+        padding-right: max(18px, env(safe-area-inset-right));
+    }
+}
