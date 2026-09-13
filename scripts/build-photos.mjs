@@ -18,15 +18,18 @@
  *   - une version grand cote borne pour la visionneuse.
  * Les originaux ne sont jamais servis au visiteur.
  *
- * Une derivee deja calculee n'est pas refaite : la comparaison porte sur la
- * taille et la date du fichier source, memorisees dans l'index.
+ * Une derivee deja calculee n'est pas refaite : la comparaison porte sur une
+ * empreinte du contenu du fichier source, memorisee dans l'index. La date de
+ * modification ne conviendrait pas, git ne la preservant pas d'une extraction
+ * a l'autre : le cache ne serait jamais touche sur le runner, la ou il sert.
  *
  * Usage: node scripts/build-photos.mjs [--dir photos] [--out data/photos.json]
  *                                      [--assets assets/photos]
  */
 
-import { readFile, writeFile, mkdir, readdir, stat, unlink } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, readdir, unlink } from 'node:fs/promises';
 import { dirname, join, extname, basename } from 'node:path';
+import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 
 const args = process.argv.slice(2);
@@ -117,16 +120,15 @@ for (const file of files) {
     expected.add(`${slug}-thumb.webp`);
     expected.add(`${slug}.webp`);
 
-    let info;
+    let stamp;
     try {
-        info = await stat(source);
+        stamp = createHash('sha1').update(await readFile(source)).digest('hex').slice(0, 16);
     } catch (e) {
         console.warn(`  ${file}: illisible (${e.message})`);
         failed += 1;
         continue;
     }
 
-    const stamp = `${info.size}:${Math.round(info.mtimeMs)}`;
     const old = known.get(file);
 
     /* Le fichier n'a pas bouge et ses derivees existent deja : on reprend
