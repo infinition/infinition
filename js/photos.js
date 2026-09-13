@@ -247,8 +247,47 @@ const PHOTOS = (() => {
 
     const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    let stepping = false;
     let closing = false;
+
+    /* Le defilement s'interrompt au lieu d'ignorer les appuis : un jeton
+       invalide l'enchainement en cours, et les animations encore en vol sont
+       annulees. Deux photos enchainees a moins d'un quart de seconde sont
+       tenues pour un defilement rapide, ou l'animation est sautee : la jouer
+       entiere imposerait un demi-seconde d'attente par photo. */
+    const FAST_STEP = 260;
+    let stepSeq = 0;
+    let lastStepAt = 0;
+    let stepAnims = [];
+
+    /* Un enchainement anime ne change la photo qu'a la fin de sa sortie. Un
+       appui qui l'interrompt doit donc repartir de la photo visee, et non de
+       celle encore affichee, sinon un cran sur deux est perdu en rafale. */
+    let pendingStepId = null;
+
+    function cancelStepAnims() {
+        stepAnims.forEach(a => {
+            try { a.cancel(); } catch { /* deja terminee */ }
+        });
+        stepAnims = [];
+    }
+
+    /* L'animation de fermeture tient l'opacite a zero jusqu'a son terme
+       (fill forwards), sinon la visionneuse reapparaitrait d'un coup a la
+       derniere image. Il faut donc l'annuler une fois le travail fait, et a
+       toute reouverture : sans cela son zero survit et la visionneuse
+       suivante s'ouvre invisible. Le jeton couvre le cas ou l'on rouvre
+       pendant l'animation, dont la fin ne doit alors plus rien fermer. */
+    let closeAnims = [];
+    let closeSeq = 0;
+
+    function cancelClose() {
+        closeSeq += 1;
+        closing = false;
+        closeAnims.forEach(a => {
+            try { a.cancel(); } catch { /* deja terminee */ }
+        });
+        closeAnims = [];
+    }
 
     function paintedRect(img) {
         const box = img.getBoundingClientRect();
@@ -372,45 +411,129 @@ const PHOTOS = (() => {
         applyZoom();
     }
 
-    function bindZoom() {
-        const stage = document.getElementById('pv-stage');
-        const img = document.getElementById('pv-image');
-        if (!stage || !img) return;
+    /* --- GESTES SUR L'APERCU ---
+       Un seul jeu d'ecouteurs, en evenements de pointeur : ils couvrent la
+       souris, le stylet et le doigt, et evitent le double traitement qu'on
+       aurait en melangeant evenements tactiles et souris.
 
-        /* Non passif : sans preventDefault la page defile sous la
-           visionneuse pendant qu'on zoome. */
+       Zones de clic : les bandes laterales font defiler, le centre ferme.
+       Deux doigts pincent pour zoomer sans quitter l'apercu, un doigt
+       deplace l'image des qu'elle est zoomee. */
+    function bindStage() {
+        const stage = document.getElementById('pv-stage');
+        if (!stage) return;
+
+        const pointers = new Map();
+        let pinch = null;
+        let origin = null;
+        let travel = 0;
+
+        /* Ecart et milieu des deux doigts : le milieu sert d'ancre au zoom,
+           exactement comme le curseur a la molette. */
+        const span = () => {
+            const [a, b] = [...pointers.values()];
+            return {
+                dist: Math.hypot(a.x - b.x, a.y - b.y),
+                cx: (a.x + b.x) / 2,
+                cy: (a.y + b.y) / 2
+            };
+        };
+
         stage.addEventListener('wheel', e => {
+            /* Non passif : sans preventDefault la page defile sous la
+               visionneuse pendant qu'on zoome. */
             e.preventDefault();
             zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? ZOOM_STEP : 1 / ZOOM_STEP);
         }, { passive: false });
 
-        /* Double clic : aller et retour, plus rapide que de remonter cran
-           par cran a la molette. */
-        stage.addEventListener('dblclick', e => {
+        stage.addEventListener('pointerdown', e => {
+            if (e.target.closest('.pv-nav')) return;
+
+            pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+            try { stage.setPointerCapture(e.pointerId); } catch { /* deja capture */ }
+
+            if (pointers.size === 1) {
+                origin = { x: e.clientX, y: e.clientY };
+                travel = 0;
+            } else if (pointers.size === 2) {
+                pinch = span();
+            }
+        });
+
+        stage.addEventListener('pointermove', e => {
+            if (!pointers.has(e.pointerId)) return;
+
+            const before = pointers.get(e.pointerId);
+            travel = Math.max(travel, Math.hypot(e.clientX - (origin || before).x,
+                e.clientY - (origin || before).y));
+            pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+            if (pointers.size >= 2) {
+                const now = span();
+                if (pinch && pinch.dist > 0) {
+                    zoomAt(now.cx, now.cy, now.dist / pinch.dist);
+                    /* Le pincement deplace aussi : les deux doigts peuvent
+                       glisser en meme temps qu'ils ecartent. */
+                    state.pan.x += now.cx - pinch.cx;
+                    state.pan.y += now.cy - pinch.cy;
+                    applyZoom();
+                }
+                pinch = now;
+                e.preventDefault();
+                return;
+            }
+
+            if (state.zoom > 1) {
+                state.pan.x += e.clientX - before.x;
+                state.pan.y += e.clientY - before.y;
+                applyZoom();
+                e.preventDefault();
+            }
+        });
+
+        const release = e => {
+            const last = pointers.get(e.pointerId);
+            pointers.delete(e.pointerId);
+            if (pointers.size < 2) pinch = null;
+            if (pointers.size > 0 || !last || !origin) return;
+
+            const dx = last.x - origin.x;
+            const dy = last.y - origin.y;
+            origin = null;
+
+            /* Balayage : seulement a plat, sinon le doigt deplace l'image. */
+            if (state.zoom === 1 && Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)) {
+                travel = 999;
+                step(dx < 0 ? 1 : -1);
+            }
+        };
+
+        stage.addEventListener('pointerup', release);
+        stage.addEventListener('pointercancel', release);
+
+        stage.addEventListener('click', e => {
+            /* Les fleches et les commandes de la barre ont leur propre clic. */
+            if (e.target.closest('.pv-nav, .pv-close, .pv-tag')) return;
+            /* Un clic qui termine un deplacement ou un balayage n'en est pas un. */
+            if (travel > 8) return;
+            /* Zoome, on inspecte : ni fermeture ni changement de photo. */
+            if (state.zoom > 1) return;
+
+            const box = stage.getBoundingClientRect();
+            const x = (e.clientX - box.left) / box.width;
+
+            if (x < 0.22) step(-1);
+            else if (x > 0.78) step(1);
+            else close();
+        });
+
+        /* Double clic : revenir a plat quand on a zoome. L'agrandissement se
+           fait a la molette ou au pincement, sinon le premier clic du double
+           fermerait l'apercu. */
+        stage.addEventListener('dblclick', () => {
             if (state.zoom > 1) resetZoom();
-            else zoomAt(e.clientX, e.clientY, 2.5);
         });
-
-        img.addEventListener('pointerdown', e => {
-            if (state.zoom <= 1) return;
-            state.drag = { x: e.clientX, y: e.clientY };
-            img.setPointerCapture(e.pointerId);
-            e.preventDefault();
-        });
-
-        img.addEventListener('pointermove', e => {
-            if (!state.drag) return;
-            state.pan.x += e.clientX - state.drag.x;
-            state.pan.y += e.clientY - state.drag.y;
-            state.drag = { x: e.clientX, y: e.clientY };
-            applyZoom();
-        });
-
-        const endDrag = () => { state.drag = null; };
-        img.addEventListener('pointerup', endDrag);
-        img.addEventListener('pointercancel', endDrag);
     }
-
 
     function open(id, from = null, silent = false) {
         const photo = state.photos.find(p => p.id === id);
@@ -418,7 +541,9 @@ const PHOTOS = (() => {
         if (!photo || !viewer) return;
 
         const wasOpen = viewer.classList.contains('open') && !closing;
-        closing = false;
+        /* Toute fermeture en cours ou terminee cesse de peser sur la vue. */
+        cancelClose();
+        if (!silent) pendingStepId = null;
         state.current = photo;
 
         const title = document.getElementById('pv-title');
@@ -473,41 +598,64 @@ const PHOTOS = (() => {
 
     async function step(delta) {
         const list = state.visible.length ? state.visible : state.photos;
-        if (stepping || !state.current || list.length < 2) return;
+        if (!state.current || list.length < 2) return;
 
-        const index = list.findIndex(p => p.id === state.current.id);
+        const from = list.some(p => p.id === pendingStepId) ? pendingStepId : state.current.id;
+        const index = list.findIndex(p => p.id === from);
         if (index < 0) return;
 
         const next = list[(index + delta + list.length) % list.length];
         const img = document.getElementById('pv-image');
+        pendingStepId = next.id;
 
-        if (!img || reduceMotion()) {
+        const now = performance.now();
+        const rapide = now - lastStepAt < FAST_STEP;
+        lastStepAt = now;
+
+        const seq = ++stepSeq;
+        cancelStepAnims();
+
+        if (!img || reduceMotion() || rapide) {
             open(next.id, null, true);
+            pendingStepId = null;
             return;
         }
 
         /* Aller vers la suivante pousse l'image vers la gauche, la nouvelle
            arrive de la droite : le mouvement suit la direction du geste. */
         const way = delta > 0 ? -1 : 1;
-        stepping = true;
 
-        try {
-            await img.animate([
-                { transform: img.style.transform || 'none', opacity: 1 },
-                { transform: `translateX(${way * 16}%) scale(.94)`, opacity: 0 }
-            ], { duration: 210, easing: 'cubic-bezier(.4, 0, 1, 1)' }).finished;
+        /* fill forwards : sans lui l'ancienne photo revient d'un coup au
+           centre, a pleine opacite, entre la fin de la sortie et l'arrivee de
+           la suivante. */
+        const leaving = img.animate([
+            { transform: img.style.transform || 'none', opacity: 1 },
+            { transform: `translateX(${way * 16}%) scale(.94)`, opacity: 0 }
+        ], { duration: 210, easing: 'cubic-bezier(.4, 0, 1, 1)', fill: 'forwards' });
 
-            open(next.id, null, true);
+        stepAnims = [leaving];
+        await leaving.finished.catch(() => { });
+        if (seq !== stepSeq) return;
 
-            await new Promise(resolve => whenReady(img, resolve));
+        /* L'image reste tenue hors champ pendant l'echange de source et le
+           temps de chargement, quel qu'il soit. */
+        open(next.id, null, true);
+        pendingStepId = null;
+        await new Promise(resolve => whenReady(img, resolve));
+        if (seq !== stepSeq) return;
 
-            await img.animate([
-                { transform: `translateX(${-way * 16}%) scale(.94)`, opacity: 0 },
-                { transform: 'none', opacity: 1 }
-            ], { duration: 290, easing: ANIM.easing }).finished;
-        } finally {
-            stepping = false;
-        }
+        const entering = img.animate([
+            { transform: `translateX(${-way * 16}%) scale(.94)`, opacity: 0 },
+            { transform: 'none', opacity: 1 }
+        ], { duration: 290, easing: ANIM.easing });
+
+        /* L'entree est posee la derniere, elle l'emporte : on peut relacher la
+           sortie sans qu'une seule image ne clignote. */
+        stepAnims = [entering];
+        leaving.cancel();
+
+        await entering.finished.catch(() => { });
+        if (seq === stepSeq) stepAnims = [];
     }
 
     function close() {
@@ -517,13 +665,20 @@ const PHOTOS = (() => {
         const img = document.getElementById('pv-image');
         const back = originRect();
 
+        const seq = ++closeSeq;
         const finish = () => {
+            /* Une reouverture a eu lieu pendant l'animation : cette fermeture
+               ne la concerne plus. */
+            if (seq !== closeSeq) return;
+
             closing = false;
             viewer.classList.remove('open');
             document.body.classList.remove('photo-open');
             if (img) img.removeAttribute('src');
             resetZoom();
             state.current = null;
+            /* La vue est masquee, l'opacite retenue peut etre relachee. */
+            cancelClose();
         };
 
         if (!img || !img.getAttribute('src') || reduceMotion()) {
@@ -533,13 +688,15 @@ const PHOTOS = (() => {
             /* La photo repart vers sa vignette. Sans vignette a l'ecran, elle
                se retire simplement sur place. */
             const end = flipFrom(img, back);
-            img.animate([
+            const slide = img.animate([
                 { transform: img.style.transform || 'none', opacity: 1 },
                 { transform: end || 'scale(.9)', opacity: end ? 1 : 0 }
             ], ANIM);
-            viewer.animate([{ opacity: 1 }, { opacity: 0 }],
-                { duration: ANIM.duration, easing: 'ease-in', fill: 'forwards' })
-                .onfinish = finish;
+            const fade = viewer.animate([{ opacity: 1 }, { opacity: 0 }],
+                { duration: ANIM.duration, easing: 'ease-in', fill: 'forwards' });
+
+            closeAnims = [slide, fade];
+            fade.onfinish = finish;
         }
 
         if (window.location.hash.startsWith('#photo:')) {
@@ -656,23 +813,8 @@ const PHOTOS = (() => {
             else if (e.key === 'ArrowRight') step(1);
         });
 
-        bindZoom();
+        bindStage();
 
-        const stage = document.getElementById('pv-stage');
-        if (stage) {
-            let startX = null;
-            stage.addEventListener('touchstart', e => {
-                startX = e.touches[0].clientX;
-            }, { passive: true });
-            stage.addEventListener('touchend', e => {
-                if (startX === null) return;
-                const dx = e.changedTouches[0].clientX - startX;
-                /* Zoome, le doigt deplace l'image : changer de photo au meme
-                   geste rendrait le deplacement impossible. */
-                if (state.zoom === 1 && Math.abs(dx) > 55) step(dx < 0 ? 1 : -1);
-                startX = null;
-            }, { passive: true });
-        }
     }
 
     async function init() {

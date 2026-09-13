@@ -515,6 +515,19 @@ body.photo-open {
    la barre ni les fleches. */
 .photo-viewer .pv-stage {
     overflow: hidden;
+    /* Le navigateur ne doit pas s approprier le pincement ni le glissement :
+       la visionneuse les traite elle meme, sans quoi la page zoomerait
+       derriere et l apercu se fermerait. */
+    touch-action: none;
+}
+
+/* Les bandes laterales font defiler, le centre ferme : le curseur l annonce. */
+.photo-viewer .pv-stage img {
+    cursor: zoom-out;
+}
+
+.photo-viewer .pv-stage img.zoomed {
+    cursor: grab;
 }
 
 .photo-viewer .pv-nav {
