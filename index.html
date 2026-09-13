@@ -3,7 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport-fit=cover : la page remplit l'ecran des appareils a encoche
+         au lieu d'etre rabotee. Les retraits sont geres dans css/safe-area.css.
+         interactive-widget : le clavier virtuel redimensionne la page plutot
+         que de la faire defiler sous lui. -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
     <meta name="theme-color" id="meta-theme-color" content="#060606">
     <!-- Security Headers -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,6 +70,9 @@
     <link rel="stylesheet" href="css/repos.css">
     <link rel="stylesheet" href="css/papers.css">
     <link rel="stylesheet" href="css/artstation.css">
+    <!-- charge en dernier : ses retraits d'encoche doivent gagner sur les
+         positions fixes declarees dans les feuilles precedentes -->
+    <link rel="stylesheet" href="css/safe-area.css">
 
     <!-- Tailwind CSS for AcidWiki components -->
     <script src="https://cdn.tailwindcss.com"></script>
