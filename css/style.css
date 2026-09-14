@@ -1973,20 +1973,6 @@ div.article-thumb {
         top: 55%;
     }
 
-    .article-entry {
-        flex-direction: column;
-    }
-
-    .article-thumb {
-        width: 100%;
-        height: 150px;
-        margin-bottom: 1rem;
-    }
-
-    img.article-thumb {
-        max-width: 100%;
-    }
-
     #global-search-input {
         font-size: 16px;
     }
@@ -2139,20 +2125,6 @@ div.article-thumb {
         top: 55%;
     }
 
-    .article-entry {
-        flex-direction: column;
-    }
-
-    .article-thumb {
-        width: 100%;
-        height: 150px;
-        margin-bottom: 1rem;
-    }
-
-    img.article-thumb {
-        max-width: 100%;
-    }
-
     .bottom-icons-container {
         max-width: 100%;
         margin: 12px auto 0;
@@ -2251,10 +2223,101 @@ div.article-thumb {
     display: block;
 }
 
-/* article-list  2 card per row in mobile */
+/* Sur mobile, le bouton ligne/grille ne changeait presque rien.
+   Deux raisons, et la regle ci-dessous les portait toutes les deux.
+   Elle posait `grid-template-columns` sur `.article-list`, qui n'est une grille
+   que lorsqu'elle porte aussi `.grid`: sur le conteneur en mode ligne, la
+   propriete ne s'applique a rien. Et deux blocs mobiles plus haut empilaient
+   TOUTE entree en carte pleine largeur, mode ligne compris, ce qui rendait les
+   deux vues identiques.
+   Desormais la vue ligne reste une vraie ligne, vignette a gauche, et la grille
+   devient une galerie de trois colonnes. */
 @media (max-width: 768px) {
-    .article-list {
-        grid-template-columns: repeat(2, 1fr);
+    .article-entry {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .article-thumb {
+        width: 72px;
+        height: 72px;
+        margin: 0 12px 0 0;
+    }
+
+    img.article-thumb {
+        max-width: 72px;
+    }
+
+    /* `minmax(0, 1fr)` et non `1fr`: une piste `1fr` ne descend jamais sous la
+       largeur minimale de son contenu, donc un titre a mot long elargissait sa
+       colonne et volait la place des deux autres. */
+    .article-list.grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.6rem;
+    }
+
+    .article-list.grid .article-entry {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.6rem;
+        min-height: 0;
+        min-width: 0;
+    }
+
+    .article-list.grid .article-info {
+        min-width: 0;
+    }
+
+    .article-list.grid .article-thumb {
+        width: 100%;
+        height: 84px;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .article-list.grid img.article-thumb {
+        max-width: 100%;
+    }
+
+    /* Une carte large d'un tiers d'ecran n'a pas la place d'un resume. C'est le
+       titre qui sert a choisir: il prend la place, sur trois lignes au plus. */
+    .article-list.grid .article-desc {
+        display: none;
+    }
+
+    .article-list.grid .article-header {
+        gap: 5px;
+        margin-bottom: 3px;
+    }
+
+    .article-list.grid .article-header .file-icon {
+        display: none;
+    }
+
+    .article-list.grid .article-title {
+        font-size: 0.78rem;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* La date se colle en bas: sans cela elle suit le titre, et une rangee de
+       trois cartes aux titres de longueurs differentes affiche trois dates a
+       trois hauteurs. */
+    .article-list.grid .article-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .article-list.grid .article-date {
+        font-size: 0.65rem;
+        margin-top: auto;
+        padding-top: 0.3rem;
     }
 }
 

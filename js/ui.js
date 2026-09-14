@@ -286,7 +286,7 @@ function updateDynamicMeta(article) {
     if (!article) return;
 
     const title = `${article.title} | ${CONFIG.projectName}`;
-    const desc = article.content ? article.content.substring(0, 160).replace(/[#*`]/g, '') : CONFIG.description;
+    const desc = article.content ? excerptFromMarkdown(article.content, 160) : CONFIG.description;
     const url = window.location.href;
     const image = article.image || CONFIG.seo.ogImage;
 
@@ -723,7 +723,7 @@ function renderArticles(items) {
             <div class="article-info">
                 <div class="article-header"><i class="${item.icon} file-icon" style="color:${color}"></i> <span class="article-title">${item.title}</span></div>
                 <span class="article-date">${item.date.split('T')[0]}</span>
-                <div class="article-desc">${item.content.substring(0, 100)}...</div>
+                <div class="article-desc">${excerptFromMarkdown(item.content)}</div>
             </div>
         `;
         container.appendChild(div);

@@ -80,3 +80,45 @@ async function fetchAllMDRecursively(path) {
     } catch (e) { }
     return files;
 }
+
+/* Le debut d'un markdown, en prose lisible.
+ *
+ * L'apercu d'une entree affichait le markdown brut coupe a cent caracteres. Sur
+ * une note qui commence par son titre et une image, cela donnait un titre deja
+ * repete juste au-dessus, puis une URL d'attachement GitHub tronquee en plein
+ * milieu : cent caracteres depenses sans qu'un mot de l'article apparaisse.
+ *
+ * On retire donc ce qui n'est pas de la prose, et on ne coupe qu'a la fin, sur
+ * une frontiere de mot. La limite est large a dessein : c'est le CSS qui decide
+ * combien de lignes rester visibles, et il lui faut de la matiere pour remplir
+ * la largeur dont il dispose. Couper court ici bridait la vue en ligne, qui a
+ * toute la largeur de la page et n'affichait qu'un demi-ligne.
+ */
+function excerptFromMarkdown(markdown, max) {
+    if (!markdown) return '';
+    const limite = max || 480;
+    let texte = String(markdown)
+        .replace(/^---\r?\n[\s\S]*?\r?\n---/, ' ')   // front matter
+        .replace(/```[\s\S]*?```/g, ' ')               // blocs de code
+        .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')         // images
+        .replace(/<img[^>]*>/gi, ' ')
+        .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')       // liens : on garde le libelle
+        .replace(/<[^>]+>/g, ' ')                      // html inline
+        .replace(/^\s*\n/, '')
+        // Le premier titre repete celui deja affiche juste au-dessus de l'apercu.
+        .replace(/^\s{0,3}#{1,6}\s+.*(\r?\n|$)/, '')
+        // Les suivants sont de la prose utile : on enleve les diesses, pas le texte.
+        .replace(/^\s{0,3}#{1,6}\s+/gm, '')
+        .replace(/^\s{0,3}(?:[-*_]\s*){3,}$/gm, ' ')   // filets horizontaux
+        .replace(/[\u2E3A\u2E3B\u2014]{2,}/g, ' ')      // et leurs variantes typographiques
+        .replace(/^\s{0,3}>\s?/gm, ' ')                // citations
+        .replace(/[*_`~]+/g, '')                       // emphase et code inline
+        .replace(/\s+/g, ' ')
+        .trim();
+    if (texte.length <= limite) return texte;
+    const coupe = texte.slice(0, limite);
+    const espace = coupe.lastIndexOf(' ');
+    return (espace > limite * 0.6 ? coupe.slice(0, espace) : coupe) + '…';
+}
+
+window.excerptFromMarkdown = excerptFromMarkdown;
