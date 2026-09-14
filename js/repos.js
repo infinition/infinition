@@ -22,7 +22,7 @@ const REPOS = (() => {
         loading: null
     };
 
-    let grid, statusEl, card, backdrop, wired = false;
+    let grid, statusEl, card, backdrop, wired = false, cardWired = false;
     let openId = null, hoverTimer = null, leaveTimer = null;
 
     const canHover = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -320,7 +320,10 @@ const REPOS = (() => {
     function openCard(repo, anchor) {
         openId = String(repo.id);
         card.innerHTML = cardHTML(repo);
-        grid.querySelectorAll('.repo-app.is-active').forEach(e => e.classList.remove('is-active'));
+        // `grid` n'existe que si la vue repos a ete ouverte. La card, elle, sert
+        // aussi aux DATA LOGS, qui listent les memes depots sans cette grille.
+        if (grid) grid.querySelectorAll('.repo-app.is-active').forEach(e => e.classList.remove('is-active'));
+        document.querySelectorAll('.is-active[data-repo-id]').forEach(e => e.classList.remove('is-active'));
         anchor.classList.add('is-active');
 
         if (canHover()) {
@@ -353,6 +356,61 @@ const REPOS = (() => {
         if (grid) grid.querySelectorAll('.repo-app.is-active').forEach(e => e.classList.remove('is-active'));
     }
 
+    /* Les gestes qui portent sur la card elle-meme, et non sur ce qui l'ouvre.
+       Separes de `wire`, parce que les DATA LOGS ouvrent la meme card sans
+       jamais passer par la grille. */
+    function wireCard() {
+        if (cardWired) return;
+        if (!card) card = document.getElementById('repo-card');
+        if (!backdrop) backdrop = document.getElementById('repos-card-backdrop');
+        if (!card || !backdrop) return;
+        cardWired = true;
+
+        card.addEventListener('mouseenter', () => clearTimeout(leaveTimer));
+        card.addEventListener('mouseleave', () => { if (canHover()) leaveTimer = setTimeout(closeCard, 180); });
+        backdrop.addEventListener('click', closeCard);
+        window.addEventListener('keydown', e => { if (e.key === 'Escape') closeCard(); });
+
+        /* Sur PC la card est ancree a l'icone, donc scroll et resize la ferment.
+           Sur mobile la feuille est ancree en bas, elle reste ouverte. */
+        window.addEventListener('scroll', () => { if (openId && canHover()) closeCard(); }, { passive: true });
+        window.addEventListener('resize', () => { if (canHover()) closeCard(); });
+    }
+
+    /* ---------- previsualisation hors de la grille ---------- */
+    /* Une entree de depot dans les DATA LOGS ouvrait GitHub sans rien montrer,
+       alors que la vue repos sait deja presenter le meme depot. Elle emprunte
+       donc cette card, qui vit au niveau du document et dont le style n'est pas
+       limite a `#repos-view`. */
+    async function ensureRepos() {
+        if (state.loaded && state.repos.length) return state.repos;
+        const data = await fetchPayload();
+        if (data && Array.isArray(data.repos)) {
+            state.repos = data.repos.filter(r => r && r.name && !r.missing);
+            state.loaded = true;
+        }
+        return state.repos;
+    }
+
+    async function preview(id, anchor) {
+        wireCard();
+        if (!card || !backdrop || !anchor) return;
+        const repos = await ensureRepos();
+        const repo = repos.find(r => String(r.id) === String(id));
+        /* Un depot absent du snapshot ne doit pas ouvrir une card vide: l'appelant
+           garde alors son comportement d'origine. */
+        if (!repo) return;
+        clearTimeout(leaveTimer);
+        openCard(repo, anchor);
+    }
+
+    function schedulePreviewClose(delai) {
+        clearTimeout(leaveTimer);
+        leaveTimer = setTimeout(closeCard, delai || 220);
+    }
+
+    const previewOpenFor = id => openId != null && String(openId) === String(id);
+
     /* ---------- init ---------- */
     function wire() {
         if (wired) return;
@@ -379,8 +437,7 @@ const REPOS = (() => {
             leaveTimer = setTimeout(closeCard, 220);
         });
 
-        card.addEventListener('mouseenter', () => clearTimeout(leaveTimer));
-        card.addEventListener('mouseleave', () => { if (canHover()) leaveTimer = setTimeout(closeCard, 180); });
+        wireCard();
 
         /* Sur PC (avec survol disponible) : un clic gauche ouvre directement le depot GitHub.
            Sur mobile (tactile sans survol) : le premier tap ouvre la card de previsualisation. */
@@ -403,13 +460,6 @@ const REPOS = (() => {
             }
         });
 
-        backdrop.addEventListener('click', closeCard);
-        window.addEventListener('keydown', e => { if (e.key === 'Escape') closeCard(); });
-
-        /* Sur PC la card est ancree a l'icone, donc scroll et resize la ferment.
-           Sur mobile la feuille est ancree en bas, elle reste ouverte. */
-        window.addEventListener('scroll', () => { if (openId && canHover()) closeCard(); }, { passive: true });
-        window.addEventListener('resize', () => { if (canHover()) closeCard(); });
 
         document.getElementById('repos-sort-group').addEventListener('click', e => {
             const btn = e.target.closest('.sort-btn');
@@ -451,7 +501,10 @@ const REPOS = (() => {
         render();
     }
 
-    return { init, iconFailed, focusFilter, updateStarBadge, state };
+    return {
+        init, iconFailed, focusFilter, updateStarBadge, state,
+        preview, closePreview: closeCard, schedulePreviewClose, previewOpenFor, canHover
+    };
 })();
 
 function initRepos() {

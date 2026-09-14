@@ -678,10 +678,29 @@ function renderArticles(items) {
         if (btn) btn.className = 'fas fa-bars';
     }
     container.innerHTML = '';
+    wireRepoPreview(container);
     items.forEach(item => {
         const div = document.createElement('div');
         div.className = 'article-entry';
+        /* Marque l'entree pour la card de previsualisation, qui est celle de la
+           vue repos et se retrouve par delegation sur le conteneur. */
+        if (item.type === 'repo') div.dataset.repoId = item.id;
         div.onclick = () => {
+            if (item.type === 'repo' && typeof REPOS !== 'undefined') {
+                /* Meme geste que dans la grille des repos: sur PC le clic ouvre
+                   GitHub, la card etant deja venue au survol; sur tactile, ou il
+                   n'y a pas de survol, le premier tap montre la card et le
+                   deuxieme la referme. Le lien vers le code est dans la card. */
+                if (REPOS.canHover()) {
+                    REPOS.closePreview();
+                    window.open(item.url, '_blank', 'noopener,noreferrer');
+                } else if (REPOS.previewOpenFor(item.id)) {
+                    REPOS.closePreview();
+                } else {
+                    REPOS.preview(item.id, div);
+                }
+                return;
+            }
             if (item.type === 'repo' || item.type === 'artwork') window.open(item.url, '_blank');
             /* Un papier ou un essai a sa liseuse, qui sait afficher un PDF et
                rendre du markdown. Le lecteur d'articles ne saurait ni l'un ni
@@ -727,6 +746,30 @@ function renderArticles(items) {
             </div>
         `;
         container.appendChild(div);
+    });
+}
+
+/* Le survol d'une entree de depot, delegue une seule fois au conteneur: son
+   contenu est reconstruit a chaque rendu, pas le conteneur lui-meme. */
+function wireRepoPreview(container) {
+    if (!container || container.dataset.repoPreviewWired) return;
+    container.dataset.repoPreviewWired = '1';
+    let hoverTimer = null;
+
+    container.addEventListener('mouseover', e => {
+        if (typeof REPOS === 'undefined' || !REPOS.canHover()) return;
+        const entry = e.target.closest('.article-entry[data-repo-id]');
+        if (!entry) return;
+        clearTimeout(hoverTimer);
+        if (REPOS.previewOpenFor(entry.dataset.repoId)) return;
+        hoverTimer = setTimeout(() => REPOS.preview(entry.dataset.repoId, entry), 110);
+    });
+
+    container.addEventListener('mouseout', e => {
+        if (typeof REPOS === 'undefined' || !REPOS.canHover()) return;
+        if (!e.target.closest('.article-entry[data-repo-id]')) return;
+        clearTimeout(hoverTimer);
+        REPOS.schedulePreviewClose();
     });
 }
 
