@@ -58,6 +58,26 @@ function findAndOpenArticle(filename) {
     const found = mergedData.find(a => a.file && a.file.normalize('NFC').includes(wanted));
     if (found) openArticle(found);
 }
+/* === RETOUR EN HAUT ===
+   La knowledge base defile dans son propre cadre et garde donc sa propre
+   fleche. Toutes les autres vues defilent avec la fenetre, une seule suffit
+   pour elles. Le portail tient en un ecran, elle n'y a rien a faire. */
+const SCROLL_TOP_THRESHOLD = 200;
+
+function updateScrollTopButton() {
+    const btn = document.getElementById('scroll-top');
+    if (!btn) return;
+
+    const modes = document.body.classList;
+    const eligible = !modes.contains('portal-mode') && !modes.contains('kb-mode');
+    btn.classList.toggle('visible', eligible && window.scrollY > SCROLL_TOP_THRESHOLD);
+}
+
+window.addEventListener('scroll', updateScrollTopButton, { passive: true });
+document.getElementById('scroll-top')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 function syncSysbarHeight() {
     const sysbar = document.querySelector('.sys-bar');
     const h = sysbar ? sysbar.getBoundingClientRect().height : 0;
@@ -115,6 +135,10 @@ function navigateTo(viewId, keepScroll = false) {
     if (viewId !== 'photos' || !window.location.hash.startsWith('#photo:')) PHOTOS.close();
     // Removed direct music fetch, now handled by reveal button
     if (!keepScroll) window.scrollTo(0, 0);
+
+    /* Changer de vue ne declenche pas toujours un evenement de defilement :
+       sans cet appel la fleche restait affichee sur le portail. */
+    updateScrollTopButton();
 }
 
 function updateGlobalSearchIcon() {

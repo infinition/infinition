@@ -2829,3 +2829,54 @@ div.article-thumb {
     transform: translateY(0) scale(1);
     margin-bottom: 2rem;
 }
+
+/* =========================================================
+   RETOUR EN HAUT
+   La knowledge base avait deja sa fleche, les autres vues
+   obligeaient a remonter des centaines de cartes a la main.
+   Celle ci est unique et vit hors des sections : elle suit le
+   defilement de la fenetre, que toutes ces vues partagent.
+   ========================================================= */
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background: #111214;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #9ca3af;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Sous les liseuses et visionneuses, qui montent a 4000 : elles ont leur
+       propre defilement, la fleche de la page n'a rien a y faire. */
+    z-index: 3000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, transform .3s, color .2s, border-color .2s, box-shadow .2s;
+}
+
+.scroll-top-btn.visible {
+    opacity: 0.9;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+    color: var(--neon-blue);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 12px rgba(19, 175, 240, 0.35);
+}
+
+@media print {
+    .scroll-top-btn {
+        display: none !important;
+    }
+}
