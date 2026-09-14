@@ -7,7 +7,7 @@ function handleHashChange() {
            espaces et ses accents : sans decodage, la recherche ne retrouvait
            aucun article et le lecteur retombait sur le portail. */
         const articleFile = safeDecode(hash.slice('#article:'.length));
-        if (mergedData.length === 0) { navigateTo('blog'); setTimeout(() => findAndOpenArticle(articleFile), 1500); }
+        if (mergedData.length === 0) { navigateTo('blog'); openArticleWhenReady(articleFile); }
         else { findAndOpenArticle(articleFile); }
     }
     /* #paper:ID, #read:rayon/texte et #art:ID ouvrent directement la liseuse
@@ -34,8 +34,28 @@ function safeDecode(value) {
     try { return decodeURIComponent(value); } catch { return value; }
 }
 
+/* Un lien venu du flux ou d'un partage arrive a froid, l'index n'est pas
+   encore charge. On attendait 1500 ms avant d'ouvrir, un pari perdu des que
+   le reseau trainait : le lecteur restait sur la liste sans rien comprendre.
+   On attend donc l'index lui meme, avec une limite. */
+function openArticleWhenReady(filename, deadline = 12000) {
+    const started = Date.now();
+    (function attempt() {
+        if (mergedData.length > 0) { findAndOpenArticle(filename); return; }
+        if (Date.now() - started > deadline) return;
+        setTimeout(attempt, 150);
+    })();
+}
+
 function findAndOpenArticle(filename) {
-    const found = mergedData.find(a => a.file.includes(filename));
+    /* macOS ecrit les accents en forme composee, un vieux renommage les avait
+       laisses en forme decomposee : deux chaines identiques a l'oeil qui ne
+       s'egalent pas. On compare sur une seule forme. */
+    const wanted = filename.normalize('NFC');
+    /* L'index melange les articles avec les depots, les oeuvres et les
+       publications, qui n'ont pas de fichier : sans cette garde la recherche
+       levait sur la premiere fiche venue et le lien mourait la. */
+    const found = mergedData.find(a => a.file && a.file.normalize('NFC').includes(wanted));
     if (found) openArticle(found);
 }
 function syncSysbarHeight() {
