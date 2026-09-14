@@ -483,7 +483,10 @@ body.theme-infinition {
 }
 
 
-.kb-search-icon {
+/* La loupe et le flux partagent la meme pastille : ce sont les deux seules
+   commandes de la barre systeme, elles doivent se lire comme une paire. */
+.kb-search-icon,
+.sys-icon-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -497,10 +500,22 @@ body.theme-infinition {
     transition: all 0.2s;
 }
 
-.kb-search-icon:hover {
+.sys-icon-btn {
+    text-decoration: none;
+}
+
+.kb-search-icon:hover,
+.sys-icon-btn:hover {
     color: var(--neon-blue);
     border-color: var(--neon-blue);
     box-shadow: 0 0 10px rgba(19, 175, 240, 0.35);
+}
+
+/* Le flux porte la couleur de son format, comme partout ailleurs sur le web. */
+.sys-icon-btn:hover {
+    color: #f26522;
+    border-color: #f26522;
+    box-shadow: 0 0 10px rgba(242, 101, 34, 0.35);
 }
 
 

@@ -3,17 +3,20 @@ window.addEventListener('hashchange', handleHashChange);
 function handleHashChange() {
     const hash = window.location.hash;
     if (hash.startsWith('#article:')) {
-        const articleFile = hash.replace('#article:', '');
+        /* Les liens du flux RSS portent un nom de fichier encode, avec ses
+           espaces et ses accents : sans decodage, la recherche ne retrouvait
+           aucun article et le lecteur retombait sur le portail. */
+        const articleFile = safeDecode(hash.slice('#article:'.length));
         if (mergedData.length === 0) { navigateTo('blog'); setTimeout(() => findAndOpenArticle(articleFile), 1500); }
         else { findAndOpenArticle(articleFile); }
     }
     /* #paper:ID, #read:rayon/texte et #art:ID ouvrent directement la liseuse
        ou la visionneuse, y compris a froid : les deux modules chargent leur
        index avant d ouvrir. */
-    else if (hash.startsWith('#paper:')) { navigateTo('papers', true); PAPERS.openFromHash(hash.slice(7)); }
-    else if (hash.startsWith('#read:')) { navigateTo('papers', true); PAPERS.openFromHash(hash.slice(6)); }
-    else if (hash.startsWith('#art:')) { navigateTo('art', true); ARTSTATION.openFromHash(hash.slice(5)); }
-    else if (hash.startsWith('#photo:')) { navigateTo('photos', true); PHOTOS.openFromHash(hash.slice(7)); }
+    else if (hash.startsWith('#paper:')) { navigateTo('papers', true); PAPERS.openFromHash(safeDecode(hash.slice(7))); }
+    else if (hash.startsWith('#read:')) { navigateTo('papers', true); PAPERS.openFromHash(safeDecode(hash.slice(6))); }
+    else if (hash.startsWith('#art:')) { navigateTo('art', true); ARTSTATION.openFromHash(safeDecode(hash.slice(5))); }
+    else if (hash.startsWith('#photo:')) { navigateTo('photos', true); PHOTOS.openFromHash(safeDecode(hash.slice(7))); }
     else if (hash === '#portfolio') navigateTo('portfolio');
     else if (hash === '#blog') navigateTo('blog');
     else if (hash === '#kb') navigateTo('kb');
@@ -24,6 +27,11 @@ function handleHashChange() {
     else if (hash === '#papers') navigateTo('papers');
     else if (hash === '#art') navigateTo('art');
     else navigateTo('portal');
+}
+
+/** decodeURIComponent leve sur un pourcentage isole, un hash bricole a la main. */
+function safeDecode(value) {
+    try { return decodeURIComponent(value); } catch { return value; }
 }
 
 function findAndOpenArticle(filename) {

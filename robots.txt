@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-# Sitemap: https://infinition.xyz/sitemap.xml
+# La page est une application a fragment : les crawlers ne voient que
+# l'accueil. Le contenu ecrit est expose ici, en XML statique.
+# Feed: https://infinition.github.io/infinition/feed.xml

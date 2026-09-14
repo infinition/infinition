@@ -47,6 +47,15 @@
     <link rel="apple-touch-icon" id="link-apple-icon" href="img/icon-180.png">
     <link rel="icon" type="image/png" id="link-favicon" href="img/icon-180.png">
 
+    <!-- Flux RSS. C'est par cette balise qu'un agregateur trouve le flux
+         quand on lui donne l'adresse du site : Feedly, NetNewsWire et les
+         autres lisent le head, jamais le JavaScript. -->
+    <link rel="alternate" type="application/rss+xml" title="INFINITION | Data Logs" href="feed.xml">
+
+    <!-- Le depot s'appelle infinition/infinition, le site vit donc sous
+         /infinition/ et non a la racine de github.io. -->
+    <link rel="canonical" href="https://infinition.github.io/infinition/">
+
     <!-- SEO & Social Sharing -->
     <meta name="description" id="meta-description"
         content="Portal of Fabien Polly (Infinition) - AI Researcher, Quantum Expert, Hacker, 3D Artist & Skater">
@@ -54,7 +63,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" id="og-url" content="https://infinition.github.io/">
+    <meta property="og:url" id="og-url" content="https://infinition.github.io/infinition/">
     <meta property="og:title" id="og-title" content="FABIEN POLLY | INFINITION">
     <meta property="og:description" id="og-description"
         content="Portal of Fabien Polly (Infinition) - AI Researcher, Quantum Expert, Hacker, 3D Artist & Skater">
@@ -62,7 +71,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" id="twitter-card" content="summary_large_image">
-    <meta name="twitter:url" id="twitter-url" content="https://infinition.github.io/">
+    <meta name="twitter:url" id="twitter-url" content="https://infinition.github.io/infinition/">
     <meta name="twitter:title" id="twitter-title" content="FABIEN POLLY | INFINITION">
     <meta name="twitter:description" id="twitter-description"
         content="Portal of Fabien Polly (Infinition) - AI Researcher, Quantum Expert, Hacker, 3D Artist & Skater">
@@ -150,6 +159,13 @@
             <button id="kb-search-icon" class="kb-search-icon" title="Search" onclick="openGlobalSearch()">
                 <i class="fas fa-search"></i>
             </button>
+            <!-- Le flux est le seul acces au contenu sans navigateur, il se
+                 tient donc dans la barre systeme, visible depuis toutes les
+                 vues, et pas seulement dans les Data Logs. -->
+            <a id="rss-icon" class="sys-icon-btn" href="feed.xml" target="_blank" rel="noopener noreferrer"
+                title="S'abonner au flux RSS">
+                <i class="fas fa-rss"></i>
+            </a>
         </div>
     </div>
 

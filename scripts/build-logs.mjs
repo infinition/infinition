@@ -56,14 +56,27 @@ async function walk(dir) {
     return out;
 }
 
-/** Date du dernier commit touchant le fichier, sinon la date frontmatter. */
-async function commitDate(path) {
+/**
+ * Dates de parution et de derniere retouche, d'apres git.
+ *
+ * On datait avec le dernier commit, donc une correction de coquille faisait
+ * remonter un vieil article en tete des Data Logs, et un flux RSS l'aurait
+ * represente comme neuf a tous les abonnes. La parution est le commit le plus
+ * ancien qui touche le fichier ; --follow suit les renommages, sans quoi un
+ * simple deplacement repassait l'article pour un inedit.
+ */
+async function fileDates(path) {
     try {
-        const { stdout } = await run('git', ['log', '-1', '--format=%cI', '--', path]);
-        const iso = stdout.trim();
-        if (iso) return new Date(iso).toISOString();
+        const { stdout } = await run('git', ['log', '--follow', '--format=%cI', '--', path]);
+        const lines = stdout.trim().split('\n').filter(Boolean);
+        if (lines.length) {
+            return {
+                created: new Date(lines[lines.length - 1]).toISOString(),
+                updated: new Date(lines[0]).toISOString()
+            };
+        }
     } catch { /* pas de git ou fichier non suivi */ }
-    return null;
+    return { created: null, updated: null };
 }
 
 /** Premiere image du markdown, ramenee en URL absolue. */
@@ -93,7 +106,9 @@ async function buildArticles() {
         const title = (text.match(/^# (.*)/m) || [])[1]
             || path.split('/').pop().replace(/\.md$/i, '');
 
-        let date = await commitDate(path);
+        const { created, updated } = await fileDates(path);
+
+        let date = created;
         if (!date) {
             const inline = (text.match(/(?:\*\*|__)?Date(?:\*\*|__)?:\s*(.*)/i) || [])[1];
             date = inline ? inline.trim() : 'Unknown';
@@ -104,7 +119,10 @@ async function buildArticles() {
             type: 'article',
             file: path,
             title: title.trim(),
+            /* date est la parution : c'est elle qui classe la liste et qui
+               horodate le flux. updated ne sert qu'a signaler une revision. */
             date,
+            updated: updated || date,
             icon: path.startsWith('kb') ? 'fas fa-book-medical' : 'fas fa-file-alt',
             image: firstImage(text, path),
             content: text,

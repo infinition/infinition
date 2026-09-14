@@ -2,7 +2,7 @@
     "name": "FABIEN POLLY | INFINITION",
     "short_name": "INFINITION",
     "description": "Portal of Fabien Polly (Infinition) - AI Researcher, Quantum Expert, Hacker, 3D Artist & Skater",
-    "start_url": "/",
+    "start_url": "./",
     "display": "standalone",
     "background_color": "#060606",
     "theme_color": "#060606",

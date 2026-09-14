@@ -24,6 +24,7 @@ on:
       - 'scripts/build-photos.mjs'
       - 'scripts/build-paper-assets.py'
       - 'scripts/build-artstation.mjs'
+      - 'scripts/build-feed.mjs'
       - 'scripts/collect-artstation.py'
       - '.github/workflows/site-data.yml'
 
@@ -120,6 +121,11 @@ jobs:
       - name: Build assets/repos-grid.svg
         run: node scripts/build-repos-svg.mjs --data data/repos.json --out assets/repos-grid.svg
 
+      - name: Build feed.xml
+        # Le flux RSS des textes du site. Il se construit apres les snapshots
+        # puisqu'il les lit, et il refuse d'ecrire un flux vide.
+        run: node scripts/build-feed.mjs --out feed.xml
+
       - name: Verifier que les JSON sont exploitables
         run: |
           node -e "
@@ -154,6 +160,15 @@ jobs:
               throw new Error('artstation.json is empty, refusing to commit');
             }
             console.log(art.artworks.length + ' artworks from ' + art.source);
+            // Un seul caractere interdit et le flux est illisible pour tous
+            // les agregateurs, sans que rien ne le signale sur le site.
+            const feed = require('fs').readFileSync('feed.xml', 'utf8');
+            const items = (feed.match(/<item>/g) || []).length;
+            if (items === 0) throw new Error('feed.xml has no item, refusing to commit');
+            if (/[\x00-\x08\x0B\x0C\x0E-\x1F\uFFFE\uFFFF]/.test(feed)) {
+              throw new Error('feed.xml contains a character XML forbids');
+            }
+            console.log(items + ' items in feed.xml');
           "
 
       - name: Commit si le contenu a change
@@ -162,11 +177,11 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           # git diff ignore les fichiers non suivis, donc un tout premier
           # snapshot passait pour "aucun changement" et n'etait jamais commite.
-          if [ -z "$(git status --porcelain -- data/repos.json data/repos-summary.json data/logs.json data/social.json data/papers.json data/library.json data/photos.json data/artstation.json assets/repos-grid.svg assets/papers assets/photos)" ]; then
+          if [ -z "$(git status --porcelain -- data/repos.json data/repos-summary.json data/logs.json data/social.json data/papers.json data/library.json data/photos.json data/artstation.json assets/repos-grid.svg assets/papers assets/photos feed.xml)" ]; then
             echo 'no change'
             exit 0
           fi
-          git add data/repos.json data/repos-summary.json data/logs.json data/social.json data/papers.json data/library.json data/photos.json data/artstation.json assets/repos-grid.svg assets/papers assets/photos
+          git add data/repos.json data/repos-summary.json data/logs.json data/social.json data/papers.json data/library.json data/photos.json data/artstation.json assets/repos-grid.svg assets/papers assets/photos feed.xml
           git commit -m 'chore(data): refresh site snapshots'
           # Un outil de build peut laisser trainer une modif hors de cette
           # liste (ex: package-lock.json retouche par npm) ; on ne veut
