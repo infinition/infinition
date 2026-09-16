@@ -384,8 +384,7 @@ canvas {
 
 /* Show the touch controls on touch devices */
 @media (pointer: coarse) {
-    .virtual-stick-zone,
-    #fly-pad {
+    .virtual-stick-zone {
         display: block;
     }
 }
@@ -1495,66 +1494,8 @@ body.is-cinematic .cine-bar {
 
 
 /* =============================================================
-   6b. FLY PAD (Touch altitude) & MISSION BANNER
+   6b. MISSION BANNER
    ============================================================= */
-
-/* Altitude used to be a two-finger slide and nothing else, which asks
-   for the hand that is already holding the stick. The pad gives the
-   aiming finger somewhere to press without leaving its side of the
-   screen; the two-finger slide still works. */
-#fly-pad {
-    position: fixed;
-    right: calc(18px + env(safe-area-inset-right, 0px));
-    bottom: calc(40px + env(safe-area-inset-bottom, 0px));
-    z-index: 10001;
-    display: none; /* Hidden on desktop */
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    touch-action: none;
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-@media (pointer: coarse) {
-    #fly-pad {
-        display: flex;
-    }
-}
-
-.fly-btn {
-    width: 62px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    line-height: 1;
-    color: var(--mr-green);
-    background: rgba(7, 10, 9, 0.6);
-    border: 1px solid var(--mr-line);
-    border-radius: 4px;
-    backdrop-filter: blur(4px);
-    cursor: pointer;
-    touch-action: none;
-    -webkit-tap-highlight-color: transparent;
-    transition: background 0.12s, border-color 0.12s, transform 0.12s;
-}
-
-.fly-btn.is-pressed {
-    background: rgba(53, 224, 122, 0.18);
-    border-color: var(--mr-green);
-    box-shadow: 0 0 18px rgba(53, 224, 122, 0.3);
-    transform: scale(0.94);
-}
-
-.fly-label {
-    font-family: 'Courier New', monospace;
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: var(--mr-dim);
-    pointer-events: none;
-}
 
 /* --- Mission banner --- */
 #mission-banner {

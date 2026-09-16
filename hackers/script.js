@@ -1419,7 +1419,6 @@ if (btnLayout) {
 
 const moveJoystick = { x: 0, y: 0, active: false };
 const lookInertia = { x: 0, y: 0 };
-let flyHold = 0;     // -1 down, +1 up, held by the FLY pad
 let flyImpulse = 0;  // metres banked by the two-finger slide
 
 const LOOK_SENSITIVITY = 0.0042;
@@ -1439,17 +1438,9 @@ stickEl.innerHTML = `<div class="stick-label">MOVE</div><div class="stick-base">
 document.body.appendChild(stickEl);
 const stickKnob = stickEl.querySelector(".stick-knob");
 
-const flyPad = document.createElement("div");
-flyPad.id = "fly-pad";
-flyPad.innerHTML = `
-    <button type="button" class="fly-btn" data-fly="1" aria-label="Fly up">&#9650;</button>
-    <div class="fly-label">FLY</div>
-    <button type="button" class="fly-btn" data-fly="-1" aria-label="Fly down">&#9660;</button>`;
-document.body.appendChild(flyPad);
-
 /* --- Stick zone: geometric, so it intercepts nothing in the DOM ---
    Gated on the same media query that draws the stick: a touchscreen
-   laptop reports a fine pointer, hides the pad, and must not have an
+   laptop reports a fine pointer, hides it, and must not have an
    invisible stick quietly swallowing the taps in that corner. */
 const coarsePointer = window.matchMedia("(pointer: coarse)");
 let touchUiVisible = coarsePointer.matches;
@@ -1463,7 +1454,7 @@ function inMoveZone(x, y) {
 // Interface surfaces keep their own taps.
 function isUiTarget(target) {
     return !!(target && target.closest &&
-        target.closest("button, a, input, #music-player-container, #garbage-modal, #ui-overlay, #fly-pad"));
+        target.closest("button, a, input, #music-player-container, #garbage-modal, #ui-overlay"));
 }
 
 const touches = { move: null, look: null, second: null };
@@ -1641,21 +1632,8 @@ function endTouches(e) {
 window.addEventListener("touchend", endTouches, { passive: false });
 window.addEventListener("touchcancel", endTouches, { passive: false });
 
-// --- FLY pad: hold to ascend / descend ---
-flyPad.querySelectorAll(".fly-btn").forEach((btn) => {
-    const dir = Number(btn.dataset.fly);
-    const press = (e) => { e.preventDefault(); e.stopPropagation(); flyHold = dir; btn.classList.add("is-pressed"); };
-    const release = (e) => { if (e) e.stopPropagation(); if (flyHold === dir) flyHold = 0; btn.classList.remove("is-pressed"); };
-    btn.addEventListener("touchstart", press, { passive: false });
-    btn.addEventListener("touchend", release);
-    btn.addEventListener("touchcancel", release);
-    btn.addEventListener("mousedown", press);
-    window.addEventListener("mouseup", release);
-    btn.addEventListener("mouseleave", release);
-});
-
 // A rotation invalidates every remembered position.
-window.addEventListener("orientationchange", () => { releaseStick(); touches.look = null; touches.second = null; flyHold = 0; });
+window.addEventListener("orientationchange", () => { releaseStick(); touches.look = null; touches.second = null; });
 
 
 /* =============================================================
@@ -2997,8 +2975,7 @@ function animate() {
     if (arrow("Space", " ")) camera.position.y += moveSpeed;
     if (codeState.ShiftLeft || codeState.ShiftRight || (!hasKeyCodes && keyState.shift)) camera.position.y -= moveSpeed;
 
-    // Touch altitude: FLY pad held down, plus the two-finger slide.
-    if (flyHold !== 0) camera.position.y += flyHold * moveSpeed;
+    // Touch altitude: the two-finger slide, banked between frames.
     if (flyImpulse !== 0) { camera.position.y += flyImpulse; flyImpulse = 0; }
 
     if (Math.abs(dx) > 0.01 || Math.abs(dz) > 0.01) {
