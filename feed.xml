@@ -45,19 +45,19 @@
             <title>When Do Geometric Algebra Layers Beat Scalarization? A Controlled Study on SO(3)-Equivariant Vector Laws</title>
             <link>https://infinition.github.io/infinition/#paper:2607.06634</link>
             <guid isPermaLink="false">paper:2607.06634</guid>
-            <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 07 Jul 2026 13:55:45 GMT</pubDate>
             <category>Publication</category>
             <description><![CDATA[Compact networks built from Clifford algebra Cl(3,0) primitives are exactly SO(3)-equivariant and learn synthetic 3D vector laws from few samples. We ask whether the geometric algebra structure itself contributes anything beyond exact equivariance. We compare against a minimal scalarization baseline: invariant dot products fed to a small MLP that outputs coefficients on the equivariant basis {vi, vi x vj}, which is...]]></description>
-            <content:encoded><![CDATA[<p><img src="https://infinition.github.io/infinition/assets/papers/2607.06634.webp" alt=""></p><p>Compact networks built from Clifford algebra Cl(3,0) primitives are exactly SO(3)-equivariant and learn synthetic 3D vector laws from few samples. We ask whether the geometric algebra structure itself contributes anything beyond exact equivariance. We compare against a minimal scalarization baseline: invariant dot products fed to a small MLP that outputs coefficients on the equivariant basis {vi, vi x vj}, which is...</p><p><a href="https://infinition.github.io/infinition/#paper:2607.06634">Lire sur infinition.github.io</a></p>]]></content:encoded>
+            <content:encoded><![CDATA[<p><img src="https://infinition.github.io/infinition/assets/papers/2607.06634v1.webp" alt=""></p><p>Compact networks built from Clifford algebra Cl(3,0) primitives are exactly SO(3)-equivariant and learn synthetic 3D vector laws from few samples. We ask whether the geometric algebra structure itself contributes anything beyond exact equivariance. We compare against a minimal scalarization baseline: invariant dot products fed to a small MLP that outputs coefficients on the equivariant basis {vi, vi x vj}, which is...</p><p><a href="https://infinition.github.io/infinition/#paper:2607.06634">Lire sur infinition.github.io</a></p>]]></content:encoded>
         </item>
         <item>
             <title>Learning Only What Valid Adapters Can Express: Subspace-Constrained Adaptation Against Fine-Tuning Poisoning</title>
             <link>https://infinition.github.io/infinition/#paper:2607.05300</link>
             <guid isPermaLink="false">paper:2607.05300</guid>
-            <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
+            <pubDate>Mon, 06 Jul 2026 16:43:04 GMT</pubDate>
             <category>Publication</category>
             <description><![CDATA[Parameter-efficient fine-tuning still leaves a broad space of behavior-changing updates reachable, so a poisoned objective can be represented and optimized. We study an alternative: adaptation constrained to the subspace estimated from a trusted pool of existing task adapters. On flan-t5-large with 196 public LoRA adapters, we show that (1) the functionally relevant content of an adapter lies in a low-dimensional...]]></description>
-            <content:encoded><![CDATA[<p><img src="https://infinition.github.io/infinition/assets/papers/2607.05300.webp" alt=""></p><p>Parameter-efficient fine-tuning still leaves a broad space of behavior-changing updates reachable, so a poisoned objective can be represented and optimized. We study an alternative: adaptation constrained to the subspace estimated from a trusted pool of existing task adapters. On flan-t5-large with 196 public LoRA adapters, we show that (1) the functionally relevant content of an adapter lies in a low-dimensional...</p><p><a href="https://infinition.github.io/infinition/#paper:2607.05300">Lire sur infinition.github.io</a></p>]]></content:encoded>
+            <content:encoded><![CDATA[<p><img src="https://infinition.github.io/infinition/assets/papers/2607.05300v1.webp" alt=""></p><p>Parameter-efficient fine-tuning still leaves a broad space of behavior-changing updates reachable, so a poisoned objective can be represented and optimized. We study an alternative: adaptation constrained to the subspace estimated from a trusted pool of existing task adapters. On flan-t5-large with 196 public LoRA adapters, we show that (1) the functionally relevant content of an adapter lies in a low-dimensional...</p><p><a href="https://infinition.github.io/infinition/#paper:2607.05300">Lire sur infinition.github.io</a></p>]]></content:encoded>
         </item>
         <item>
             <title>Drift-Bounded Spectral Updates for Deep Local Learning</title>
@@ -72,10 +72,10 @@
             <title>FluidWorld: Reaction-Diffusion Dynamics as a Predictive Substrate for World Models</title>
             <link>https://infinition.github.io/infinition/#paper:2603.21315</link>
             <guid isPermaLink="false">paper:2603.21315</guid>
-            <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
+            <pubDate>Sun, 22 Mar 2026 16:49:43 GMT</pubDate>
             <category>Publication</category>
             <description><![CDATA[World models learn to predict future states of an environment, enabling planning and mental simulation. Current approaches default to Transformer-based predictors operating in learned latent spaces. This comes at a cost: O(N^2) computation and no explicit spatial inductive bias. This paper asks a foundational question: is self-attention necessary for predictive world modeling, or can alternative computational...]]></description>
-            <content:encoded><![CDATA[<p><img src="https://infinition.github.io/infinition/assets/papers/2603.21315.webp" alt=""></p><p>World models learn to predict future states of an environment, enabling planning and mental simulation. Current approaches default to Transformer-based predictors operating in learned latent spaces. This comes at a cost: O(N^2) computation and no explicit spatial inductive bias. This paper asks a foundational question: is self-attention necessary for predictive world modeling, or can alternative computational...</p><p><a href="https://infinition.github.io/infinition/#paper:2603.21315">Lire sur infinition.github.io</a></p>]]></content:encoded>
+            <content:encoded><![CDATA[<p><img src="https://infinition.github.io/infinition/assets/papers/2603.21315v1.webp" alt=""></p><p>World models learn to predict future states of an environment, enabling planning and mental simulation. Current approaches default to Transformer-based predictors operating in learned latent spaces. This comes at a cost: O(N^2) computation and no explicit spatial inductive bias. This paper asks a foundational question: is self-attention necessary for predictive world modeling, or can alternative computational...</p><p><a href="https://infinition.github.io/infinition/#paper:2603.21315">Lire sur infinition.github.io</a></p>]]></content:encoded>
         </item>
         <item>
             <title>L'Architecture Cachée de l'Univers : Synthèse des Avancées Physiques de 2025-2026</title>
