@@ -429,6 +429,22 @@ canvas {
     transition: transform 0.08s ease-out;
 }
 
+/* En butee, le pas de course: le pouce doit voir la difference sans
+   quitter la ville des yeux. */
+.virtual-stick-zone.is-sprinting .stick-base {
+    border-color: var(--mr-amber);
+    box-shadow: 0 0 28px rgba(240, 180, 41, 0.25);
+}
+
+.virtual-stick-zone.is-sprinting .stick-knob {
+    background: rgba(240, 180, 41, 0.8);
+    box-shadow: 0 0 20px rgba(240, 180, 41, 0.5);
+}
+
+.virtual-stick-zone.is-sprinting .stick-label {
+    color: var(--mr-amber);
+}
+
 .stick-label {
     position: absolute;
     top: -22px;

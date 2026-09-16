@@ -1147,19 +1147,16 @@ function initMusicPlayer() {
             songInfo.innerText = "-- PAUSED --";
             songInfo.style.color = "";
         } else {
-            audio.play().catch(() => {
-                songInfo.innerText = "./play --confirm";
-            });
-            isPlaying = true;
-            setPlayingClass(true);
+            wantsPlayback = true;
             updateSongDisplay(PLAYLIST[currentIndex].title);
+            requestPlay();
         }
     }
 
     // --- Next / Previous ---
     function nextTrack() {
         loadTrack(currentIndex + 1);
-        if (isPlaying) audio.play();
+        if (isPlaying || wantsPlayback) requestPlay();
     }
 
     function prevTrack() {
@@ -1169,7 +1166,50 @@ function initMusicPlayer() {
         } else {
             loadTrack(currentIndex - 1);
         }
-        if (isPlaying) audio.play();
+        if (isPlaying || wantsPlayback) requestPlay();
+    }
+
+    /* L'etat de lecture se lit sur l'element, pas sur l'intention: la
+       page se croyait en train de jouer alors qu'iOS avait refuse le
+       demarrage, et le HUD affichait un titre sur du silence. */
+    audio.addEventListener('play', () => { isPlaying = true; setPlayingClass(true); });
+    audio.addEventListener('pause', () => { isPlaying = false; setPlayingClass(false); });
+
+    /* iOS ne lance aucun son tant que l'utilisateur n'a rien touche. Le
+       premier morceau partait donc muet au chargement, et il fallait
+       passer au suivant, ce clic la etant un geste, pour entendre quoi
+       que ce soit. On garde l'intention et le premier contact la
+       realise, sur le morceau d'ouverture et depuis son debut. */
+    let wantsPlayback = false;
+    const UNLOCK_EVENTS = ['pointerdown', 'touchstart', 'keydown'];
+
+    function detachUnlock() {
+        UNLOCK_EVENTS.forEach((type) => window.removeEventListener(type, tryUnlock, true));
+    }
+
+    function tryUnlock() {
+        if (!wantsPlayback || !audio.paused) { detachUnlock(); return; }
+        audio.play().then(() => {
+            detachUnlock();
+            updateSongDisplay(PLAYLIST[currentIndex].title);
+        }).catch(() => { /* le prochain geste retentera */ });
+    }
+
+    function attachUnlock() {
+        detachUnlock();
+        UNLOCK_EVENTS.forEach((type) => window.addEventListener(type, tryUnlock, true));
+    }
+
+    function requestPlay() {
+        wantsPlayback = true;
+        return audio.play().then(() => {
+            detachUnlock();
+            updateSongDisplay(PLAYLIST[currentIndex].title);
+        }).catch(() => {
+            songInfo.innerText = "./play --tap to start";
+            songInfo.style.color = "";
+            attachUnlock();
+        });
     }
 
     // --- Auto-advance when track ends ---
@@ -1215,10 +1255,8 @@ function initMusicPlayer() {
         show: () => container.classList.add('visible'),
         play: () => {
             if (!hasStarted) { hasStarted = true; loadTrack(0); }
-            isPlaying = true;
-            setPlayingClass(true);
-            audio.play().catch(() => {});
             updateSongDisplay(PLAYLIST[currentIndex].title);
+            requestPlay();
         },
         setVolume: (vol) => { audio.volume = vol / 100; },
         toggleMute: toggleMute,
@@ -1417,7 +1455,9 @@ if (btnLayout) {
    it used to: it follows the identifier it claimed, so the aiming
    finger can pass right beside it without dragging it along. */
 
-const moveJoystick = { x: 0, y: 0, active: false };
+const moveJoystick = { x: 0, y: 0, active: false, rim: false };
+// Course du stick collee en butee: on passe au pas de course.
+const STICK_SPRINT = 1.7;
 const lookInertia = { x: 0, y: 0 };
 let flyImpulse = 0;  // metres banked by the two-finger slide
 
@@ -1474,8 +1514,8 @@ function setStickCenter(x, y) {
 function releaseStick() {
     touches.move = null;
     moveJoystick.active = false;
-    moveJoystick.x = 0; moveJoystick.y = 0;
-    stickEl.classList.remove("is-floating", "is-active");
+    moveJoystick.x = 0; moveJoystick.y = 0; moveJoystick.rim = false;
+    stickEl.classList.remove("is-floating", "is-active", "is-sprinting");
     stickEl.style.left = ""; stickEl.style.top = "";
     stickKnob.style.transform = "translate(-50%, -50%)";
 }
@@ -1486,13 +1526,21 @@ function updateStick(t) {
     if (dist > STICK_MAX_DIST) { dx = (dx / dist) * STICK_MAX_DIST; dy = (dy / dist) * STICK_MAX_DIST; }
     stickKnob.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px))`;
 
-    // Dead zone then a soft curve: fine control stays near the centre.
+    /* Zone morte puis courbe douce: le pouce garde de la precision pres
+       du centre, et la course commande la vitesse au lieu de valoir
+       tout ou rien. En butee franche, le sprint. */
     const nx = dx / STICK_MAX_DIST, ny = dy / STICK_MAX_DIST;
     const mag = Math.min(1, Math.hypot(nx, ny));
-    if (mag < 0.12) { moveJoystick.x = 0; moveJoystick.y = 0; return; }
-    const shaped = Math.pow((mag - 0.12) / 0.88, 1.4);
+    if (mag < 0.08) {
+        moveJoystick.x = 0; moveJoystick.y = 0; moveJoystick.rim = false;
+        stickEl.classList.remove("is-sprinting");
+        return;
+    }
+    const shaped = Math.pow((mag - 0.08) / 0.92, 1.5);
     moveJoystick.x = (nx / mag) * shaped;
     moveJoystick.y = (ny / mag) * shaped;
+    moveJoystick.rim = dist >= STICK_MAX_DIST * 0.97;
+    stickEl.classList.toggle("is-sprinting", moveJoystick.rim);
 }
 
 function applyLook(dx, dy) {
@@ -2965,11 +3013,11 @@ function animate() {
     camera.getWorldDirection(forward).normalize();
     right.crossVectors(forward, camera.up).normalize();
 
-    let dx = 0, dz = 0;
-    if (held("forward") || arrow("ArrowUp", "arrowup")) dz += 1;
-    if (held("back") || arrow("ArrowDown", "arrowdown")) dz -= 1;
-    if (held("left") || arrow("ArrowLeft", "arrowleft")) dx -= 1;
-    if (held("right") || arrow("ArrowRight", "arrowright")) dx += 1;
+    let dx = 0, dz = 0, keyed = false;
+    if (held("forward") || arrow("ArrowUp", "arrowup")) { dz += 1; keyed = true; }
+    if (held("back") || arrow("ArrowDown", "arrowdown")) { dz -= 1; keyed = true; }
+    if (held("left") || arrow("ArrowLeft", "arrowleft")) { dx -= 1; keyed = true; }
+    if (held("right") || arrow("ArrowRight", "arrowright")) { dx += 1; keyed = true; }
     if (moveJoystick.active) { dx += moveJoystick.x; dz -= moveJoystick.y; }
 
     if (arrow("Space", " ")) camera.position.y += moveSpeed;
@@ -2979,9 +3027,18 @@ function animate() {
     if (flyImpulse !== 0) { camera.position.y += flyImpulse; flyImpulse = 0; }
 
     if (Math.abs(dx) > 0.01 || Math.abs(dz) > 0.01) {
+        /* normalize() ne garde que la direction, donc la course du stick
+           partait a la poubelle et la moindre poussee valait plein
+           regime. La vitesse est reglee a part: proportionnelle a la
+           course au doigt, tout ou rien au clavier. */
+        let throttle = 1;
+        if (!keyed && moveJoystick.active) {
+            throttle = Math.min(1, Math.hypot(moveJoystick.x, moveJoystick.y));
+            if (moveJoystick.rim) throttle *= STICK_SPRINT;
+        }
         const dir = new THREE.Vector3();
         dir.addScaledVector(forward, dz).addScaledVector(right, dx).normalize();
-        camera.position.add(dir.multiplyScalar(moveSpeed));
+        camera.position.add(dir.multiplyScalar(moveSpeed * throttle));
     }
 
     // Collisions
