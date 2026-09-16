@@ -22,10 +22,10 @@ function handleHashChange() {
     else if (hash === '#kb') navigateTo('kb');
     else if (hash === '#music') navigateTo('music');
     else if (hash === '#photos') navigateTo('photos');
-    else if (hash === '#acid-pages') navigateTo('acid-pages');
     else if (hash === '#repos') navigateTo('repos');
     else if (hash === '#papers') navigateTo('papers');
     else if (hash === '#art') navigateTo('art');
+    else if (hash === '#startx') navigateTo('startx');
     else navigateTo('portal');
 }
 
@@ -89,6 +89,14 @@ window.addEventListener('resize', syncSysbarHeight);
 
 
 function navigateTo(viewId, keepScroll = false) {
+    /* Quitter startx passe toujours par son animation d'arret : la garde
+       intercepte l'appel, joue la sequence, puis se rappelle elle-meme une
+       fois STARTX.active retombe a false, donc sans se reintercepter. */
+    if (window.STARTX && STARTX.active && viewId !== 'startx') {
+        STARTX.requestExit(viewId, keepScroll);
+        return;
+    }
+
     /* L'attribut pose dans le <head> masquait le portail avant la premiere
        peinture. A partir d'ici c'est ce routeur qui decide ce qui s'affiche,
        et sa regle CSS gagnerait contre nos styles en ligne. */
@@ -123,10 +131,10 @@ function navigateTo(viewId, keepScroll = false) {
     if (viewId === 'blog') runScanSimulation();
     if (viewId === 'kb') initKB();
     if (viewId === 'photos') initPhotos();
-    if (viewId === 'acid-pages') initAcidPages();
     if (viewId === 'repos') initRepos();
     if (viewId === 'papers') initPapers();
     if (viewId === 'art') initArtStation();
+    if (viewId === 'startx' && window.STARTX) STARTX.enter();
 
     /* Le retour arriere du navigateur repasse de #paper:ID a #papers sans
        passer par le bouton de fermeture, on referme donc ici. */

@@ -574,6 +574,12 @@ body:not(.portal-mode) #sys-msg {
     gap: 10px;
 }
 
+.term-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
 .term-close-btn {
     background: none;
     border: none;
@@ -587,6 +593,31 @@ body:not(.portal-mode) #sys-msg {
 
 .term-close-btn:hover {
     color: #fff;
+}
+
+.term-icon-btn {
+    background: none;
+    border: none;
+    color: var(--neon-green);
+    cursor: pointer;
+    font-size: 0.85rem;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.term-icon-btn:hover {
+    color: #fff;
+}
+
+/* La maximisation ne remplace pas le top pose par .active (deja au ras de la
+   sys-bar) : elle etend juste la hauteur jusqu'au bas de l'ecran, retrait
+   d'encoche compris. */
+#terminal-dropdown.maximized {
+    height: calc(100dvh - var(--sysbar-height, 40px) - env(safe-area-inset-bottom));
+}
+
+#terminal-dropdown.maximized .term-input-area {
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .term-body {

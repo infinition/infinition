@@ -1,0 +1,549 @@
+/* =========================================================
+   STARTX — bureau retro X11 branche sur le vrai site.
+
+   Chaque fenetre "reelle" (Repos, Data Logs, Knowledge, Photos,
+   ArtStation, Papers, Profile, Music, Gibson) ne duplique rien :
+   au clic sur son icone, la vraie section .view-section de la
+   page (#repos-view, #papers-view, ...) est deplacee dans le
+   corps de la fenetre, et sa fonction d'init habituelle
+   (initRepos, initPapers, ...) est appelee exactement comme le
+   ferait navigateTo(). Fermer la fenetre la redepose a sa place
+   d'origine dans le document : le reste du site n'a jamais
+   connaissance de startx.
+   ========================================================= */
+
+/* Le bouton de lancement vit dans la barre systeme, a cote du flux RSS,
+   mais ne doit pas heriter sa teinte orange de marque. */
+#startx-launch-btn {
+    -webkit-appearance: none;
+    appearance: none;
+    font: inherit;
+}
+
+#startx-launch-btn:hover {
+    color: var(--neon-green) !important;
+    border-color: var(--neon-green) !important;
+    box-shadow: 0 0 10px rgba(10, 255, 71, .35) !important;
+}
+
+#startx-view {
+    padding-top: var(--sysbar-height);
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    background: #05070a;
+    position: relative;
+}
+
+/* inset:0 ignorerait le padding-top de #startx-view (les elements en
+   position absolue se calent sur le bord de son cadre, pas apres son
+   padding) et le bureau se retrouverait sous la sys-bar. On recale donc
+   le haut explicitement sur --sysbar-height. */
+.startx-crt {
+    position: absolute;
+    top: var(--sysbar-height, 40px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.startx-crt::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0px,
+            rgba(0, 0, 0, 0) 2px,
+            rgba(0, 0, 0, .16) 3px);
+    pointer-events: none;
+    z-index: 500;
+    mix-blend-mode: multiply;
+}
+
+/* Le vignettage vit SOUS le bureau (icones, fenetres, taskbar sont a
+   z-index >= 10) : au-dessus, son bord assombri a 55-100% rendait tout
+   element proche du coin illisible, desktop compris. Seules les fines
+   lignes de balayage ci-dessus restent devant, elles sont trop discretes
+   pour genre. */
+.startx-crt::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 45%, rgba(10, 255, 71, .05) 0%, rgba(0, 0, 0, 0) 55%),
+        radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, .45) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ---------- BOOT / SHUTDOWN ---------- */
+.startx-power {
+    position: absolute;
+    inset: 0;
+    z-index: 900;
+    background: #05070a;
+    color: var(--neon-green);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(13px, 1.9vw, 17px);
+    line-height: 1.55;
+    padding: 6vh 6vw;
+    white-space: pre-wrap;
+    transition: opacity .45s ease, filter .45s ease;
+}
+
+.startx-power[hidden] {
+    display: none;
+}
+
+.startx-power.leaving {
+    opacity: 0;
+    filter: brightness(3) blur(4px);
+    pointer-events: none;
+}
+
+.startx-power .dim {
+    color: #4c6b52;
+}
+
+.startx-power .dim b {
+    color: var(--neon-green);
+    font-weight: 400;
+}
+
+.startx-caret {
+    display: inline-block;
+    width: .55em;
+    height: 1em;
+    background: var(--neon-green);
+    vertical-align: -.15em;
+    margin-left: 2px;
+    animation: startx-blink 1s steps(1) infinite;
+}
+
+@keyframes startx-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ---------- DESKTOP ---------- */
+.startx-desktop {
+    /* La taskbar est posee sur le bureau, pas a cote : toute fenetre qui
+       occupe 100% de la hauteur passe dessous et perd sa derniere bande
+       de 32px. Les fenetres maximisees s'arretent donc au-dessus. */
+    --startx-taskbar-h: 32px;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 10;
+    transition: opacity .5s ease;
+}
+
+.startx-desktop.show {
+    opacity: 1;
+}
+
+.startx-icons {
+    position: absolute;
+    top: 24px;
+    left: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 84px);
+    gap: 18px 10px;
+    z-index: 20;
+}
+
+.startx-icon {
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: 1px solid transparent;
+    color: #cdeed8;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 4px 6px;
+    cursor: pointer;
+    text-align: center;
+    touch-action: none;
+}
+
+.startx-icon:hover,
+.startx-icon:focus-visible {
+    background: rgba(10, 255, 71, .08);
+    border-color: #1c2b20;
+    outline: none;
+}
+
+.startx-icon svg {
+    width: 30px;
+    height: 24px;
+}
+
+.startx-icon .lbl {
+    font-size: .72rem;
+    letter-spacing: .03em;
+    font-weight: 700;
+    max-width: 82px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Une icone deplacee (glisser-deposer) sort de la grille et se cale en
+   coordonnees libres, relatives a .startx-icons (deja position:absolute). */
+.startx-icon.free {
+    position: absolute;
+    width: 84px;
+    touch-action: none;
+}
+
+.startx-icon .tag {
+    font-size: 9px;
+    color: #5b7a63;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+/* ---------- WINDOWS ---------- */
+.startx-window {
+    position: absolute;
+    width: min(680px, 90vw);
+    height: min(74vh, 560px);
+    background: #0d1410;
+    border: 1px solid #1c2b20;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .55);
+    display: flex;
+    flex-direction: column;
+    z-index: 30;
+    min-width: 260px;
+    min-height: 160px;
+}
+
+.startx-window[hidden] {
+    display: none;
+}
+
+.startx-window.maximized {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    /* Sans la marge de taskbar, le bas de l'application maximisee (le
+       flux de logs du Gibson, par exemple) finit cache derriere elle. */
+    height: calc(100% - var(--startx-taskbar-h, 32px)) !important;
+}
+
+.startx-win-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 8px 7px 12px;
+    background: #0f1713;
+    border-bottom: 1px solid #1c2b20;
+    border-top: 2px solid var(--win-accent, var(--neon-green));
+    cursor: grab;
+    user-select: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .78rem;
+    letter-spacing: .03em;
+    flex: none;
+    touch-action: none;
+}
+
+.startx-window.maximized .startx-win-title {
+    cursor: default;
+}
+
+.startx-win-title:active {
+    cursor: grabbing;
+}
+
+.startx-win-dot {
+    width: 9px;
+    height: 9px;
+    flex: none;
+    background: var(--win-accent, var(--neon-green));
+    border-radius: 50%;
+}
+
+.startx-win-title .t {
+    flex: 1;
+    color: #cdeed8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.startx-win-btn {
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: 1px solid #1c2b20;
+    color: #5b7a63;
+    font-size: 10px;
+    width: 22px;
+    height: 20px;
+    line-height: 1;
+    cursor: pointer;
+    flex: none;
+}
+
+.startx-win-btn:hover {
+    color: #cdeed8;
+    border-color: #5b7a63;
+}
+
+.startx-win-body {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    background: #05070a;
+}
+
+/* La vraie section deplacee dans la fenetre doit remplir ce corps
+   au lieu de viser le viewport entier comme sur la page normale. */
+.startx-win-body .view-section {
+    display: block !important;
+    position: static !important;
+    top: auto !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding-top: 0 !important;
+    overflow: auto !important;
+    animation: none !important;
+}
+
+.startx-win-body #hackers-iframe {
+    height: 100% !important;
+}
+
+/* Le vrai terminal (#terminal-dropdown) se deplace lui aussi dans sa
+   fenetre : il perd sa position de dropdown flottant et son propre
+   bandeau, la fenetre StartX fournit deja titre + boutons. */
+.startx-win-body #terminal-dropdown {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    border-bottom: none !important;
+    transition: none !important;
+}
+
+.startx-win-body #terminal-dropdown .term-header {
+    display: none;
+}
+
+.startx-win-body #terminal-dropdown .term-body {
+    height: 100%;
+}
+
+/* Poignee de redimensionnement, coin bas-droit. */
+.startx-resize-handle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    cursor: nwse-resize;
+    z-index: 6;
+    touch-action: none;
+}
+
+.startx-resize-handle::before {
+    content: "";
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid var(--win-accent, var(--neon-green));
+    border-bottom: 2px solid var(--win-accent, var(--neon-green));
+    opacity: .6;
+}
+
+.startx-window.maximized .startx-resize-handle {
+    display: none;
+}
+
+/* ---------- CONTEXT MENU (clic droit / appui long) ---------- */
+.startx-ctxmenu {
+    position: absolute;
+    min-width: 170px;
+    background: #0f1713;
+    border: 1px solid #1c2b20;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+    z-index: 950;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .78rem;
+    padding: 4px 0;
+}
+
+.startx-ctxmenu button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    color: #cdeed8;
+    font: inherit;
+    padding: 7px 14px;
+    cursor: pointer;
+}
+
+.startx-ctxmenu button:hover {
+    background: rgba(10, 255, 71, .08);
+    color: var(--neon-green);
+}
+
+.startx-ctxmenu button.danger:hover {
+    background: rgba(255, 0, 60, .1);
+    color: var(--neon-red);
+}
+
+.startx-ctxmenu-sep {
+    height: 1px;
+    background: #1c2b20;
+    margin: 4px 0;
+}
+
+/* ---------- TASKBAR ---------- */
+.startx-taskbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--startx-taskbar-h, 32px);
+    background: #0b100d;
+    border-top: 1px solid #1c2b20;
+    display: flex;
+    align-items: stretch;
+    z-index: 800;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+}
+
+.startx-start {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--neon-green);
+    color: #04220f;
+    border: none;
+    padding: 0 14px;
+    font-family: inherit;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    cursor: pointer;
+}
+
+.startx-start:hover {
+    filter: brightness(1.1);
+}
+
+.startx-tasks {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+    padding: 0 6px;
+    overflow-x: auto;
+}
+
+.startx-task {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #101a15;
+    border: 1px solid #1c2b20;
+    color: #5b7a63;
+    font-family: inherit;
+    font-size: .68rem;
+    padding: 0 10px;
+    margin: 4px 0;
+    cursor: pointer;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: none;
+}
+
+.startx-task.active {
+    color: #cdeed8;
+    border-color: #5b7a63;
+}
+
+.startx-tray {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+    color: #5b7a63;
+    border-left: 1px solid #1c2b20;
+    white-space: nowrap;
+}
+
+.startx-tray .clk {
+    color: #cdeed8;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- START MENU ---------- */
+#startx-menu {
+    position: absolute;
+    left: 0;
+    bottom: 32px;
+    width: 190px;
+    background: #0f1713;
+    border: 1px solid #1c2b20;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .5);
+    z-index: 900;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .78rem;
+}
+
+#startx-menu[hidden] {
+    display: none;
+}
+
+#startx-menu button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    color: #cdeed8;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#startx-menu button:hover {
+    background: rgba(10, 255, 71, .08);
+    color: var(--neon-green);
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 700px) {
+    .startx-icons {
+        grid-template-columns: repeat(3, 28vw);
+        gap: 12px 4px;
+    }
+
+    .startx-window {
+        width: 100%;
+        height: calc(100% - var(--startx-taskbar-h, 32px));
+        top: 0 !important;
+        left: 0 !important;
+    }
+}

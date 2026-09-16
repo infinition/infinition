@@ -93,12 +93,12 @@
     <link rel="stylesheet" href="css/themes/infinition.css">
     <link rel="stylesheet" href="css/themes/dark.css">
 
-    <link rel="stylesheet" href="css/acid_pages.css">
     <link rel="stylesheet" href="css/kb.css">
     <link rel="stylesheet" href="css/repos.css">
     <link rel="stylesheet" href="css/papers.css">
     <link rel="stylesheet" href="css/artstation.css">
     <link rel="stylesheet" href="css/photos.css">
+    <link rel="stylesheet" href="css/startx.css">
     <!-- charge en dernier : ses retraits d'encoche doivent gagner sur les
          positions fixes declarees dans les feuilles precedentes -->
     <link rel="stylesheet" href="css/safe-area.css">
@@ -133,9 +133,12 @@
     <div id="terminal-dropdown">
         <div class="term-header">
             <div class="term-title">
-                <i class="fas fa-terminal"></i> TERM_V1.0
+                <i class="fas fa-terminal"></i> TERM_V1.1
             </div>
-            <button class="term-close-btn" onclick="terminal.toggle()">×</button>
+            <div class="term-header-actions">
+                <button class="term-icon-btn" id="term-max-btn" onclick="terminal.toggleMaximize()" title="Maximize" aria-label="Maximize terminal"><i class="fas fa-expand"></i></button>
+                <button class="term-close-btn" onclick="terminal.toggle()">×</button>
+            </div>
         </div>
         <div class="term-body">
             <div id="term-output" class="term-output"></div>
@@ -166,6 +169,9 @@
                 title="S'abonner au flux RSS">
                 <i class="fas fa-rss"></i>
             </a>
+            <button id="startx-launch-btn" class="sys-icon-btn" title="Launch StartX" aria-label="Launch StartX" onclick="STARTX.toggle()">
+                <i class="fas fa-desktop"></i>
+            </button>
         </div>
     </div>
 
@@ -825,88 +831,6 @@
     <section id="hackers-view" class="view-section" style="padding-top: var(--sysbar-height); background: #000;">
         <iframe id="hackers-iframe" src="" style="width: 100%; height: calc(100vh - var(--sysbar-height)); border: none;"></iframe>
     </section>
-
-    <section id="acid-pages-view" class="view-section">
-        <div class="max-w-6xl mx-auto p-4 md:p-8">
-
-            <!-- Header -->
-            <header class="mb-12 text-center pt-8">
-                <div
-                    class="inline-flex items-center justify-center gap-3 mb-4 p-4 glass-panel rounded-full border border-lime-900/30 shadow-[0_0_30px_rgba(132,204,22,0.1)]">
-                    <i data-lucide="globe" class="w-8 h-8 text-lime-500"></i>
-                    <h1 class="text-3xl md:text-4xl font-bold tracking-widest text-white">
-                        ACID <span class="text-lime-500">//</span> PAGES
-                    </h1>
-                </div>
-                <p class="text-zinc-500 tracking-wider uppercase text-sm font-semibold">
-                    Scan Github Profiles for Deployed Sites
-                </p>
-            </header>
-
-            <!-- Search Bar -->
-            <div class="max-w-xl mx-auto mb-16 relative z-10">
-                <form id="acid-search-form" class="relative group">
-                    <div
-                        class="absolute -inset-0.5 bg-gradient-to-r from-lime-600 to-emerald-600 rounded-lg blur opacity-20 group-hover:opacity-60 transition duration-500">
-                    </div>
-
-                    <div class="relative flex items-center glass-panel rounded-lg p-1">
-                        <div class="pl-4 pr-3 text-zinc-500">
-                            <i data-lucide="github" class="w-5 h-5"></i>
-                        </div>
-                        <input type="text" id="acid-search-input" value="infinition" placeholder="GITHUB USERNAME..."
-                            class="w-full bg-transparent border-none outline-none text-white placeholder-zinc-600 font-mono py-3"
-                            autocomplete="off" />
-                        <button type="submit" id="acid-search-btn"
-                            class="bg-lime-600 hover:bg-lime-500 text-black px-6 py-2.5 rounded font-bold transition-all shadow-[0_0_15px_rgba(132,204,22,0.3)] hover:shadow-[0_0_20px_rgba(132,204,22,0.5)] flex items-center gap-2">
-                            <i id="acid-btn-icon" data-lucide="search" class="w-4 h-4"></i>
-                            <span>SCAN</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Error Container -->
-            <div id="acid-error-container"
-                class="hidden max-w-md mx-auto mb-8 p-6 glass-panel border-red-900/50 rounded-xl flex flex-col items-center text-center text-red-400 animate-fade-in">
-                <i data-lucide="alert-circle" class="w-10 h-10 mb-3 text-red-500"></i>
-                <p id="acid-error-message" class="font-mono text-sm uppercase tracking-wide">Error message here</p>
-            </div>
-
-            <!-- Stats -->
-            <div id="acid-stats-container"
-                class="hidden mb-6 flex justify-between items-end border-b border-zinc-800 pb-2 px-2 animate-fade-in">
-                <h2 class="text-xl font-bold text-zinc-400">
-                    TARGET: <span id="acid-target-user" class="text-lime-400">@USERNAME</span>
-                </h2>
-                <span class="text-xs font-mono text-zinc-500 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded">
-                    <span id="acid-repo-count" class="text-white font-bold">0</span> SITES DETECTED
-                </span>
-            </div>
-
-            <!-- Content Grid -->
-            <div id="acid-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
-                <!-- Cards will be injected here -->
-            </div>
-
-            <!-- Loading State -->
-            <div id="acid-loader" class="hidden py-20 flex flex-col items-center justify-center">
-                <div class="loader mb-6"></div>
-                <p class="text-lime-500 font-mono text-sm animate-pulse tracking-[0.2em]">ACCESSING MAINFRAME...</p>
-            </div>
-
-            <!-- Empty State -->
-            <div id="acid-empty-state"
-                class="hidden py-20 text-center border border-dashed border-zinc-800 rounded-2xl bg-zinc-900/30">
-                <i data-lucide="ghost" class="w-16 h-16 text-zinc-700 mx-auto mb-4"></i>
-                <p class="text-zinc-500 text-lg uppercase font-bold">No Pages Detected</p>
-                <p class="text-zinc-600 text-xs font-mono mt-2">Target has no public repositories with Pages enabled.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
     <!-- SECTION PAPERS - BIBLIOTHEQUE arXiv -->
     <section id="papers-view" class="view-section">
         <div class="papers-wrap">
@@ -1081,6 +1005,71 @@
     <div class="card-backdrop" id="repos-card-backdrop"></div>
     <div class="repo-card" id="repo-card" role="dialog" aria-label="Repository details"></div>
 
+    <!-- SECTION STARTX : bureau retro, branche sur les vraies vues du site -->
+    <section id="startx-view" class="view-section">
+        <div class="startx-crt">
+            <div class="startx-power" id="startx-power" hidden></div>
+
+            <div class="startx-desktop" id="startx-desktop">
+                <div class="startx-icons" id="startx-icons" role="group" aria-label="Desktop">
+                    <button class="startx-icon" data-target="repos" style="color:var(--neon-green)">
+                        <svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 4h7l2 2h13v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4z"/></svg>
+                        <span class="lbl">REPOS</span><span class="tag">git://</span>
+                    </button>
+                    <button class="startx-icon" data-target="blog" style="color:var(--neon-blue)">
+                        <svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 4h7l2 2h13v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4z"/></svg>
+                        <span class="lbl">DATA_LOGS</span><span class="tag">/var/log</span>
+                    </button>
+                    <button class="startx-icon" data-target="kb" style="color:var(--neon-purple)">
+                        <svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 4h7l2 2h13v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4z"/></svg>
+                        <span class="lbl">KNOWLEDGE</span><span class="tag">/mnt/kb</span>
+                    </button>
+                    <button class="startx-icon" data-target="music" style="color:var(--neon-orange)">
+                        <svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 4h7l2 2h13v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4z"/></svg>
+                        <span class="lbl">AUDIO_FREQ</span><span class="tag">/dev/snd</span>
+                    </button>
+                    <button class="startx-icon" data-target="photos" style="color:var(--neon-red)">
+                        <svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 4h7l2 2h13v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4z"/></svg>
+                        <span class="lbl">PHOTOS</span><span class="tag">/media</span>
+                    </button>
+                    <button class="startx-icon" data-target="art" style="color:var(--neon-purple)">
+                        <svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 4h7l2 2h13v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4z"/></svg>
+                        <span class="lbl">ARTSTATION</span><span class="tag">/mnt/art</span>
+                    </button>
+                    <button class="startx-icon" data-target="papers" style="color:var(--neon-blue)">
+                        <svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 4h7l2 2h13v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4z"/></svg>
+                        <span class="lbl">PAPERS</span><span class="tag">arxiv://</span>
+                    </button>
+                    <button class="startx-icon" data-target="portfolio" style="color:var(--neon-green)">
+                        <svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 4h7l2 2h13v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4z"/></svg>
+                        <span class="lbl">0xPOLLY</span><span class="tag">~/whoami</span>
+                    </button>
+                    <button class="startx-icon" data-target="hackers" style="color:var(--neon-red)">
+                        <svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="1" width="22" height="18" rx="1"/><path d="M4 6l4 4-4 4M11 14h8"/></svg>
+                        <span class="lbl">GIBSON</span><span class="tag">root@</span>
+                    </button>
+                    <button class="startx-icon" data-target="terminal" style="color:var(--neon-green)">
+                        <svg viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="1" width="22" height="18" rx="1"/><path d="M4 6l4 4-4 4M11 14h8"/></svg>
+                        <span class="lbl">TERMINAL</span><span class="tag">bash</span>
+                    </button>
+                </div>
+
+                <div id="startx-windows"></div>
+
+                <div id="startx-menu" hidden></div>
+
+                <div class="startx-taskbar">
+                    <button class="startx-start" id="startx-start-btn">▤ START</button>
+                    <div class="startx-tasks" id="startx-tasks"></div>
+                    <div class="startx-tray">
+                        <span>X :0</span>
+                        <span class="clk" id="startx-clock">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SCRIPTS EXTERNES CONSERVÉS -->
     <div id="search-modal">
         <div class="search-container">
@@ -1120,9 +1109,10 @@
     <script src="js/social.js"></script>
     <script src="js/main.js"></script>
     <script src="js/portal.js"></script>
+    <script src="js/vfs.js"></script>
     <script src="js/terminal.js"></script>
-    <script src="js/acid_pages.js"></script>
     <script src="js/kb.js"></script>
+    <script src="js/startx.js"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>

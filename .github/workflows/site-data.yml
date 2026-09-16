@@ -39,15 +39,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # build-logs.mjs date les articles avec git log, il lui faut
           # l'historique complet.
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Install dependencies
@@ -87,7 +87,7 @@ jobs:
         # pas refaite : seul un fichier ajoute ou modifie est reencode.
         run: node scripts/build-photos.mjs --dir photos --out data/photos.json --assets assets/photos
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 

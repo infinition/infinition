@@ -126,6 +126,26 @@ body {
     padding-right: max(15px, env(safe-area-inset-right));
 }
 
+/* --- STARTX ---
+   Le bureau est en position absolue et couvre tout l ecran sous la sys-bar :
+   la taskbar et les icones doivent reculer devant l encoche et la barre
+   d accueil comme n importe quelle superposition plein ecran. */
+.startx-taskbar {
+    padding-bottom: env(safe-area-inset-bottom);
+    height: calc(32px + env(safe-area-inset-bottom));
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+.startx-icons {
+    left: calc(18px + env(safe-area-inset-left));
+}
+
+#startx-menu {
+    bottom: calc(32px + env(safe-area-inset-bottom));
+    left: env(safe-area-inset-left);
+}
+
 /* --- FEUILLE DU BAS DES REPOS ---
    Le retrait du bas y etait deja, il manquait les cotes : la
    feuille va d un bord a l autre et passait sous l encoche en
