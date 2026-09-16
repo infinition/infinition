@@ -828,8 +828,12 @@
         </div>
     </div>
 
-    <section id="hackers-view" class="view-section" style="padding-top: var(--sysbar-height); background: #000;">
-        <iframe id="hackers-iframe" src="" style="width: 100%; height: calc(100vh - var(--sysbar-height)); border: none;"></iframe>
+    <section id="hackers-view" class="view-section">
+        <!-- La hauteur reste en ligne, avec la variante dvh par dessus: une
+             feuille de style encore en cache ne doit pas pouvoir replier
+             l'iframe sur sa taille intrinseque de 300x150. -->
+        <iframe id="hackers-iframe" src="" title="Gibson"
+                style="width:100%;border:none;height:calc(100vh - var(--sysbar-height));height:calc(100dvh - var(--sysbar-height));"></iframe>
     </section>
     <!-- SECTION PAPERS - BIBLIOTHEQUE arXiv -->
     <section id="papers-view" class="view-section">

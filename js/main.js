@@ -88,6 +88,30 @@ window.addEventListener('load', syncSysbarHeight);
 window.addEventListener('resize', syncSysbarHeight);
 
 
+/* iOS garde le geste tactile pour lui quand la page hote n'ecoute pas le
+   tactile: un glissement au dessus de l'iframe est traite comme un debut
+   de defilement et le jeu ne recoit jamais rien, alors qu'un simple tap
+   passe. D'ou le stick et la visee morts dans le Gibson, sauf si un
+   doigt tenait deja un bouton du jeu, qui lui avait capte le geste.
+
+   Il suffit que la page declare ecouter le tactile pour que Safari
+   reprenne la route normale et livre l'evenement au cadre. Les
+   ecouteurs ne font donc rien: un evenement ne du tout de l'iframe ne
+   remonte pas ici, et prevenir ceux de la page casserait la barre
+   systeme. */
+const GAME_TOUCH_EVENTS = ['touchstart', 'touchmove', 'touchend'];
+const gameTouchRouter = () => {};
+let gameTouchRouting = false;
+
+function setGameTouchRouting(on) {
+    if (on === gameTouchRouting) return;
+    gameTouchRouting = on;
+    GAME_TOUCH_EVENTS.forEach((type) => {
+        if (on) document.addEventListener(type, gameTouchRouter, { passive: false });
+        else document.removeEventListener(type, gameTouchRouter, { passive: false });
+    });
+}
+
 function navigateTo(viewId, keepScroll = false) {
     /* Quitter startx passe toujours par son animation d'arret : la garde
        intercepte l'appel, joue la sequence, puis se rappelle elle-meme une
@@ -111,6 +135,10 @@ function navigateTo(viewId, keepScroll = false) {
     }
     document.body.classList.toggle('kb-mode', viewId === 'kb');
     document.body.classList.toggle('portal-mode', viewId === 'portal');
+    /* Le jeu prend tout l'ecran et gere ses propres gestes : la page qui
+       le porte ne doit plus pouvoir defiler sous les doigts. */
+    document.body.classList.toggle('hackers-mode', viewId === 'hackers');
+    setGameTouchRouting(viewId === 'hackers');
     updateGlobalSearchIcon();
     
     // Stop hackers easter egg if navigating away

@@ -487,6 +487,45 @@ body {
     display: block;
 }
 
+/* Le Gibson tourne dans une iframe plein ecran. Sur mobile, 100vh vaut
+   la hauteur SANS la barre d'URL: la page parent depassait donc de
+   quelques dizaines de pixels, restait defilable, et Safari lisait le
+   moindre glissement au dessus du jeu comme un defilement de page.
+   L'iframe ne recevait alors aucun evenement tactile, donc ni stick ni
+   visee, sauf si un doigt tenait deja un bouton du jeu qui avait capte
+   le geste avant le navigateur. dvh cale la vue sur la zone reellement
+   visible, et touch-action retire ces gestes au navigateur. */
+#hackers-view {
+    box-sizing: border-box;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    padding-top: var(--sysbar-height);
+    background: #000;
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+}
+
+/* La hauteur est posee en ligne dans le HTML, ici on ne fait qu'ajouter
+   ce qui manque: le geste appartient au jeu, pas au navigateur. */
+#hackers-iframe {
+    display: block;
+    touch-action: none;
+}
+
+/* Tant que le jeu est ouvert, la page derriere ne bouge plus. Le
+   verrou porte aussi sur la hauteur: en 100vh la page depasse de la
+   barre d'URL et garde de quoi defiler. */
+body.hackers-mode {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
+}
+
 /* --- SHARE TOOLBAR --- */
 .share-toolbar {
     display: flex;

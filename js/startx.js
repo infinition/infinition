@@ -329,12 +329,15 @@ window.STARTX = (function () {
         });
         bar.addEventListener('pointerup', () => { dragging = false; });
 
-        // Poignee de redimensionnement, coin bas-droit, desactivee en plein ecran.
+        /* Poignee de redimensionnement, coin bas-droit. Elle reste visible
+           en plein ecran: tirer dessus fait simplement sortir la fenetre
+           de cet etat en gardant la taille qu'elle avait a l'ecran, comme
+           n'importe quel gestionnaire de fenetres. */
         const handle = el.querySelector('.startx-resize-handle');
         let resizing = false, rsx = 0, rsy = 0, rsw = 0, rsh = 0;
         handle.addEventListener('pointerdown', (e) => {
-            if (entry.maximized) return;
             e.stopPropagation();
+            if (entry.maximized) unmaximizeInPlace(cfg.id);
             resizing = true;
             rsx = e.clientX; rsy = e.clientY;
             const r = el.getBoundingClientRect();
@@ -350,6 +353,24 @@ window.STARTX = (function () {
         handle.addEventListener('pointerup', () => { resizing = false; });
 
         bindContextTrigger(bar, (x, y) => showWinTitleMenu(cfg.id, x, y), (e) => !!e.target.closest('.startx-win-btn'));
+    }
+
+    /* Sortie du plein ecran sans rendre sa taille d'avant: la fenetre
+       garde exactement ce qu'elle occupe a l'ecran, ce qui permet
+       d'enchainer sur un redimensionnement sans saut. */
+    function unmaximizeInPlace(id) {
+        const entry = state[id];
+        if (!entry || !entry.maximized) return;
+        const r = entry.el.getBoundingClientRect();
+        const deskRect = document.getElementById('startx-desktop').getBoundingClientRect();
+        entry.maximized = false;
+        entry.el.classList.remove('maximized');
+        entry.el.style.left = (r.left - deskRect.left) + 'px';
+        entry.el.style.top = (r.top - deskRect.top) + 'px';
+        entry.el.style.width = r.width + 'px';
+        entry.el.style.height = r.height + 'px';
+        const icon = entry.el.querySelector('[data-act="max"] i');
+        if (icon) icon.className = 'fas fa-expand';
     }
 
     function showWinTitleMenu(id, x, y) {
