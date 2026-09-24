@@ -7,13 +7,22 @@
         <link>https://infinition.github.io/infinition/</link>
         <description>Notes de recherche, knowledge base, essais et publications de Fabien Polly.</description>
         <language>fr</language>
-        <lastBuildDate>Sun, 13 Sep 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 16 Sep 2026 12:43:12 GMT</lastBuildDate>
         <atom:link href="https://infinition.github.io/infinition/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://infinition.github.io/infinition/img/icon-180.png</url>
             <title>INFINITION | Data Logs</title>
             <link>https://infinition.github.io/infinition/</link>
         </image>
+        <item>
+            <title>The Drift Contract: Spectral Updates for Depth-Robust Local Learning</title>
+            <link>https://infinition.github.io/infinition/#paper:2609.26811</link>
+            <guid isPermaLink="false">paper:2609.26811</guid>
+            <pubDate>Wed, 16 Sep 2026 12:43:12 GMT</pubDate>
+            <category>Publication</category>
+            <description><![CDATA[Local learning trains each layer with its own auxiliary loss and no global backward pass, which makes layer updates structurally parallel. Two problems have kept it marginal: accuracy degrades as depth grows, and hyperparameters are fragile. We apply Muon-style spectral update geometry (momentum orthogonalization with spectral step scaling) to per-layer local updates, an intersection not previously studied. On...]]></description>
+            <content:encoded><![CDATA[<p><img src="https://infinition.github.io/infinition/assets/papers/2609.26811v1.webp" alt=""></p><p>Local learning trains each layer with its own auxiliary loss and no global backward pass, which makes layer updates structurally parallel. Two problems have kept it marginal: accuracy degrades as depth grows, and hyperparameters are fragile. We apply Muon-style spectral update geometry (momentum orthogonalization with spectral step scaling) to per-layer local updates, an intersection not previously studied. On...</p><p><a href="https://infinition.github.io/infinition/#paper:2609.26811">Lire sur infinition.github.io</a></p>]]></content:encoded>
+        </item>
         <item>
             <title>Plusieurs piliers, pas un puits : La dispersion comme redondance</title>
             <link>https://infinition.github.io/infinition/#read:essays/plusieurs-piliers-pas-un-puits</link>
