@@ -46,7 +46,7 @@ const SEARCH_URL = `https://arxiv.org/search/?searchtype=author&query=${encodeUR
 /* Identifiants connus, au cas ou la decouverte automatique ne reponde pas du
    tout. Ils ne sont jamais la seule source : s ils sont deja trouves par
    l API ils ne sont pas refetches. */
-const SEED_IDS = ['2607.05300', '2607.06634', '2603.21315'];
+const SEED_IDS = ['2609.26811', '2607.05300', '2607.06634', '2603.21315'];
 
 /* Preprints qui n ont pas encore d identifiant arXiv public.
  *
@@ -74,15 +74,6 @@ const preprint = fields => ({
 });
 
 const UNPUBLISHED = [
-    preprint({
-        id: 'drift-bounded-spectral-updates',
-        title: 'Drift-Bounded Spectral Updates for Deep Local Learning',
-        categories: ['cs.LG'],
-        primary_category: 'cs.LG',
-        published: '2026-07-01T00:00:00.000Z',
-        abs_url: 'https://github.com/infinition/drift-contract',
-        pdf_source: 'https://raw.githubusercontent.com/infinition/drift-contract/main/paper/paper.pdf'
-    }),
     preprint({
         id: 'digital-abelian-logical-phase-control',
         title: 'Digital Abelian Logical Phase Control in a Correlated-Hopping Ladder',
